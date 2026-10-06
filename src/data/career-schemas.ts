@@ -112,7 +112,7 @@ export const governmentStateSchema: z.ZodType<GovernmentState> = z.object({
   round: z.enum(["first", "later"]), supportPartyIds: z.array(z.string().min(1)), termTurn: z.number().int().nonnegative(),
   totalTermTurns: z.number().int().positive(), lastInvestitureYes: z.number().int().nonnegative().nullable(),
   fallRiskPercent: bounded(), warningSignals: z.array(z.string().min(1)),
-  challenge: z.object({ type: z.enum(["presidential-vacancy", "constructive-censure"]), phase: z.enum(["admission", "defense"]), causeId: z.string().min(1), sponsorCount: z.number().int().nonnegative(), successorId: z.string().nullable(), daysElapsed: z.number().int().nonnegative(), defenseInfluence: bounded(), admissionPassed: z.boolean().nullable() }).strict().nullable(),
+  challenge: z.object({ type: z.enum(["presidential-vacancy", "constructive-censure", "censure"]), phase: z.enum(["admission", "defense"]), causeId: z.string().min(1), sponsorCount: z.number().int().nonnegative(), successorId: z.string().nullable(), daysElapsed: z.number().int().nonnegative(), defenseInfluence: bounded(), admissionPassed: z.boolean().nullable() }).strict().nullable(),
   cabinet: z.array(z.object({ officeId: z.string().min(1), title: z.string().min(1), legislatorId: z.string().min(1), loyalty: bounded() }).strict()),
   policyVotes: z.array(z.object({ id: z.string().min(1), turn: z.number().int().nonnegative(), kind: z.literal("project"), focus: z.enum(["employment", "services", "investment"]), title: z.string().min(1), requiredMajorityPercent: bounded(50, 100), yes: z.number().int().nonnegative(), no: z.number().int().nonnegative(), passed: z.boolean(), votes: z.array(z.object({ legislatorId: z.string().min(1), choice: z.enum(["yes", "no"]), reasons: z.array(z.string().min(1)) }).strict()).min(1), explanation: z.string().min(1) }).strict()),
 }).strict();
@@ -139,16 +139,17 @@ const realismModeSchema: z.ZodType<RealismMode> = z.enum(["relaxed", "realistic"
 
 export const legacyProfileSchema: z.ZodType<LegacyProfile> = z.object({
   dimensions: z.object({ governance: bounded(), integrity: bounded(), influence: bounded(), continuity: bounded(), publicTrust: bounded() }).strict(),
-  archetype: z.enum(["reformer", "builder", "broker", "survivor", "caretaker", "ideologue", "controversial"]),
+  archetype: z.enum(["reformer", "builder", "broker", "survivor", "caretaker", "ideologue", "controversial", "stabilizer", "institution-keeper", "kingmaker"]),
   summary: z.string().min(1), milestones: z.array(z.string().min(1)).min(1).max(3),
   reevaluationAt5: bounded(), reevaluationAt15: bounded(), reevaluationAt30: bounded().optional(), shareText: z.string().min(1).max(800),
 }).strict();
 
 const gameState = gameStateSchema;
 export const careerGameStateSchema: z.ZodType<CareerGameState> = z.object({
-  saveSchemaVersion: z.literal(14), countryId: z.string().min(1), countryDataVersion: z.string().min(1), contentDataVersion: z.string().min(1),
+  saveSchemaVersion: z.literal(15), countryId: z.string().min(1), countryDataVersion: z.string().min(1), contentDataVersion: z.string().min(1),
   seed: z.string().min(1), stage: z.enum(["campaign", "election-result", "legislature", "executive", "party-leadership", "minister", "term-summary", "legacy"]), realism: realismModeSchema, ironman: z.boolean(),
   currentTurn: z.number().int().nonnegative(), world: gameState,
+  regime: z.object({ template: z.literal("hegemony"), elites: bounded(), partyApparatus: bounded(), military: bounded(), security: bounded(), protest: bounded(), legitimacy: bounded(), actionsRemaining: z.number().int().min(0).max(2), lastExplanation: z.string().min(1), fall: z.enum(["purge", "coup", "revolt"]).nullable(), history: z.array(z.object({ turn: z.number().int().nonnegative(), action: z.enum(["elite-pact", "party-renewal", "civilian-oversight", "protest-dialogue", "restrict-assembly"]), explanation: z.string().min(1) }).strict()).max(160) }).strict().nullable(),
   geopolitics: z.custom<GeopoliticsState>((value) => typeof value === "object" && value !== null && "schemaVersion" in value && (value as GeopoliticsState).schemaVersion === 1 && Array.isArray((value as GeopoliticsState).actors) && Array.isArray((value as GeopoliticsState).relations)),
   player: politicalCharacterSchema,
   playerPartyId: z.string().min(1), campaign: campaignStateSchema, electionOutcome: electionOutcomeSchema.nullable(),

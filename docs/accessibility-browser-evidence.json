@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-06",
+  "platformScope": "PC",
+  "limitations": "Ventanas de escritorio automatizadas; no lector de pantalla ni cobertura de todo hardware PC. Contraste medido por phase5-browser-check.py en Ayuda.",
+  "results": [
+    {
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "emulatedViewport": true,
+      "keyboardHelp": true,
+      "largeTextRootPx": 18,
+      "noHorizontalOverflow": true,
+      "reducedMotionRequested": true,
+      "offlineNewProfiles": true,
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "emulatedViewport": true,
+      "keyboardHelp": true,
+      "largeTextRootPx": 18,
+      "noHorizontalOverflow": true,
+      "reducedMotionRequested": true,
+      "offlineNewProfiles": true,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "emulatedViewport": true,
+      "keyboardHelp": true,
+      "largeTextRootPx": 18,
+      "noHorizontalOverflow": true,
+      "reducedMotionRequested": true,
+      "offlineNewProfiles": true,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "emulatedViewport": true,
+      "keyboardHelp": true,
+      "largeTextRootPx": 18,
+      "noHorizontalOverflow": true,
+      "reducedMotionRequested": true,
+      "offlineNewProfiles": true,
+      "errors": []
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "id": "venezuela",
+  "name": "Venezuela",
+  "experimental": true,
+  "startingYear": 2026,
+  "dataVersion": "venezuela-constitutional-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance",
+  "population": 28516896,
+  "politicalSystem": {
+    "formOfGovernment": "presidential",
+    "executive": {
+      "officeId": "president",
+      "title": "Presidente de la República",
+      "selection": "direct-election",
+      "termYears": 6,
+      "consecutiveTermLimit": null,
+      "election": {
+        "method": "plurality",
+        "firstRoundThresholdPercent": 50,
+        "runoffDays": 0
+      },
+      "investiture": null,
+      "confidence": null,
+      "censure": null,
+      "dissolution": {
+        "executiveMayPropose": false,
+        "minimumMonthsBetween": 0
+      }
+    },
+    "legislature": {
+      "type": "unicameral",
+      "lowerChamber": {
+        "id": "national-assembly",
+        "name": "Asamblea Nacional",
+        "seats": 285,
+        "termYears": 5,
+        "electoralSystem": "mixed",
+        "districtCount": 1,
+        "nationalSeats": 0,
+        "seatAllocationMethod": "largest-remainder",
+        "electoralThresholdPercent": 0
+      }
+    },
+    "presidentialTermYears": 6,
+    "presidentialElection": "direct",
+    "removalMechanisms": [
+      "impeachment",
+      "vacancy"
+    ],
+    "politicalDistribution": [
+      {
+        "sharePercent": 22,
+        "ideology": {
+          "economy": 62,
+          "social": 43,
+          "nationalism": 60,
+          "institutionalism": 72,
+          "rigidity": 46
+        }
+      },
+      {
+        "sharePercent": 21,
+        "ideology": {
+          "economy": 35,
+          "social": 67,
+          "nationalism": 28,
+          "institutionalism": 78,
+          "rigidity": 38
+        }
+      },
+      {
+        "sharePercent": 20,
+        "ideology": {
+          "economy": 68,
+          "social": 34,
+          "nationalism": 74,
+          "institutionalism": 48,
+          "rigidity": 54
+        }
+      },
+      {
+        "sharePercent": 19,
+        "ideology": {
+          "economy": 48,
+          "social": 55,
+          "nationalism": 45,
+          "institutionalism": 68,
+          "rigidity": 35
+        }
+      },
+      {
+        "sharePercent": 18,
+        "ideology": {
+          "economy": 52,
+          "social": 50,
+          "nationalism": 50,
+          "institutionalism": 58,
+          "rigidity": 60
+        }
+      }
+    ],
+    "headOfState": {
+      "officeId": "president",
+      "title": "Presidente de la República",
+      "selection": "direct-election",
+      "termYears": 6,
+      "ceremonial": false
+    },
+    "executiveAccountability": {
+      "presidentialVacancy": null,
+      "presidentialAccusation": {
+        "grounds": [
+          "impeachment"
+        ]
+      },
+      "cabinetCensure": null
+    }
+  },
+  "candidateEligibility": [
+    {
+      "officeId": "deputy",
+      "minimumAge": 21,
+      "chamberId": "national-assembly",
+      "nationality": "citizen",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party"
+    },
+    {
+      "officeId": "president",
+      "minimumAge": 30,
+      "nationality": "citizen-by-birth",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party"
+    }
+  ],
+  "dataSources": [
+    {
+      "name": "World Bank · World Development Indicators",
+      "url": "https://data.worldbank.org/country/venezuela-rb",
+      "indicator": "PIB corriente, población, comercio de mercancías, crecimiento anual del PIB (1,6%) y desempleo modelado OIT (5,3%) con último dato WDI 2025; inflación CPI WDI no disponible desde 2016, el escenario cita la proyección FMI WEO octubre 2025 para 2026",
+      "year": 2025,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "OEA · Constitución venezolana con Enmienda N.º 1 (Gaceta Oficial 5.908 extraordinaria)",
+      "url": "https://www.oas.org/juridico/PDFs/mesicic4_ven_cons_updated.pdf",
+      "indicator": "Artículos 192, 228 y 230 y Enmienda N.º 1 de 2009: legislatura unicameral, reelección sin límite, mandato presidencial de seis años y legislativo de cinco años",
+      "year": 2009,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "IPU Parline · National Assembly of Venezuela",
+      "url": "https://data.ipu.org/parliament/VE/VE-LC01/",
+      "indicator": "Asamblea Nacional unicameral, 285 escaños legales y mandato legislativo de cinco años; el juego agrega la distribución territorial y reglas mixtas",
+      "year": 2026,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "IMF · World Economic Outlook, October 2025, Statistical Appendix",
+      "url": "https://www.imf.org/-/media/files/publications/weo/2025/october/english/text.pdf",
+      "indicator": "Proyección de inflación de precios al consumidor para Venezuela en 2026 (682,1%); es una proyección externa, no dato observado. La simulación limita el indicador a 100% por su rango común y usa el techo como valor inicial jugable",
+      "year": 2025,
+      "accessedOn": "2026-10-06"
+    }
+  ],
+  "economy": {
+    "gdpUsd": 99661244155.6306,
+    "annualGrowthPercent": 1.6,
+    "annualInflationPercent": 100,
+    "unemploymentPercent": 5.3
+  },
+  "mandateExpectations": {
+    "annualGrowthFloorPercent": 1,
+    "inflationCeilingPercent": 100,
+    "unemploymentCeilingPercent": 7.5,
+    "approvalFloorPercent": 35
+  },
+  "trade": {
+    "goodsExportsUsd": 8600000000,
+    "dataYear": 2025,
+    "leadingSectors": [
+      "Petróleo y gas",
+      "Minería",
+      "Agroindustria"
+    ]
+  },
+  "socialBlocks": [
+    {
+      "id": "workers",
+      "name": "Hogares asalariados",
+      "populationShare": 24,
+      "mood": 0,
+      "demands": [
+        "empleo",
+        "salario real",
+        "servicios"
+      ]
+    },
+    {
+      "id": "rural",
+      "name": "Comunidades rurales",
+      "populationShare": 16,
+      "mood": 0,
+      "demands": [
+        "conectividad",
+        "infraestructura",
+        "acceso a mercados"
+      ]
+    },
+    {
+      "id": "professionals",
+      "name": "Profesionales y personal técnico",
+      "populationShare": 20,
+      "mood": 0,
+      "demands": [
+        "formación",
+        "innovación",
+        "vivienda"
+      ]
+    },
+    {
+      "id": "business",
+      "name": "Pequeñas y medianas empresas",
+      "populationShare": 15,
+      "mood": 0,
+      "demands": [
+        "crédito",
+        "reglas previsibles",
+        "infraestructura"
+      ]
+    },
+    {
+      "id": "public-services",
+      "name": "Personal de servicios públicos",
+      "populationShare": 14,
+      "mood": 0,
+      "demands": [
+        "capacidad institucional",
+        "salud",
+        "educación"
+      ]
+    },
+    {
+      "id": "students",
+      "name": "Estudiantes y hogares jóvenes",
+      "populationShare": 11,
+      "mood": 0,
+      "demands": [
+        "educación",
+        "vivienda",
+        "oportunidades"
+      ]
+    }
+  ],
+  "electoralDistricts": [
+    {
+      "id": "national-list",
+      "name": "Lista nacional agregada (circunscripciones omitidas)",
+      "seatsByChamber": {
+        "national-assembly": 285
+      }
+    }
+  ],
+  "partyLeadership": {
+    "officeId": "party-leader",
+    "title": "Líder del partido",
+    "termYears": 2,
+    "minimumAge": 18,
+    "eligibleAfterOfficeIds": [
+      "deputy",
+      "president",
+      "minister"
+    ],
+    "electionMethod": "generated-caucus-majority",
+    "requiredMajorityPercent": 50
+  },
+  "ministerialAppointment": {
+    "officeId": "minister",
+    "title": "Secretario de gabinete",
+    "termYears": 2,
+    "minimumAge": 18,
+    "eligibleAfterOfficeIds": [
+      "deputy",
+      "president",
+      "party-leader"
+    ],
+    "appointmentMethod": "generated-executive-choice",
+    "minimumSupportPercent": 45,
+    "portfolios": [
+      {
+        "id": "economy",
+        "title": "Economía",
+        "focus": "economy"
+      },
+      {
+        "id": "foreign-affairs",
+        "title": "Relaciones exteriores",
+        "focus": "institutions"
+      },
+      {
+        "id": "health",
+        "title": "Salud",
+        "focus": "services"
+      },
+      {
+        "id": "education",
+        "title": "Educación",
+        "focus": "services"
+      },
+      {
+        "id": "infrastructure",
+        "title": "Infraestructura",
+        "focus": "economy"
+      }
+    ]
+  }
+}

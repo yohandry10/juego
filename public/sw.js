@@ -1,11 +1,13 @@
-const CACHE = "mandato-shell-v5";
-const DATA_CACHE = "mandato-data-v4";
-const CORE = ["/", "/privacy.html", "/data/countries/index.json", "/data/countries/peru.json", "/data/countries/spain.json", "/data/countries/france.json", "/data/world/world-map.json"];
+const CACHE = "mandato-shell-__BUILD_VERSION__";
+const DATA_CACHE = "mandato-data-__BUILD_VERSION__";
+const CORE = ["/", "/offline-manifest.json"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE);
     await cache.addAll(CORE);
+    const offlineManifest = await (await cache.match("/offline-manifest.json")).json();
+    await cache.addAll(offlineManifest.files);
     const page = await cache.match("/");
     const html = await page.text();
     const assets = [...html.matchAll(/(?:src|href)="(\/assets\/[^\"]+)"/g)].map((match) => match[1]);
@@ -28,7 +30,7 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET" || url.origin !== self.location.origin) return;
   if (request.mode === "navigate") {
     event.respondWith(fetch(request).then((response) => {
-      if (response.ok) void caches.open(CACHE).then((cache) => cache.put(request.url, response.clone()));
+      if (response.ok) { const copy = response.clone(); void caches.open(CACHE).then((cache) => cache.put(request.url, copy)); }
       return response;
     }).catch(async () => {
       const cache = await caches.open(CACHE);
@@ -47,7 +49,7 @@ self.addEventListener("fetch", (event) => {
     })());
     return;
   }
-  if (url.pathname.startsWith("/data/")) {
+  if (url.pathname.startsWith("/data/") || ["/credits.html", "/privacy.html", "/THIRD-PARTY-NOTICES.txt", "/offline-manifest.json"].includes(url.pathname)) {
     event.respondWith((async () => {
       const cache = await caches.open(DATA_CACHE);
       const cached = await caches.match(request, { ignoreVary: true });

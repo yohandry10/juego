@@ -1,65 +1,63 @@
 # Informe de Fase 4 — Mundo y geopolítica
 
-**Corte:** 2026-10-06 · **Datos de escenario:** `world-2026-10-06-v1` · **Estado:** núcleo integrado; criterios pendientes detallados abajo.
+Corte: 2026-10-06. **Fase abierta; no se declara terminada.** Datos `world-2026-10-06-v1`, parámetros `world-balance-v3`, carrera v15. Este informe sustituye los conteos y mediciones anteriores.
 
-## Diseño entregado
+## Implementación y alcance
 
-- Snapshot de 217 países y economías: 193 estados marcados miembros ONU. El fichero contiene capital, región, grupo de ingreso, indicadores económicos versionados, años y banderas de observación. Faltan observaciones WB en PIB para 6 actores, gasto militar para 64 y exportación/importación de mercancías para 11 por cada indicador.
-- Fuentes: [World Bank WDI API](https://api.worldbank.org/v2/country) (PIB NY.GDP.MKTP.CD, población SP.POP.TOTL, gasto militar MS.MIL.XPND.GD.ZS, comercio TX.VAL.MRCH.CD.WT/TM.VAL.MRCH.CD.WT); [roster de Estados miembros ONU](https://www.un.org/en/about-us/member-states); [Natural Earth Admin 0 1:110m](https://www.naturalearthdata.com/downloads/110m-cultural-vectors/110m-admin-0-countries/); clasificación de disuasión nuclear desde [FAS Status of World Nuclear Forces](https://fas.org/initiative/status-world-nuclear-forces/). Se guarda la fecha de la instantánea y el año por indicador. La tarea `world:update-data` descarga los datos de nuevo y valida duplicados, conteos mínimos y geometrías.
-- El mapa descargado tiene 169 geometrías para el catálogo de 217 actores. Los restantes siguen en el selector y no desaparecen del estado. La capa incluye selección por click/teclado y colores por alineamiento, comercio aproximado, sanciones, fuerzas y conflictos.
-- El guardado de carrera v14 incluye los 217 actores de partida, relaciones, organismos, votos, acuerdos, shocks, conflictos, acciones y efectos domésticos. Las versiones v3–v13 conservan sin cambios el estado legado y reciben geopolítica desde su semilla.
-- El Worker acepta `world-create` y `world-advance`; la vista usa el Worker para avanzar un trimestre. El calendario regular de carrera también avanza mundo, economía y sociedad; el shock mundial actualiza crecimiento, inflación, desempleo, causas visibles y ánimo/aprobación.
-- Los actores tienen seis estilos, inercia, sensibilidad doméstica y credibilidad. El motor produce acciones explicadas, shocks encadenados, flujo bilateral aproximado, aranceles limitados, sanciones, resoluciones anuales, guerras abstractas con costos/resultados, lealtad militar y riesgo simplificado de golpe. Un golpe generado ahora puede cerrar un Gobierno activo y deja un motivo en el resumen de carrera. No permite guerra directa entre dos actores marcados con disuasión nuclear.
-- Hay postura exterior de alineamiento/equilibrio/neutralidad, visita, acuerdo comercial, sanción, ayuda, reconocimiento de interlocución, propuesta de movilidad humana y solicitudes de financiación IMF/Banco Mundial. La ratificación contabiliza votos nominales deterministas de legisladores generados, con apoyos, rechazos y abstenciones; el fracaso rechaza el acuerdo y consume una acción. El tratado comercial aprobado altera gradualmente flujo, crecimiento y empleo aproximados; el acuerdo migratorio aprobado mejora coordinación y empleo sin modelar personas. Los programas financieros aplican cambios macroeconómicos de balance distintos y explicados al aprobarse. Los motivos persisten en el registro.
-- Cambiar de postura exterior ya no regala influencia: alinearse cuesta 3, equilibrar 2 y mantener neutralidad 0; repetir la postura actual queda deshabilitado. Las tres opciones dejan efectos de juego distintos sobre aislamiento, confianza y flujo con el socio.
+El snapshot conserva 217 actores, 193 miembros ONU y 169 geometrías Natural Earth. Los actores sin geometría permanecen en el catálogo. WDI aporta magnitudes económicas fechadas; los flujos bilaterales, dependencias, fuerzas, estabilidad, lealtad y estilos estratégicos son índices de juego. Hay ausencias observadas: PIB en 6 actores, gasto militar en 64, comercio de mercancías en 11 por indicador. OMC, FMI e IBRD se contrastaron por separado con listas oficiales fechadas en `src/data/world-memberships.json`: 166 miembros OMC, 191 FMI y 189 IBRD. De OMC, 164 tienen actor; UE y Taiwán permanecen expresamente sin actor en el catálogo actual. Las demás listas y la disuasión requieren completar curación. Los guardados existentes conservan su snapshot y no se reemplazan silenciosamente. Actualización: `npm run world:update-data`.
 
-## Supuestos y límites
+Los diez perfiles se vinculan a su actor correcto. Los shocks duran varios trimestres, ponderan proveedor, sector crítico y flujo, y afectan directamente al origen aunque carezca de enlaces comerciales. Las decisiones IA alteran aranceles, confianza, tensión, credibilidad y comercio con explicación persistente. Las sanciones caducan tras doce trimestres y cuestan a emisor y receptor. Las consultas anuales de OMC, seguridad y bloques producen efectos agregados condicionados a membresía y resultado; los votos consideran estabilidad, credibilidad y presión doméstica.
 
-Los flujos bilaterales, las dependencias y los índices de poder son variables de juego derivadas; el WDI no se presenta como una matriz bilateral. Las organizaciones son snapshots simplificados. La ONU usa un voto simplificado; los programas IMF/Banco Mundial aplican cambios macroeconómicos abstractos tras votación legislativa, pero no desembolsan en un calendario ni reproducen elegibilidad o condiciones reales; la OMC y los bloques no ejecutan procesos completos de disputa, negociación o decisión. Las alianzas y los tratados no son una implementación jurídica. Los conflictos son deterministas y agregados, sin tropas con ubicación, logística, ocupación, refugiados, insurgencias persistentes ni intervención de fuerzas del jugador. El golpe puede cerrar un Gobierno activo y deja una causa en el historial; todavía carece de probabilidades calibradas, relación con lealtad por unidad militar y procedimiento de transición. Los países y la clasificación nuclear requieren revisión editorial de su snapshot y fuentes antes de tratárselos como canónicos.
+La guerra permanece activa entre trimestres: fuerzas terrestres, navales y aéreas con ubicación por país, logística y moral; movimiento agregado, defensa y resolución por semilla. Incluye tipos convencional, proxy con patrocinadores, híbrido, bloqueo e insurgencia. Acumula costos humanos, económicos, políticos y diplomáticos. La posguerra conserva daño, desplazamiento, insurgencia, reparación y alto el fuego con recuperación gradual. Desplazamiento e insurgencia presionan estabilidad y lealtad; reparaciones transfieren costos según el resultado, y la ayuda civil acelera recuperación con costo para el donante. Los puntos del mapa muestran ubicación agregada; no hay frentes tácticos. Un Gobierno ejecutivo puede solicitar autorización abstracta de guerra con costo y voto de coalición/lealtad; el motor veta guerra directa entre actores marcados nucleares y no permite uso nuclear.
 
-La tasa cero de guerra directa nuclear resulta de una restricción estructural del selector de pares; no mide la estabilidad estratégica del mundo real. No existe mecánica de uso nuclear. Las acciones de IA y los shocks usan heurísticas, no una calibración histórica. La capa de capas del mapa colorea países, no dibuja enlaces individuales. La comisión/ratificación es una papeleta simplificada, sin texto de tratado ni enmiendas.
+Los golpes requieren baja estabilidad y lealtad militar, presión interna elevada y una tirada por semilla. Registran riesgo y causa por actor, transición y enfriamiento de 24 trimestres. Un golpe nacional puede cerrar el Gobierno. No equivalen a una probabilidad histórica observada.
 
-## Simulación reproducible a 50 años
+Sanciones, ayuda y reconocimiento requieren encabezar un Gobierno activo; contactos y propuestas permanecen accesibles desde otras rutas. La ratificación parlamentaria consume una acción; la ejecutiva convoca a la misma cámara y cuesta tres de capital. Solo modifica el vínculo nacional, conserva terceros y supera importación/auditoría. Los comandos diplomáticos están en `src/application/diplomacy-commands.ts`, fuera de React. Un contacto con un socio ausente crea un enlace sintético explícitamente derivado. Visita, reconocimiento, ayuda, sanción, tratados, movilidad y programas IMF/Banco Mundial conservan motivos; tratados y programas requieren ratificación nominal. Los programas nuevos tienen cuatro entregas, revisiones contra indicadores nacionales, pausa, recuperación antes del plazo, deuda y cuatro devoluciones anuales. `financing-parameters.json` contiene coeficientes comunes ficticios; no son contratos ni tasas oficiales. La amortización no puede duplicarse en el mismo trimestre. Los acuerdos antiguos conservan sus efectos y no se desembolsan otra vez. Las disputas OMC tienen consulta, panel, seguimiento, cumplimiento y contramedida con costo bilateral; las condiciones colectivas ficticias se distinguen de la pertenencia histórica.
 
-`npm run world:validate` ejecuta 100 semillas (`mandato-phase-4-1` a `-100`), 200 trimestres por semilla, 217 actores por corrida. El benchmark bruto se guarda en [`phase-4-simulation.json`](phase-4-simulation.json); todos los resúmenes usan las mismas semillas y la misma versión de código.
+Los turnos normales de Congreso, ejecutivo, ministerio y partido avanzan carrera, economía y mundo en un Worker persistente. Los actores relevantes —potencias, país, socios y conflictos— evolucionan políticamente cada trimestre; los secundarios agregan su deriva anual conservando exposición comercial trimestral. No hay un botón ordinario que avance solo el reloj mundial.
 
-| Medida | Resultado del corte |
+## Evidencia a 50 años
+
+`npm run world:validate`: 100 semillas, 200 trimestres por semilla. `auditWorld` revisa en **cada trimestre** todos los índices de actores, relaciones, flujos, referencias, fuerzas, posguerra, votos, sanciones, shocks y explicaciones; no se limita al estado final. [JSON reproducible](phase-4-simulation.json).
+
+| Medida | Resultado |
 | --- | ---: |
-| Corridas / horizonte | 100 / 50 años |
-| Actores por corrida | 217, ninguno eliminado |
-| Guerra directa nuclear | 0 en 100; veto por diseño |
-| Valores no válidos | 0 |
-| Guerras abstractas | 1.26 por corrida (126/100) |
-| Shocks | 23.77 por corrida (2,377/100) |
-| Sanciones | 0.95 por corrida (95/100) |
-| Golpes | 0 por corrida en el lote base |
-| Tiempo por trimestre | 0.987 ms promedio; 19.752 s de tiempo acumulado para 100 procesos de 50 años (hardware dependiente; medición del 2026-10-06) |
+| Actores / corridas / años | 217 / 100 / 50 |
+| Valores o referencias inválidos | 0 |
+| Guerras directas nucleares | 0; veto estructural |
+| Conflictos iniciados por corrida | 16.76 |
+| Golpes mundiales por corrida | 41.94 |
+| Shocks por corrida | 24.07 |
+| Sanciones por corrida | 0.99 |
+| Trimestre mundial medio, con auditoría | 2,73 ms |
 
-## Aceptación
+El conteo de golpes ahora es mundial, a partir de `coupHistory`; el anterior cero contaba únicamente el país del jugador y no es una comparación equivalente. Se eliminó la casi ausencia de conflictos del ajuste anterior, pero las frecuencias siguen siendo heurísticas. Conflictos iniciados no significa conflictos activos por año; no se comparan esas métricas directamente con estadísticas reales. El veto nuclear verifica la regla, no una predicción estratégica.
 
-Superados en esta implementación: catálogo estable de actores y variables limitadas; determinismo por semilla; migración a v14; sanción con costo para emisor y receptor; explicaciones de acción/shock/conflicto; disuasión directa nuclear completa por regla; mapa seleccionable con catálogo para actores sin geometría; ejecución del avance mundial en Worker; conteo mínimo de 80 plantillas internacionales y 10 arcos.
+`validate:diplomacy`: 225 escenarios (Perú, México, Argentina; 25 semillas comunes; tres posturas; cinco años), en [diplomacy-balance.json](diplomacy-balance.json). Alinearse cuesta 3 de influencia, modifica aislamiento -2 y confianza +2; equilibrar cuesta 2, aislamiento +1 y confianza +1; conservar la neutralidad inicial cuesta 0. El enlace y la exposición producen beneficios diferentes. No es un ensayo de optimalidad de una estrategia.
 
-| Criterio 7.5 | Estado | Evidencia y límite |
+`world:sensitivity` verifica 1.736 casos (217 actores × ocho shocks), exposición nula/baja/alta e impacto local; 36 corridas adicionales de 50 años comparan tres frecuencias en 12 semillas reservadas comunes. Guerras medias: 9,08 / 16 / 23,17; golpes: 25,92 / 38,42 / 49,58. No hay valores inválidos ni guerras nucleares. [Evidencia de sensibilidad](world-sensitivity.json). Esto verifica respuesta de parámetros, sin sustituir calibración histórica independiente.
+
+## Aceptación 7.5, uno por uno
+
+| Criterio | Estado | Evidencia y límite |
 | --- | --- | --- |
-| 1. Existencia y estabilidad | Cumple en este lote | `world:validate`: 217 actores retenidos, cero indicadores inválidos en 100 corridas de 50 años. La validación no prueba que cada dato observado sea correcto. |
-| 2. Disuasión coherente | Cumple por regla estructural | 0 guerras directas entre actores marcados nucleares; el selector veta esas parejas. No es un pronóstico de estabilidad ni un modelo de escalada nuclear. |
-| 3. Sanciones con costo | Cumple en pruebas deterministas | El cálculo reduce comercio e impone efectos al emisor y receptor. No está calibrado contra elasticidades reales. |
-| 4. Explicabilidad | Parcial | Acciones simuladas guardan motivos y el estado conserva historial. Falta auditar automáticamente que toda mutación/acción de todos los subsistemas tenga explicación persistente. |
-| 5. Shocks coherentes | Parcial | Shocks encadenados afectan actores según exposiciones sintéticas y pasan a la economía nacional. Falta validar sensibilidad entre perfiles y países con datos independientes. |
-| 6. Guerra completa | Parcial | Resolución explica costos humanos, económicos y políticos y asigna resultado; no incluye fuerzas y movimiento por mapa, persistencia de insurgencia, reconstrucción ni diplomacia de posguerra. |
-| 7. Presión sobre país mediano | Parcial | La UI impone costos distintos y cambia aislamiento, confianza y flujo según alineamiento/equilibrio/neutralidad. Ayuda y acuerdo migratorio ratificado ahora entran en la economía doméstica con motivos visibles; falta comparar resultados diplomáticos por múltiples semillas y países. |
-| 8. Rendimiento y Worker | Cumple en corte local | Worker usado por el avance geopolítico; media medida de 0.987 ms por trimestre en el lote de 50 años y smoke de turno ejecutivo 0.083 s en el entorno local. Hardware no normalizado. |
-| 9. Tasas razonables | Parcial | Frecuencias registradas y límites comprobados, pero 0 golpes y guerra/sanciones con tasas heurísticas no han recibido calibración externa. |
-| 10. Contenido | Cumple cantidad mínima | Se validan 80 plantillas internacionales y 10 arcos; no se ha hecho aprobación editorial humana línea por línea. |
+| 1. Existencia y estabilidad | Cumple en el lote | 217 actores retenidos, auditoría trimestral sin errores en 100 × 50 años. |
+| 2. Disuasión | Cumple por regla | Cero guerras directas nucleares; veto explícito. No hay modelo de uso nuclear. |
+| 3. Sanciones con costo | Cumple en el modelo | Pruebas de costo bilateral y sanciones temporales; elasticidades abstractas. |
+| 4. Explicabilidad | Parcial | Las decisiones de intereses guardan sus entradas numéricas; la auditoría reproduce la regla y rechaza una acción contradictoria. Conflictos/golpes tienen causas visibles. Falta completar revisión semántica de todas las mutaciones, obligaciones y consecuencias. |
+| 5. Shocks | Cumple en el modelo | 1.736 casos prueban dependencia, sector, proveedor y efecto local en los ocho tipos. El grafo es sintético, no una matriz comercial observada. |
+| 6. Guerra completa | Cumple en el modelo agregado | Fuerzas, cinco tipos, cuatro costos, autorización y resultado explicable; posguerra afecta presión, estabilidad, lealtad y transferencias, con ayuda civil. No hay frentes tácticos ni diplomacia exhaustiva. |
+| 7. País mediano | Cumple la comparación básica | 225 escenarios con costos, confianza y aislamiento diferenciados. Falta balance estratégico de carreras y distintas potencias asociadas. |
+| 8. Worker y rendimiento | Cumple medición local | Worker avanza el turno completo; Chromium/Firefox lo verifican sin red y sincronizado. Hay evolución anual agregada de secundarios. Mundo 2,73 ms/trimestre bajo carga; Worker frío 0,254/0,276 s y caliente 0,075/0,090 s (Chromium/Firefox), sin red; [JSON](career-worker-browser-evidence.json). No se extrapola a otro hardware. |
+| 9. Tasas razonables | Parcial | Frecuencias medidas, umbrales/enfriamiento y 36 corridas de sensibilidad; falta calibración independiente de tasas y validación de su verosimilitud. |
+| 10. Contenido | Cumple cantidad y validador | 80 plantillas y 10 arcos internacionales; revisión humana editorial pendiente. |
 
-Parciales o pendientes: calibración independiente de frecuencias; transmisión detallada por canasta y socios; desembolsos y condicionalidad real IMF/Banco Mundial; solución de disputas OMC; decisiones sustantivas de bloques; flujos fiscales de ayuda y efectos demográficos de movilidad; reconocimiento jurídico (el botón registra reconocimiento de interlocución); debate parlamentario, enmiendas y reglas nacionales de ratificación; fuerzas, conflicto por terceros/híbrido y movimiento por mapa; posguerra/reconstrucción; comparación masiva de posturas; pruebas visuales del mapa en viewport móvil y medición del turno en hardware de gama media. No se afirma que toda la sección 7.5 esté cerrada.
+## Pendientes de alcance
+
+Completar auditoría semántica de causas y obligaciones; calibrar frecuencias con referencias independientes; curar las demás membresías, revisar semántica de condiciones y ampliar los recorridos de disputas y financiación; ratificación con reglas nacionales más completas y balance diplomático ampliado. Posguerra, permisos por cargo, sensibilidad y nivel de detalle ya tienen implementación y pruebas; no se confunden con modelos exhaustivos. El comercio es un grafo disperso ficticio, las capas colorean actores y la ubicación de fuerzas usa centroides aproximados. No se afirma que todo el alcance de 7.5 esté cerrado.
 
 ## Validación del corte
 
-- `npm test` — 79/79 aprobadas, incluidas votación nominal de tratados, reglas ejecutivas, migración y simulación mundial.
-- `npm run build` — correcto; TypeScript y bundle incluida la emisión del Worker. Ayuda y Mundo cargan en chunks diferidos (5.63 KB y 13.99 KB); el chunk inicial sigue en 706.50 KB sin comprimir (190.16 KB gzip), sobre el aviso de 500 KB.
-- `npm run build:worker-check` — correcto.
-- `python tests/web-smoke.py` — correcto; turno ejecutivo normal 0,079 s en el entorno local.
-- `npm run world:validate` — 100 × 50 años; cero valores inválidos y cero guerras nucleares directas. Salida completa en `phase-4-simulation.json`; golpes observados: 0, por lo que su frecuencia sigue sin calibrar.
-- `scripts/phase4-diplomacy-browser-check.py` — correcto en navegador: postura con costo, reconocimiento, ayuda exterior, tratados migratorio y financiero, elección y conteo nominal de ratificación.
-- `scripts/phase5-browser-check.py` y `scripts/country-start-browser-check.py` — correctos en Chromium de escritorio; ayuda/offline y arranque de los seis perfiles.
+117 pruebas pasan; build y Worker pasan. Smoke Edge, diplomacia y régimen opcional pasan. Chromium inicia los diez perfiles y tres ejemplos generados con HTTP 200. Ayuda, créditos, licencias y perfiles sin conexión pasan en Chromium/Firefox; teclado, texto grande y ventanas de escritorio pasan. Entorno: Node 24.13.1, Windows, Core i5-10400F, ~16 GiB RAM. Las mediciones dependen del hardware y carga concurrente.
+
+La interfaz explica beneficios, costos y riesgos en lenguaje cotidiano, con reglas numéricas opcionales. Financiación pasa aprobación, pausa, recuperación y compromiso con costo en Chromium/Firefox, 1280 y 1920 px. La prueba usa una partida generada por comandos reales, sin alterar votos o indicadores: [evidencia](financing-browser-evidence.json). Esto no acredita comprensión humana ni completa la ratificación nacional, aún genérica.

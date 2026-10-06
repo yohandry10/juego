@@ -1,0 +1,76 @@
+{
+  "date": "2026-10-06",
+  "limitations": "Colores CSS opacos frente al fondo más próximo; no sustituye revisión visual, gráficos SVG, lectores de pantalla ni medición de todos los estados posibles.",
+  "results": [
+    {
+      "view": "initial",
+      "checked": 50,
+      "failures": []
+    },
+    {
+      "view": "creation",
+      "checked": 45,
+      "failures": []
+    },
+    {
+      "view": "creation",
+      "checked": 45,
+      "failures": []
+    },
+    {
+      "view": "creation",
+      "checked": 54,
+      "failures": []
+    },
+    {
+      "view": "creation",
+      "checked": 53,
+      "failures": []
+    },
+    {
+      "view": "creation",
+      "checked": 62,
+      "failures": []
+    },
+    {
+      "view": "01 Carrera",
+      "checked": 83,
+      "failures": []
+    },
+    {
+      "view": "02 Bandeja",
+      "checked": 47,
+      "failures": []
+    },
+    {
+      "view": "03 Congreso",
+      "checked": 145,
+      "failures": []
+    },
+    {
+      "view": "04 Prensa",
+      "checked": 45,
+      "failures": []
+    },
+    {
+      "view": "05 Economía",
+      "checked": 42,
+      "failures": []
+    },
+    {
+      "view": "06 Mundo",
+      "checked": 187,
+      "failures": []
+    },
+    {
+      "view": "07 País",
+      "checked": 68,
+      "failures": []
+    },
+    {
+      "view": "08 Ayuda",
+      "checked": 96,
+      "failures": []
+    }
+  ]
+}

@@ -1,97 +1,68 @@
-# MANDATO · Prototipo web en desarrollo
+# MANDATO — Carrera política
 
-Prototipo web jugable de carrera política. Crea un personaje, haz campaña, compite por un escaño ficticio y juega una legislatura parametrizada por las instituciones nacionales. En España, los diputados pueden negociar una investidura parlamentaria y formar un gabinete de NPC ficticios. El juego genera actores con semilla, explica las votaciones y guarda la partida localmente.
+Juego para PC, en navegador, para una persona, todavía en desarrollo. Crea un personaje ficticio, compite, negocia y gobierna; las instituciones y datos observados se distinguen de las reglas y distribuciones de simulación. No importa políticos ni resultados electorales actuales.
 
-**Fuente de verdad del proyecto:** [MANDATO — Documento guía de diseño y construcción](docs/MANDATO%20%E2%80%94%20Documento%20gu%C3%ADa%20de%20dise%C3%B1o%20y%20construcci%C3%B3n.md). Los datos económicos e institucionales reales son versionados por país. El motor genera partidos, facciones y legisladores ficticios; no replica la política coyuntural. Informes: [Fase 0](docs/phase-0-report.md) y [Fase 1](docs/phase-1-report.md). Las decisiones están en [`docs/decisions.md`](docs/decisions.md).
+La especificación es [MANDATO — Documento guía de diseño y construcción](docs/MANDATO%20%E2%80%94%20Documento%20gu%C3%ADa%20de%20dise%C3%B1o%20y%20construcci%C3%B3n.md). **Fases 4 y 5 siguen abiertas.** El [informe final de avance](docs/final-report.md) enlaza aceptación, evidencia y pendientes. Consulta el [manual](docs/manual-del-juego.md), [decisiones](docs/decisions.md) y [continuación](docs/prompt-continuacion-fases-2-a-4-5.md).
 
-Consulta el [manual del juego](docs/manual-del-juego.md) para conocer la carrera, los sistemas disponibles, las pestañas y las limitaciones actuales.
+## Ejecutar
 
-Créditos y procedencia: [`docs/creditos-y-licencias.md`](docs/creditos-y-licencias.md). El [aviso de privacidad](public/privacy.html) describe el comportamiento local del prototipo; requiere revisión antes del lanzamiento público.
-
-La prueba con personas tiene su [protocolo de sesión](docs/protocolo-prueba-jugadores.md); no hay resultados humanos todavía.
-
-La diplomacia tiene una comprobación reproducible en `scripts/phase4-diplomacy-browser-check.py`, que recorre postura, reconocimiento, ayuda exterior, movilidad y financiación hasta la ratificación legislativa. La guía y el funcionamiento offline se recorren en `scripts/phase5-browser-check.py`.
-
-## Requisitos
-
-- Node.js 22 o posterior
-- npm
-
-## Preparación y uso
+Node 22+ y npm; el corte se validó en Node 24.13.1/Windows.
 
 ```sh
-npm install
+npm ci
 npm test
 npm run build
 npm run build:worker-check
-npm run sim -- --country peru --years 5 --seed primera-partida
-npm run dev
+npm run dev -- --port 5173 --strictPort
 ```
 
-`npm run dev` abre la aplicación web local; el selector del inicio permite escoger los perfiles disponibles. El CLI imprime la evolución trimestral en español. Repetir país, duración y semilla reproduce los mismos actores, eventos y estado final.
+Para comprobar producción después del build: `node node_modules/vite/bin/vite.js preview --host 127.0.0.1 --port 4173 --strictPort`. Confirma HTTP 200 antes de las pruebas de navegador y evita builds simultáneos mientras se instala la caché offline.
 
-## Simulación masiva
+## Escenarios y sistemas
+
+Diez perfiles nacionales (Perú, España, Francia, Alemania, Estados Unidos, Reino Unido, Brasil, México, Argentina, Venezuela), varios experimentales con agregaciones electorales explícitas. Además hay 217 escenarios generados con una plantilla institucional ficticia común; no describen las constituciones reales. Venezuela permanece constitucional experimental: seis años de presidencia, reelección sin límite tras enmienda 2009, Asamblea 285/cinco años; el cap de inflación a 100% se distingue de la proyección histórica del FMI citada.
+
+La variante hegemónica se elige voluntariamente en cualquier escenario; élites, partido, militares, seguridad, protesta y legitimidad condicionan acceso y caída. No se atribuye por defecto a ningún país. Las restricciones de derechos tienen costos domésticos y exteriores visibles.
+
+Campañas, competencia individual de listas, rivales con campaña, investidura negociada, censura/vacancia, Congreso, gabinete, economía/sociedad, tratados nominales, diplomacia, mundo y legado se conectan al mismo estado determinista. Hay diez arquetipos y salón local con hasta 50 resúmenes; las reevaluaciones históricas aún son fórmulas. Carrera v15 migra v3–v14. Guardado IndexedDB, importación/exportación; Ironman desactiva importación. Borrar datos del sitio elimina partidas, preferencias y salón.
+
+Mundo: 217 actores, 193 miembros ONU, 169 geometrías. Datos `world-2026-10-06-v1`; comercio bilateral, exposición, estilos y fuerzas son derivados ficticios. Los turnos completos avanzan en un Worker, con política anual agregada para secundarios. Conflictos agregados persisten con logística, movimiento, costos y posguerra; cinco tipos, autorización ejecutiva y golpes explicados. No hay uso nuclear. `npm run world:update-data` actualiza el snapshot económico. `python scripts/update-memberships.py` contrasta OMC, FMI e IBRD por separado, con procedencia y miembros sin actor. Los préstamos nuevos tienen entregas, revisiones, pausas y devolución; sus términos son reglas de juego.
+
+La interfaz usa explicaciones cotidianas: beneficio, riesgo, costo y siguiente paso. Economía prioriza empleo, precios, pobreza y actividad; las cifras técnicas quedan en detalles opcionales. Ayuda incluye seis pasos, guía por etapa, checklist, glosario y texto ajustable. El ritmo opcional avanza hasta la próxima decisión, sin elegir por el jugador. El build emite créditos/fuentes de los diez países y avisos de dependencias; el service worker precarga módulos, países, mapa, privacidad y créditos. Los 217 escenarios generados se construyen localmente desde los datos ya almacenados. [Privacidad](public/privacy.html), [créditos y licencias](docs/creditos-y-licencias.md), [issues](https://github.com/yohandry10/juego/issues).
+
+## Verificar
 
 ```sh
 npm run validate:mass
-npm run sim -- --country peru --years 20 --runs 1000 --seed balance
-npm run validate:career
-npm run validate:government
 npm run validate:countries -- 25
+npm run validate:balance
+npm run validate:generated
+npm run validate:diplomacy
+npm run validate:long-career
 npm run content:validate
 npm run world:validate
+npm run world:sensitivity
+npm run build:repro-check
+python tests/web-smoke.py
+python scripts/country-start-browser-check.py
+node --import tsx scripts/prepare-financing-fixtures.ts
+python scripts/financing-browser-check.py
+python scripts/phase4-diplomacy-browser-check.py
+python scripts/regime-browser-check.py
+python scripts/career-worker-browser-check.py
+python scripts/phase5-browser-check.py
+python scripts/accessibility-browser-check.py
+python scripts/contrast-browser-check.py
 ```
 
-Cada corrida usa una subsemilla estable (`semilla-N`) y verifica que los indicadores principales permanezcan numéricos. `validate:career` compara corridas de estrategia territorial y recaudación. `validate:government` compara mandatos generados con apoyo aislado frente a una coalición negociada y defensa del Gobierno. `validate:countries -- 25` ejecuta 25 semillas por estrategia en cada ficha del selector y registra resultados de campaña, escaños y, cuando se gana, el período legislativo completo. Es un lote básico de consistencia; no sustituye el balance estadístico de todos los cargos e ideologías ni una comparación con resultados reales.
-
-`content:validate` comprueba integridad del catálogo y duplicados literales entre títulos y variantes; el resultado es una auditoría estática, no una medición de repetición durante 30 años de juego.
+Los scripts de producción usan 4173; smoke usa 5173. `MANDATO_BASE_URL` configura el arranque por país; `MANDATO_BROWSER=firefox` selecciona Firefox para Ayuda/offline. Batería ampliada: 4.500 muestras, 450 por país, tres estrategias y tres modos, con cargos e ideologías desglosados y semillas nuevas `balance-holdout-v2` ya utilizadas en este corte. Cada muestra cierra un mandato o derrota y retiro; no 40 años por muestra. El balance conserva extremos y no se declara satisfactorio. La carrera larga registrada sí cubre 40 años, con seis semillas previas fallidas explicitadas.
 
 ## Arquitectura
 
-```text
-CLI ──> Engine ──> Domain
- │       │           ▲
- └──> Data ──────────┘
-Worker ──> Engine + World Simulation
-Web ──> Application ──> Domain
-Web ──> Persistence (IndexedDB)
-```
+Domain define contratos; Engine genera actores y avanza mundo/economía/sociedad; Data valida y parametriza; Application ejecuta comandos puros; Web presenta; Persistence almacena y migra; CLI/Worker componen el motor. La lógica de régimen y diplomacia permanece fuera de React. El determinismo depende de semilla y versiones iguales, no de comparar builds con parámetros distintos.
 
-- `src/domain`: contratos del estado, los actores y los eventos; sin dependencias de infraestructura.
-- `src/engine`: RNG, bus tipado, generador de actores desde parámetros y pasos trimestrales. Las reglas no consultan red, reloj ni variables globales.
-- `src/data`: validación runtime con Zod y lectura de archivos JSON.
-- `src/cli`: composición de datos y motor; adapta eventos del juego a texto de terminal.
-- `src/application`: comandos deterministas para campaña, elección, negociación, votación, memoria, investidura y gabinete.
-- `src/web`: interfaz española con creador de seis pasos, carrera, Congreso, investidura, prensa, economía, mapa mundial, guía inicial y glosario.
-- `src/persistence`: guardado IndexedDB e importación/exportación JSON versionada; las carreras históricas v3 a v13 migran a v14 preservando el estado nacional y creando el snapshot mundial con la semilla existente.
-- `src/data/event-catalog.ts`: 407 plantillas ficticias de tres variantes y 64 arcos narrativos; incluye 80 internacionales y 40 arcos nuevos de contenido ampliado.
-- `src/engine/world-simulation.ts`: 217 actores versionados, relaciones, shocks, sanciones, decisiones y guerras agregadas deterministas. El avance mundial jugable y masivo también corre en Web Worker.
-- `data/countries`: datos nacionales versionados, distribuciones de escenario y referencias de datos observados.
+## Estado verificable
 
-El bus síncrono transmite eventos del motor a observadores como el CLI; cada evento queda en el historial de la partida con una explicación de sus causas. Los observadores no mutan el estado ni participan en cálculos. Los flujos aleatorios de actores, economía, sociedad y política están separados para conservar el determinismo al cambiar un módulo. `serializeGameState` y `restoreGameState` validan guardados con versión de esquema y permiten reanudar una partida desde el mismo estado.
+117 pruebas, build/Worker, smoke y navegadores pasan; 407 plantillas/64 arcos/80 internacionales/10 arcos mundiales. Auditoría mundial cada trimestre en 100 × 50 años y 651 arranques generados. Contraste CSS, teclado y texto verificados; Chromium/Firefox en PC y offline. El chunk principal es 334,58 KB minificado; separarlo no elimina las descargas iniciales de React/validación/datos. La carrera de 40 años restaura idénticamente y tiene 0% de repetición literal a 30 años, pero su memoria/estado/tiempo crecen.
 
-## Mundo y geopolítica
-
-El snapshot `world-2026-10-06-v1` contiene 217 países y economías del catálogo del Banco Mundial; 193 están marcados como miembros de la ONU. La matriz bilateral es una aproximación dispersa de juego, no una matriz observada de comercio. El mapa Natural Earth a escala 1:110m contiene 169 geometrías: los actores sin geometría siguen disponibles en el catálogo y pueden seleccionarse por código. Las membresías de ONU, FMI/Banco Mundial, OMC y bloques regionales se mantienen como snapshots simplificados. La actualización de WDI, roster ONU y Natural Earth se ejecuta con `npm run world:update-data`.
-
-Las cifras de guerra y shocks son calibración interna: `docs/phase-4-report.md` describe el alcance y las limitaciones. La guerra es abstracta; el juego no tiene uso nuclear. La guía inicial y el glosario están en Ayuda. Tras la primera carga completa, un service worker conserva el shell, los escenarios y el mapa para uso sin conexión; la interfaz avisa cuando esa capacidad del navegador está disponible. Fase 5 conserva límites explícitos: el catálogo jugable tiene seis fichas (Perú, España, Francia, Alemania, Estados Unidos y Reino Unido), aún menos de los diez países iniciales; algunos modelos electorales y cámaras altas se agregan. Faltan Brasil, México, Argentina y Venezuela, además del escenario autoritario/hegemónico. La guía no se ha validado con cinco jugadores, y el balance completo, la auditoría editorial/legal y la publicación pública siguen abiertos.
-
-## Datos iniciales
-
-El fixture de Perú tiene `dataVersion: peru-2026-10-05-v7`. La población, el PIB, el crecimiento y la inflación usan datos observados por el Banco Mundial para 2024; el desempleo usa el indicador modelado por OIT para 2025; las exportaciones de bienes (US$ 90 082 millones) corresponden a 2025 según MINCETUR. Cada dato indica indicador, período, fuente y fecha de consulta. La configuración institucional declara una legislatura bicameral de 130 diputados y 60 senadores, mandatos de cinco años, 27 circunscripciones y reglas electorales estructurales. El motor genera los 190 NPC ficticios y sus partidos por partida, según la semilla y la distribución ideológica del escenario; no utiliza nombres ni resultados electorales reales. La misma función genera una cámara o dos según la ficha de país.
-Las fichas también versionan expectativas iniciales de crecimiento, inflación, desempleo y aprobación. Son metas de diseño del escenario, no pronósticos oficiales; sus desvíos generan señales y presión política.
-
-España es el segundo perfil (`dataVersion: spain-institutions-2023-snapshot-v4`) y se marca experimental. Sus reglas institucionales oficiales configuran la jefatura del Estado, el Congreso, el Senado, la investidura, la confianza, la censura constructiva y la disolución. El reparto de los 350 escaños del Congreso por circunscripción usa el snapshot publicado en 2023, reemplazable por versión; el Senado genera 208 escaños de elección directa y 58 designados según una instantánea poblacional versionada. No hay resultados ni personajes de la elección real. Los campos económicos/sociales de este perfil siguen siendo valores provisionales de simulación y no se presentan como datos observados.
-
-Fuentes: [población](https://data.worldbank.org/indicator/SP.POP.TOTL?locations=PE), [PIB nominal](https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=PE), [crecimiento del PIB](https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=PE), [inflación](https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=PE), [desempleo modelado por OIT](https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=PE), [exportaciones MINCETUR](https://www.gob.pe/institucion/mincetur/noticias/1346927-mincetur-exportaciones-del-peru-alcanzaron-los-us-90-082-millones-y-consolidan-al-pais-como-potencia-comercial-de-sudamerica).
-
-La economía trimestral, el humor social, la aprobación y la estabilidad son reglas de juego provisionales, no predicciones económicas. El registro de fuentes diferencia los datos observados de esas reglas derivadas.
-
-## Formato de contenido
-
-`countrySchema` valida identidad y versión de datos, rango de indicadores, forma de gobierno, tipo y cámaras de la legislatura, reglas electorales estructurales, distribución ideológica, fechas y fuentes, y participaciones sociales. Unicameralidad y bicameralidad usan el mismo esquema y generador; el estado guarda partidos, facciones y NPC creados con la semilla. Los guardados conservan versión del país, versión de contenido y esquema de carrera, y se validan al restaurar.
-
-Los ejes ideológicos y la rigidez usan valores entre 0 y 100, según las direcciones que define el documento maestro. Las posiciones describen arquetipos ficticios y no representan afiliaciones de personas reales.
-
-
-El perfil de liderazgo partidario y las carteras ministeriales son abstracciones comunes de juego versionadas por país; candidatos, bancadas y autoridades ejecutivas se generan en cada partida, sin importar partidos, cargos vigentes ni personas reales. La duración ministerial de dos años es una regla jugable, no un plazo institucional.
+Pendientes obligatorios: curación y balance, calibración y alcance mundial restante, contenido/editorial, legado histórico completo, tutorial/pulido, robustez sostenida, licencias específicas y publicación. [Cinco sesiones nuevas](docs/protocolo-prueba-jugadores.md), revisión humana y tecnologías de asistencia siguen sin evidencia; automatización no las cumple.

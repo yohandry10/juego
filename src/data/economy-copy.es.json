@@ -1,0 +1,44 @@
+{
+  "title": "Empleo, precios y bienestar",
+  "intro": "Tus decisiones cambian la vida de la gente. Una medida puede ayudar a un grupo y perjudicar a otro. Revisa el costo y los riesgos antes de elegir; algunos resultados tardan varios trimestres.",
+  "capital": "El capital político es el apoyo que puedes gastar para impulsar decisiones difíciles.",
+  "uncertainty": "Son aproximaciones del juego. Una crisis, el comercio o la reacción de la gente pueden cambiar el resultado.",
+  "primary": ["gdpGrowthPercent", "inflationPercent", "unemploymentPercent", "povertyPercent"],
+  "indicators": {
+    "gdpPerCapitaUsd": "Producción por persona", "gdpGrowthPercent": "Actividad económica", "inflationPercent": "Subida de precios", "unemploymentPercent": "Personas sin empleo", "informalityPercent": "Trabajo informal", "publicDebtPercentGdp": "Deuda del Estado", "fiscalDeficitPercentGdp": "Gasto que supera los ingresos", "tradeBalancePercentGdp": "Ventas menos compras al exterior", "currentAccountPercentGdp": "Balance de ingresos del exterior", "reservesMonthsImports": "Reservas para comprar al exterior", "exchangeRateIndex": "Valor de la moneda", "policyRatePercent": "Costo de pedir préstamos", "creditRatingIndex": "Confianza de los prestamistas", "countryRiskBasisPoints": "Riesgo para prestar al país", "inequalityIndex": "Desigualdad", "povertyPercent": "Personas en pobreza", "realWageIndex": "Lo que alcanza el salario", "domesticInvestmentPercentGdp": "Inversión dentro del país", "foreignInvestmentPercentGdp": "Inversión del exterior", "productivityIndex": "Capacidad para producir"
+  },
+  "meanings": {
+    "gdpGrowthPercent": "Si sube, el país produce más. Eso puede abrir oportunidades de empleo.",
+    "inflationPercent": "Cuando los precios suben, el mismo dinero compra menos.",
+    "unemploymentPercent": "Si baja, más personas encuentran trabajo.",
+    "povertyPercent": "Si baja, menos personas tienen dificultades para cubrir sus necesidades."
+  },
+  "groups": { "workers": "trabajadores", "rural-communities": "comunidades rurales", "business": "empresas", "middle-income": "clase media", "youth": "jóvenes", "public-services": "usuarios de servicios públicos", "extractive-sector": "minería y energía", "manufacturing": "industria", "technology-finance": "tecnología y finanzas", "consumers": "consumidores", "savers": "ahorradores", "debtors": "personas endeudadas" },
+  "crises": { "inflation": "Los precios suben demasiado", "currency": "Faltan recursos para pagar al exterior", "debt": "La deuda se vuelve difícil de pagar", "banking": "Los bancos están bajo presión", "demand-recession": "Caen las compras y el empleo" },
+  "policies": {
+    "public-investment": { "label": "Invertir en obras y proyectos", "benefit": "Busca crear empleo y aumentar lo que el país puede producir.", "risk": "Aumenta la deuda. Los resultados tardan; el gasto empieza antes de que se vean." },
+    "austerity": { "label": "Reducir el gasto del Estado", "benefit": "Busca ordenar las cuentas y frenar el crecimiento de la deuda.", "risk": "Puede reducir empleo, servicios y apoyo popular antes de dar resultados." },
+    "income-tax": { "label": "Cobrar más impuestos a los ingresos", "benefit": "Busca recaudar recursos para servicios públicos.", "risk": "Puede quitar apoyo entre empresas y parte de la clase media." },
+    "corporate-tax": { "label": "Cobrar más impuestos a las empresas", "benefit": "Busca recaudar más para atender necesidades del país.", "risk": "Puede frenar inversión y enfrentar a las empresas con tu Gobierno." },
+    "consumption-tax": { "label": "Cobrar más impuestos a las compras", "benefit": "Busca mejorar las cuentas del Estado.", "risk": "Las familias pagan más al comprar; puede bajar su apoyo." },
+    "extractive-royalty": { "label": "Cobrar más por explotar recursos naturales", "benefit": "Busca que minería y energía aporten más al país.", "risk": "Puede reducir inversión y molestar a las empresas de esos sectores." },
+    "health-spending": { "label": "Destinar más recursos a la salud", "benefit": "Busca mejorar la atención y el bienestar de las familias.", "risk": "Cuesta recursos del Estado y puede aumentar la deuda." },
+    "education-spending": { "label": "Destinar más recursos a la educación", "benefit": "Busca mejorar oportunidades y capacidad para producir a largo plazo.", "risk": "Aumenta el gasto; los resultados tardan en llegar." },
+    "infrastructure-spending": { "label": "Mejorar caminos y servicios básicos", "benefit": "Busca conectar comunidades y facilitar el trabajo.", "risk": "Aumenta la deuda y requiere esperar a que las obras rindan." },
+    "subsidies": { "label": "Ayudar a pagar productos y servicios", "benefit": "Busca aliviar gastos de familias y comunidades.", "risk": "Aumenta el gasto y deja menos margen para otras necesidades." },
+    "transfers": { "label": "Dar apoyo económico a las familias", "benefit": "Busca aliviar la pobreza y sostener las compras.", "risk": "Aumenta el gasto y la deuda; necesita recursos para mantenerse." },
+    "tariffs": { "label": "Cobrar más a productos del exterior", "benefit": "Busca proteger empresas y empleos del país.", "risk": "Puede encarecer compras y perjudicar sectores que necesitan importar." },
+    "trade-opening": { "label": "Facilitar el comercio con otros países", "benefit": "Busca ampliar ventas y facilitar compras del exterior.", "risk": "Las empresas locales pueden perder frente a competidores extranjeros." },
+    "labor-regulation": { "label": "Reforzar las reglas del trabajo", "benefit": "Busca proteger a los trabajadores.", "risk": "Puede aumentar costos y enfrentar a las empresas con tu Gobierno." },
+    "environmental-regulation": { "label": "Reforzar la protección del ambiente", "benefit": "Busca proteger comunidades y reducir daños de la actividad económica.", "risk": "Puede frenar proyectos y molestar a sectores que explotan recursos." },
+    "privatization": { "label": "Pasar empresas del Estado a manos privadas", "benefit": "Busca atraer inversión y aliviar parte de la deuda.", "risk": "Puede generar rechazo entre trabajadores y usuarios de servicios públicos." },
+    "nationalization": { "label": "Pasar empresas a manos del Estado", "benefit": "Busca aumentar el control público sobre actividades importantes.", "risk": "Cuesta recursos y puede alejar inversiones privadas." },
+    "credit-easing": { "label": "Facilitar los préstamos", "benefit": "Busca impulsar inversión, compras y empleo.", "risk": "Puede aumentar precios y quitar valor a los ahorros." },
+    "credit-tightening": { "label": "Poner límites a los préstamos", "benefit": "Busca frenar la subida de precios y recuperar confianza.", "risk": "Puede frenar actividad y dificultar la vida de quienes deben dinero." },
+    "capital-controls": { "label": "Limitar la salida de dinero del país", "benefit": "Busca conservar recursos durante una crisis.", "risk": "Puede alejar inversión y generar rechazo empresarial." },
+    "currency-defense": { "label": "Usar reservas para sostener la moneda", "benefit": "Busca frenar el encarecimiento de las compras del exterior.", "risk": "Gasta reservas que puedes necesitar si la crisis continúa." },
+    "imf-program": { "label": "Aplicar un plan de estabilización", "benefit": "Busca reducir la presión de precios y recuperar confianza.", "risk": "El ajuste puede perjudicar empleo y apoyo popular. No es una solicitud de préstamo." },
+    "debt-restructuring": { "label": "Negociar nuevas condiciones de la deuda", "benefit": "Busca aliviar la carga de los pagos.", "risk": "Puede dañar la confianza de prestamistas e inversores." },
+    "default": { "label": "Dejar de pagar parte de la deuda", "benefit": "Libera recursos a corto plazo para otras necesidades.", "risk": "Puede causar una crisis de confianza, pérdida de inversión y empleo." }
+  }
+}

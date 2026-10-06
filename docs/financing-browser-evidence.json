@@ -1,0 +1,152 @@
+{
+  "date": "2026-10-06",
+  "platformScope": "PC",
+  "baseUrl": "http://127.0.0.1:4173",
+  "humanTest": false,
+  "results": [
+    {
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "seed": "financing-browser-v2-0",
+      "checkpointProtocol": "Partida generada por comandos reales: nominación, cuatro semanas de campaña, victoria, negociación y solicitud. Sin modificar votos ni indicadores.",
+      "approvalPauseRecovery": [
+        {
+          "quarter": 1,
+          "visibleStatus": "Préstamo en marcha"
+        },
+        {
+          "quarter": 2,
+          "visibleStatus": "Préstamo en marcha"
+        },
+        {
+          "quarter": 3,
+          "visibleStatus": "Próxima entrega en pausa"
+        },
+        {
+          "quarter": 4,
+          "visibleStatus": "Próxima entrega en pausa"
+        },
+        {
+          "quarter": 5,
+          "visibleStatus": "Préstamo en marcha"
+        }
+      ],
+      "tranches": 2,
+      "commitmentCost": 4,
+      "economicExplanations": 20,
+      "horizontalOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "engine": "chromium",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "seed": "financing-browser-v2-0",
+      "checkpointProtocol": "Partida generada por comandos reales: nominación, cuatro semanas de campaña, victoria, negociación y solicitud. Sin modificar votos ni indicadores.",
+      "approvalPauseRecovery": [
+        {
+          "quarter": 1,
+          "visibleStatus": "Préstamo en marcha"
+        },
+        {
+          "quarter": 2,
+          "visibleStatus": "Préstamo en marcha"
+        },
+        {
+          "quarter": 3,
+          "visibleStatus": "Próxima entrega en pausa"
+        },
+        {
+          "quarter": 4,
+          "visibleStatus": "Próxima entrega en pausa"
+        },
+        {
+          "quarter": 5,
+          "visibleStatus": "Préstamo en marcha"
+        }
+      ],
+      "tranches": 2,
+      "commitmentCost": 4,
+      "economicExplanations": 20,
+      "horizontalOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "engine": "firefox",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "seed": "financing-browser-v2-0",
+      "checkpointProtocol": "Partida generada por comandos reales: nominación, cuatro semanas de campaña, victoria, negociación y solicitud. Sin modificar votos ni indicadores.",
+      "approvalPauseRecovery": [
+        {
+          "quarter": 1,
+          "visibleStatus": "Préstamo en marcha"
+        },
+        {
+          "quarter": 2,
+          "visibleStatus": "Préstamo en marcha"
+        },
+        {
+          "quarter": 3,
+          "visibleStatus": "Próxima entrega en pausa"
+        },
+        {
+          "quarter": 4,
+          "visibleStatus": "Próxima entrega en pausa"
+        },
+        {
+          "quarter": 5,
+          "visibleStatus": "Préstamo en marcha"
+        }
+      ],
+      "tranches": 2,
+      "commitmentCost": 4,
+      "economicExplanations": 20,
+      "horizontalOverflow": false,
+      "pageErrors": []
+    },
+    {
+      "engine": "firefox",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "seed": "financing-browser-v2-0",
+      "checkpointProtocol": "Partida generada por comandos reales: nominación, cuatro semanas de campaña, victoria, negociación y solicitud. Sin modificar votos ni indicadores.",
+      "approvalPauseRecovery": [
+        {
+          "quarter": 1,
+          "visibleStatus": "Préstamo en marcha"
+        },
+        {
+          "quarter": 2,
+          "visibleStatus": "Préstamo en marcha"
+        },
+        {
+          "quarter": 3,
+          "visibleStatus": "Próxima entrega en pausa"
+        },
+        {
+          "quarter": 4,
+          "visibleStatus": "Próxima entrega en pausa"
+        },
+        {
+          "quarter": 5,
+          "visibleStatus": "Préstamo en marcha"
+        }
+      ],
+      "tranches": 2,
+      "commitmentCost": 4,
+      "economicExplanations": 20,
+      "horizontalOverflow": false,
+      "pageErrors": []
+    }
+  ]
+}

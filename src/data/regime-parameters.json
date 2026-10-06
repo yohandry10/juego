@@ -1,0 +1,16 @@
+{
+  "description": "Escenario ficticio opcional, independiente del régimen real de cualquier país; índices abstractos de apoyo.",
+  "initial": { "elites": 55, "partyApparatus": 55, "military": 60, "security": 55, "protest": 25, "legitimacy": 50 },
+  "entrySupport": 50,
+  "purgeSupportThreshold": 25,
+  "coupLoyaltyThreshold": 25,
+  "revoltProtestThreshold": 75,
+  "revoltLegitimacyThreshold": 30,
+  "actions": {
+    "elite-pact": { "title": "Negociar pacto con las élites", "capitalCost": 5, "elites": 7, "partyApparatus": 0, "military": 0, "security": 0, "protest": 3, "legitimacy": -2, "debt": 0.3, "isolation": 0 },
+    "party-renewal": { "title": "Renovar el aparato del partido", "capitalCost": 4, "elites": -3, "partyApparatus": 8, "military": 0, "security": 0, "protest": 0, "legitimacy": 2, "debt": 0.2, "isolation": 0 },
+    "civilian-oversight": { "title": "Acordar supervisión civil", "capitalCost": 5, "elites": 0, "partyApparatus": 0, "military": 5, "security": -3, "protest": -2, "legitimacy": 3, "debt": 0.2, "isolation": -1 },
+    "protest-dialogue": { "title": "Abrir diálogo con manifestantes", "capitalCost": 5, "elites": -3, "partyApparatus": -2, "military": 0, "security": -2, "protest": -8, "legitimacy": 6, "debt": 0.3, "isolation": -2 },
+    "restrict-assembly": { "title": "Restringir las reuniones públicas", "capitalCost": 6, "elites": 0, "partyApparatus": 0, "military": -3, "security": 4, "protest": -3, "legitimacy": -9, "debt": 0.6, "isolation": 8 }
+  }
+}

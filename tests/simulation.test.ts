@@ -11,7 +11,21 @@ import { createRng } from "../src/engine/rng.js";
 import type { GameEvent } from "../src/domain/types.js";
 import { restoreGameState, serializeGameState } from "../src/data/game-save.js";
 import { handleWorkerRequest } from "../src/worker/simulation-worker.js";
+import { advanceCareer, createCareerGame } from "../src/application/career-commands.js";
 import { advanceClock } from "../src/engine/calendar.js";
+
+test("the career worker advances world, economy and career with the same deterministic transition", async () => {
+  const nation = await loadCountry("data/countries/peru.json");
+  const base = createCareerGame(nation, { seed: "career-worker", name: "Elena Ríos", age: 40, originId: "professional-middle", professionId: "teacher", educationId: "technical", officeId: "president" });
+  const executive = advanceCareer({ ...base, stage: "election-result", electionOutcome: { elected: true, playerVotes: 1, playerVoteSharePercent: 60, turnoutPercent: 70, partySeatsInDistrict: 0, playerListPosition: null, explanation: "Elección de prueba.", partyVotes: {} } }, nation);
+  const response = handleWorkerRequest({ type: "career-advance", country: nation, state: executive });
+  assert.equal(response.type, "career-advanced");
+  if (response.type === "career-advanced") {
+    assert.deepEqual(response.state, advanceCareer(executive, nation));
+    assert.equal(response.state.geopolitics.quarterIndex, executive.geopolitics.quarterIndex + 1);
+    assert.equal(response.state.world.quarterIndex, executive.world.quarterIndex + 1);
+  }
+});
 
 const countryPath = fileURLToPath(new URL("../data/countries/peru.json", import.meta.url));
 const country = await loadCountry(countryPath);

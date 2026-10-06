@@ -1,0 +1,14 @@
+{
+  "version": "personal-list-competition-v3",
+  "description": "Competencia personal ficticia por todos los puestos del distrito; evita que una lista agregada garantice el acceso individual. No reproduce listas ni votos reales.",
+  "rivalSupportFloor": 4,
+  "rivalSupportRange": 24,
+  "listStrengthRange": 8,
+  "networkWeight": 0.15,
+  "pluralityPartyWeight": 0.65,
+  "executiveRivalCampaignFloor": 8,
+  "executiveRivalCampaignRange": 20,
+  "executiveElectorateVariation": 12,
+  "coalitionDistanceWeight": 0.7,
+  "coalitionBaseScore": 45
+}

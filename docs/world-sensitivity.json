@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-06",
+  "dependencyCases": 1736,
+  "actors": 217,
+  "shockTypes": 8,
+  "protocol": "Exposición nula/baja/alta y efecto local en cada actor; 12 semillas reservadas comunes, 50 años, tres configuraciones de frecuencia. Parámetros de juego: no probabilidades históricas ni calibración externa.",
+  "limitations": "Sensibilidad del modelo sintético; no acredita una matriz comercial observada ni reproduce frecuencias del mundo real.",
+  "results": [
+    {
+      "scenario": "low",
+      "conflictQuarterProbability": 0.2,
+      "coupRiskScale": 0.0006,
+      "runs": 12,
+      "years": 50,
+      "averageWars": 9.083333333333334,
+      "averageCoups": 25.916666666666668,
+      "averageShocks": 23.416666666666668,
+      "invalidValues": 0,
+      "directNuclearWars": 0
+    },
+    {
+      "scenario": "baseline",
+      "conflictQuarterProbability": 0.35,
+      "coupRiskScale": 0.0012,
+      "runs": 12,
+      "years": 50,
+      "averageWars": 16,
+      "averageCoups": 38.416666666666664,
+      "averageShocks": 23.416666666666668,
+      "invalidValues": 0,
+      "directNuclearWars": 0
+    },
+    {
+      "scenario": "high",
+      "conflictQuarterProbability": 0.5,
+      "coupRiskScale": 0.0018,
+      "runs": 12,
+      "years": 50,
+      "averageWars": 23.166666666666668,
+      "averageCoups": 49.583333333333336,
+      "averageShocks": 23.416666666666668,
+      "invalidValues": 0,
+      "directNuclearWars": 0
+    }
+  ]
+}

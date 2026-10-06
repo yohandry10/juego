@@ -63,6 +63,16 @@ export interface InternationalAction {
   readonly intensity: number;
   readonly explanation: string;
   readonly costToSender: number;
+  readonly decisionEvidence?: WorldDecisionEvidence;
+}
+
+export interface WorldDecisionEvidence {
+  readonly tension: number;
+  readonly trust: number;
+  readonly domesticStress: number;
+  readonly domesticSensitivity: number;
+  readonly credibility: number;
+  readonly style: StrategicStyle;
 }
 
 export interface GlobalShock {
@@ -92,6 +102,18 @@ export interface WorldConflict {
   readonly diplomaticCost: number;
   readonly outcome: "attacker-advance" | "defender-holds" | "stalemate" | "ceasefire" | null;
   readonly explanation: string;
+  readonly forces?: readonly AggregateForce[];
+  readonly sponsorIds?: readonly string[];
+  readonly reconstruction?: { readonly damage: number; readonly displacement: number; readonly insurgency: number; readonly reparations: number; readonly treaty: string };
+}
+
+export interface AggregateForce {
+  readonly ownerId: string;
+  readonly kind: "army" | "fleet" | "air";
+  readonly locationId: string;
+  readonly strength: number;
+  readonly logistics: number;
+  readonly morale: number;
 }
 
 export interface InternationalOrganization {
@@ -123,6 +145,48 @@ export interface PlayerTreaty {
   readonly status: "proposed" | "ratified" | "rejected" | "expired";
   readonly signedQuarter: number;
   readonly explanation: string;
+  /** Optional so old approved programs are not disbursed a second time. */
+  readonly financing?: FinancingProgram;
+}
+
+export interface FinancingProgram {
+  readonly lender: "imf" | "world-bank";
+  readonly status: "approved" | "active" | "suspended" | "completed" | "terminated" | "repaid";
+  readonly approvedQuarter: number;
+  readonly nextReviewQuarter: number;
+  readonly deadlineQuarter: number;
+  readonly committedPercentGdp: number;
+  readonly disbursedPercentGdp: number;
+  readonly repaidPercentGdp: number;
+  readonly tranches: number;
+  readonly target: number;
+  readonly lastCommitmentQuarter: number;
+  readonly lastRepaymentQuarter?: number;
+  readonly reviews: readonly { readonly quarter: number; readonly metric: number; readonly target: number; readonly passed: boolean; readonly disbursement: number; readonly explanation: string }[];
+}
+
+export interface TradeDispute {
+  readonly id: string;
+  readonly complainantId: string;
+  readonly respondentId: string;
+  readonly phase: "consultation" | "panel" | "compliance" | "settled" | "dismissed" | "retaliation";
+  readonly openedQuarter: number;
+  readonly nextDecisionQuarter: number;
+  readonly measurePercent: number;
+  readonly remedyPercent: number;
+  readonly explanation: string;
+  readonly steps: readonly { readonly quarter: number; readonly phase: TradeDispute["phase"]; readonly tariff: number; readonly trust: number; readonly explanation: string }[];
+}
+
+export interface OrganizationStanding {
+  readonly organizationId: string;
+  readonly actorId: string;
+  readonly quarter: number;
+  readonly eligible: boolean;
+  readonly stability: number;
+  readonly credibility: number;
+  readonly recentCoup: boolean;
+  readonly explanation: string;
 }
 
 export interface PlayerDiplomacy {
@@ -145,15 +209,18 @@ export interface GeopoliticsState {
   readonly relations: readonly BilateralRelation[];
   readonly organizations: readonly InternationalOrganization[];
   readonly treaties: readonly PlayerTreaty[];
+  readonly tradeDisputes?: readonly TradeDispute[];
+  readonly organizationStanding?: readonly OrganizationStanding[];
   readonly votes: readonly InternationalVote[];
   readonly sanctions: readonly { readonly fromId: string; readonly toId: string; readonly startedQuarter: number; readonly reason: string }[];
   readonly shocks: readonly GlobalShock[];
   readonly conflicts: readonly WorldConflict[];
   readonly actions: readonly InternationalAction[];
   readonly player: PlayerDiplomacy;
-  readonly domesticImpact: { readonly growthDelta: number; readonly inflationDelta: number; readonly unemploymentDelta: number; readonly causes: readonly string[] };
+  readonly domesticImpact: { readonly growthDelta: number; readonly inflationDelta: number; readonly unemploymentDelta: number; readonly causes: readonly string[]; readonly financing?: { readonly debt: number; readonly reserves: number; readonly investment: number; readonly fiscalDeficit: number; readonly risk: number } };
   readonly militaryLoyalty: number;
   readonly coups: number;
+  readonly coupHistory?: readonly { readonly actorId: string; readonly quarterIndex: number; readonly risk: number; readonly explanation: string }[];
   readonly headlines: readonly { readonly quarterIndex: number; readonly text: string; readonly explanation: string }[];
 }
 

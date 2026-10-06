@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-06",
+  "browser": "Chromium",
+  "baseUrl": "http://127.0.0.1:5173",
+  "results": [
+    {
+      "country": "peru",
+      "httpStatus": 200,
+      "campaignStarted": true,
+      "pageErrors": []
+    },
+    {
+      "country": "spain",
+      "httpStatus": 200,
+      "campaignStarted": true,
+      "pageErrors": []
+    },
+    {
+      "country": "france",
+      "httpStatus": 200,
+      "campaignStarted": true,
+      "pageErrors": []
+    },
+    {
+      "country": "germany",
+      "httpStatus": 200,
+      "campaignStarted": true,
+      "pageErrors": []
+    },
+    {
+      "country": "argentina",
+      "httpStatus": 200,
+      "campaignStarted": true,
+      "pageErrors": []
+    },
+    {
+      "country": "brazil",
+      "httpStatus": 200,
+      "campaignStarted": true,
+      "pageErrors": []
+    },
+    {
+      "country": "united-states",
+      "httpStatus": 200,
+      "campaignStarted": true,
+      "pageErrors": []
+    },
+    {
+      "country": "united-kingdom",
+      "httpStatus": 200,
+      "campaignStarted": true,
+      "pageErrors": []
+    },
+    {
+      "country": "mexico",
+      "httpStatus": 200,
+      "campaignStarted": true,
+      "pageErrors": []
+    },
+    {
+      "country": "venezuela",
+      "httpStatus": 200,
+      "campaignStarted": true,
+      "pageErrors": []
+    },
+    {
+      "country": "generated-abw",
+      "httpStatus": 200,
+      "campaignStarted": true,
+      "pageErrors": []
+    },
+    {
+      "country": "generated-ven",
+      "httpStatus": 200,
+      "campaignStarted": true,
+      "pageErrors": []
+    },
+    {
+      "country": "generated-usa",
+      "httpStatus": 200,
+      "campaignStarted": true,
+      "pageErrors": []
+    }
+  ]
+}

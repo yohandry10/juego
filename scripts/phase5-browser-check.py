@@ -1,8 +1,9 @@
 from playwright.sync_api import sync_playwright
+import os
 
 
 with sync_playwright() as playwright:
-    browser = playwright.chromium.launch(headless=True)
+    browser = getattr(playwright, os.environ.get("MANDATO_BROWSER", "chromium")).launch(headless=True)
     context = browser.new_context()
     page = context.new_page()
     errors = []
@@ -40,7 +41,7 @@ with sync_playwright() as playwright:
     first_step = page.get_by_role("checkbox").first
     first_step.check()
     page.get_by_role("searchbox").fill("censura")
-    assert page.get_by_text("Procedimiento legislativo para retirar la confianza", exact=False).is_visible()
+    assert page.get_by_text("Una votación para quitarle el poder", exact=False).is_visible()
     page.get_by_role("button", name="Grande", exact=True).click()
     assert page.evaluate("getComputedStyle(document.documentElement).fontSize") == "18px"
     page.wait_for_function("navigator.serviceWorker.controller !== null", timeout=10000)
@@ -57,6 +58,11 @@ with sync_playwright() as playwright:
     page.get_by_role("heading", name="Aviso de privacidad").wait_for()
     page.goto("http://127.0.0.1:4173", wait_until="networkidle")
     assert page.get_by_text("Una carrera. Un país real.").is_visible()
+    page.get_by_role("link", name="Créditos y fuentes").click()
+    page.get_by_role("heading", name="Créditos y fuentes", exact=True).wait_for()
+    assert page.get_by_role("heading", name="Venezuela", exact=True).is_visible()
+    license_url = page.get_by_role("link", name="Avisos y licencias", exact=False).get_attribute("href")
+    assert page.evaluate("async (url) => (await (await fetch(url)).text()).includes('MIT')", license_url)
     assert not errors, errors
     print("OK: Ayuda, glosario, tamaño de texto, progreso local, aviso de privacidad y navegación sin red.")
     print("Service worker activo:", await_controller)

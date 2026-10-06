@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-06",
+  "identical": true,
+  "files": 29,
+  "command": "npm run build:repro-check",
+  "environment": "Node v24.13.1, win32, installed lockfile dependencies",
+  "limitation": "Dos builds consecutivos con las dependencias instaladas; no valida instalación limpia en otro SO.",
+  "hashes": [
+    {
+      "file": "assets/EconomyView-C3hpuIKm.js",
+      "sha256": "78e3da55297c3e24a61b20dc8eb07b4163cd135095e3789f09534e8110422586"
+    },
+    {
+      "file": "assets/HallOfFame-Dp65byxo.js",
+      "sha256": "99b9a5cc1f548360d164f3dbe8d1c967e82518af2a8f42b7ed2de56aa0b2ca9e"
+    },
+    {
+      "file": "assets/HelpView-BMrL2IbT.js",
+      "sha256": "105d2141a83a51a16a90d2269ad10a6e1ff07b1e6d02a31164fe30b71bb2b36e"
+    },
+    {
+      "file": "assets/index-DFZJhy_E.js",
+      "sha256": "5517dae3519bafd208ac32ad8fb6e8147adac69b3d143f5ec8f9e64ddfcc7fd1"
+    },
+    {
+      "file": "assets/index-ocEd9DCS.css",
+      "sha256": "aff33e08afc66d485d9a96fbb62f722a0fbdb2e28065c2fda3f5b846f506f20f"
+    },
+    {
+      "file": "assets/react-Dy-GIXkn.js",
+      "sha256": "6e6dcd4abf81fe24cc734fddac8cddcfd68fb888353c40807059fb21859e427d"
+    },
+    {
+      "file": "assets/rolldown-runtime-CbXtAM7H.js",
+      "sha256": "bbf7c5086ae414dc3f33777e3eebf16ea8631325b8bb4690d25091c03567f31a"
+    },
+    {
+      "file": "assets/simulation-worker-TferRALr.js",
+      "sha256": "9d0595b4f65366824d0fd036536f23686fd18dea2538619ad1079bbf32ae299c"
+    },
+    {
+      "file": "assets/validation-2oiOZAhq.js",
+      "sha256": "8d848c7ef273e9082cf69252079d78d1e2a04bd56281726f34780a1f0c71c0c2"
+    },
+    {
+      "file": "assets/world-data-BfIfJd9a.js",
+      "sha256": "d4fa3fb524369d47cbd303a1e446bc487892a09135984a16291c726f4af4a5fb"
+    },
+    {
+      "file": "assets/WorldView-FNDYWy8C.js",
+      "sha256": "400056182fac7e3450f18b5cb1793004291a803830ada345e0cd0a96ad4f6d64"
+    },
+    {
+      "file": "credits.html",
+      "sha256": "d810b80641b9ed8a359529eca22720b6ddcd09c8321e7124f0c629b3145e9ca2"
+    },
+    {
+      "file": "data/countries/argentina.json",
+      "sha256": "31876a5c996afbdfa26dc2b09e41e9cd2dd1ff3fd51edc867c157aa496df9dd2"
+    },
+    {
+      "file": "data/countries/brazil.json",
+      "sha256": "1380b1d382bb1f06876cbae63b56e5a3f70327d3ae4b1bcd902f551d9943ba93"
+    },
+    {
+      "file": "data/countries/france.json",
+      "sha256": "334c1160d46b84238921fe6f6ca1159df5a9977f1f09e6eb548132d79c88c886"
+    },
+    {
+      "file": "data/countries/germany.json",
+      "sha256": "b807ed9e62dd9327e04cb38e3c893d8343693f9e6966ca35169cbb8a89d49283"
+    },
+    {
+      "file": "data/countries/index.json",
+      "sha256": "3fd4f346c2552724d79c43192f1db010036e022e4bb03ab032e00b36c188f024"
+    },
+    {
+      "file": "data/countries/mexico.json",
+      "sha256": "53c1ee695dc669fc979121b0865806058b0210de4931bc696db34a56b507f126"
+    },
+    {
+      "file": "data/countries/peru.json",
+      "sha256": "97b4bf0660feab256b26462e791d4b8777ce14f51f3984646670db5ba258e875"
+    },
+    {
+      "file": "data/countries/spain.json",
+      "sha256": "f412651c9c8d7a71551b3c3214ff27eaa204844be2bb128c41e8805b545e57c5"
+    },
+    {
+      "file": "data/countries/united-kingdom.json",
+      "sha256": "bdcbd901081dcaa167b0ce60901003f0b4b337d8f13fe0210a8dd516f7a50e51"
+    },
+    {
+      "file": "data/countries/united-states.json",
+      "sha256": "d2372bad662a47fdb796c20462257f7b0d9c29e7b5464b102480b7e1d2aa13df"
+    },
+    {
+      "file": "data/countries/venezuela.json",
+      "sha256": "428601cc9bcb5bc662c3537326430702291e8f6cafb3e4ac453cff96601640a3"
+    },
+    {
+      "file": "data/world/world-map.json",
+      "sha256": "7b4af331cb84b6410804f9b764f0ec41f1a561699a6947873f09956af44cfecc"
+    },
+    {
+      "file": "index.html",
+      "sha256": "28103eac8c95c3a26f40c8f608a78d9014f61d9a114c925b6a58bd1aa06c2727"
+    },
+    {
+      "file": "offline-manifest.json",
+      "sha256": "bbee7079dfac526773d3295ba6a00040ed1f1bcf9bcc90cfcc03a334f954a6e9"
+    },
+    {
+      "file": "privacy.html",
+      "sha256": "046671fed1e260a329208d0ea388a1cc6230445f2738fd6ce928570fab47bb5c"
+    },
+    {
+      "file": "sw.js",
+      "sha256": "8895f81ad8d93fd7513a1b10495fb6959aed3087f8c9c5953240fb5edddf4b0c"
+    },
+    {
+      "file": "THIRD-PARTY-NOTICES.txt",
+      "sha256": "174f2c3cb13951d14ecd4663c16a86267e6c2d72eccf9751928c5646e1b6e3f1"
+    }
+  ]
+}

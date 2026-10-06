@@ -1,8 +1,9 @@
-import { careerGameStateSchema } from "../data/career-schemas.js";
+import { careerGameStateSchema, legacyProfileSchema } from "../data/career-schemas.js";
 import type { CareerGameState } from "../domain/career-types.js";
 import { createInitialBudgetState } from "../domain/budget.js";
 import { createEconomicState } from "../domain/economic-model.js";
 import { createGeopoliticsState } from "../engine/world-simulation.js";
+import { auditWorld } from "../engine/world-audit.js";
 
 function budgetForLegacySave(legacy: Record<string, unknown>) {
   const world = typeof legacy.world === "object" && legacy.world !== null ? legacy.world as Record<string, unknown> : {};
@@ -22,7 +23,8 @@ function withV13Defaults(legacy: Record<string, unknown>): Record<string, unknow
   const leadership = typeof legacy.partyLeadership === "object" && legacy.partyLeadership !== null ? legacy.partyLeadership as Record<string, unknown> : null;
   return {
     ...legacy,
-    saveSchemaVersion: 14,
+    saveSchemaVersion: 15,
+    regime: legacy.regime ?? null,
     geopolitics: legacy.geopolitics ?? createGeopoliticsState(
       ({ peru: "per", spain: "esp", france: "fra" } as Record<string, string>)[String(legacy.countryId ?? "peru")] ?? String(legacy.countryId ?? "peru"),
       typeof legacy.seed === "string" ? legacy.seed : "migrated-world",
@@ -48,7 +50,7 @@ function withV13Defaults(legacy: Record<string, unknown>): Record<string, unknow
   };
 }
 
-export function migrateCareerSave(value: unknown): CareerGameState {
+function migrateCareerUnchecked(value: unknown): CareerGameState {
   if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && value.saveSchemaVersion === 3) {
     const legacy = value as Record<string, unknown>;
     const elected = typeof legacy.electionOutcome === "object" && legacy.electionOutcome !== null && "elected" in legacy.electionOutcome && legacy.electionOutcome.elected === true;
@@ -98,8 +100,17 @@ export function migrateCareerSave(value: unknown): CareerGameState {
     const legacy = value as Record<string, unknown>;
     return careerGameStateSchema.parse({ ...withV13Defaults(legacy), ministry: null });
   }
-  if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && [11, 12, 13].includes(value.saveSchemaVersion as number)) return careerGameStateSchema.parse(withV13Defaults(value as Record<string, unknown>));
+  if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && [11, 12, 13, 14].includes(value.saveSchemaVersion as number)) return careerGameStateSchema.parse(withV13Defaults(value as Record<string, unknown>));
   return careerGameStateSchema.parse(value);
+}
+
+export function migrateCareerSave(value: unknown): CareerGameState {
+  const state = migrateCareerUnchecked(value);
+  let issues: string[];
+  try { issues = auditWorld(state.geopolitics); }
+  catch { throw new Error("El mundo del guardado está incompleto o dañado. Importa una copia válida."); }
+  if (issues.length) throw new Error(`El mundo del guardado contiene valores o referencias inválidos: ${issues.slice(0, 3).join(", ")}.`);
+  return state;
 }
 
 function openDb(): Promise<IDBDatabase> {
@@ -116,11 +127,37 @@ export async function saveCareer(state: CareerGameState): Promise<void> {
   const db = await openDb();
   await new Promise<void>((resolve, reject) => {
     const transaction = db.transaction(STORE_NAME, "readwrite");
-    transaction.objectStore(STORE_NAME).put(valid, ACTIVE_SAVE);
+    const store = transaction.objectStore(STORE_NAME);
+    store.put(valid, ACTIVE_SAVE);
+    if (valid.legacy) {
+      const key = `hall-${valid.countryId}-${valid.seed}`;
+      store.put({ hallArchive: true, name: valid.player.name, countryId: valid.countryId, legacy: valid.legacy, archivedAt: Date.now() }, key);
+      const entries = store.getAll();
+      const keys = store.getAllKeys();
+      keys.onsuccess = () => {
+        const order = keys.result.map((key, index) => ({ key, entry: entries.result[index] as { hallArchive?: boolean; archivedAt?: number } })).filter((item) => item.entry?.hallArchive).sort((a, b) => (b.entry.archivedAt ?? 0) - (a.entry.archivedAt ?? 0));
+        for (const old of order.slice(50)) store.delete(old.key);
+      };
+    }
     transaction.oncomplete = () => resolve();
     transaction.onerror = () => reject(transaction.error);
   });
   db.close();
+}
+
+export async function loadHallOfFame() {
+  const db = await openDb();
+  const records = await new Promise<unknown[]>((resolve, reject) => {
+    const request = db.transaction(STORE_NAME, "readonly").objectStore(STORE_NAME).getAll();
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
+  db.close();
+  return records.filter((record) => typeof record === "object" && record !== null && "hallArchive" in record).map((record) => {
+    const entry = record as unknown as { name: string; countryId: string; legacy: unknown; archivedAt: number };
+    if (typeof entry.name !== "string" || typeof entry.countryId !== "string" || !Number.isFinite(entry.archivedAt)) throw new Error("El archivo local de legados contiene una entrada dañada.");
+    return { name: entry.name, countryId: entry.countryId, legacy: legacyProfileSchema.parse(entry.legacy), archivedAt: entry.archivedAt };
+  }).sort((a, b) => b.archivedAt - a.archivedAt).slice(0, 50);
 }
 
 export async function loadCareer(): Promise<CareerGameState | null> {
@@ -133,7 +170,7 @@ export async function loadCareer(): Promise<CareerGameState | null> {
   db.close();
   if (value === null) return null;
   const migrated = migrateCareerSave(value);
-  if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].includes(value.saveSchemaVersion as number)) await saveCareer(migrated);
+  if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].includes(value.saveSchemaVersion as number)) await saveCareer(migrated);
   return migrated;
 }
 

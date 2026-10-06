@@ -1,0 +1,15 @@
+{
+  "version": "legacy-canon-v2",
+  "archetypes": {
+    "reformer": { "label": "Reformista", "text": "Su carrera apostó por cambiar reglas y servicios; la memoria de esas reformas depende de los resultados y del respaldo que logró conservar." },
+    "builder": { "label": "Constructor de continuidad", "text": "Dejó una trayectoria de gestión y continuidad. Las obras y acuerdos sostienen su reputación mientras puedan mantenerse." },
+    "broker": { "label": "Mediador", "text": "Su principal instrumento fue la negociación. Los acuerdos abrieron puertas y también dejaron deudas políticas." },
+    "survivor": { "label": "Superviviente", "text": "Conservó influencia en momentos difíciles. Su permanencia pesa en la historia junto con los costos de sostener el poder." },
+    "caretaker": { "label": "Cuidador de la confianza", "text": "Buscó conservar respaldo público y relaciones previsibles. Su legado depende de que esa confianza sobreviva a la coyuntura." },
+    "ideologue": { "label": "Defensor de una doctrina", "text": "Mantuvo una identidad política firme. Esa coherencia le dio una base fiel y límites para negociar fuera de ella." },
+    "controversial": { "label": "Figura controvertida", "text": "Su influencia dividió la evaluación pública. Los costos institucionales y las relaciones deterioradas siguen pesando después de su salida." },
+    "stabilizer": { "label": "Estabilizador", "text": "La estabilidad de precios y empleo sostiene su evaluación. Las decisiones de ajuste se revisan junto con los daños y beneficios que dejaron." },
+    "institution-keeper": { "label": "Custodio de las instituciones", "text": "La confianza en las reglas pesa más que la duración de su mandato. Las restricciones de derechos reducen esa evaluación aunque el gobierno permanezca." },
+    "kingmaker": { "label": "Hacedor de alianzas y sucesión", "text": "Su influencia continuó a través de otras figuras. La continuidad de esas alianzas condiciona su lugar en la memoria política." }
+  }
+}

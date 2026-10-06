@@ -4,7 +4,7 @@
 
 ## Objetivo
 
-Comprobar si una persona que no conoce MANDATO puede entender el ciclo de carrera y, en sus primeros diez minutos, explicar una causa por la que podría perder el poder. La prueba no busca que la persona memorice reglas ni que prefiera una ideología.
+Comprobar si una persona que no conoce MANDATO puede entender el ciclo de carrera y, en sus primeros diez minutos, explicar una causa por la que podría perder el poder. La prueba no busca que la persona memorice reglas ni que prefiera una ideología. La directriz del juego es comprensión para todas las edades sin exigir economía o leyes. Este primer protocolo usa adultos nuevos con distintas experiencias de juego; no acredita por sí solo comprensión infantil o de todas las edades.
 
 ## Participantes y condiciones
 
@@ -52,6 +52,8 @@ Hacer estas preguntas literalmente y sin sugerir respuestas:
 4. ¿Qué información te faltó para decidir?
 5. ¿En qué momento quisiste parar? ¿Qué te hizo seguir o detenerte?
 6. ¿Qué parte te gustaría jugar durante otros diez minutos?
+7. Elige una opción que viste: ¿qué podrías ganar, cuánto cuesta y qué podría salir mal?
+8. Si el tiempo se detuvo, ¿qué podrías hacer para continuar?
 
 ## Registro por persona
 

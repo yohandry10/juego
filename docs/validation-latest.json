@@ -1,0 +1,207 @@
+{
+  "date": "2026-10-06",
+  "environment": "Windows; Node 24.13.1; Core i5-10400F; 17098092544 bytes RAM",
+  "unitTests": {
+    "command": "npm test",
+    "passed": 117,
+    "failed": 0
+  },
+  "build": {
+    "command": "npm run build",
+    "passed": true,
+    "repeatedBuildHashesIdentical": true,
+    "hashesFile": "build-reproducibility.json",
+    "filesCompared": 29,
+    "mainChunkMinifiedKB": 334.58,
+    "mainChunkGzipKB": 94.26,
+    "workerChunkMinifiedKB": 385.45
+  },
+  "worker": {
+    "command": "npm run build:worker-check",
+    "passed": true
+  },
+  "baseSimulation": {
+    "command": "npm run validate:mass",
+    "runs": 1000,
+    "years": 20,
+    "workers": 4,
+    "invalidValues": 0,
+    "elapsedMs": 5634
+  },
+  "world": {
+    "command": "npm run world:validate",
+    "runs": 100,
+    "years": 50,
+    "evidence": "phase-4-simulation.json",
+    "auditedEachQuarter": true,
+    "sensitivity": {
+      "command": "npm run world:sensitivity",
+      "shockCases": 1736,
+      "fiftyYearRuns": 36,
+      "evidence": "world-sensitivity.json",
+      "independentHistoricalCalibrationCompleted": false
+    }
+  },
+  "countries": {
+    "command": "npm run validate:countries -- 25",
+    "campaigns": 500,
+    "profiles": 10,
+    "evidence": "country-balance-25.json",
+    "jsonCapturedFromNpmCommand": true
+  },
+  "careerBalance": {
+    "command": "npm run validate:balance",
+    "runs": 4500,
+    "perProfile": 450,
+    "distinctSeeds": 500,
+    "strategies": 3,
+    "realismModes": 3,
+    "ideologies": 5,
+    "workers": 4,
+    "status": "complete",
+    "evidence": "career-balance.json",
+    "balanced": false,
+    "seedPrefix": "balance-holdout-v2",
+    "scope": "Semillas nuevas respecto al lote anterior. Ejecutado tras correcciones institucionales; anterior al ritmo opcional y a extracción de parámetros financieros sin alterar valores. El protocolo no usa ritmo rápido ni solicita préstamos; no acredita balance satisfactorio."
+  },
+  "generatedCountries": {
+    "command": "node --import tsx src/cli/generated-countries.ts",
+    "profiles": 217,
+    "starts": 651,
+    "evidence": "generated-countries-evidence.json"
+  },
+  "diplomacyComparison": {
+    "command": "node --import tsx src/cli/diplomacy-balance.ts",
+    "scenarios": 225,
+    "evidence": "diplomacy-balance.json"
+  },
+  "longCareer": {
+    "command": "npm run validate:long-career",
+    "years": 40,
+    "evidence": "long-career-evidence.json",
+    "memoryStabilityProven": false,
+    "maximumTurnMs": 40.408400000000256,
+    "p95TurnMs": 31.10319999999774,
+    "firstTenYearsAverageTurnMs": 12.272057500000074,
+    "lastTenYearsAverageTurnMs": 24.332302499999876
+  },
+  "browser": {
+    "smoke": {
+      "command": "python tests/web-smoke.py",
+      "engine": "Edge Chromium",
+      "passed": true,
+      "executiveTurnSeconds": 0.482,
+      "hallArchiveAndEscape": true
+    },
+    "countryStart": {
+      "command": "python scripts/country-start-browser-check.py",
+      "passed": true,
+      "nationalProfiles": 10,
+      "generatedExamples": 3
+    },
+    "diplomacy": {
+      "command": "python scripts/phase4-diplomacy-browser-check.py",
+      "passed": true
+    },
+    "regime": {
+      "command": "python scripts/regime-browser-check.py",
+      "passed": true
+    },
+    "helpOfflineCredits": {
+      "command": "python scripts/phase5-browser-check.py",
+      "engines": [
+        "chromium",
+        "firefox"
+      ],
+      "passed": true
+    },
+    "accessibility": {
+      "command": "python scripts/accessibility-browser-check.py",
+      "engines": [
+        "chromium",
+        "firefox"
+      ],
+      "passed": true,
+      "desktopResolutions": [
+        {
+          "width": 1280,
+          "height": 900
+        },
+        {
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    "contrast": {
+      "command": "python scripts/contrast-browser-check.py",
+      "passed": true,
+      "evidence": "contrast-browser-evidence.json"
+    },
+    "careerWorker": {
+      "command": "python scripts/career-worker-browser-check.py",
+      "engines": [
+        "chromium",
+        "firefox"
+      ],
+      "passed": true,
+      "offline": true,
+      "persistentWorkerConfirmed": true,
+      "worldEconomyCareerSynchronized": true,
+      "governmentNegotiationCost": 5,
+      "evidence": "career-worker-browser-evidence.json",
+      "fastPaceWaitsForUnansweredChoice": true
+    },
+    "financing": {
+      "command": "node --import tsx scripts/prepare-financing-fixtures.ts; python scripts/financing-browser-check.py",
+      "engines": [
+        "chromium",
+        "firefox"
+      ],
+      "passed": true,
+      "approvalSuspensionRecovery": true,
+      "commitmentCostChecked": true,
+      "horizontalOverflow": false,
+      "economicExplanations": 20,
+      "evidence": "financing-browser-evidence.json",
+      "humanTest": false,
+      "desktopResolutions": [
+        {
+          "width": 1280,
+          "height": 900
+        },
+        {
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    }
+  },
+  "humanSessions": 0,
+  "screenReaderTested": false,
+  "humanEditorialReviewCompleted": false,
+  "publicReleaseCompleted": false,
+  "allMandatoryCriteriaCompleted": false,
+  "cut": "institutional-financing-and-player-copy-2026-10-06",
+  "memberships": {
+    "evidence": "../src/data/world-memberships.json",
+    "officialWtoMembers": 166,
+    "representedWtoMembers": 164,
+    "officialImfMembers": 191,
+    "officialIbrdMembers": 189,
+    "unrepresentedWtoActors": [
+      "EU",
+      "TWN"
+    ],
+    "otherOrganizationRostersFullyReviewed": false,
+    "existingSavesKeepTheirSnapshot": true
+  },
+  "sourceAtReportCut": {
+    "sha256": "7ec519703ba437543b15f55a2f53e490e6b0cdd55532dbc47ffa285fa6b432c7",
+    "scope": "src, data/countries, public, tests sin pycache, scripts y configuración; excluye informes para evitar autorreferencia",
+    "buildHashes": "build-reproducibility.json",
+    "note": "La batería de balance tiene el alcance y el momento de ejecución explicitados en careerBalance.scope; la huella identifica el código del corte, no atribuye cada muestra a código no ejecutado."
+  },
+  "platformScope": "PC only, corrected explicitly by the user on 2026-10-06",
+  "representativePcHardwareCoverageCompleted": false
+}

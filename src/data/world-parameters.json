@@ -1,0 +1,15 @@
+{
+  "version": "world-balance-v3",
+  "description": "Coeficientes abstractos de juego; no probabilidades históricas ni pérdidas humanas observadas.",
+  "conflictQuarterProbability": 0.35,
+  "conflictMinTension": 25,
+  "maxConflictQuarters": 8,
+  "logisticsAttrition": 4,
+  "reconstructionDecay": 0.92,
+  "coupStabilityThreshold": 42,
+  "coupLoyaltyThreshold": 48,
+  "coupStressThreshold": 38,
+  "coupRiskScale": 0.0012,
+  "coupCooldownQuarters": 24,
+  "sanctionDurationQuarters": 12
+}

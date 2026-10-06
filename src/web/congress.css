@@ -5,8 +5,8 @@
 .legislator-card{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:14px;background:#202c25;border:1px solid #344139}
 .legislator-card>div:first-child{display:grid;gap:5px}
 .legislator-card strong{font:15px 'Playfair Display'}
-.legislator-card span,.legislator-card small{color:#98a398;font-size:10px}
-.member-actions{display:flex;gap:6px}
-.member-actions button{background:#152019;color:#d2e0bb;border:1px solid #586747;padding:8px;font-size:10px}
+.legislator-card span,.legislator-card small{color:#98a398;font-size:0.625rem}
+.member-actions{display:flex;flex-wrap:wrap;gap:6px}
+.member-actions button{background:#152019;color:#d2e0bb;border:1px solid #586747;padding:8px;font-size:0.625rem;white-space:normal;overflow-wrap:anywhere}
 .member-actions button:disabled{opacity:.4}
 @media(max-width:650px){.legislator-card{align-items:flex-start;flex-direction:column}.member-actions{width:100%}.member-actions button{flex:1}}

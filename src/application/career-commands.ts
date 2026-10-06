@@ -8,7 +8,12 @@ import { createRng, hashSeed } from "../engine/rng.js";
 import { applyEconomicPolicy, economicModelParameters, policyPoliticalCost } from "../domain/economic-model.js";
 import { careerEventArcsComplete as careerEventArcs, careerEventCatalog, eventCatalogVersion } from "../data/event-catalog.js";
 import { createGeopoliticsState } from "../engine/world-simulation.js";
+import { advanceRegime, createRegimeState } from "./regime-commands.js";
+import regimeParameters from "../data/regime-parameters.json" with { type: "json" };
+import legacyCanon from "../data/legacy-archetypes.json" with { type: "json" };
+import electoralParameters from "../data/electoral-parameters.json" with { type: "json" };
 import { advanceGeopolitics } from "../engine/world-simulation.js";
+import { createFinancingProgram, organizationMember } from "../engine/world-institutions.js";
 import { admitPresidentialVacancy, canSubmitPresidentialVacancy, resolveCensureVote, resolveInvestitureVote, resolvePresidentialVacancy, vacancyDebateReady } from "./executive-rules.js";
 
 const clamp = (n: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, n));
@@ -20,12 +25,18 @@ function applyGeopoliticalEffects<T extends CareerGameState["world"]>(world: T, 
     gdpGrowthPercent: clamp(indicators.gdpGrowthPercent + impact.growthDelta * 0.25, -30, 30),
     inflationPercent: clamp(indicators.inflationPercent + impact.inflationDelta * 0.2, -5, 100),
     unemploymentPercent: clamp(indicators.unemploymentPercent + impact.unemploymentDelta * 0.2, 0, 70),
+    publicDebtPercentGdp: clamp(indicators.publicDebtPercentGdp + (impact.financing?.debt ?? 0), 0, 1000),
+    reservesMonthsImports: clamp(indicators.reservesMonthsImports + (impact.financing?.reserves ?? 0), 0, 120),
+    domesticInvestmentPercentGdp: clamp(indicators.domesticInvestmentPercentGdp + (impact.financing?.investment ?? 0), 0, 100),
+    fiscalDeficitPercentGdp: clamp(indicators.fiscalDeficitPercentGdp + (impact.financing?.fiscalDeficit ?? 0), -100, 100),
+    countryRiskBasisPoints: clamp(indicators.countryRiskBasisPoints + (impact.financing?.risk ?? 0), 0, 50000),
   };
   const economy = { ...world.economy, indicators: { ...indicators, ...changes }, causesByIndicator: {
     ...world.economy.causesByIndicator,
     gdpGrowthPercent: [...impact.causes, ...(world.economy.causesByIndicator.gdpGrowthPercent ?? [])].slice(0, 6),
     inflationPercent: [...impact.causes, ...(world.economy.causesByIndicator.inflationPercent ?? [])].slice(0, 6),
     unemploymentPercent: [...impact.causes, ...(world.economy.causesByIndicator.unemploymentPercent ?? [])].slice(0, 6),
+    ...(impact.financing && Object.values(impact.financing).some((v) => v !== 0) ? Object.fromEntries(["publicDebtPercentGdp", "reservesMonthsImports", "domesticInvestmentPercentGdp", "fiscalDeficitPercentGdp", "countryRiskBasisPoints"].map((key) => [key, [...impact.causes, ...(world.economy.causesByIndicator[key] ?? [])].slice(0, 6)])) : {}),
   } };
   const approvalPercent = clamp(world.approvalPercent - Math.max(0, impact.inflationDelta + impact.unemploymentDelta - impact.growthDelta) * 0.025, 0, 100);
   const socialBlocks = world.socialBlocks.map((block) => ({ ...block, mood: clamp(block.mood - Math.max(0, impact.inflationDelta + impact.unemploymentDelta - impact.growthDelta) * 0.08, -100, 100) }));
@@ -185,7 +196,7 @@ function addCareerEvent(state: CareerGameState, preferredId?: string, payloadId:
   const linkedPayloadId = payloadId ?? (continuation?.eventId === template.id ? continuation.payloadId : null);
   const item = {
     id: makeId(state.seed, `inbox-${state.inbox.length}`), eventId: template.id, variantId, category: template.category,
-    type: "news" as const, title: template.title, body: template.variants[variantIndex]!, createdAtTurn: state.currentTurn,
+    type: "news" as const, title: template.title, body: template.variants[variantIndex]! + (recurringBudgetRequest ? ` Informe fiscal: ingresos ${state.budget.revenueIndex.toFixed(1)}, gasto ${state.budget.spendingIndex.toFixed(1)}, deuda ${state.budget.debtIndex.toFixed(1)} (índices). Servicios ${state.budget.servicesSharePercent}%, inversión ${state.budget.investmentSharePercent}%, transferencias ${state.budget.transfersSharePercent}% y seguridad ${state.budget.securitySharePercent}%. Contexto macroeconómico: crecimiento ${state.world.economy.indicators.gdpGrowthPercent.toFixed(2)}%, inflación ${state.world.economy.indicators.inflationPercent.toFixed(2)}% y desempleo ${state.world.economy.indicators.unemploymentPercent.toFixed(2)}%. La asignación propuesta se votará en la cámara.` : ""), createdAtTurn: state.currentTurn,
     priority: template.arcId ? 75 : 45, resolved: false, options: options ?? choicesForEvent(template), explanation: `${template.detail}${linkedPayloadId ? ` Personaje relacionado: ${state.world.legislators.find((member) => member.id === linkedPayloadId)?.name ?? linkedPayloadId}.` : ""} Arco ${template.arcId ?? "independiente"}${template.arcStep ? ` · paso ${template.arcStep}` : ""}.`, payloadId: linkedPayloadId,
   };
   return { ...state, inbox: [...state.inbox, item], usedEventVariants: [...state.usedEventVariants, variantId] };
@@ -209,6 +220,7 @@ export interface NewCareerInput {
   readonly partyId?: string;
   readonly realism?: RealismMode;
   readonly ironman?: boolean;
+  readonly scenario?: "constitutional" | "hegemony";
 }
 
 function validateCareer(state: CareerGameState): CareerGameState {
@@ -216,8 +228,8 @@ function validateCareer(state: CareerGameState): CareerGameState {
 }
 
 export function createCareerGame(country: CountryDefinition, input: NewCareerInput): CareerGameState {
-  const officeId = input.officeId ?? "deputy";
-  const rule = country.candidateEligibility.find((candidate) => candidate.officeId === officeId);
+  const officeId = input.scenario === "hegemony" ? country.politicalSystem.executive.officeId : input.officeId ?? "deputy";
+  const rule = country.candidateEligibility.find((candidate) => candidate.officeId === officeId) ?? (input.scenario === "hegemony" ? { officeId, minimumAge: 18, nationality: "none" as const, activeSuffrageRequired: false, voterRegistrationRequired: false, nomination: "party" as const } : undefined);
   if (!rule) throw new Error(`El país no configura requisitos para el cargo ${officeId}.`);
   if (!meetsAgeRule(rule, input.age)) throw new Error(`La edad mínima para postular a ${officeId} es ${rule.minimumAge} años.`);
   if (rule.nationality !== "none" && rule.nationality === "citizen-by-birth" && (input.nationality ?? "citizen-by-birth") !== "citizen-by-birth") throw new Error(`El cargo ${officeId} exige ciudadanía de nacimiento.`);
@@ -252,7 +264,7 @@ export function createCareerGame(country: CountryDefinition, input: NewCareerInp
   };
   const partyDef = world.parties.find((candidate) => candidate.id === playerPartyId)!;
   const state: CareerGameState = {
-    saveSchemaVersion: 14, countryId: country.id, countryDataVersion: country.dataVersion, contentDataVersion: eventCatalogVersion, seed: input.seed, stage: "campaign", realism: input.realism ?? "realistic", ironman: input.ironman ?? false, currentTurn: 0,
+    saveSchemaVersion: 15, regime: input.scenario === "hegemony" ? createRegimeState() : null, countryId: country.id, countryDataVersion: country.dataVersion, contentDataVersion: eventCatalogVersion, seed: input.seed, stage: "campaign", realism: input.realism ?? "realistic", ironman: input.ironman ?? false, currentTurn: 0,
     world, geopolitics: createGeopoliticsState(country.id, input.seed), player, playerPartyId,
     campaign: { officeId, week: 1, totalWeeks: 4, actionsRemaining: 2, districtId: district, chamberId, partyId: playerPartyId, nominated: false, actionHistory: [], promises: [], partySupportPercent: partyDef.supportPercent, playerPreferencePercent: 3, campaignFundsSpent: 0, nationalAgenda: null, pollHistory: [], debateHistory: [] },
     electionOutcome: null, legislature: null, government: null, budget: createInitialBudgetState(world.year), partyLeadership: null, ministry: null,
@@ -314,7 +326,7 @@ export function performCampaignAction(state: CareerGameState, action: CampaignAc
   const promise = action === "make-promise" ? { id: makeId(state.seed, `promise-${state.campaign.week}-${state.campaign.promises.length}`), text: "Mejorar los servicios públicos del distrito", blockId: "workers", cost: 15, dueTurn: 8, status: "pending" as const } : null;
   const record = { id: makeId(state.seed, `campaign-${state.campaign.week}-${state.campaign.actionHistory.length}`), week: state.campaign.week, type: action, districtId: state.campaign.districtId, explanation, result: gain, promiseId: promise?.id ?? null } as const;
   const log = [...state.log, { turn: state.currentTurn + 1, text: explanation, explanation: `Cambio de preferencia: +${gain.toFixed(1)} puntos; gasto: ${Math.max(0, expense)}.` }];
-  const next = { ...state, currentTurn: state.currentTurn + 1, player: { ...state.player, resources: { ...state.player.resources, campaignFunds: funds + (expense < 0 ? -expense : 0) } }, campaign: { ...state.campaign, actionsRemaining: state.campaign.actionsRemaining - 1, playerPreferencePercent: clamp(state.campaign.playerPreferencePercent + (action === "fundraising" ? 0 : gain), 0, 100), campaignFundsSpent: state.campaign.campaignFundsSpent + Math.max(0, expense), actionHistory: [...state.campaign.actionHistory, record], promises: promise ? [...state.campaign.promises, promise] : state.campaign.promises }, log };
+  const next = { ...state, currentTurn: state.currentTurn + 1, player: { ...state.player, resources: { ...state.player.resources, campaignFunds: funds } }, campaign: { ...state.campaign, actionsRemaining: state.campaign.actionsRemaining - 1, playerPreferencePercent: clamp(state.campaign.playerPreferencePercent + (action === "fundraising" ? 0 : gain), 0, 100), campaignFundsSpent: state.campaign.campaignFundsSpent + Math.max(0, expense), actionHistory: [...state.campaign.actionHistory, record], promises: promise ? [...state.campaign.promises, promise] : state.campaign.promises }, log };
   const eventId = ({ "door-knocking": "district-meeting", rally: "youth-forum", "media-interview": "local-radio", "primary-outreach": "volunteer-team", fundraising: "campaign-donor", "make-promise": "promise-reminder" } as const)[action];
   return validateCareer(addCareerEvent(next, eventId));
 }
@@ -356,11 +368,19 @@ function allocateDistrictSeats(method: "dhondt" | "largest-remainder" | "plurali
 
 function resolveExecutiveElection(state: CareerGameState, country: CountryDefinition): CareerGameState {
   const rule = country.politicalSystem.executive;
+  if (rule.selection === "legislative-investiture") {
+    const explanation = "La campaña presentó una candidatura de jefatura de Gobierno. El acceso requiere ahora negociación y votación de investidura; no es una elección ejecutiva directa.";
+    return validateCareer({ ...state, stage: "election-result", currentTurn: state.currentTurn + 1, electionOutcome: { playerVotes: 0, playerVoteSharePercent: 0, turnoutPercent: 0, partySeatsInDistrict: 0, playerListPosition: null, elected: state.campaign.nominated, explanation, partyVotes: {} }, log: [...state.log, { turn: state.currentTurn + 1, text: "Candidatura presentada a la cámara", explanation }] });
+  }
   if (rule.selection !== "direct-election" || !rule.election) throw new Error("La ficha nacional no configura una elección ejecutiva directa.");
   const parties = state.world.parties;
-  const candidateScores = parties.map((party) => party.supportPercent + (party.id === state.playerPartyId
-    ? state.campaign.playerPreferencePercent * 0.6 + (state.player.attributes.charisma - 10) * 0.35 + (state.player.attributes.oratory - 10) * 0.2
-    : 0));
+  const candidateScores = parties.map((party) => {
+    const rng = createRng(hashSeed(`${state.seed}:executive-rival:${party.id}`));
+    const campaign = party.id === state.playerPartyId ? state.campaign.playerPreferencePercent
+      : electoralParameters.executiveRivalCampaignFloor + rng.next() * electoralParameters.executiveRivalCampaignRange;
+    const attributes = party.id === state.playerPartyId ? (state.player.attributes.charisma - 10) * 0.35 + (state.player.attributes.oratory - 10) * 0.2 : 0;
+    return Math.max(1, party.supportPercent + campaign * 0.6 + attributes + (rng.next() - 0.5) * electoralParameters.executiveElectorateVariation);
+  });
   const ranking = candidateScores.map((score, index) => ({ score, index })).sort((left, right) => right.score - left.score || left.index - right.index);
   const playerIndex = parties.findIndex((party) => party.id === state.playerPartyId);
   const playerRank = ranking.findIndex((item) => item.index === playerIndex);
@@ -370,13 +390,37 @@ function resolveExecutiveElection(state: CareerGameState, country: CountryDefini
   const opponent = ranking.find((item) => item.index !== playerIndex);
   const runoffShare = finalist && opponent ? candidateScores[playerIndex]! / (candidateScores[playerIndex]! + opponent.score) * 100 : 0;
   const playerVoteSharePercent = rule.election.method === "two-round" && firstRoundShare < rule.election.firstRoundThresholdPercent ? runoffShare : firstRoundShare;
-  const elected = state.campaign.nominated && finalist && (rule.election.method === "two-round" && firstRoundShare < rule.election.firstRoundThresholdPercent ? runoffShare >= 50 : playerRank === 0 && firstRoundShare >= (rule.election.method === "plurality" ? 0 : rule.election.firstRoundThresholdPercent));
+  // The US profile has synthetic districts: group its House seats into fifty
+  // abstract delegations, add two senators each and three capital electors.
+  // Electoral majority is measured in electors, never in national vote share.
+  let electoralExplanation = "";
+  let electoralWon = false;
+  if (rule.election.method === "electoral-college") {
+    const electorTotals = parties.map(() => 0);
+    const houseSeats = country.politicalSystem.legislature.lowerChamber.seats;
+    for (let delegation = 0; delegation < 51; delegation++) {
+      const weight = delegation === 50 ? 3 : Math.floor(houseSeats / 50) + (delegation < houseSeats % 50 ? 1 : 0) + 2;
+      const local = candidateScores.map((score, index) => score + (createRng(hashSeed(`${state.seed}:electors:${delegation}:${parties[index]!.id}`)).next() - 0.5) * 20);
+      const winner = local.reduce((best, score, index) => score > local[best]! ? index : best, 0);
+      electorTotals[winner] = electorTotals[winner]! + weight;
+    }
+    const totalElectors = electorTotals.reduce((sum, value) => sum + value, 0);
+    electoralWon = electorTotals[playerIndex]! > totalElectors / 2;
+    const majority = electorTotals.some((value) => value > totalElectors / 2);
+    if (!majority) {
+      const finalists = electorTotals.map((value, index) => ({ value, index })).sort((a, b) => b.value - a.value).slice(0, 3);
+      const selected = finalists.sort((a, b) => state.world.legislators.filter((m) => m.partyId === parties[b.index]!.id).length - state.world.legislators.filter((m) => m.partyId === parties[a.index]!.id).length)[0]!;
+      electoralWon = selected.index === playerIndex;
+    }
+    electoralExplanation = `Colegio agregado: ${electorTotals[playerIndex]} de ${totalElectors} electores; mayoría ${Math.floor(totalElectors / 2) + 1}. ${majority ? "Resultado por delegaciones ficticias." : "Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo."} No reproduce fronteras ni resultados reales.`;
+  }
+  const elected = state.campaign.nominated && (rule.election.method === "electoral-college" ? electoralWon : finalist && (rule.election.method === "two-round" && firstRoundShare < rule.election.firstRoundThresholdPercent ? runoffShare >= 50 : playerRank === 0));
   const turnoutPercent = clamp(68 + state.world.approvalPercent * 0.08, 45, 90);
   const totalVotes = Math.round(country.population * 0.72 * turnoutPercent / 100);
   const outcome = {
     playerVotes: Math.round(totalVotes * playerVoteSharePercent / 100), playerVoteSharePercent, turnoutPercent,
     partySeatsInDistrict: 0, playerListPosition: 1, elected,
-    explanation: rule.election.method === "two-round"
+    explanation: rule.election.method === "electoral-college" ? electoralExplanation : rule.election.method === "two-round"
       ? finalist ? `Primera vuelta: ${firstRoundShare.toFixed(1)}%. ${firstRoundShare < rule.election.firstRoundThresholdPercent ? `En la segunda vuelta obtuviste ${runoffShare.toFixed(1)}%.` : "Superaste el umbral de primera vuelta."} ${elected ? "Ganaste la elección ejecutiva." : "No alcanzaste los votos necesarios."}` : `Quedaste fuera de las dos candidaturas más votadas en primera vuelta (${firstRoundShare.toFixed(1)}%).`
       : `${elected ? "Ganaste" : "No ganaste"} la elección ejecutiva con ${firstRoundShare.toFixed(1)}% en una elección de tipo ${rule.election.method}.`,
     partyVotes: Object.fromEntries(parties.map((party, index) => [party.id, Math.round(candidateScores[index]! * 1000)])),
@@ -388,6 +432,12 @@ function resolveExecutiveElection(state: CareerGameState, country: CountryDefini
 
 export function resolveElection(state: CareerGameState, country: CountryDefinition): CareerGameState {
   if (state.stage !== "campaign") throw new Error("La elección ya fue resuelta.");
+  if (state.regime) {
+    const support = state.regime.elites * 0.3 + state.regime.partyApparatus * 0.3 + state.campaign.playerPreferencePercent * 0.7 + state.player.attributes.network;
+    const elected = state.campaign.nominated && support >= regimeParameters.entrySupport;
+    const explanation = `Coalición dirigente ficticia: respaldo ${support.toFixed(1)} frente al umbral ${regimeParameters.entrySupport}; ${elected ? "acceso al ejecutivo" : "la coalición rechazó la candidatura"}. No representa una elección constitucional ni un resultado real.`;
+    return validateCareer({ ...state, stage: "election-result", currentTurn: state.currentTurn + 1, electionOutcome: { playerVotes: 0, playerVoteSharePercent: clamp(support, 0, 100), turnoutPercent: 0, partySeatsInDistrict: 0, playerListPosition: null, elected, explanation, partyVotes: {} }, careerHistory: [...state.careerHistory, { turn: state.currentTurn + 1, roleId: state.campaign.officeId, outcome: elected ? "elite-access-won" : "elite-access-lost", explanation }], log: [...state.log, { turn: state.currentTurn + 1, text: "La coalición dirigente resolvió el acceso al poder.", explanation }] });
+  }
   if (state.campaign.officeId === country.partyLeadership.officeId) return resolvePartyLeadershipElection(state, country);
   if (state.campaign.officeId === country.ministerialAppointment.officeId) return resolveMinisterialAppointment(state, country);
   if (state.campaign.officeId === country.politicalSystem.executive.officeId) return resolveExecutiveElection(state, country);
@@ -397,16 +447,43 @@ export function resolveElection(state: CareerGameState, country: CountryDefiniti
   const districtSeats = district.seatsByChamber[chamber.id] ?? 0;
   const averageMood = state.world.socialBlocks.reduce((sum, block) => sum + block.mood, 0) / Math.max(1, state.world.socialBlocks.length);
   const share = clamp(state.campaign.playerPreferencePercent + (state.world.approvalPercent - 50) * 0.03 + averageMood * 0.01, 0, 100);
-  const partyVotes = state.world.parties.map((party, index) => Math.max(1, Math.round((party.supportPercent + (party.id === state.playerPartyId ? state.campaign.playerPreferencePercent * 0.6 : 0) + (index * 17 % 9)) * 1000)));
+  const partyVotes = state.world.parties.map((party) => {
+    const rng = createRng(hashSeed(`${state.seed}:district-election:${state.campaign.districtId}:${party.id}`));
+    const campaign = party.id === state.playerPartyId ? state.campaign.playerPreferencePercent : electoralParameters.executiveRivalCampaignFloor + rng.next() * electoralParameters.executiveRivalCampaignRange;
+    const electorate = (rng.next() - 0.5) * electoralParameters.executiveElectorateVariation;
+    return Math.max(1, Math.round((party.supportPercent + campaign * 0.6 + electorate) * 1000));
+  });
   const seats = allocateDistrictSeats(chamber.seatAllocationMethod, chamber.electoralThresholdPercent, districtSeats, partyVotes);
   const playerPartyIndex = state.world.parties.findIndex((party) => party.id === state.playerPartyId);
-  const partySeats = seats[playerPartyIndex] ?? 0;
-  const rivalSupport = 6 + createRng(hashSeed(`${state.seed}:candidate-list:${state.campaign.districtId}`)).next() * 16;
-  const playerListPosition = share >= rivalSupport ? 1 : 2;
-  const elected = state.campaign.nominated && partySeats >= playerListPosition;
+  let partySeats = seats[playerPartyIndex] ?? 0;
+  const listRng = createRng(hashSeed(`${state.seed}:candidate-list:${state.campaign.districtId}`));
+  const candidateCount = Math.max(2, districtSeats);
+  const personalNetwork = state.player.attributes.network * electoralParameters.networkWeight;
+  const listStrength = (listRng.next() - 0.5) * electoralParameters.listStrengthRange;
+  let playerListPosition: number | null = 1 + Array.from({ length: candidateCount - 1 }, () => electoralParameters.rivalSupportFloor + listRng.next() * electoralParameters.rivalSupportRange + listStrength).filter((support) => support > share + personalNetwork).length;
+  let elected = state.campaign.nominated && partySeats >= playerListPosition;
+  let pluralityExplanation = "";
+  if (chamber.seatAllocationMethod === "plurality") {
+    // A confirmed nomination in a single-member race has no second, hidden
+    // list-position lottery. Multi-member races rank individual candidates,
+    // rather than awarding every seat to the largest party.
+    const slotsPerParty = Math.max(1, Math.ceil(districtSeats / 2));
+    const candidates = state.world.parties.flatMap((party) => Array.from({ length: slotsPerParty }, (_, slot) => {
+      const rng = createRng(hashSeed(`${state.seed}:plurality:${state.campaign.districtId}:${party.id}:${slot}`));
+      const isPlayer = party.id === state.playerPartyId && slot === 0;
+      const campaign = isPlayer ? share : electoralParameters.executiveRivalCampaignFloor + rng.next() * electoralParameters.executiveRivalCampaignRange;
+      return { partyId: party.id, slot, isPlayer, score: party.supportPercent * electoralParameters.pluralityPartyWeight + campaign + (rng.next() - 0.5) * electoralParameters.executiveElectorateVariation + (isPlayer ? personalNetwork : rng.next() * 3) };
+    })).sort((a, b) => b.score - a.score || a.partyId.localeCompare(b.partyId) || a.slot - b.slot);
+    const winners = candidates.slice(0, districtSeats);
+    const position = candidates.findIndex((candidate) => candidate.isPlayer) + 1;
+    elected = state.campaign.nominated && winners.some((candidate) => candidate.isPlayer);
+    partySeats = winners.filter((candidate) => candidate.partyId === state.playerPartyId).length;
+    playerListPosition = null;
+    pluralityExplanation = `Contienda mayoritaria agregada: puesto personal ${position}/${candidates.length}, ${districtSeats} plazas en disputa. Apoyo partidario, campaña, red y variación del electorado determinan cada candidatura; no hay una lista proporcional. ${elected ? "Obtuviste escaño." : "No obtuviste escaño."}`;
+  }
   const totalVotes = partyVotes.reduce((sum, vote) => sum + vote, 0);
   const turnoutPercent = clamp(66 + averageMood * 0.12 + state.world.approvalPercent * 0.1, 40, 90);
-  const outcome = { playerVotes: Math.round(totalVotes * turnoutPercent / 100 * share / 100), playerVoteSharePercent: share, turnoutPercent, partySeatsInDistrict: partySeats, playerListPosition, elected, explanation: elected ? `Obtuviste un escaño en ${chamber.name}: tu partido ganó ${partySeats} en el distrito y tu respaldo personal te ubicó en el puesto ${playerListPosition} de la lista.` : `No obtuviste escaño: nominación ${state.campaign.nominated ? "confirmada" : "no confirmada"}, respaldo personal ${share.toFixed(1)}%, puesto simulado ${playerListPosition}, escaños del partido en el distrito ${partySeats}.`, partyVotes: Object.fromEntries(state.world.parties.map((party, index) => [party.id, partyVotes[index]!])) };
+  const outcome = { playerVotes: Math.round(totalVotes * turnoutPercent / 100 * share / 100), playerVoteSharePercent: share, turnoutPercent, partySeatsInDistrict: partySeats, playerListPosition, elected, explanation: pluralityExplanation || (elected ? `Obtuviste un escaño en ${chamber.name}: tu partido ganó ${partySeats} en el distrito y tu respaldo personal te ubicó en el puesto ${playerListPosition} de la lista.` : `No obtuviste escaño: nominación ${state.campaign.nominated ? "confirmada" : "no confirmada"}, respaldo personal ${share.toFixed(1)}%, puesto simulado ${playerListPosition}, escaños del partido en el distrito ${partySeats}.`), partyVotes: Object.fromEntries(state.world.parties.map((party, index) => [party.id, partyVotes[index]!])) };
   return validateCareer({ ...state, stage: "election-result", currentTurn: state.currentTurn + 1, electionOutcome: outcome, log: [...state.log, { turn: state.currentTurn + 1, text: elected ? "Ganaste la elección." : "La campaña terminó sin escaño.", explanation: outcome.explanation }] });
 }
 
@@ -605,15 +682,26 @@ export function startGovernmentInvestiture(state: CareerGameState, country: Coun
 }
 
 export function negotiateGovernmentSupport(state: CareerGameState, partyId: string, country: CountryDefinition): CareerGameState {
-  if (state.government?.status !== "awaiting-investiture") throw new Error("No hay una investidura pendiente para negociar.");
+  if (!state.government || !["awaiting-investiture", "active"].includes(state.government.status)) throw new Error("La negociación requiere una investidura pendiente o un Gobierno activo.");
+  if (state.government.challenge) throw new Error("Resuelve el procedimiento institucional antes de negociar un acuerdo de gobierno.");
   if (!state.world.parties.some((party) => party.id === partyId)) throw new Error("El partido no existe en esta partida.");
-  if (state.government.supportPartyIds.includes(partyId)) throw new Error("Ese partido ya forma parte del acuerdo de investidura.");
+  if (state.government.supportPartyIds.includes(partyId)) throw new Error("Ese partido ya forma parte del acuerdo de gobierno.");
   const cost = 5;
   if (state.player.resources.politicalCapital < cost) throw new Error("No tienes capital político suficiente para negociar este apoyo.");
-  const supportPartyIds = [...state.government.supportPartyIds, partyId];
+  const party = state.world.parties.find((item) => item.id === partyId)!;
+  const axes = ["economy", "social", "nationalism", "institutionalism"] as const;
+  const distance = axes.reduce((sum, axis) => sum + Math.abs(party.ideology[axis] - state.player.ideology[axis]), 0) / axes.length;
+  const jitter = (createRng(hashSeed(`${state.seed}:coalition:${partyId}`)).next() - 0.5) * 36;
+  const supportScore = electoralParameters.coalitionBaseScore - distance * electoralParameters.coalitionDistanceWeight + state.player.attributes.network * 0.4 + state.player.resources.politicalCapital * 0.25 + jitter;
+  const accepted = supportScore >= 50;
+  const supportPartyIds = accepted ? [...state.government.supportPartyIds, partyId] : state.government.supportPartyIds;
+  const activeAgreement = state.government.status === "active";
+  const portfolioCandidate = activeAgreement && accepted ? state.world.legislators.filter((member) => member.chamberId === state.government!.chamberId && member.partyId === partyId).sort((a, b) => b.loyalty - a.loyalty || a.id.localeCompare(b.id))[0] : undefined;
+  const portfolioSlot = state.government.cabinet.findIndex((minister) => state.world.legislators.find((member) => member.id === minister.legislatorId)?.partyId === state.playerPartyId);
+  const cabinet = portfolioCandidate && portfolioSlot >= 0 ? state.government.cabinet.map((minister, index) => index === portfolioSlot ? { ...minister, legislatorId: portfolioCandidate.id, loyalty: portfolioCandidate.loyalty } : minister) : state.government.cabinet;
   return validateCareer({ ...state, player: { ...state.player, resources: { ...state.player.resources, politicalCapital: state.player.resources.politicalCapital - cost } },
-    government: withStability(state, { ...state.government, supportPartyIds }, country),
-    log: [...state.log, { turn: state.currentTurn, text: "Cerraste un acuerdo de investidura.", explanation: `El bloque de apoyo ahora incluye ${supportPartyIds.length} partidos ficticios; negociación: -${cost} de capital político.` }] });
+    government: withStability(state, { ...state.government, supportPartyIds, cabinet }, country),
+    log: [...state.log, { turn: state.currentTurn, text: accepted ? activeAgreement ? "Cerraste un acuerdo de gobierno." : "Cerraste un acuerdo de investidura." : "El partido rechazó el acuerdo de gobierno.", explanation: `Distancia ideológica ${distance.toFixed(1)}, red personal, capital disponible y disposición por semilla: respaldo ${supportScore.toFixed(1)} / 50. El bloque incluye ${supportPartyIds.length} partidos ficticios; negociación: -${cost} de capital político.${portfolioCandidate && portfolioSlot >= 0 ? ` La coalición concede una cartera a ${portfolioCandidate.name}; cambia su titular y su lealtad.` : activeAgreement && accepted ? " El acuerdo es parlamentario: no queda una cartera de tu partido para ceder." : ""}` }] });
 }
 
 export function appointMinister(state: CareerGameState, officeId: string, legislatorId: string): CareerGameState {
@@ -660,7 +748,7 @@ export function resolveGovernmentInvestiture(state: CareerGameState, country: Co
   }
   const laterRound = government.round === "first";
   const failed: GovernmentState = { ...government, round: laterRound ? "later" : "later", status: laterRound ? "awaiting-investiture" : "ended", lastInvestitureYes: yesVotes };
-  return validateCareer({ ...state, government: failed,
+  return validateCareer({ ...state, government: failed, stage: !laterRound && state.campaign.officeId === rules.officeId ? "term-summary" : state.stage,
     careerHistory: laterRound ? state.careerHistory : [...state.careerHistory, { turn: state.currentTurn, roleId: rules.officeId, outcome: "investiture-failed", explanation: `La candidatura no obtuvo la confianza en las rondas disponibles (${yesVotes} votos en la última).` }],
     log: [...state.log, { turn: state.currentTurn, text: laterRound ? "No alcanzaste la mayoría absoluta; habrá una segunda votación." : "No obtuviste la confianza de la cámara.", explanation: `Resultado: ${yesVotes} votos afirmativos de ${members.length}; regla de esta ronda: ${government.round}.` }] });
 }
@@ -675,10 +763,11 @@ export function submitGovernmentChallenge(state: CareerGameState, country: Count
   const parliamentary = country.politicalSystem.executive.censure;
   const vacancy = country.politicalSystem.executiveAccountability;
   let challenge: GovernmentChallenge;
-  if (parliamentary?.type === "constructive" && sponsors / members.length * 100 >= parliamentary.minimumSponsorsPercent) {
+  if (parliamentary && sponsors / members.length * 100 >= parliamentary.minimumSponsorsPercent) {
     const successor = members.filter((member) => !support.has(member.partyId)).sort((a, b) => b.influence - a.influence)[0];
-    if (!successor) throw new Error("No hay una candidatura ficticia disponible para la moción constructiva.");
-    challenge = { type: "constructive-censure", phase: "defense", causeId: "constructive-censure", sponsorCount: sponsors, successorId: successor.id, daysElapsed: 0, defenseInfluence: 0, admissionPassed: true };
+    if (parliamentary.type === "constructive" && !successor) throw new Error("No hay una candidatura ficticia disponible para la moción constructiva.");
+    const type = parliamentary.type === "constructive" ? "constructive-censure" : "censure";
+    challenge = { type, phase: "defense", causeId: type, sponsorCount: sponsors, successorId: parliamentary.type === "constructive" ? successor!.id : null, daysElapsed: 0, defenseInfluence: 0, admissionPassed: true };
   } else if (vacancy.presidentialVacancy && canSubmitPresidentialVacancy(vacancy, sponsors, members.length)) {
     const causeId = vacancy.presidentialVacancy.causes[0] ?? "constitutional-vacancy";
     challenge = { type: "presidential-vacancy", phase: "admission", causeId, sponsorCount: sponsors, successorId: null, daysElapsed: 0, defenseInfluence: 0, admissionPassed: null };
@@ -783,6 +872,9 @@ export function buildLegacyProfile(state: CareerGameState): LegacyProfile {
   const publicTrust = Math.round(clamp(state.world.approvalPercent * 0.75 + (meanTrust + 100) * 0.125, 0, 100));
   const dimensions = { governance, integrity, influence, continuity, publicTrust };
   const scores: readonly [LegacyProfile["archetype"], number][] = [
+    ["stabilizer", governance * 0.25 + publicTrust * 0.25 + Math.max(0, 100 - state.world.economy.indicators.inflationPercent * 2 - state.world.economy.indicators.unemploymentPercent * 2) * 0.5],
+    ["institution-keeper", state.world.publicAgenda.institutionalTrust * 0.65 + integrity * 0.2 + publicTrust * 0.15 - (state.regime?.history.filter((entry) => entry.action === "restrict-assembly").length ?? 0) * 5],
+    ["kingmaker", influence * 0.35 + continuity * 0.35 + Math.min(100, state.careerHistory.filter((entry) => entry.outcome === "backed-successor").length * 30) * 0.3],
     ["reformer", integrity * 0.4 + governance * 0.25 + publicTrust * 0.35],
     ["builder", governance * 0.55 + continuity * 0.3 + influence * 0.15],
     ["broker", influence * 0.6 + continuity * 0.25 + (100 - integrity) * 0.15],
@@ -793,11 +885,11 @@ export function buildLegacyProfile(state: CareerGameState): LegacyProfile {
   ];
   const archetype = [...scores].sort((left, right) => right[1] - left[1])[0]![0];
   const milestones = state.careerHistory.slice(-3).map((entry) => `${entry.roleId}: ${entry.explanation}`).slice(-3);
-  const summary = `${state.player.name} cierra su carrera como ${archetype}. Gobernanza ${governance}/100, integridad ${integrity}/100, influencia ${influence}/100, continuidad ${continuity}/100 y confianza pública ${publicTrust}/100.`;
+  const summary = `${state.player.name} cierra su carrera como ${legacyCanon.archetypes[archetype].label.toLowerCase()}. ${legacyCanon.archetypes[archetype].text} Gobernanza ${governance}/100, integridad ${integrity}/100, influencia ${influence}/100, continuidad ${continuity}/100 y confianza pública ${publicTrust}/100.`;
   const reevaluationAt5 = Math.round(clamp((governance + integrity + publicTrust) / 3 + continuity * 0.05, 0, 100));
   const reevaluationAt15 = Math.round(clamp((governance * 0.8 + integrity + publicTrust * 0.9) / 2.7 + continuity * 0.12, 0, 100));
   const reevaluationAt30 = Math.round(clamp((governance * 0.65 + integrity * 0.9 + publicTrust * 0.75) / 2.3 + continuity * 0.18 + influence * 0.04, 0, 100));
-  const shareText = `${state.player.name} · ${archetype} · legado ${governance}/100 · ${milestones.at(-1) ?? "Carrera registrada en MANDATO"}`;
+  const shareText = `${state.player.name} · ${legacyCanon.archetypes[archetype].label} · legado ${governance}/100 · ${milestones.at(-1) ?? "Carrera registrada en MANDATO"}`;
   return { dimensions, archetype, summary, milestones, reevaluationAt5, reevaluationAt15, reevaluationAt30, shareText };
 }
 
@@ -858,7 +950,7 @@ function applyAnnualMortality(state: CareerGameState, priorYear: number): Career
 
 function makeProposal(seed: string, turn: number): LegislativeProposal {
   const proposals = [
-    ["ordinary-law", "Ley de empleo regional", "Incentivos temporales para la contratación formal fuera de Lima.", { economy: 38, social: 64, nationalism: 52, institutionalism: 58, rigidity: 32 }],
+    ["ordinary-law", "Ley de empleo regional", "Incentivos temporales para la contratación formal fuera de la capital nacional.", { economy: 38, social: 64, nationalism: 52, institutionalism: 58, rigidity: 32 }],
     ["budget", "Presupuesto de servicios esenciales", "Prioriza salud, educación y mantenimiento de infraestructura.", { economy: 35, social: 70, nationalism: 50, institutionalism: 60, rigidity: 30 }],
     ["reform", "Reforma de transparencia", "Publica contratos y votaciones nominales en formato abierto.", { economy: 50, social: 58, nationalism: 45, institutionalism: 76, rigidity: 28 }],
     ["motion", "Moción de seguridad territorial", "Solicita un plan coordinado con autoridades regionales.", { economy: 55, social: 42, nationalism: 71, institutionalism: 48, rigidity: 62 }],
@@ -886,7 +978,7 @@ function startLegislature(state: CareerGameState, country: CountryDefinition): C
 
 function startExecutiveTerm(state: CareerGameState, country: CountryDefinition): CareerGameState {
   const rules = country.politicalSystem.executive;
-  if (rules.selection !== "direct-election" || !state.electionOutcome?.elected) throw new Error("No existe una victoria ejecutiva directa que pueda formar Gobierno.");
+  if ((!state.regime && rules.selection !== "direct-election") || !state.electionOutcome?.elected) throw new Error("No existe una victoria ejecutiva directa que pueda formar Gobierno.");
   const chamberId = country.politicalSystem.legislature.lowerChamber.id;
   const cabinetMembers = state.world.legislators.filter((member) => member.chamberId === chamberId && member.partyId === state.playerPartyId)
     .sort((left, right) => right.influence - left.influence).slice(0, 5);
@@ -924,13 +1016,19 @@ export function advanceCareer(state: CareerGameState, country?: CountryDefinitio
         careerHistory: [...state.careerHistory, { turn: state.currentTurn + 1, roleId: country.ministerialAppointment.officeId, outcome: "ministerial-term-started", explanation: `Mandato jugable de ${country.ministerialAppointment.termYears} años en ${portfolio?.title ?? "la cartera seleccionada"}.` }],
         log: [...state.log, { turn: state.currentTurn + 1, text: `Asumiste el Ministerio de ${portfolio?.title ?? "la cartera"}.`, explanation: `${authority?.name ?? "Un ejecutivo NPC generado"} aprobó el nombramiento.` }] });
     }
-    if (state.campaign.officeId === country.politicalSystem.executive.officeId) return startExecutiveTerm(state, country);
+    if (state.campaign.officeId === country.politicalSystem.executive.officeId) {
+      if (!state.regime && country.politicalSystem.executive.selection === "legislative-investiture") {
+        const districtId = country.electoralDistricts.find((district) => (district.seatsByChamber[state.campaign.chamberId] ?? 0) > 0)!.id;
+        return startGovernmentInvestiture(startLegislature({ ...state, campaign: { ...state.campaign, districtId } }, country), country);
+      }
+      return startExecutiveTerm(state, country);
+    }
     return validateCareer(startLegislature(addCareerEvent(state, "committee-chair"), country));
   }
   if (state.stage === "executive") {
     if (!country || state.government?.status !== "active") throw new Error("Falta el Gobierno activo o la ficha institucional para avanzar el turno.");
     if (state.government.challenge) throw new Error("Resuelve el procedimiento institucional antes de avanzar el trimestre.");
-    const geopolitics = advanceGeopolitics(state.geopolitics, state.seed);
+    const geopolitics = advanceGeopolitics(state.geopolitics, state.seed, 1, state.world.economy.indicators);
     const world = applyGeopoliticalEffects(advanceQuarter(country, state.world).state, geopolitics);
     if (geopolitics.coups > state.geopolitics.coups) {
       return applyAnnualMortality(registerMilitaryCoup({ ...state, world }, country, geopolitics), state.world.year);
@@ -946,11 +1044,11 @@ export function advanceCareer(state: CareerGameState, country?: CountryDefinitio
     const budgetStep = budgetDue ? "budget-shortfall" : undefined;
     const arcStep = budgetStep ? undefined : nextArcStep(next);
     const quarterEvent = addCareerEvent(next, budgetStep ?? arcStep?.eventId, arcStep?.payloadId ?? null);
-    return applyAnnualMortality(validateCareer(maybeOpenGovernmentChallenge(validateCareer(quarterEvent), country)), state.world.year);
+    return applyAnnualMortality(validateCareer(state.regime ? advanceRegime(quarterEvent) : maybeOpenGovernmentChallenge(validateCareer(quarterEvent), country)), state.world.year);
   }
   if (state.stage === "party-leadership") {
     if (!country || !state.partyLeadership) throw new Error("Falta el mandato de liderazgo o la ficha nacional.");
-    const geopolitics = advanceGeopolitics(state.geopolitics, state.seed);
+    const geopolitics = advanceGeopolitics(state.geopolitics, state.seed, 1, state.world.economy.indicators);
     const world = applyGeopoliticalEffects(advanceQuarter(country, state.world).state, geopolitics);
     const termTurn = Math.min(state.partyLeadership.totalTermTurns, state.partyLeadership.termTurn + 1);
     const termFinished = termTurn >= state.partyLeadership.totalTermTurns;
@@ -964,7 +1062,7 @@ export function advanceCareer(state: CareerGameState, country?: CountryDefinitio
   }
   if (state.stage === "minister") {
     if (!country || !state.ministry) throw new Error("Falta el nombramiento ministerial o la ficha nacional.");
-    const geopolitics = advanceGeopolitics(state.geopolitics, state.seed);
+    const geopolitics = advanceGeopolitics(state.geopolitics, state.seed, 1, state.world.economy.indicators);
     const world = applyGeopoliticalEffects(advanceQuarter(country, state.world).state, geopolitics);
     const termTurn = Math.min(state.ministry.totalTermTurns, state.ministry.termTurn + 1);
     const supportPercent = clamp(state.ministry.supportPercent + (world.approvalPercent - 50) * 0.025, 0, 100);
@@ -983,7 +1081,7 @@ export function advanceCareer(state: CareerGameState, country?: CountryDefinitio
   if (state.government?.status === "active" && state.government.challenge) throw new Error("Resuelve el procedimiento institucional antes de avanzar el trimestre.");
   if (state.legislature.turn >= state.legislature.totalTurns) return validateCareer({ ...state, stage: "term-summary" });
   const turn = state.legislature.turn + 1;
-  const geopolitics = country ? advanceGeopolitics(state.geopolitics, state.seed) : state.geopolitics;
+  const geopolitics = country ? advanceGeopolitics(state.geopolitics, state.seed, 1, state.world.economy.indicators) : state.geopolitics;
   const world = country ? applyGeopoliticalEffects(advanceQuarter(country, state.world).state, geopolitics) : state.world;
   const termFinished = Boolean(state.government?.status === "active" && state.government.termTurn + 1 >= state.government.totalTermTurns);
   const government = state.government?.status === "active"
@@ -1140,12 +1238,16 @@ export function nominate(state: CareerGameState): CareerGameState {
 export function ratifyInternationalTreaty(state: CareerGameState, country: CountryDefinition, treatyId: string): CareerGameState {
   const legislature = state.legislature;
   const treaty = state.geopolitics.treaties.find((item) => item.id === treatyId);
-  if (state.stage !== "legislature" || !legislature || legislature.actionsRemaining < 1) throw new Error("La ratificación requiere una sesión legislativa con acciones disponibles.");
+  const executiveSession = state.stage === "executive" && state.government?.status === "active";
+  if (!executiveSession && (state.stage !== "legislature" || !legislature || legislature.actionsRemaining < 1)) throw new Error("La ratificación requiere una sesión legislativa o encabezar un Gobierno activo.");
+  if (executiveSession && state.player.resources.politicalCapital < 3) throw new Error("Convocar la ratificación desde el Gobierno requiere 3 de capital político.");
   if (!treaty || treaty.status !== "proposed") throw new Error("El acuerdo ya no está pendiente de ratificación.");
-  const chamber = legislature.chamberId;
+  const chamber = executiveSession ? state.government!.chamberId : legislature!.chamberId;
   const members = state.world.legislators.filter((member) => member.chamberId === chamber);
   if (!members.length) throw new Error("La cámara no tiene representantes generados para votar el tratado.");
-  const relation = state.geopolitics.relations.find((item) => item.a === treaty.partnerId || item.b === treaty.partnerId);
+  if (treaty.kind === "aid" && !organizationMember(state.geopolitics, treaty.partnerId, state.geopolitics.playerCountryId)) throw new Error("El país no pertenece al organismo financiero del snapshot.");
+  const ownBilateral = (item: CareerGameState["geopolitics"]["relations"][number]) => item.a === treaty.partnerId && item.b === state.geopolitics.playerCountryId || item.b === treaty.partnerId && item.a === state.geopolitics.playerCountryId;
+  const relation = state.geopolitics.relations.find(ownBilateral);
   const partnerTrust = relation?.trust ?? 50;
   const ballots = members.map((member) => {
     const party = state.world.parties.find((item) => item.id === member.partyId);
@@ -1175,39 +1277,13 @@ export function ratifyInternationalTreaty(state: CareerGameState, country: Count
   const passed = yes / Math.max(1, decided) * 100 > 50;
   const explanation = `Votación nominal ficticia en ${country.name}: ${yes} a favor, ${no} en contra y ${abstain} abstenciones. Se requiere más de la mitad de los votos emitidos; ${passed ? "el acuerdo queda ratificado" : "el acuerdo no alcanza la mayoría"}.`;
   const financeTerms = treaty.kind === "aid" && passed
-    ? treaty.partnerId === "imf"
-      ? " Programa de estabilización modelado: deuda pública +8 puntos del PIB y reservas +1.2 meses; condición simulada de consolidación fiscal reduce el déficit 1.2 puntos y el crecimiento inicial 0.4 puntos. No representa un acuerdo ni una tasa real del FMI."
-      : " Préstamo de inversión modelado: deuda pública +3 puntos del PIB, inversión +1.5 puntos y reservas +0.6 meses; la condición simulada destina recursos a proyectos de infraestructura y servicios. No representa una operación real del Banco Mundial."
+    ? " Se aprueba una línea ficticia en cuatro tramos. Primer desembolso en el trimestre siguiente; las siguientes revisiones verifican déficit (FMI) o inversión (Banco Mundial). Incumplir suspende el tramo y hay amortización presupuestaria posterior. No son tasas, plazos ni condiciones oficiales."
     : "";
   const decisionExplanation = `${explanation}${financeTerms}`;
-  const nextTreaties = state.geopolitics.treaties.map((item) => item.id === treaty.id ? { ...item, status: passed ? "ratified" as const : "rejected" as const, explanation: `${item.explanation} ${decisionExplanation}` } : item);
-  const nextRelations = passed ? state.geopolitics.relations.map((item) => item.a === treaty.partnerId || item.b === treaty.partnerId ? { ...item, trust: clamp(item.trust + 3, 0, 100), annualFlowUsd: item.annualFlowUsd * (treaty.kind === "trade" ? 1.03 : 1.01) } : item) : state.geopolitics.relations;
+  const nextTreaties = state.geopolitics.treaties.map((item) => item.id === treaty.id ? { ...item, status: passed ? "ratified" as const : "rejected" as const, ...(passed && treaty.kind === "aid" && ["imf", "world-bank"].includes(treaty.partnerId) ? { financing: createFinancingProgram(treaty.partnerId as "imf" | "world-bank", state.geopolitics.quarterIndex, state.world.economy.indicators) } : {}), explanation: `${item.explanation} ${decisionExplanation}` } : item);
+  const nextRelations = passed ? state.geopolitics.relations.map((item) => ownBilateral(item) ? { ...item, trust: clamp(item.trust + 3, 0, 100), annualFlowUsd: item.annualFlowUsd * (treaty.kind === "trade" ? 1.03 : 1.01) } : item) : state.geopolitics.relations;
   const votes = [...state.geopolitics.votes, { id: `treaty-vote-${treaty.id}`, quarterIndex: state.geopolitics.quarterIndex, organizationId: "national-legislature", title: `Ratificación ${treaty.id}`, yes, no, abstain, passed, explanation: decisionExplanation }];
-  let world = state.world;
-  if (passed && treaty.kind === "aid") {
-    const imf = treaty.partnerId === "imf";
-    const indicators = state.world.economy.indicators;
-    const updatedIndicators = imf
-      ? {
-        ...indicators,
-        publicDebtPercentGdp: clamp(indicators.publicDebtPercentGdp + 8, 0, 1000),
-        fiscalDeficitPercentGdp: clamp(indicators.fiscalDeficitPercentGdp - 1.2, -100, 100),
-        reservesMonthsImports: clamp(indicators.reservesMonthsImports + 1.2, 0, 120),
-        countryRiskBasisPoints: clamp(indicators.countryRiskBasisPoints - 100, 0, 50000),
-        gdpGrowthPercent: clamp(indicators.gdpGrowthPercent - 0.4, -30, 100),
-      }
-      : {
-        ...indicators,
-        publicDebtPercentGdp: clamp(indicators.publicDebtPercentGdp + 3, 0, 1000),
-        fiscalDeficitPercentGdp: clamp(indicators.fiscalDeficitPercentGdp + 0.2, -100, 100),
-        reservesMonthsImports: clamp(indicators.reservesMonthsImports + 0.6, 0, 120),
-        countryRiskBasisPoints: clamp(indicators.countryRiskBasisPoints - 40, 0, 50000),
-        domesticInvestmentPercentGdp: clamp(indicators.domesticInvestmentPercentGdp + 1.5, 0, 100),
-        gdpGrowthPercent: clamp(indicators.gdpGrowthPercent + 0.3, -30, 100),
-      };
-    const causes = [`${imf ? "Programa IMF" : "Préstamo del Banco Mundial"}: desembolso y condiciones de balance de juego; ${decisionExplanation}`];
-    world = { ...state.world, economy: { ...state.world.economy, indicators: updatedIndicators, causesByIndicator: { ...state.world.economy.causesByIndicator, publicDebtPercentGdp: [...causes, ...(state.world.economy.causesByIndicator.publicDebtPercentGdp ?? [])].slice(0, 6), gdpGrowthPercent: [...causes, ...(state.world.economy.causesByIndicator.gdpGrowthPercent ?? [])].slice(0, 6) } }, approvalPercent: clamp(state.world.approvalPercent + (imf ? -1 : 0.5), 0, 100) };
-  }
+  const world = state.world;
   const next: CareerGameState = {
     ...state,
     world,
@@ -1219,7 +1295,8 @@ export function ratifyInternationalTreaty(state: CareerGameState, country: Count
       votes,
       player: passed && treaty.kind === "migration" ? { ...state.geopolitics.player, migrationAgreement: true } : state.geopolitics.player,
     },
-    legislature: { ...legislature, actionsRemaining: legislature.actionsRemaining - 1 },
+    legislature: !executiveSession && legislature ? { ...legislature, actionsRemaining: legislature.actionsRemaining - 1 } : legislature,
+    player: executiveSession ? { ...state.player, resources: { ...state.player.resources, politicalCapital: state.player.resources.politicalCapital - 3 } } : state.player,
     log: [...state.log, { turn: state.currentTurn + 1, text: `${treaty.kind === "aid" ? "Programa financiero" : "Tratado"} ${passed ? "ratificado" : "rechazado"}.`, explanation: decisionExplanation }],
   };
   return validateCareer(next);

@@ -1,0 +1,296 @@
+{
+  "runsPerStrategy": 25,
+  "seeds": "mass-<strategy>-<run>",
+  "results": [
+    {
+      "country": "Alemania · germany-institutions-2025-economic-snapshot-2024-v2",
+      "strategies": {
+        "doorstep": {
+          "runs": 25,
+          "wins": 16,
+          "winRatePercent": 64,
+          "averagePlayerVoteSharePercent": 19.698268523368988,
+          "averagePartySeatsInDistrict": 0.92,
+          "legislaturesCompleted": 16,
+          "passedProposalPercent": 94.140625,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 66.49119543650794
+        },
+        "fundraising": {
+          "runs": 25,
+          "wins": 15,
+          "winRatePercent": 60,
+          "averagePlayerVoteSharePercent": 17.82780944306776,
+          "averagePartySeatsInDistrict": 0.92,
+          "legislaturesCompleted": 15,
+          "passedProposalPercent": 88.33333333333333,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 67.31878306878308
+        }
+      }
+    },
+    {
+      "country": "Argentina · argentina-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance",
+      "strategies": {
+        "doorstep": {
+          "runs": 25,
+          "wins": 4,
+          "winRatePercent": 16,
+          "averagePlayerVoteSharePercent": 19.673268523368986,
+          "averagePartySeatsInDistrict": 56.76,
+          "legislaturesCompleted": 4,
+          "passedProposalPercent": 100,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 66.17825875486382
+        },
+        "fundraising": {
+          "runs": 25,
+          "wins": 2,
+          "winRatePercent": 8,
+          "averagePlayerVoteSharePercent": 17.80280944306776,
+          "averagePartySeatsInDistrict": 52.08,
+          "legislaturesCompleted": 2,
+          "passedProposalPercent": 100,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 73.34630350194551
+        }
+      }
+    },
+    {
+      "country": "Brasil · brazil-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance",
+      "strategies": {
+        "doorstep": {
+          "runs": 25,
+          "wins": 8,
+          "winRatePercent": 32,
+          "averagePlayerVoteSharePercent": 19.673268523368986,
+          "averagePartySeatsInDistrict": 126.44,
+          "legislaturesCompleted": 8,
+          "passedProposalPercent": 93.75,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 62.74671052631579
+        },
+        "fundraising": {
+          "runs": 25,
+          "wins": 4,
+          "winRatePercent": 16,
+          "averagePlayerVoteSharePercent": 17.80280944306776,
+          "averagePartySeatsInDistrict": 117.52,
+          "legislaturesCompleted": 4,
+          "passedProposalPercent": 100,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 66.25548245614034
+        }
+      }
+    },
+    {
+      "country": "España · spain-institutions-2023-snapshot-v4",
+      "strategies": {
+        "doorstep": {
+          "runs": 25,
+          "wins": 8,
+          "winRatePercent": 32,
+          "averagePlayerVoteSharePercent": 19.698268523368988,
+          "averagePartySeatsInDistrict": 0.72,
+          "legislaturesCompleted": 8,
+          "passedProposalPercent": 89.84375,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 61.814732142857146
+        },
+        "fundraising": {
+          "runs": 25,
+          "wins": 6,
+          "winRatePercent": 24,
+          "averagePlayerVoteSharePercent": 17.82780944306776,
+          "averagePartySeatsInDistrict": 0.72,
+          "legislaturesCompleted": 6,
+          "passedProposalPercent": 100,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 67.53571428571429
+        }
+      }
+    },
+    {
+      "country": "Estados Unidos · united-states-institutions-2026-economic-snapshot-2024-v1",
+      "strategies": {
+        "doorstep": {
+          "runs": 25,
+          "wins": 8,
+          "winRatePercent": 32,
+          "averagePlayerVoteSharePercent": 19.719935190035653,
+          "averagePartySeatsInDistrict": 0.32,
+          "legislaturesCompleted": 8,
+          "passedProposalPercent": 93.75,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 64.77370689655172
+        },
+        "fundraising": {
+          "runs": 25,
+          "wins": 10,
+          "winRatePercent": 40,
+          "averagePlayerVoteSharePercent": 17.849476109734425,
+          "averagePartySeatsInDistrict": 0.4,
+          "legislaturesCompleted": 10,
+          "passedProposalPercent": 75,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 58.537356321839084
+        }
+      }
+    },
+    {
+      "country": "Francia · france-institutions-2024-snapshot-v2",
+      "strategies": {
+        "doorstep": {
+          "runs": 25,
+          "wins": 18,
+          "winRatePercent": 72,
+          "averagePlayerVoteSharePercent": 19.698268523368988,
+          "averagePartySeatsInDistrict": 0.72,
+          "legislaturesCompleted": 18,
+          "passedProposalPercent": 95.27777777777777,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 64.30435201232429
+        },
+        "fundraising": {
+          "runs": 25,
+          "wins": 14,
+          "winRatePercent": 56.00000000000001,
+          "averagePlayerVoteSharePercent": 17.82780944306776,
+          "averagePartySeatsInDistrict": 0.56,
+          "legislaturesCompleted": 14,
+          "passedProposalPercent": 92.85714285714286,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 64.02946273830156
+        }
+      }
+    },
+    {
+      "country": "México · mexico-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance",
+      "strategies": {
+        "doorstep": {
+          "runs": 25,
+          "wins": 6,
+          "winRatePercent": 24,
+          "averagePlayerVoteSharePercent": 19.673268523368986,
+          "averagePartySeatsInDistrict": 0.36,
+          "legislaturesCompleted": 6,
+          "passedProposalPercent": 83.33333333333334,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 59.425
+        },
+        "fundraising": {
+          "runs": 25,
+          "wins": 10,
+          "winRatePercent": 40,
+          "averagePlayerVoteSharePercent": 17.80280944306776,
+          "averagePartySeatsInDistrict": 0.6,
+          "legislaturesCompleted": 10,
+          "passedProposalPercent": 82.5,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 60.41833333333333
+        }
+      }
+    },
+    {
+      "country": "Perú · peru-2026-10-05-v7",
+      "strategies": {
+        "doorstep": {
+          "runs": 25,
+          "wins": 19,
+          "winRatePercent": 76,
+          "averagePlayerVoteSharePercent": 19.71660185670232,
+          "averagePartySeatsInDistrict": 1,
+          "legislaturesCompleted": 19,
+          "passedProposalPercent": 36.84210526315789,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 47.51417004048583
+        },
+        "fundraising": {
+          "runs": 25,
+          "wins": 16,
+          "winRatePercent": 64,
+          "averagePlayerVoteSharePercent": 17.846142776401088,
+          "averagePartySeatsInDistrict": 1,
+          "legislaturesCompleted": 16,
+          "passedProposalPercent": 37.1875,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 47.31730769230769
+        }
+      }
+    },
+    {
+      "country": "Reino Unido · united-kingdom-institutions-2026-economic-snapshot-2025-v1",
+      "strategies": {
+        "doorstep": {
+          "runs": 25,
+          "wins": 12,
+          "winRatePercent": 48,
+          "averagePlayerVoteSharePercent": 19.719935190035653,
+          "averagePartySeatsInDistrict": 0.48,
+          "legislaturesCompleted": 12,
+          "passedProposalPercent": 97.91666666666666,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 66.68782051282052
+        },
+        "fundraising": {
+          "runs": 25,
+          "wins": 8,
+          "winRatePercent": 32,
+          "averagePlayerVoteSharePercent": 17.849476109734425,
+          "averagePartySeatsInDistrict": 0.32,
+          "legislaturesCompleted": 8,
+          "passedProposalPercent": 90.625,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 66.09615384615385
+        }
+      }
+    },
+    {
+      "country": "Venezuela · venezuela-constitutional-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance",
+      "strategies": {
+        "doorstep": {
+          "runs": 25,
+          "wins": 9,
+          "winRatePercent": 36,
+          "averagePlayerVoteSharePercent": 19.673268523368986,
+          "averagePartySeatsInDistrict": 63.76,
+          "legislaturesCompleted": 9,
+          "passedProposalPercent": 80.55555555555556,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 61.25730994152047
+        },
+        "fundraising": {
+          "runs": 25,
+          "wins": 3,
+          "winRatePercent": 12,
+          "averagePlayerVoteSharePercent": 17.80280944306776,
+          "averagePartySeatsInDistrict": 60,
+          "legislaturesCompleted": 3,
+          "passedProposalPercent": 100,
+          "singlePartyMajorityLegislatures": 0,
+          "singlePartyMajorityRatePercent": 0,
+          "affirmativeBallotPercent": 63.970760233918135
+        }
+      }
+    }
+  ]
+}

@@ -6,19 +6,19 @@
       "file": "germany.json"
     },
     {
+      "id": "argentina",
+      "name": "Argentina",
+      "file": "argentina.json"
+    },
+    {
+      "id": "brazil",
+      "name": "Brasil",
+      "file": "brazil.json"
+    },
+    {
       "id": "spain",
       "name": "España",
       "file": "spain.json"
-    },
-    {
-      "id": "france",
-      "name": "Francia",
-      "file": "france.json"
-    },
-    {
-      "id": "peru",
-      "name": "Perú",
-      "file": "peru.json"
     },
     {
       "id": "united-states",
@@ -26,9 +26,29 @@
       "file": "united-states.json"
     },
     {
+      "id": "france",
+      "name": "Francia",
+      "file": "france.json"
+    },
+    {
+      "id": "mexico",
+      "name": "México",
+      "file": "mexico.json"
+    },
+    {
+      "id": "peru",
+      "name": "Perú",
+      "file": "peru.json"
+    },
+    {
       "id": "united-kingdom",
       "name": "Reino Unido",
       "file": "united-kingdom.json"
+    },
+    {
+      "id": "venezuela",
+      "name": "Venezuela",
+      "file": "venezuela.json"
     }
   ]
 }

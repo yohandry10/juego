@@ -1,6 +1,6 @@
 import parametersJson from "../data/economic-parameters.json" with { type: "json" };
 import { economicModelParametersSchema, economicScenariosSchema } from "../data/schemas.js";
-import type { EconomicCrisisType, EconomicModelParameters, EconomicPolicyId, EconomicScenarioData, EconomicState, GameState } from "./types.js";
+import type { CountryDefinition, EconomicCrisisType, EconomicModelParameters, EconomicPolicyId, EconomicScenarioData, EconomicState, GameState } from "./types.js";
 import scenariosJson from "../data/economic-scenarios.json" with { type: "json" };
 
 export const economicModelParameters = economicModelParametersSchema.parse(parametersJson);
@@ -12,18 +12,25 @@ export function economicScenarioFor(countryId: string): EconomicScenarioData {
   return scenario;
 }
 
-export function createEconomicState(countryId: string): EconomicState {
+export function createEconomicState(countryId: string, country?: CountryDefinition): EconomicState {
   const scenario = economicScenarioFor(countryId);
+  const derived = country && !economicScenarios[countryId] ? {
+    ...scenario.indicators,
+    gdpPerCapitaUsd: country.economy.gdpUsd / country.population,
+    gdpGrowthPercent: country.economy.annualGrowthPercent,
+    inflationPercent: country.economy.annualInflationPercent,
+    unemploymentPercent: country.economy.unemploymentPercent,
+  } : scenario.indicators;
   return {
     snapshotYear: scenario.snapshotYear,
-    naturalUnemploymentPercent: scenario.indicators.unemploymentPercent,
-    indicators: { ...scenario.indicators },
+    naturalUnemploymentPercent: derived.unemploymentPercent,
+    indicators: { ...derived },
     sectors: scenario.sectors.map((sector) => ({ ...sector, baselineAnnualGrowthPercent: sector.annualGrowthPercent, outputIndex: 100 })),
     publicSpendingPercentGdp: scenario.fiscalSpendingPercentGdp,
     taxBurdenPercentGdp: scenario.taxBurdenPercentGdp,
     tradeOpennessPercent: scenario.tradeOpennessPercent,
     publicOwnershipPercent: scenario.publicOwnershipPercent,
-    pendingEffects: [], crises: [], policyHistory: [], causesByIndicator: {},
+    pendingEffects: [], crises: [], policyHistory: [], causesByIndicator: country && !economicScenarios[countryId] ? { gdpGrowthPercent: ["Valor de la ficha nacional fechada. Los indicadores auxiliares y sectores usan una plantilla de balance experimental, no observaciones de este país."], inflationPercent: ["Inflación de la ficha nacional, limitada al rango común del motor; no equivale a una medición nueva."], unemploymentPercent: ["Desempleo inicial de la ficha nacional y año de sus fuentes."] } : {},
   };
 }
 

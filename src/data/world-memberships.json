@@ -1,0 +1,2775 @@
+{
+  "snapshotDate": "2026-10-06",
+  "rosters": {
+    "wto": {
+      "sourceUrl": "https://www.wto.org/english/thewto_e/whatis_e/tif_e/org6_e.htm",
+      "accessedOn": "2026-10-06",
+      "officialMemberCount": 166,
+      "representedActorCount": 164,
+      "unrepresentedMembers": [
+        {
+          "code": "EU",
+          "name": "European Union",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "TWN",
+          "name": "Chinese Taipei",
+          "joinedOn": "2002-01-01"
+        }
+      ],
+      "members": [
+        {
+          "code": "AFG",
+          "name": "Afghanistan",
+          "joinedOn": "2016-07-29"
+        },
+        {
+          "code": "AGO",
+          "name": "Angola",
+          "joinedOn": "1996-11-23"
+        },
+        {
+          "code": "ALB",
+          "name": "Albania",
+          "joinedOn": "2000-09-08"
+        },
+        {
+          "code": "ARE",
+          "name": "United Arab Emirates",
+          "joinedOn": "1996-04-10"
+        },
+        {
+          "code": "ARG",
+          "name": "Argentina",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "ARM",
+          "name": "Armenia",
+          "joinedOn": "2003-02-05"
+        },
+        {
+          "code": "ATG",
+          "name": "Antigua and Barbuda",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "AUS",
+          "name": "Australia",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "AUT",
+          "name": "Austria",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "BDI",
+          "name": "Burundi",
+          "joinedOn": "1995-07-23"
+        },
+        {
+          "code": "BEL",
+          "name": "Belgium",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "BEN",
+          "name": "Benin",
+          "joinedOn": "1996-02-22"
+        },
+        {
+          "code": "BFA",
+          "name": "Burkina Faso",
+          "joinedOn": "1995-06-03"
+        },
+        {
+          "code": "BGD",
+          "name": "Bangladesh",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "BGR",
+          "name": "Bulgaria",
+          "joinedOn": "1996-12-01"
+        },
+        {
+          "code": "BHR",
+          "name": "Bahrain, Kingdom of",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "BLZ",
+          "name": "Belize",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "BOL",
+          "name": "Bolivia, Plurinational State of",
+          "joinedOn": "1995-09-12"
+        },
+        {
+          "code": "BRA",
+          "name": "Brazil",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "BRB",
+          "name": "Barbados",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "BRN",
+          "name": "Brunei Darussalam",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "BWA",
+          "name": "Botswana",
+          "joinedOn": "1995-05-31"
+        },
+        {
+          "code": "CAF",
+          "name": "Central African Republic",
+          "joinedOn": "1995-05-31"
+        },
+        {
+          "code": "CAN",
+          "name": "Canada",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "CHE",
+          "name": "Switzerland",
+          "joinedOn": "1995-07-01"
+        },
+        {
+          "code": "CHL",
+          "name": "Chile",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "CHN",
+          "name": "China",
+          "joinedOn": "2001-12-11"
+        },
+        {
+          "code": "CIV",
+          "name": "Côte d'Ivoire",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "CMR",
+          "name": "Cameroon",
+          "joinedOn": "1995-12-13"
+        },
+        {
+          "code": "COD",
+          "name": "Democratic Republic of the Congo",
+          "joinedOn": "1997-01-01"
+        },
+        {
+          "code": "COG",
+          "name": "Congo",
+          "joinedOn": "1997-03-27"
+        },
+        {
+          "code": "COL",
+          "name": "Colombia",
+          "joinedOn": "1995-04-30"
+        },
+        {
+          "code": "COM",
+          "name": "Comoros",
+          "joinedOn": "2024-08-21"
+        },
+        {
+          "code": "CPV",
+          "name": "Cabo Verde",
+          "joinedOn": "2008-07-23"
+        },
+        {
+          "code": "CRI",
+          "name": "Costa Rica",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "CUB",
+          "name": "Cuba",
+          "joinedOn": "1995-04-20"
+        },
+        {
+          "code": "CYP",
+          "name": "Cyprus",
+          "joinedOn": "1995-07-30"
+        },
+        {
+          "code": "CZE",
+          "name": "Czech Republic",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "DEU",
+          "name": "Germany",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "DJI",
+          "name": "Djibouti",
+          "joinedOn": "1995-05-31"
+        },
+        {
+          "code": "DMA",
+          "name": "Dominica",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "DNK",
+          "name": "Denmark",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "DOM",
+          "name": "Dominican Republic",
+          "joinedOn": "1995-03-09"
+        },
+        {
+          "code": "ECU",
+          "name": "Ecuador",
+          "joinedOn": "1996-01-21"
+        },
+        {
+          "code": "EGY",
+          "name": "Egypt",
+          "joinedOn": "1995-06-30"
+        },
+        {
+          "code": "ESP",
+          "name": "Spain",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "EST",
+          "name": "Estonia",
+          "joinedOn": "1999-11-13"
+        },
+        {
+          "code": "EU",
+          "name": "European Union",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "FIN",
+          "name": "Finland",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "FJI",
+          "name": "Fiji",
+          "joinedOn": "1996-01-14"
+        },
+        {
+          "code": "FRA",
+          "name": "France",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "GAB",
+          "name": "Gabon",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "GBR",
+          "name": "United Kingdom",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "GEO",
+          "name": "Georgia",
+          "joinedOn": "2000-06-14"
+        },
+        {
+          "code": "GHA",
+          "name": "Ghana",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "GIN",
+          "name": "Guinea",
+          "joinedOn": "1995-10-25"
+        },
+        {
+          "code": "GMB",
+          "name": "Gambia",
+          "joinedOn": "1996-10-23"
+        },
+        {
+          "code": "GNB",
+          "name": "Guinea-Bissau",
+          "joinedOn": "1995-05-31"
+        },
+        {
+          "code": "GRC",
+          "name": "Greece",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "GRD",
+          "name": "Grenada",
+          "joinedOn": "1996-02-22"
+        },
+        {
+          "code": "GTM",
+          "name": "Guatemala",
+          "joinedOn": "1995-07-21"
+        },
+        {
+          "code": "GUY",
+          "name": "Guyana",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "HKG",
+          "name": "Hong Kong, China",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "HND",
+          "name": "Honduras",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "HRV",
+          "name": "Croatia",
+          "joinedOn": "2000-11-30"
+        },
+        {
+          "code": "HTI",
+          "name": "Haiti",
+          "joinedOn": "1996-01-30"
+        },
+        {
+          "code": "HUN",
+          "name": "Hungary",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "IDN",
+          "name": "Indonesia",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "IND",
+          "name": "India",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "IRL",
+          "name": "Ireland",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "ISL",
+          "name": "Iceland",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "ISR",
+          "name": "Israel",
+          "joinedOn": "1995-04-21"
+        },
+        {
+          "code": "ITA",
+          "name": "Italy",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "JAM",
+          "name": "Jamaica",
+          "joinedOn": "1995-03-09"
+        },
+        {
+          "code": "JOR",
+          "name": "Jordan",
+          "joinedOn": "2000-04-11"
+        },
+        {
+          "code": "JPN",
+          "name": "Japan",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "KAZ",
+          "name": "Kazakhstan",
+          "joinedOn": "2015-11-30"
+        },
+        {
+          "code": "KEN",
+          "name": "Kenya",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "KGZ",
+          "name": "Kyrgyz Republic",
+          "joinedOn": "1998-12-20"
+        },
+        {
+          "code": "KHM",
+          "name": "Cambodia",
+          "joinedOn": "2004-10-13"
+        },
+        {
+          "code": "KNA",
+          "name": "Saint Kitts and Nevis",
+          "joinedOn": "1996-02-21"
+        },
+        {
+          "code": "KOR",
+          "name": "Korea, Republic of",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "KWT",
+          "name": "Kuwait, the State of",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "LAO",
+          "name": "Lao People&rsquo;s Democratic Republic",
+          "joinedOn": "2013-02-02"
+        },
+        {
+          "code": "LBR",
+          "name": "Liberia",
+          "joinedOn": "2016-07-14"
+        },
+        {
+          "code": "LCA",
+          "name": "Saint Lucia",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "LIE",
+          "name": "Liechtenstein",
+          "joinedOn": "1995-09-01"
+        },
+        {
+          "code": "LKA",
+          "name": "Sri Lanka",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "LSO",
+          "name": "Lesotho",
+          "joinedOn": "1995-05-31"
+        },
+        {
+          "code": "LTU",
+          "name": "Lithuania",
+          "joinedOn": "2001-05-31"
+        },
+        {
+          "code": "LUX",
+          "name": "Luxembourg",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "LVA",
+          "name": "Latvia",
+          "joinedOn": "1999-02-10"
+        },
+        {
+          "code": "MAC",
+          "name": "Macao, China",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "MAR",
+          "name": "Morocco",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "MDA",
+          "name": "Moldova, Republic of",
+          "joinedOn": "2001-07-26"
+        },
+        {
+          "code": "MDG",
+          "name": "Madagascar",
+          "joinedOn": "1995-11-17"
+        },
+        {
+          "code": "MDV",
+          "name": "Maldives",
+          "joinedOn": "1995-05-31"
+        },
+        {
+          "code": "MEX",
+          "name": "Mexico",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "MKD",
+          "name": "North Macedonia",
+          "joinedOn": "2003-04-04"
+        },
+        {
+          "code": "MLI",
+          "name": "Mali",
+          "joinedOn": "1995-05-31"
+        },
+        {
+          "code": "MLT",
+          "name": "Malta",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "MMR",
+          "name": "Myanmar",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "MNE",
+          "name": "Montenegro",
+          "joinedOn": "2012-04-29"
+        },
+        {
+          "code": "MNG",
+          "name": "Mongolia",
+          "joinedOn": "1997-01-29"
+        },
+        {
+          "code": "MOZ",
+          "name": "Mozambique",
+          "joinedOn": "1995-08-26"
+        },
+        {
+          "code": "MRT",
+          "name": "Mauritania",
+          "joinedOn": "1995-05-31"
+        },
+        {
+          "code": "MUS",
+          "name": "Mauritius",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "MWI",
+          "name": "Malawi",
+          "joinedOn": "1995-05-31"
+        },
+        {
+          "code": "MYS",
+          "name": "Malaysia",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "NAM",
+          "name": "Namibia",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "NER",
+          "name": "Niger",
+          "joinedOn": "1996-12-13"
+        },
+        {
+          "code": "NGA",
+          "name": "Nigeria",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "NIC",
+          "name": "Nicaragua",
+          "joinedOn": "1995-09-03"
+        },
+        {
+          "code": "NLD",
+          "name": "Netherlands",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "NOR",
+          "name": "Norway",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "NPL",
+          "name": "Nepal",
+          "joinedOn": "2004-04-23"
+        },
+        {
+          "code": "NZL",
+          "name": "New Zealand",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "OMN",
+          "name": "Oman",
+          "joinedOn": "2000-11-09"
+        },
+        {
+          "code": "PAK",
+          "name": "Pakistan",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "PAN",
+          "name": "Panama",
+          "joinedOn": "1997-09-06"
+        },
+        {
+          "code": "PER",
+          "name": "Peru",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "PHL",
+          "name": "Philippines",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "PNG",
+          "name": "Papua New Guinea",
+          "joinedOn": "1996-06-09"
+        },
+        {
+          "code": "POL",
+          "name": "Poland",
+          "joinedOn": "1995-07-01"
+        },
+        {
+          "code": "PRT",
+          "name": "Portugal",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "PRY",
+          "name": "Paraguay",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "QAT",
+          "name": "Qatar",
+          "joinedOn": "1996-01-13"
+        },
+        {
+          "code": "ROU",
+          "name": "Romania",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "RUS",
+          "name": "Russian Federation",
+          "joinedOn": "2012-08-22"
+        },
+        {
+          "code": "RWA",
+          "name": "Rwanda",
+          "joinedOn": "1996-05-22"
+        },
+        {
+          "code": "SAU",
+          "name": "Saudi Arabia, Kingdom of",
+          "joinedOn": "2005-12-11"
+        },
+        {
+          "code": "SEN",
+          "name": "Senegal",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "SGP",
+          "name": "Singapore",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "SLB",
+          "name": "Solomon Islands",
+          "joinedOn": "1996-07-26"
+        },
+        {
+          "code": "SLE",
+          "name": "Sierra Leone",
+          "joinedOn": "1995-07-23"
+        },
+        {
+          "code": "SLV",
+          "name": "El Salvador",
+          "joinedOn": "1995-05-07"
+        },
+        {
+          "code": "SUR",
+          "name": "Suriname",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "SVK",
+          "name": "Slovak Republic",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "SVN",
+          "name": "Slovenia",
+          "joinedOn": "1995-07-30"
+        },
+        {
+          "code": "SWE",
+          "name": "Sweden",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "SWZ",
+          "name": "Eswatini",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "SYC",
+          "name": "Seychelles",
+          "joinedOn": "2015-04-26"
+        },
+        {
+          "code": "TCD",
+          "name": "Chad",
+          "joinedOn": "1996-10-19"
+        },
+        {
+          "code": "TGO",
+          "name": "Togo",
+          "joinedOn": "1995-05-31"
+        },
+        {
+          "code": "THA",
+          "name": "Thailand",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "TJK",
+          "name": "Tajikistan",
+          "joinedOn": "2013-03-02"
+        },
+        {
+          "code": "TLS",
+          "name": "Timor-Leste",
+          "joinedOn": "2024-08-30"
+        },
+        {
+          "code": "TON",
+          "name": "Tonga",
+          "joinedOn": "2007-07-27"
+        },
+        {
+          "code": "TTO",
+          "name": "Trinidad and Tobago",
+          "joinedOn": "1995-03-01"
+        },
+        {
+          "code": "TUN",
+          "name": "Tunisia",
+          "joinedOn": "1995-03-29"
+        },
+        {
+          "code": "TUR",
+          "name": "T&uuml;rkiye",
+          "joinedOn": "1995-03-26"
+        },
+        {
+          "code": "TWN",
+          "name": "Chinese Taipei",
+          "joinedOn": "2002-01-01"
+        },
+        {
+          "code": "TZA",
+          "name": "Tanzania",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "UGA",
+          "name": "Uganda",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "UKR",
+          "name": "Ukraine",
+          "joinedOn": "2008-05-16"
+        },
+        {
+          "code": "URY",
+          "name": "Uruguay",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "USA",
+          "name": "United States",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "VCT",
+          "name": "Saint Vincent and the Grenadines",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "VEN",
+          "name": "Venezuela, Bolivarian Republic of",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "VNM",
+          "name": "Viet Nam",
+          "joinedOn": "2007-01-11"
+        },
+        {
+          "code": "VUT",
+          "name": "Vanuatu",
+          "joinedOn": "2012-08-24"
+        },
+        {
+          "code": "WSM",
+          "name": "Samoa",
+          "joinedOn": "2012-05-10"
+        },
+        {
+          "code": "YEM",
+          "name": "Yemen",
+          "joinedOn": "2014-06-26"
+        },
+        {
+          "code": "ZAF",
+          "name": "South Africa",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "ZMB",
+          "name": "Zambia",
+          "joinedOn": "1995-01-01"
+        },
+        {
+          "code": "ZWE",
+          "name": "Zimbabwe",
+          "joinedOn": "1995-03-05"
+        }
+      ],
+      "dataUrl": "https://www.wto.org/library/news/news_vars_e.js"
+    },
+    "imf": {
+      "sourceUrl": "https://www.imf.org/external/np/sec/memdir/memdate.htm",
+      "accessedOn": "2026-10-06",
+      "officialMemberCount": 191,
+      "representedActorCount": 191,
+      "unrepresentedMembers": [],
+      "members": [
+        {
+          "code": "AFG",
+          "name": "Afghanistan, Islamic Rep. of (Afghanistan)",
+          "joinedOn": "1955-07-14"
+        },
+        {
+          "code": "AGO",
+          "name": "Angola",
+          "joinedOn": "1989-09-19"
+        },
+        {
+          "code": "ALB",
+          "name": "Albania",
+          "joinedOn": "1991-10-15"
+        },
+        {
+          "code": "AND",
+          "name": "Andorra, Principality of",
+          "joinedOn": "2020-10-16"
+        },
+        {
+          "code": "ARE",
+          "name": "United Arab Emirates",
+          "joinedOn": "1972-09-22"
+        },
+        {
+          "code": "ARG",
+          "name": "Argentina",
+          "joinedOn": "1956-09-20"
+        },
+        {
+          "code": "ARM",
+          "name": "Armenia",
+          "joinedOn": "1992-05-28"
+        },
+        {
+          "code": "ATG",
+          "name": "Antigua and Barbuda",
+          "joinedOn": "1982-02-25"
+        },
+        {
+          "code": "AUS",
+          "name": "Australia",
+          "joinedOn": "1947-08-05"
+        },
+        {
+          "code": "AUT",
+          "name": "Austria",
+          "joinedOn": "1948-08-27"
+        },
+        {
+          "code": "AZE",
+          "name": "Azerbaijan",
+          "joinedOn": "1992-09-18"
+        },
+        {
+          "code": "BDI",
+          "name": "Burundi",
+          "joinedOn": "1963-09-28"
+        },
+        {
+          "code": "BEL",
+          "name": "Belgium",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "BEN",
+          "name": "Benin (Dahomey)",
+          "joinedOn": "1963-07-10"
+        },
+        {
+          "code": "BFA",
+          "name": "Burkina Faso (Upper Volta)",
+          "joinedOn": "1963-05-02"
+        },
+        {
+          "code": "BGD",
+          "name": "Bangladesh",
+          "joinedOn": "1972-08-17"
+        },
+        {
+          "code": "BGR",
+          "name": "Bulgaria",
+          "joinedOn": "1990-09-25"
+        },
+        {
+          "code": "BHR",
+          "name": "Bahrain",
+          "joinedOn": "1972-09-07"
+        },
+        {
+          "code": "BHS",
+          "name": "Bahamas, The",
+          "joinedOn": "1973-08-21"
+        },
+        {
+          "code": "BIH",
+          "name": "Bosnia and Herzegovina",
+          "joinedOn": "1992-12-14"
+        },
+        {
+          "code": "BLR",
+          "name": "Belarus",
+          "joinedOn": "1992-07-10"
+        },
+        {
+          "code": "BLZ",
+          "name": "Belize",
+          "joinedOn": "1982-03-16"
+        },
+        {
+          "code": "BOL",
+          "name": "Bolivia",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "BRA",
+          "name": "Brazil",
+          "joinedOn": "1946-01-14"
+        },
+        {
+          "code": "BRB",
+          "name": "Barbados",
+          "joinedOn": "1970-12-29"
+        },
+        {
+          "code": "BRN",
+          "name": "Brunei Darussalam",
+          "joinedOn": "1995-10-10"
+        },
+        {
+          "code": "BTN",
+          "name": "Bhutan",
+          "joinedOn": "1981-09-28"
+        },
+        {
+          "code": "BWA",
+          "name": "Botswana",
+          "joinedOn": "1968-07-24"
+        },
+        {
+          "code": "CAF",
+          "name": "Central African Republic",
+          "joinedOn": "1963-07-10"
+        },
+        {
+          "code": "CAN",
+          "name": "Canada",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "CHE",
+          "name": "Switzerland",
+          "joinedOn": "1992-05-29"
+        },
+        {
+          "code": "CHL",
+          "name": "Chile",
+          "joinedOn": "1945-12-31"
+        },
+        {
+          "code": "CHN",
+          "name": "China",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "CIV",
+          "name": "Côte d'Ivoire (Ivory Coast)",
+          "joinedOn": "1963-03-11"
+        },
+        {
+          "code": "CMR",
+          "name": "Cameroon",
+          "joinedOn": "1963-07-10"
+        },
+        {
+          "code": "COD",
+          "name": "Congo, Democratic Republic of the (Zaïre)",
+          "joinedOn": "1963-09-28"
+        },
+        {
+          "code": "COG",
+          "name": "Congo, Republic of",
+          "joinedOn": "1963-07-10"
+        },
+        {
+          "code": "COL",
+          "name": "Colombia",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "COM",
+          "name": "Comoros",
+          "joinedOn": "1976-09-21"
+        },
+        {
+          "code": "CPV",
+          "name": "Cape Verde",
+          "joinedOn": "1978-11-20"
+        },
+        {
+          "code": "CRI",
+          "name": "Costa Rica",
+          "joinedOn": "1946-01-08"
+        },
+        {
+          "code": "CYP",
+          "name": "Cyprus",
+          "joinedOn": "1961-12-21"
+        },
+        {
+          "code": "CZE",
+          "name": "Czech Republic",
+          "joinedOn": "1993-01-01"
+        },
+        {
+          "code": "DEU",
+          "name": "Germany",
+          "joinedOn": "1952-08-14"
+        },
+        {
+          "code": "DJI",
+          "name": "Djibouti",
+          "joinedOn": "1978-12-29"
+        },
+        {
+          "code": "DMA",
+          "name": "Dominica",
+          "joinedOn": "1978-12-12"
+        },
+        {
+          "code": "DNK",
+          "name": "Denmark",
+          "joinedOn": "1946-03-30"
+        },
+        {
+          "code": "DOM",
+          "name": "Dominican Republic",
+          "joinedOn": "1945-12-28"
+        },
+        {
+          "code": "DZA",
+          "name": "Algeria",
+          "joinedOn": "1963-09-26"
+        },
+        {
+          "code": "ECU",
+          "name": "Ecuador",
+          "joinedOn": "1945-12-28"
+        },
+        {
+          "code": "EGY",
+          "name": "Egypt",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "ERI",
+          "name": "Eritrea",
+          "joinedOn": "1994-07-06"
+        },
+        {
+          "code": "ESP",
+          "name": "Spain",
+          "joinedOn": "1958-09-15"
+        },
+        {
+          "code": "EST",
+          "name": "Estonia",
+          "joinedOn": "1992-05-26"
+        },
+        {
+          "code": "ETH",
+          "name": "Ethiopia",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "FIN",
+          "name": "Finland",
+          "joinedOn": "1948-01-14"
+        },
+        {
+          "code": "FJI",
+          "name": "Fiji",
+          "joinedOn": "1971-05-28"
+        },
+        {
+          "code": "FRA",
+          "name": "France",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "FSM",
+          "name": "Micronesia, Federated States of",
+          "joinedOn": "1993-06-24"
+        },
+        {
+          "code": "GAB",
+          "name": "Gabon",
+          "joinedOn": "1963-09-10"
+        },
+        {
+          "code": "GBR",
+          "name": "United Kingdom",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "GEO",
+          "name": "Georgia",
+          "joinedOn": "1992-05-05"
+        },
+        {
+          "code": "GHA",
+          "name": "Ghana",
+          "joinedOn": "1957-09-20"
+        },
+        {
+          "code": "GIN",
+          "name": "Guinea",
+          "joinedOn": "1963-09-28"
+        },
+        {
+          "code": "GMB",
+          "name": "Gambia, The",
+          "joinedOn": "1967-09-21"
+        },
+        {
+          "code": "GNB",
+          "name": "Guinea-Bissau",
+          "joinedOn": "1977-03-24"
+        },
+        {
+          "code": "GNQ",
+          "name": "Equatorial Guinea",
+          "joinedOn": "1969-12-22"
+        },
+        {
+          "code": "GRC",
+          "name": "Greece",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "GRD",
+          "name": "Grenada",
+          "joinedOn": "1975-08-27"
+        },
+        {
+          "code": "GTM",
+          "name": "Guatemala",
+          "joinedOn": "1945-12-28"
+        },
+        {
+          "code": "GUY",
+          "name": "Guyana",
+          "joinedOn": "1966-09-26"
+        },
+        {
+          "code": "HND",
+          "name": "Honduras",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "HRV",
+          "name": "Croatia",
+          "joinedOn": "1992-12-14"
+        },
+        {
+          "code": "HTI",
+          "name": "Haiti",
+          "joinedOn": "1953-09-08"
+        },
+        {
+          "code": "HUN",
+          "name": "Hungary",
+          "joinedOn": "1982-05-06"
+        },
+        {
+          "code": "IDN",
+          "name": "Indonesia",
+          "joinedOn": "1967-02-21"
+        },
+        {
+          "code": "IND",
+          "name": "India",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "IRL",
+          "name": "Ireland",
+          "joinedOn": "1957-08-08"
+        },
+        {
+          "code": "IRN",
+          "name": "Iran, Islamic Republic of (Iran)",
+          "joinedOn": "1945-12-29"
+        },
+        {
+          "code": "IRQ",
+          "name": "Iraq",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "ISL",
+          "name": "Iceland",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "ISR",
+          "name": "Israel",
+          "joinedOn": "1954-07-12"
+        },
+        {
+          "code": "ITA",
+          "name": "Italy",
+          "joinedOn": "1947-03-27"
+        },
+        {
+          "code": "JAM",
+          "name": "Jamaica",
+          "joinedOn": "1963-02-21"
+        },
+        {
+          "code": "JOR",
+          "name": "Jordan",
+          "joinedOn": "1952-08-29"
+        },
+        {
+          "code": "JPN",
+          "name": "Japan",
+          "joinedOn": "1952-08-13"
+        },
+        {
+          "code": "KAZ",
+          "name": "Kazakhstan",
+          "joinedOn": "1992-07-15"
+        },
+        {
+          "code": "KEN",
+          "name": "Kenya",
+          "joinedOn": "1964-02-03"
+        },
+        {
+          "code": "KGZ",
+          "name": "Kyrgyz Republic (Kyrgyzstan)",
+          "joinedOn": "1992-05-08"
+        },
+        {
+          "code": "KHM",
+          "name": "Cambodia",
+          "joinedOn": "1969-12-31"
+        },
+        {
+          "code": "KIR",
+          "name": "Kiribati",
+          "joinedOn": "1986-06-03"
+        },
+        {
+          "code": "KNA",
+          "name": "St. Kitts and Nevis",
+          "joinedOn": "1984-08-15"
+        },
+        {
+          "code": "KOR",
+          "name": "Korea",
+          "joinedOn": "1955-08-26"
+        },
+        {
+          "code": "KWT",
+          "name": "Kuwait",
+          "joinedOn": "1962-09-13"
+        },
+        {
+          "code": "LAO",
+          "name": "Lao People's Democratic Republic (Laos)",
+          "joinedOn": "1961-07-05"
+        },
+        {
+          "code": "LBN",
+          "name": "Lebanon",
+          "joinedOn": "1947-04-14"
+        },
+        {
+          "code": "LBR",
+          "name": "Liberia",
+          "joinedOn": "1962-03-28"
+        },
+        {
+          "code": "LBY",
+          "name": "Libya",
+          "joinedOn": "1958-09-17"
+        },
+        {
+          "code": "LCA",
+          "name": "St. Lucia",
+          "joinedOn": "1979-11-15"
+        },
+        {
+          "code": "LIE",
+          "name": "Liechtenstein, Principality of",
+          "joinedOn": "2024-10-21"
+        },
+        {
+          "code": "LKA",
+          "name": "Sri Lanka (Ceylon)",
+          "joinedOn": "1950-08-29"
+        },
+        {
+          "code": "LSO",
+          "name": "Lesotho",
+          "joinedOn": "1968-07-25"
+        },
+        {
+          "code": "LTU",
+          "name": "Lithuania",
+          "joinedOn": "1992-04-29"
+        },
+        {
+          "code": "LUX",
+          "name": "Luxembourg",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "LVA",
+          "name": "Latvia",
+          "joinedOn": "1992-05-19"
+        },
+        {
+          "code": "MAR",
+          "name": "Morocco",
+          "joinedOn": "1958-04-25"
+        },
+        {
+          "code": "MDA",
+          "name": "Moldova",
+          "joinedOn": "1992-08-12"
+        },
+        {
+          "code": "MDG",
+          "name": "Madagascar (Malagasy Republic)",
+          "joinedOn": "1963-09-25"
+        },
+        {
+          "code": "MDV",
+          "name": "Maldives",
+          "joinedOn": "1978-01-13"
+        },
+        {
+          "code": "MEX",
+          "name": "Mexico",
+          "joinedOn": "1945-12-31"
+        },
+        {
+          "code": "MHL",
+          "name": "Marshall Islands",
+          "joinedOn": "1992-05-21"
+        },
+        {
+          "code": "MKD",
+          "name": "Macedonia, former Yugoslav Republic of",
+          "joinedOn": "1992-12-14"
+        },
+        {
+          "code": "MLI",
+          "name": "Mali",
+          "joinedOn": "1963-09-27"
+        },
+        {
+          "code": "MLT",
+          "name": "Malta",
+          "joinedOn": "1968-09-11"
+        },
+        {
+          "code": "MMR",
+          "name": "Myanmar (Burma)",
+          "joinedOn": "1952-01-03"
+        },
+        {
+          "code": "MNE",
+          "name": "Montenegro",
+          "joinedOn": "2007-01-18"
+        },
+        {
+          "code": "MNG",
+          "name": "Mongolia",
+          "joinedOn": "1991-02-14"
+        },
+        {
+          "code": "MOZ",
+          "name": "Mozambique",
+          "joinedOn": "1984-09-24"
+        },
+        {
+          "code": "MRT",
+          "name": "Mauritania",
+          "joinedOn": "1963-09-10"
+        },
+        {
+          "code": "MUS",
+          "name": "Mauritius",
+          "joinedOn": "1968-09-23"
+        },
+        {
+          "code": "MWI",
+          "name": "Malawi",
+          "joinedOn": "1965-07-19"
+        },
+        {
+          "code": "MYS",
+          "name": "Malaysia (Malaya)",
+          "joinedOn": "1958-03-07"
+        },
+        {
+          "code": "NAM",
+          "name": "Namibia",
+          "joinedOn": "1990-09-25"
+        },
+        {
+          "code": "NER",
+          "name": "Niger",
+          "joinedOn": "1963-04-24"
+        },
+        {
+          "code": "NGA",
+          "name": "Nigeria",
+          "joinedOn": "1961-03-30"
+        },
+        {
+          "code": "NIC",
+          "name": "Nicaragua",
+          "joinedOn": "1946-03-14"
+        },
+        {
+          "code": "NLD",
+          "name": "Netherlands",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "NOR",
+          "name": "Norway",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "NPL",
+          "name": "Nepal",
+          "joinedOn": "1961-09-06"
+        },
+        {
+          "code": "NRU",
+          "name": "Nauru",
+          "joinedOn": "2016-04-12"
+        },
+        {
+          "code": "NZL",
+          "name": "New Zealand",
+          "joinedOn": "1961-08-31"
+        },
+        {
+          "code": "OMN",
+          "name": "Oman",
+          "joinedOn": "1971-12-23"
+        },
+        {
+          "code": "PAK",
+          "name": "Pakistan",
+          "joinedOn": "1950-07-11"
+        },
+        {
+          "code": "PAN",
+          "name": "Panama",
+          "joinedOn": "1946-03-14"
+        },
+        {
+          "code": "PER",
+          "name": "Peru",
+          "joinedOn": "1945-12-31"
+        },
+        {
+          "code": "PHL",
+          "name": "Philippines",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "PLW",
+          "name": "Palau",
+          "joinedOn": "1997-12-16"
+        },
+        {
+          "code": "PNG",
+          "name": "Papua New Guinea",
+          "joinedOn": "1975-10-09"
+        },
+        {
+          "code": "POL",
+          "name": "Poland",
+          "joinedOn": "1986-06-12"
+        },
+        {
+          "code": "PRT",
+          "name": "Portugal",
+          "joinedOn": "1961-03-29"
+        },
+        {
+          "code": "PRY",
+          "name": "Paraguay",
+          "joinedOn": "1945-12-28"
+        },
+        {
+          "code": "QAT",
+          "name": "Qatar",
+          "joinedOn": "1972-09-08"
+        },
+        {
+          "code": "ROU",
+          "name": "Romania",
+          "joinedOn": "1972-12-15"
+        },
+        {
+          "code": "RUS",
+          "name": "Russian Federation",
+          "joinedOn": "1992-06-01"
+        },
+        {
+          "code": "RWA",
+          "name": "Rwanda",
+          "joinedOn": "1963-09-30"
+        },
+        {
+          "code": "SAU",
+          "name": "Saudi Arabia",
+          "joinedOn": "1957-08-26"
+        },
+        {
+          "code": "SDN",
+          "name": "Sudan",
+          "joinedOn": "1957-09-05"
+        },
+        {
+          "code": "SEN",
+          "name": "Senegal",
+          "joinedOn": "1962-08-31"
+        },
+        {
+          "code": "SGP",
+          "name": "Singapore",
+          "joinedOn": "1966-08-03"
+        },
+        {
+          "code": "SLB",
+          "name": "Solomon Islands",
+          "joinedOn": "1978-09-22"
+        },
+        {
+          "code": "SLE",
+          "name": "Sierra Leone",
+          "joinedOn": "1962-09-10"
+        },
+        {
+          "code": "SLV",
+          "name": "El Salvador",
+          "joinedOn": "1946-03-14"
+        },
+        {
+          "code": "SMR",
+          "name": "San Marino",
+          "joinedOn": "1992-09-23"
+        },
+        {
+          "code": "SOM",
+          "name": "Somalia",
+          "joinedOn": "1962-08-31"
+        },
+        {
+          "code": "SRB",
+          "name": "Serbia",
+          "joinedOn": "1992-12-14"
+        },
+        {
+          "code": "SSD",
+          "name": "South Sudan",
+          "joinedOn": "2012-04-18"
+        },
+        {
+          "code": "STP",
+          "name": "São Tomé and Príncipe",
+          "joinedOn": "1977-09-30"
+        },
+        {
+          "code": "SUR",
+          "name": "Suriname",
+          "joinedOn": "1978-04-27"
+        },
+        {
+          "code": "SVK",
+          "name": "Slovak Republic",
+          "joinedOn": "1993-01-01"
+        },
+        {
+          "code": "SVN",
+          "name": "Slovenia",
+          "joinedOn": "1992-12-14"
+        },
+        {
+          "code": "SWE",
+          "name": "Sweden",
+          "joinedOn": "1951-08-31"
+        },
+        {
+          "code": "SWZ",
+          "name": "Swaziland",
+          "joinedOn": "1969-09-22"
+        },
+        {
+          "code": "SYC",
+          "name": "Seychelles",
+          "joinedOn": "1977-06-30"
+        },
+        {
+          "code": "SYR",
+          "name": "Syrian Arab Republic (Syria)",
+          "joinedOn": "1947-04-10"
+        },
+        {
+          "code": "TCD",
+          "name": "Chad",
+          "joinedOn": "1963-07-10"
+        },
+        {
+          "code": "TGO",
+          "name": "Togo",
+          "joinedOn": "1962-08-01"
+        },
+        {
+          "code": "THA",
+          "name": "Thailand (Siam)",
+          "joinedOn": "1949-05-03"
+        },
+        {
+          "code": "TJK",
+          "name": "Tajikistan",
+          "joinedOn": "1993-04-27"
+        },
+        {
+          "code": "TKM",
+          "name": "Turkmenistan",
+          "joinedOn": "1992-09-22"
+        },
+        {
+          "code": "TLS",
+          "name": "Timor-Leste (East Timor)",
+          "joinedOn": "2002-07-23"
+        },
+        {
+          "code": "TON",
+          "name": "Tonga",
+          "joinedOn": "1985-09-13"
+        },
+        {
+          "code": "TTO",
+          "name": "Trinidad and Tobago",
+          "joinedOn": "1963-09-16"
+        },
+        {
+          "code": "TUN",
+          "name": "Tunisia",
+          "joinedOn": "1958-04-14"
+        },
+        {
+          "code": "TUR",
+          "name": "Turkey",
+          "joinedOn": "1947-03-11"
+        },
+        {
+          "code": "TUV",
+          "name": "Tuvalu",
+          "joinedOn": "2010-06-24"
+        },
+        {
+          "code": "TZA",
+          "name": "Tanzania (Tanganyika)",
+          "joinedOn": "1962-09-10"
+        },
+        {
+          "code": "UGA",
+          "name": "Uganda",
+          "joinedOn": "1963-09-27"
+        },
+        {
+          "code": "UKR",
+          "name": "Ukraine",
+          "joinedOn": "1992-09-03"
+        },
+        {
+          "code": "URY",
+          "name": "Uruguay",
+          "joinedOn": "1946-03-11"
+        },
+        {
+          "code": "USA",
+          "name": "United States",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "UZB",
+          "name": "Uzbekistan",
+          "joinedOn": "1992-09-21"
+        },
+        {
+          "code": "VCT",
+          "name": "St. Vincent and the Grenadines",
+          "joinedOn": "1979-12-28"
+        },
+        {
+          "code": "VEN",
+          "name": "Venezuela, República Bolivariana de",
+          "joinedOn": "1946-12-30"
+        },
+        {
+          "code": "VNM",
+          "name": "Vietnam (Viet Nam)",
+          "joinedOn": "1956-09-21"
+        },
+        {
+          "code": "VUT",
+          "name": "Vanuatu",
+          "joinedOn": "1981-09-28"
+        },
+        {
+          "code": "WSM",
+          "name": "Samoa (Western Samoa)",
+          "joinedOn": "1971-12-28"
+        },
+        {
+          "code": "XKX",
+          "name": "Kosovo",
+          "joinedOn": "2009-06-29"
+        },
+        {
+          "code": "YEM",
+          "name": "Yemen, Republic of",
+          "joinedOn": "1990-05-22"
+        },
+        {
+          "code": "ZAF",
+          "name": "South Africa",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "ZMB",
+          "name": "Zambia",
+          "joinedOn": "1965-09-23"
+        },
+        {
+          "code": "ZWE",
+          "name": "Zimbabwe",
+          "joinedOn": "1980-09-29"
+        }
+      ]
+    },
+    "world-bank": {
+      "sourceUrl": "https://www.worldbank.org/en/about/leadership/members",
+      "accessedOn": "2026-10-06",
+      "officialMemberCount": 189,
+      "representedActorCount": 189,
+      "unrepresentedMembers": [],
+      "members": [
+        {
+          "code": "AFG",
+          "name": "Afghanistan",
+          "joinedOn": "1955-07-14"
+        },
+        {
+          "code": "AGO",
+          "name": "Angola",
+          "joinedOn": "1989-09-19"
+        },
+        {
+          "code": "ALB",
+          "name": "Albania",
+          "joinedOn": "1991-10-15"
+        },
+        {
+          "code": "ARE",
+          "name": "United Arab Emirates",
+          "joinedOn": "1972-09-22"
+        },
+        {
+          "code": "ARG",
+          "name": "Argentina",
+          "joinedOn": "1956-09-20"
+        },
+        {
+          "code": "ARM",
+          "name": "Armenia",
+          "joinedOn": "1992-09-16"
+        },
+        {
+          "code": "ATG",
+          "name": "Antigua and Barbuda",
+          "joinedOn": "1983-09-22"
+        },
+        {
+          "code": "AUS",
+          "name": "Australia",
+          "joinedOn": "1947-08-05"
+        },
+        {
+          "code": "AUT",
+          "name": "Austria",
+          "joinedOn": "1948-08-27"
+        },
+        {
+          "code": "AZE",
+          "name": "Azerbaijan",
+          "joinedOn": "1992-09-18"
+        },
+        {
+          "code": "BDI",
+          "name": "Burundi",
+          "joinedOn": "1963-09-28"
+        },
+        {
+          "code": "BEL",
+          "name": "Belgium",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "BEN",
+          "name": "Benin",
+          "joinedOn": "1963-07-10"
+        },
+        {
+          "code": "BFA",
+          "name": "Burkina Faso",
+          "joinedOn": "1963-05-02"
+        },
+        {
+          "code": "BGD",
+          "name": "Bangladesh",
+          "joinedOn": "1972-08-17"
+        },
+        {
+          "code": "BGR",
+          "name": "Bulgaria",
+          "joinedOn": "1990-09-25"
+        },
+        {
+          "code": "BHR",
+          "name": "Bahrain",
+          "joinedOn": "1972-09-15"
+        },
+        {
+          "code": "BHS",
+          "name": "Bahamas",
+          "joinedOn": "1973-08-21"
+        },
+        {
+          "code": "BIH",
+          "name": "Bosnia and Herzegovina",
+          "joinedOn": "1993-02-25"
+        },
+        {
+          "code": "BLR",
+          "name": "Belarus",
+          "joinedOn": "1992-07-10"
+        },
+        {
+          "code": "BLZ",
+          "name": "Belize",
+          "joinedOn": "1982-03-19"
+        },
+        {
+          "code": "BOL",
+          "name": "Bolivia",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "BRA",
+          "name": "Brazil",
+          "joinedOn": "1946-01-14"
+        },
+        {
+          "code": "BRB",
+          "name": "Barbados",
+          "joinedOn": "1974-09-12"
+        },
+        {
+          "code": "BRN",
+          "name": "Brunei Darussalam",
+          "joinedOn": "1995-10-10"
+        },
+        {
+          "code": "BTN",
+          "name": "Bhutan",
+          "joinedOn": "1981-09-28"
+        },
+        {
+          "code": "BWA",
+          "name": "Botswana",
+          "joinedOn": "1968-07-24"
+        },
+        {
+          "code": "CAF",
+          "name": "Central African Republic",
+          "joinedOn": "1963-07-10"
+        },
+        {
+          "code": "CAN",
+          "name": "Canada",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "CHE",
+          "name": "Switzerland",
+          "joinedOn": "1992-05-29"
+        },
+        {
+          "code": "CHL",
+          "name": "Chile",
+          "joinedOn": "1945-12-31"
+        },
+        {
+          "code": "CHN",
+          "name": "China",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "CIV",
+          "name": "Cote d'Ivoire",
+          "joinedOn": "1963-03-11"
+        },
+        {
+          "code": "CMR",
+          "name": "Cameroon",
+          "joinedOn": "1963-07-10"
+        },
+        {
+          "code": "COD",
+          "name": "Congo, Democratic Republic of",
+          "joinedOn": "1963-09-28"
+        },
+        {
+          "code": "COG",
+          "name": "Congo, Republic of",
+          "joinedOn": "1963-07-10"
+        },
+        {
+          "code": "COL",
+          "name": "Colombia",
+          "joinedOn": "1946-12-24"
+        },
+        {
+          "code": "COM",
+          "name": "Comoros",
+          "joinedOn": "1976-10-28"
+        },
+        {
+          "code": "CPV",
+          "name": "Cabo Verde",
+          "joinedOn": "1978-11-20"
+        },
+        {
+          "code": "CRI",
+          "name": "Costa Rica",
+          "joinedOn": "1946-01-08"
+        },
+        {
+          "code": "CYP",
+          "name": "Cyprus",
+          "joinedOn": "1961-12-21"
+        },
+        {
+          "code": "CZE",
+          "name": "Czechia",
+          "joinedOn": "1993-01-01"
+        },
+        {
+          "code": "DEU",
+          "name": "Germany",
+          "joinedOn": "1952-08-14"
+        },
+        {
+          "code": "DJI",
+          "name": "Djibouti",
+          "joinedOn": "1980-10-01"
+        },
+        {
+          "code": "DMA",
+          "name": "Dominica",
+          "joinedOn": "1980-09-29"
+        },
+        {
+          "code": "DNK",
+          "name": "Denmark",
+          "joinedOn": "1946-03-30"
+        },
+        {
+          "code": "DOM",
+          "name": "Dominican Republic",
+          "joinedOn": "1961-09-18"
+        },
+        {
+          "code": "DZA",
+          "name": "Algeria",
+          "joinedOn": "1963-09-26"
+        },
+        {
+          "code": "ECU",
+          "name": "Ecuador",
+          "joinedOn": "1945-12-28"
+        },
+        {
+          "code": "EGY",
+          "name": "Egypt, Arab Republic of",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "ERI",
+          "name": "Eritrea",
+          "joinedOn": "1994-07-06"
+        },
+        {
+          "code": "ESP",
+          "name": "Spain",
+          "joinedOn": "1958-09-15"
+        },
+        {
+          "code": "EST",
+          "name": "Estonia",
+          "joinedOn": "1992-06-23"
+        },
+        {
+          "code": "ETH",
+          "name": "Ethiopia",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "FIN",
+          "name": "Finland",
+          "joinedOn": "1948-01-14"
+        },
+        {
+          "code": "FJI",
+          "name": "Fiji",
+          "joinedOn": "1971-05-28"
+        },
+        {
+          "code": "FRA",
+          "name": "France",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "FSM",
+          "name": "Micronesia, Federated States of",
+          "joinedOn": "1993-06-24"
+        },
+        {
+          "code": "GAB",
+          "name": "Gabon",
+          "joinedOn": "1963-09-10"
+        },
+        {
+          "code": "GBR",
+          "name": "United Kingdom",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "GEO",
+          "name": "Georgia",
+          "joinedOn": "1992-08-07"
+        },
+        {
+          "code": "GHA",
+          "name": "Ghana",
+          "joinedOn": "1957-09-20"
+        },
+        {
+          "code": "GIN",
+          "name": "Guinea",
+          "joinedOn": "1963-09-28"
+        },
+        {
+          "code": "GMB",
+          "name": "Gambia",
+          "joinedOn": "1967-10-18"
+        },
+        {
+          "code": "GNB",
+          "name": "Guinea-Bissau",
+          "joinedOn": "1977-03-24"
+        },
+        {
+          "code": "GNQ",
+          "name": "Equatorial Guinea",
+          "joinedOn": "1970-07-01"
+        },
+        {
+          "code": "GRC",
+          "name": "Greece",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "GRD",
+          "name": "Grenada",
+          "joinedOn": "1975-08-27"
+        },
+        {
+          "code": "GTM",
+          "name": "Guatemala",
+          "joinedOn": "1945-12-28"
+        },
+        {
+          "code": "GUY",
+          "name": "Guyana",
+          "joinedOn": "1966-09-26"
+        },
+        {
+          "code": "HND",
+          "name": "Honduras",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "HRV",
+          "name": "Croatia",
+          "joinedOn": "1993-02-25"
+        },
+        {
+          "code": "HTI",
+          "name": "Haiti",
+          "joinedOn": "1953-09-08"
+        },
+        {
+          "code": "HUN",
+          "name": "Hungary",
+          "joinedOn": "1982-07-07"
+        },
+        {
+          "code": "IDN",
+          "name": "Indonesia",
+          "joinedOn": "1967-04-13"
+        },
+        {
+          "code": "IND",
+          "name": "India",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "IRL",
+          "name": "Ireland",
+          "joinedOn": "1957-08-08"
+        },
+        {
+          "code": "IRN",
+          "name": "Iran, Islamic Republic of",
+          "joinedOn": "1945-12-29"
+        },
+        {
+          "code": "IRQ",
+          "name": "Iraq",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "ISL",
+          "name": "Iceland",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "ISR",
+          "name": "Israel",
+          "joinedOn": "1954-07-12"
+        },
+        {
+          "code": "ITA",
+          "name": "Italy",
+          "joinedOn": "1947-03-27"
+        },
+        {
+          "code": "JAM",
+          "name": "Jamaica",
+          "joinedOn": "1963-02-21"
+        },
+        {
+          "code": "JOR",
+          "name": "Jordan",
+          "joinedOn": "1952-08-29"
+        },
+        {
+          "code": "JPN",
+          "name": "Japan",
+          "joinedOn": "1952-08-13"
+        },
+        {
+          "code": "KAZ",
+          "name": "Kazakhstan",
+          "joinedOn": "1992-07-23"
+        },
+        {
+          "code": "KEN",
+          "name": "Kenya",
+          "joinedOn": "1964-02-03"
+        },
+        {
+          "code": "KGZ",
+          "name": "Kyrgyz Republic",
+          "joinedOn": "1992-09-18"
+        },
+        {
+          "code": "KHM",
+          "name": "Cambodia",
+          "joinedOn": "1970-07-22"
+        },
+        {
+          "code": "KIR",
+          "name": "Kiribati",
+          "joinedOn": "1986-09-29"
+        },
+        {
+          "code": "KNA",
+          "name": "St. Kitts and Nevis",
+          "joinedOn": "1984-08-15"
+        },
+        {
+          "code": "KOR",
+          "name": "Korea, Republic of",
+          "joinedOn": "1955-08-26"
+        },
+        {
+          "code": "KWT",
+          "name": "Kuwait",
+          "joinedOn": "1962-09-13"
+        },
+        {
+          "code": "LAO",
+          "name": "Lao People's Democratic Republic",
+          "joinedOn": "1961-07-05"
+        },
+        {
+          "code": "LBN",
+          "name": "Lebanon",
+          "joinedOn": "1947-04-14"
+        },
+        {
+          "code": "LBR",
+          "name": "Liberia",
+          "joinedOn": "1962-03-28"
+        },
+        {
+          "code": "LBY",
+          "name": "Libya",
+          "joinedOn": "1958-09-17"
+        },
+        {
+          "code": "LCA",
+          "name": "St. Lucia",
+          "joinedOn": "1980-06-27"
+        },
+        {
+          "code": "LKA",
+          "name": "Sri Lanka",
+          "joinedOn": "1950-08-29"
+        },
+        {
+          "code": "LSO",
+          "name": "Lesotho",
+          "joinedOn": "1968-07-25"
+        },
+        {
+          "code": "LTU",
+          "name": "Lithuania",
+          "joinedOn": "1992-07-06"
+        },
+        {
+          "code": "LUX",
+          "name": "Luxembourg",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "LVA",
+          "name": "Latvia",
+          "joinedOn": "1992-08-11"
+        },
+        {
+          "code": "MAR",
+          "name": "Morocco",
+          "joinedOn": "1958-04-25"
+        },
+        {
+          "code": "MDA",
+          "name": "Moldova",
+          "joinedOn": "1992-08-12"
+        },
+        {
+          "code": "MDG",
+          "name": "Madagascar",
+          "joinedOn": "1963-09-25"
+        },
+        {
+          "code": "MDV",
+          "name": "Maldives",
+          "joinedOn": "1978-01-13"
+        },
+        {
+          "code": "MEX",
+          "name": "Mexico",
+          "joinedOn": "1945-12-31"
+        },
+        {
+          "code": "MHL",
+          "name": "Marshall Islands",
+          "joinedOn": "1992-05-21"
+        },
+        {
+          "code": "MKD",
+          "name": "North Macedonia",
+          "joinedOn": "1993-02-25"
+        },
+        {
+          "code": "MLI",
+          "name": "Mali",
+          "joinedOn": "1963-09-27"
+        },
+        {
+          "code": "MLT",
+          "name": "Malta",
+          "joinedOn": "1983-09-26"
+        },
+        {
+          "code": "MMR",
+          "name": "Myanmar",
+          "joinedOn": "1952-01-03"
+        },
+        {
+          "code": "MNE",
+          "name": "Montenegro",
+          "joinedOn": "2007-01-18"
+        },
+        {
+          "code": "MNG",
+          "name": "Mongolia",
+          "joinedOn": "1991-02-14"
+        },
+        {
+          "code": "MOZ",
+          "name": "Mozambique",
+          "joinedOn": "1984-09-24"
+        },
+        {
+          "code": "MRT",
+          "name": "Mauritania",
+          "joinedOn": "1963-09-10"
+        },
+        {
+          "code": "MUS",
+          "name": "Mauritius",
+          "joinedOn": "1968-09-23"
+        },
+        {
+          "code": "MWI",
+          "name": "Malawi",
+          "joinedOn": "1965-07-19"
+        },
+        {
+          "code": "MYS",
+          "name": "Malaysia",
+          "joinedOn": "1958-03-07"
+        },
+        {
+          "code": "NAM",
+          "name": "Namibia",
+          "joinedOn": "1990-09-25"
+        },
+        {
+          "code": "NER",
+          "name": "Niger",
+          "joinedOn": "1963-04-24"
+        },
+        {
+          "code": "NGA",
+          "name": "Nigeria",
+          "joinedOn": "1961-03-30"
+        },
+        {
+          "code": "NIC",
+          "name": "Nicaragua",
+          "joinedOn": "1946-03-14"
+        },
+        {
+          "code": "NLD",
+          "name": "Netherlands",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "NOR",
+          "name": "Norway",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "NPL",
+          "name": "Nepal",
+          "joinedOn": "1961-09-06"
+        },
+        {
+          "code": "NRU",
+          "name": "Naoero",
+          "joinedOn": "2016-04-12"
+        },
+        {
+          "code": "NZL",
+          "name": "New Zealand",
+          "joinedOn": "1961-08-31"
+        },
+        {
+          "code": "OMN",
+          "name": "Oman",
+          "joinedOn": "1971-12-23"
+        },
+        {
+          "code": "PAK",
+          "name": "Pakistan",
+          "joinedOn": "1950-07-11"
+        },
+        {
+          "code": "PAN",
+          "name": "Panama",
+          "joinedOn": "1946-03-14"
+        },
+        {
+          "code": "PER",
+          "name": "Peru",
+          "joinedOn": "1945-12-31"
+        },
+        {
+          "code": "PHL",
+          "name": "Philippines",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "PLW",
+          "name": "Palau",
+          "joinedOn": "1997-12-16"
+        },
+        {
+          "code": "PNG",
+          "name": "Papua New Guinea",
+          "joinedOn": "1975-10-09"
+        },
+        {
+          "code": "POL",
+          "name": "Poland",
+          "joinedOn": "1986-06-27"
+        },
+        {
+          "code": "PRT",
+          "name": "Portugal",
+          "joinedOn": "1961-03-29"
+        },
+        {
+          "code": "PRY",
+          "name": "Paraguay",
+          "joinedOn": "1945-12-28"
+        },
+        {
+          "code": "QAT",
+          "name": "Qatar",
+          "joinedOn": "1972-09-25"
+        },
+        {
+          "code": "ROU",
+          "name": "Romania",
+          "joinedOn": "1972-12-15"
+        },
+        {
+          "code": "RUS",
+          "name": "Russian Federation",
+          "joinedOn": "1992-06-16"
+        },
+        {
+          "code": "RWA",
+          "name": "Rwanda",
+          "joinedOn": "1963-09-30"
+        },
+        {
+          "code": "SAU",
+          "name": "Saudi Arabia",
+          "joinedOn": "1957-08-26"
+        },
+        {
+          "code": "SDN",
+          "name": "Sudan",
+          "joinedOn": "1957-09-05"
+        },
+        {
+          "code": "SEN",
+          "name": "Senegal",
+          "joinedOn": "1962-08-31"
+        },
+        {
+          "code": "SGP",
+          "name": "Singapore",
+          "joinedOn": "1966-08-03"
+        },
+        {
+          "code": "SLB",
+          "name": "Solomon Islands",
+          "joinedOn": "1978-09-22"
+        },
+        {
+          "code": "SLE",
+          "name": "Sierra Leone",
+          "joinedOn": "1962-09-10"
+        },
+        {
+          "code": "SLV",
+          "name": "El Salvador",
+          "joinedOn": "1946-03-14"
+        },
+        {
+          "code": "SMR",
+          "name": "San Marino",
+          "joinedOn": "2000-09-21"
+        },
+        {
+          "code": "SOM",
+          "name": "Somalia",
+          "joinedOn": "1962-08-31"
+        },
+        {
+          "code": "SRB",
+          "name": "Serbia",
+          "joinedOn": "1993-02-25"
+        },
+        {
+          "code": "SSD",
+          "name": "South Sudan",
+          "joinedOn": "2012-04-18"
+        },
+        {
+          "code": "STP",
+          "name": "Sao Tome and Principe",
+          "joinedOn": "1977-09-30"
+        },
+        {
+          "code": "SUR",
+          "name": "Suriname",
+          "joinedOn": "1978-06-27"
+        },
+        {
+          "code": "SVK",
+          "name": "Slovak Republic",
+          "joinedOn": "1993-01-01"
+        },
+        {
+          "code": "SVN",
+          "name": "Slovenia",
+          "joinedOn": "1993-02-25"
+        },
+        {
+          "code": "SWE",
+          "name": "Sweden",
+          "joinedOn": "1951-08-31"
+        },
+        {
+          "code": "SWZ",
+          "name": "Eswatini",
+          "joinedOn": "1969-09-22"
+        },
+        {
+          "code": "SYC",
+          "name": "Seychelles",
+          "joinedOn": "1980-09-29"
+        },
+        {
+          "code": "SYR",
+          "name": "Syrian Arab Republic",
+          "joinedOn": "1947-04-10"
+        },
+        {
+          "code": "TCD",
+          "name": "Chad",
+          "joinedOn": "1963-07-10"
+        },
+        {
+          "code": "TGO",
+          "name": "Togo",
+          "joinedOn": "1962-08-01"
+        },
+        {
+          "code": "THA",
+          "name": "Thailand",
+          "joinedOn": "1949-05-03"
+        },
+        {
+          "code": "TJK",
+          "name": "Tajikistan",
+          "joinedOn": "1993-06-04"
+        },
+        {
+          "code": "TKM",
+          "name": "Turkmenistan",
+          "joinedOn": "1992-09-22"
+        },
+        {
+          "code": "TLS",
+          "name": "Timor-Leste",
+          "joinedOn": "2002-07-23"
+        },
+        {
+          "code": "TON",
+          "name": "Tonga",
+          "joinedOn": "1985-09-13"
+        },
+        {
+          "code": "TTO",
+          "name": "Trinidad and Tobago",
+          "joinedOn": "1963-09-16"
+        },
+        {
+          "code": "TUN",
+          "name": "Tunisia",
+          "joinedOn": "1958-04-14"
+        },
+        {
+          "code": "TUR",
+          "name": "Türkiye",
+          "joinedOn": "1947-03-11"
+        },
+        {
+          "code": "TUV",
+          "name": "Tuvalu",
+          "joinedOn": "2010-06-24"
+        },
+        {
+          "code": "TZA",
+          "name": "Tanzania",
+          "joinedOn": "1962-09-10"
+        },
+        {
+          "code": "UGA",
+          "name": "Uganda",
+          "joinedOn": "1963-09-27"
+        },
+        {
+          "code": "UKR",
+          "name": "Ukraine",
+          "joinedOn": "1992-09-03"
+        },
+        {
+          "code": "URY",
+          "name": "Uruguay",
+          "joinedOn": "1946-03-11"
+        },
+        {
+          "code": "USA",
+          "name": "United States",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "UZB",
+          "name": "Uzbekistan",
+          "joinedOn": "1992-09-21"
+        },
+        {
+          "code": "VCT",
+          "name": "St. Vincent and the Grenadines",
+          "joinedOn": "1982-08-31"
+        },
+        {
+          "code": "VEN",
+          "name": "Venezuela, Republica Bolivariana de",
+          "joinedOn": "1946-12-30"
+        },
+        {
+          "code": "VNM",
+          "name": "Viet Nam",
+          "joinedOn": "1956-09-21"
+        },
+        {
+          "code": "VUT",
+          "name": "Vanuatu",
+          "joinedOn": "1981-09-28"
+        },
+        {
+          "code": "WSM",
+          "name": "Samoa",
+          "joinedOn": "1974-06-28"
+        },
+        {
+          "code": "XKX",
+          "name": "Kosovo",
+          "joinedOn": "2009-06-29"
+        },
+        {
+          "code": "YEM",
+          "name": "Yemen, Republic of",
+          "joinedOn": "1969-10-03"
+        },
+        {
+          "code": "ZAF",
+          "name": "South Africa",
+          "joinedOn": "1945-12-27"
+        },
+        {
+          "code": "ZMB",
+          "name": "Zambia",
+          "joinedOn": "1965-09-23"
+        },
+        {
+          "code": "ZWE",
+          "name": "Zimbabwe",
+          "joinedOn": "1980-09-29"
+        }
+      ],
+      "institution": "IBRD"
+    }
+  }
+}

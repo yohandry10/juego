@@ -1,0 +1,38 @@
+{
+  "steps": [
+    { "title": "Elige qué historia quieres vivir", "text": "Elige un país y un cargo. Los políticos y partidos son inventados. Cada comienzo ofrece ventajas y problemas distintos; no necesitas conocer las leyes del país." },
+    { "title": "Consigue apoyo para tu candidatura", "text": "Confirma la nominación de tu partido. Cada semana tienes dos acciones: visitar a la gente, hacer un mitin o buscar fondos. Lee el costo antes de elegir y después avanza la semana." },
+    { "title": "Entiende el resultado", "text": "La elección te dice qué ayudó y qué te perjudicó. Si pierdes, revisa esas razones: puedes cerrar esta campaña y buscar otra oportunidad." },
+    { "title": "Busca aliados", "text": "En el Congreso necesitas votos. Hablar y ofrecer acuerdos puede cambiar apoyos; prometer algo y no cumplirlo daña la confianza. Ningún trato garantiza un voto." },
+    { "title": "Cuida tu Gobierno", "text": "Puedes perder el poder si se juntan poco apoyo, aliados descontentos, crisis o escándalos. Atiende los avisos de la Bandeja y negocia antes de avanzar. Si empieza una destitución, tendrás opciones para defenderte." },
+    { "title": "Decide, mira el resultado y aprende", "text": "Revisa qué puedes hacer, cuánto cuesta y qué arriesgas. Luego avanza el tiempo. Si algo cambia, abre «¿Por qué cambió?». No hace falta mirar todas las cifras para jugar." }
+  ],
+  "glossary": [
+    { "term": "Aprobación", "definition": "Cuánta gente respalda tu trabajo. Un apoyo bajo hace más difícil ganar elecciones y conservar el poder." },
+    { "term": "Bancada", "definition": "El grupo de representantes de un partido en el Congreso." },
+    { "term": "Capital político", "definition": "El apoyo que puedes gastar para impulsar decisiones difíciles. Si se agota, tendrás menos opciones." },
+    { "term": "Censura", "definition": "Una votación para quitarle el poder a un Gobierno que perdió el apoyo del Congreso." },
+    { "term": "Circunscripción", "definition": "La zona o lista en la que compites por un puesto." },
+    { "term": "Cohabitación", "definition": "La presidencia y el Gobierno pertenecen a grupos distintos y deben compartir decisiones." },
+    { "term": "Déficit fiscal", "definition": "El Estado gasta más de lo que recibe. Necesita cubrir esa diferencia, por ejemplo con deuda." },
+    { "term": "Escaño", "definition": "Un puesto en el Congreso." },
+    { "term": "Facción", "definition": "Un grupo dentro de tu partido que tiene sus propias prioridades." },
+    { "term": "Influencia", "definition": "Tu capacidad para negociar con otros países. La gastas en contactos y acuerdos." },
+    { "term": "Ironman", "definition": "Modo con un solo guardado automático. Tus decisiones quedan y no puedes volver a una partida anterior." },
+    { "term": "Mayoría", "definition": "Tener suficientes votos para que una propuesta se apruebe." },
+    { "term": "PIB", "definition": "El valor de lo que produce el país en un año. Sirve para comparar el tamaño de su economía." },
+    { "term": "Realismo", "definition": "Cambia cómo actúan los rivales y cuánta información recibes. Todos empiezan con los mismos recursos." },
+    { "term": "Semilla", "definition": "La clave de tu escenario. Con el mismo país, versión y decisiones permite repetir la misma historia." },
+    { "term": "Vacancia", "definition": "Un procedimiento para declarar que alguien ya no puede continuar en su cargo." }
+  ],
+  "stages": {
+    "campaign": { "title": "Tu siguiente paso: conseguir apoyo", "text": "Confirma tu candidatura y elige dos acciones cada semana. Puedes acercarte a la gente, explicar tus propuestas o buscar fondos. Cada opción tiene un costo." },
+    "election-result": { "title": "Tu siguiente paso: leer el resultado", "text": "Mira qué ayudó y qué te perjudicó. Si ganaste, empieza el mandato. Si perdiste, cierra esta campaña y revisa tus opciones para volver." },
+    "legislature": { "title": "Tu siguiente paso: buscar votos", "text": "Revisa la propuesta, habla con representantes y decide tu voto. Cuando cierres la sesión avanzará un trimestre y verás las consecuencias." },
+    "executive": { "title": "Tu siguiente paso: cuidar el apoyo", "text": "Antes de avanzar, revisa los avisos, tu apoyo en el Congreso y los problemas del país. Puedes negociar aliados o elegir medidas en Economía. Gastar todo tu capital limita tu defensa." },
+    "minister": { "title": "Tu siguiente paso: cumplir con tu área", "text": "Elige qué mejorar y revisa cómo te evalúan. Los resultados y la confianza del Gobierno influyen en que conserves el puesto." },
+    "party-leadership": { "title": "Tu siguiente paso: convencer a tu partido", "text": "Busca apoyo entre grupos del partido. Conseguir respaldo cuesta recursos y no elimina a tus rivales." },
+    "term-summary": { "title": "Tu siguiente paso: elegir otra oportunidad", "text": "Revisa qué lograste y qué quedó pendiente. Puedes buscar un nuevo cargo, volver a competir o retirarte y conocer tu legado." },
+    "legacy": { "title": "Tu siguiente paso: decidir cómo seguir", "text": "Tu legado recoge los logros y costos de la carrera. Si sigues con vida puedes apoyar a otra figura o buscar el regreso; también puedes conservar esta historia en el salón." }
+  }
+}

@@ -1,0 +1,551 @@
+{
+  "schemaVersion": 1,
+  "id": "brazil",
+  "name": "Brasil",
+  "experimental": true,
+  "startingYear": 2026,
+  "dataVersion": "brazil-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance",
+  "population": 212812405,
+  "politicalSystem": {
+    "formOfGovernment": "presidential",
+    "executive": {
+      "officeId": "president",
+      "title": "Presidente",
+      "selection": "direct-election",
+      "termYears": 4,
+      "consecutiveTermLimit": 2,
+      "election": {
+        "method": "two-round",
+        "firstRoundThresholdPercent": 50,
+        "runoffDays": 28
+      },
+      "investiture": null,
+      "confidence": null,
+      "censure": null,
+      "dissolution": {
+        "executiveMayPropose": false,
+        "minimumMonthsBetween": 0
+      }
+    },
+    "legislature": {
+      "type": "bicameral",
+      "lowerChamber": {
+        "id": "house",
+        "name": "Cámara de Diputados",
+        "seats": 513,
+        "termYears": 4,
+        "electoralSystem": "proportional",
+        "districtCount": 1,
+        "nationalSeats": 0,
+        "seatAllocationMethod": "dhondt",
+        "electoralThresholdPercent": 0
+      },
+      "upperChamber": {
+        "id": "senate",
+        "name": "Senado Federal",
+        "seats": 81,
+        "termYears": 8,
+        "electoralSystem": "majoritarian",
+        "districtCount": 27,
+        "nationalSeats": 0,
+        "seatAllocationMethod": "plurality",
+        "electoralThresholdPercent": 0
+      }
+    },
+    "presidentialTermYears": 4,
+    "presidentialElection": "two-round",
+    "removalMechanisms": [
+      "impeachment",
+      "vacancy"
+    ],
+    "politicalDistribution": [
+      {
+        "sharePercent": 26,
+        "ideology": {
+          "economy": 65,
+          "social": 43,
+          "nationalism": 55,
+          "institutionalism": 68,
+          "rigidity": 47
+        }
+      },
+      {
+        "sharePercent": 23,
+        "ideology": {
+          "economy": 35,
+          "social": 67,
+          "nationalism": 35,
+          "institutionalism": 78,
+          "rigidity": 38
+        }
+      },
+      {
+        "sharePercent": 20,
+        "ideology": {
+          "economy": 68,
+          "social": 34,
+          "nationalism": 74,
+          "institutionalism": 48,
+          "rigidity": 54
+        }
+      },
+      {
+        "sharePercent": 17,
+        "ideology": {
+          "economy": 48,
+          "social": 55,
+          "nationalism": 45,
+          "institutionalism": 68,
+          "rigidity": 35
+        }
+      },
+      {
+        "sharePercent": 14,
+        "ideology": {
+          "economy": 52,
+          "social": 50,
+          "nationalism": 50,
+          "institutionalism": 58,
+          "rigidity": 60
+        }
+      }
+    ],
+    "headOfState": {
+      "officeId": "president",
+      "title": "Presidente de Brasil",
+      "selection": "direct-election",
+      "termYears": 4,
+      "ceremonial": false
+    },
+    "executiveAccountability": {
+      "presidentialVacancy": null,
+      "presidentialAccusation": {
+        "grounds": [
+          "impeachment"
+        ]
+      },
+      "cabinetCensure": null
+    }
+  },
+  "candidateEligibility": [
+    {
+      "officeId": "deputy",
+      "minimumAge": 21,
+      "chamberId": "house",
+      "nationality": "citizen",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party"
+    },
+    {
+      "officeId": "senator",
+      "minimumAge": 35,
+      "chamberId": "senate",
+      "nationality": "citizen",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party"
+    },
+    {
+      "officeId": "president",
+      "minimumAge": 35,
+      "nationality": "citizen",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party"
+    }
+  ],
+  "dataSources": [
+    {
+      "name": "Banco Mundial · World Development Indicators",
+      "url": "https://data.worldbank.org/country/brazil",
+      "indicator": "Población total, PIB corriente, crecimiento real anual, inflación y desempleo modelado por OIT; variables macro del snapshot 2025, exportaciones de mercancías WDI 2025",
+      "year": 2025,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Cámara dos Deputados · Constituição Federal",
+      "url": "https://www2.camara.leg.br/atividade-legislativa/legislacao/Constituicoes_Brasileiras/constituicao-cidada/constituicao-federal/index.html/CF1988.html/",
+      "indicator": "Mandato presidencial de cuatro años, elección a dos vueltas, composición y atribuciones federales",
+      "year": 2026,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Câmara dos Deputados · composição do Congresso",
+      "url": "https://www.camara.leg.br/historia-e-arquivo/",
+      "indicator": "513 diputados proporcionales por cuatro años, 81 senadores por ocho años, tres por unidad federativa; distritos del juego agregados",
+      "year": 2026,
+      "accessedOn": "2026-10-06"
+    }
+  ],
+  "economy": {
+    "gdpUsd": 2279920092492.13,
+    "annualGrowthPercent": 2.2857464902475,
+    "annualInflationPercent": 5.01675279604836,
+    "unemploymentPercent": 5.97
+  },
+  "mandateExpectations": {
+    "annualGrowthFloorPercent": 2,
+    "inflationCeilingPercent": 6.0,
+    "unemploymentCeilingPercent": 7.5,
+    "approvalFloorPercent": 38
+  },
+  "trade": {
+    "goodsExportsUsd": 348278000000,
+    "dataYear": 2025,
+    "leadingSectors": [
+      "Manufactura",
+      "Agroindustria",
+      "Minerales y energía"
+    ]
+  },
+  "socialBlocks": [
+    {
+      "id": "workers",
+      "name": "Hogares asalariados",
+      "populationShare": 24,
+      "mood": 0,
+      "demands": [
+        "empleo",
+        "salario real",
+        "servicios"
+      ]
+    },
+    {
+      "id": "rural",
+      "name": "Comunidades rurales",
+      "populationShare": 16,
+      "mood": 0,
+      "demands": [
+        "conectividad",
+        "infraestructura",
+        "acceso a mercados"
+      ]
+    },
+    {
+      "id": "professionals",
+      "name": "Profesionales y personal técnico",
+      "populationShare": 20,
+      "mood": 0,
+      "demands": [
+        "formación",
+        "innovación",
+        "vivienda"
+      ]
+    },
+    {
+      "id": "business",
+      "name": "Pequeñas y medianas empresas",
+      "populationShare": 15,
+      "mood": 0,
+      "demands": [
+        "crédito",
+        "reglas previsibles",
+        "infraestructura"
+      ]
+    },
+    {
+      "id": "public-services",
+      "name": "Personal de servicios públicos",
+      "populationShare": 14,
+      "mood": 0,
+      "demands": [
+        "capacidad institucional",
+        "salud",
+        "educación"
+      ]
+    },
+    {
+      "id": "students",
+      "name": "Estudiantes y hogares jóvenes",
+      "populationShare": 11,
+      "mood": 0,
+      "demands": [
+        "educación",
+        "vivienda",
+        "oportunidades"
+      ]
+    }
+  ],
+  "electoralDistricts": [
+    {
+      "id": "national",
+      "name": "Lista nacional agregada",
+      "seatsByChamber": {
+        "house": 513,
+        "senate": 0
+      }
+    },
+    {
+      "id": "state-01",
+      "name": "Delegación estatal abstracta 01",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-02",
+      "name": "Delegación estatal abstracta 02",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-03",
+      "name": "Delegación estatal abstracta 03",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-04",
+      "name": "Delegación estatal abstracta 04",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-05",
+      "name": "Delegación estatal abstracta 05",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-06",
+      "name": "Delegación estatal abstracta 06",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-07",
+      "name": "Delegación estatal abstracta 07",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-08",
+      "name": "Delegación estatal abstracta 08",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-09",
+      "name": "Delegación estatal abstracta 09",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-10",
+      "name": "Delegación estatal abstracta 10",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-11",
+      "name": "Delegación estatal abstracta 11",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-12",
+      "name": "Delegación estatal abstracta 12",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-13",
+      "name": "Delegación estatal abstracta 13",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-14",
+      "name": "Delegación estatal abstracta 14",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-15",
+      "name": "Delegación estatal abstracta 15",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-16",
+      "name": "Delegación estatal abstracta 16",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-17",
+      "name": "Delegación estatal abstracta 17",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-18",
+      "name": "Delegación estatal abstracta 18",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-19",
+      "name": "Delegación estatal abstracta 19",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-20",
+      "name": "Delegación estatal abstracta 20",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-21",
+      "name": "Delegación estatal abstracta 21",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-22",
+      "name": "Delegación estatal abstracta 22",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-23",
+      "name": "Delegación estatal abstracta 23",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-24",
+      "name": "Delegación estatal abstracta 24",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-25",
+      "name": "Delegación estatal abstracta 25",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-26",
+      "name": "Delegación estatal abstracta 26",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "state-27",
+      "name": "Delegación estatal abstracta 27",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    }
+  ],
+  "partyLeadership": {
+    "officeId": "party-leader",
+    "title": "Líder del partido",
+    "termYears": 2,
+    "minimumAge": 18,
+    "eligibleAfterOfficeIds": [
+      "deputy",
+      "senator",
+      "president",
+      "minister"
+    ],
+    "electionMethod": "generated-caucus-majority",
+    "requiredMajorityPercent": 50
+  },
+  "ministerialAppointment": {
+    "officeId": "minister",
+    "title": "Secretario de gabinete",
+    "termYears": 2,
+    "minimumAge": 18,
+    "eligibleAfterOfficeIds": [
+      "deputy",
+      "senator",
+      "president",
+      "party-leader"
+    ],
+    "appointmentMethod": "generated-executive-choice",
+    "minimumSupportPercent": 45,
+    "portfolios": [
+      {
+        "id": "economy",
+        "title": "Economía",
+        "focus": "economy"
+      },
+      {
+        "id": "foreign-affairs",
+        "title": "Relaciones exteriores",
+        "focus": "institutions"
+      },
+      {
+        "id": "health",
+        "title": "Salud",
+        "focus": "services"
+      },
+      {
+        "id": "education",
+        "title": "Educación",
+        "focus": "services"
+      },
+      {
+        "id": "infrastructure",
+        "title": "Infraestructura",
+        "focus": "economy"
+      }
+    ]
+  }
+}

@@ -1,4 +1,5 @@
 import type { GameState, Ideology } from "./types.js";
+import type { RegimeState } from "./regime-types.js";
 import type { GeopoliticsState } from "./geopolitics-types.js";
 
 export type CareerStage = "campaign" | "election-result" | "legislature" | "executive" | "party-leadership" | "minister" | "term-summary" | "legacy";
@@ -174,7 +175,8 @@ export interface CharacterRelationship {
 }
 
 export interface CareerGameState {
-  readonly saveSchemaVersion: 14;
+  readonly saveSchemaVersion: 15;
+  readonly regime: RegimeState | null;
   readonly countryId: string;
   readonly countryDataVersion: string;
   readonly contentDataVersion: string;
@@ -252,7 +254,7 @@ export interface BudgetVoteRecord {
 
 export interface LegacyProfile {
   readonly dimensions: Readonly<Record<"governance" | "integrity" | "influence" | "continuity" | "publicTrust", number>>;
-  readonly archetype: "reformer" | "builder" | "broker" | "survivor" | "caretaker" | "ideologue" | "controversial";
+  readonly archetype: "reformer" | "builder" | "broker" | "survivor" | "caretaker" | "ideologue" | "controversial" | "stabilizer" | "institution-keeper" | "kingmaker";
   readonly summary: string;
   readonly milestones: readonly string[];
   readonly reevaluationAt5: number;
@@ -292,7 +294,7 @@ export interface GovernmentPolicyVoteRecord {
 }
 
 export interface GovernmentChallenge {
-  readonly type: "presidential-vacancy" | "constructive-censure";
+  readonly type: "presidential-vacancy" | "constructive-censure" | "censure";
   readonly phase: "admission" | "defense";
   readonly causeId: string;
   readonly sponsorCount: number;

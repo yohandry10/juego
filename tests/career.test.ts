@@ -57,7 +57,7 @@ test("international treaty ratification counts deterministic chamber votes and a
   assert.ok(passageVote.yes > passageVote.no);
   assert.equal(passageVote.abstain + passageVote.yes + passageVote.no, state.world.legislators.filter((member) => member.chamberId === state.legislature!.chamberId).length);
   assert.equal(passed.geopolitics.treaties.find((item) => item.id === treaty.id)?.status, "ratified");
-  assert.equal(passed.geopolitics.relations.find((relation) => relation.a === partnerId || relation.b === partnerId)?.annualFlowUsd, state.geopolitics.relations.find((relation) => relation.a === partnerId || relation.b === partnerId)!.annualFlowUsd * 1.03);
+  assert.equal(passed.geopolitics.relations.find((relation) => [relation.a, relation.b].includes(partnerId) && [relation.a, relation.b].includes(state.geopolitics.playerCountryId))?.annualFlowUsd, state.geopolitics.relations.find((relation) => [relation.a, relation.b].includes(partnerId) && [relation.a, relation.b].includes(state.geopolitics.playerCountryId))!.annualFlowUsd * 1.03);
 
   const opposed = { ...highSupport, world: { ...highSupport.world, approvalPercent: 0, legislators: highSupport.world.legislators.map((member) => member.chamberId === state.legislature!.chamberId ? { ...member, ideology: { ...member.ideology, economy: 0, nationalism: 100, social: 0 } } : member) }, geopolitics: { ...highSupport.geopolitics, treaties: [{ ...treaty, id: "test-trade-rejected" }] } };
   const rejected = ratifyInternationalTreaty(opposed, country, "test-trade-rejected");
@@ -68,9 +68,12 @@ test("international treaty ratification counts deterministic chamber votes and a
   const imfRequest = { ...highSupport, geopolitics: { ...highSupport.geopolitics, treaties: [...highSupport.geopolitics.treaties, imfTreaty] } };
   const imfApproval = ratifyInternationalTreaty(imfRequest, country, imfTreaty.id);
   assert.equal(imfApproval.geopolitics.treaties.find((item) => item.id === imfTreaty.id)?.status, "ratified");
-  assert.equal(imfApproval.world.economy.indicators.publicDebtPercentGdp, highSupport.world.economy.indicators.publicDebtPercentGdp + 8);
-  assert.equal(imfApproval.world.economy.indicators.fiscalDeficitPercentGdp, highSupport.world.economy.indicators.fiscalDeficitPercentGdp - 1.2);
-  assert.ok(imfApproval.world.economy.causesByIndicator.publicDebtPercentGdp?.[0]?.includes("Programa IMF"));
+  assert.equal(imfApproval.world.economy.indicators.publicDebtPercentGdp, highSupport.world.economy.indicators.publicDebtPercentGdp);
+  assert.equal(imfApproval.world.economy.indicators.fiscalDeficitPercentGdp, highSupport.world.economy.indicators.fiscalDeficitPercentGdp);
+  assert.equal(imfApproval.geopolitics.treaties.find((item) => item.id === imfTreaty.id)?.financing?.disbursedPercentGdp, 0);
+  const firstTranche = advanceCareer(imfApproval, country);
+  assert.equal(firstTranche.geopolitics.treaties.find((item) => item.id === imfTreaty.id)?.financing?.disbursedPercentGdp, 2);
+  assert.ok(firstTranche.world.economy.causesByIndicator.publicDebtPercentGdp?.some((cause) => cause.includes("Desembolso")));
 });
 
 test("event choices change party support and resolve the inbox item", () => {
@@ -217,7 +220,7 @@ test("a party nomination starts a causal event arc that advances with the campai
 });
 
 test("campaign promises become an inbox decision and change resources and approval", () => {
-  let state = newPlayer("promise-case");
+  let state = newPlayer("promise-case-0");
   state = performCampaignAction(state, "make-promise");
   state = performCampaignAction(state, "rally");
   const promise = state.campaign.promises[0]!;

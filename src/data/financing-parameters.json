@@ -1,0 +1,39 @@
+{
+  "version": "financing-game-v1",
+  "description": "Reglas ficticias comunes de MANDATO. No reproducen contratos, tasas ni condiciones oficiales de FMI o Banco Mundial.",
+  "requestInfluenceCost": 7,
+  "commitmentCapitalCost": 4,
+  "trancheCount": 4,
+  "firstReviewDelayQuarters": 1,
+  "reviewIntervalQuarters": 2,
+  "disbursementWindowQuarters": 12,
+  "repaymentGraceQuarters": 12,
+  "repaymentIntervalQuarters": 4,
+  "repaymentCount": 4,
+  "annualFinanceCost": 0.025,
+  "repaymentReserveShare": 0.1,
+  "failedReviewRiskIncrease": 10,
+  "retainedReviews": 12,
+  "lenders": {
+    "imf": {
+      "committedPercentGdp": 8,
+      "targetDelta": -0.5,
+      "targetMinimum": -20,
+      "targetMaximum": 100,
+      "reserveShare": 0.15,
+      "investmentShare": 0,
+      "passedReviewRiskReduction": 25,
+      "commitment": { "deficitDelta": -0.6, "investmentDelta": 0, "spendingDelta": -0.6, "growthDelta": -0.15, "approvalDelta": -1 }
+    },
+    "world-bank": {
+      "committedPercentGdp": 3,
+      "targetDelta": 0.5,
+      "targetMinimum": 0,
+      "targetMaximum": 99,
+      "reserveShare": 0.2,
+      "investmentShare": 0.5,
+      "passedReviewRiskReduction": 10,
+      "commitment": { "deficitDelta": 0.3, "investmentDelta": 0.75, "spendingDelta": 0, "growthDelta": 0, "approvalDelta": 0.2 }
+    }
+  }
+}

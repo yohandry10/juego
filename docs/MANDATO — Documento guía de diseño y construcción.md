@@ -2,6 +2,8 @@
 
 *Documento maestro del proyecto MANDATO · Versión 2, adaptada el 5 de octubre de 2026 · Idioma del juego: español*
 
+**Alcance corregido por el usuario el 6 de octubre de 2026: exclusivamente PC.** El juego se diseña para ratón, teclado y pantallas de escritorio. Las referencias posteriores a versión móvil o pruebas con dispositivos móviles pertenecen al alcance anterior y dejan de ser requisitos. La interfaz debe entenderse sin conocimientos de leyes o economía, manteniendo decisiones, costos y riesgos interesantes. Esta directriz prevalece sobre requisitos contradictorios del documento.
+
 ## 0. Cómo debes usar este documento
 
 Este es el documento fuente de verdad del proyecto MANDATO. Es largo a propósito: queremos que no tengas que adivinar nada importante. Léelo completo antes de producir cualquier cosa y vuelve a él cada vez que empieces una fase.

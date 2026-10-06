@@ -1,69 +1,68 @@
 # MANDATO — Manual del juego
 
-MANDATO es una simulación política para una persona. Creas una figura política ficticia, construyes una carrera y tomas decisiones en un país cuyas instituciones y datos de escenario están versionados. Cada partida genera sus propios partidos, legisladores, facciones y relaciones. No reproduce políticos ni resultados electorales reales.
+Juego político para PC y una persona, con ratón y teclado. No necesitas conocimientos de economía o leyes: elige acciones, busca apoyos y aprende de sus consecuencias. Las opciones principales explican qué ganas, qué gastas y qué arriesgas; abre detalles si quieres profundizar. Cada partida crea partidos, legisladores, facciones y relaciones ficticios. Las fichas distinguen instituciones, observaciones fechadas y parámetros del escenario. No reproduce dirigentes ni resultados actuales.
 
-## Empezar una partida
+## Crear una carrera
 
-En la pantalla inicial elige uno de los escenarios disponibles y completa el creador de seis pasos:
+Elige país y variante. Hay diez perfiles nacionales y escenarios generados; estos últimos usan instituciones y sociedad explícitamente ficticias. La variante constitucional es la predeterminada, también en Venezuela. La variante hegemónica es una experiencia hipotética opcional, independiente del régimen real.
 
-1. Indica nombre, origen social, cargo de inicio y circunscripción.
-2. Elige una profesión y una formación; ambas modifican habilidades iniciales.
-3. Define cinco ejes ideológicos. Sus extremos describen posiciones distintas, no una etiqueta moral.
-4. Escoge entre dos y tres rasgos de personalidad.
-5. Reparte los atributos disponibles entre carisma, oratoria, astucia, gestión, integridad, red de contactos y salud.
-6. Confirma edad, partido, semilla, nivel de realismo y, si quieres, Ironman.
+El creador tiene seis pasos: nombre/origen/cargo/circunscripción; profesión/formación; ideología; dos o tres rasgos; atributos; edad/partido/semilla/realismo/Ironman. La misma semilla y versiones reproducen el escenario. Los tres realismos modifican rivales e información, sin regalar recursos. Ironman conserva el guardado automático y bloquea importación.
 
-La semilla permite repetir la generación cuando el país y las versiones de datos y contenido coinciden. Relajado, Realista e Implacable cambian el comportamiento o la información de los rivales; no conceden ni quitan recursos. Ironman conserva un único guardado automático y desactiva la importación.
+## Campaña y acceso
 
-## El ciclo de carrera
+Cuatro semanas, dos acciones por semana. Recorrer, mitin, prensa, partido, recaudación y promesas tienen costos y efectos; recaudar acredita 12 mil una vez. Confirma nominación antes de cerrar. Las listas rivales y candidaturas personales compiten: ganar escaños para el partido no garantiza un puesto propio en una lista grande. El resultado explica la asignación y tu lugar. Las contiendas mayoritarias ordenan candidatos individuales; una nominación confirmada no enfrenta una lotería adicional de lista proporcional.
 
-Una campaña dura cuatro semanas. Dispones de dos acciones por semana: recorrer el distrito, organizar un mitin, hablar con la prensa, acercarte al partido, recaudar fondos o formular una promesa. Confirma tu nominación y avanza las semanas. Las promesas pueden volver como decisiones y afectar la confianza.
+Las presidencias pueden tener pluralidad, dos vueltas o Colegio Electoral agregado; este último reparte 538 electores en delegaciones ficticias y simplifica la elección contingente, sin reproducir estados reales. Una candidatura de jefatura parlamentaria pasa a investidura, no a elección ejecutiva directa. Perder permite otra campaña. Un acceso hegemónico depende de la coalición dirigente y se identifica como hipotético, sin votos electorales ficticiamente presentados como reales.
 
-Puedes perder la candidatura o el puesto. Una derrota electoral cierra la carrera de ese cargo; una vacancia, una censura aprobada o un golpe generado pueden terminar un Gobierno activo. El resumen y el historial indican qué procedimiento ocurrió y por qué. Las decisiones institucionales se pueden gestionar; el golpe es un evento probabilístico simplificado, no una batalla controlable.
+## Negociar y gobernar
 
-El resultado electoral muestra el apoyo y explica los factores principales. Si pierdes, puedes iniciar otra campaña; si ganas, el escenario avanza al cargo configurado. Las carreras legislativas muestran representantes generados, sus partidos, facciones y circunscripciones. Las opciones de negociación y los votos pueden dejar confianza, resentimiento o memoria duradera.
+Congreso muestra bancadas, facciones, relaciones y motivos de voto. Negociar cuesta y puede fallar; no se garantiza comprar una mayoría. Un diputado conserva su escaño si falla su investidura; una candidatura inicial a jefatura que no logra confianza termina esa ruta. Un Gobierno activo también negocia acuerdos por cinco de capital; pueden ser rechazados y, si hay una cartera propia disponible, cederla a un socio. La negociación no reemplaza carteras de socios anteriores. Los proyectos, decretos, presupuestos, gabinete y política económica dejan efectos, rezagos y registros.
 
-Según el sistema del país, puedes formar o sostener un gobierno, negociar una investidura, reorganizar un gabinete, legislar, aprobar un presupuesto y responder a procedimientos de censura o vacancia. Cada procedimiento usa las reglas configuradas para ese escenario. El riesgo de caída, las señales de alerta y el registro de votos ayudan a entender por qué una coalición sobrevive o pierde poder.
+La caída puede venir de censura ordinaria o constructiva, vacancia donde exista, pérdida de estabilidad o golpe simulado. El procedimiento muestra promotores, defensa, plazo nacional y resultado. Los días no son iguales en todos los países. El diario y cierre explican la causa. No confundas el indicador de riesgo con una caída inevitable.
 
-Al cerrar una etapa puedes continuar a otro cargo, cambiar de partido, fundar uno ficticio, retirarte y generar un legado. El resumen conserva hitos de la carrera y tres proyecciones deterministas de reevaluación a 5, 15 y 30 años; son cálculos de juego y no una simulación de acontecimientos posteriores. Algunas rutas de liderazgo partidario y ministerios son abstracciones comunes del juego, no una simulación completa de cada institución nacional.
+En la variante hegemónica consulta élites, partido, militares, seguridad, protesta y legitimidad. Hay cinco acciones con costo y hasta dos por trimestre. Pactar distribuye recursos; renovar el partido puede molestar a élites; supervisión civil y diálogo tienen concesiones. Restringir reuniones reduce legitimidad y confianza, perjudica economía y aumenta aislamiento; no es una recompensa sin costos. Pérdida de élites/aparato puede producir purga, baja lealtad militar golpe y protesta alta con legitimidad baja revuelta. Los umbrales y causas aparecen en pantalla.
 
-## Economía y sociedad
+## Empleo, precios y bienestar
 
-La economía avanza por trimestre mediante cinco sectores y un conjunto de indicadores relacionados. Las políticas tienen ganadores, costos y rezagos; una medida aprobada no necesariamente produce un efecto inmediato. El panel Economía presenta las variables, las causas registradas, las crisis y las respuestas posibles. Sus proyecciones son rangos de juego, no pronósticos.
+Economía empieza con cuatro señales: si el país crece, cuánto suben los precios, cuánta gente busca empleo y cuánta vive en pobreza. Cada una explica por qué cambió. Al elegir una medida ves su beneficio, su riesgo, el costo en apoyo político y cuánto tarda. Puede ayudar a unos grupos y perjudicar a otros; no promete resultados garantizados. Los veinte indicadores y las cuentas completas siguen disponibles en detalles opcionales.
 
-Los bloques sociales tienen demandas, ánimo y capacidad de organización. El ánimo y las condiciones materiales influyen en la aprobación, la agenda, la estabilidad y la posibilidad de acción colectiva. Marchas, huelgas y bloqueos se describen sin violencia gráfica. Revisa sus explicaciones para conocer qué presión los originó.
+## Ritmo del tiempo
 
-## Diplomacia y mundo
+En Carrera puedes seguir paso a paso (tres meses) o avanzar hasta la próxima decisión. El ritmo rápido espera si tienes una respuesta en Bandeja, una propuesta que votar o una crisis que atender; también se detiene al terminar un cargo. Nunca elige una respuesta por ti y avanza como máximo un año por pulsación. Puedes volver al ritmo normal para observar cada trimestre.
 
-Mundo permite consultar el catálogo de países y economías, seleccionar actores, cambiar capas y avanzar la simulación geopolítica. Alinearse cuesta tres puntos de influencia; equilibrar, dos; mantener neutralidad no cuesta influencia. Cambiar de postura registra la decisión y modifica aislamiento, confianza o comercio sintético. Los flujos comerciales bilaterales son relaciones de juego y no cifras observadas de comercio entre cada par de países. Las sanciones dañan tanto al receptor como a quien las impone. Los shocks internacionales se transmiten de acuerdo con exposiciones simplificadas.
+## Mundo
 
-Los tratados pueden requerir ratificación legislativa. Organismos y votaciones usan reglas resumidas. Los conflictos son abstractos y deterministas; no hay combate táctico ni decisión de uso nuclear. Algunos actores del catálogo no tienen geometría en el mapa a esta escala, pero permanecen seleccionables desde los filtros y la lista.
+Selecciona actor/capa y consulta datos, relaciones, sanciones, organismos, shocks y registro. Visitas y nuevas posturas consumen influencia; un socio ausente abre un enlace sintético. Los acuerdos comerciales, de movilidad y los préstamos del FMI/Banco Mundial necesitan aprobación del Congreso. Sanciones, ayuda y reconocimiento requieren encabezar un Gobierno activo; otras rutas realizan contactos y propuestas. La ratificación parlamentaria consume una acción y la ejecutiva cuesta tres de capital. Programas, migración, ayuda y reconocimiento son abstracciones y no operaciones jurídicas reales. El reloj mundial avanza junto con el turno de carrera: un Worker mantiene economía, mundo y gobierno sincronizados, también sin conexión.
 
-La interfaz permite alineamiento, visitas, sanciones, ayuda exterior, reconocimiento de interlocución y propuestas de tratados comerciales o migratorios. La ayuda crea un compromiso de juego que afecta gradualmente crecimiento e inflación; un acuerdo migratorio ratificado mejora modestamente empleo y actividad, y uno comercial mejora el flujo bilateral y el crecimiento aproximado. Ambos efectos tienen una causa visible y no representan movimientos reales de personas o mercancías. También se puede solicitar un programa IMF o un préstamo de inversión del Banco Mundial; cada uno cuesta influencia y requiere votación legislativa. Si se aprueban, el programa IMF eleva deuda y reservas, reduce el déficit y aplica un costo temporal de crecimiento; el préstamo del Banco Mundial eleva deuda e inversión y mejora actividad. Son condiciones macroeconómicas estilizadas, no montos, contratos ni términos reales de esas instituciones. Los representantes generados emiten votos deterministas según ideología, bancada, aprobación pública, confianza y relaciones; una mayoría de votos emitidos aprueba el acuerdo. El resultado y las abstenciones quedan registrados. La ratificación no reproduce el debate parlamentario completo.
+Pedir apoyo económico cuesta 7 de influencia. Una solicitud aprobada abre cuatro entregas: la primera llega al siguiente trimestre y las demás dependen de cumplir el compromiso. Si falta cumplir, la entrega queda en pausa y la tarjeta explica una acción concreta, su costo y su riesgo. Lo recibido aumenta la deuda; se devuelve en cuatro pagos anuales desde el cuarto año del acuerdo. Si vence el plazo no habrá más entregas, pero la deuda permanece. Las cifras y metas completas son opcionales. Los acuerdos de guardados antiguos conservan sus efectos, sin repetir el préstamo.
+
+Un Gobierno ejecutivo puede solicitar autorización de conflicto con 12 de capital y voto abstracto de coalición/lealtad. La guerra agrupa tierra/mar/aire con moral, logística y ubicación por país; avanza varios trimestres, causa daños y termina con una explicación. Proxy, híbrido, bloqueo e insurgencia tienen consecuencias distintas. Posguerra muestra daño, desplazamiento, insurgencia y reparación como índices de juego que afectan presión interna, estabilidad, lealtad y transferencias. La ayuda civil puede reducir daños con costo para el donante. No hay uso nuclear ni combate táctico.
 
 ## Pestañas
 
-| Pestaña | Qué consultar |
+| Pestaña | Uso |
 | --- | --- |
-| Resumen / Carrera | Acciones disponibles, estado del cargo, riesgo y diario. |
-| Bandeja | Decisiones pendientes y actividad de la carrera. |
-| Congreso | Representantes ficticios, composición y motivos de voto. |
-| Prensa | Titulares generados a partir de sucesos de la partida. |
-| Economía | Indicadores, políticas, crisis, sectores y sociedad. |
-| Mundo | Mapa, actores, relaciones internacionales y reportes. |
-| País | Instituciones, snapshot, versión y fuentes del escenario. |
-| Ayuda | Ruta de inicio, checklist local, glosario y tamaño de texto. |
+| 01 Carrera | Campaña, cargo, recursos, riesgo y decisiones. |
+| 02 Bandeja | Noticias, arcos y decisiones pendientes. |
+| 03 Congreso | Representantes ficticios, bancadas, negociación y votos. |
+| 04 Prensa | Titulares satíricos de sucesos del estado. |
+| 05 Economía | Indicadores, sectores, políticas y causas. |
+| 06 Mundo | Mapa, actores, organismos y diplomacia. |
+| 07 País | Instituciones, versión, fuentes y supuestos. |
+| 08 Ayuda | Primeros diez minutos, glosario y texto. |
 
-## Guardado, privacidad y accesibilidad
+## Retiro, legado y guardado
 
-La partida se guarda en IndexedDB en el navegador. Puedes exportarla como JSON e importarla, excepto en Ironman. La aplicación no necesita una cuenta para jugar. El service worker de producción almacena recursos estáticos para una sesión posterior sin conexión; la prueba automatizada de navegador cubre carga inicial, interfaz de ayuda y recarga offline. Borrar los datos locales del sitio puede borrar el guardado.
+Retirarte produce diez arquetipos posibles, estadísticas, texto y tarjeta copiable. El salón del pie conserva hasta cincuenta resúmenes locales; Escape cierra el diálogo. Las reevaluaciones a 5/15/30 años son fórmulas, no una historia posterior completa. Hay opciones de retorno y sucesión.
 
-El pie de la aplicación abre el [aviso de privacidad](../public/privacy.html) y el canal de [reporte de errores](https://github.com/yohandry10/juego/issues). La procedencia de datasets y los pendientes de licencias están en [créditos](creditos-y-licencias.md).
+IndexedDB conserva la partida v15. Guardados v3–v14 migran preservando la carrera; importar/exportar usa JSON, salvo importación bloqueada en Ironman. Los botones de importación y exportación están en la barra lateral de PC. El salón también es local. El sitio no necesita cuentas ni envía deliberadamente la partida; alojamiento y enlaces externos tienen sus propias condiciones. Borrar datos del sitio elimina guardado, salón y preferencias.
 
-Los controles se pueden operar con teclado y muestran foco visible. Ayuda ofrece tres tamaños de texto y la interfaz respeta la preferencia del sistema para reducir movimiento. Esto no reemplaza una auditoría con lectores de pantalla, contraste medido en todas las pantallas ni pruebas con personas con distintas necesidades de acceso.
+En producción, tras la primera carga completa, se almacenan los diez perfiles, módulos, mapa, privacidad, créditos y licencias para jugar sin conexión; los escenarios generados se construyen desde ese material. La pestaña Ayuda ajusta texto y ofrece checklist. Hay foco de teclado y reducción de movimiento. Las pruebas automáticas cubren Chromium/Firefox y PC; no sustituyen lectores de pantalla ni sesiones con personas.
 
-## Escenarios disponibles y límites
+## Países y límites
 
-El selector incluye Perú, España, Francia, Alemania, Estados Unidos y Reino Unido. En Estados Unidos se generan 435 puestos de distrito para la Cámara de Representantes, 100 senadores en 50 delegaciones estatales agregadas y una elección presidencial que abstrae el Colegio Electoral al resultado nacional; no se simulan fronteras estatales ni clases de renovación senatorial. En Reino Unido, las 650 circunscripciones del Commons son puestos ficticios sin geometría; los cerca de 800 miembros elegibles del Lords forman una bancada generada agregada, aunque su tamaño real no es fijo y no hay candidatura jugable a esa cámara. La elección del primer ministro usa una investidura resumida. Las distribuciones políticas y sociales y varias metas económicas son parámetros de balance, no partidos ni encuestas actuales. Consulta País y sus fuentes para distinguir observaciones, reglas oficiales y supuestos de simulación.
+Perú, España, Francia, Alemania, EE.UU., Reino Unido, Brasil, México, Argentina y Venezuela tienen instituciones versionadas; varias se agregan. Alemania no reproduce compensación federal ni delegaciones completas; EE.UU. no reproduce estados, fronteras ni clases senatoriales; Lords usa una muestra aproximada de 800 miembros sin candidatura jugable; Brasil/Argentina agregan diputaciones nacionales y delegaciones senatoriales; México agrega listas y parte del Senado. No son diez modelos íntegramente curados.
 
-Los informes de fase describen cobertura y calibración: [Fase 4](phase-4-report.md) y [Fase 5](phase-5-report.md). La guía interna y el estado del proyecto están en [MANDATO — Documento guía de diseño y construcción](MANDATO%20%E2%80%94%20Documento%20gu%C3%ADa%20de%20dise%C3%B1o%20y%20construcci%C3%B3n.md). El prototipo todavía no cumple todos los criterios de país, auditoría editorial, balance integral, pruebas con personas ni publicación que fija esa guía.
+Venezuela: presidencia seis años, reelección sin límite tras Enmienda N.º 1 de 2009; Asamblea unicameral de 285 escaños/cinco años. Se representa una elección territorial agregada. La proyección histórica del WEO octubre 2025 para inflación 2026 es 682,1%; el motor limita el indicador a 100%. No la presenta como inflación observada ni activa una variante hegemónica por defecto.
+
+Economía y sociedad incluyen sectores, deuda, pobreza, desigualdad, distribuciones y expectativas de balance. Los generados utilizan una plantilla institucional común ficticia, aunque sus magnitudes disponibles de WDI están identificadas. Consulta País para distinguir cada origen. [Informes de Fase 4](phase-4-report.md), [Fase 5](phase-5-report.md) e [informe final de avance](final-report.md) enumeran lo pendiente. El juego completo sigue sin cumplir todos los criterios obligatorios.

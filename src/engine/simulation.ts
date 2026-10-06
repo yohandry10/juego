@@ -145,7 +145,7 @@ export function createGameState(country: CountryDefinition, seed: string): GameS
     gdpIndex: 100,
     inflationPercent: country.economy.annualInflationPercent,
     unemploymentPercent: country.economy.unemploymentPercent,
-    economy: createEconomicState(country.id),
+    economy: createEconomicState(country.id, country),
     publicAgenda: {
       issues: ["employment", "cost-of-living", "public-services", "institutions"].map((id, index) => ({ id, salience: [82, 76, 68, 44][index]!, ownerPartyId: null })),
       polarization: 38, institutionalTrust: 52, partyTrust: 50, electorateTrust: 50, collectiveActions: [],

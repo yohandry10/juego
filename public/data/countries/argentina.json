@@ -1,0 +1,534 @@
+{
+  "schemaVersion": 1,
+  "id": "argentina",
+  "name": "Argentina",
+  "experimental": true,
+  "startingYear": 2026,
+  "dataVersion": "argentina-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance",
+  "population": 45851378,
+  "politicalSystem": {
+    "formOfGovernment": "presidential",
+    "executive": {
+      "officeId": "president",
+      "title": "Presidente",
+      "selection": "direct-election",
+      "termYears": 4,
+      "consecutiveTermLimit": 1,
+      "election": {
+        "method": "two-round",
+        "firstRoundThresholdPercent": 45,
+        "runoffDays": 30
+      },
+      "investiture": null,
+      "confidence": null,
+      "censure": null,
+      "dissolution": {
+        "executiveMayPropose": false,
+        "minimumMonthsBetween": 0
+      }
+    },
+    "legislature": {
+      "type": "bicameral",
+      "lowerChamber": {
+        "id": "house",
+        "name": "Cámara de Diputados",
+        "seats": 257,
+        "termYears": 4,
+        "electoralSystem": "proportional",
+        "districtCount": 1,
+        "nationalSeats": 0,
+        "seatAllocationMethod": "dhondt",
+        "electoralThresholdPercent": 0
+      },
+      "upperChamber": {
+        "id": "senate",
+        "name": "Senado de la Nación",
+        "seats": 72,
+        "termYears": 6,
+        "electoralSystem": "majoritarian",
+        "districtCount": 24,
+        "nationalSeats": 0,
+        "seatAllocationMethod": "plurality",
+        "electoralThresholdPercent": 0
+      }
+    },
+    "presidentialTermYears": 4,
+    "presidentialElection": "two-round",
+    "removalMechanisms": [
+      "impeachment",
+      "vacancy"
+    ],
+    "politicalDistribution": [
+      {
+        "sharePercent": 22,
+        "ideology": {
+          "economy": 62,
+          "social": 43,
+          "nationalism": 60,
+          "institutionalism": 72,
+          "rigidity": 46
+        }
+      },
+      {
+        "sharePercent": 21,
+        "ideology": {
+          "economy": 35,
+          "social": 67,
+          "nationalism": 28,
+          "institutionalism": 78,
+          "rigidity": 38
+        }
+      },
+      {
+        "sharePercent": 20,
+        "ideology": {
+          "economy": 68,
+          "social": 34,
+          "nationalism": 74,
+          "institutionalism": 48,
+          "rigidity": 54
+        }
+      },
+      {
+        "sharePercent": 19,
+        "ideology": {
+          "economy": 48,
+          "social": 55,
+          "nationalism": 45,
+          "institutionalism": 68,
+          "rigidity": 35
+        }
+      },
+      {
+        "sharePercent": 18,
+        "ideology": {
+          "economy": 52,
+          "social": 50,
+          "nationalism": 50,
+          "institutionalism": 58,
+          "rigidity": 60
+        }
+      }
+    ],
+    "headOfState": {
+      "officeId": "president",
+      "title": "Presidente de Argentina",
+      "selection": "direct-election",
+      "termYears": 4,
+      "ceremonial": false
+    },
+    "executiveAccountability": {
+      "presidentialVacancy": null,
+      "presidentialAccusation": {
+        "grounds": [
+          "impeachment"
+        ]
+      },
+      "cabinetCensure": null
+    }
+  },
+  "candidateEligibility": [
+    {
+      "officeId": "deputy",
+      "minimumAge": 25,
+      "chamberId": "house",
+      "nationality": "citizen",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party"
+    },
+    {
+      "officeId": "senator",
+      "minimumAge": 30,
+      "chamberId": "senate",
+      "nationality": "citizen",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party"
+    },
+    {
+      "officeId": "president",
+      "minimumAge": 30,
+      "nationality": "citizen",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party"
+    }
+  ],
+  "dataSources": [
+    {
+      "name": "Banco Mundial · World Development Indicators",
+      "url": "https://data.worldbank.org/country/argentina",
+      "indicator": "Población total, PIB corriente, crecimiento real anual, inflación y desempleo modelado por OIT; variables macro del snapshot 2025, exportaciones de mercancías WDI 2025",
+      "year": 2025,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Argentina.gob.ar · Constitución Nacional y democracia",
+      "url": "https://www.argentina.gob.ar/sites/default/files/la_democracia_argentina_volumen_2.pdf",
+      "indicator": "Elección directa presidencial a cuatro años, una reelección consecutiva y requisitos estructurales de cargos federales",
+      "year": 2025,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Argentina.gob.ar · ¿Qué elegimos?",
+      "url": "https://www.argentina.gob.ar/elecciones-2025/que-elegimos",
+      "indicator": "Cámara de Diputados de 257 integrantes, Senado de 72 con tres por provincia/CABA; agregación territorial declarada por el juego",
+      "year": 2025,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "INDEC · IPC diciembre y año 2025",
+      "url": "https://www.indec.gob.ar/uploads/informesdeprensa/ipc_01_266741F036E8.pdf",
+      "indicator": "Inflación nacional acumulada en 2025: 31,5%",
+      "year": 2025,
+      "accessedOn": "2026-10-06"
+    }
+  ],
+  "economy": {
+    "gdpUsd": 683097891618.597,
+    "annualGrowthPercent": 4.36733330217022,
+    "annualInflationPercent": 31.5,
+    "unemploymentPercent": 7.145
+  },
+  "mandateExpectations": {
+    "annualGrowthFloorPercent": 2,
+    "inflationCeilingPercent": 37.2,
+    "unemploymentCeilingPercent": 8.6,
+    "approvalFloorPercent": 38
+  },
+  "trade": {
+    "goodsExportsUsd": 87111000000,
+    "dataYear": 2025,
+    "leadingSectors": [
+      "Agroindustria",
+      "Energía",
+      "Minería"
+    ]
+  },
+  "socialBlocks": [
+    {
+      "id": "workers",
+      "name": "Hogares asalariados",
+      "populationShare": 24,
+      "mood": 0,
+      "demands": [
+        "empleo",
+        "salario real",
+        "servicios"
+      ]
+    },
+    {
+      "id": "rural",
+      "name": "Comunidades rurales",
+      "populationShare": 16,
+      "mood": 0,
+      "demands": [
+        "conectividad",
+        "infraestructura",
+        "acceso a mercados"
+      ]
+    },
+    {
+      "id": "professionals",
+      "name": "Profesionales y personal técnico",
+      "populationShare": 20,
+      "mood": 0,
+      "demands": [
+        "formación",
+        "innovación",
+        "vivienda"
+      ]
+    },
+    {
+      "id": "business",
+      "name": "Pequeñas y medianas empresas",
+      "populationShare": 15,
+      "mood": 0,
+      "demands": [
+        "crédito",
+        "reglas previsibles",
+        "infraestructura"
+      ]
+    },
+    {
+      "id": "public-services",
+      "name": "Personal de servicios públicos",
+      "populationShare": 14,
+      "mood": 0,
+      "demands": [
+        "capacidad institucional",
+        "salud",
+        "educación"
+      ]
+    },
+    {
+      "id": "students",
+      "name": "Estudiantes y hogares jóvenes",
+      "populationShare": 11,
+      "mood": 0,
+      "demands": [
+        "educación",
+        "vivienda",
+        "oportunidades"
+      ]
+    }
+  ],
+  "electoralDistricts": [
+    {
+      "id": "national",
+      "name": "Lista nacional agregada",
+      "seatsByChamber": {
+        "house": 257,
+        "senate": 0
+      }
+    },
+    {
+      "id": "province-01",
+      "name": "Delegación provincial abstracta 01",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-02",
+      "name": "Delegación provincial abstracta 02",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-03",
+      "name": "Delegación provincial abstracta 03",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-04",
+      "name": "Delegación provincial abstracta 04",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-05",
+      "name": "Delegación provincial abstracta 05",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-06",
+      "name": "Delegación provincial abstracta 06",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-07",
+      "name": "Delegación provincial abstracta 07",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-08",
+      "name": "Delegación provincial abstracta 08",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-09",
+      "name": "Delegación provincial abstracta 09",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-10",
+      "name": "Delegación provincial abstracta 10",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-11",
+      "name": "Delegación provincial abstracta 11",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-12",
+      "name": "Delegación provincial abstracta 12",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-13",
+      "name": "Delegación provincial abstracta 13",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-14",
+      "name": "Delegación provincial abstracta 14",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-15",
+      "name": "Delegación provincial abstracta 15",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-16",
+      "name": "Delegación provincial abstracta 16",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-17",
+      "name": "Delegación provincial abstracta 17",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-18",
+      "name": "Delegación provincial abstracta 18",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-19",
+      "name": "Delegación provincial abstracta 19",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-20",
+      "name": "Delegación provincial abstracta 20",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-21",
+      "name": "Delegación provincial abstracta 21",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-22",
+      "name": "Delegación provincial abstracta 22",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-23",
+      "name": "Delegación provincial abstracta 23",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    },
+    {
+      "id": "province-24",
+      "name": "Delegación provincial abstracta 24",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 3
+      }
+    }
+  ],
+  "partyLeadership": {
+    "officeId": "party-leader",
+    "title": "Líder del partido",
+    "termYears": 2,
+    "minimumAge": 18,
+    "eligibleAfterOfficeIds": [
+      "deputy",
+      "senator",
+      "president",
+      "minister"
+    ],
+    "electionMethod": "generated-caucus-majority",
+    "requiredMajorityPercent": 50
+  },
+  "ministerialAppointment": {
+    "officeId": "minister",
+    "title": "Secretario de gabinete",
+    "termYears": 2,
+    "minimumAge": 18,
+    "eligibleAfterOfficeIds": [
+      "deputy",
+      "senator",
+      "president",
+      "party-leader"
+    ],
+    "appointmentMethod": "generated-executive-choice",
+    "minimumSupportPercent": 45,
+    "portfolios": [
+      {
+        "id": "economy",
+        "title": "Economía",
+        "focus": "economy"
+      },
+      {
+        "id": "foreign-affairs",
+        "title": "Relaciones exteriores",
+        "focus": "institutions"
+      },
+      {
+        "id": "health",
+        "title": "Salud",
+        "focus": "services"
+      },
+      {
+        "id": "education",
+        "title": "Educación",
+        "focus": "services"
+      },
+      {
+        "id": "infrastructure",
+        "title": "Infraestructura",
+        "focus": "economy"
+      }
+    ]
+  }
+}

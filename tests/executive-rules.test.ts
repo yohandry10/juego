@@ -115,12 +115,12 @@ test("Peru exposes a data-driven presidential campaign and a full executive term
 });
 
 test("a locally simulated coup removes the active executive and explains the lost term", () => {
-  const seed = "forced-coup-36";
+  const seed = "forced-coup-40";
   let state = createCareerGame(peru, { seed, name: "Elena Cruz", age: 40, originId: "professional-middle", professionId: "teacher", educationId: "public-university", officeId: "president" });
   const playerCountry = state.geopolitics.playerCountryId;
   const geopolitics = createGeopoliticsState("peru", seed);
-  state = { ...state, geopolitics: { ...geopolitics, actors: geopolitics.actors.map((actor) => actor.id === playerCountry ? { ...actor, regimeStability: 0 } : actor) } };
-  state = { ...state, stage: "executive", government: {
+  state = { ...state, geopolitics: { ...geopolitics, actors: geopolitics.actors.map((actor) => actor.id === playerCountry ? { ...actor, regimeStability: 0, militaryLoyalty: 5, domesticStress: 85 } : actor) } };
+  state = { ...state, stage: "executive", electionOutcome: { playerVotes: 1, playerVoteSharePercent: 60, turnoutPercent: 70, partySeatsInDistrict: 0, playerListPosition: null, elected: true, explanation: "Gobierno electo de prueba para validar la transición por golpe.", partyVotes: {} }, government: {
     status: "active", executiveId: state.player.id, chamberId: state.campaign.chamberId, round: "first", supportPartyIds: [state.playerPartyId],
     termTurn: 0, totalTermTurns: 20, lastInvestitureYes: null, fallRiskPercent: 20, warningSignals: [], challenge: null, cabinet: [], policyVotes: [],
   } };
@@ -345,7 +345,7 @@ test("realism modes change NPC behavior, crisis pressure, and visible vote detai
 });
 
 test("configured government challenges expose defense and resolve using generated chamber votes", () => {
-  const initial = createCareerGame(spain, { seed: "challenge-spain", name: "Lucía Rivas", age: 38, originId: "professional-middle", professionId: "lawyer", educationId: "public-university", districtId: "madrid" });
+  const initial = createCareerGame(spain, { seed: "government-formation", name: "Lucía Rivas", age: 38, originId: "professional-middle", professionId: "lawyer", educationId: "public-university", districtId: "madrid" });
   let parliamentary = advanceCareer({ ...initial, stage: "election-result", electionOutcome: { playerVotes: 1, playerVoteSharePercent: 30, turnoutPercent: 70, partySeatsInDistrict: 5, playerListPosition: 1, elected: true, explanation: "Escaño", partyVotes: {} } }, spain);
   parliamentary = startGovernmentInvestiture(parliamentary, spain);
   parliamentary = negotiateGovernmentSupport(parliamentary, parliamentary.world.parties[1]!.id, spain);

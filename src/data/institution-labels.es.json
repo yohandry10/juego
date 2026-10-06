@@ -1,0 +1,6 @@
+{
+  "offices": { "deputy": "Diputación", "senator": "Senado", "president": "Presidencia", "prime-minister": "Jefatura de Gobierno", "party-leader": "Liderazgo del partido", "minister": "Ministerio" },
+  "governments": { "presidential": "Presidencial", "parliamentary": "Parlamentario", "semi-presidential": "Presidencia y jefatura de Gobierno", "authoritarian": "Gobierno hegemónico" },
+  "legislatures": { "unicameral": "Una cámara", "bicameral": "Dos cámaras" },
+  "elections": { "proportional": "Reparto de puestos según votos", "mixed": "Voto por territorio y por lista", "plurality": "Gana quien consigue más votos", "majoritarian": "Gana quien consigue más votos", "two-round": "Segunda vuelta si hace falta", "electoral-college": "Elección por representantes territoriales", "appointed": "Designación" }
+}

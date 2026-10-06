@@ -1,0 +1,24 @@
+{
+  "intro": "Elige con quién colaborar y cuándo poner límites. Mejorar una relación puede abrir oportunidades; presionar a otro país también puede perjudicar al tuyo.",
+  "influence": "La influencia es tu capacidad para negociar con otros países. Cada acción gasta parte de ella.",
+  "officialOnly": "Puedes hablar y proponer acuerdos desde tu cargo. Para gastar recursos del país o imponer sanciones necesitas dirigir el Gobierno.",
+  "technical": "Ver datos y reglas del mundo",
+  "choices": {
+    "visit": { "label": "Realizar visita", "cost": 2, "benefit": "Acerca posiciones y mejora la confianza.", "risk": "Gasta influencia; una visita no asegura un acuerdo." },
+    "treaty": { "label": "Proponer tratado comercial", "cost": 5, "benefit": "Busca facilitar el comercio con este país.", "risk": "El Congreso puede rechazarlo. Todavía no recibes el beneficio." },
+    "sanction": { "label": "Imponer sanción", "cost": 4, "benefit": "Presiona al otro país restringiendo el comercio.", "risk": "Tu país también pierde comercio y la relación empeora." },
+    "aid": { "label": "Ofrecer ayuda exterior", "cost": 7, "benefit": "Mejora la relación y puede ayudar a reconstruir después de una guerra.", "risk": "Usa recursos de tu país que podrían destinarse a otras necesidades." },
+    "recognition": { "label": "Abrir relaciones oficiales", "cost": 3, "benefit": "Abre un canal de diálogo y reduce el aislamiento.", "risk": "Gasta influencia; el diálogo no garantiza apoyo futuro." },
+    "migration": { "label": "Proponer acuerdo migratorio", "cost": 6, "benefit": "Busca coordinar el trabajo y la movilidad entre ambos países.", "risk": "Necesita aprobación del Congreso; no resuelve por sí solo los problemas de empleo." }
+  },
+  "stances": {
+    "align": { "label": "Alinearse", "text": "Acercarte a un socio facilita su respaldo, pero te ata más a él.", "cost": 3 },
+    "balance": { "label": "Equilibrar", "text": "Mantienes varios canales abiertos y gastas más esfuerzo en coordinarlos.", "cost": 2 },
+    "neutral": { "label": "Mantener neutralidad", "text": "Evitas compromisos fuertes, con menos respaldo concentrado de un socio.", "cost": 0 }
+  },
+  "dispute": "Si otro país dificulta vender tus productos, puedes pedir una revisión. Primero intentarán llegar a un acuerdo. Si el problema continúa, pueden aplicarse límites al comercio que cuestan a ambos países.",
+  "disputeUnavailable": "Para pedir la revisión necesitas dirigir el Gobierno, tener influencia y elegir un país miembro de la OMC con una barrera comercial suficiente. Una consulta abierta debe terminar antes de iniciar otra.",
+  "disputePhases": { "consultation": "Intentando llegar a un acuerdo", "panel": "La medida está en revisión", "compliance": "Es hora de corregir la medida", "settled": "Problema resuelto", "dismissed": "Caso cerrado", "retaliation": "Límites al comercio por incumplimiento" },
+  "conflictTypes": { "conventional": "Guerra entre países", "proxy": "Conflicto con apoyo de otros países", "hybrid": "Ataques y presión sin guerra abierta", "blockade": "Bloqueo", "insurgency": "Conflicto interno" },
+  "actionKinds": { "trade-deal": "Acuerdo comercial", "tariff": "Impuestos al comercio", "sanction": "Sanción", "alliance": "Alianza", "recognition": "Relaciones oficiales", "security-assistance": "Apoyo exterior", "military-exercise": "Ejercicio militar", "ultimatum": "Exigencia diplomática", "de-escalation": "Diálogo", "crisis": "Crisis internacional" }
+}

@@ -58,3 +58,47 @@ test("United Kingdom profile keeps Commons electoral districts separate from the
   assert.equal(generated.legislators.length, 1450);
   assert.deepEqual(generated, createGameState(country, "uk-profile-deterministic"));
 });
+
+test("Brazil, Mexico and Argentina profiles preserve their bicameral seat totals and deterministic starts", async () => {
+  const expected = [
+    { id: "brazil", house: 513, senate: 81, term: 4 },
+    { id: "mexico", house: 500, senate: 128, term: 6 },
+    { id: "argentina", house: 257, senate: 72, term: 4 },
+  ];
+  for (const item of expected) {
+    const country = await loadCountry(fileURLToPath(new URL(`../data/countries/${item.id}.json`, import.meta.url)));
+    assert.equal(country.experimental, true);
+    assert.equal(country.politicalSystem.executive.termYears, item.term);
+    if (country.politicalSystem.legislature.type !== "bicameral") throw new Error(`${item.id} debe configurar dos cámaras.`);
+    assert.equal(country.politicalSystem.legislature.lowerChamber.seats, item.house);
+    assert.equal(country.politicalSystem.legislature.upperChamber.seats, item.senate);
+    const generated = createGameState(country, `${item.id}-profile-deterministic`);
+    assert.equal(generated.legislators.length, item.house + item.senate);
+    assert.deepEqual(generated, createGameState(country, `${item.id}-profile-deterministic`));
+    assert.ok(country.dataSources.some((source) => source.name.includes("World Development Indicators")));
+  }
+});
+
+test("Venezuela profile keeps constitutional rules separate from fictional generated scenario data", async () => {
+  const country = await loadCountry(fileURLToPath(new URL("../data/countries/venezuela.json", import.meta.url)));
+  const manifest = JSON.parse(await readFile(new URL("../public/data/countries/index.json", import.meta.url), "utf8")) as { countries: readonly { id: string; file: string }[] };
+  assert.ok(country.experimental);
+  assert.ok(manifest.countries.some((entry) => entry.id === "venezuela" && entry.file === "venezuela.json"));
+  assert.equal(country.politicalSystem.formOfGovernment, "presidential");
+  assert.equal(country.politicalSystem.executive.termYears, 6);
+  assert.equal(country.politicalSystem.executive.consecutiveTermLimit, null);
+  assert.equal(country.politicalSystem.headOfState.title, country.politicalSystem.executive.title);
+  assert.equal(country.politicalSystem.headOfState.termYears, 6);
+  assert.equal(country.politicalSystem.legislature.type, "unicameral");
+  assert.equal(country.politicalSystem.legislature.lowerChamber.seats, 285);
+  assert.equal(country.politicalSystem.legislature.lowerChamber.termYears, 5);
+  assert.equal(country.economy.annualInflationPercent, 100, "the shared game scale intentionally caps the sourced 682.1% forecast");
+  assert.ok(country.dataSources.some((source) => source.name.includes("OEA") && source.indicator.includes("sin límite")));
+  assert.ok(country.dataSources.some((source) => source.name.includes("IPU Parline") && source.indicator.includes("285")));
+  const generated = createGameState(country, "venezuela-profile-deterministic");
+  assert.equal(generated.legislators.length, 285);
+  assert.equal(generated.economy.indicators.inflationPercent, 100);
+  assert.equal(generated.economy.indicators.gdpGrowthPercent, country.economy.annualGrowthPercent);
+  assert.equal(generated.economy.indicators.unemploymentPercent, country.economy.unemploymentPercent);
+  assert.deepEqual(generated, createGameState(country, "venezuela-profile-deterministic"));
+});

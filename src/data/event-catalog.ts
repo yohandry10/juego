@@ -123,14 +123,14 @@ const phase5Topics = phase5Families.flatMap((title, index) => {
 
 const allTopics = [...topics.map(([id, category, title, stage, arcId, arcStep]) => [id, category, title, stage, arcId, arcStep, `${title}: ${id.replaceAll("-", " ")}.`] as const), ...addedArcs, ...addedIssues, ...economyEvents, ...crisisArcEvents, ...internationalTopics, ...phase5Topics];
 
-export const eventCatalogVersion = "career-events-v6-world-content";
+export const eventCatalogVersion = "career-events-v7-phase-context";
 export const careerEventCatalog: readonly CareerEventTemplate[] = allTopics.map(([id, category, title, stage, arcId, arcStep, detail]) => {
   return {
     id, category, stage, title, detail, arcId, arcStep,
     variants: [
-      `${detail} El reporte llegó antes del cierre y deja una decisión sobre tu mesa.`,
-      `${detail} El tema creció durante la jornada; representantes del distrito piden una respuesta clara.`,
-      `${detail} Una conversación privada llevó el asunto a la bandeja. Las próximas horas pueden cambiar su costo.`,
+      `${detail}${category === "international" && arcStep ? [" Se abre la alerta: los equipos identifican la exposición y piden una evaluación inicial.", " La negociación está en curso: las delegaciones comparan garantías y costos de un acuerdo.", " El seguimiento contrasta los compromisos asumidos con sus efectos comerciales y políticos."][arcStep - 1] : ""} El reporte llegó antes del cierre y deja una decisión sobre tu mesa.`,
+      `${detail}${category === "international" && arcStep ? [" El diagnóstico identifica los sectores vulnerables antes de abrir conversaciones.", " Los interlocutores presentan condiciones y piden definir las concesiones aceptables.", " Los asesores revisan el resultado de las conversaciones y las obligaciones pendientes."][arcStep - 1] : ""} El tema creció durante la jornada; representantes del distrito piden una respuesta clara.`,
+      `${detail}${category === "international" && arcStep ? [" La advertencia llega a las cancillerías; todavía no existe un compromiso conjunto.", " La mesa diplomática recibe propuestas contrapuestas y debe elegir una respuesta.", " El balance del proceso muestra quiénes obtuvieron garantías y quiénes asumieron costos."][arcStep - 1] : ""} Una conversación privada llevó el asunto a la bandeja. Las próximas horas pueden cambiar su costo.`,
     ],
   };
 });
