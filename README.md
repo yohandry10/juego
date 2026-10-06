@@ -37,10 +37,13 @@ npm run validate:mass
 npm run sim -- --country peru --years 20 --runs 1000 --seed balance
 npm run validate:career
 npm run validate:government
+npm run content:validate
 npm run world:validate
 ```
 
 Cada corrida usa una subsemilla estable (`semilla-N`) y verifica que los indicadores principales permanezcan numéricos. `validate:career` compara 1.000 corridas de estrategia territorial y recaudación. `validate:government` compara 1.000 mandatos generados con apoyo aislado frente a una coalición negociada y defensa del Gobierno.
+
+`content:validate` comprueba integridad del catálogo y duplicados literales entre títulos y variantes; el resultado es una auditoría estática, no una medición de repetición durante 30 años de juego.
 
 ## Arquitectura
 

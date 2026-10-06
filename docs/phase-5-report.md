@@ -31,7 +31,7 @@ El prototipo ejecuta y compila localmente y ofrece guardado local. El flujo de s
 | Criterio | Estado | Evidencia y límite |
 | --- | --- | --- |
 | 1. Diez países y escenarios generados | No cumple | El selector ofrece tres países; faltan siete escenarios curados y batería de inicio para el roster completo. |
-| 2. Contenido y repetición | Parcial | 407 plantillas y 64 arcos pasan las pruebas de esquema/cantidad; no se ha medido repetición literal a 30 años ni terminado la auditoría de huecos y condiciones editoriales. |
+| 2. Contenido y repetición | Parcial | `npm run content:validate`: 407 plantillas, 64 arcos, 80 internacionales, 10 arcos mundiales; 1.628 títulos/variantes estáticos, 60 repetidos (3,69%), sin huecos ni referencias inválidas. Falta medir una carrera simulada de 30 años y terminar auditoría editorial humana/condiciones. |
 | 3. Equilibrio integral | No cumple | Calibraciones anteriores cubren Perú, España y Francia en estrategias limitadas; no existe matriz completa de países, cargos e ideologías. |
 | 4. Tutorial con cinco personas | No cumple | Hay guía y checklist de seis temas; Chromium valida la interfaz, no la comprensión sin ayuda ni el resultado con participantes. |
 | 5. Accesibilidad | Parcial | Teclado/foco visible, tamaño de texto, movimiento reducido y contraste >=4.5:1 medido en los textos >=12px de Ayuda con Chromium; sin auditoría integral de toda la interfaz ni lector de pantalla. |

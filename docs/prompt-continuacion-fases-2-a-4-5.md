@@ -51,6 +51,6 @@ Trabaja con el orden y criterios de 7.6; el informe actual es `docs/phase-5-repo
 
 ## Validación y entrega
 
-Repite como mínimo `npm test`, `npm run build`, `npm run build:worker-check`, `python tests/web-smoke.py`, `npm run world:validate`, `scripts/phase4-diplomacy-browser-check.py` y la comprobación de navegador de producción `scripts/phase5-browser-check.py`; ejecuta además las baterías masivas por país, cargo y estrategia que requiera el cambio. Corrige fallos y vuelve a ejecutar comprobaciones afectadas. Registra el equipo/entorno y tiempos si presentas resultados de rendimiento.
+Repite como mínimo `npm test`, `npm run build`, `npm run build:worker-check`, `python tests/web-smoke.py`, `npm run content:validate`, `npm run world:validate`, `scripts/phase4-diplomacy-browser-check.py` y la comprobación de navegador de producción `scripts/phase5-browser-check.py`; ejecuta además las baterías masivas por país, cargo y estrategia que requiera el cambio. Corrige fallos y vuelve a ejecutar comprobaciones afectadas. Registra el equipo/entorno y tiempos si presentas resultados de rendimiento.
 
 Actualiza `docs/decisions.md`, `docs/phase-4-report.md`, `docs/phase-5-report.md`, el manual `docs/manual-del-juego.md`, este documento y la documentación principal cuando cambie el estado real. Revisa `git diff --check`, crea un commit descriptivo, sube a `origin/main` y confirma que el SHA remoto coincide. Informa criterios completados y pendientes con evidencia; no llames “terminado” al juego mientras quede un criterio obligatorio sin cumplir.
