@@ -28,7 +28,7 @@ Revisa `docs/phase-4-report.md` y la tabla de criterios de 7.5; implementa y val
 1. Revisión de precisión y procedencia del roster mundial, membresías y clasificación de disuasión; cobertura honesta de datos ausentes y geometría.
 2. Fuentes y supuestos para organizaciones internacionales: reglas implementadas de FMI/Banco Mundial, diferencias OMC y decisiones de bloques, o limitaciones claramente delimitadas si el alcance no permite completarlas.
 3. Shocks y transmisión por exposiciones completas, con explicaciones y causalidad verificable.
-4. Acciones diplomáticas pendientes (ayuda, reconocimiento, acuerdos migratorios) y sus costos/beneficios diferenciados.
+4. Profundizar las acciones diplomáticas ya visibles (ayuda, reconocimiento y movilidad humana): integrar sus costos/beneficios al estado nacional y dar efectos inspeccionables a acuerdos migratorios.
 5. Conflictos con fuerzas y movimiento agregados, conflictos por terceros e híbridos, costos humanos/económicos/políticos/diplomáticos y estado de posguerra, todos abstractos, deterministas y sin combate táctico.
 6. Acoplamiento de lealtad militar y golpes con estabilidad y procedimientos internos, incluida medición de golpes en corridas largas.
 7. Ampliar benchmark más allá de un único marcador: shocks, sanciones, conflictos, golpes, bounds, consistencia entre semillas y tiempo por turno.
@@ -51,6 +51,6 @@ Trabaja con el orden y criterios de 7.6; el informe actual es `docs/phase-5-repo
 
 ## Validación y entrega
 
-Repite como mínimo `npm test`, `npm run build`, `npm run build:worker-check`, `python tests/web-smoke.py`, `npm run world:validate` y la comprobación de navegador de producción `scripts/phase5-browser-check.py`; ejecuta además las baterías masivas por país, cargo y estrategia que requiera el cambio. Corrige fallos y vuelve a ejecutar comprobaciones afectadas. Registra el equipo/entorno y tiempos si presentas resultados de rendimiento.
+Repite como mínimo `npm test`, `npm run build`, `npm run build:worker-check`, `python tests/web-smoke.py`, `npm run world:validate`, `scripts/phase4-diplomacy-browser-check.py` y la comprobación de navegador de producción `scripts/phase5-browser-check.py`; ejecuta además las baterías masivas por país, cargo y estrategia que requiera el cambio. Corrige fallos y vuelve a ejecutar comprobaciones afectadas. Registra el equipo/entorno y tiempos si presentas resultados de rendimiento.
 
 Actualiza `docs/decisions.md`, `docs/phase-4-report.md`, `docs/phase-5-report.md`, el manual `docs/manual-del-juego.md`, este documento y la documentación principal cuando cambie el estado real. Revisa `git diff --check`, crea un commit descriptivo, sube a `origin/main` y confirma que el SHA remoto coincide. Informa criterios completados y pendientes con evidencia; no llames “terminado” al juego mientras quede un criterio obligatorio sin cumplir.

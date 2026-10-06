@@ -1,6 +1,6 @@
 export type DiplomaticStance = "align" | "balance" | "neutral";
 export type StrategicStyle = "cautious" | "broker" | "guardian" | "revisionist" | "inward" | "coalition-builder";
-export type WorldActionKind = "trade-deal" | "tariff" | "sanction" | "alliance" | "security-assistance" | "military-exercise" | "ultimatum" | "de-escalation" | "crisis";
+export type WorldActionKind = "trade-deal" | "tariff" | "sanction" | "alliance" | "recognition" | "security-assistance" | "military-exercise" | "ultimatum" | "de-escalation" | "crisis";
 export type ConflictType = "conventional" | "proxy" | "hybrid" | "blockade" | "insurgency";
 export type GlobalShockType = "energy" | "food" | "finance" | "interest-rates" | "pandemic" | "natural-disaster" | "semiconductor" | "migration";
 export type InternationalLayer = "alliances" | "trade" | "sanctions" | "conflicts" | "military";

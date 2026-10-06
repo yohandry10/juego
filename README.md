@@ -8,6 +8,10 @@ Consulta el [manual del juego](docs/manual-del-juego.md) para conocer la carrera
 
 Créditos y procedencia: [`docs/creditos-y-licencias.md`](docs/creditos-y-licencias.md). El [aviso de privacidad](public/privacy.html) describe el comportamiento local del prototipo; requiere revisión antes del lanzamiento público.
 
+La prueba con personas tiene su [protocolo de sesión](docs/protocolo-prueba-jugadores.md); no hay resultados humanos todavía.
+
+La interfaz exterior tiene una comprobación reproducible en `scripts/phase4-diplomacy-browser-check.py`, que recorre el menú de ayuda, reconocimiento y tratados hasta la ratificación legislativa.
+
 ## Requisitos
 
 - Node.js 22 o posterior

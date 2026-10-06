@@ -33,11 +33,11 @@ Los bloques sociales tienen demandas, ánimo y capacidad de organización. El á
 
 ## Diplomacia y mundo
 
-Mundo permite consultar el catálogo de países y economías, seleccionar actores, cambiar capas y avanzar la simulación geopolítica. Los flujos comerciales bilaterales son relaciones sintéticas de juego y no cifras observadas de comercio entre cada par de países. Las sanciones dañan tanto al receptor como a quien las impone. Los shocks internacionales se transmiten de acuerdo con exposiciones simplificadas.
+Mundo permite consultar el catálogo de países y economías, seleccionar actores, cambiar capas y avanzar la simulación geopolítica. Alinearse cuesta tres puntos de influencia; equilibrar, dos; mantener neutralidad no cuesta influencia. Cambiar de postura registra la decisión y modifica aislamiento, confianza o comercio sintético. Los flujos comerciales bilaterales son relaciones de juego y no cifras observadas de comercio entre cada par de países. Las sanciones dañan tanto al receptor como a quien las impone. Los shocks internacionales se transmiten de acuerdo con exposiciones simplificadas.
 
 Los tratados pueden requerir ratificación legislativa. Organismos y votaciones usan reglas resumidas. Los conflictos son abstractos y deterministas; no hay combate táctico ni decisión de uso nuclear. Algunos actores del catálogo no tienen geometría en el mapa a esta escala, pero permanecen seleccionables desde los filtros y la lista.
 
-La interfaz solo expone parte del sistema diplomático: alineamiento, visitas, sanciones, propuestas de tratado y votaciones están conectados; ayuda, reconocimiento, migración, financiación internacional y algunos procedimientos de organismos aún son incompletos.
+La interfaz permite alineamiento, visitas, sanciones, ayuda exterior, reconocimiento de interlocución y propuestas de tratados comerciales o migratorios. Son reglas simplificadas: la ayuda se resume como un índice anual, el acuerdo migratorio no simula flujos de personas y la ratificación de tratados no reproduce el debate parlamentario completo. El financiamiento internacional, las condiciones FMI/Banco Mundial y otros procedimientos de organismos siguen incompletos.
 
 ## Pestañas
 

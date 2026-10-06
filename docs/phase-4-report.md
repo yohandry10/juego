@@ -10,7 +10,8 @@
 - El guardado de carrera v14 incluye los 217 actores de partida, relaciones, organismos, votos, acuerdos, shocks, conflictos, acciones y efectos domésticos. Las versiones v3–v13 conservan sin cambios el estado legado y reciben geopolítica desde su semilla.
 - El Worker acepta `world-create` y `world-advance`; la vista usa el Worker para avanzar un trimestre. El calendario regular de carrera también avanza mundo, economía y sociedad; el shock mundial actualiza crecimiento, inflación, desempleo, causas visibles y ánimo/aprobación.
 - Los actores tienen seis estilos, inercia, sensibilidad doméstica y credibilidad. El motor produce acciones explicadas, shocks encadenados, flujo bilateral aproximado, aranceles limitados, sanciones, resoluciones anuales, guerras abstractas con costos/resultados, lealtad militar y riesgo simplificado de golpe. No permite guerra directa entre dos actores marcados con disuasión nuclear.
-- Hay postura exterior de alineamiento/equilibrio/neutralidad, visita, acuerdo comercial propuesto, sanción y ratificación simplificada desde una sesión legislativa. La UI muestra membresías, votaciones, explicaciones, impactos y el historial de acciones.
+- Hay postura exterior de alineamiento/equilibrio/neutralidad, visita, acuerdo comercial, sanción, ayuda, reconocimiento de interlocución y propuesta de movilidad humana. El tratado comercial o migratorio se somete a ratificación simplificada en una sesión legislativa; la UI muestra costo de influencia, historial y motivo.
+- Cambiar de postura exterior ya no regala influencia: alinearse cuesta 3, equilibrar 2 y mantener neutralidad 0; repetir la postura actual queda deshabilitado. Las tres opciones dejan efectos de juego distintos sobre aislamiento, confianza y flujo con el socio.
 
 ## Supuestos y límites
 
@@ -46,12 +47,12 @@ Superados en esta implementación: catálogo estable de actores y variables limi
 | 4. Explicabilidad | Parcial | Acciones simuladas guardan motivos y el estado conserva historial. Falta auditar automáticamente que toda mutación/acción de todos los subsistemas tenga explicación persistente. |
 | 5. Shocks coherentes | Parcial | Shocks encadenados afectan actores según exposiciones sintéticas y pasan a la economía nacional. Falta validar sensibilidad entre perfiles y países con datos independientes. |
 | 6. Guerra completa | Parcial | Resolución explica costos humanos, económicos y políticos y asigna resultado; no incluye fuerzas y movimiento por mapa, persistencia de insurgencia, reconstrucción ni diplomacia de posguerra. |
-| 7. Presión sobre país mediano | Parcial | La UI ofrece alineamiento, equilibrio y neutralidad; falta un lote comparativo que demuestre costos/beneficios de cada postura con diversas semillas y escenarios. |
+| 7. Presión sobre país mediano | Parcial | La UI impone costos distintos y cambia aislamiento, confianza y flujo según alineamiento/equilibrio/neutralidad; falta un lote comparativo de resultados en distintas semillas y países. |
 | 8. Rendimiento y Worker | Cumple en corte local | Worker usado por el avance geopolítico; media medida de 1.015 ms por trimestre en el lote de 50 años y smoke de turno ejecutivo 0.068 s en el entorno local. Hardware no normalizado. |
 | 9. Tasas razonables | Parcial | Frecuencias registradas y límites comprobados, pero 0 golpes y guerra/sanciones con tasas heurísticas no han recibido calibración externa. |
 | 10. Contenido | Cumple cantidad mínima | Se validan 80 plantillas internacionales y 10 arcos; no se ha hecho aprobación editorial humana línea por línea. |
 
-Parciales o pendientes: calibración independiente de frecuencias; transmisión detallada por canasta y socios; financiamiento y condicionalidad FMI/Banco Mundial; solución de disputas OMC; decisiones reales de bloques; menú diplomático incompleto (ayuda, reconocimiento y acuerdo migratorio aún sin acción); fuerzas y movimiento por mapa; posguerra/reconstrucción; golpes conectados plenamente al flujo institucional; pruebas visuales del mapa en viewport móvil y medición del turno en hardware de gama media. No se afirma que toda la sección 7.5 esté cerrada.
+Parciales o pendientes: calibración independiente de frecuencias; transmisión detallada por canasta y socios; financiamiento y condicionalidad FMI/Banco Mundial; solución de disputas OMC; decisiones reales de bloques; simulación material de ayuda y migración; reconocimiento jurídico (el botón registra reconocimiento de interlocución); votación sustantiva de ratificación (ahora registra aprobación simplificada); fuerzas y movimiento por mapa; posguerra/reconstrucción; golpes conectados plenamente al flujo institucional; comparación masiva de posturas; pruebas visuales del mapa en viewport móvil y medición del turno en hardware de gama media. No se afirma que toda la sección 7.5 esté cerrada.
 
 ## Validación del corte
 
@@ -60,3 +61,4 @@ Parciales o pendientes: calibración independiente de frecuencias; transmisión 
 - `npm run build:worker-check` — correcto.
 - `python tests/web-smoke.py` — correcto; turno ejecutivo normal 0,068 s en el entorno local.
 - `npm run world:validate` — 100 × 50 años; cero valores inválidos y cero guerras nucleares directas. Salida completa en `phase-4-simulation.json`.
+- `scripts/phase4-diplomacy-browser-check.py` — correcto en navegador: reconocimiento, ayuda, tratado migratorio, elección y ratificación legislativa simplificada.

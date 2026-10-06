@@ -10,6 +10,7 @@
 - Se muestra en el pie de la interfaz que política y sátira son ficción y que el guardado es local. La página declara su propósito en metadatos.
 - Se añadió un aviso de privacidad para el comportamiento local y un enlace al canal de issues del repositorio (consultado: issues habilitadas). Se creó un inventario de fuentes y licencias con las verificaciones de publicación pendientes.
 - Se publicó el [manual del juego](manual-del-juego.md) con recorrido jugable, sistemas, pestañas, persistencia y límites.
+- Se preparó un [protocolo de prueba con jugadores](protocolo-prueba-jugadores.md) con guion, recorrido de diez minutos, preguntas y tabla de resultados; la prueba todavía no se ha realizado.
 - Se añadió Ayuda con una ruta de seis pasos para la primera sesión, estado local de temas revisados, glosario buscable y control de tamaño de texto. Se añadió foco de teclado visible y respeto a `prefers-reduced-motion`.
 - Se añadió un service worker de producción que guarda shell, módulos compilados, escenarios, mapa y aviso de privacidad para el uso sin conexión posterior a la primera carga completa.
 - Verificación con Chromium y Playwright del build de producción: inicia el service worker, usa Ayuda sin partida, filtra el glosario, cambia el tamaño, conserva el checklist y vuelve a abrir Ayuda tras recargar sin red. El procedimiento reproducible está en `scripts/phase5-browser-check.py`.
