@@ -1,0 +1,23 @@
+export const pressHeadlineVersion = "fictional-press-v1";
+export const pressHeadlineTemplates = [
+  "{subject}: la campaña prepara su respuesta antes de la próxima sesión.",
+  "La bandeja registra novedades sobre {subject}; las bancadas todavía miden el costo.",
+  "{subject} gana espacio en el debate público del distrito.",
+  "La discusión sobre {subject} llega a la mesa legislativa.",
+  "Voceros ficticios ofrecen versiones distintas sobre {subject}.",
+  "{subject}: la ciudadanía pide plazos claros y seguimiento.",
+  "El equipo de campaña suma {subject} a sus prioridades.",
+  "{subject} pone a prueba la disciplina de las bancadas.",
+  "La conversación de hoy gira alrededor de {subject}.",
+  "{subject}: el debate continúa, con posiciones todavía abiertas.",
+  "La decisión sobre {subject} queda registrada en el diario de carrera.",
+  "Representantes del distrito preguntan por el siguiente paso en {subject}.",
+  "{subject} enfrenta una ronda de preguntas en los medios ficticios.",
+  "Una propuesta vinculada a {subject} busca apoyos transversales.",
+  "{subject}: las razones de cada voto quedan disponibles para consulta.",
+  "La bancada revisa sus compromisos públicos sobre {subject}.",
+  "{subject} reabre una conversación que parecía cerrada.",
+  "La respuesta a {subject} puede mover la confianza entre legisladores.",
+  "{subject}: el registro de la partida muestra quién actuó y por qué.",
+  "Un nuevo reporte sobre {subject} llega a la bandeja de carrera.",
+] as const;

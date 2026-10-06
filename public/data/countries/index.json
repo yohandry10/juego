@@ -1,0 +1,6 @@
+{
+  "countries": [
+    { "id": "peru", "name": "Perú", "file": "peru.json" },
+    { "id": "spain", "name": "España", "file": "spain.json" }
+  ]
+}

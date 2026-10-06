@@ -1,0 +1,32 @@
+{
+  "name": "mandato-simulation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Motor determinista de simulación política para MANDATO",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -p tsconfig.json && vite build",
+    "build:web": "vite build",
+    "build:worker-check": "tsc -p tsconfig.worker.json",
+    "test": "tsx --test tests/**/*.test.ts",
+    "sim": "node --import tsx src/cli/index.ts",
+    "validate:mass": "tsx src/cli/index.ts --country peru --years 20 --runs 1000 --seed mandato-phase-0",
+    "validate:career": "tsx src/cli/career-mass.ts 1000",
+    "validate:government": "tsx src/cli/government-mass.ts"
+  },
+  "dependencies": {
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "zod": "^4.1.12"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.2"
+  }
+}

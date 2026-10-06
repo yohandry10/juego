@@ -1,0 +1,826 @@
+{
+  "schemaVersion": 1,
+  "id": "spain",
+  "name": "España",
+  "experimental": true,
+  "startingYear": 2026,
+  "dataVersion": "spain-institutions-2023-snapshot-v4",
+  "population": 48619695,
+  "politicalSystem": {
+    "formOfGovernment": "parliamentary",
+    "executive": {
+      "officeId": "head-of-government",
+      "title": "Presidente del Gobierno",
+      "selection": "legislative-investiture",
+      "termYears": 4,
+      "consecutiveTermLimit": null,
+      "election": null,
+      "investiture": {
+        "firstVoteMajority": "absolute",
+        "laterVoteMajority": "simple",
+        "laterVoteDelayHours": 48,
+        "dissolutionAfterDays": 60
+      },
+      "confidence": {
+        "passMajority": "simple",
+        "failureEffect": "new-investiture"
+      },
+      "censure": {
+        "type": "constructive",
+        "passageMajority": "absolute",
+        "minimumSponsorsPercent": 10,
+        "daysBeforeVote": 5
+      },
+      "dissolution": {
+        "executiveMayPropose": true,
+        "minimumMonthsBetween": 12
+      }
+    },
+    "legislature": {
+      "type": "bicameral",
+      "lowerChamber": {
+        "id": "congress",
+        "name": "Congreso de los Diputados",
+        "seats": 350,
+        "termYears": 4,
+        "electoralSystem": "proportional",
+        "districtCount": 52,
+        "nationalSeats": 0,
+        "seatAllocationMethod": "dhondt",
+        "electoralThresholdPercent": 3
+      },
+      "upperChamber": {
+        "id": "senate",
+        "name": "Senado",
+        "seats": 266,
+        "termYears": 4,
+        "electoralSystem": "mixed",
+        "districtCount": 59,
+        "nationalSeats": 58,
+        "appointments": {
+          "appointedSeatsInSnapshot": 58,
+          "appointingBodies": "17 comunidades autónomas",
+          "fixedSeatsPerBody": 1,
+          "extraSeatsPerPopulation": 1,
+          "populationUnit": 1000000,
+          "snapshotYear": 2026
+        },
+        "seatAllocationMethod": "plurality",
+        "electoralThresholdPercent": 0
+      }
+    },
+    "removalMechanisms": [
+      "censure",
+      "dissolution"
+    ],
+    "politicalDistribution": [
+      {
+        "sharePercent": 18,
+        "ideology": {
+          "institutionalism": 74,
+          "economy": 28,
+          "rigidity": 30,
+          "social": 72,
+          "nationalism": 38
+        }
+      },
+      {
+        "sharePercent": 24,
+        "ideology": {
+          "institutionalism": 65,
+          "economy": 42,
+          "rigidity": 34,
+          "social": 58,
+          "nationalism": 48
+        }
+      },
+      {
+        "sharePercent": 23,
+        "ideology": {
+          "institutionalism": 53,
+          "economy": 56,
+          "rigidity": 45,
+          "social": 42,
+          "nationalism": 56
+        }
+      },
+      {
+        "sharePercent": 20,
+        "ideology": {
+          "institutionalism": 60,
+          "economy": 68,
+          "rigidity": 41,
+          "social": 36,
+          "nationalism": 62
+        }
+      },
+      {
+        "sharePercent": 15,
+        "ideology": {
+          "institutionalism": 80,
+          "economy": 52,
+          "rigidity": 24,
+          "social": 50,
+          "nationalism": 28
+        }
+      }
+    ],
+    "headOfState": {
+      "officeId": "monarch",
+      "title": "Rey",
+      "selection": "hereditary",
+      "termYears": null,
+      "ceremonial": true
+    },
+    "executiveAccountability": {
+      "presidentialVacancy": null,
+      "presidentialAccusation": null,
+      "cabinetCensure": null
+    }
+  },
+  "candidateEligibility": [
+    {
+      "officeId": "deputy",
+      "activeSuffrageRequired": true,
+      "nationality": "citizen",
+      "voterRegistrationRequired": true,
+      "nomination": "party",
+      "minimumAge": 18
+    },
+    {
+      "officeId": "senator",
+      "minimumAge": 18,
+      "chamberId": "senate",
+      "nationality": "citizen",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party"
+    }
+  ],
+  "dataSources": [
+    {
+      "url": "https://www.senado.es/web/conocersenado/normas/constitucion/detalleconstitucioncompleta/index.html?lang=es_ES",
+      "indicator": "Artículos 68–69, 99 y 112–115: composición y reglas parlamentarias",
+      "year": 2026,
+      "accessedOn": "2026-10-05",
+      "name": "Senado de España · Constitución Española"
+    },
+    {
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-11672",
+      "indicator": "Artículos 162–163 y 165: número de diputados, circunscripciones y reglas de asignación",
+      "year": 2026,
+      "accessedOn": "2026-10-05",
+      "name": "Boletín Oficial del Estado · Ley Orgánica 5/1985"
+    },
+    {
+      "url": "https://www.boe.es/buscar/doc.php?id=BOE-A-2023-12663",
+      "indicator": "Snapshot territorial de escaños por circunscripción para el escenario, no resultados electorales",
+      "year": 2023,
+      "accessedOn": "2026-10-05",
+      "name": "Boletín Oficial del Estado · Real Decreto 400/2023"
+    },
+    {
+      "url": "https://www.senado.es/pequenosenado/es/med/senadores",
+      "indicator": "Elección directa y designación autonómica por población; conteo de escaños versionado",
+      "year": 2026,
+      "accessedOn": "2026-10-05",
+      "name": "Senado de España · Elección de senadores"
+    }
+  ],
+  "economy": {
+    "gdpUsd": 1720000000000,
+    "annualGrowthPercent": 2.5,
+    "annualInflationPercent": 2.8,
+    "unemploymentPercent": 11.4
+  },
+  "mandateExpectations": {
+    "annualGrowthFloorPercent": 2.5,
+    "inflationCeilingPercent": 2.8,
+    "unemploymentCeilingPercent": 9.0,
+    "approvalFloorPercent": 43
+  },
+  "trade": {
+    "goodsExportsUsd": 400000000000,
+    "dataYear": 2024,
+    "leadingSectors": [
+      "Industria",
+      "Servicios",
+      "Agroalimentación"
+    ]
+  },
+  "socialBlocks": [
+    {
+      "id": "workers",
+      "mood": 4,
+      "demands": [
+        "estabilidad laboral",
+        "salarios y coste de vida"
+      ],
+      "populationShare": 27,
+      "name": "Trabajadores"
+    },
+    {
+      "id": "middle-income",
+      "mood": 3,
+      "demands": [
+        "servicios públicos",
+        "vivienda asequible"
+      ],
+      "populationShare": 25,
+      "name": "Clases medias"
+    },
+    {
+      "id": "business",
+      "mood": 2,
+      "demands": [
+        "reglas previsibles",
+        "productividad"
+      ],
+      "populationShare": 13,
+      "name": "Empresariado"
+    },
+    {
+      "id": "rural-communities",
+      "mood": 0,
+      "demands": [
+        "conectividad",
+        "servicios de proximidad"
+      ],
+      "populationShare": 12,
+      "name": "Territorios rurales"
+    },
+    {
+      "id": "regional-identities",
+      "mood": 1,
+      "demands": [
+        "autogobierno",
+        "financiación territorial"
+      ],
+      "populationShare": 11,
+      "name": "Comunidades territoriales"
+    },
+    {
+      "id": "youth",
+      "mood": 5,
+      "demands": [
+        "empleo",
+        "acceso a vivienda"
+      ],
+      "populationShare": 12,
+      "name": "Jóvenes"
+    }
+  ],
+  "electoralDistricts": [
+    {
+      "id": "albacete",
+      "name": "Albacete",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 4
+      }
+    },
+    {
+      "id": "alicante",
+      "name": "Alicante/Alacant",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 12
+      }
+    },
+    {
+      "id": "almeria",
+      "name": "Almería",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 6
+      }
+    },
+    {
+      "id": "alava",
+      "name": "Araba/Álava",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 4
+      }
+    },
+    {
+      "id": "asturias",
+      "name": "Asturias",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 7
+      }
+    },
+    {
+      "id": "avila",
+      "name": "Ávila",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 3
+      }
+    },
+    {
+      "id": "badajoz",
+      "name": "Badajoz",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 5
+      }
+    },
+    {
+      "id": "balears",
+      "name": "Illes Balears",
+      "seatsByChamber": {
+        "senate": 0,
+        "congress": 8
+      }
+    },
+    {
+      "id": "barcelona",
+      "name": "Barcelona",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 32
+      }
+    },
+    {
+      "id": "bizkaia",
+      "name": "Bizkaia",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 8
+      }
+    },
+    {
+      "id": "burgos",
+      "name": "Burgos",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 4
+      }
+    },
+    {
+      "id": "caceres",
+      "name": "Cáceres",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 4
+      }
+    },
+    {
+      "id": "cadiz",
+      "name": "Cádiz",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 9
+      }
+    },
+    {
+      "id": "cantabria",
+      "name": "Cantabria",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 5
+      }
+    },
+    {
+      "id": "castellon",
+      "name": "Castellón/Castelló",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 5
+      }
+    },
+    {
+      "id": "ciudad-real",
+      "name": "Ciudad Real",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 5
+      }
+    },
+    {
+      "id": "cordoba",
+      "name": "Córdoba",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 6
+      }
+    },
+    {
+      "id": "coruna",
+      "name": "A Coruña",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 8
+      }
+    },
+    {
+      "id": "cuenca",
+      "name": "Cuenca",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 3
+      }
+    },
+    {
+      "id": "gipuzkoa",
+      "name": "Gipuzkoa",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 6
+      }
+    },
+    {
+      "id": "girona",
+      "name": "Girona",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 6
+      }
+    },
+    {
+      "id": "granada",
+      "name": "Granada",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 7
+      }
+    },
+    {
+      "id": "guadalajara",
+      "name": "Guadalajara",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 3
+      }
+    },
+    {
+      "id": "huelva",
+      "name": "Huelva",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 5
+      }
+    },
+    {
+      "id": "huesca",
+      "name": "Huesca",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 3
+      }
+    },
+    {
+      "id": "jaen",
+      "name": "Jaén",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 5
+      }
+    },
+    {
+      "id": "leon",
+      "name": "León",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 4
+      }
+    },
+    {
+      "id": "lleida",
+      "name": "Lleida",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 4
+      }
+    },
+    {
+      "id": "lugo",
+      "name": "Lugo",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 4
+      }
+    },
+    {
+      "id": "madrid",
+      "name": "Madrid",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 37
+      }
+    },
+    {
+      "id": "malaga",
+      "name": "Málaga",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 11
+      }
+    },
+    {
+      "id": "murcia",
+      "name": "Murcia",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 10
+      }
+    },
+    {
+      "id": "navarra",
+      "name": "Navarra",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 5
+      }
+    },
+    {
+      "id": "ourense",
+      "name": "Ourense",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 4
+      }
+    },
+    {
+      "id": "palencia",
+      "name": "Palencia",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 3
+      }
+    },
+    {
+      "id": "las-palmas",
+      "name": "Las Palmas",
+      "seatsByChamber": {
+        "senate": 0,
+        "congress": 8
+      }
+    },
+    {
+      "id": "pontevedra",
+      "name": "Pontevedra",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 7
+      }
+    },
+    {
+      "id": "la-rioja",
+      "name": "La Rioja",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 4
+      }
+    },
+    {
+      "id": "salamanca",
+      "name": "Salamanca",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 4
+      }
+    },
+    {
+      "id": "santa-cruz-tenerife",
+      "name": "Santa Cruz de Tenerife",
+      "seatsByChamber": {
+        "senate": 0,
+        "congress": 7
+      }
+    },
+    {
+      "id": "segovia",
+      "name": "Segovia",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 3
+      }
+    },
+    {
+      "id": "sevilla",
+      "name": "Sevilla",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 12
+      }
+    },
+    {
+      "id": "soria",
+      "name": "Soria",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 2
+      }
+    },
+    {
+      "id": "tarragona",
+      "name": "Tarragona",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 6
+      }
+    },
+    {
+      "id": "teruel",
+      "name": "Teruel",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 3
+      }
+    },
+    {
+      "id": "toledo",
+      "name": "Toledo",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 6
+      }
+    },
+    {
+      "id": "valencia",
+      "name": "Valencia/València",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 16
+      }
+    },
+    {
+      "id": "valladolid",
+      "name": "Valladolid",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 5
+      }
+    },
+    {
+      "id": "zamora",
+      "name": "Zamora",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 3
+      }
+    },
+    {
+      "id": "zaragoza",
+      "name": "Zaragoza",
+      "seatsByChamber": {
+        "senate": 4,
+        "congress": 7
+      }
+    },
+    {
+      "id": "ceuta",
+      "name": "Ceuta",
+      "seatsByChamber": {
+        "senate": 2,
+        "congress": 1
+      }
+    },
+    {
+      "id": "melilla",
+      "name": "Melilla",
+      "seatsByChamber": {
+        "senate": 2,
+        "congress": 1
+      }
+    },
+    {
+      "id": "mallorca",
+      "name": "Mallorca",
+      "seatsByChamber": {
+        "senate": 3,
+        "congress": 0
+      }
+    },
+    {
+      "id": "menorca",
+      "name": "Menorca",
+      "seatsByChamber": {
+        "senate": 1,
+        "congress": 0
+      }
+    },
+    {
+      "id": "ibiza-formentera",
+      "name": "Ibiza-Formentera",
+      "seatsByChamber": {
+        "senate": 1,
+        "congress": 0
+      }
+    },
+    {
+      "id": "gran-canaria",
+      "name": "Gran Canaria",
+      "seatsByChamber": {
+        "senate": 3,
+        "congress": 0
+      }
+    },
+    {
+      "id": "fuerteventura",
+      "name": "Fuerteventura",
+      "seatsByChamber": {
+        "senate": 1,
+        "congress": 0
+      }
+    },
+    {
+      "id": "lanzarote",
+      "name": "Lanzarote",
+      "seatsByChamber": {
+        "senate": 1,
+        "congress": 0
+      }
+    },
+    {
+      "id": "tenerife",
+      "name": "Tenerife",
+      "seatsByChamber": {
+        "senate": 3,
+        "congress": 0
+      }
+    },
+    {
+      "id": "la-gomera",
+      "name": "La Gomera",
+      "seatsByChamber": {
+        "senate": 1,
+        "congress": 0
+      }
+    },
+    {
+      "id": "el-hierro",
+      "name": "El Hierro",
+      "seatsByChamber": {
+        "senate": 1,
+        "congress": 0
+      }
+    },
+    {
+      "id": "la-palma",
+      "name": "La Palma",
+      "seatsByChamber": {
+        "senate": 1,
+        "congress": 0
+      }
+    }
+  ],
+  "partyLeadership": {
+    "officeId": "party-leader",
+    "title": "Líder del partido",
+    "termYears": 2,
+    "minimumAge": 18,
+    "eligibleAfterOfficeIds": [
+      "deputy",
+      "senator",
+      "head-of-government",
+      "minister"
+    ],
+    "electionMethod": "generated-caucus-majority",
+    "requiredMajorityPercent": 50
+  },
+  "ministerialAppointment": {
+    "officeId": "minister",
+    "title": "Ministro",
+    "termYears": 2,
+    "minimumAge": 18,
+    "eligibleAfterOfficeIds": [
+      "deputy",
+      "senator",
+      "head-of-government",
+      "party-leader"
+    ],
+    "appointmentMethod": "generated-executive-choice",
+    "minimumSupportPercent": 45,
+    "portfolios": [
+      {
+        "id": "economy",
+        "title": "Economía",
+        "focus": "economy"
+      },
+      {
+        "id": "interior",
+        "title": "Interior",
+        "focus": "institutions"
+      },
+      {
+        "id": "health",
+        "title": "Salud",
+        "focus": "services"
+      },
+      {
+        "id": "education",
+        "title": "Educación",
+        "focus": "services"
+      },
+      {
+        "id": "infrastructure",
+        "title": "Infraestructura",
+        "focus": "economy"
+      }
+    ]
+  }
+}

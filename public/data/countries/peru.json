@@ -1,0 +1,626 @@
+{
+  "schemaVersion": 1,
+  "id": "peru",
+  "name": "Perú",
+  "experimental": false,
+  "startingYear": 2026,
+  "dataVersion": "peru-2026-10-05-v7",
+  "population": 34217848,
+  "politicalSystem": {
+    "formOfGovernment": "presidential",
+    "executive": {
+      "officeId": "president",
+      "title": "Presidente",
+      "selection": "direct-election",
+      "termYears": 5,
+      "consecutiveTermLimit": 1,
+      "election": {
+        "method": "two-round",
+        "firstRoundThresholdPercent": 50,
+        "runoffDays": 30
+      },
+      "investiture": null,
+      "confidence": null,
+      "censure": null,
+      "dissolution": {
+        "executiveMayPropose": false,
+        "minimumMonthsBetween": 0
+      }
+    },
+    "legislature": {
+      "type": "bicameral",
+      "lowerChamber": {
+        "id": "chamber-of-deputies",
+        "name": "Cámara de Diputados",
+        "seats": 130,
+        "termYears": 5,
+        "electoralSystem": "proportional",
+        "districtCount": 27,
+        "nationalSeats": 0,
+        "seatAllocationMethod": "dhondt",
+        "electoralThresholdPercent": 0
+      },
+      "upperChamber": {
+        "id": "senate",
+        "name": "Senado",
+        "seats": 60,
+        "termYears": 5,
+        "electoralSystem": "mixed",
+        "districtCount": 27,
+        "nationalSeats": 30,
+        "seatAllocationMethod": "dhondt",
+        "electoralThresholdPercent": 0
+      }
+    },
+    "presidentialTermYears": 5,
+    "presidentialElection": "two-round",
+    "removalMechanisms": [
+      "impeachment",
+      "vacancy",
+      "dissolution"
+    ],
+    "politicalDistribution": [
+      {
+        "sharePercent": 32,
+        "ideology": {
+          "economy": 68,
+          "social": 38,
+          "nationalism": 54,
+          "institutionalism": 35,
+          "rigidity": 62
+        }
+      },
+      {
+        "sharePercent": 24,
+        "ideology": {
+          "economy": 30,
+          "social": 26,
+          "nationalism": 47,
+          "institutionalism": 70,
+          "rigidity": 35
+        }
+      },
+      {
+        "sharePercent": 18,
+        "ideology": {
+          "economy": 52,
+          "social": 56,
+          "nationalism": 28,
+          "institutionalism": 42,
+          "rigidity": 49
+        }
+      },
+      {
+        "sharePercent": 16,
+        "ideology": {
+          "economy": 42,
+          "social": 72,
+          "nationalism": 38,
+          "institutionalism": 54,
+          "rigidity": 36
+        }
+      },
+      {
+        "sharePercent": 10,
+        "ideology": {
+          "economy": 60,
+          "social": 42,
+          "nationalism": 78,
+          "institutionalism": 86,
+          "rigidity": 22
+        }
+      }
+    ],
+    "headOfState": {
+      "officeId": "president",
+      "title": "Presidente de la República",
+      "selection": "direct-election",
+      "termYears": 5,
+      "ceremonial": false
+    },
+    "executiveAccountability": {
+      "presidentialVacancy": {
+        "causes": [
+          "incapacidad-moral-o-fisica-permanente"
+        ],
+        "minimumSponsorsPercent": 20,
+        "admissionVotePercent": 40,
+        "finalVotePercent": 66.6666667,
+        "minimumDaysBeforeVote": 3,
+        "maximumDaysBeforeVote": 10,
+        "maximumDefenseMinutes": 60
+      },
+      "presidentialAccusation": {
+        "grounds": [
+          "traicion-a-la-patria",
+          "impedir-elecciones",
+          "disolver-camara-fuera-de-supuestos",
+          "impedir-funcionamiento-del-congreso-o-sistema-electoral"
+        ]
+      },
+      "cabinetCensure": {
+        "minimumSponsorsPercent": 25,
+        "passageMajority": "absolute",
+        "minimumDaysBeforeVote": 4,
+        "maximumDaysBeforeVote": 10
+      }
+    }
+  },
+  "candidateEligibility": [
+    {
+      "officeId": "deputy",
+      "minimumAge": 25,
+      "nationality": "citizen-by-birth",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party-primary"
+    },
+    {
+      "officeId": "senator",
+      "minimumAge": 45,
+      "chamberId": "senate",
+      "ageExceptions": [
+        {
+          "minimumAge": 25,
+          "priorOfficeIds": [
+            "deputy"
+          ]
+        }
+      ],
+      "nationality": "citizen-by-birth",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party-primary"
+    },
+    {
+      "officeId": "president",
+      "minimumAge": 36,
+      "nationality": "citizen-by-birth",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party"
+    }
+  ],
+  "dataSources": [
+    {
+      "name": "Banco Mundial · World Development Indicators",
+      "url": "https://data.worldbank.org/indicator/SP.POP.TOTL?locations=PE",
+      "indicator": "SP.POP.TOTL (población total)",
+      "year": 2024,
+      "accessedOn": "2026-10-05"
+    },
+    {
+      "name": "Banco Mundial · World Development Indicators",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=PE",
+      "indicator": "NY.GDP.MKTP.CD (PIB, US$ corrientes)",
+      "year": 2024,
+      "accessedOn": "2026-10-05"
+    },
+    {
+      "name": "Banco Mundial · World Development Indicators",
+      "url": "https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG?locations=PE",
+      "indicator": "NY.GDP.MKTP.KD.ZG (crecimiento del PIB, anual %)",
+      "year": 2024,
+      "accessedOn": "2026-10-05"
+    },
+    {
+      "name": "Banco Mundial · World Development Indicators",
+      "url": "https://data.worldbank.org/indicator/FP.CPI.TOTL.ZG?locations=PE",
+      "indicator": "FP.CPI.TOTL.ZG (inflación de precios al consumidor, anual %)",
+      "year": 2024,
+      "accessedOn": "2026-10-05"
+    },
+    {
+      "name": "Banco Mundial · World Development Indicators",
+      "url": "https://data.worldbank.org/indicator/SL.UEM.TOTL.ZS?locations=PE",
+      "indicator": "SL.UEM.TOTL.ZS (desempleo, estimación modelada OIT, %)",
+      "year": 2025,
+      "accessedOn": "2026-10-05"
+    },
+    {
+      "name": "Ministerio de Comercio Exterior y Turismo del Perú",
+      "url": "https://www.gob.pe/institucion/mincetur/noticias/1346927-mincetur-exportaciones-del-peru-alcanzaron-los-us-90-082-millones-y-consolidan-al-pais-como-potencia-comercial-de-sudamerica",
+      "indicator": "Exportación de bienes (US$ corrientes)",
+      "year": 2025,
+      "accessedOn": "2026-10-05"
+    },
+    {
+      "name": "Jurado Nacional de Elecciones · Compendio de Legislación Electoral",
+      "url": "https://www.jne.gob.pe/oc/2025/Compendio-de-Legislacion-Electoral/12-Ley-Organica-Elecciones-Ley-N26859.pdf",
+      "indicator": "Ley Orgánica de Elecciones, reglas institucionales de la estructura legislativa y el sistema electoral",
+      "year": 2025,
+      "accessedOn": "2026-10-05"
+    },
+    {
+      "name": "Jurado Nacional de Elecciones · Manual Jurisdiccional Electoral 2026",
+      "url": "https://eseg.jne.gob.pe/assets/pdf/publicaciones/Manual_Jurisdiccional_Electoral_2026.pdf",
+      "indicator": "Requisitos personales estructurales para postular al cargo de diputado: ciudadanía peruana de nacimiento, 25 años, derecho de sufragio, registro y selección partidaria",
+      "year": 2026,
+      "accessedOn": "2026-10-05"
+    },
+    {
+      "name": "Jurado Nacional de Elecciones · Manual Jurisdiccional Electoral 2026",
+      "url": "https://eseg.jne.gob.pe/assets/pdf/publicaciones/Manual_Jurisdiccional_Electoral_2026.pdf",
+      "indicator": "Requisito estructural para candidatura al Senado: ciudadanía de nacimiento, sufragio y registro vigentes, edad mínima de 45 años o 25 con experiencia previa como diputado",
+      "year": 2026,
+      "accessedOn": "2026-10-05"
+    },
+    {
+      "name": "Jurado Nacional de Elecciones · Resolución N.° 0053-2025-JNE",
+      "url": "https://portal.jne.gob.pe/portal_documentos/files/7035a123-eb9a-4be0-9c57-72003e46cc3c.pdf",
+      "indicator": "Estructura y asignación de escaños por circunscripción para las cámaras legislativas (marco EG 2026)",
+      "year": 2025,
+      "accessedOn": "2026-10-05"
+    },
+    {
+      "name": "Congreso de la República del Perú · Constitución Política",
+      "url": "https://www3.congreso.gob.pe/Docs/files/constitucion/constitucion-12-2024.pdf",
+      "indicator": "Artículos 110–112: jefatura del Estado, requisitos, elección a dos vueltas, duración y no reelección inmediata",
+      "year": 2024,
+      "accessedOn": "2026-10-05"
+    },
+    {
+      "name": "Congreso de la República del Perú · Reglamento del Congreso",
+      "url": "https://www3.congreso.gob.pe/Docs/constitucion/reglamento/reglamento%20setiembre-2025.pdf",
+      "indicator": "Artículo 89-A: iniciativa, admisión, intervalo de defensa y votos requeridos para la vacancia presidencial",
+      "year": 2025,
+      "accessedOn": "2026-10-05"
+    }
+  ],
+  "economy": {
+    "gdpUsd": 289220000000,
+    "annualGrowthPercent": 3.3,
+    "annualInflationPercent": 2.0,
+    "unemploymentPercent": 5.1
+  },
+  "mandateExpectations": {
+    "annualGrowthFloorPercent": 3.0,
+    "inflationCeilingPercent": 3.0,
+    "unemploymentCeilingPercent": 5.0,
+    "approvalFloorPercent": 38
+  },
+  "trade": {
+    "goodsExportsUsd": 90082000000,
+    "dataYear": 2025,
+    "leadingSectors": [
+      "Minería",
+      "Agroexportación",
+      "Pesca"
+    ]
+  },
+  "socialBlocks": [
+    {
+      "id": "workers",
+      "name": "Trabajadores",
+      "populationShare": 27,
+      "mood": 5,
+      "demands": [
+        "empleo estable",
+        "salarios que sigan el costo de vida"
+      ]
+    },
+    {
+      "id": "middle-income",
+      "name": "Clases medias",
+      "populationShare": 24,
+      "mood": 8,
+      "demands": [
+        "servicios públicos confiables",
+        "seguridad económica"
+      ]
+    },
+    {
+      "id": "business",
+      "name": "Empresariado",
+      "populationShare": 14,
+      "mood": 2,
+      "demands": [
+        "reglas previsibles",
+        "acceso a crédito"
+      ]
+    },
+    {
+      "id": "rural-communities",
+      "name": "Comunidades rurales",
+      "populationShare": 15,
+      "mood": -2,
+      "demands": [
+        "infraestructura",
+        "representación territorial"
+      ]
+    },
+    {
+      "id": "media-and-faith",
+      "name": "Medios e instituciones religiosas",
+      "populationShare": 8,
+      "mood": 3,
+      "demands": [
+        "confianza institucional",
+        "libertad de expresión"
+      ]
+    },
+    {
+      "id": "youth",
+      "name": "Jóvenes",
+      "populationShare": 12,
+      "mood": 10,
+      "demands": [
+        "educación accesible",
+        "oportunidades de futuro"
+      ]
+    }
+  ],
+  "electoralDistricts": [
+    {
+      "id": "amazonas",
+      "name": "Amazonas",
+      "seatsByChamber": {
+        "chamber-of-deputies": 2,
+        "senate": 1
+      }
+    },
+    {
+      "id": "ancash",
+      "name": "Áncash",
+      "seatsByChamber": {
+        "chamber-of-deputies": 5,
+        "senate": 1
+      }
+    },
+    {
+      "id": "apurimac",
+      "name": "Apurímac",
+      "seatsByChamber": {
+        "chamber-of-deputies": 2,
+        "senate": 1
+      }
+    },
+    {
+      "id": "arequipa",
+      "name": "Arequipa",
+      "seatsByChamber": {
+        "chamber-of-deputies": 6,
+        "senate": 1
+      }
+    },
+    {
+      "id": "ayacucho",
+      "name": "Ayacucho",
+      "seatsByChamber": {
+        "chamber-of-deputies": 3,
+        "senate": 1
+      }
+    },
+    {
+      "id": "cajamarca",
+      "name": "Cajamarca",
+      "seatsByChamber": {
+        "chamber-of-deputies": 6,
+        "senate": 1
+      }
+    },
+    {
+      "id": "callao",
+      "name": "Callao",
+      "seatsByChamber": {
+        "chamber-of-deputies": 4,
+        "senate": 1
+      }
+    },
+    {
+      "id": "cusco",
+      "name": "Cusco",
+      "seatsByChamber": {
+        "chamber-of-deputies": 5,
+        "senate": 1
+      }
+    },
+    {
+      "id": "huancavelica",
+      "name": "Huancavelica",
+      "seatsByChamber": {
+        "chamber-of-deputies": 2,
+        "senate": 1
+      }
+    },
+    {
+      "id": "huanuco",
+      "name": "Huánuco",
+      "seatsByChamber": {
+        "chamber-of-deputies": 3,
+        "senate": 1
+      }
+    },
+    {
+      "id": "ica",
+      "name": "Ica",
+      "seatsByChamber": {
+        "chamber-of-deputies": 4,
+        "senate": 1
+      }
+    },
+    {
+      "id": "junin",
+      "name": "Junín",
+      "seatsByChamber": {
+        "chamber-of-deputies": 5,
+        "senate": 1
+      }
+    },
+    {
+      "id": "la-libertad",
+      "name": "La Libertad",
+      "seatsByChamber": {
+        "chamber-of-deputies": 7,
+        "senate": 1
+      }
+    },
+    {
+      "id": "lambayeque",
+      "name": "Lambayeque",
+      "seatsByChamber": {
+        "chamber-of-deputies": 5,
+        "senate": 1
+      }
+    },
+    {
+      "id": "lima-metropolitana",
+      "name": "Lima Metropolitana",
+      "seatsByChamber": {
+        "chamber-of-deputies": 32,
+        "senate": 4
+      }
+    },
+    {
+      "id": "lima-provincias",
+      "name": "Lima Provincias",
+      "seatsByChamber": {
+        "chamber-of-deputies": 4,
+        "senate": 1
+      }
+    },
+    {
+      "id": "peruanos-en-el-extranjero",
+      "name": "Peruanos residentes en el extranjero",
+      "seatsByChamber": {
+        "chamber-of-deputies": 2,
+        "senate": 1
+      }
+    },
+    {
+      "id": "loreto",
+      "name": "Loreto",
+      "seatsByChamber": {
+        "chamber-of-deputies": 4,
+        "senate": 1
+      }
+    },
+    {
+      "id": "madre-de-dios",
+      "name": "Madre de Dios",
+      "seatsByChamber": {
+        "chamber-of-deputies": 2,
+        "senate": 1
+      }
+    },
+    {
+      "id": "moquegua",
+      "name": "Moquegua",
+      "seatsByChamber": {
+        "chamber-of-deputies": 2,
+        "senate": 1
+      }
+    },
+    {
+      "id": "pasco",
+      "name": "Pasco",
+      "seatsByChamber": {
+        "chamber-of-deputies": 2,
+        "senate": 1
+      }
+    },
+    {
+      "id": "piura",
+      "name": "Piura",
+      "seatsByChamber": {
+        "chamber-of-deputies": 7,
+        "senate": 1
+      }
+    },
+    {
+      "id": "puno",
+      "name": "Puno",
+      "seatsByChamber": {
+        "chamber-of-deputies": 5,
+        "senate": 1
+      }
+    },
+    {
+      "id": "san-martin",
+      "name": "San Martín",
+      "seatsByChamber": {
+        "chamber-of-deputies": 4,
+        "senate": 1
+      }
+    },
+    {
+      "id": "tacna",
+      "name": "Tacna",
+      "seatsByChamber": {
+        "chamber-of-deputies": 2,
+        "senate": 1
+      }
+    },
+    {
+      "id": "tumbes",
+      "name": "Tumbes",
+      "seatsByChamber": {
+        "chamber-of-deputies": 2,
+        "senate": 1
+      }
+    },
+    {
+      "id": "ucayali",
+      "name": "Ucayali",
+      "seatsByChamber": {
+        "chamber-of-deputies": 3,
+        "senate": 1
+      }
+    }
+  ],
+  "partyLeadership": {
+    "officeId": "party-leader",
+    "title": "Líder del partido",
+    "termYears": 2,
+    "minimumAge": 18,
+    "eligibleAfterOfficeIds": [
+      "deputy",
+      "senator",
+      "president",
+      "minister"
+    ],
+    "electionMethod": "generated-caucus-majority",
+    "requiredMajorityPercent": 50
+  },
+  "ministerialAppointment": {
+    "officeId": "minister",
+    "title": "Ministro",
+    "termYears": 2,
+    "minimumAge": 18,
+    "eligibleAfterOfficeIds": [
+      "deputy",
+      "senator",
+      "president",
+      "party-leader"
+    ],
+    "appointmentMethod": "generated-executive-choice",
+    "minimumSupportPercent": 45,
+    "portfolios": [
+      {
+        "id": "economy",
+        "title": "Economía",
+        "focus": "economy"
+      },
+      {
+        "id": "interior",
+        "title": "Interior",
+        "focus": "institutions"
+      },
+      {
+        "id": "health",
+        "title": "Salud",
+        "focus": "services"
+      },
+      {
+        "id": "education",
+        "title": "Educación",
+        "focus": "services"
+      },
+      {
+        "id": "infrastructure",
+        "title": "Infraestructura",
+        "focus": "economy"
+      }
+    ]
+  }
+}

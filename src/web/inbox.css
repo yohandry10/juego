@@ -1,0 +1,27 @@
+.action-card:disabled{opacity:.38;cursor:not-allowed;transform:none}
+.inbox-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:20px 0}
+.inbox-item{background:#202c25;border:1px solid #344139;padding:18px}
+.inbox-item h3{margin:10px 0}
+.inbox-item p{line-height:1.7}
+.inbox-item small{display:block;color:#8e9c8f;line-height:1.6;margin-top:10px}
+.inbox-options{display:flex;gap:9px;margin-top:15px}
+.inbox-options button{flex:1;font-size:11px;padding:10px}
+.inbox-options .primary-button{background:#28372c;color:#d5e0bf;border-color:#536346}
+@media(max-width:600px){.inbox-options{flex-direction:column}}
+.wizard-card h3{margin:2px 0 0;font:600 25px 'Playfair Display'}
+.wizard-help{margin:0;color:#95a094;font-size:12px;line-height:1.65}
+.wizard-progress{display:grid;grid-template-columns:repeat(6,1fr);gap:5px}
+.wizard-progress i{height:3px;background:#344139}.wizard-progress i.done{background:#c4d797}
+.range-label{margin:3px 0}.range-label span{display:flex;justify-content:space-between;gap:8px}.range-label input,.attribute-row input{accent-color:#c4d797}
+.trait-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.creation-card .trait-option{display:flex;grid-template-columns:none;align-items:center;gap:9px;padding:11px;border:1px solid #344139;background:#121a16;color:#cbd2c5}
+.trait-option input{width:auto;accent-color:#c4d797}
+.wizard-actions{display:flex;gap:10px}.wizard-actions>*{flex:1}
+.attribute-list{display:grid;gap:5px;max-height:230px;overflow:auto}
+.creation-card .attribute-row{display:grid;grid-template-columns:100px 1fr 22px;align-items:center;gap:9px}
+.creation-card .attribute-row input{padding:0;border:0}
+.character-summary{display:grid;gap:5px;padding:12px;background:#202c25}.character-summary span{font-size:10px;color:#99a598}
+.press-feed{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:24px}
+.press-feed article{padding:18px;background:#202c25;border:1px solid #344139}
+.press-feed h3{font:600 18px 'Playfair Display';line-height:1.4;margin:12px 0}
+.press-feed p{color:#9aa69a;font-size:11px;line-height:1.7}
