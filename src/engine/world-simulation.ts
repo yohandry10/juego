@@ -129,16 +129,23 @@ export function advanceGeopolitics(state: GeopoliticsState, seed: string, quarte
     });
     const aidIndex = current.player.annualAidIndex;
     const migrationAgreement = current.player.migrationAgreement;
+    const tradeAgreement = current.treaties.some((treaty) => treaty.kind === "trade" && treaty.status === "ratified");
+    const financialPrograms = current.treaties.filter((treaty) => treaty.kind === "aid" && treaty.status === "ratified");
+    const imfProgram = financialPrograms.some((treaty) => treaty.partnerId === "imf");
+    const worldBankProgram = financialPrograms.some((treaty) => treaty.partnerId === "world-bank");
     const domesticCauses = [
       ...(shock ? [shock.explanation] : []),
       ...(aidIndex > 0 ? [`El compromiso de ayuda exterior (índice ${aidIndex}) presiona el presupuesto y el crecimiento nacionales.`] : []),
       ...(migrationAgreement ? ["El acuerdo de movilidad ratificado mejora gradualmente la coordinación laboral; no simula personas ni flujos migratorios."] : []),
+      ...(tradeAgreement ? ["El tratado comercial ratificado mejora gradualmente el acceso al mercado asociado; el flujo bilateral sigue siendo una aproximación."] : []),
+      ...(imfProgram ? ["El programa IMF mantiene una condicionalidad fiscal abstracta con un costo acotado de actividad; no representa desembolsos ni revisiones reales."] : []),
+      ...(worldBankProgram ? ["El préstamo de inversión del Banco Mundial mantiene una mejora gradual de inversión y empleo; los proyectos se abstraen y no representan una operación real."] : []),
     ];
     current = { ...current, quarterIndex: q, actors: actorsWithSanctionCosts, relations, conflicts, actions, sanctions, votes: vote ? [...current.votes.slice(-99), vote] : current.votes, shocks: shock ? [...current.shocks.slice(-199), shock] : current.shocks,
       domesticImpact: {
-        growthDelta: clamp((player?.tradeShockIndex ?? 0) * 0.025 - aidIndex * 0.008 + (migrationAgreement ? 0.3 : 0), -5, 5),
+        growthDelta: clamp((player?.tradeShockIndex ?? 0) * 0.025 - aidIndex * 0.008 + (migrationAgreement ? 0.3 : 0) + (tradeAgreement ? 0.2 : 0) - (imfProgram ? 0.18 : 0) + (worldBankProgram ? 0.25 : 0), -5, 5),
         inflationDelta: clamp(Math.abs(player?.tradeShockIndex ?? 0) * 0.018 + aidIndex * 0.004 + (migrationAgreement ? 0.05 : 0), 0, 5),
-        unemploymentDelta: clamp(Math.max(0, -(player?.tradeShockIndex ?? 0)) * 0.012 - (migrationAgreement ? 0.35 : 0), -3, 3),
+        unemploymentDelta: clamp(Math.max(0, -(player?.tradeShockIndex ?? 0)) * 0.012 - (migrationAgreement ? 0.35 : 0) - (tradeAgreement ? 0.1 : 0) + (imfProgram ? 0.04 : 0) - (worldBankProgram ? 0.08 : 0), -3, 3),
         causes: domesticCauses.length ? domesticCauses : current.domesticImpact.causes.slice(-3),
       },
       militaryLoyalty: clamp(current.militaryLoyalty + ((player?.regimeStability ?? 50) - 50) * 0.005, 0, 100), coups: current.coups + ((player?.regimeStability ?? 50) < 25 && roll(seed, q * 222223) < 0.025 ? 1 : 0) };

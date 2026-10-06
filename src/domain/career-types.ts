@@ -257,6 +257,7 @@ export interface LegacyProfile {
   readonly milestones: readonly string[];
   readonly reevaluationAt5: number;
   readonly reevaluationAt15: number;
+  readonly reevaluationAt30?: number | undefined;
   readonly shareText: string;
 }
 

@@ -1,4 +1,4 @@
-const CACHE = "mandato-shell-v4";
+const CACHE = "mandato-shell-v5";
 const DATA_CACHE = "mandato-data-v4";
 const CORE = ["/", "/privacy.html", "/data/countries/index.json", "/data/countries/peru.json", "/data/countries/spain.json", "/data/countries/france.json", "/data/world/world-map.json"];
 
@@ -37,7 +37,14 @@ self.addEventListener("fetch", (event) => {
     return;
   }
   if (url.pathname.startsWith("/assets/")) {
-    event.respondWith(caches.match(request, { ignoreVary: true }).then((cached) => cached ?? fetch(request)));
+    event.respondWith((async () => {
+      const cache = await caches.open(CACHE);
+      const cached = await cache.match(request, { ignoreVary: true });
+      if (cached) return cached;
+      const response = await fetch(request);
+      if (response.ok) await cache.put(request, response.clone());
+      return response;
+    })());
     return;
   }
   if (url.pathname.startsWith("/data/")) {

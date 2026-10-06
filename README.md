@@ -10,7 +10,7 @@ Créditos y procedencia: [`docs/creditos-y-licencias.md`](docs/creditos-y-licenc
 
 La prueba con personas tiene su [protocolo de sesión](docs/protocolo-prueba-jugadores.md); no hay resultados humanos todavía.
 
-La interfaz exterior tiene una comprobación reproducible en `scripts/phase4-diplomacy-browser-check.py`, que recorre el menú de ayuda, reconocimiento y tratados hasta la ratificación legislativa.
+La diplomacia tiene una comprobación reproducible en `scripts/phase4-diplomacy-browser-check.py`, que recorre postura, reconocimiento, ayuda exterior, movilidad y financiación hasta la ratificación legislativa. La guía y el funcionamiento offline se recorren en `scripts/phase5-browser-check.py`.
 
 ## Requisitos
 
@@ -74,7 +74,7 @@ El bus síncrono transmite eventos del motor a observadores como el CLI; cada ev
 
 El snapshot `world-2026-10-06-v1` contiene 217 países y economías del catálogo del Banco Mundial; 193 están marcados como miembros de la ONU. La matriz bilateral es una aproximación dispersa de juego, no una matriz observada de comercio. El mapa Natural Earth a escala 1:110m contiene 169 geometrías: los actores sin geometría siguen disponibles en el catálogo y pueden seleccionarse por código. Las membresías de ONU, FMI/Banco Mundial, OMC y bloques regionales se mantienen como snapshots simplificados. La actualización de WDI, roster ONU y Natural Earth se ejecuta con `npm run world:update-data`.
 
-Las cifras de guerra y shocks son calibración interna: `docs/phase-4-report.md` describe el alcance y las limitaciones. La guerra es abstracta; el juego no tiene uso nuclear. La guía inicial y el glosario están en Ayuda. Tras la primera carga completa, un service worker conserva el shell, los escenarios y el mapa para uso sin conexión; la interfaz avisa cuando esa capacidad del navegador está disponible. Fase 5 conserva límites explícitos: el catálogo nacional jugable tiene cuatro fichas (Perú, España, Francia y Alemania), aún menos de los diez países iniciales; el nuevo perfil alemán agrega instituciones federales para jugabilidad y no simula las delegaciones de los Länder. La guía no se ha validado con cinco jugadores, y el balance completo, la auditoría editorial/legal y la publicación pública siguen abiertos.
+Las cifras de guerra y shocks son calibración interna: `docs/phase-4-report.md` describe el alcance y las limitaciones. La guerra es abstracta; el juego no tiene uso nuclear. La guía inicial y el glosario están en Ayuda. Tras la primera carga completa, un service worker conserva el shell, los escenarios y el mapa para uso sin conexión; la interfaz avisa cuando esa capacidad del navegador está disponible. Fase 5 conserva límites explícitos: el catálogo jugable tiene seis fichas (Perú, España, Francia, Alemania, Estados Unidos y Reino Unido), aún menos de los diez países iniciales; algunos modelos electorales y cámaras altas se agregan. Faltan Brasil, México, Argentina y Venezuela, además del escenario autoritario/hegemónico. La guía no se ha validado con cinco jugadores, y el balance completo, la auditoría editorial/legal y la publicación pública siguen abiertos.
 
 ## Datos iniciales
 

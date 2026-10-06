@@ -25,9 +25,11 @@ with sync_playwright() as playwright:
     page.get_by_role("button", name="Reconocer interlocución").click()
     assert page.get_by_text("aislamiento diplomático: 6", exact=False).is_visible()
     page.get_by_role("button", name="Ofrecer ayuda exterior").click()
-    assert page.get_by_text("Ayuda acumulada: índice 5", exact=False).is_visible()
+    assert page.get_by_text("Ayuda exterior acumulada: índice 5", exact=False).is_visible()
     page.get_by_role("button", name="Proponer acuerdo migratorio").click()
     assert page.get_by_text("Acuerdo de movilidad con", exact=False).is_visible()
+    page.get_by_role("button", name="Solicitar programa IMF").click()
+    assert page.get_by_text("Programa financiero con IMF", exact=False).is_visible()
 
     page.locator(".tabbar").get_by_role("button", name="Resumen").click()
     page.get_by_role("button", name="Confirmar nominación").click()
@@ -39,8 +41,15 @@ with sync_playwright() as playwright:
     page.get_by_role("button", name="Iniciar mandato").click()
     page.get_by_text("Sesión 0 de 20").wait_for()
     page.locator(".tabbar").get_by_role("button", name="Mundo").click()
-    page.get_by_role("button", name="Ratificar tratado").click()
-    assert page.get_by_text("acuerdo migratorio ratificado: sí", exact=False).is_visible()
+    page.get_by_role("button", name="Someter a votación").first.click()
+    assert page.get_by_text("a favor", exact=False).is_visible()
+    assert (
+        page.get_by_text("acuerdo migratorio ratificado: sí", exact=False).is_visible()
+        or page.get_by_text("acuerdo migratorio ratificado: no", exact=False).is_visible()
+    )
+    finance_proposal = page.locator(".vote-report").filter(has_text="Programa financiero con IMF")
+    finance_proposal.get_by_role("button", name="Someter a votación").click()
+    assert page.get_by_text("Votación nominal ficticia en Perú", exact=False).count() >= 1
     assert not errors, errors
-    print("OK: postura con costo, reconocimiento, ayuda exterior, tratado migratorio, elección y ratificación legislativa.")
+    print("OK: postura con costo, reconocimiento, ayuda exterior, tratado migratorio, elección y votación nominal de ratificación.")
     browser.close()

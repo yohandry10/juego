@@ -1,0 +1,4227 @@
+{
+  "schemaVersion": 1,
+  "id": "united-states",
+  "name": "Estados Unidos",
+  "experimental": false,
+  "startingYear": 2026,
+  "dataVersion": "united-states-institutions-2026-economic-snapshot-2024-v1",
+  "population": 340110988,
+  "politicalSystem": {
+    "formOfGovernment": "presidential",
+    "executive": {
+      "officeId": "president",
+      "title": "Presidente",
+      "selection": "direct-election",
+      "termYears": 4,
+      "consecutiveTermLimit": 2,
+      "election": {
+        "method": "electoral-college",
+        "firstRoundThresholdPercent": 50,
+        "runoffDays": 0
+      },
+      "investiture": null,
+      "confidence": null,
+      "censure": null,
+      "dissolution": {
+        "executiveMayPropose": false,
+        "minimumMonthsBetween": 0
+      }
+    },
+    "legislature": {
+      "type": "bicameral",
+      "lowerChamber": {
+        "id": "house",
+        "name": "Cámara de Representantes (435 distritos abstractos)",
+        "seats": 435,
+        "termYears": 2,
+        "electoralSystem": "majoritarian",
+        "districtCount": 435,
+        "nationalSeats": 0,
+        "seatAllocationMethod": "plurality",
+        "electoralThresholdPercent": 0
+      },
+      "upperChamber": {
+        "id": "senate",
+        "name": "Senado (50 delegaciones estatales agregadas)",
+        "seats": 100,
+        "termYears": 6,
+        "electoralSystem": "majoritarian",
+        "districtCount": 50,
+        "nationalSeats": 0,
+        "seatAllocationMethod": "plurality",
+        "electoralThresholdPercent": 0
+      }
+    },
+    "presidentialTermYears": 4,
+    "presidentialElection": "electoral-college",
+    "removalMechanisms": [
+      "impeachment"
+    ],
+    "politicalDistribution": [
+      {
+        "sharePercent": 28,
+        "ideology": {
+          "economy": 62,
+          "social": 43,
+          "nationalism": 60,
+          "institutionalism": 72,
+          "rigidity": 46
+        }
+      },
+      {
+        "sharePercent": 25,
+        "ideology": {
+          "economy": 35,
+          "social": 67,
+          "nationalism": 28,
+          "institutionalism": 78,
+          "rigidity": 38
+        }
+      },
+      {
+        "sharePercent": 20,
+        "ideology": {
+          "economy": 68,
+          "social": 34,
+          "nationalism": 74,
+          "institutionalism": 48,
+          "rigidity": 54
+        }
+      },
+      {
+        "sharePercent": 16,
+        "ideology": {
+          "economy": 48,
+          "social": 55,
+          "nationalism": 45,
+          "institutionalism": 68,
+          "rigidity": 35
+        }
+      },
+      {
+        "sharePercent": 11,
+        "ideology": {
+          "economy": 52,
+          "social": 50,
+          "nationalism": 50,
+          "institutionalism": 58,
+          "rigidity": 60
+        }
+      }
+    ],
+    "headOfState": {
+      "officeId": "president",
+      "title": "Presidente de los Estados Unidos",
+      "selection": "indirect-election",
+      "termYears": 4,
+      "ceremonial": false
+    },
+    "executiveAccountability": {
+      "presidentialVacancy": null,
+      "presidentialAccusation": {
+        "grounds": [
+          "impeachment"
+        ]
+      },
+      "cabinetCensure": null
+    }
+  },
+  "candidateEligibility": [
+    {
+      "officeId": "deputy",
+      "minimumAge": 25,
+      "chamberId": "house",
+      "nationality": "citizen",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party"
+    },
+    {
+      "officeId": "senator",
+      "minimumAge": 30,
+      "chamberId": "senate",
+      "nationality": "citizen",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party"
+    },
+    {
+      "officeId": "president",
+      "minimumAge": 35,
+      "nationality": "citizen-by-birth",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party"
+    }
+  ],
+  "dataSources": [
+    {
+      "name": "World Bank · World Development Indicators",
+      "url": "https://data.worldbank.org/country/united-states",
+      "indicator": "GDP current US$, population, inflation and unemployment; economic snapshot values used where identified",
+      "year": 2024,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "U.S. Bureau of Economic Analysis",
+      "url": "https://www.bea.gov/news/2025/gross-domestic-product-4th-quarter-and-year-2024-third-estimate-gdp-industry-and",
+      "indicator": "Annual real GDP growth (2024)",
+      "year": 2024,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "U.S. House of Representatives",
+      "url": "https://www.house.gov/representatives",
+      "indicator": "435 voting representatives; two-year terms; generated districts are abstract gameplay slots",
+      "year": 2026,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "U.S. Senate",
+      "url": "https://www.senate.gov/about/origins-foundations/senate-and-constitution/term-lengths.htm",
+      "indicator": "Two senators per state; six-year terms; three election classes are not modelled",
+      "year": 2026,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "USAGov",
+      "url": "https://www.usa.gov/electoral-college",
+      "indicator": "Presidential election uses Electoral College in real institutions; game abstracts electors into a national election result",
+      "year": 2026,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "U.S. National Archives",
+      "url": "https://www.archives.gov/founding-docs/constitution-transcript",
+      "indicator": "U.S. Constitution, Articles I and II; structural offices and qualifications",
+      "year": 2026,
+      "accessedOn": "2026-10-06"
+    }
+  ],
+  "economy": {
+    "gdpUsd": 29184400000000,
+    "annualGrowthPercent": 2.8,
+    "annualInflationPercent": 2.9,
+    "unemploymentPercent": 4.0
+  },
+  "mandateExpectations": {
+    "annualGrowthFloorPercent": 1.2,
+    "inflationCeilingPercent": 4.0,
+    "unemploymentCeilingPercent": 5.8,
+    "approvalFloorPercent": 42
+  },
+  "trade": {
+    "goodsExportsUsd": 2185220000000,
+    "dataYear": 2025,
+    "leadingSectors": [
+      "Servicios profesionales y digitales",
+      "Manufactura",
+      "Energía"
+    ]
+  },
+  "socialBlocks": [
+    {
+      "id": "workers",
+      "name": "Hogares asalariados",
+      "populationShare": 24,
+      "mood": 8,
+      "demands": [
+        "empleo",
+        "salario real",
+        "servicios"
+      ]
+    },
+    {
+      "id": "rural",
+      "name": "Comunidades rurales",
+      "populationShare": 16,
+      "mood": 3,
+      "demands": [
+        "conectividad",
+        "infraestructura",
+        "acceso a mercados"
+      ]
+    },
+    {
+      "id": "professionals",
+      "name": "Profesionales y personal técnico",
+      "populationShare": 20,
+      "mood": 5,
+      "demands": [
+        "formación",
+        "innovación",
+        "vivienda"
+      ]
+    },
+    {
+      "id": "business",
+      "name": "Pequeñas y medianas empresas",
+      "populationShare": 15,
+      "mood": 2,
+      "demands": [
+        "crédito",
+        "reglas previsibles",
+        "infraestructura"
+      ]
+    },
+    {
+      "id": "public-services",
+      "name": "Personal de servicios públicos",
+      "populationShare": 14,
+      "mood": 4,
+      "demands": [
+        "capacidad institucional",
+        "salud",
+        "educación"
+      ]
+    },
+    {
+      "id": "students",
+      "name": "Estudiantes y hogares jóvenes",
+      "populationShare": 11,
+      "mood": 6,
+      "demands": [
+        "educación",
+        "vivienda",
+        "oportunidades"
+      ]
+    }
+  ],
+  "electoralDistricts": [
+    {
+      "id": "house-001",
+      "name": "Distrito federal abstracto 001",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-002",
+      "name": "Distrito federal abstracto 002",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-003",
+      "name": "Distrito federal abstracto 003",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-004",
+      "name": "Distrito federal abstracto 004",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-005",
+      "name": "Distrito federal abstracto 005",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-006",
+      "name": "Distrito federal abstracto 006",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-007",
+      "name": "Distrito federal abstracto 007",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-008",
+      "name": "Distrito federal abstracto 008",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-009",
+      "name": "Distrito federal abstracto 009",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-010",
+      "name": "Distrito federal abstracto 010",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-011",
+      "name": "Distrito federal abstracto 011",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-012",
+      "name": "Distrito federal abstracto 012",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-013",
+      "name": "Distrito federal abstracto 013",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-014",
+      "name": "Distrito federal abstracto 014",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-015",
+      "name": "Distrito federal abstracto 015",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-016",
+      "name": "Distrito federal abstracto 016",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-017",
+      "name": "Distrito federal abstracto 017",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-018",
+      "name": "Distrito federal abstracto 018",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-019",
+      "name": "Distrito federal abstracto 019",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-020",
+      "name": "Distrito federal abstracto 020",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-021",
+      "name": "Distrito federal abstracto 021",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-022",
+      "name": "Distrito federal abstracto 022",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-023",
+      "name": "Distrito federal abstracto 023",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-024",
+      "name": "Distrito federal abstracto 024",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-025",
+      "name": "Distrito federal abstracto 025",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-026",
+      "name": "Distrito federal abstracto 026",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-027",
+      "name": "Distrito federal abstracto 027",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-028",
+      "name": "Distrito federal abstracto 028",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-029",
+      "name": "Distrito federal abstracto 029",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-030",
+      "name": "Distrito federal abstracto 030",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-031",
+      "name": "Distrito federal abstracto 031",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-032",
+      "name": "Distrito federal abstracto 032",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-033",
+      "name": "Distrito federal abstracto 033",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-034",
+      "name": "Distrito federal abstracto 034",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-035",
+      "name": "Distrito federal abstracto 035",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-036",
+      "name": "Distrito federal abstracto 036",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-037",
+      "name": "Distrito federal abstracto 037",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-038",
+      "name": "Distrito federal abstracto 038",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-039",
+      "name": "Distrito federal abstracto 039",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-040",
+      "name": "Distrito federal abstracto 040",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-041",
+      "name": "Distrito federal abstracto 041",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-042",
+      "name": "Distrito federal abstracto 042",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-043",
+      "name": "Distrito federal abstracto 043",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-044",
+      "name": "Distrito federal abstracto 044",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-045",
+      "name": "Distrito federal abstracto 045",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-046",
+      "name": "Distrito federal abstracto 046",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-047",
+      "name": "Distrito federal abstracto 047",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-048",
+      "name": "Distrito federal abstracto 048",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-049",
+      "name": "Distrito federal abstracto 049",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-050",
+      "name": "Distrito federal abstracto 050",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-051",
+      "name": "Distrito federal abstracto 051",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-052",
+      "name": "Distrito federal abstracto 052",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-053",
+      "name": "Distrito federal abstracto 053",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-054",
+      "name": "Distrito federal abstracto 054",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-055",
+      "name": "Distrito federal abstracto 055",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-056",
+      "name": "Distrito federal abstracto 056",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-057",
+      "name": "Distrito federal abstracto 057",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-058",
+      "name": "Distrito federal abstracto 058",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-059",
+      "name": "Distrito federal abstracto 059",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-060",
+      "name": "Distrito federal abstracto 060",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-061",
+      "name": "Distrito federal abstracto 061",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-062",
+      "name": "Distrito federal abstracto 062",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-063",
+      "name": "Distrito federal abstracto 063",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-064",
+      "name": "Distrito federal abstracto 064",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-065",
+      "name": "Distrito federal abstracto 065",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-066",
+      "name": "Distrito federal abstracto 066",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-067",
+      "name": "Distrito federal abstracto 067",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-068",
+      "name": "Distrito federal abstracto 068",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-069",
+      "name": "Distrito federal abstracto 069",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-070",
+      "name": "Distrito federal abstracto 070",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-071",
+      "name": "Distrito federal abstracto 071",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-072",
+      "name": "Distrito federal abstracto 072",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-073",
+      "name": "Distrito federal abstracto 073",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-074",
+      "name": "Distrito federal abstracto 074",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-075",
+      "name": "Distrito federal abstracto 075",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-076",
+      "name": "Distrito federal abstracto 076",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-077",
+      "name": "Distrito federal abstracto 077",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-078",
+      "name": "Distrito federal abstracto 078",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-079",
+      "name": "Distrito federal abstracto 079",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-080",
+      "name": "Distrito federal abstracto 080",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-081",
+      "name": "Distrito federal abstracto 081",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-082",
+      "name": "Distrito federal abstracto 082",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-083",
+      "name": "Distrito federal abstracto 083",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-084",
+      "name": "Distrito federal abstracto 084",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-085",
+      "name": "Distrito federal abstracto 085",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-086",
+      "name": "Distrito federal abstracto 086",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-087",
+      "name": "Distrito federal abstracto 087",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-088",
+      "name": "Distrito federal abstracto 088",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-089",
+      "name": "Distrito federal abstracto 089",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-090",
+      "name": "Distrito federal abstracto 090",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-091",
+      "name": "Distrito federal abstracto 091",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-092",
+      "name": "Distrito federal abstracto 092",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-093",
+      "name": "Distrito federal abstracto 093",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-094",
+      "name": "Distrito federal abstracto 094",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-095",
+      "name": "Distrito federal abstracto 095",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-096",
+      "name": "Distrito federal abstracto 096",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-097",
+      "name": "Distrito federal abstracto 097",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-098",
+      "name": "Distrito federal abstracto 098",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-099",
+      "name": "Distrito federal abstracto 099",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-100",
+      "name": "Distrito federal abstracto 100",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-101",
+      "name": "Distrito federal abstracto 101",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-102",
+      "name": "Distrito federal abstracto 102",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-103",
+      "name": "Distrito federal abstracto 103",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-104",
+      "name": "Distrito federal abstracto 104",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-105",
+      "name": "Distrito federal abstracto 105",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-106",
+      "name": "Distrito federal abstracto 106",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-107",
+      "name": "Distrito federal abstracto 107",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-108",
+      "name": "Distrito federal abstracto 108",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-109",
+      "name": "Distrito federal abstracto 109",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-110",
+      "name": "Distrito federal abstracto 110",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-111",
+      "name": "Distrito federal abstracto 111",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-112",
+      "name": "Distrito federal abstracto 112",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-113",
+      "name": "Distrito federal abstracto 113",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-114",
+      "name": "Distrito federal abstracto 114",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-115",
+      "name": "Distrito federal abstracto 115",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-116",
+      "name": "Distrito federal abstracto 116",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-117",
+      "name": "Distrito federal abstracto 117",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-118",
+      "name": "Distrito federal abstracto 118",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-119",
+      "name": "Distrito federal abstracto 119",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-120",
+      "name": "Distrito federal abstracto 120",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-121",
+      "name": "Distrito federal abstracto 121",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-122",
+      "name": "Distrito federal abstracto 122",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-123",
+      "name": "Distrito federal abstracto 123",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-124",
+      "name": "Distrito federal abstracto 124",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-125",
+      "name": "Distrito federal abstracto 125",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-126",
+      "name": "Distrito federal abstracto 126",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-127",
+      "name": "Distrito federal abstracto 127",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-128",
+      "name": "Distrito federal abstracto 128",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-129",
+      "name": "Distrito federal abstracto 129",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-130",
+      "name": "Distrito federal abstracto 130",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-131",
+      "name": "Distrito federal abstracto 131",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-132",
+      "name": "Distrito federal abstracto 132",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-133",
+      "name": "Distrito federal abstracto 133",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-134",
+      "name": "Distrito federal abstracto 134",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-135",
+      "name": "Distrito federal abstracto 135",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-136",
+      "name": "Distrito federal abstracto 136",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-137",
+      "name": "Distrito federal abstracto 137",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-138",
+      "name": "Distrito federal abstracto 138",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-139",
+      "name": "Distrito federal abstracto 139",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-140",
+      "name": "Distrito federal abstracto 140",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-141",
+      "name": "Distrito federal abstracto 141",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-142",
+      "name": "Distrito federal abstracto 142",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-143",
+      "name": "Distrito federal abstracto 143",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-144",
+      "name": "Distrito federal abstracto 144",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-145",
+      "name": "Distrito federal abstracto 145",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-146",
+      "name": "Distrito federal abstracto 146",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-147",
+      "name": "Distrito federal abstracto 147",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-148",
+      "name": "Distrito federal abstracto 148",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-149",
+      "name": "Distrito federal abstracto 149",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-150",
+      "name": "Distrito federal abstracto 150",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-151",
+      "name": "Distrito federal abstracto 151",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-152",
+      "name": "Distrito federal abstracto 152",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-153",
+      "name": "Distrito federal abstracto 153",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-154",
+      "name": "Distrito federal abstracto 154",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-155",
+      "name": "Distrito federal abstracto 155",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-156",
+      "name": "Distrito federal abstracto 156",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-157",
+      "name": "Distrito federal abstracto 157",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-158",
+      "name": "Distrito federal abstracto 158",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-159",
+      "name": "Distrito federal abstracto 159",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-160",
+      "name": "Distrito federal abstracto 160",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-161",
+      "name": "Distrito federal abstracto 161",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-162",
+      "name": "Distrito federal abstracto 162",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-163",
+      "name": "Distrito federal abstracto 163",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-164",
+      "name": "Distrito federal abstracto 164",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-165",
+      "name": "Distrito federal abstracto 165",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-166",
+      "name": "Distrito federal abstracto 166",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-167",
+      "name": "Distrito federal abstracto 167",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-168",
+      "name": "Distrito federal abstracto 168",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-169",
+      "name": "Distrito federal abstracto 169",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-170",
+      "name": "Distrito federal abstracto 170",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-171",
+      "name": "Distrito federal abstracto 171",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-172",
+      "name": "Distrito federal abstracto 172",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-173",
+      "name": "Distrito federal abstracto 173",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-174",
+      "name": "Distrito federal abstracto 174",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-175",
+      "name": "Distrito federal abstracto 175",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-176",
+      "name": "Distrito federal abstracto 176",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-177",
+      "name": "Distrito federal abstracto 177",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-178",
+      "name": "Distrito federal abstracto 178",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-179",
+      "name": "Distrito federal abstracto 179",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-180",
+      "name": "Distrito federal abstracto 180",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-181",
+      "name": "Distrito federal abstracto 181",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-182",
+      "name": "Distrito federal abstracto 182",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-183",
+      "name": "Distrito federal abstracto 183",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-184",
+      "name": "Distrito federal abstracto 184",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-185",
+      "name": "Distrito federal abstracto 185",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-186",
+      "name": "Distrito federal abstracto 186",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-187",
+      "name": "Distrito federal abstracto 187",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-188",
+      "name": "Distrito federal abstracto 188",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-189",
+      "name": "Distrito federal abstracto 189",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-190",
+      "name": "Distrito federal abstracto 190",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-191",
+      "name": "Distrito federal abstracto 191",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-192",
+      "name": "Distrito federal abstracto 192",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-193",
+      "name": "Distrito federal abstracto 193",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-194",
+      "name": "Distrito federal abstracto 194",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-195",
+      "name": "Distrito federal abstracto 195",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-196",
+      "name": "Distrito federal abstracto 196",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-197",
+      "name": "Distrito federal abstracto 197",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-198",
+      "name": "Distrito federal abstracto 198",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-199",
+      "name": "Distrito federal abstracto 199",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-200",
+      "name": "Distrito federal abstracto 200",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-201",
+      "name": "Distrito federal abstracto 201",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-202",
+      "name": "Distrito federal abstracto 202",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-203",
+      "name": "Distrito federal abstracto 203",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-204",
+      "name": "Distrito federal abstracto 204",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-205",
+      "name": "Distrito federal abstracto 205",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-206",
+      "name": "Distrito federal abstracto 206",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-207",
+      "name": "Distrito federal abstracto 207",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-208",
+      "name": "Distrito federal abstracto 208",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-209",
+      "name": "Distrito federal abstracto 209",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-210",
+      "name": "Distrito federal abstracto 210",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-211",
+      "name": "Distrito federal abstracto 211",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-212",
+      "name": "Distrito federal abstracto 212",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-213",
+      "name": "Distrito federal abstracto 213",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-214",
+      "name": "Distrito federal abstracto 214",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-215",
+      "name": "Distrito federal abstracto 215",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-216",
+      "name": "Distrito federal abstracto 216",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-217",
+      "name": "Distrito federal abstracto 217",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-218",
+      "name": "Distrito federal abstracto 218",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-219",
+      "name": "Distrito federal abstracto 219",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-220",
+      "name": "Distrito federal abstracto 220",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-221",
+      "name": "Distrito federal abstracto 221",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-222",
+      "name": "Distrito federal abstracto 222",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-223",
+      "name": "Distrito federal abstracto 223",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-224",
+      "name": "Distrito federal abstracto 224",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-225",
+      "name": "Distrito federal abstracto 225",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-226",
+      "name": "Distrito federal abstracto 226",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-227",
+      "name": "Distrito federal abstracto 227",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-228",
+      "name": "Distrito federal abstracto 228",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-229",
+      "name": "Distrito federal abstracto 229",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-230",
+      "name": "Distrito federal abstracto 230",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-231",
+      "name": "Distrito federal abstracto 231",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-232",
+      "name": "Distrito federal abstracto 232",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-233",
+      "name": "Distrito federal abstracto 233",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-234",
+      "name": "Distrito federal abstracto 234",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-235",
+      "name": "Distrito federal abstracto 235",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-236",
+      "name": "Distrito federal abstracto 236",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-237",
+      "name": "Distrito federal abstracto 237",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-238",
+      "name": "Distrito federal abstracto 238",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-239",
+      "name": "Distrito federal abstracto 239",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-240",
+      "name": "Distrito federal abstracto 240",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-241",
+      "name": "Distrito federal abstracto 241",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-242",
+      "name": "Distrito federal abstracto 242",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-243",
+      "name": "Distrito federal abstracto 243",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-244",
+      "name": "Distrito federal abstracto 244",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-245",
+      "name": "Distrito federal abstracto 245",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-246",
+      "name": "Distrito federal abstracto 246",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-247",
+      "name": "Distrito federal abstracto 247",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-248",
+      "name": "Distrito federal abstracto 248",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-249",
+      "name": "Distrito federal abstracto 249",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-250",
+      "name": "Distrito federal abstracto 250",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-251",
+      "name": "Distrito federal abstracto 251",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-252",
+      "name": "Distrito federal abstracto 252",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-253",
+      "name": "Distrito federal abstracto 253",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-254",
+      "name": "Distrito federal abstracto 254",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-255",
+      "name": "Distrito federal abstracto 255",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-256",
+      "name": "Distrito federal abstracto 256",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-257",
+      "name": "Distrito federal abstracto 257",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-258",
+      "name": "Distrito federal abstracto 258",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-259",
+      "name": "Distrito federal abstracto 259",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-260",
+      "name": "Distrito federal abstracto 260",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-261",
+      "name": "Distrito federal abstracto 261",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-262",
+      "name": "Distrito federal abstracto 262",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-263",
+      "name": "Distrito federal abstracto 263",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-264",
+      "name": "Distrito federal abstracto 264",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-265",
+      "name": "Distrito federal abstracto 265",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-266",
+      "name": "Distrito federal abstracto 266",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-267",
+      "name": "Distrito federal abstracto 267",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-268",
+      "name": "Distrito federal abstracto 268",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-269",
+      "name": "Distrito federal abstracto 269",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-270",
+      "name": "Distrito federal abstracto 270",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-271",
+      "name": "Distrito federal abstracto 271",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-272",
+      "name": "Distrito federal abstracto 272",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-273",
+      "name": "Distrito federal abstracto 273",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-274",
+      "name": "Distrito federal abstracto 274",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-275",
+      "name": "Distrito federal abstracto 275",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-276",
+      "name": "Distrito federal abstracto 276",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-277",
+      "name": "Distrito federal abstracto 277",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-278",
+      "name": "Distrito federal abstracto 278",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-279",
+      "name": "Distrito federal abstracto 279",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-280",
+      "name": "Distrito federal abstracto 280",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-281",
+      "name": "Distrito federal abstracto 281",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-282",
+      "name": "Distrito federal abstracto 282",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-283",
+      "name": "Distrito federal abstracto 283",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-284",
+      "name": "Distrito federal abstracto 284",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-285",
+      "name": "Distrito federal abstracto 285",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-286",
+      "name": "Distrito federal abstracto 286",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-287",
+      "name": "Distrito federal abstracto 287",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-288",
+      "name": "Distrito federal abstracto 288",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-289",
+      "name": "Distrito federal abstracto 289",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-290",
+      "name": "Distrito federal abstracto 290",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-291",
+      "name": "Distrito federal abstracto 291",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-292",
+      "name": "Distrito federal abstracto 292",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-293",
+      "name": "Distrito federal abstracto 293",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-294",
+      "name": "Distrito federal abstracto 294",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-295",
+      "name": "Distrito federal abstracto 295",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-296",
+      "name": "Distrito federal abstracto 296",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-297",
+      "name": "Distrito federal abstracto 297",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-298",
+      "name": "Distrito federal abstracto 298",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-299",
+      "name": "Distrito federal abstracto 299",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-300",
+      "name": "Distrito federal abstracto 300",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-301",
+      "name": "Distrito federal abstracto 301",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-302",
+      "name": "Distrito federal abstracto 302",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-303",
+      "name": "Distrito federal abstracto 303",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-304",
+      "name": "Distrito federal abstracto 304",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-305",
+      "name": "Distrito federal abstracto 305",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-306",
+      "name": "Distrito federal abstracto 306",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-307",
+      "name": "Distrito federal abstracto 307",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-308",
+      "name": "Distrito federal abstracto 308",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-309",
+      "name": "Distrito federal abstracto 309",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-310",
+      "name": "Distrito federal abstracto 310",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-311",
+      "name": "Distrito federal abstracto 311",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-312",
+      "name": "Distrito federal abstracto 312",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-313",
+      "name": "Distrito federal abstracto 313",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-314",
+      "name": "Distrito federal abstracto 314",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-315",
+      "name": "Distrito federal abstracto 315",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-316",
+      "name": "Distrito federal abstracto 316",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-317",
+      "name": "Distrito federal abstracto 317",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-318",
+      "name": "Distrito federal abstracto 318",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-319",
+      "name": "Distrito federal abstracto 319",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-320",
+      "name": "Distrito federal abstracto 320",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-321",
+      "name": "Distrito federal abstracto 321",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-322",
+      "name": "Distrito federal abstracto 322",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-323",
+      "name": "Distrito federal abstracto 323",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-324",
+      "name": "Distrito federal abstracto 324",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-325",
+      "name": "Distrito federal abstracto 325",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-326",
+      "name": "Distrito federal abstracto 326",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-327",
+      "name": "Distrito federal abstracto 327",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-328",
+      "name": "Distrito federal abstracto 328",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-329",
+      "name": "Distrito federal abstracto 329",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-330",
+      "name": "Distrito federal abstracto 330",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-331",
+      "name": "Distrito federal abstracto 331",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-332",
+      "name": "Distrito federal abstracto 332",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-333",
+      "name": "Distrito federal abstracto 333",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-334",
+      "name": "Distrito federal abstracto 334",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-335",
+      "name": "Distrito federal abstracto 335",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-336",
+      "name": "Distrito federal abstracto 336",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-337",
+      "name": "Distrito federal abstracto 337",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-338",
+      "name": "Distrito federal abstracto 338",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-339",
+      "name": "Distrito federal abstracto 339",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-340",
+      "name": "Distrito federal abstracto 340",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-341",
+      "name": "Distrito federal abstracto 341",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-342",
+      "name": "Distrito federal abstracto 342",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-343",
+      "name": "Distrito federal abstracto 343",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-344",
+      "name": "Distrito federal abstracto 344",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-345",
+      "name": "Distrito federal abstracto 345",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-346",
+      "name": "Distrito federal abstracto 346",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-347",
+      "name": "Distrito federal abstracto 347",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-348",
+      "name": "Distrito federal abstracto 348",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-349",
+      "name": "Distrito federal abstracto 349",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-350",
+      "name": "Distrito federal abstracto 350",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-351",
+      "name": "Distrito federal abstracto 351",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-352",
+      "name": "Distrito federal abstracto 352",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-353",
+      "name": "Distrito federal abstracto 353",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-354",
+      "name": "Distrito federal abstracto 354",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-355",
+      "name": "Distrito federal abstracto 355",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-356",
+      "name": "Distrito federal abstracto 356",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-357",
+      "name": "Distrito federal abstracto 357",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-358",
+      "name": "Distrito federal abstracto 358",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-359",
+      "name": "Distrito federal abstracto 359",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-360",
+      "name": "Distrito federal abstracto 360",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-361",
+      "name": "Distrito federal abstracto 361",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-362",
+      "name": "Distrito federal abstracto 362",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-363",
+      "name": "Distrito federal abstracto 363",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-364",
+      "name": "Distrito federal abstracto 364",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-365",
+      "name": "Distrito federal abstracto 365",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-366",
+      "name": "Distrito federal abstracto 366",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-367",
+      "name": "Distrito federal abstracto 367",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-368",
+      "name": "Distrito federal abstracto 368",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-369",
+      "name": "Distrito federal abstracto 369",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-370",
+      "name": "Distrito federal abstracto 370",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-371",
+      "name": "Distrito federal abstracto 371",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-372",
+      "name": "Distrito federal abstracto 372",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-373",
+      "name": "Distrito federal abstracto 373",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-374",
+      "name": "Distrito federal abstracto 374",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-375",
+      "name": "Distrito federal abstracto 375",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-376",
+      "name": "Distrito federal abstracto 376",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-377",
+      "name": "Distrito federal abstracto 377",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-378",
+      "name": "Distrito federal abstracto 378",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-379",
+      "name": "Distrito federal abstracto 379",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-380",
+      "name": "Distrito federal abstracto 380",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-381",
+      "name": "Distrito federal abstracto 381",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-382",
+      "name": "Distrito federal abstracto 382",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-383",
+      "name": "Distrito federal abstracto 383",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-384",
+      "name": "Distrito federal abstracto 384",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-385",
+      "name": "Distrito federal abstracto 385",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-386",
+      "name": "Distrito federal abstracto 386",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-387",
+      "name": "Distrito federal abstracto 387",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-388",
+      "name": "Distrito federal abstracto 388",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-389",
+      "name": "Distrito federal abstracto 389",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-390",
+      "name": "Distrito federal abstracto 390",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-391",
+      "name": "Distrito federal abstracto 391",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-392",
+      "name": "Distrito federal abstracto 392",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-393",
+      "name": "Distrito federal abstracto 393",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-394",
+      "name": "Distrito federal abstracto 394",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-395",
+      "name": "Distrito federal abstracto 395",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-396",
+      "name": "Distrito federal abstracto 396",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-397",
+      "name": "Distrito federal abstracto 397",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-398",
+      "name": "Distrito federal abstracto 398",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-399",
+      "name": "Distrito federal abstracto 399",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-400",
+      "name": "Distrito federal abstracto 400",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-401",
+      "name": "Distrito federal abstracto 401",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-402",
+      "name": "Distrito federal abstracto 402",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-403",
+      "name": "Distrito federal abstracto 403",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-404",
+      "name": "Distrito federal abstracto 404",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-405",
+      "name": "Distrito federal abstracto 405",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-406",
+      "name": "Distrito federal abstracto 406",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-407",
+      "name": "Distrito federal abstracto 407",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-408",
+      "name": "Distrito federal abstracto 408",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-409",
+      "name": "Distrito federal abstracto 409",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-410",
+      "name": "Distrito federal abstracto 410",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-411",
+      "name": "Distrito federal abstracto 411",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-412",
+      "name": "Distrito federal abstracto 412",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-413",
+      "name": "Distrito federal abstracto 413",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-414",
+      "name": "Distrito federal abstracto 414",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-415",
+      "name": "Distrito federal abstracto 415",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-416",
+      "name": "Distrito federal abstracto 416",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-417",
+      "name": "Distrito federal abstracto 417",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-418",
+      "name": "Distrito federal abstracto 418",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-419",
+      "name": "Distrito federal abstracto 419",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-420",
+      "name": "Distrito federal abstracto 420",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-421",
+      "name": "Distrito federal abstracto 421",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-422",
+      "name": "Distrito federal abstracto 422",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-423",
+      "name": "Distrito federal abstracto 423",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-424",
+      "name": "Distrito federal abstracto 424",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-425",
+      "name": "Distrito federal abstracto 425",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-426",
+      "name": "Distrito federal abstracto 426",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-427",
+      "name": "Distrito federal abstracto 427",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-428",
+      "name": "Distrito federal abstracto 428",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-429",
+      "name": "Distrito federal abstracto 429",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-430",
+      "name": "Distrito federal abstracto 430",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-431",
+      "name": "Distrito federal abstracto 431",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-432",
+      "name": "Distrito federal abstracto 432",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-433",
+      "name": "Distrito federal abstracto 433",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-434",
+      "name": "Distrito federal abstracto 434",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "house-435",
+      "name": "Distrito federal abstracto 435",
+      "seatsByChamber": {
+        "house": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "senate-state-01",
+      "name": "Delegación estatal abstracta 01",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-02",
+      "name": "Delegación estatal abstracta 02",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-03",
+      "name": "Delegación estatal abstracta 03",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-04",
+      "name": "Delegación estatal abstracta 04",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-05",
+      "name": "Delegación estatal abstracta 05",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-06",
+      "name": "Delegación estatal abstracta 06",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-07",
+      "name": "Delegación estatal abstracta 07",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-08",
+      "name": "Delegación estatal abstracta 08",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-09",
+      "name": "Delegación estatal abstracta 09",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-10",
+      "name": "Delegación estatal abstracta 10",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-11",
+      "name": "Delegación estatal abstracta 11",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-12",
+      "name": "Delegación estatal abstracta 12",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-13",
+      "name": "Delegación estatal abstracta 13",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-14",
+      "name": "Delegación estatal abstracta 14",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-15",
+      "name": "Delegación estatal abstracta 15",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-16",
+      "name": "Delegación estatal abstracta 16",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-17",
+      "name": "Delegación estatal abstracta 17",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-18",
+      "name": "Delegación estatal abstracta 18",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-19",
+      "name": "Delegación estatal abstracta 19",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-20",
+      "name": "Delegación estatal abstracta 20",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-21",
+      "name": "Delegación estatal abstracta 21",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-22",
+      "name": "Delegación estatal abstracta 22",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-23",
+      "name": "Delegación estatal abstracta 23",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-24",
+      "name": "Delegación estatal abstracta 24",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-25",
+      "name": "Delegación estatal abstracta 25",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-26",
+      "name": "Delegación estatal abstracta 26",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-27",
+      "name": "Delegación estatal abstracta 27",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-28",
+      "name": "Delegación estatal abstracta 28",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-29",
+      "name": "Delegación estatal abstracta 29",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-30",
+      "name": "Delegación estatal abstracta 30",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-31",
+      "name": "Delegación estatal abstracta 31",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-32",
+      "name": "Delegación estatal abstracta 32",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-33",
+      "name": "Delegación estatal abstracta 33",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-34",
+      "name": "Delegación estatal abstracta 34",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-35",
+      "name": "Delegación estatal abstracta 35",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-36",
+      "name": "Delegación estatal abstracta 36",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-37",
+      "name": "Delegación estatal abstracta 37",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-38",
+      "name": "Delegación estatal abstracta 38",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-39",
+      "name": "Delegación estatal abstracta 39",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-40",
+      "name": "Delegación estatal abstracta 40",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-41",
+      "name": "Delegación estatal abstracta 41",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-42",
+      "name": "Delegación estatal abstracta 42",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-43",
+      "name": "Delegación estatal abstracta 43",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-44",
+      "name": "Delegación estatal abstracta 44",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-45",
+      "name": "Delegación estatal abstracta 45",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-46",
+      "name": "Delegación estatal abstracta 46",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-47",
+      "name": "Delegación estatal abstracta 47",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-48",
+      "name": "Delegación estatal abstracta 48",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-49",
+      "name": "Delegación estatal abstracta 49",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    },
+    {
+      "id": "senate-state-50",
+      "name": "Delegación estatal abstracta 50",
+      "seatsByChamber": {
+        "house": 0,
+        "senate": 2
+      }
+    }
+  ],
+  "partyLeadership": {
+    "officeId": "party-leader",
+    "title": "Líder del partido",
+    "termYears": 2,
+    "minimumAge": 18,
+    "eligibleAfterOfficeIds": [
+      "deputy",
+      "senator",
+      "president",
+      "minister"
+    ],
+    "electionMethod": "generated-caucus-majority",
+    "requiredMajorityPercent": 50
+  },
+  "ministerialAppointment": {
+    "officeId": "minister",
+    "title": "Secretario de gabinete",
+    "termYears": 2,
+    "minimumAge": 18,
+    "eligibleAfterOfficeIds": [
+      "deputy",
+      "senator",
+      "president",
+      "party-leader"
+    ],
+    "appointmentMethod": "generated-executive-choice",
+    "minimumSupportPercent": 45,
+    "portfolios": [
+      {
+        "id": "economy",
+        "title": "Economía",
+        "focus": "economy"
+      },
+      {
+        "id": "foreign-affairs",
+        "title": "Relaciones exteriores",
+        "focus": "institutions"
+      },
+      {
+        "id": "health",
+        "title": "Salud",
+        "focus": "services"
+      },
+      {
+        "id": "education",
+        "title": "Educación",
+        "focus": "services"
+      },
+      {
+        "id": "infrastructure",
+        "title": "Infraestructura",
+        "focus": "economy"
+      }
+    ]
+  }
+}

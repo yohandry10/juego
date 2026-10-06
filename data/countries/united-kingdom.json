@@ -1,0 +1,5555 @@
+{
+  "schemaVersion": 1,
+  "id": "united-kingdom",
+  "name": "Reino Unido",
+  "experimental": false,
+  "startingYear": 2026,
+  "dataVersion": "united-kingdom-institutions-2026-economic-snapshot-2025-v1",
+  "population": 69487000,
+  "politicalSystem": {
+    "formOfGovernment": "parliamentary",
+    "headOfState": {
+      "officeId": "monarch",
+      "title": "Monarca (jefatura de Estado)",
+      "selection": "hereditary",
+      "termYears": null,
+      "ceremonial": true
+    },
+    "executive": {
+      "officeId": "prime-minister",
+      "title": "Primer ministro",
+      "selection": "legislative-investiture",
+      "termYears": 5,
+      "consecutiveTermLimit": null,
+      "election": null,
+      "investiture": {
+        "firstVoteMajority": "simple",
+        "laterVoteMajority": "simple",
+        "laterVoteDelayHours": 24,
+        "dissolutionAfterDays": 14
+      },
+      "confidence": {
+        "passMajority": "simple",
+        "failureEffect": "resignation"
+      },
+      "censure": {
+        "type": "ordinary",
+        "passageMajority": "simple",
+        "minimumSponsorsPercent": 25,
+        "daysBeforeVote": 7
+      },
+      "dissolution": {
+        "executiveMayPropose": true,
+        "minimumMonthsBetween": 0
+      }
+    },
+    "legislature": {
+      "type": "bicameral",
+      "lowerChamber": {
+        "id": "commons",
+        "name": "House of Commons (650 circunscripciones abstractas)",
+        "seats": 650,
+        "termYears": 5,
+        "electoralSystem": "majoritarian",
+        "districtCount": 650,
+        "nationalSeats": 0,
+        "seatAllocationMethod": "plurality",
+        "electoralThresholdPercent": 0
+      },
+      "upperChamber": {
+        "id": "lords",
+        "name": "House of Lords (muestra agregada de miembros elegibles)",
+        "seats": 800,
+        "termYears": 5,
+        "electoralSystem": "other",
+        "districtCount": 1,
+        "nationalSeats": 0,
+        "seatAllocationMethod": "largest-remainder",
+        "electoralThresholdPercent": 0,
+        "appointments": {
+          "appointedSeatsInSnapshot": 800,
+          "appointingBodies": "Mayoritariamente miembros vitalicios nombrados por el monarca por recomendación del primer ministro; incluye representantes eclesiásticos y pares hereditarios electos dentro de la institución",
+          "fixedSeatsPerBody": 0,
+          "extraSeatsPerPopulation": 0,
+          "populationUnit": 1,
+          "snapshotYear": 2026
+        }
+      }
+    },
+    "removalMechanisms": [
+      "censure",
+      "dissolution"
+    ],
+    "politicalDistribution": [
+      {
+        "sharePercent": 28,
+        "ideology": {
+          "economy": 35,
+          "social": 65,
+          "nationalism": 30,
+          "institutionalism": 79,
+          "rigidity": 35
+        }
+      },
+      {
+        "sharePercent": 23,
+        "ideology": {
+          "economy": 68,
+          "social": 42,
+          "nationalism": 65,
+          "institutionalism": 72,
+          "rigidity": 42
+        }
+      },
+      {
+        "sharePercent": 19,
+        "ideology": {
+          "economy": 54,
+          "social": 50,
+          "nationalism": 72,
+          "institutionalism": 48,
+          "rigidity": 58
+        }
+      },
+      {
+        "sharePercent": 16,
+        "ideology": {
+          "economy": 44,
+          "social": 72,
+          "nationalism": 34,
+          "institutionalism": 65,
+          "rigidity": 36
+        }
+      },
+      {
+        "sharePercent": 14,
+        "ideology": {
+          "economy": 59,
+          "social": 47,
+          "nationalism": 45,
+          "institutionalism": 60,
+          "rigidity": 50
+        }
+      }
+    ],
+    "executiveAccountability": {
+      "presidentialVacancy": null,
+      "presidentialAccusation": null,
+      "cabinetCensure": {
+        "minimumSponsorsPercent": 25,
+        "passageMajority": "simple",
+        "minimumDaysBeforeVote": 7,
+        "maximumDaysBeforeVote": 14
+      }
+    }
+  },
+  "candidateEligibility": [
+    {
+      "officeId": "deputy",
+      "minimumAge": 18,
+      "chamberId": "commons",
+      "nationality": "citizen",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party"
+    },
+    {
+      "officeId": "prime-minister",
+      "minimumAge": 18,
+      "chamberId": "commons",
+      "nationality": "citizen",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party"
+    }
+  ],
+  "dataSources": [
+    {
+      "name": "World Bank · World Development Indicators",
+      "url": "https://data.worldbank.org/country/united-kingdom",
+      "indicator": "PIB, población, inflación y desempleo; snapshot macroeconómico de 2025 donde hay dato comparable",
+      "year": 2025,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Office for National Statistics · Blue Book 2026",
+      "url": "https://www.ons.gov.uk/economy/grossdomesticproductgdp/articles/bluebook2026impactongdpandmaincomponents/2026-08-20",
+      "indicator": "PIB nominal 2024: £2.905 billones; crecimiento real anual 2024: 1.1%; el perfil usa la trayectoria observada como contraste del snapshot WDI",
+      "year": 2024,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "UK Parliament · How MPs are elected",
+      "url": "https://www.parliament.uk/about/mps-and-lords/members/electing-mps/",
+      "indicator": "650 circunscripciones uninominales, mayoría de votos y mandato parlamentario máximo de cinco años",
+      "year": 2026,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "UK Parliament · Membership of the House of Lords",
+      "url": "https://www.parliament.uk/about/mps-and-lords/about-lords/lords-types/",
+      "indicator": "La cámara alta tiene alrededor de 800 miembros elegibles; mayoría nombrada por el monarca a consejo del primer ministro; cantidad no fija. Muestra agregada de juego.",
+      "year": 2026,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "House of Lords Library · Current membership dashboard",
+      "url": "https://lordslibrary.parliament.uk/house-of-lords-data-dashboard-membership-of-the-house/",
+      "indicator": "Snapshot y composición de miembros de la Cámara de los Lores; lista real no importada a la simulación",
+      "year": 2026,
+      "accessedOn": "2026-10-06"
+    }
+  ],
+  "economy": {
+    "gdpUsd": 4002587541846,
+    "annualGrowthPercent": 1.1,
+    "annualInflationPercent": 2.5,
+    "unemploymentPercent": 4.4
+  },
+  "mandateExpectations": {
+    "annualGrowthFloorPercent": 0.8,
+    "inflationCeilingPercent": 4.0,
+    "unemploymentCeilingPercent": 6.0,
+    "approvalFloorPercent": 42
+  },
+  "trade": {
+    "goodsExportsUsd": 555829000000,
+    "dataYear": 2025,
+    "leadingSectors": [
+      "Servicios profesionales y financieros",
+      "Manufactura",
+      "Energía y farmacéutica"
+    ]
+  },
+  "socialBlocks": [
+    {
+      "id": "workers",
+      "name": "Hogares asalariados",
+      "populationShare": 23,
+      "mood": 8,
+      "demands": [
+        "empleo",
+        "salario real",
+        "servicios"
+      ]
+    },
+    {
+      "id": "rural",
+      "name": "Comunidades rurales",
+      "populationShare": 13,
+      "mood": 3,
+      "demands": [
+        "conectividad",
+        "infraestructura",
+        "acceso a mercados"
+      ]
+    },
+    {
+      "id": "professionals",
+      "name": "Profesionales y personal técnico",
+      "populationShare": 24,
+      "mood": 5,
+      "demands": [
+        "formación",
+        "innovación",
+        "vivienda"
+      ]
+    },
+    {
+      "id": "business",
+      "name": "Pequeñas y medianas empresas",
+      "populationShare": 14,
+      "mood": 2,
+      "demands": [
+        "crédito",
+        "reglas previsibles",
+        "infraestructura"
+      ]
+    },
+    {
+      "id": "public-services",
+      "name": "Personal de servicios públicos",
+      "populationShare": 16,
+      "mood": 4,
+      "demands": [
+        "capacidad institucional",
+        "salud",
+        "educación"
+      ]
+    },
+    {
+      "id": "students",
+      "name": "Estudiantes y hogares jóvenes",
+      "populationShare": 10,
+      "mood": 6,
+      "demands": [
+        "educación",
+        "vivienda",
+        "oportunidades"
+      ]
+    }
+  ],
+  "electoralDistricts": [
+    {
+      "id": "commons-001",
+      "name": "Circunscripción parlamentaria abstracta 001",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-002",
+      "name": "Circunscripción parlamentaria abstracta 002",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-003",
+      "name": "Circunscripción parlamentaria abstracta 003",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-004",
+      "name": "Circunscripción parlamentaria abstracta 004",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-005",
+      "name": "Circunscripción parlamentaria abstracta 005",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-006",
+      "name": "Circunscripción parlamentaria abstracta 006",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-007",
+      "name": "Circunscripción parlamentaria abstracta 007",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-008",
+      "name": "Circunscripción parlamentaria abstracta 008",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-009",
+      "name": "Circunscripción parlamentaria abstracta 009",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-010",
+      "name": "Circunscripción parlamentaria abstracta 010",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-011",
+      "name": "Circunscripción parlamentaria abstracta 011",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-012",
+      "name": "Circunscripción parlamentaria abstracta 012",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-013",
+      "name": "Circunscripción parlamentaria abstracta 013",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-014",
+      "name": "Circunscripción parlamentaria abstracta 014",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-015",
+      "name": "Circunscripción parlamentaria abstracta 015",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-016",
+      "name": "Circunscripción parlamentaria abstracta 016",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-017",
+      "name": "Circunscripción parlamentaria abstracta 017",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-018",
+      "name": "Circunscripción parlamentaria abstracta 018",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-019",
+      "name": "Circunscripción parlamentaria abstracta 019",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-020",
+      "name": "Circunscripción parlamentaria abstracta 020",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-021",
+      "name": "Circunscripción parlamentaria abstracta 021",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-022",
+      "name": "Circunscripción parlamentaria abstracta 022",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-023",
+      "name": "Circunscripción parlamentaria abstracta 023",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-024",
+      "name": "Circunscripción parlamentaria abstracta 024",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-025",
+      "name": "Circunscripción parlamentaria abstracta 025",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-026",
+      "name": "Circunscripción parlamentaria abstracta 026",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-027",
+      "name": "Circunscripción parlamentaria abstracta 027",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-028",
+      "name": "Circunscripción parlamentaria abstracta 028",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-029",
+      "name": "Circunscripción parlamentaria abstracta 029",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-030",
+      "name": "Circunscripción parlamentaria abstracta 030",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-031",
+      "name": "Circunscripción parlamentaria abstracta 031",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-032",
+      "name": "Circunscripción parlamentaria abstracta 032",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-033",
+      "name": "Circunscripción parlamentaria abstracta 033",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-034",
+      "name": "Circunscripción parlamentaria abstracta 034",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-035",
+      "name": "Circunscripción parlamentaria abstracta 035",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-036",
+      "name": "Circunscripción parlamentaria abstracta 036",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-037",
+      "name": "Circunscripción parlamentaria abstracta 037",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-038",
+      "name": "Circunscripción parlamentaria abstracta 038",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-039",
+      "name": "Circunscripción parlamentaria abstracta 039",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-040",
+      "name": "Circunscripción parlamentaria abstracta 040",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-041",
+      "name": "Circunscripción parlamentaria abstracta 041",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-042",
+      "name": "Circunscripción parlamentaria abstracta 042",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-043",
+      "name": "Circunscripción parlamentaria abstracta 043",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-044",
+      "name": "Circunscripción parlamentaria abstracta 044",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-045",
+      "name": "Circunscripción parlamentaria abstracta 045",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-046",
+      "name": "Circunscripción parlamentaria abstracta 046",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-047",
+      "name": "Circunscripción parlamentaria abstracta 047",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-048",
+      "name": "Circunscripción parlamentaria abstracta 048",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-049",
+      "name": "Circunscripción parlamentaria abstracta 049",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-050",
+      "name": "Circunscripción parlamentaria abstracta 050",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-051",
+      "name": "Circunscripción parlamentaria abstracta 051",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-052",
+      "name": "Circunscripción parlamentaria abstracta 052",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-053",
+      "name": "Circunscripción parlamentaria abstracta 053",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-054",
+      "name": "Circunscripción parlamentaria abstracta 054",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-055",
+      "name": "Circunscripción parlamentaria abstracta 055",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-056",
+      "name": "Circunscripción parlamentaria abstracta 056",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-057",
+      "name": "Circunscripción parlamentaria abstracta 057",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-058",
+      "name": "Circunscripción parlamentaria abstracta 058",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-059",
+      "name": "Circunscripción parlamentaria abstracta 059",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-060",
+      "name": "Circunscripción parlamentaria abstracta 060",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-061",
+      "name": "Circunscripción parlamentaria abstracta 061",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-062",
+      "name": "Circunscripción parlamentaria abstracta 062",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-063",
+      "name": "Circunscripción parlamentaria abstracta 063",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-064",
+      "name": "Circunscripción parlamentaria abstracta 064",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-065",
+      "name": "Circunscripción parlamentaria abstracta 065",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-066",
+      "name": "Circunscripción parlamentaria abstracta 066",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-067",
+      "name": "Circunscripción parlamentaria abstracta 067",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-068",
+      "name": "Circunscripción parlamentaria abstracta 068",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-069",
+      "name": "Circunscripción parlamentaria abstracta 069",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-070",
+      "name": "Circunscripción parlamentaria abstracta 070",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-071",
+      "name": "Circunscripción parlamentaria abstracta 071",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-072",
+      "name": "Circunscripción parlamentaria abstracta 072",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-073",
+      "name": "Circunscripción parlamentaria abstracta 073",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-074",
+      "name": "Circunscripción parlamentaria abstracta 074",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-075",
+      "name": "Circunscripción parlamentaria abstracta 075",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-076",
+      "name": "Circunscripción parlamentaria abstracta 076",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-077",
+      "name": "Circunscripción parlamentaria abstracta 077",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-078",
+      "name": "Circunscripción parlamentaria abstracta 078",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-079",
+      "name": "Circunscripción parlamentaria abstracta 079",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-080",
+      "name": "Circunscripción parlamentaria abstracta 080",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-081",
+      "name": "Circunscripción parlamentaria abstracta 081",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-082",
+      "name": "Circunscripción parlamentaria abstracta 082",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-083",
+      "name": "Circunscripción parlamentaria abstracta 083",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-084",
+      "name": "Circunscripción parlamentaria abstracta 084",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-085",
+      "name": "Circunscripción parlamentaria abstracta 085",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-086",
+      "name": "Circunscripción parlamentaria abstracta 086",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-087",
+      "name": "Circunscripción parlamentaria abstracta 087",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-088",
+      "name": "Circunscripción parlamentaria abstracta 088",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-089",
+      "name": "Circunscripción parlamentaria abstracta 089",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-090",
+      "name": "Circunscripción parlamentaria abstracta 090",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-091",
+      "name": "Circunscripción parlamentaria abstracta 091",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-092",
+      "name": "Circunscripción parlamentaria abstracta 092",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-093",
+      "name": "Circunscripción parlamentaria abstracta 093",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-094",
+      "name": "Circunscripción parlamentaria abstracta 094",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-095",
+      "name": "Circunscripción parlamentaria abstracta 095",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-096",
+      "name": "Circunscripción parlamentaria abstracta 096",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-097",
+      "name": "Circunscripción parlamentaria abstracta 097",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-098",
+      "name": "Circunscripción parlamentaria abstracta 098",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-099",
+      "name": "Circunscripción parlamentaria abstracta 099",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-100",
+      "name": "Circunscripción parlamentaria abstracta 100",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-101",
+      "name": "Circunscripción parlamentaria abstracta 101",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-102",
+      "name": "Circunscripción parlamentaria abstracta 102",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-103",
+      "name": "Circunscripción parlamentaria abstracta 103",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-104",
+      "name": "Circunscripción parlamentaria abstracta 104",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-105",
+      "name": "Circunscripción parlamentaria abstracta 105",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-106",
+      "name": "Circunscripción parlamentaria abstracta 106",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-107",
+      "name": "Circunscripción parlamentaria abstracta 107",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-108",
+      "name": "Circunscripción parlamentaria abstracta 108",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-109",
+      "name": "Circunscripción parlamentaria abstracta 109",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-110",
+      "name": "Circunscripción parlamentaria abstracta 110",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-111",
+      "name": "Circunscripción parlamentaria abstracta 111",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-112",
+      "name": "Circunscripción parlamentaria abstracta 112",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-113",
+      "name": "Circunscripción parlamentaria abstracta 113",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-114",
+      "name": "Circunscripción parlamentaria abstracta 114",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-115",
+      "name": "Circunscripción parlamentaria abstracta 115",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-116",
+      "name": "Circunscripción parlamentaria abstracta 116",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-117",
+      "name": "Circunscripción parlamentaria abstracta 117",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-118",
+      "name": "Circunscripción parlamentaria abstracta 118",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-119",
+      "name": "Circunscripción parlamentaria abstracta 119",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-120",
+      "name": "Circunscripción parlamentaria abstracta 120",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-121",
+      "name": "Circunscripción parlamentaria abstracta 121",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-122",
+      "name": "Circunscripción parlamentaria abstracta 122",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-123",
+      "name": "Circunscripción parlamentaria abstracta 123",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-124",
+      "name": "Circunscripción parlamentaria abstracta 124",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-125",
+      "name": "Circunscripción parlamentaria abstracta 125",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-126",
+      "name": "Circunscripción parlamentaria abstracta 126",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-127",
+      "name": "Circunscripción parlamentaria abstracta 127",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-128",
+      "name": "Circunscripción parlamentaria abstracta 128",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-129",
+      "name": "Circunscripción parlamentaria abstracta 129",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-130",
+      "name": "Circunscripción parlamentaria abstracta 130",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-131",
+      "name": "Circunscripción parlamentaria abstracta 131",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-132",
+      "name": "Circunscripción parlamentaria abstracta 132",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-133",
+      "name": "Circunscripción parlamentaria abstracta 133",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-134",
+      "name": "Circunscripción parlamentaria abstracta 134",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-135",
+      "name": "Circunscripción parlamentaria abstracta 135",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-136",
+      "name": "Circunscripción parlamentaria abstracta 136",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-137",
+      "name": "Circunscripción parlamentaria abstracta 137",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-138",
+      "name": "Circunscripción parlamentaria abstracta 138",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-139",
+      "name": "Circunscripción parlamentaria abstracta 139",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-140",
+      "name": "Circunscripción parlamentaria abstracta 140",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-141",
+      "name": "Circunscripción parlamentaria abstracta 141",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-142",
+      "name": "Circunscripción parlamentaria abstracta 142",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-143",
+      "name": "Circunscripción parlamentaria abstracta 143",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-144",
+      "name": "Circunscripción parlamentaria abstracta 144",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-145",
+      "name": "Circunscripción parlamentaria abstracta 145",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-146",
+      "name": "Circunscripción parlamentaria abstracta 146",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-147",
+      "name": "Circunscripción parlamentaria abstracta 147",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-148",
+      "name": "Circunscripción parlamentaria abstracta 148",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-149",
+      "name": "Circunscripción parlamentaria abstracta 149",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-150",
+      "name": "Circunscripción parlamentaria abstracta 150",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-151",
+      "name": "Circunscripción parlamentaria abstracta 151",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-152",
+      "name": "Circunscripción parlamentaria abstracta 152",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-153",
+      "name": "Circunscripción parlamentaria abstracta 153",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-154",
+      "name": "Circunscripción parlamentaria abstracta 154",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-155",
+      "name": "Circunscripción parlamentaria abstracta 155",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-156",
+      "name": "Circunscripción parlamentaria abstracta 156",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-157",
+      "name": "Circunscripción parlamentaria abstracta 157",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-158",
+      "name": "Circunscripción parlamentaria abstracta 158",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-159",
+      "name": "Circunscripción parlamentaria abstracta 159",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-160",
+      "name": "Circunscripción parlamentaria abstracta 160",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-161",
+      "name": "Circunscripción parlamentaria abstracta 161",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-162",
+      "name": "Circunscripción parlamentaria abstracta 162",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-163",
+      "name": "Circunscripción parlamentaria abstracta 163",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-164",
+      "name": "Circunscripción parlamentaria abstracta 164",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-165",
+      "name": "Circunscripción parlamentaria abstracta 165",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-166",
+      "name": "Circunscripción parlamentaria abstracta 166",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-167",
+      "name": "Circunscripción parlamentaria abstracta 167",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-168",
+      "name": "Circunscripción parlamentaria abstracta 168",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-169",
+      "name": "Circunscripción parlamentaria abstracta 169",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-170",
+      "name": "Circunscripción parlamentaria abstracta 170",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-171",
+      "name": "Circunscripción parlamentaria abstracta 171",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-172",
+      "name": "Circunscripción parlamentaria abstracta 172",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-173",
+      "name": "Circunscripción parlamentaria abstracta 173",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-174",
+      "name": "Circunscripción parlamentaria abstracta 174",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-175",
+      "name": "Circunscripción parlamentaria abstracta 175",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-176",
+      "name": "Circunscripción parlamentaria abstracta 176",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-177",
+      "name": "Circunscripción parlamentaria abstracta 177",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-178",
+      "name": "Circunscripción parlamentaria abstracta 178",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-179",
+      "name": "Circunscripción parlamentaria abstracta 179",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-180",
+      "name": "Circunscripción parlamentaria abstracta 180",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-181",
+      "name": "Circunscripción parlamentaria abstracta 181",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-182",
+      "name": "Circunscripción parlamentaria abstracta 182",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-183",
+      "name": "Circunscripción parlamentaria abstracta 183",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-184",
+      "name": "Circunscripción parlamentaria abstracta 184",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-185",
+      "name": "Circunscripción parlamentaria abstracta 185",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-186",
+      "name": "Circunscripción parlamentaria abstracta 186",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-187",
+      "name": "Circunscripción parlamentaria abstracta 187",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-188",
+      "name": "Circunscripción parlamentaria abstracta 188",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-189",
+      "name": "Circunscripción parlamentaria abstracta 189",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-190",
+      "name": "Circunscripción parlamentaria abstracta 190",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-191",
+      "name": "Circunscripción parlamentaria abstracta 191",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-192",
+      "name": "Circunscripción parlamentaria abstracta 192",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-193",
+      "name": "Circunscripción parlamentaria abstracta 193",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-194",
+      "name": "Circunscripción parlamentaria abstracta 194",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-195",
+      "name": "Circunscripción parlamentaria abstracta 195",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-196",
+      "name": "Circunscripción parlamentaria abstracta 196",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-197",
+      "name": "Circunscripción parlamentaria abstracta 197",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-198",
+      "name": "Circunscripción parlamentaria abstracta 198",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-199",
+      "name": "Circunscripción parlamentaria abstracta 199",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-200",
+      "name": "Circunscripción parlamentaria abstracta 200",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-201",
+      "name": "Circunscripción parlamentaria abstracta 201",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-202",
+      "name": "Circunscripción parlamentaria abstracta 202",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-203",
+      "name": "Circunscripción parlamentaria abstracta 203",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-204",
+      "name": "Circunscripción parlamentaria abstracta 204",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-205",
+      "name": "Circunscripción parlamentaria abstracta 205",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-206",
+      "name": "Circunscripción parlamentaria abstracta 206",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-207",
+      "name": "Circunscripción parlamentaria abstracta 207",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-208",
+      "name": "Circunscripción parlamentaria abstracta 208",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-209",
+      "name": "Circunscripción parlamentaria abstracta 209",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-210",
+      "name": "Circunscripción parlamentaria abstracta 210",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-211",
+      "name": "Circunscripción parlamentaria abstracta 211",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-212",
+      "name": "Circunscripción parlamentaria abstracta 212",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-213",
+      "name": "Circunscripción parlamentaria abstracta 213",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-214",
+      "name": "Circunscripción parlamentaria abstracta 214",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-215",
+      "name": "Circunscripción parlamentaria abstracta 215",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-216",
+      "name": "Circunscripción parlamentaria abstracta 216",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-217",
+      "name": "Circunscripción parlamentaria abstracta 217",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-218",
+      "name": "Circunscripción parlamentaria abstracta 218",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-219",
+      "name": "Circunscripción parlamentaria abstracta 219",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-220",
+      "name": "Circunscripción parlamentaria abstracta 220",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-221",
+      "name": "Circunscripción parlamentaria abstracta 221",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-222",
+      "name": "Circunscripción parlamentaria abstracta 222",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-223",
+      "name": "Circunscripción parlamentaria abstracta 223",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-224",
+      "name": "Circunscripción parlamentaria abstracta 224",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-225",
+      "name": "Circunscripción parlamentaria abstracta 225",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-226",
+      "name": "Circunscripción parlamentaria abstracta 226",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-227",
+      "name": "Circunscripción parlamentaria abstracta 227",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-228",
+      "name": "Circunscripción parlamentaria abstracta 228",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-229",
+      "name": "Circunscripción parlamentaria abstracta 229",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-230",
+      "name": "Circunscripción parlamentaria abstracta 230",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-231",
+      "name": "Circunscripción parlamentaria abstracta 231",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-232",
+      "name": "Circunscripción parlamentaria abstracta 232",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-233",
+      "name": "Circunscripción parlamentaria abstracta 233",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-234",
+      "name": "Circunscripción parlamentaria abstracta 234",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-235",
+      "name": "Circunscripción parlamentaria abstracta 235",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-236",
+      "name": "Circunscripción parlamentaria abstracta 236",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-237",
+      "name": "Circunscripción parlamentaria abstracta 237",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-238",
+      "name": "Circunscripción parlamentaria abstracta 238",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-239",
+      "name": "Circunscripción parlamentaria abstracta 239",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-240",
+      "name": "Circunscripción parlamentaria abstracta 240",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-241",
+      "name": "Circunscripción parlamentaria abstracta 241",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-242",
+      "name": "Circunscripción parlamentaria abstracta 242",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-243",
+      "name": "Circunscripción parlamentaria abstracta 243",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-244",
+      "name": "Circunscripción parlamentaria abstracta 244",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-245",
+      "name": "Circunscripción parlamentaria abstracta 245",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-246",
+      "name": "Circunscripción parlamentaria abstracta 246",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-247",
+      "name": "Circunscripción parlamentaria abstracta 247",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-248",
+      "name": "Circunscripción parlamentaria abstracta 248",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-249",
+      "name": "Circunscripción parlamentaria abstracta 249",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-250",
+      "name": "Circunscripción parlamentaria abstracta 250",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-251",
+      "name": "Circunscripción parlamentaria abstracta 251",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-252",
+      "name": "Circunscripción parlamentaria abstracta 252",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-253",
+      "name": "Circunscripción parlamentaria abstracta 253",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-254",
+      "name": "Circunscripción parlamentaria abstracta 254",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-255",
+      "name": "Circunscripción parlamentaria abstracta 255",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-256",
+      "name": "Circunscripción parlamentaria abstracta 256",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-257",
+      "name": "Circunscripción parlamentaria abstracta 257",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-258",
+      "name": "Circunscripción parlamentaria abstracta 258",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-259",
+      "name": "Circunscripción parlamentaria abstracta 259",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-260",
+      "name": "Circunscripción parlamentaria abstracta 260",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-261",
+      "name": "Circunscripción parlamentaria abstracta 261",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-262",
+      "name": "Circunscripción parlamentaria abstracta 262",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-263",
+      "name": "Circunscripción parlamentaria abstracta 263",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-264",
+      "name": "Circunscripción parlamentaria abstracta 264",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-265",
+      "name": "Circunscripción parlamentaria abstracta 265",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-266",
+      "name": "Circunscripción parlamentaria abstracta 266",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-267",
+      "name": "Circunscripción parlamentaria abstracta 267",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-268",
+      "name": "Circunscripción parlamentaria abstracta 268",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-269",
+      "name": "Circunscripción parlamentaria abstracta 269",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-270",
+      "name": "Circunscripción parlamentaria abstracta 270",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-271",
+      "name": "Circunscripción parlamentaria abstracta 271",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-272",
+      "name": "Circunscripción parlamentaria abstracta 272",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-273",
+      "name": "Circunscripción parlamentaria abstracta 273",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-274",
+      "name": "Circunscripción parlamentaria abstracta 274",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-275",
+      "name": "Circunscripción parlamentaria abstracta 275",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-276",
+      "name": "Circunscripción parlamentaria abstracta 276",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-277",
+      "name": "Circunscripción parlamentaria abstracta 277",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-278",
+      "name": "Circunscripción parlamentaria abstracta 278",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-279",
+      "name": "Circunscripción parlamentaria abstracta 279",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-280",
+      "name": "Circunscripción parlamentaria abstracta 280",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-281",
+      "name": "Circunscripción parlamentaria abstracta 281",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-282",
+      "name": "Circunscripción parlamentaria abstracta 282",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-283",
+      "name": "Circunscripción parlamentaria abstracta 283",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-284",
+      "name": "Circunscripción parlamentaria abstracta 284",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-285",
+      "name": "Circunscripción parlamentaria abstracta 285",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-286",
+      "name": "Circunscripción parlamentaria abstracta 286",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-287",
+      "name": "Circunscripción parlamentaria abstracta 287",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-288",
+      "name": "Circunscripción parlamentaria abstracta 288",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-289",
+      "name": "Circunscripción parlamentaria abstracta 289",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-290",
+      "name": "Circunscripción parlamentaria abstracta 290",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-291",
+      "name": "Circunscripción parlamentaria abstracta 291",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-292",
+      "name": "Circunscripción parlamentaria abstracta 292",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-293",
+      "name": "Circunscripción parlamentaria abstracta 293",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-294",
+      "name": "Circunscripción parlamentaria abstracta 294",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-295",
+      "name": "Circunscripción parlamentaria abstracta 295",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-296",
+      "name": "Circunscripción parlamentaria abstracta 296",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-297",
+      "name": "Circunscripción parlamentaria abstracta 297",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-298",
+      "name": "Circunscripción parlamentaria abstracta 298",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-299",
+      "name": "Circunscripción parlamentaria abstracta 299",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-300",
+      "name": "Circunscripción parlamentaria abstracta 300",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-301",
+      "name": "Circunscripción parlamentaria abstracta 301",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-302",
+      "name": "Circunscripción parlamentaria abstracta 302",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-303",
+      "name": "Circunscripción parlamentaria abstracta 303",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-304",
+      "name": "Circunscripción parlamentaria abstracta 304",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-305",
+      "name": "Circunscripción parlamentaria abstracta 305",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-306",
+      "name": "Circunscripción parlamentaria abstracta 306",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-307",
+      "name": "Circunscripción parlamentaria abstracta 307",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-308",
+      "name": "Circunscripción parlamentaria abstracta 308",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-309",
+      "name": "Circunscripción parlamentaria abstracta 309",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-310",
+      "name": "Circunscripción parlamentaria abstracta 310",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-311",
+      "name": "Circunscripción parlamentaria abstracta 311",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-312",
+      "name": "Circunscripción parlamentaria abstracta 312",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-313",
+      "name": "Circunscripción parlamentaria abstracta 313",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-314",
+      "name": "Circunscripción parlamentaria abstracta 314",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-315",
+      "name": "Circunscripción parlamentaria abstracta 315",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-316",
+      "name": "Circunscripción parlamentaria abstracta 316",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-317",
+      "name": "Circunscripción parlamentaria abstracta 317",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-318",
+      "name": "Circunscripción parlamentaria abstracta 318",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-319",
+      "name": "Circunscripción parlamentaria abstracta 319",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-320",
+      "name": "Circunscripción parlamentaria abstracta 320",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-321",
+      "name": "Circunscripción parlamentaria abstracta 321",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-322",
+      "name": "Circunscripción parlamentaria abstracta 322",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-323",
+      "name": "Circunscripción parlamentaria abstracta 323",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-324",
+      "name": "Circunscripción parlamentaria abstracta 324",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-325",
+      "name": "Circunscripción parlamentaria abstracta 325",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-326",
+      "name": "Circunscripción parlamentaria abstracta 326",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-327",
+      "name": "Circunscripción parlamentaria abstracta 327",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-328",
+      "name": "Circunscripción parlamentaria abstracta 328",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-329",
+      "name": "Circunscripción parlamentaria abstracta 329",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-330",
+      "name": "Circunscripción parlamentaria abstracta 330",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-331",
+      "name": "Circunscripción parlamentaria abstracta 331",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-332",
+      "name": "Circunscripción parlamentaria abstracta 332",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-333",
+      "name": "Circunscripción parlamentaria abstracta 333",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-334",
+      "name": "Circunscripción parlamentaria abstracta 334",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-335",
+      "name": "Circunscripción parlamentaria abstracta 335",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-336",
+      "name": "Circunscripción parlamentaria abstracta 336",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-337",
+      "name": "Circunscripción parlamentaria abstracta 337",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-338",
+      "name": "Circunscripción parlamentaria abstracta 338",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-339",
+      "name": "Circunscripción parlamentaria abstracta 339",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-340",
+      "name": "Circunscripción parlamentaria abstracta 340",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-341",
+      "name": "Circunscripción parlamentaria abstracta 341",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-342",
+      "name": "Circunscripción parlamentaria abstracta 342",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-343",
+      "name": "Circunscripción parlamentaria abstracta 343",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-344",
+      "name": "Circunscripción parlamentaria abstracta 344",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-345",
+      "name": "Circunscripción parlamentaria abstracta 345",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-346",
+      "name": "Circunscripción parlamentaria abstracta 346",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-347",
+      "name": "Circunscripción parlamentaria abstracta 347",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-348",
+      "name": "Circunscripción parlamentaria abstracta 348",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-349",
+      "name": "Circunscripción parlamentaria abstracta 349",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-350",
+      "name": "Circunscripción parlamentaria abstracta 350",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-351",
+      "name": "Circunscripción parlamentaria abstracta 351",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-352",
+      "name": "Circunscripción parlamentaria abstracta 352",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-353",
+      "name": "Circunscripción parlamentaria abstracta 353",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-354",
+      "name": "Circunscripción parlamentaria abstracta 354",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-355",
+      "name": "Circunscripción parlamentaria abstracta 355",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-356",
+      "name": "Circunscripción parlamentaria abstracta 356",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-357",
+      "name": "Circunscripción parlamentaria abstracta 357",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-358",
+      "name": "Circunscripción parlamentaria abstracta 358",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-359",
+      "name": "Circunscripción parlamentaria abstracta 359",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-360",
+      "name": "Circunscripción parlamentaria abstracta 360",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-361",
+      "name": "Circunscripción parlamentaria abstracta 361",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-362",
+      "name": "Circunscripción parlamentaria abstracta 362",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-363",
+      "name": "Circunscripción parlamentaria abstracta 363",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-364",
+      "name": "Circunscripción parlamentaria abstracta 364",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-365",
+      "name": "Circunscripción parlamentaria abstracta 365",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-366",
+      "name": "Circunscripción parlamentaria abstracta 366",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-367",
+      "name": "Circunscripción parlamentaria abstracta 367",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-368",
+      "name": "Circunscripción parlamentaria abstracta 368",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-369",
+      "name": "Circunscripción parlamentaria abstracta 369",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-370",
+      "name": "Circunscripción parlamentaria abstracta 370",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-371",
+      "name": "Circunscripción parlamentaria abstracta 371",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-372",
+      "name": "Circunscripción parlamentaria abstracta 372",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-373",
+      "name": "Circunscripción parlamentaria abstracta 373",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-374",
+      "name": "Circunscripción parlamentaria abstracta 374",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-375",
+      "name": "Circunscripción parlamentaria abstracta 375",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-376",
+      "name": "Circunscripción parlamentaria abstracta 376",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-377",
+      "name": "Circunscripción parlamentaria abstracta 377",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-378",
+      "name": "Circunscripción parlamentaria abstracta 378",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-379",
+      "name": "Circunscripción parlamentaria abstracta 379",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-380",
+      "name": "Circunscripción parlamentaria abstracta 380",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-381",
+      "name": "Circunscripción parlamentaria abstracta 381",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-382",
+      "name": "Circunscripción parlamentaria abstracta 382",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-383",
+      "name": "Circunscripción parlamentaria abstracta 383",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-384",
+      "name": "Circunscripción parlamentaria abstracta 384",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-385",
+      "name": "Circunscripción parlamentaria abstracta 385",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-386",
+      "name": "Circunscripción parlamentaria abstracta 386",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-387",
+      "name": "Circunscripción parlamentaria abstracta 387",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-388",
+      "name": "Circunscripción parlamentaria abstracta 388",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-389",
+      "name": "Circunscripción parlamentaria abstracta 389",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-390",
+      "name": "Circunscripción parlamentaria abstracta 390",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-391",
+      "name": "Circunscripción parlamentaria abstracta 391",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-392",
+      "name": "Circunscripción parlamentaria abstracta 392",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-393",
+      "name": "Circunscripción parlamentaria abstracta 393",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-394",
+      "name": "Circunscripción parlamentaria abstracta 394",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-395",
+      "name": "Circunscripción parlamentaria abstracta 395",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-396",
+      "name": "Circunscripción parlamentaria abstracta 396",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-397",
+      "name": "Circunscripción parlamentaria abstracta 397",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-398",
+      "name": "Circunscripción parlamentaria abstracta 398",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-399",
+      "name": "Circunscripción parlamentaria abstracta 399",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-400",
+      "name": "Circunscripción parlamentaria abstracta 400",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-401",
+      "name": "Circunscripción parlamentaria abstracta 401",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-402",
+      "name": "Circunscripción parlamentaria abstracta 402",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-403",
+      "name": "Circunscripción parlamentaria abstracta 403",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-404",
+      "name": "Circunscripción parlamentaria abstracta 404",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-405",
+      "name": "Circunscripción parlamentaria abstracta 405",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-406",
+      "name": "Circunscripción parlamentaria abstracta 406",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-407",
+      "name": "Circunscripción parlamentaria abstracta 407",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-408",
+      "name": "Circunscripción parlamentaria abstracta 408",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-409",
+      "name": "Circunscripción parlamentaria abstracta 409",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-410",
+      "name": "Circunscripción parlamentaria abstracta 410",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-411",
+      "name": "Circunscripción parlamentaria abstracta 411",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-412",
+      "name": "Circunscripción parlamentaria abstracta 412",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-413",
+      "name": "Circunscripción parlamentaria abstracta 413",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-414",
+      "name": "Circunscripción parlamentaria abstracta 414",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-415",
+      "name": "Circunscripción parlamentaria abstracta 415",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-416",
+      "name": "Circunscripción parlamentaria abstracta 416",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-417",
+      "name": "Circunscripción parlamentaria abstracta 417",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-418",
+      "name": "Circunscripción parlamentaria abstracta 418",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-419",
+      "name": "Circunscripción parlamentaria abstracta 419",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-420",
+      "name": "Circunscripción parlamentaria abstracta 420",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-421",
+      "name": "Circunscripción parlamentaria abstracta 421",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-422",
+      "name": "Circunscripción parlamentaria abstracta 422",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-423",
+      "name": "Circunscripción parlamentaria abstracta 423",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-424",
+      "name": "Circunscripción parlamentaria abstracta 424",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-425",
+      "name": "Circunscripción parlamentaria abstracta 425",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-426",
+      "name": "Circunscripción parlamentaria abstracta 426",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-427",
+      "name": "Circunscripción parlamentaria abstracta 427",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-428",
+      "name": "Circunscripción parlamentaria abstracta 428",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-429",
+      "name": "Circunscripción parlamentaria abstracta 429",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-430",
+      "name": "Circunscripción parlamentaria abstracta 430",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-431",
+      "name": "Circunscripción parlamentaria abstracta 431",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-432",
+      "name": "Circunscripción parlamentaria abstracta 432",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-433",
+      "name": "Circunscripción parlamentaria abstracta 433",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-434",
+      "name": "Circunscripción parlamentaria abstracta 434",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-435",
+      "name": "Circunscripción parlamentaria abstracta 435",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-436",
+      "name": "Circunscripción parlamentaria abstracta 436",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-437",
+      "name": "Circunscripción parlamentaria abstracta 437",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-438",
+      "name": "Circunscripción parlamentaria abstracta 438",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-439",
+      "name": "Circunscripción parlamentaria abstracta 439",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-440",
+      "name": "Circunscripción parlamentaria abstracta 440",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-441",
+      "name": "Circunscripción parlamentaria abstracta 441",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-442",
+      "name": "Circunscripción parlamentaria abstracta 442",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-443",
+      "name": "Circunscripción parlamentaria abstracta 443",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-444",
+      "name": "Circunscripción parlamentaria abstracta 444",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-445",
+      "name": "Circunscripción parlamentaria abstracta 445",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-446",
+      "name": "Circunscripción parlamentaria abstracta 446",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-447",
+      "name": "Circunscripción parlamentaria abstracta 447",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-448",
+      "name": "Circunscripción parlamentaria abstracta 448",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-449",
+      "name": "Circunscripción parlamentaria abstracta 449",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-450",
+      "name": "Circunscripción parlamentaria abstracta 450",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-451",
+      "name": "Circunscripción parlamentaria abstracta 451",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-452",
+      "name": "Circunscripción parlamentaria abstracta 452",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-453",
+      "name": "Circunscripción parlamentaria abstracta 453",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-454",
+      "name": "Circunscripción parlamentaria abstracta 454",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-455",
+      "name": "Circunscripción parlamentaria abstracta 455",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-456",
+      "name": "Circunscripción parlamentaria abstracta 456",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-457",
+      "name": "Circunscripción parlamentaria abstracta 457",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-458",
+      "name": "Circunscripción parlamentaria abstracta 458",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-459",
+      "name": "Circunscripción parlamentaria abstracta 459",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-460",
+      "name": "Circunscripción parlamentaria abstracta 460",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-461",
+      "name": "Circunscripción parlamentaria abstracta 461",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-462",
+      "name": "Circunscripción parlamentaria abstracta 462",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-463",
+      "name": "Circunscripción parlamentaria abstracta 463",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-464",
+      "name": "Circunscripción parlamentaria abstracta 464",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-465",
+      "name": "Circunscripción parlamentaria abstracta 465",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-466",
+      "name": "Circunscripción parlamentaria abstracta 466",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-467",
+      "name": "Circunscripción parlamentaria abstracta 467",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-468",
+      "name": "Circunscripción parlamentaria abstracta 468",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-469",
+      "name": "Circunscripción parlamentaria abstracta 469",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-470",
+      "name": "Circunscripción parlamentaria abstracta 470",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-471",
+      "name": "Circunscripción parlamentaria abstracta 471",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-472",
+      "name": "Circunscripción parlamentaria abstracta 472",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-473",
+      "name": "Circunscripción parlamentaria abstracta 473",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-474",
+      "name": "Circunscripción parlamentaria abstracta 474",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-475",
+      "name": "Circunscripción parlamentaria abstracta 475",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-476",
+      "name": "Circunscripción parlamentaria abstracta 476",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-477",
+      "name": "Circunscripción parlamentaria abstracta 477",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-478",
+      "name": "Circunscripción parlamentaria abstracta 478",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-479",
+      "name": "Circunscripción parlamentaria abstracta 479",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-480",
+      "name": "Circunscripción parlamentaria abstracta 480",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-481",
+      "name": "Circunscripción parlamentaria abstracta 481",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-482",
+      "name": "Circunscripción parlamentaria abstracta 482",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-483",
+      "name": "Circunscripción parlamentaria abstracta 483",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-484",
+      "name": "Circunscripción parlamentaria abstracta 484",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-485",
+      "name": "Circunscripción parlamentaria abstracta 485",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-486",
+      "name": "Circunscripción parlamentaria abstracta 486",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-487",
+      "name": "Circunscripción parlamentaria abstracta 487",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-488",
+      "name": "Circunscripción parlamentaria abstracta 488",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-489",
+      "name": "Circunscripción parlamentaria abstracta 489",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-490",
+      "name": "Circunscripción parlamentaria abstracta 490",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-491",
+      "name": "Circunscripción parlamentaria abstracta 491",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-492",
+      "name": "Circunscripción parlamentaria abstracta 492",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-493",
+      "name": "Circunscripción parlamentaria abstracta 493",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-494",
+      "name": "Circunscripción parlamentaria abstracta 494",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-495",
+      "name": "Circunscripción parlamentaria abstracta 495",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-496",
+      "name": "Circunscripción parlamentaria abstracta 496",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-497",
+      "name": "Circunscripción parlamentaria abstracta 497",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-498",
+      "name": "Circunscripción parlamentaria abstracta 498",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-499",
+      "name": "Circunscripción parlamentaria abstracta 499",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-500",
+      "name": "Circunscripción parlamentaria abstracta 500",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-501",
+      "name": "Circunscripción parlamentaria abstracta 501",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-502",
+      "name": "Circunscripción parlamentaria abstracta 502",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-503",
+      "name": "Circunscripción parlamentaria abstracta 503",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-504",
+      "name": "Circunscripción parlamentaria abstracta 504",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-505",
+      "name": "Circunscripción parlamentaria abstracta 505",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-506",
+      "name": "Circunscripción parlamentaria abstracta 506",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-507",
+      "name": "Circunscripción parlamentaria abstracta 507",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-508",
+      "name": "Circunscripción parlamentaria abstracta 508",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-509",
+      "name": "Circunscripción parlamentaria abstracta 509",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-510",
+      "name": "Circunscripción parlamentaria abstracta 510",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-511",
+      "name": "Circunscripción parlamentaria abstracta 511",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-512",
+      "name": "Circunscripción parlamentaria abstracta 512",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-513",
+      "name": "Circunscripción parlamentaria abstracta 513",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-514",
+      "name": "Circunscripción parlamentaria abstracta 514",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-515",
+      "name": "Circunscripción parlamentaria abstracta 515",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-516",
+      "name": "Circunscripción parlamentaria abstracta 516",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-517",
+      "name": "Circunscripción parlamentaria abstracta 517",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-518",
+      "name": "Circunscripción parlamentaria abstracta 518",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-519",
+      "name": "Circunscripción parlamentaria abstracta 519",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-520",
+      "name": "Circunscripción parlamentaria abstracta 520",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-521",
+      "name": "Circunscripción parlamentaria abstracta 521",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-522",
+      "name": "Circunscripción parlamentaria abstracta 522",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-523",
+      "name": "Circunscripción parlamentaria abstracta 523",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-524",
+      "name": "Circunscripción parlamentaria abstracta 524",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-525",
+      "name": "Circunscripción parlamentaria abstracta 525",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-526",
+      "name": "Circunscripción parlamentaria abstracta 526",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-527",
+      "name": "Circunscripción parlamentaria abstracta 527",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-528",
+      "name": "Circunscripción parlamentaria abstracta 528",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-529",
+      "name": "Circunscripción parlamentaria abstracta 529",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-530",
+      "name": "Circunscripción parlamentaria abstracta 530",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-531",
+      "name": "Circunscripción parlamentaria abstracta 531",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-532",
+      "name": "Circunscripción parlamentaria abstracta 532",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-533",
+      "name": "Circunscripción parlamentaria abstracta 533",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-534",
+      "name": "Circunscripción parlamentaria abstracta 534",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-535",
+      "name": "Circunscripción parlamentaria abstracta 535",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-536",
+      "name": "Circunscripción parlamentaria abstracta 536",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-537",
+      "name": "Circunscripción parlamentaria abstracta 537",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-538",
+      "name": "Circunscripción parlamentaria abstracta 538",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-539",
+      "name": "Circunscripción parlamentaria abstracta 539",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-540",
+      "name": "Circunscripción parlamentaria abstracta 540",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-541",
+      "name": "Circunscripción parlamentaria abstracta 541",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-542",
+      "name": "Circunscripción parlamentaria abstracta 542",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-543",
+      "name": "Circunscripción parlamentaria abstracta 543",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-544",
+      "name": "Circunscripción parlamentaria abstracta 544",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-545",
+      "name": "Circunscripción parlamentaria abstracta 545",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-546",
+      "name": "Circunscripción parlamentaria abstracta 546",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-547",
+      "name": "Circunscripción parlamentaria abstracta 547",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-548",
+      "name": "Circunscripción parlamentaria abstracta 548",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-549",
+      "name": "Circunscripción parlamentaria abstracta 549",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-550",
+      "name": "Circunscripción parlamentaria abstracta 550",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-551",
+      "name": "Circunscripción parlamentaria abstracta 551",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-552",
+      "name": "Circunscripción parlamentaria abstracta 552",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-553",
+      "name": "Circunscripción parlamentaria abstracta 553",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-554",
+      "name": "Circunscripción parlamentaria abstracta 554",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-555",
+      "name": "Circunscripción parlamentaria abstracta 555",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-556",
+      "name": "Circunscripción parlamentaria abstracta 556",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-557",
+      "name": "Circunscripción parlamentaria abstracta 557",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-558",
+      "name": "Circunscripción parlamentaria abstracta 558",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-559",
+      "name": "Circunscripción parlamentaria abstracta 559",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-560",
+      "name": "Circunscripción parlamentaria abstracta 560",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-561",
+      "name": "Circunscripción parlamentaria abstracta 561",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-562",
+      "name": "Circunscripción parlamentaria abstracta 562",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-563",
+      "name": "Circunscripción parlamentaria abstracta 563",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-564",
+      "name": "Circunscripción parlamentaria abstracta 564",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-565",
+      "name": "Circunscripción parlamentaria abstracta 565",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-566",
+      "name": "Circunscripción parlamentaria abstracta 566",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-567",
+      "name": "Circunscripción parlamentaria abstracta 567",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-568",
+      "name": "Circunscripción parlamentaria abstracta 568",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-569",
+      "name": "Circunscripción parlamentaria abstracta 569",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-570",
+      "name": "Circunscripción parlamentaria abstracta 570",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-571",
+      "name": "Circunscripción parlamentaria abstracta 571",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-572",
+      "name": "Circunscripción parlamentaria abstracta 572",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-573",
+      "name": "Circunscripción parlamentaria abstracta 573",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-574",
+      "name": "Circunscripción parlamentaria abstracta 574",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-575",
+      "name": "Circunscripción parlamentaria abstracta 575",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-576",
+      "name": "Circunscripción parlamentaria abstracta 576",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-577",
+      "name": "Circunscripción parlamentaria abstracta 577",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-578",
+      "name": "Circunscripción parlamentaria abstracta 578",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-579",
+      "name": "Circunscripción parlamentaria abstracta 579",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-580",
+      "name": "Circunscripción parlamentaria abstracta 580",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-581",
+      "name": "Circunscripción parlamentaria abstracta 581",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-582",
+      "name": "Circunscripción parlamentaria abstracta 582",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-583",
+      "name": "Circunscripción parlamentaria abstracta 583",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-584",
+      "name": "Circunscripción parlamentaria abstracta 584",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-585",
+      "name": "Circunscripción parlamentaria abstracta 585",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-586",
+      "name": "Circunscripción parlamentaria abstracta 586",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-587",
+      "name": "Circunscripción parlamentaria abstracta 587",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-588",
+      "name": "Circunscripción parlamentaria abstracta 588",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-589",
+      "name": "Circunscripción parlamentaria abstracta 589",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-590",
+      "name": "Circunscripción parlamentaria abstracta 590",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-591",
+      "name": "Circunscripción parlamentaria abstracta 591",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-592",
+      "name": "Circunscripción parlamentaria abstracta 592",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-593",
+      "name": "Circunscripción parlamentaria abstracta 593",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-594",
+      "name": "Circunscripción parlamentaria abstracta 594",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-595",
+      "name": "Circunscripción parlamentaria abstracta 595",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-596",
+      "name": "Circunscripción parlamentaria abstracta 596",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-597",
+      "name": "Circunscripción parlamentaria abstracta 597",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-598",
+      "name": "Circunscripción parlamentaria abstracta 598",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-599",
+      "name": "Circunscripción parlamentaria abstracta 599",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-600",
+      "name": "Circunscripción parlamentaria abstracta 600",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-601",
+      "name": "Circunscripción parlamentaria abstracta 601",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-602",
+      "name": "Circunscripción parlamentaria abstracta 602",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-603",
+      "name": "Circunscripción parlamentaria abstracta 603",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-604",
+      "name": "Circunscripción parlamentaria abstracta 604",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-605",
+      "name": "Circunscripción parlamentaria abstracta 605",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-606",
+      "name": "Circunscripción parlamentaria abstracta 606",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-607",
+      "name": "Circunscripción parlamentaria abstracta 607",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-608",
+      "name": "Circunscripción parlamentaria abstracta 608",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-609",
+      "name": "Circunscripción parlamentaria abstracta 609",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-610",
+      "name": "Circunscripción parlamentaria abstracta 610",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-611",
+      "name": "Circunscripción parlamentaria abstracta 611",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-612",
+      "name": "Circunscripción parlamentaria abstracta 612",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-613",
+      "name": "Circunscripción parlamentaria abstracta 613",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-614",
+      "name": "Circunscripción parlamentaria abstracta 614",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-615",
+      "name": "Circunscripción parlamentaria abstracta 615",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-616",
+      "name": "Circunscripción parlamentaria abstracta 616",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-617",
+      "name": "Circunscripción parlamentaria abstracta 617",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-618",
+      "name": "Circunscripción parlamentaria abstracta 618",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-619",
+      "name": "Circunscripción parlamentaria abstracta 619",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-620",
+      "name": "Circunscripción parlamentaria abstracta 620",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-621",
+      "name": "Circunscripción parlamentaria abstracta 621",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-622",
+      "name": "Circunscripción parlamentaria abstracta 622",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-623",
+      "name": "Circunscripción parlamentaria abstracta 623",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-624",
+      "name": "Circunscripción parlamentaria abstracta 624",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-625",
+      "name": "Circunscripción parlamentaria abstracta 625",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-626",
+      "name": "Circunscripción parlamentaria abstracta 626",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-627",
+      "name": "Circunscripción parlamentaria abstracta 627",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-628",
+      "name": "Circunscripción parlamentaria abstracta 628",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-629",
+      "name": "Circunscripción parlamentaria abstracta 629",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-630",
+      "name": "Circunscripción parlamentaria abstracta 630",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-631",
+      "name": "Circunscripción parlamentaria abstracta 631",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-632",
+      "name": "Circunscripción parlamentaria abstracta 632",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-633",
+      "name": "Circunscripción parlamentaria abstracta 633",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-634",
+      "name": "Circunscripción parlamentaria abstracta 634",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-635",
+      "name": "Circunscripción parlamentaria abstracta 635",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-636",
+      "name": "Circunscripción parlamentaria abstracta 636",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-637",
+      "name": "Circunscripción parlamentaria abstracta 637",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-638",
+      "name": "Circunscripción parlamentaria abstracta 638",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-639",
+      "name": "Circunscripción parlamentaria abstracta 639",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-640",
+      "name": "Circunscripción parlamentaria abstracta 640",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-641",
+      "name": "Circunscripción parlamentaria abstracta 641",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-642",
+      "name": "Circunscripción parlamentaria abstracta 642",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-643",
+      "name": "Circunscripción parlamentaria abstracta 643",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-644",
+      "name": "Circunscripción parlamentaria abstracta 644",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-645",
+      "name": "Circunscripción parlamentaria abstracta 645",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-646",
+      "name": "Circunscripción parlamentaria abstracta 646",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-647",
+      "name": "Circunscripción parlamentaria abstracta 647",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-648",
+      "name": "Circunscripción parlamentaria abstracta 648",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-649",
+      "name": "Circunscripción parlamentaria abstracta 649",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "commons-650",
+      "name": "Circunscripción parlamentaria abstracta 650",
+      "seatsByChamber": {
+        "commons": 1,
+        "lords": 0
+      }
+    },
+    {
+      "id": "lords-aggregate",
+      "name": "Cámara de los Lores (bancada generada agregada)",
+      "seatsByChamber": {
+        "commons": 0,
+        "lords": 800
+      }
+    }
+  ],
+  "partyLeadership": {
+    "officeId": "party-leader",
+    "title": "Líder del partido",
+    "termYears": 2,
+    "minimumAge": 18,
+    "eligibleAfterOfficeIds": [
+      "deputy",
+      "prime-minister",
+      "minister"
+    ],
+    "electionMethod": "generated-caucus-majority",
+    "requiredMajorityPercent": 50
+  },
+  "ministerialAppointment": {
+    "officeId": "minister",
+    "title": "Ministro",
+    "termYears": 2,
+    "minimumAge": 18,
+    "eligibleAfterOfficeIds": [
+      "deputy",
+      "prime-minister",
+      "party-leader"
+    ],
+    "appointmentMethod": "generated-executive-choice",
+    "minimumSupportPercent": 45,
+    "portfolios": [
+      {
+        "id": "economy",
+        "title": "Tesoro y economía",
+        "focus": "economy"
+      },
+      {
+        "id": "foreign-affairs",
+        "title": "Relaciones exteriores",
+        "focus": "institutions"
+      },
+      {
+        "id": "health",
+        "title": "Salud",
+        "focus": "services"
+      },
+      {
+        "id": "education",
+        "title": "Educación",
+        "focus": "services"
+      },
+      {
+        "id": "infrastructure",
+        "title": "Infraestructura",
+        "focus": "economy"
+      }
+    ]
+  }
+}

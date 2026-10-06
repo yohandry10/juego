@@ -6,6 +6,8 @@ COUNTRIES = {
     "spain": "España",
     "france": "Francia",
     "germany": "Alemania",
+    "united-states": "Estados Unidos",
+    "united-kingdom": "Reino Unido",
 }
 
 with sync_playwright() as playwright:

@@ -141,7 +141,7 @@ export const legacyProfileSchema: z.ZodType<LegacyProfile> = z.object({
   dimensions: z.object({ governance: bounded(), integrity: bounded(), influence: bounded(), continuity: bounded(), publicTrust: bounded() }).strict(),
   archetype: z.enum(["reformer", "builder", "broker", "survivor", "caretaker", "ideologue", "controversial"]),
   summary: z.string().min(1), milestones: z.array(z.string().min(1)).min(1).max(3),
-  reevaluationAt5: bounded(), reevaluationAt15: bounded(), shareText: z.string().min(1).max(800),
+  reevaluationAt5: bounded(), reevaluationAt15: bounded(), reevaluationAt30: bounded().optional(), shareText: z.string().min(1).max(800),
 }).strict();
 
 const gameState = gameStateSchema;

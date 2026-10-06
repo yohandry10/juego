@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
 import { loadCountry, parseCountry } from "../src/data/load-country.js";
-import { addInboxReport, advanceCareer, applyBetrayalMemory, castVote, createCareerGame, negotiateWithLegislator, nominate, performCampaignAction } from "../src/application/career-commands.js";
+import { addInboxReport, advanceCareer, applyBetrayalMemory, castVote, createCareerGame, negotiateWithLegislator, nominate, performCampaignAction, ratifyInternationalTreaty } from "../src/application/career-commands.js";
 import { careerGameStateSchema } from "../src/data/career-schemas.js";
 import { simulateCampaign } from "../src/cli/career-mass.js";
 import { careerEventArcsComplete as careerEventArcs, careerEventCatalog, worldEventArcs } from "../src/data/event-catalog.js";
@@ -29,6 +29,48 @@ test("event catalog contains at least 400 templates, variants, and forty multi-s
   assert.equal(careerEventCatalog.filter((event) => event.category === "international").length, 80);
   assert.equal(worldEventArcs.length, 10);
   assert.ok(pressHeadlineTemplates.length >= 20 && pressHeadlineTemplates.length <= 40);
+});
+
+test("international treaty ratification counts deterministic chamber votes and applies effects only on passage", () => {
+  let state = newPlayer("annual-budget-flow");
+  for (const action of ["rally", "door-knocking"] as const) state = performCampaignAction(state, action);
+  state = advanceCareer(state, country);
+  for (const action of ["media-interview", "rally"] as const) state = performCampaignAction(state, action);
+  state = advanceCareer(state, country);
+  for (const action of ["rally", "door-knocking"] as const) state = performCampaignAction(state, action);
+  state = advanceCareer(state, country);
+  for (const action of ["media-interview", "rally"] as const) state = performCampaignAction(state, action);
+  state = nominate(state);
+  state = advanceCareer(state, country);
+  state = advanceCareer(state, country);
+  assert.equal(state.stage, "legislature");
+  const partnerId = "usa";
+  const treaty = { id: "test-trade-vote", partnerId, kind: "trade" as const, status: "proposed" as const, signedQuarter: 0, explanation: "Acuerdo de prueba." };
+  const highSupport = {
+    ...state,
+    world: { ...state.world, approvalPercent: 100, legislators: state.world.legislators.map((member) => member.chamberId === state.legislature!.chamberId ? { ...member, ideology: { ...member.ideology, economy: 100, nationalism: 0, social: 100 } } : member) },
+    geopolitics: { ...state.geopolitics, treaties: [...state.geopolitics.treaties, treaty], relations: state.geopolitics.relations.map((relation) => relation.a === partnerId || relation.b === partnerId ? { ...relation, trust: 100 } : relation) },
+  };
+  const passed = ratifyInternationalTreaty(highSupport, country, treaty.id);
+  const passageVote = passed.geopolitics.votes.at(-1)!;
+  assert.equal(passageVote.passed, true);
+  assert.ok(passageVote.yes > passageVote.no);
+  assert.equal(passageVote.abstain + passageVote.yes + passageVote.no, state.world.legislators.filter((member) => member.chamberId === state.legislature!.chamberId).length);
+  assert.equal(passed.geopolitics.treaties.find((item) => item.id === treaty.id)?.status, "ratified");
+  assert.equal(passed.geopolitics.relations.find((relation) => relation.a === partnerId || relation.b === partnerId)?.annualFlowUsd, state.geopolitics.relations.find((relation) => relation.a === partnerId || relation.b === partnerId)!.annualFlowUsd * 1.03);
+
+  const opposed = { ...highSupport, world: { ...highSupport.world, approvalPercent: 0, legislators: highSupport.world.legislators.map((member) => member.chamberId === state.legislature!.chamberId ? { ...member, ideology: { ...member.ideology, economy: 0, nationalism: 100, social: 0 } } : member) }, geopolitics: { ...highSupport.geopolitics, treaties: [{ ...treaty, id: "test-trade-rejected" }] } };
+  const rejected = ratifyInternationalTreaty(opposed, country, "test-trade-rejected");
+  assert.equal(rejected.geopolitics.votes.at(-1)?.passed, false);
+  assert.equal(rejected.geopolitics.treaties.find((item) => item.id === "test-trade-rejected")?.status, "rejected");
+
+  const imfTreaty = { ...treaty, id: "test-imf-program", partnerId: "imf", kind: "aid" as const };
+  const imfRequest = { ...highSupport, geopolitics: { ...highSupport.geopolitics, treaties: [...highSupport.geopolitics.treaties, imfTreaty] } };
+  const imfApproval = ratifyInternationalTreaty(imfRequest, country, imfTreaty.id);
+  assert.equal(imfApproval.geopolitics.treaties.find((item) => item.id === imfTreaty.id)?.status, "ratified");
+  assert.equal(imfApproval.world.economy.indicators.publicDebtPercentGdp, highSupport.world.economy.indicators.publicDebtPercentGdp + 8);
+  assert.equal(imfApproval.world.economy.indicators.fiscalDeficitPercentGdp, highSupport.world.economy.indicators.fiscalDeficitPercentGdp - 1.2);
+  assert.ok(imfApproval.world.economy.causesByIndicator.publicDebtPercentGdp?.[0]?.includes("Programa IMF"));
 });
 
 test("event choices change party support and resolve the inbox item", () => {

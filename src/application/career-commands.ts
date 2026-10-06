@@ -796,8 +796,9 @@ export function buildLegacyProfile(state: CareerGameState): LegacyProfile {
   const summary = `${state.player.name} cierra su carrera como ${archetype}. Gobernanza ${governance}/100, integridad ${integrity}/100, influencia ${influence}/100, continuidad ${continuity}/100 y confianza pública ${publicTrust}/100.`;
   const reevaluationAt5 = Math.round(clamp((governance + integrity + publicTrust) / 3 + continuity * 0.05, 0, 100));
   const reevaluationAt15 = Math.round(clamp((governance * 0.8 + integrity + publicTrust * 0.9) / 2.7 + continuity * 0.12, 0, 100));
+  const reevaluationAt30 = Math.round(clamp((governance * 0.65 + integrity * 0.9 + publicTrust * 0.75) / 2.3 + continuity * 0.18 + influence * 0.04, 0, 100));
   const shareText = `${state.player.name} · ${archetype} · legado ${governance}/100 · ${milestones.at(-1) ?? "Carrera registrada en MANDATO"}`;
-  return { dimensions, archetype, summary, milestones, reevaluationAt5, reevaluationAt15, shareText };
+  return { dimensions, archetype, summary, milestones, reevaluationAt5, reevaluationAt15, reevaluationAt30, shareText };
 }
 
 export function retireCareer(state: CareerGameState): CareerGameState {
@@ -1134,6 +1135,94 @@ export function nominate(state: CareerGameState): CareerGameState {
   if (state.stage !== "campaign") throw new Error("La nominación solo puede confirmarse durante la campaña.");
   const nominated = { ...state, campaign: { ...state.campaign, nominated: true }, log: [...state.log, { turn: state.currentTurn, text: "El partido confirmó tu nominación.", explanation: "Tu partido ficticio confirmó tu candidatura para la contienda en curso." }] };
   return validateCareer(addCareerEvent(nominated, "party-nomination-whip"));
+}
+
+export function ratifyInternationalTreaty(state: CareerGameState, country: CountryDefinition, treatyId: string): CareerGameState {
+  const legislature = state.legislature;
+  const treaty = state.geopolitics.treaties.find((item) => item.id === treatyId);
+  if (state.stage !== "legislature" || !legislature || legislature.actionsRemaining < 1) throw new Error("La ratificación requiere una sesión legislativa con acciones disponibles.");
+  if (!treaty || treaty.status !== "proposed") throw new Error("El acuerdo ya no está pendiente de ratificación.");
+  const chamber = legislature.chamberId;
+  const members = state.world.legislators.filter((member) => member.chamberId === chamber);
+  if (!members.length) throw new Error("La cámara no tiene representantes generados para votar el tratado.");
+  const relation = state.geopolitics.relations.find((item) => item.a === treaty.partnerId || item.b === treaty.partnerId);
+  const partnerTrust = relation?.trust ?? 50;
+  const ballots = members.map((member) => {
+    const party = state.world.parties.find((item) => item.id === member.partyId);
+    const relationship = state.relationships.find((item) => item.legislatorId === member.id);
+    const openness = treaty.kind === "migration"
+      ? (member.ideology.social - 50) * 0.12 + (50 - member.ideology.nationalism) * 0.1
+      : treaty.kind === "aid"
+        ? (member.ideology.economy - 50) * 0.08 + (member.ideology.rigidity - 50) * 0.06
+        : (member.ideology.economy - 50) * 0.12 + (50 - member.ideology.nationalism) * 0.08;
+    const coalitionBonus = state.government?.supportPartyIds.includes(member.partyId) ? 3 : 0;
+    const score = (treaty.kind === "aid" ? 48 : 43) + openness + (partnerTrust - 50) * 0.12 + (state.world.approvalPercent - 50) * 0.06
+      + (party?.discipline ?? 50) * member.loyalty / 100 * 0.04 + (relationship?.trust ?? 0) * 0.08
+      - (relationship?.grudge ?? 0) * 0.08 + coalitionBonus
+      + (hashSeed(`${state.seed}:treaty:${treaty.id}:${member.id}`) % 3001) / 100 - 15;
+    const attendance = hashSeed(`${state.seed}:treaty-attendance:${treaty.id}:${member.id}`) % 100;
+    const choice = attendance < 7 ? "abstain" as const : score >= 50 ? "yes" as const : "no" as const;
+    return { legislatorId: member.id, choice, score: Math.round(score), reasons: [
+      treaty.kind === "migration" ? "Evalúa la coordinación de movilidad y empleo." : treaty.kind === "aid" ? "Evalúa el crédito externo, sus condiciones y costos presupuestarios." : "Evalúa los beneficios y costos de integración comercial.",
+      `Confianza bilateral: ${Math.round(partnerTrust)}; relación legislativa: ${Math.round(relationship?.trust ?? 0)}.`,
+      state.government?.supportPartyIds.includes(member.partyId) ? "Pertenece a la bancada de apoyo del Gobierno." : "Vota desde una bancada ajena al Gobierno.",
+    ] };
+  });
+  const yes = ballots.filter((ballot) => ballot.choice === "yes").length;
+  const no = ballots.filter((ballot) => ballot.choice === "no").length;
+  const abstain = ballots.length - yes - no;
+  const decided = yes + no;
+  const passed = yes / Math.max(1, decided) * 100 > 50;
+  const explanation = `Votación nominal ficticia en ${country.name}: ${yes} a favor, ${no} en contra y ${abstain} abstenciones. Se requiere más de la mitad de los votos emitidos; ${passed ? "el acuerdo queda ratificado" : "el acuerdo no alcanza la mayoría"}.`;
+  const financeTerms = treaty.kind === "aid" && passed
+    ? treaty.partnerId === "imf"
+      ? " Programa de estabilización modelado: deuda pública +8 puntos del PIB y reservas +1.2 meses; condición simulada de consolidación fiscal reduce el déficit 1.2 puntos y el crecimiento inicial 0.4 puntos. No representa un acuerdo ni una tasa real del FMI."
+      : " Préstamo de inversión modelado: deuda pública +3 puntos del PIB, inversión +1.5 puntos y reservas +0.6 meses; la condición simulada destina recursos a proyectos de infraestructura y servicios. No representa una operación real del Banco Mundial."
+    : "";
+  const decisionExplanation = `${explanation}${financeTerms}`;
+  const nextTreaties = state.geopolitics.treaties.map((item) => item.id === treaty.id ? { ...item, status: passed ? "ratified" as const : "rejected" as const, explanation: `${item.explanation} ${decisionExplanation}` } : item);
+  const nextRelations = passed ? state.geopolitics.relations.map((item) => item.a === treaty.partnerId || item.b === treaty.partnerId ? { ...item, trust: clamp(item.trust + 3, 0, 100), annualFlowUsd: item.annualFlowUsd * (treaty.kind === "trade" ? 1.03 : 1.01) } : item) : state.geopolitics.relations;
+  const votes = [...state.geopolitics.votes, { id: `treaty-vote-${treaty.id}`, quarterIndex: state.geopolitics.quarterIndex, organizationId: "national-legislature", title: `Ratificación ${treaty.id}`, yes, no, abstain, passed, explanation: decisionExplanation }];
+  let world = state.world;
+  if (passed && treaty.kind === "aid") {
+    const imf = treaty.partnerId === "imf";
+    const indicators = state.world.economy.indicators;
+    const updatedIndicators = imf
+      ? {
+        ...indicators,
+        publicDebtPercentGdp: clamp(indicators.publicDebtPercentGdp + 8, 0, 1000),
+        fiscalDeficitPercentGdp: clamp(indicators.fiscalDeficitPercentGdp - 1.2, -100, 100),
+        reservesMonthsImports: clamp(indicators.reservesMonthsImports + 1.2, 0, 120),
+        countryRiskBasisPoints: clamp(indicators.countryRiskBasisPoints - 100, 0, 50000),
+        gdpGrowthPercent: clamp(indicators.gdpGrowthPercent - 0.4, -30, 100),
+      }
+      : {
+        ...indicators,
+        publicDebtPercentGdp: clamp(indicators.publicDebtPercentGdp + 3, 0, 1000),
+        fiscalDeficitPercentGdp: clamp(indicators.fiscalDeficitPercentGdp + 0.2, -100, 100),
+        reservesMonthsImports: clamp(indicators.reservesMonthsImports + 0.6, 0, 120),
+        countryRiskBasisPoints: clamp(indicators.countryRiskBasisPoints - 40, 0, 50000),
+        domesticInvestmentPercentGdp: clamp(indicators.domesticInvestmentPercentGdp + 1.5, 0, 100),
+        gdpGrowthPercent: clamp(indicators.gdpGrowthPercent + 0.3, -30, 100),
+      };
+    const causes = [`${imf ? "Programa IMF" : "Préstamo del Banco Mundial"}: desembolso y condiciones de balance de juego; ${decisionExplanation}`];
+    world = { ...state.world, economy: { ...state.world.economy, indicators: updatedIndicators, causesByIndicator: { ...state.world.economy.causesByIndicator, publicDebtPercentGdp: [...causes, ...(state.world.economy.causesByIndicator.publicDebtPercentGdp ?? [])].slice(0, 6), gdpGrowthPercent: [...causes, ...(state.world.economy.causesByIndicator.gdpGrowthPercent ?? [])].slice(0, 6) } }, approvalPercent: clamp(state.world.approvalPercent + (imf ? -1 : 0.5), 0, 100) };
+  }
+  const next: CareerGameState = {
+    ...state,
+    world,
+    currentTurn: state.currentTurn + 1,
+    geopolitics: {
+      ...state.geopolitics,
+      treaties: nextTreaties,
+      relations: nextRelations,
+      votes,
+      player: passed && treaty.kind === "migration" ? { ...state.geopolitics.player, migrationAgreement: true } : state.geopolitics.player,
+    },
+    legislature: { ...legislature, actionsRemaining: legislature.actionsRemaining - 1 },
+    log: [...state.log, { turn: state.currentTurn + 1, text: `${treaty.kind === "aid" ? "Programa financiero" : "Tratado"} ${passed ? "ratificado" : "rechazado"}.`, explanation: decisionExplanation }],
+  };
+  return validateCareer(next);
 }
 
 export function castVote(state: CareerGameState, vote: "yes" | "no" | "abstain"): CareerGameState {

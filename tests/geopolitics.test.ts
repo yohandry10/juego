@@ -68,3 +68,33 @@ test("foreign aid and a ratified mobility agreement create visible domestic econ
   assert.ok(mobility.unemploymentDelta < baseline.unemploymentDelta);
   assert.ok(mobility.causes.some((cause) => cause.includes("no simula personas")));
 });
+
+test("a ratified trade agreement creates a persistent, explained domestic effect", () => {
+  const seed = "player-trade-treaty-impact";
+  const base = createGeopoliticsState("peru", seed);
+  const baseline = advanceGeopolitics(base, seed, 1).domesticImpact;
+  const treatyState = { ...base, treaties: [{ id: "trade-test", partnerId: "usa", kind: "trade" as const, status: "ratified" as const, signedQuarter: 0, explanation: "Tratado comercial de prueba." }] };
+  const impact = advanceGeopolitics(treatyState, seed, 1).domesticImpact;
+  assert.ok(impact.growthDelta > baseline.growthDelta);
+  assert.ok(impact.unemploymentDelta < baseline.unemploymentDelta);
+  assert.ok(impact.causes.some((cause) => cause.includes("acceso al mercado asociado")));
+});
+
+test("ratified IMF and World Bank programs apply distinct domestic conditions", () => {
+  const seed = "player-financing-domestic-impact";
+  const base = createGeopoliticsState("peru", seed);
+  const treaty = (partnerId: "imf" | "world-bank") => ({ id: `program-${partnerId}`, partnerId, kind: "aid" as const, status: "ratified" as const, signedQuarter: 0, explanation: "Programa financiero de prueba." });
+  const imf = advanceGeopolitics({ ...base, treaties: [treaty("imf")] }, seed, 1).domesticImpact;
+  const worldBank = advanceGeopolitics({ ...base, treaties: [treaty("world-bank")] }, seed, 1).domesticImpact;
+  const combined = advanceGeopolitics({ ...base, treaties: [treaty("imf"), treaty("world-bank")] }, seed, 1).domesticImpact;
+  const baseline = advanceGeopolitics(base, seed, 1).domesticImpact;
+  assert.ok(imf.growthDelta < baseline.growthDelta);
+  assert.ok(imf.unemploymentDelta > baseline.unemploymentDelta);
+  assert.ok(imf.causes.some((cause) => cause.includes("condicionalidad fiscal")));
+  assert.ok(worldBank.growthDelta > baseline.growthDelta);
+  assert.ok(worldBank.unemploymentDelta < baseline.unemploymentDelta);
+  assert.ok(worldBank.causes.some((cause) => cause.includes("proyectos se abstraen")));
+  assert.ok(combined.causes.some((cause) => cause.includes("condicionalidad fiscal")));
+  assert.ok(combined.causes.some((cause) => cause.includes("proyectos se abstraen")));
+  assert.ok(combined.growthDelta > imf.growthDelta);
+});

@@ -449,5 +449,6 @@ test("legacy profiles diverge with governance and integrity and show the history
   assert.notDeepEqual(successfulLegacy.dimensions, troubledLegacy.dimensions);
   assert.notEqual(successfulLegacy.archetype, troubledLegacy.archetype);
   assert.ok(successfulLegacy.milestones.some((milestone) => milestone.includes("Completó su mandato")));
+  assert.ok(Number.isInteger(successfulLegacy.reevaluationAt30) && successfulLegacy.reevaluationAt30! >= 0 && successfulLegacy.reevaluationAt30! <= 100);
   assert.ok(troubledLegacy.milestones.some((milestone) => milestone.includes("aprobó su remoción")));
 });

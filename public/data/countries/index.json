@@ -19,6 +19,16 @@
       "id": "peru",
       "name": "Perú",
       "file": "peru.json"
+    },
+    {
+      "id": "united-states",
+      "name": "Estados Unidos",
+      "file": "united-states.json"
+    },
+    {
+      "id": "united-kingdom",
+      "name": "Reino Unido",
+      "file": "united-kingdom.json"
     }
   ]
 }
