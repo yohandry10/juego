@@ -103,6 +103,18 @@ test("the worker message adapter uses the same deterministic engine", () => {
   assert.ok(advanced.events.every((event) => event.explanation.length > 0));
 });
 
+test("the web worker adapter creates and advances the full world off the interface", () => {
+  const created = handleWorkerRequest({ type: "world-create", countryId: "peru", seed: "worker-world" });
+  assert.equal(created.type, "world-ready");
+  if (created.type !== "world-ready") return;
+  assert.equal(created.state.actors.length, 217);
+  const advanced = handleWorkerRequest({ type: "world-advance", state: created.state, seed: "worker-world", quarters: 8 });
+  assert.equal(advanced.type, "world-advanced");
+  if (advanced.type !== "world-advanced") return;
+  assert.equal(advanced.state.quarterIndex, 8);
+  assert.equal(advanced.state.actors.length, 217);
+});
+
 test("country loader reports schema errors with a useful path", async () => {
   const directory = await mkdtemp(join(tmpdir(), "mandato-invalid-country-"));
   const path = join(directory, "bad.json");

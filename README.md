@@ -29,6 +29,7 @@ npm run validate:mass
 npm run sim -- --country peru --years 20 --runs 1000 --seed balance
 npm run validate:career
 npm run validate:government
+npm run world:validate
 ```
 
 Cada corrida usa una subsemilla estable (`semilla-N`) y verifica que los indicadores principales permanezcan numéricos. `validate:career` compara 1.000 corridas de estrategia territorial y recaudación. `validate:government` compara 1.000 mandatos generados con apoyo aislado frente a una coalición negociada y defensa del Gobierno.
@@ -39,7 +40,7 @@ Cada corrida usa una subsemilla estable (`semilla-N`) y verifica que los indicad
 CLI ──> Engine ──> Domain
  │       │           ▲
  └──> Data ──────────┘
-Worker ──> Engine
+Worker ──> Engine + World Simulation
 Web ──> Application ──> Domain
 Web ──> Persistence (IndexedDB)
 ```
@@ -49,12 +50,19 @@ Web ──> Persistence (IndexedDB)
 - `src/data`: validación runtime con Zod y lectura de archivos JSON.
 - `src/cli`: composición de datos y motor; adapta eventos del juego a texto de terminal.
 - `src/application`: comandos deterministas para campaña, elección, negociación, votación, memoria, investidura y gabinete.
-- `src/web`: interfaz española con creador de seis pasos, carrera, Congreso, investidura, prensa y datos del país.
-- `src/persistence`: guardado IndexedDB e importación/exportación JSON versionada; las carreras históricas v3 a v10 migran a v11.
-- `src/data/event-catalog.ts`: 84 plantillas ficticias, tres variantes por evento y nueve arcos narrativos versionados.
+- `src/web`: interfaz española con creador de seis pasos, carrera, Congreso, investidura, prensa, economía y mapa mundial seleccionable con capas.
+- `src/persistence`: guardado IndexedDB e importación/exportación JSON versionada; las carreras históricas v3 a v13 migran a v14 preservando el estado nacional y creando el snapshot mundial con la semilla existente.
+- `src/data/event-catalog.ts`: 407 plantillas ficticias de tres variantes y 64 arcos narrativos; incluye 80 internacionales y 40 arcos nuevos de contenido ampliado.
+- `src/engine/world-simulation.ts`: 217 actores versionados, relaciones, shocks, sanciones, decisiones y guerras agregadas deterministas. El avance mundial jugable y masivo también corre en Web Worker.
 - `data/countries`: datos nacionales versionados, distribuciones de escenario y referencias de datos observados.
 
 El bus síncrono transmite eventos del motor a observadores como el CLI; cada evento queda en el historial de la partida con una explicación de sus causas. Los observadores no mutan el estado ni participan en cálculos. Los flujos aleatorios de actores, economía, sociedad y política están separados para conservar el determinismo al cambiar un módulo. `serializeGameState` y `restoreGameState` validan guardados con versión de esquema y permiten reanudar una partida desde el mismo estado.
+
+## Mundo y geopolítica
+
+El snapshot `world-2026-10-06-v1` contiene 217 países y economías del catálogo del Banco Mundial; 193 están marcados como miembros de la ONU. La matriz bilateral es una aproximación dispersa de juego, no una matriz observada de comercio. El mapa Natural Earth a escala 1:110m contiene 169 geometrías: los actores sin geometría siguen disponibles en el catálogo y pueden seleccionarse por código. Las membresías de ONU, FMI/Banco Mundial, OMC y bloques regionales se mantienen como snapshots simplificados. La actualización de WDI, roster ONU y Natural Earth se ejecuta con `npm run world:update-data`.
+
+Las cifras de guerra y shocks son calibración interna: `docs/phase-4-report.md` describe el alcance y las limitaciones. La guerra es abstracta; el juego no tiene uso nuclear. Fase 5 aún conserva límites explícitos: el catálogo nacional jugable tiene tres fichas (Perú, España y Francia), no diez países curados; la auditoría manual, el tutorial probado con cinco jugadores, el balance completo de todas las carreras y la publicación pública no se consideran satisfechos por generar más texto o por compilar el sitio.
 
 ## Datos iniciales
 

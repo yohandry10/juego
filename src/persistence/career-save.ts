@@ -2,6 +2,7 @@ import { careerGameStateSchema } from "../data/career-schemas.js";
 import type { CareerGameState } from "../domain/career-types.js";
 import { createInitialBudgetState } from "../domain/budget.js";
 import { createEconomicState } from "../domain/economic-model.js";
+import { createGeopoliticsState } from "../engine/world-simulation.js";
 
 function budgetForLegacySave(legacy: Record<string, unknown>) {
   const world = typeof legacy.world === "object" && legacy.world !== null ? legacy.world as Record<string, unknown> : {};
@@ -21,7 +22,11 @@ function withV13Defaults(legacy: Record<string, unknown>): Record<string, unknow
   const leadership = typeof legacy.partyLeadership === "object" && legacy.partyLeadership !== null ? legacy.partyLeadership as Record<string, unknown> : null;
   return {
     ...legacy,
-    saveSchemaVersion: 13,
+    saveSchemaVersion: 14,
+    geopolitics: legacy.geopolitics ?? createGeopoliticsState(
+      ({ peru: "per", spain: "esp", france: "fra" } as Record<string, string>)[String(legacy.countryId ?? "peru")] ?? String(legacy.countryId ?? "peru"),
+      typeof legacy.seed === "string" ? legacy.seed : "migrated-world",
+    ),
     campaign: { ...campaign, nationalAgenda: campaign.nationalAgenda ?? null, pollHistory: campaign.pollHistory ?? [], debateHistory: campaign.debateHistory ?? [] },
     government: government ? { ...government, policyVotes: government.policyVotes ?? [] } : legacy.government,
     partyLeadership: leadership ? { ...leadership, role: leadership.role ?? "opposition" } : legacy.partyLeadership,
@@ -93,7 +98,7 @@ export function migrateCareerSave(value: unknown): CareerGameState {
     const legacy = value as Record<string, unknown>;
     return careerGameStateSchema.parse({ ...withV13Defaults(legacy), ministry: null });
   }
-  if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && [11, 12].includes(value.saveSchemaVersion as number)) return careerGameStateSchema.parse(withV13Defaults(value as Record<string, unknown>));
+  if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && [11, 12, 13].includes(value.saveSchemaVersion as number)) return careerGameStateSchema.parse(withV13Defaults(value as Record<string, unknown>));
   return careerGameStateSchema.parse(value);
 }
 
@@ -128,7 +133,7 @@ export async function loadCareer(): Promise<CareerGameState | null> {
   db.close();
   if (value === null) return null;
   const migrated = migrateCareerSave(value);
-  if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && [3, 4, 5, 6, 7, 8, 9, 10, 11, 12].includes(value.saveSchemaVersion as number)) await saveCareer(migrated);
+  if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].includes(value.saveSchemaVersion as number)) await saveCareer(migrated);
   return migrated;
 }
 

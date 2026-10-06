@@ -1,4 +1,5 @@
 import type { GameState, Ideology } from "./types.js";
+import type { GeopoliticsState } from "./geopolitics-types.js";
 
 export type CareerStage = "campaign" | "election-result" | "legislature" | "executive" | "party-leadership" | "minister" | "term-summary" | "legacy";
 export type RealismMode = "relaxed" | "realistic" | "relentless";
@@ -144,7 +145,7 @@ export interface InboxItem {
   readonly id: string;
   readonly eventId: string;
   readonly variantId: string;
-  readonly category: "campaign" | "party" | "congress" | "media" | "personal" | "economy";
+  readonly category: "campaign" | "party" | "congress" | "media" | "personal" | "economy" | "international";
   readonly type: "decision" | "report" | "offer" | "crisis" | "news";
   readonly title: string;
   readonly body: string;
@@ -173,7 +174,7 @@ export interface CharacterRelationship {
 }
 
 export interface CareerGameState {
-  readonly saveSchemaVersion: 13;
+  readonly saveSchemaVersion: 14;
   readonly countryId: string;
   readonly countryDataVersion: string;
   readonly contentDataVersion: string;
@@ -183,6 +184,7 @@ export interface CareerGameState {
   readonly ironman: boolean;
   readonly currentTurn: number;
   readonly world: GameState;
+  readonly geopolitics: GeopoliticsState;
   readonly player: PoliticalCharacter;
   readonly playerPartyId: string;
   readonly campaign: CampaignState;

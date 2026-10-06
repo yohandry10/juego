@@ -5,7 +5,7 @@ import { loadCountry, parseCountry } from "../src/data/load-country.js";
 import { addInboxReport, advanceCareer, applyBetrayalMemory, castVote, createCareerGame, negotiateWithLegislator, nominate, performCampaignAction } from "../src/application/career-commands.js";
 import { careerGameStateSchema } from "../src/data/career-schemas.js";
 import { simulateCampaign } from "../src/cli/career-mass.js";
-import { careerEventArcs, careerEventCatalog } from "../src/data/event-catalog.js";
+import { careerEventArcsComplete as careerEventArcs, careerEventCatalog, worldEventArcs } from "../src/data/event-catalog.js";
 import { resolveInboxOption } from "../src/application/career-commands.js";
 import { pressHeadlineTemplates } from "../src/data/press-headlines.js";
 
@@ -21,11 +21,13 @@ test("campaign actions change support, use resources, and create explainable log
   assert.deepEqual(next, performCampaignAction(initial, "door-knocking"));
 });
 
-test("event catalog contains at least 200 templates, variants, and fourteen multi-step arcs", () => {
-  assert.ok(careerEventCatalog.length >= 200);
+test("event catalog contains at least 400 templates, variants, and forty multi-step arcs", () => {
+  assert.ok(careerEventCatalog.length >= 400);
   assert.ok(careerEventCatalog.every((event) => event.variants.length >= 3));
-  assert.ok(careerEventArcs.length >= 14);
+  assert.ok(careerEventArcs.length >= 40);
   assert.ok(careerEventArcs.every((arc) => arc.eventIds.length >= 3 && arc.eventIds.every((id) => careerEventCatalog.some((event) => event.id === id))));
+  assert.equal(careerEventCatalog.filter((event) => event.category === "international").length, 80);
+  assert.equal(worldEventArcs.length, 10);
   assert.ok(pressHeadlineTemplates.length >= 20 && pressHeadlineTemplates.length <= 40);
 });
 

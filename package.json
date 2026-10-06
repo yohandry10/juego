@@ -14,7 +14,9 @@
     "validate:mass": "tsx src/cli/index.ts --country peru --years 20 --runs 1000 --seed mandato-phase-0",
     "validate:career": "tsx src/cli/career-mass.ts 1000",
     "validate:government": "tsx src/cli/government-mass.ts",
-    "calibrate:phase3": "tsx src/cli/economic-calibration.ts"
+    "calibrate:phase3": "tsx src/cli/economic-calibration.ts",
+    "world:update-data": "node scripts/update-world-data.mjs",
+    "world:validate": "tsx src/cli/world-mass.ts 100"
   },
   "dependencies": {
     "react": "^19.3.0",

@@ -1,4 +1,5 @@
 import { z } from "zod";
+import type { GeopoliticsState } from "../domain/geopolitics-types.js";
 import { gameStateSchema, ideologySchema } from "./schemas.js";
 import type { CareerGameState, CampaignActionRecord, CampaignState, CharacterRelationship, ElectionOutcome, FavorLedgerEntry, GovernmentState, InboxItem, InboxOption, LegislatureState, LegacyProfile, LegislativeProposal, LegislatorVote, PoliticalCharacter, PublicBudgetState, PromiseRecord, RealismMode, RelationshipMemory, VoteRecord } from "../domain/career-types.js";
 
@@ -90,7 +91,7 @@ export const inboxOptionSchema: z.ZodType<InboxOption> = z.object({
 
 export const inboxItemSchema: z.ZodType<InboxItem> = z.object({
   id: z.string().min(1), eventId: z.string().min(1), variantId: z.string().min(1),
-  category: z.enum(["campaign", "party", "congress", "media", "personal", "economy"]),
+  category: z.enum(["campaign", "party", "congress", "media", "personal", "economy", "international"]),
   type: z.enum(["decision", "report", "offer", "crisis", "news"]), title: z.string().min(1), body: z.string().min(1),
   createdAtTurn: z.number().int().nonnegative(), priority: z.number().int().min(0).max(100), resolved: z.boolean(),
   options: z.array(inboxOptionSchema), explanation: z.string().min(1), payloadId: z.string().nullable(),
@@ -145,9 +146,11 @@ export const legacyProfileSchema: z.ZodType<LegacyProfile> = z.object({
 
 const gameState = gameStateSchema;
 export const careerGameStateSchema: z.ZodType<CareerGameState> = z.object({
-  saveSchemaVersion: z.literal(13), countryId: z.string().min(1), countryDataVersion: z.string().min(1), contentDataVersion: z.string().min(1),
+  saveSchemaVersion: z.literal(14), countryId: z.string().min(1), countryDataVersion: z.string().min(1), contentDataVersion: z.string().min(1),
   seed: z.string().min(1), stage: z.enum(["campaign", "election-result", "legislature", "executive", "party-leadership", "minister", "term-summary", "legacy"]), realism: realismModeSchema, ironman: z.boolean(),
-  currentTurn: z.number().int().nonnegative(), world: gameState, player: politicalCharacterSchema,
+  currentTurn: z.number().int().nonnegative(), world: gameState,
+  geopolitics: z.custom<GeopoliticsState>((value) => typeof value === "object" && value !== null && "schemaVersion" in value && (value as GeopoliticsState).schemaVersion === 1 && Array.isArray((value as GeopoliticsState).actors) && Array.isArray((value as GeopoliticsState).relations)),
+  player: politicalCharacterSchema,
   playerPartyId: z.string().min(1), campaign: campaignStateSchema, electionOutcome: electionOutcomeSchema.nullable(),
   legislature: legislatureStateSchema.nullable(), relationships: z.array(characterRelationshipSchema), government: governmentStateSchema.nullable(), budget: publicBudgetStateSchema,
   partyLeadership: z.object({

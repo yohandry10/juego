@@ -1,6 +1,6 @@
 export interface CareerEventTemplate {
   readonly id: string;
-  readonly category: "campaign" | "party" | "congress" | "media" | "personal" | "economy";
+  readonly category: "campaign" | "party" | "congress" | "media" | "personal" | "economy" | "international";
   readonly stage: "campaign" | "legislature" | "any";
   readonly title: string;
   readonly detail: string;
@@ -95,9 +95,35 @@ const crisisArcEvents: readonly [string, CareerEventTemplate["category"], string
   ["bank-liquidity","economy","Tensión de liquidez bancaria","any","banking-response",1,"Entidades elevan cautela y depositantes piden información."],["bank-backstop","congress","Opciones para contener el contagio","legislature","banking-response",2,"Liquidez y controles cambian crédito y confianza."],["bank-review","economy","Revisión del sistema financiero","any","banking-response",3,"Crédito y riesgo se recuperan a ritmos distintos."],
   ["recession-alert","economy","La demanda se contrae","any","recovery-response",1,"Consumo e inversión menores amplían capacidad ociosa."],["recovery-budget","congress","Debate sobre la recuperación","legislature","recovery-response",2,"Gasto, inversión y crédito compiten por recursos."],["recovery-review","economy","Primeros datos de recuperación","any","recovery-response",3,"Empleo, producción y déficit permiten evaluar la estrategia."]
 ];
-const allTopics = [...topics.map(([id, category, title, stage, arcId, arcStep]) => [id, category, title, stage, arcId, arcStep, `${title}: ${id.replaceAll("-", " ")}.`] as const), ...addedArcs, ...addedIssues, ...economyEvents, ...crisisArcEvents];
+const internationalFamilies = [
+  ["energy-security", "Seguridad energética", "La exposición a importaciones y rutas de suministro elevó el costo de la energía."], ["food-supply", "Abastecimiento de alimentos", "Las cosechas, el transporte y las reservas condicionan el precio de los alimentos."], ["financial-markets", "Tensión financiera internacional", "El costo global del crédito modifica las decisiones de inversión y deuda."], ["pandemic-coordination", "Coordinación sanitaria", "La circulación de una enfermedad exige compartir información y proteger servicios esenciales."], ["natural-disaster", "Desastre y ayuda internacional", "El daño a infraestructura y hogares demanda ayuda coordinada y una reconstrucción verificable."], ["semiconductor-chain", "Cadena tecnológica", "La concentración de componentes estratégicos vuelve vulnerable a la industria local."], ["migration-pressure", "Rutas migratorias", "Los cambios en flujos migratorios requieren coordinación fronteriza y servicios de recepción."], ["trade-dispute", "Disputa comercial", "Una medida arancelaria afecta exportadores, productores locales y compromisos multilaterales."], ["regional-security", "Seguridad regional", "Una crisis de seguridad pone a prueba la credibilidad de alianzas y los canales de diálogo."], ["climate-transition", "Transición climática", "La inversión energética distribuye costos, empleos y oportunidades entre regiones."],
+] as const;
+const internationalPerspectives = ["Informe", "Consultas diplomáticas", "Votación multilateral", "Respuesta nacional", "Revisión de efectos"] as const;
+const internationalTopics = [
+  ...internationalFamilies.flatMap(([id, title, detail]) => ["alerta", "negociación", "resultado"].map((phase, index) => [
+    `world-${id}-${phase}`, "international" as const, `${title}: ${["señales de presión", "opciones sobre la mesa", "balance de la respuesta"][index]}`, "any" as const, `${id}-arc`, index + 1,
+    `${detail} La simulación compara exposición comercial, estabilidad doméstica y credibilidad de los compromisos.`] as const)),
+  ...internationalFamilies.flatMap(([id, title, detail]) => internationalPerspectives.map((perspective, index) => [
+    `world-${id}-${perspective.toLowerCase().replaceAll(" ", "-")}`, "international" as const, `${title}: ${perspective}`, "any" as const, null, null,
+    `${detail} ${perspective}: los costos y beneficios dependen de las relaciones bilaterales y de las reglas institucionales.`] as const)),
+];
 
-export const eventCatalogVersion = "career-events-v5";
+const phase5Families = [
+  "Reforma electoral", "Negociación presupuestaria", "Coalición en revisión", "Mandato local", "Promesa de campaña", "Sucesión partidaria", "Confianza parlamentaria", "Agenda pública", "Transparencia contractual", "Servicio de salud", "Escuela y territorio", "Transporte público", "Empleo juvenil", "Pequeña empresa", "Política tributaria", "Inversión productiva", "Costo de vivienda", "Protección social", "Gestión del agua", "Respuesta ante incendios", "Plan de infraestructura", "Reforma previsional", "Regulación laboral", "Transición energética", "Desarrollo rural", "Seguridad ciudadana", "Integridad pública", "Libertad de prensa", "Gobierno regional", "Deuda pública", "Acuerdo comercial", "Acceso a crédito", "Gestión de residuos", "Servicios digitales", "Formación técnica", "Cuidados familiares", "Participación vecinal", "Auditoría de programas", "Coordinación ministerial", "Memoria política",
+] as const;
+const phase5Topics = phase5Families.flatMap((title, index) => {
+  const id = `polish-${String(index + 1).padStart(2, "0")}`;
+  const arcId = `public-life-${String(index + 1).padStart(2, "0")}`;
+  const detail = `El asunto de ${title.toLocaleLowerCase()} enfrenta demandas con plazos, recursos y responsables distintos.`;
+  return ["señales", "decisión", "seguimiento"].map((phase, index) => [
+    `${id}-${phase}`, index === 0 ? "media" as const : index === 1 ? "congress" as const : "economy" as const,
+    `${title}: ${["aparecen demandas", "se comparan alternativas", "se revisan resultados"][index]}`, "any" as const, arcId, index + 1,
+    `${detail} ${["Los primeros informes muestran quiénes están expuestos.", "Cada alternativa distribuye beneficios y costos de manera diferente.", "Los resultados permiten revisar compromisos, ejecución y confianza pública."][index]}`] as const);
+});
+
+const allTopics = [...topics.map(([id, category, title, stage, arcId, arcStep]) => [id, category, title, stage, arcId, arcStep, `${title}: ${id.replaceAll("-", " ")}.`] as const), ...addedArcs, ...addedIssues, ...economyEvents, ...crisisArcEvents, ...internationalTopics, ...phase5Topics];
+
+export const eventCatalogVersion = "career-events-v6-world-content";
 export const careerEventCatalog: readonly CareerEventTemplate[] = allTopics.map(([id, category, title, stage, arcId, arcStep, detail]) => {
   return {
     id, category, stage, title, detail, arcId, arcStep,
@@ -132,3 +158,10 @@ export const careerEventArcs: readonly CareerEventArc[] = [
   { id: "banking-response", eventIds: ["bank-liquidity", "bank-backstop", "bank-review"] },
   { id: "recovery-response", eventIds: ["recession-alert", "recovery-budget", "recovery-review"] },
 ] as const;
+
+export const worldEventArcs: readonly CareerEventArc[] = internationalFamilies.map(([id]) => ({ id: `${id}-arc`, eventIds: [`world-${id}-alerta`, `world-${id}-negociación`, `world-${id}-resultado`] }));
+export const phase5EventArcs: readonly CareerEventArc[] = phase5Families.map((_, index) => {
+  const id = `polish-${String(index + 1).padStart(2, "0")}`;
+  return { id: `public-life-${String(index + 1).padStart(2, "0")}`, eventIds: [`${id}-señales`, `${id}-decisión`, `${id}-seguimiento`] };
+});
+export const careerEventArcsComplete: readonly CareerEventArc[] = [...careerEventArcs, ...worldEventArcs, ...phase5EventArcs];

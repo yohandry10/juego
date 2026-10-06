@@ -5,7 +5,7 @@ import { loadCountry } from "../src/data/load-country.js";
 import { economicModelParameters, applyEconomicPolicy, advanceEconomicQuarter, createEconomicState } from "../src/domain/economic-model.js";
 import { economicModelParametersSchema, gameStateSchema } from "../src/data/schemas.js";
 import { advanceQuarter, createGameState, simulateQuarters } from "../src/engine/simulation.js";
-import { careerEventArcs, careerEventCatalog } from "../src/data/event-catalog.js";
+import { careerEventArcsComplete as careerEventArcs, careerEventCatalog } from "../src/data/event-catalog.js";
 import { careerGameStateSchema } from "../src/data/career-schemas.js";
 import { createCareerGame } from "../src/application/career-commands.js";
 import { economicPolicyCanBeDecreed, enactEconomicPolicy, executiveAuthorityPercent } from "../src/application/economic-commands.js";
@@ -17,11 +17,11 @@ const peru = countries[0]!;
 const spain = countries[1]!;
 const france = countries[2]!;
 
-test("fase 3 valida los parámetros, ofrece respuestas distintas a cada crisis y supera las 200 plantillas", () => {
+test("fase 3 valida los parámetros, ofrece respuestas distintas a cada crisis y supera las 400 plantillas", () => {
   assert.equal(economicModelParametersSchema.parse(economicModelParameters).version, "economic-model-v2");
   for (const options of Object.values(economicModelParameters.crisisResponses)) assert.ok(new Set(options.map((item) => item.policyId)).size >= 3);
-  assert.ok(careerEventCatalog.length >= 200);
-  assert.ok(careerEventArcs.length >= 14);
+  assert.ok(careerEventCatalog.length >= 400);
+  assert.ok(careerEventArcs.length >= 40);
 });
 
 test("los cinco tipos de crisis se reproducen con estados iniciales controlados y se distinguen", () => {

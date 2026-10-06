@@ -6,10 +6,31 @@ import { createGameState } from "../engine/simulation.js";
 import { advanceQuarter } from "../engine/simulation.js";
 import { createRng, hashSeed } from "../engine/rng.js";
 import { applyEconomicPolicy, economicModelParameters, policyPoliticalCost } from "../domain/economic-model.js";
-import { careerEventArcs, careerEventCatalog, eventCatalogVersion } from "../data/event-catalog.js";
+import { careerEventArcsComplete as careerEventArcs, careerEventCatalog, eventCatalogVersion } from "../data/event-catalog.js";
+import { createGeopoliticsState } from "../engine/world-simulation.js";
+import { advanceGeopolitics } from "../engine/world-simulation.js";
 import { admitPresidentialVacancy, canSubmitPresidentialVacancy, resolveCensureVote, resolveInvestitureVote, resolvePresidentialVacancy, vacancyDebateReady } from "./executive-rules.js";
 
 const clamp = (n: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, n));
+function applyGeopoliticalEffects<T extends CareerGameState["world"]>(world: T, geopolitics: CareerGameState["geopolitics"]): T {
+  const impact = geopolitics.domesticImpact;
+  if (!impact.causes.length) return world;
+  const indicators = world.economy.indicators;
+  const changes = {
+    gdpGrowthPercent: clamp(indicators.gdpGrowthPercent + impact.growthDelta * 0.25, -30, 30),
+    inflationPercent: clamp(indicators.inflationPercent + impact.inflationDelta * 0.2, -5, 100),
+    unemploymentPercent: clamp(indicators.unemploymentPercent + impact.unemploymentDelta * 0.2, 0, 70),
+  };
+  const economy = { ...world.economy, indicators: { ...indicators, ...changes }, causesByIndicator: {
+    ...world.economy.causesByIndicator,
+    gdpGrowthPercent: [...impact.causes, ...(world.economy.causesByIndicator.gdpGrowthPercent ?? [])].slice(0, 6),
+    inflationPercent: [...impact.causes, ...(world.economy.causesByIndicator.inflationPercent ?? [])].slice(0, 6),
+    unemploymentPercent: [...impact.causes, ...(world.economy.causesByIndicator.unemploymentPercent ?? [])].slice(0, 6),
+  } };
+  const approvalPercent = clamp(world.approvalPercent - Math.max(0, impact.inflationDelta + impact.unemploymentDelta - impact.growthDelta) * 0.025, 0, 100);
+  const socialBlocks = world.socialBlocks.map((block) => ({ ...block, mood: clamp(block.mood - Math.max(0, impact.inflationDelta + impact.unemploymentDelta - impact.growthDelta) * 0.08, -100, 100) }));
+  return { ...world, economy, approvalPercent, inflationPercent: changes.inflationPercent, unemploymentPercent: changes.unemploymentPercent, socialBlocks } as T;
+}
 const makeId = (seed: string, suffix: string) => `${suffix}-${hashSeed(`${seed}:${suffix}`).toString(16)}`;
 const defaultIdeology: Ideology = { economy: 50, social: 50, nationalism: 50, institutionalism: 55, rigidity: 35 };
 const eventChoices = [
@@ -222,8 +243,8 @@ export function createCareerGame(country: CountryDefinition, input: NewCareerInp
   };
   const partyDef = world.parties.find((candidate) => candidate.id === playerPartyId)!;
   const state: CareerGameState = {
-    saveSchemaVersion: 13, countryId: country.id, countryDataVersion: country.dataVersion, contentDataVersion: eventCatalogVersion, seed: input.seed, stage: "campaign", realism: input.realism ?? "realistic", ironman: input.ironman ?? false, currentTurn: 0,
-    world, player, playerPartyId,
+    saveSchemaVersion: 14, countryId: country.id, countryDataVersion: country.dataVersion, contentDataVersion: eventCatalogVersion, seed: input.seed, stage: "campaign", realism: input.realism ?? "realistic", ironman: input.ironman ?? false, currentTurn: 0,
+    world, geopolitics: createGeopoliticsState(country.id, input.seed), player, playerPartyId,
     campaign: { officeId, week: 1, totalWeeks: 4, actionsRemaining: 2, districtId: district, chamberId, partyId: playerPartyId, nominated: false, actionHistory: [], promises: [], partySupportPercent: partyDef.supportPercent, playerPreferencePercent: 3, campaignFundsSpent: 0, nationalAgenda: null, pollHistory: [], debateHistory: [] },
     electionOutcome: null, legislature: null, government: null, budget: createInitialBudgetState(world.year), partyLeadership: null, ministry: null,
     careerHistory: [{ turn: 0, roleId: officeId, outcome: "campaign-started", explanation: `La carrera empieza con una candidatura generada para ${officeId}${district === "national" ? " en el escenario nacional" : ` en ${district}`}.` }], lifeStatus: "active", legacy: null, returnCall: { status: "none", partyId: null },
@@ -899,11 +920,12 @@ export function advanceCareer(state: CareerGameState, country?: CountryDefinitio
   if (state.stage === "executive") {
     if (!country || state.government?.status !== "active") throw new Error("Falta el Gobierno activo o la ficha institucional para avanzar el turno.");
     if (state.government.challenge) throw new Error("Resuelve el procedimiento institucional antes de avanzar el trimestre.");
-    const world = advanceQuarter(country, state.world).state;
+    const geopolitics = advanceGeopolitics(state.geopolitics, state.seed);
+    const world = applyGeopoliticalEffects(advanceQuarter(country, state.world).state, geopolitics);
     const termTurn = Math.min(state.government.totalTermTurns, state.government.termTurn + 1);
     const termFinished = termTurn >= state.government.totalTermTurns;
     const government = withStability({ ...state, world }, { ...state.government, termTurn, ...(termFinished ? { status: "ended" as const } : {}) }, country);
-    let next = { ...state, world, government, stage: termFinished ? "term-summary" as const : "executive" as const, currentTurn: state.currentTurn + 1,
+    let next = { ...state, world, geopolitics, government, stage: termFinished ? "term-summary" as const : "executive" as const, currentTurn: state.currentTurn + 1,
       careerHistory: termFinished ? [...state.careerHistory, { turn: state.currentTurn + 1, roleId: country.politicalSystem.executive.officeId, outcome: "executive-term-completed", explanation: `Se completaron ${country.politicalSystem.executive.termYears} años de mandato.` }] : state.careerHistory,
       log: [...state.log, { turn: state.currentTurn + 1, text: termFinished ? "Completaste el mandato ejecutivo." : `Avanza el mandato ejecutivo: trimestre ${termTurn} de ${government.totalTermTurns}.`, explanation: "El turno actualiza el mundo trimestral con los módulos existentes de economía y sociedad." }] };
     const budgetDue = !termFinished && world.quarterIndex > next.budget.lastProposalQuarterIndex && world.quarterIndex % 4 === 0;
@@ -915,20 +937,22 @@ export function advanceCareer(state: CareerGameState, country?: CountryDefinitio
   }
   if (state.stage === "party-leadership") {
     if (!country || !state.partyLeadership) throw new Error("Falta el mandato de liderazgo o la ficha nacional.");
-    const world = advanceQuarter(country, state.world).state;
+    const geopolitics = advanceGeopolitics(state.geopolitics, state.seed);
+    const world = applyGeopoliticalEffects(advanceQuarter(country, state.world).state, geopolitics);
     const termTurn = Math.min(state.partyLeadership.totalTermTurns, state.partyLeadership.termTurn + 1);
     const termFinished = termTurn >= state.partyLeadership.totalTermTurns;
     const supportDrift = (world.approvalPercent - 50) * 0.02;
     const partyLeadership = { ...state.partyLeadership, termTurn, actionsRemaining: 2,
       supportPercent: clamp(state.partyLeadership.supportPercent + supportDrift, 0, 100) };
-    const next: CareerGameState = { ...state, world, partyLeadership, stage: termFinished ? "term-summary" : "party-leadership", currentTurn: state.currentTurn + 1,
+    const next: CareerGameState = { ...state, world, geopolitics, partyLeadership, stage: termFinished ? "term-summary" : "party-leadership", currentTurn: state.currentTurn + 1,
       careerHistory: termFinished ? [...state.careerHistory, { turn: state.currentTurn + 1, roleId: country.partyLeadership.officeId, outcome: "party-leadership-term-completed", explanation: `Se completaron ${country.partyLeadership.termYears} años y ${partyLeadership.actionsTaken.length} decisiones de liderazgo.` }] : state.careerHistory,
       log: [...state.log, { turn: state.currentTurn + 1, text: termFinished ? "Concluyó tu período de liderazgo partidario." : `Avanza el liderazgo partidario: trimestre ${termTurn} de ${partyLeadership.totalTermTurns}.`, explanation: `La economía y la aprobación avanzan un trimestre; el respaldo interno cambia según la aprobación pública y tus decisiones.` }] };
     return applyAnnualMortality(validateCareer(next), state.world.year);
   }
   if (state.stage === "minister") {
     if (!country || !state.ministry) throw new Error("Falta el nombramiento ministerial o la ficha nacional.");
-    const world = advanceQuarter(country, state.world).state;
+    const geopolitics = advanceGeopolitics(state.geopolitics, state.seed);
+    const world = applyGeopoliticalEffects(advanceQuarter(country, state.world).state, geopolitics);
     const termTurn = Math.min(state.ministry.totalTermTurns, state.ministry.termTurn + 1);
     const supportPercent = clamp(state.ministry.supportPercent + (world.approvalPercent - 50) * 0.025, 0, 100);
     const dismissed = supportPercent < 15;
@@ -936,7 +960,7 @@ export function advanceCareer(state: CareerGameState, country?: CountryDefinitio
     const ended = dismissed || termFinished;
     const ministry = { ...state.ministry, termTurn, supportPercent, actionsRemaining: 2 };
     const outcome = dismissed ? "ministerial-dismissed" : "ministerial-term-completed";
-    const next: CareerGameState = { ...state, world, ministry, stage: ended ? "term-summary" : "minister", currentTurn: state.currentTurn + 1,
+    const next: CareerGameState = { ...state, world, geopolitics, ministry, stage: ended ? "term-summary" : "minister", currentTurn: state.currentTurn + 1,
       careerHistory: ended ? [...state.careerHistory, { turn: state.currentTurn + 1, roleId: country.ministerialAppointment.officeId, outcome, explanation: dismissed ? `El respaldo ejecutivo cayó a ${supportPercent.toFixed(1)}%, por debajo del umbral de 15%.` : `Se completaron ${country.ministerialAppointment.termYears} años de mandato en la cartera.` }] : state.careerHistory,
       log: [...state.log, { turn: state.currentTurn + 1, text: dismissed ? "El ejecutivo retiró tu nombramiento." : termFinished ? "Concluyó tu período ministerial." : `Avanza el Ministerio: trimestre ${termTurn} de ${ministry.totalTermTurns}.`, explanation: dismissed ? "El respaldo del ejecutivo NPC cayó bajo el umbral visible y produjo la salida del gabinete." : `La aprobación pública modifica lentamente el respaldo ejecutivo; ahora es ${supportPercent.toFixed(1)}%.` }] };
     return applyAnnualMortality(validateCareer(next), state.world.year);
@@ -946,14 +970,15 @@ export function advanceCareer(state: CareerGameState, country?: CountryDefinitio
   if (state.government?.status === "active" && state.government.challenge) throw new Error("Resuelve el procedimiento institucional antes de avanzar el trimestre.");
   if (state.legislature.turn >= state.legislature.totalTurns) return validateCareer({ ...state, stage: "term-summary" });
   const turn = state.legislature.turn + 1;
-  const world = country ? advanceQuarter(country, state.world).state : state.world;
+  const geopolitics = country ? advanceGeopolitics(state.geopolitics, state.seed) : state.geopolitics;
+  const world = country ? applyGeopoliticalEffects(advanceQuarter(country, state.world).state, geopolitics) : state.world;
   const termFinished = Boolean(state.government?.status === "active" && state.government.termTurn + 1 >= state.government.totalTermTurns);
   const government = state.government?.status === "active"
     ? withStability({ ...state, world }, { ...state.government, termTurn: Math.min(state.government.totalTermTurns, state.government.termTurn + 1), ...(termFinished ? { status: "ended" as const } : {}) }, country!)
     : state.government;
   const legislatureFinished = turn >= state.legislature.totalTurns;
   const history = [...state.careerHistory, ...(legislatureFinished ? [{ turn: state.currentTurn + 1, roleId: state.campaign.officeId, outcome: "legislative-term-completed", explanation: `Se completó el período legislativo con ${state.legislature.voteHistory.length} votaciones registradas.` }] : []), ...(termFinished ? [{ turn: state.currentTurn + 1, roleId: country?.politicalSystem.executive.officeId ?? "executive", outcome: "government-term-completed", explanation: "El Gobierno concluye el período configurado." }] : [])];
-  let moved: CareerGameState = { ...state, world, government, stage: legislatureFinished ? "term-summary" as const : "legislature" as const, currentTurn: state.currentTurn + 1, legislature: { ...state.legislature, turn, actionsRemaining: 3, currentProposal: legislatureFinished ? null : makeProposal(state.seed, turn + 1) }, log: [...state.log, { turn: state.currentTurn + 1, text: termFinished ? "Concluyó el mandato de Gobierno." : legislatureFinished ? "Concluyó el período legislativo." : `Comienza el turno legislativo ${turn} de ${state.legislature.totalTurns}.`, explanation: termFinished ? "El mandato concluye al alcanzar la duración configurada por el país." : "Avance trimestral de la legislatura; la economía y el ánimo social también evolucionan." }], careerHistory: history };
+  let moved: CareerGameState = { ...state, world, geopolitics, government, stage: legislatureFinished ? "term-summary" as const : "legislature" as const, currentTurn: state.currentTurn + 1, legislature: { ...state.legislature, turn, actionsRemaining: 3, currentProposal: legislatureFinished ? null : makeProposal(state.seed, turn + 1) }, log: [...state.log, { turn: state.currentTurn + 1, text: termFinished ? "Concluyó el mandato de Gobierno." : legislatureFinished ? "Concluyó el período legislativo." : `Comienza el turno legislativo ${turn} de ${state.legislature.totalTurns}.`, explanation: termFinished ? "El mandato concluye al alcanzar la duración configurada por el país." : "Avance trimestral; economía, sociedad y geopolítica reaccionan a los hechos del mundo." }], careerHistory: history };
   moved = applyDueRelationshipConsequences(moved, turn);
   if (country) moved = maybeOpenGovernmentChallenge(moved, country);
   moved = applyAnnualMortality(moved, state.world.year);
