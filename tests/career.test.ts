@@ -21,10 +21,10 @@ test("campaign actions change support, use resources, and create explainable log
   assert.deepEqual(next, performCampaignAction(initial, "door-knocking"));
 });
 
-test("event catalog contains at least 80 templates, variants, and eight multi-step arcs", () => {
-  assert.ok(careerEventCatalog.length >= 80);
+test("event catalog contains at least 200 templates, variants, and fourteen multi-step arcs", () => {
+  assert.ok(careerEventCatalog.length >= 200);
   assert.ok(careerEventCatalog.every((event) => event.variants.length >= 3));
-  assert.ok(careerEventArcs.length >= 8);
+  assert.ok(careerEventArcs.length >= 14);
   assert.ok(careerEventArcs.every((arc) => arc.eventIds.length >= 3 && arc.eventIds.every((id) => careerEventCatalog.some((event) => event.id === id))));
   assert.ok(pressHeadlineTemplates.length >= 20 && pressHeadlineTemplates.length <= 40);
 });

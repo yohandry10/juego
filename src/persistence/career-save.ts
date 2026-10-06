@@ -1,6 +1,7 @@
 import { careerGameStateSchema } from "../data/career-schemas.js";
 import type { CareerGameState } from "../domain/career-types.js";
 import { createInitialBudgetState } from "../domain/budget.js";
+import { createEconomicState } from "../domain/economic-model.js";
 
 function budgetForLegacySave(legacy: Record<string, unknown>) {
   const world = typeof legacy.world === "object" && legacy.world !== null ? legacy.world as Record<string, unknown> : {};
@@ -14,16 +15,31 @@ const DB_NAME = "mandato-career";
 const STORE_NAME = "saves";
 const ACTIVE_SAVE = "active";
 
-function withV12Defaults(legacy: Record<string, unknown>): Record<string, unknown> {
+function withV13Defaults(legacy: Record<string, unknown>): Record<string, unknown> {
   const campaign = typeof legacy.campaign === "object" && legacy.campaign !== null ? legacy.campaign as Record<string, unknown> : {};
   const government = typeof legacy.government === "object" && legacy.government !== null ? legacy.government as Record<string, unknown> : null;
   const leadership = typeof legacy.partyLeadership === "object" && legacy.partyLeadership !== null ? legacy.partyLeadership as Record<string, unknown> : null;
   return {
     ...legacy,
-    saveSchemaVersion: 12,
+    saveSchemaVersion: 13,
     campaign: { ...campaign, nationalAgenda: campaign.nationalAgenda ?? null, pollHistory: campaign.pollHistory ?? [], debateHistory: campaign.debateHistory ?? [] },
     government: government ? { ...government, policyVotes: government.policyVotes ?? [] } : legacy.government,
     partyLeadership: leadership ? { ...leadership, role: leadership.role ?? "opposition" } : legacy.partyLeadership,
+    world: (() => {
+      const world = typeof legacy.world === "object" && legacy.world !== null ? legacy.world as Record<string, unknown> : {};
+      const parties = Array.isArray(world.parties) ? world.parties as Array<Record<string, unknown>> : [];
+      const factions = Array.isArray(world.factions) ? world.factions as Array<Record<string, unknown>> : [];
+      const socialBlocks = Array.isArray(world.socialBlocks) ? world.socialBlocks as Array<Record<string, unknown>> : [];
+      const countryId = typeof world.countryId === "string" ? world.countryId : String(legacy.countryId ?? "peru");
+      return {
+        ...world,
+        economy: world.economy ?? createEconomicState(countryId),
+        publicAgenda: world.publicAgenda ?? { issues: ["employment", "cost-of-living", "public-services", "institutions"].map((id, index) => ({ id, salience: [82, 76, 68, 44][index]!, ownerPartyId: null })), polarization: 38, institutionalTrust: 52, partyTrust: 50, electorateTrust: 50, collectiveActions: [] },
+        headOfStatePartyId: world.headOfStatePartyId ?? (typeof parties[0]?.id === "string" ? parties[0].id : null),
+        socialBlocks: socialBlocks.map((block, index) => ({ ...block, ideology: block.ideology ?? { economy: 50, social: 50, nationalism: 50, institutionalism: 55, rigidity: 35 }, dispersion: block.dispersion ?? 45, pressurePower: block.pressurePower ?? [72, 48, 58, 55, 65, 52][index % 6], organization: block.organization ?? [70, 40, 52, 58, 65, 48][index % 6], unmetDemandIndex: block.unmetDemandIndex ?? 20 })),
+        factions: factions.map((faction) => ({ ...faction, ideology: faction.ideology ?? (parties.find((party) => party.id === faction.partyId)?.ideology ?? { economy: 50, social: 50, nationalism: 50, institutionalism: 55, rigidity: 35 }) })),
+      };
+    })(),
   };
 }
 
@@ -32,7 +48,7 @@ export function migrateCareerSave(value: unknown): CareerGameState {
     const legacy = value as Record<string, unknown>;
     const elected = typeof legacy.electionOutcome === "object" && legacy.electionOutcome !== null && "elected" in legacy.electionOutcome && legacy.electionOutcome.elected === true;
     return careerGameStateSchema.parse({
-      ...withV12Defaults(legacy),
+      ...withV13Defaults(legacy),
       realism: legacy.realism ?? "realistic",
       ironman: legacy.ironman ?? false,
       budget: budgetForLegacySave(legacy),
@@ -49,35 +65,35 @@ export function migrateCareerSave(value: unknown): CareerGameState {
   if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && value.saveSchemaVersion === 4) {
     const legacy = value as Record<string, unknown>;
     const government = typeof legacy.government === "object" && legacy.government !== null
-      ? { ...(legacy.government as Record<string, unknown>), fallRiskPercent: 35, warningSignals: [], challenge: null }
+      ? { ...(legacy.government as Record<string, unknown>), fallRiskPercent: 35, warningSignals: [], challenge: null, policyVotes: (legacy.government as Record<string, unknown>).policyVotes ?? [] }
       : legacy.government;
-    return careerGameStateSchema.parse({ ...withV12Defaults(legacy), realism: legacy.realism ?? "realistic", ironman: legacy.ironman ?? false, government, budget: budgetForLegacySave(legacy), partyLeadership: null, ministry: null });
+    return careerGameStateSchema.parse({ ...withV13Defaults(legacy), realism: legacy.realism ?? "realistic", ironman: legacy.ironman ?? false, government, budget: budgetForLegacySave(legacy), partyLeadership: null, ministry: null });
   }
   if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && value.saveSchemaVersion === 5) {
     const legacy = value as Record<string, unknown>;
-    return careerGameStateSchema.parse({ ...withV12Defaults(legacy), realism: legacy.realism ?? "realistic", ironman: legacy.ironman ?? false, budget: budgetForLegacySave(legacy), partyLeadership: null, ministry: null });
+    return careerGameStateSchema.parse({ ...withV13Defaults(legacy), realism: legacy.realism ?? "realistic", ironman: legacy.ironman ?? false, budget: budgetForLegacySave(legacy), partyLeadership: null, ministry: null });
   }
   if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && value.saveSchemaVersion === 6) {
     const legacy = value as Record<string, unknown>;
-    return careerGameStateSchema.parse({ ...withV12Defaults(legacy), realism: legacy.realism ?? "realistic", ironman: legacy.ironman ?? false, budget: budgetForLegacySave(legacy), partyLeadership: null, ministry: null });
+    return careerGameStateSchema.parse({ ...withV13Defaults(legacy), realism: legacy.realism ?? "realistic", ironman: legacy.ironman ?? false, budget: budgetForLegacySave(legacy), partyLeadership: null, ministry: null });
   }
   if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && value.saveSchemaVersion === 7) {
     const legacy = value as Record<string, unknown>;
-    return careerGameStateSchema.parse({ ...withV12Defaults(legacy), ironman: legacy.ironman ?? false, budget: budgetForLegacySave(legacy), partyLeadership: null, ministry: null });
+    return careerGameStateSchema.parse({ ...withV13Defaults(legacy), ironman: legacy.ironman ?? false, budget: budgetForLegacySave(legacy), partyLeadership: null, ministry: null });
   }
   if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && value.saveSchemaVersion === 8) {
     const legacy = value as Record<string, unknown>;
-    return careerGameStateSchema.parse({ ...withV12Defaults(legacy), budget: budgetForLegacySave(legacy), partyLeadership: null, ministry: null });
+    return careerGameStateSchema.parse({ ...withV13Defaults(legacy), budget: budgetForLegacySave(legacy), partyLeadership: null, ministry: null });
   }
   if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && value.saveSchemaVersion === 9) {
     const legacy = value as Record<string, unknown>;
-    return careerGameStateSchema.parse({ ...withV12Defaults(legacy), partyLeadership: null, ministry: null });
+    return careerGameStateSchema.parse({ ...withV13Defaults(legacy), partyLeadership: null, ministry: null });
   }
   if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && value.saveSchemaVersion === 10) {
     const legacy = value as Record<string, unknown>;
-    return careerGameStateSchema.parse({ ...withV12Defaults(legacy), ministry: null });
+    return careerGameStateSchema.parse({ ...withV13Defaults(legacy), ministry: null });
   }
-  if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && value.saveSchemaVersion === 11) return careerGameStateSchema.parse(withV12Defaults(value as Record<string, unknown>));
+  if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && [11, 12].includes(value.saveSchemaVersion as number)) return careerGameStateSchema.parse(withV13Defaults(value as Record<string, unknown>));
   return careerGameStateSchema.parse(value);
 }
 
@@ -112,7 +128,7 @@ export async function loadCareer(): Promise<CareerGameState | null> {
   db.close();
   if (value === null) return null;
   const migrated = migrateCareerSave(value);
-  if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && [3, 4, 5, 6, 7, 8, 9, 10, 11].includes(value.saveSchemaVersion as number)) await saveCareer(migrated);
+  if (typeof value === "object" && value !== null && "saveSchemaVersion" in value && [3, 4, 5, 6, 7, 8, 9, 10, 11, 12].includes(value.saveSchemaVersion as number)) await saveCareer(migrated);
   return migrated;
 }
 

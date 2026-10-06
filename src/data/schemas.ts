@@ -1,5 +1,5 @@
 import { z } from "zod";
-import type { CandidateEligibilityRule, Character, ChamberDefinition, CountryDefinition, ElectoralDistrictDefinition, ExecutiveRules, Faction, GameEvent, GameState, Ideology, Legislator, Party, PoliticalSystem, Relationship, Sector, SocialBlock } from "../domain/types.js";
+import type { CandidateEligibilityRule, Character, ChamberDefinition, CountryDefinition, EconomicCrisisState, EconomicModelParameters, EconomicPolicyId, EconomicScenarioData, EconomicState, EconomicSectorState, ElectoralDistrictDefinition, ExecutiveRules, Faction, GameEvent, GameState, Ideology, Legislator, Party, PoliticalSystem, PublicAgendaState, Relationship, Sector, SocialBlock } from "../domain/types.js";
 
 const bounded = (min = 0, max = 100) => z.number().min(min).max(max);
 
@@ -22,10 +22,71 @@ export const legislatorSchema: z.ZodType<Legislator> = z.object({
 export const socialBlockSchema: z.ZodType<SocialBlock> = z.object({
   id: z.string().min(1), name: z.string().min(1), populationShare: bounded(),
   mood: bounded(-100, 100), demands: z.array(z.string().min(1)).min(1),
+  ideology: ideologySchema.optional(), dispersion: bounded().optional(), pressurePower: bounded().optional(), organization: bounded().optional(), unmetDemandIndex: bounded().optional(),
+}).strict();
+
+const sectorIds = ["extractive", "agriculture", "manufacturing", "services", "technology-finance"] as const;
+const crisisTypes = ["inflation", "currency", "debt", "banking", "demand-recession"] as const;
+const economicPolicyIds = ["public-investment", "austerity", "income-tax", "corporate-tax", "consumption-tax", "extractive-royalty", "health-spending", "education-spending", "infrastructure-spending", "subsidies", "transfers", "tariffs", "trade-opening", "labor-regulation", "environmental-regulation", "privatization", "nationalization", "credit-easing", "credit-tightening", "capital-controls", "currency-defense", "imf-program", "debt-restructuring", "default"] as const;
+const economicIndicatorsSchema = z.object({
+  gdpPerCapitaUsd: z.number().positive(), gdpGrowthPercent: z.number().min(-100).max(100), inflationPercent: z.number().min(-10).max(100), unemploymentPercent: bounded(0, 100), informalityPercent: bounded(),
+  publicDebtPercentGdp: bounded(0, 500), fiscalDeficitPercentGdp: z.number().min(-100).max(100), tradeBalancePercentGdp: z.number().min(-100).max(100), currentAccountPercentGdp: z.number().min(-100).max(100),
+  reservesMonthsImports: bounded(0, 100), exchangeRateIndex: z.number().positive(), policyRatePercent: z.number().min(0).max(100), creditRatingIndex: bounded(), countryRiskBasisPoints: bounded(0, 5000),
+  inequalityIndex: bounded(), povertyPercent: bounded(), realWageIndex: z.number().positive(), domesticInvestmentPercentGdp: bounded(0, 100), foreignInvestmentPercentGdp: bounded(0, 100), productivityIndex: z.number().positive(),
+}).strict();
+
+const policyEffectSchema = z.object({ politicalCost: z.number().nonnegative(), lagQuarters: z.number().int().nonnegative(), outputPercent: z.number(), employmentPercent: z.number(), inflationPercent: z.number(), debtPercentGdp: z.number(), reservePercent: z.number(), mood: z.number(), winners: z.array(z.string().min(1)), losers: z.array(z.string().min(1)) }).strict();
+export const economicModelParametersSchema: z.ZodType<EconomicModelParameters> = z.object({
+  version: z.string().min(1), dynamics: z.record(z.string().min(1), z.number()), quarterlyShock: z.number().nonnegative(), commodityShockAmplitude: z.number().nonnegative(), growthFromInvestment: z.number(), growthFromProductivity: z.number(), inflationPersistence: bounded(), inflationFromDepreciation: z.number(), unemploymentPersistence: bounded(), unemploymentFromGrowth: z.number(), debtInterestPassThrough: z.number(), reserveOutflowUnderPressure: z.number(), moodFromRealWages: z.number(), moodFromEmployment: z.number(), moodFromPrices: z.number(), ideologyPenalty: z.number().nonnegative(), austerityImmediateOutputShare: bounded(), austerityImmediateEmploymentShare: bounded(), interventionistApprovalCeiling: bounded(), marketApprovalFloor: bounded(),
+  crisisThresholds: z.record(z.enum(crisisTypes), z.number()),
+  policyEffects: z.record(z.enum(economicPolicyIds), policyEffectSchema).refine((items) => Object.keys(items).length === economicPolicyIds.length),
+  crisisResponses: z.record(z.enum(crisisTypes), z.array(z.object({ policyId: z.enum(economicPolicyIds), title: z.string().min(1), explanation: z.string().min(1) }).strict()).min(3)),
+}).strict().superRefine((parameters, context) => {
+  const requiredDynamics = ["agendaSalienceDecay", "agendaTrustReversion", "approvalToPartyTrust", "baselineTrendWeight", "collectiveActionLifetimeQuarters", "collectiveApprovalFactor", "collectiveApprovalMax", "collectiveDemandThreshold", "collectiveMoodThreshold", "collectiveStabilityFactor", "collectiveTypeOrganizationThreshold", "collectiveTypePressureThreshold", "countryRiskDebtFactor", "countryRiskDowngrade", "countryRiskRecovery", "countryRiskReservePenalty", "creditRatingDebtFactor", "creditRatingDeficitFactor", "creditRatingGrowthBonus", "creditRatingGrowthDrag", "crisisGrowthDrag", "currentAccountAdjustment", "debtAnnualization", "debtRateShock", "demandBaselineInflation", "demandBaselinePoverty", "demandBaselineUnemployment", "demandInflationWeight", "demandPovertyWeight", "demandUnemploymentWeight", "depreciationCurrentAccountFactor", "depreciationReserveOffset", "depreciationRiskFactor", "depreciationShockAmplitude", "domesticInvestmentCrisisDrag", "domesticInvestmentGrowthBonus", "domesticInvestmentRecessionDrag", "fiscalBalanceFactor", "fiscalDeficitDrift", "foreignInvestmentCrisisDrag", "foreignInvestmentMax", "foreignInvestmentRatingFactor", "foreignInvestmentRiskFactor", "globalInflationShock", "growthAnnualization", "growthOutputGap", "inequalityGrowthRelief", "inequalityInflationFactor", "inequalityInflationThreshold", "inequalityRecessionFactor", "inflationGrowthFactor", "inflationTargetPercent", "informalityGrowthRelief", "informalityRecessionFactor", "informalityUnemploymentFactor", "perCapitaAnnualization", "polarizationCollectiveFactor", "polarizationReversion", "policyRateGlobalFactor", "policyRateInflationRelief", "policyRateInflationRise", "policyRateInflationThreshold", "povertyUnemploymentFactor", "povertyWageFactor", "productivityGrowthFactor", "productivityLagFactor", "realWageGrowthFactor", "realWageInflationFactor", "reserveTradeFactor", "sectorBaseAnnualization", "sectorCommodityGrowthFactor", "sectorCrisisDrag", "sectorExchangeFactor", "sectorExportDemandFactor", "sectorGrowthMomentum", "sectorTrendReversion", "sectorTrendWeight", "socialActionSalienceEmployment", "socialActionSalienceInflation", "socialCountryRiskWeight", "socialCreditRatingWeight", "socialCurrentAccountWeight", "socialDebtWeight", "socialDeficitWeight", "socialDomesticInvestmentWeight", "socialExchangeWeight", "socialForeignInvestmentWeight", "socialGrowthWeight", "socialInequalityWeight", "socialInformalityWeight", "socialMoodActionBase", "socialMoodRandomAmplitude", "socialPerCapitaWeight", "socialPolicyRateWeight", "socialPovertyWeight", "socialProductivityWeight", "socialReservesWeight", "socialSectorWeight", "socialTradeWeight", "stabilityToInstitutionTrust", "tradeDemandFactor", "tradeDepreciationFactor", "unmetDemandNewWeight", "unmetDemandPersistence", "mandateUnemploymentGapWeight"] as const;
+  for (const key of requiredDynamics) {
+    if (parameters.dynamics[key] === undefined) context.addIssue({ code: "custom", message: `Falta el coeficiente dinámico ${key}.`, path: ["dynamics", key] });
+  }
+  for (const crisis of crisisTypes) {
+    const policies = parameters.crisisResponses[crisis];
+    if (new Set(policies.map((entry) => entry.policyId)).size !== policies.length) context.addIssue({ code: "custom", message: `Las respuestas de ${crisis} deben ofrecer medidas distintas.`, path: ["crisisResponses", crisis] });
+  }
+});
+
+const economicScenarioSchema: z.ZodType<EconomicScenarioData> = z.object({
+  snapshotYear: z.number().int().min(1900), indicators: economicIndicatorsSchema,
+  sectors: z.array(z.object({ id: z.enum(sectorIds), name: z.string().min(1), gdpSharePercent: bounded(), annualGrowthPercent: z.number(), employmentIntensity: bounded(), exportSharePercent: bounded(), commoditySensitivity: bounded(), exchangeSensitivity: bounded(), creditSensitivity: bounded(), importDependence: bounded(), stateOwnershipPercent: bounded() }).strict()).length(5),
+  fiscalSpendingPercentGdp: bounded(), taxBurdenPercentGdp: bounded(), tradeOpennessPercent: bounded(), publicOwnershipPercent: bounded(),
+}).strict().superRefine((scenario, context) => {
+  if (Math.abs(scenario.sectors.reduce((sum, sector) => sum + sector.gdpSharePercent, 0) - 100) > 0.01) context.addIssue({ code: "custom", message: "Los cinco sectores deben sumar el PIB nacional.", path: ["sectors"] });
+});
+export const economicScenariosSchema = z.record(z.string().min(1), economicScenarioSchema);
+
+const economicSectorSchema: z.ZodType<EconomicSectorState> = z.object({
+  id: z.enum(sectorIds), name: z.string().min(1), gdpSharePercent: bounded(), annualGrowthPercent: z.number().min(-100).max(100), baselineAnnualGrowthPercent: z.number().min(-100).max(100).optional(), employmentIntensity: bounded(), exportSharePercent: bounded(),
+  commoditySensitivity: bounded(), exchangeSensitivity: bounded(), creditSensitivity: bounded(), importDependence: bounded(), stateOwnershipPercent: bounded(), outputIndex: z.number().positive(),
+}).strict();
+
+const economicCrisisSchema: z.ZodType<EconomicCrisisState> = z.object({ type: z.enum(crisisTypes), severity: bounded(), startedQuarter: z.number().int().nonnegative(), explanation: z.string().min(1) }).strict();
+
+export const economicStateSchema: z.ZodType<EconomicState> = z.object({
+  snapshotYear: z.number().int().min(1900), naturalUnemploymentPercent: bounded(), indicators: economicIndicatorsSchema, sectors: z.array(economicSectorSchema).length(5),
+  publicSpendingPercentGdp: bounded(0, 100), taxBurdenPercentGdp: bounded(0, 100), tradeOpennessPercent: bounded(), publicOwnershipPercent: bounded(),
+  pendingEffects: z.array(z.object({ policyId: z.enum(economicPolicyIds), dueQuarter: z.number().int().nonnegative(), outputPercent: z.number().min(-100).max(100), employmentPercent: z.number().min(-100).max(100), productivityPercent: z.number().min(-100).max(100), reservePercent: z.number().min(-100).max(100), inflationPercent: z.number().min(-100).max(100), debtPercentGdp: z.number().min(-100).max(100), mood: z.number().min(-100).max(100), source: z.string().min(1) }).strict()),
+  crises: z.array(economicCrisisSchema), policyHistory: z.array(z.object({ policyId: z.enum(economicPolicyIds), quarter: z.number().int().nonnegative(), passed: z.boolean(), explanation: z.string().min(1), supportPercent: bounded().optional(), votes: z.array(z.object({ memberId: z.string().min(1), choice: z.enum(["yes", "no"]), reasons: z.array(z.string().min(1)) }).strict()).optional() }).strict()),
+  causesByIndicator: z.record(z.string(), z.array(z.string().min(1))),
+}).strict().superRefine((economy, context) => {
+  if (Math.abs(economy.sectors.reduce((sum, sector) => sum + sector.gdpSharePercent, 0) - 100) > 0.01) context.addIssue({ code: "custom", message: "La participación de los cinco sectores debe sumar 100%.", path: ["sectors"] });
+  if (new Set(economy.sectors.map((sector) => sector.id)).size !== economy.sectors.length) context.addIssue({ code: "custom", message: "Los cinco sectores deben tener identificadores únicos.", path: ["sectors"] });
+});
+
+const publicAgendaSchema: z.ZodType<PublicAgendaState> = z.object({
+  issues: z.array(z.object({ id: z.string().min(1), salience: bounded(), ownerPartyId: z.string().nullable() }).strict()).min(3).max(4),
+  polarization: bounded(), institutionalTrust: bounded(), partyTrust: bounded(), electorateTrust: bounded(),
+  collectiveActions: z.array(z.object({ id: z.string().min(1), type: z.enum(["strike", "march", "blockade", "rally"]), blockId: z.string().min(1), startedQuarter: z.number().int().nonnegative(), severity: bounded(), explanation: z.string().min(1), resolved: z.boolean() }).strict()),
 }).strict();
 
 export const factionSchema: z.ZodType<Faction> = z.object({
-  id: z.string().min(1), partyId: z.string().min(1), name: z.string().min(1), influencePercent: bounded(),
+  id: z.string().min(1), partyId: z.string().min(1), name: z.string().min(1), influencePercent: bounded(), ideology: ideologySchema.optional(),
 }).strict();
 
 export const sectorSchema: z.ZodType<Sector> = z.object({
@@ -92,6 +153,7 @@ const politicalSystemSchema: z.ZodType<PoliticalSystem> = z.object({
     presidentialAccusation: z.object({ grounds: z.array(z.string().min(1)).min(1) }).strict().nullable(),
     cabinetCensure: z.object({ minimumSponsorsPercent: bounded(), passageMajority: z.enum(["absolute", "simple"]), minimumDaysBeforeVote: z.number().int().nonnegative(), maximumDaysBeforeVote: z.number().int().positive() }).strict().nullable(),
   }).strict(),
+  cohabitation: z.object({ effectiveAuthorityAlignedPercent: bounded(), effectiveAuthorityCohabitationPercent: bounded(), decreeAllowedWhenAligned: z.boolean(), decreeAllowedWhenCohabiting: z.boolean() }).strict().optional(),
   presidentialTermYears: z.number().int().positive().optional(),
   presidentialElection: z.enum(["direct", "two-round", "electoral-college", "parliamentary"]).optional(),
   removalMechanisms: z.array(z.enum(["impeachment", "vacancy", "censure", "dissolution", "coup", "purge"])),
@@ -203,6 +265,8 @@ export const gameEventSchema: z.ZodType<GameEvent> = z.discriminatedUnion("type"
   z.object({ type: z.literal("economy.inflation-warning"), year: z.number().int(), quarter: z.number().int().min(1).max(4), inflationPercent: z.number().min(-20).max(100), explanation: z.string().min(1) }).strict(),
   z.object({ type: z.literal("politics.crisis"), year: z.number().int(), quarter: z.number().int().min(1).max(4), stability: bounded(), explanation: z.string().min(1) }).strict(),
   z.object({ type: z.literal("society.discontent"), year: z.number().int(), quarter: z.number().int().min(1).max(4), blockName: z.string().min(1), mood: bounded(-100, 100), explanation: z.string().min(1) }).strict(),
+  z.object({ type: z.literal("society.collective-action"), year: z.number().int(), quarter: z.number().int().min(1).max(4), blockName: z.string().min(1), action: z.enum(["strike", "march", "blockade", "rally"]), severity: bounded(), explanation: z.string().min(1) }).strict(),
+  z.object({ type: z.literal("economy.crisis"), year: z.number().int(), quarter: z.number().int().min(1).max(4), crisis: z.enum(crisisTypes), severity: bounded(), explanation: z.string().min(1) }).strict(),
 ]);
 
 export const gameStateSchema: z.ZodType<GameState> = z.object({
@@ -212,7 +276,8 @@ export const gameStateSchema: z.ZodType<GameState> = z.object({
     actors: z.number().int().min(0).max(0xffff_ffff), economy: z.number().int().min(0).max(0xffff_ffff),
     society: z.number().int().min(0).max(0xffff_ffff), politics: z.number().int().min(0).max(0xffff_ffff),
   }).strict(),
-  quarterIndex: z.number().int().nonnegative(), approvalPercent: bounded(), politicalStability: bounded(), gdpIndex: z.number().positive(),
+  quarterIndex: z.number().int().nonnegative(), approvalPercent: bounded(), politicalStability: bounded(), gdpIndex: z.number().positive(), economy: economicStateSchema,
+  publicAgenda: publicAgendaSchema, headOfStatePartyId: z.string().min(1).nullable(),
   inflationPercent: z.number().min(-20).max(100), unemploymentPercent: z.number().min(0).max(80),
   parties: z.array(partySchema), factions: z.array(factionSchema), legislators: z.array(legislatorSchema), socialBlocks: z.array(socialBlockSchema),
   eventHistory: z.array(gameEventSchema),

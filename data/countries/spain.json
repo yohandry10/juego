@@ -217,7 +217,18 @@
         "salarios y coste de vida"
       ],
       "populationShare": 27,
-      "name": "Trabajadores"
+      "name": "Trabajadores",
+      "ideology": {
+        "economy": 28,
+        "social": 66,
+        "nationalism": 34,
+        "institutionalism": 64,
+        "rigidity": 52
+      },
+      "dispersion": 45,
+      "pressurePower": 80,
+      "organization": 84,
+      "unmetDemandIndex": 20
     },
     {
       "id": "middle-income",
@@ -227,7 +238,18 @@
         "vivienda asequible"
       ],
       "populationShare": 25,
-      "name": "Clases medias"
+      "name": "Clases medias",
+      "ideology": {
+        "economy": 55,
+        "social": 62,
+        "nationalism": 42,
+        "institutionalism": 70,
+        "rigidity": 34
+      },
+      "dispersion": 38,
+      "pressurePower": 42,
+      "organization": 58,
+      "unmetDemandIndex": 20
     },
     {
       "id": "business",
@@ -237,7 +259,18 @@
         "productividad"
       ],
       "populationShare": 13,
-      "name": "Empresariado"
+      "name": "Empresariado",
+      "ideology": {
+        "economy": 86,
+        "social": 45,
+        "nationalism": 46,
+        "institutionalism": 74,
+        "rigidity": 48
+      },
+      "dispersion": 35,
+      "pressurePower": 64,
+      "organization": 78,
+      "unmetDemandIndex": 20
     },
     {
       "id": "rural-communities",
@@ -247,7 +280,18 @@
         "servicios de proximidad"
       ],
       "populationShare": 12,
-      "name": "Territorios rurales"
+      "name": "Territorios rurales",
+      "ideology": {
+        "economy": 43,
+        "social": 51,
+        "nationalism": 66,
+        "institutionalism": 54,
+        "rigidity": 64
+      },
+      "dispersion": 52,
+      "pressurePower": 75,
+      "organization": 56,
+      "unmetDemandIndex": 20
     },
     {
       "id": "regional-identities",
@@ -257,7 +301,18 @@
         "financiación territorial"
       ],
       "populationShare": 11,
-      "name": "Comunidades territoriales"
+      "name": "Comunidades territoriales",
+      "ideology": {
+        "economy": 46,
+        "social": 69,
+        "nationalism": 30,
+        "institutionalism": 57,
+        "rigidity": 62
+      },
+      "dispersion": 48,
+      "pressurePower": 68,
+      "organization": 66,
+      "unmetDemandIndex": 20
     },
     {
       "id": "youth",
@@ -267,7 +322,18 @@
         "acceso a vivienda"
       ],
       "populationShare": 12,
-      "name": "Jóvenes"
+      "name": "Jóvenes",
+      "ideology": {
+        "economy": 65,
+        "social": 78,
+        "nationalism": 22,
+        "institutionalism": 77,
+        "rigidity": 27
+      },
+      "dispersion": 58,
+      "pressurePower": 44,
+      "organization": 50,
+      "unmetDemandIndex": 20
     }
   ],
   "electoralDistricts": [

@@ -173,7 +173,7 @@ export interface CharacterRelationship {
 }
 
 export interface CareerGameState {
-  readonly saveSchemaVersion: 12;
+  readonly saveSchemaVersion: 13;
   readonly countryId: string;
   readonly countryDataVersion: string;
   readonly contentDataVersion: string;

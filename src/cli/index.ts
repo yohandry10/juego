@@ -45,6 +45,8 @@ function formatEvent(event: GameEvent): string {
     case "economy.inflation-warning": return `Alerta de inflación en ${event.quarter}T ${event.year}: ${event.inflationPercent.toFixed(2)}%. Causa: ${event.explanation}`;
     case "politics.crisis": return `Crisis política en ${event.quarter}T ${event.year}: estabilidad ${event.stability.toFixed(1)}%. Causa: ${event.explanation}`;
     case "society.discontent": return `Malestar social: ${event.blockName} registra humor ${event.mood.toFixed(1)}. Causa: ${event.explanation}`;
+    case "society.collective-action": return `Acción colectiva (${event.action}) de ${event.blockName}, presión ${event.severity.toFixed(0)}. Causa: ${event.explanation}`;
+    case "economy.crisis": return `Crisis económica (${event.crisis}), gravedad ${event.severity.toFixed(0)}. Causa: ${event.explanation}`;
   }
 }
 

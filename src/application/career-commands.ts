@@ -1,10 +1,11 @@
 import type { CareerGameState, CampaignActionType, CampaignActionRecord, PoliticalCharacter, LegislativeProposal, VoteRecord, CharacterRelationship, InboxItem, InboxOption, RelationshipMemory, AttributeId, GovernmentState, LegacyProfile, GovernmentChallenge, RealismMode, PartyLeadershipState, MinistryState } from "../domain/career-types.js";
-import type { CountryDefinition, Faction, GameState, Ideology, Party } from "../domain/types.js";
+import type { CountryDefinition, EconomicPolicyId, EconomicPolicyRoute, Faction, GameState, Ideology, Party } from "../domain/types.js";
 import { careerGameStateSchema } from "../data/career-schemas.js";
 import { createInitialBudgetState } from "../domain/budget.js";
 import { createGameState } from "../engine/simulation.js";
 import { advanceQuarter } from "../engine/simulation.js";
 import { createRng, hashSeed } from "../engine/rng.js";
+import { applyEconomicPolicy, economicModelParameters, policyPoliticalCost } from "../domain/economic-model.js";
 import { careerEventArcs, careerEventCatalog, eventCatalogVersion } from "../data/event-catalog.js";
 import { admitPresidentialVacancy, canSubmitPresidentialVacancy, resolveCensureVote, resolveInvestitureVote, resolvePresidentialVacancy, vacancyDebateReady } from "./executive-rules.js";
 
@@ -82,7 +83,9 @@ export function calculateGovernmentStability(state: CareerGameState, supportPart
   const inflationGap = Math.max(0, state.world.inflationPercent - expectations.inflationCeilingPercent);
   const unemploymentGap = Math.max(0, state.world.unemploymentPercent - expectations.unemploymentCeilingPercent);
   const approvalGap = Math.max(0, expectations.approvalFloorPercent - state.world.approvalPercent);
-  const expectationsPressure = clamp(Math.round(growthGap * 2 + inflationGap * 1.5 + unemploymentGap * 1.5 + approvalGap * 0.15), 0, 20);
+  const mandateTrust = (state.world.publicAgenda.institutionalTrust * 0.35 + state.world.publicAgenda.partyTrust * 0.25 + state.world.publicAgenda.electorateTrust * 0.4);
+  const trustPressure = Math.max(0, (55 - mandateTrust) * 0.18);
+  const expectationsPressure = clamp(Math.round(growthGap * 2 + inflationGap * 1.5 + unemploymentGap * economicModelParameters.dynamics.mandateUnemploymentGapWeight! + approvalGap * 0.15 + trustPressure), 0, 24);
   const risk = clamp(Math.round(62 - supportPercent * 0.48 + Math.max(0, 50 - state.world.approvalPercent) * 0.45 + realismPressure + expectationsPressure), 0, 95);
   const signals = [
     ...(supportPercent < 50 ? ["El bloque de apoyo no alcanza la mitad de la cámara."] : []),
@@ -91,6 +94,7 @@ export function calculateGovernmentStability(state: CareerGameState, supportPart
     ...(inflationGap > 0.25 ? [`La inflación (${state.world.inflationPercent.toFixed(1)}%) supera el umbral nacional (${expectations.inflationCeilingPercent}%).`] : []),
     ...(unemploymentGap > 0.25 ? [`El desempleo (${state.world.unemploymentPercent.toFixed(1)}%) supera el umbral nacional (${expectations.unemploymentCeilingPercent}%).`] : []),
     ...(approvalGap > 0 ? [`La aprobación está por debajo de la expectativa de mandato (${expectations.approvalFloorPercent}%).`] : []),
+    ...(trustPressure > 1 ? [`La confianza del congreso, partido y electorado promedia ${mandateTrust.toFixed(0)} y eleva el riesgo del mandato.`] : []),
     ...(risk >= 55 ? ["La combinación de apoyos, desempeño y aprobación eleva el riesgo de una crisis institucional."] : []),
   ];
   return { fallRiskPercent: risk, warningSignals: signals };
@@ -218,7 +222,7 @@ export function createCareerGame(country: CountryDefinition, input: NewCareerInp
   };
   const partyDef = world.parties.find((candidate) => candidate.id === playerPartyId)!;
   const state: CareerGameState = {
-    saveSchemaVersion: 12, countryId: country.id, countryDataVersion: country.dataVersion, contentDataVersion: eventCatalogVersion, seed: input.seed, stage: "campaign", realism: input.realism ?? "realistic", ironman: input.ironman ?? false, currentTurn: 0,
+    saveSchemaVersion: 13, countryId: country.id, countryDataVersion: country.dataVersion, contentDataVersion: eventCatalogVersion, seed: input.seed, stage: "campaign", realism: input.realism ?? "realistic", ironman: input.ironman ?? false, currentTurn: 0,
     world, player, playerPartyId,
     campaign: { officeId, week: 1, totalWeeks: 4, actionsRemaining: 2, districtId: district, chamberId, partyId: playerPartyId, nominated: false, actionHistory: [], promises: [], partySupportPercent: partyDef.supportPercent, playerPreferencePercent: 3, campaignFundsSpent: 0, nationalAgenda: null, pollHistory: [], debateHistory: [] },
     electionOutcome: null, legislature: null, government: null, budget: createInitialBudgetState(world.year), partyLeadership: null, ministry: null,

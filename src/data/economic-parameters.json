@@ -1,0 +1,675 @@
+{
+  "version": "economic-model-v2",
+  "quarterlyShock": 0.45,
+  "growthFromInvestment": 0.025,
+  "growthFromProductivity": 0.12,
+  "inflationPersistence": 0.82,
+  "inflationFromDepreciation": 0.18,
+  "unemploymentPersistence": 0.86,
+  "unemploymentFromGrowth": 0.34,
+  "debtInterestPassThrough": 0.025,
+  "reserveOutflowUnderPressure": 0.4,
+  "moodFromRealWages": 0.14,
+  "moodFromEmployment": 0.12,
+  "moodFromPrices": 0.1,
+  "ideologyPenalty": 0.06,
+  "austerityImmediateOutputShare": 0.45,
+  "austerityImmediateEmploymentShare": 0.4,
+  "crisisThresholds": {
+    "inflation": 9,
+    "currency": 28,
+    "debt": 105,
+    "banking": 24,
+    "demand-recession": -1.5
+  },
+  "crisisResponses": {
+    "inflation": [
+      {
+        "policyId": "credit-tightening",
+        "title": "Endurecer el crédito",
+        "explanation": "Reduce la presión de precios, con costo de actividad y empleo."
+      },
+      {
+        "policyId": "subsidies",
+        "title": "Amortiguar precios esenciales",
+        "explanation": "Alivia el costo de vida de inmediato, con mayor gasto y riesgo fiscal."
+      },
+      {
+        "policyId": "income-tax",
+        "title": "Ajustar impuestos a la renta",
+        "explanation": "Modera la demanda y recauda, con costo político para contribuyentes afectados."
+      }
+    ],
+    "currency": [
+      {
+        "policyId": "currency-defense",
+        "title": "Defender la moneda",
+        "explanation": "Contiene la depreciación inmediata a costa de reservas."
+      },
+      {
+        "policyId": "capital-controls",
+        "title": "Regular flujos de capital",
+        "explanation": "Compra tiempo para las reservas, con fricción financiera y comercial."
+      },
+      {
+        "policyId": "imf-program",
+        "title": "Negociar un programa de estabilización",
+        "explanation": "Refuerza reservas y financiamiento con ajustes internos y costo social."
+      }
+    ],
+    "debt": [
+      {
+        "policyId": "austerity",
+        "title": "Contener el gasto",
+        "explanation": "Reduce el déficit más rápido, con un golpe inmediato a demanda y empleo."
+      },
+      {
+        "policyId": "debt-restructuring",
+        "title": "Reestructurar vencimientos",
+        "explanation": "Reduce el servicio de deuda, con costo para acreedores y acceso futuro al crédito."
+      },
+      {
+        "policyId": "corporate-tax",
+        "title": "Ampliar la recaudación empresarial",
+        "explanation": "Mejora ingresos públicos con un costo de inversión y oposición empresarial."
+      }
+    ],
+    "banking": [
+      {
+        "policyId": "credit-easing",
+        "title": "Proveer liquidez",
+        "explanation": "Apoya crédito y empleo en el corto plazo, con presión inflacionaria y sobre reservas."
+      },
+      {
+        "policyId": "imf-program",
+        "title": "Asegurar liquidez externa",
+        "explanation": "Refuerza la posición de reservas, bajo condiciones fiscales y sociales."
+      },
+      {
+        "policyId": "capital-controls",
+        "title": "Frenar salidas de capital",
+        "explanation": "Contiene retiros de liquidez y movimientos especulativos con restricciones financieras."
+      }
+    ],
+    "demand-recession": [
+      {
+        "policyId": "public-investment",
+        "title": "Invertir en infraestructura",
+        "explanation": "Sostiene demanda y empleo futuro; el mayor rendimiento llega con rezago."
+      },
+      {
+        "policyId": "transfers",
+        "title": "Ampliar transferencias temporales",
+        "explanation": "Apoya consumo pronto con costo fiscal y un efecto que se desvanece."
+      },
+      {
+        "policyId": "credit-easing",
+        "title": "Facilitar crédito productivo",
+        "explanation": "Moviliza inversión privada con riesgo de inflación y deuda."
+      }
+    ]
+  },
+  "policyEffects": {
+    "public-investment": {
+      "politicalCost": 5,
+      "lagQuarters": 4,
+      "outputPercent": 0.25,
+      "employmentPercent": 0.8,
+      "inflationPercent": 0.1,
+      "debtPercentGdp": 0.45,
+      "reservePercent": 0,
+      "mood": 1.2,
+      "winners": [
+        "workers",
+        "rural-communities"
+      ],
+      "losers": [
+        "business",
+        "middle-income"
+      ]
+    },
+    "austerity": {
+      "politicalCost": 6,
+      "lagQuarters": 3,
+      "outputPercent": -0.55,
+      "employmentPercent": -0.3,
+      "inflationPercent": -0.15,
+      "debtPercentGdp": -0.7,
+      "reservePercent": 0.2,
+      "mood": -1.4,
+      "winners": [
+        "business"
+      ],
+      "losers": [
+        "workers",
+        "middle-income",
+        "youth"
+      ]
+    },
+    "income-tax": {
+      "politicalCost": 4,
+      "lagQuarters": 1,
+      "outputPercent": -0.12,
+      "employmentPercent": 0,
+      "inflationPercent": -0.02,
+      "debtPercentGdp": -0.18,
+      "reservePercent": 0,
+      "mood": -0.1,
+      "winners": [
+        "workers",
+        "public-services"
+      ],
+      "losers": [
+        "business",
+        "middle-income"
+      ]
+    },
+    "corporate-tax": {
+      "politicalCost": 4,
+      "lagQuarters": 2,
+      "outputPercent": -0.18,
+      "employmentPercent": -0.18,
+      "inflationPercent": 0,
+      "debtPercentGdp": -0.16,
+      "reservePercent": 0,
+      "mood": 0,
+      "winners": [
+        "workers",
+        "public-services"
+      ],
+      "losers": [
+        "business"
+      ]
+    },
+    "consumption-tax": {
+      "politicalCost": 4,
+      "lagQuarters": 1,
+      "outputPercent": -0.12,
+      "employmentPercent": -0.04,
+      "inflationPercent": 0.35,
+      "debtPercentGdp": -0.16,
+      "reservePercent": 0,
+      "mood": -0.5,
+      "winners": [
+        "business",
+        "public-services"
+      ],
+      "losers": [
+        "workers",
+        "middle-income"
+      ]
+    },
+    "extractive-royalty": {
+      "politicalCost": 4,
+      "lagQuarters": 2,
+      "outputPercent": -0.12,
+      "employmentPercent": -0.04,
+      "inflationPercent": 0,
+      "debtPercentGdp": -0.12,
+      "reservePercent": 0.12,
+      "mood": 0.25,
+      "winners": [
+        "workers",
+        "rural-communities"
+      ],
+      "losers": [
+        "extractive-sector",
+        "business"
+      ]
+    },
+    "health-spending": {
+      "politicalCost": 4,
+      "lagQuarters": 2,
+      "outputPercent": 0.12,
+      "employmentPercent": 0.55,
+      "inflationPercent": 0.03,
+      "debtPercentGdp": 0.16,
+      "reservePercent": 0,
+      "mood": 1,
+      "winners": [
+        "workers",
+        "middle-income",
+        "youth"
+      ],
+      "losers": [
+        "business"
+      ]
+    },
+    "education-spending": {
+      "politicalCost": 4,
+      "lagQuarters": 5,
+      "outputPercent": 0.2,
+      "employmentPercent": 0.08,
+      "inflationPercent": 0.02,
+      "debtPercentGdp": 0.18,
+      "reservePercent": 0,
+      "mood": 0.8,
+      "winners": [
+        "youth",
+        "workers"
+      ],
+      "losers": [
+        "business"
+      ]
+    },
+    "infrastructure-spending": {
+      "politicalCost": 5,
+      "lagQuarters": 4,
+      "outputPercent": 0.3,
+      "employmentPercent": 0.16,
+      "inflationPercent": 0.05,
+      "debtPercentGdp": 0.3,
+      "reservePercent": 0,
+      "mood": 0.8,
+      "winners": [
+        "rural-communities",
+        "workers"
+      ],
+      "losers": [
+        "business"
+      ]
+    },
+    "subsidies": {
+      "politicalCost": 4,
+      "lagQuarters": 0,
+      "outputPercent": 0.08,
+      "employmentPercent": 0.28,
+      "inflationPercent": -0.2,
+      "debtPercentGdp": 0.22,
+      "reservePercent": 0,
+      "mood": 0.65,
+      "winners": [
+        "workers",
+        "rural-communities"
+      ],
+      "losers": [
+        "business",
+        "public-services"
+      ]
+    },
+    "transfers": {
+      "politicalCost": 4,
+      "lagQuarters": 1,
+      "outputPercent": 0.1,
+      "employmentPercent": 0.45,
+      "inflationPercent": 0.05,
+      "debtPercentGdp": 0.2,
+      "reservePercent": 0,
+      "mood": 0.7,
+      "winners": [
+        "workers",
+        "youth"
+      ],
+      "losers": [
+        "business"
+      ]
+    },
+    "tariffs": {
+      "politicalCost": 4,
+      "lagQuarters": 2,
+      "outputPercent": 0.02,
+      "employmentPercent": 0.06,
+      "inflationPercent": 0.25,
+      "debtPercentGdp": -0.02,
+      "reservePercent": 0.1,
+      "mood": 0.1,
+      "winners": [
+        "manufacturing",
+        "workers"
+      ],
+      "losers": [
+        "middle-income",
+        "technology-finance"
+      ]
+    },
+    "trade-opening": {
+      "politicalCost": 4,
+      "lagQuarters": 3,
+      "outputPercent": 0.24,
+      "employmentPercent": -0.24,
+      "inflationPercent": -0.1,
+      "debtPercentGdp": 0,
+      "reservePercent": 0.2,
+      "mood": 0.1,
+      "winners": [
+        "consumers",
+        "extractive-sector",
+        "technology-finance"
+      ],
+      "losers": [
+        "manufacturing",
+        "workers"
+      ]
+    },
+    "labor-regulation": {
+      "politicalCost": 4,
+      "lagQuarters": 3,
+      "outputPercent": -0.08,
+      "employmentPercent": -0.04,
+      "inflationPercent": 0.02,
+      "debtPercentGdp": 0,
+      "reservePercent": 0,
+      "mood": 0.6,
+      "winners": [
+        "workers"
+      ],
+      "losers": [
+        "business"
+      ]
+    },
+    "environmental-regulation": {
+      "politicalCost": 4,
+      "lagQuarters": 3,
+      "outputPercent": -0.1,
+      "employmentPercent": -0.04,
+      "inflationPercent": 0,
+      "debtPercentGdp": 0,
+      "reservePercent": 0,
+      "mood": 0.35,
+      "winners": [
+        "rural-communities",
+        "workers"
+      ],
+      "losers": [
+        "extractive-sector"
+      ]
+    },
+    "privatization": {
+      "politicalCost": 5,
+      "lagQuarters": 3,
+      "outputPercent": 0.2,
+      "employmentPercent": -0.28,
+      "inflationPercent": 0,
+      "debtPercentGdp": -0.25,
+      "reservePercent": 0.15,
+      "mood": -0.35,
+      "winners": [
+        "business"
+      ],
+      "losers": [
+        "workers",
+        "public-services"
+      ]
+    },
+    "nationalization": {
+      "politicalCost": 6,
+      "lagQuarters": 4,
+      "outputPercent": -0.22,
+      "employmentPercent": 0.06,
+      "inflationPercent": 0.08,
+      "debtPercentGdp": 0.28,
+      "reservePercent": -0.12,
+      "mood": 0.25,
+      "winners": [
+        "workers",
+        "public-services"
+      ],
+      "losers": [
+        "business",
+        "technology-finance"
+      ]
+    },
+    "credit-easing": {
+      "politicalCost": 3,
+      "lagQuarters": 2,
+      "outputPercent": 0.22,
+      "employmentPercent": 0.1,
+      "inflationPercent": 0.32,
+      "debtPercentGdp": 0.04,
+      "reservePercent": -0.08,
+      "mood": 0.3,
+      "winners": [
+        "business",
+        "workers"
+      ],
+      "losers": [
+        "savers"
+      ]
+    },
+    "credit-tightening": {
+      "politicalCost": 3,
+      "lagQuarters": 2,
+      "outputPercent": -0.3,
+      "employmentPercent": -0.1,
+      "inflationPercent": -0.45,
+      "debtPercentGdp": 0.02,
+      "reservePercent": 0.1,
+      "mood": -0.4,
+      "winners": [
+        "savers",
+        "business"
+      ],
+      "losers": [
+        "workers",
+        "debtors"
+      ]
+    },
+    "capital-controls": {
+      "politicalCost": 5,
+      "lagQuarters": 1,
+      "outputPercent": -0.18,
+      "employmentPercent": -0.03,
+      "inflationPercent": 0.1,
+      "debtPercentGdp": 0,
+      "reservePercent": 0.45,
+      "mood": -0.1,
+      "winners": [
+        "workers",
+        "public-services"
+      ],
+      "losers": [
+        "business",
+        "technology-finance"
+      ]
+    },
+    "currency-defense": {
+      "politicalCost": 4,
+      "lagQuarters": 0,
+      "outputPercent": -0.12,
+      "employmentPercent": -0.04,
+      "inflationPercent": -0.2,
+      "debtPercentGdp": 0,
+      "reservePercent": -0.5,
+      "mood": -0.1,
+      "winners": [
+        "consumers",
+        "workers"
+      ],
+      "losers": [
+        "extractive-sector",
+        "business"
+      ]
+    },
+    "imf-program": {
+      "politicalCost": 7,
+      "lagQuarters": 2,
+      "outputPercent": -0.45,
+      "employmentPercent": -0.2,
+      "inflationPercent": -0.35,
+      "debtPercentGdp": -0.5,
+      "reservePercent": 0.7,
+      "mood": -1.2,
+      "winners": [
+        "business",
+        "technology-finance"
+      ],
+      "losers": [
+        "workers",
+        "middle-income",
+        "youth"
+      ]
+    },
+    "debt-restructuring": {
+      "politicalCost": 6,
+      "lagQuarters": 2,
+      "outputPercent": -0.25,
+      "employmentPercent": -0.1,
+      "inflationPercent": 0.08,
+      "debtPercentGdp": -1.5,
+      "reservePercent": 0.25,
+      "mood": -0.6,
+      "winners": [
+        "workers",
+        "public-services"
+      ],
+      "losers": [
+        "business",
+        "technology-finance"
+      ]
+    },
+    "default": {
+      "politicalCost": 8,
+      "lagQuarters": 4,
+      "outputPercent": -1.1,
+      "employmentPercent": -0.55,
+      "inflationPercent": 0.65,
+      "debtPercentGdp": -3,
+      "reservePercent": -0.35,
+      "mood": -2,
+      "winners": [
+        "debtors",
+        "public-services"
+      ],
+      "losers": [
+        "business",
+        "workers",
+        "technology-finance"
+      ]
+    }
+  },
+  "commodityShockAmplitude": 0.8,
+  "interventionistApprovalCeiling": 58,
+  "marketApprovalFloor": 42,
+  "dynamics": {
+    "baselineTrendWeight": 0.35,
+    "sectorTrendWeight": 0.65,
+    "growthAnnualization": 4,
+    "growthOutputGap": 0.8,
+    "crisisGrowthDrag": 0.7,
+    "depreciationRiskFactor": 0.12,
+    "depreciationCurrentAccountFactor": 0.08,
+    "depreciationShockAmplitude": 0.35,
+    "depreciationReserveOffset": 0.005,
+    "inflationTargetPercent": 3,
+    "inflationGrowthFactor": 0.35,
+    "globalInflationShock": 0.12,
+    "fiscalBalanceFactor": 0.01,
+    "fiscalDeficitDrift": 0.35,
+    "debtAnnualization": 4,
+    "debtRateShock": 0.04,
+    "reserveTradeFactor": 0.01,
+    "realWageGrowthFactor": 0.4,
+    "realWageInflationFactor": 0.25,
+    "informalityUnemploymentFactor": 0.08,
+    "informalityRecessionFactor": 0.03,
+    "informalityGrowthRelief": 0.015,
+    "povertyUnemploymentFactor": 0.18,
+    "povertyWageFactor": 0.04,
+    "inequalityRecessionFactor": 0.04,
+    "inequalityGrowthRelief": 0.015,
+    "inequalityInflationThreshold": 6,
+    "inequalityInflationFactor": 0.08,
+    "productivityGrowthFactor": 0.08,
+    "productivityLagFactor": 0.1,
+    "foreignInvestmentRatingFactor": 0.008,
+    "foreignInvestmentRiskFactor": 0.003,
+    "foreignInvestmentCrisisDrag": 0.2,
+    "creditRatingDebtFactor": 0.012,
+    "creditRatingDeficitFactor": 0.2,
+    "creditRatingGrowthBonus": 0.12,
+    "creditRatingGrowthDrag": 0.1,
+    "countryRiskDebtFactor": 2,
+    "countryRiskDowngrade": 10,
+    "countryRiskRecovery": 4,
+    "countryRiskReservePenalty": 20,
+    "perCapitaAnnualization": 400,
+    "policyRateGlobalFactor": 0.08,
+    "policyRateInflationThreshold": 6,
+    "policyRateInflationRise": 0.12,
+    "policyRateInflationRelief": 0.04,
+    "domesticInvestmentGrowthBonus": 0.03,
+    "domesticInvestmentRecessionDrag": 0.08,
+    "domesticInvestmentCrisisDrag": 0.1,
+    "tradeDepreciationFactor": 0.06,
+    "tradeDemandFactor": 0.08,
+    "currentAccountAdjustment": 0.08,
+    "sectorBaseAnnualization": 4,
+    "sectorCommodityGrowthFactor": 0.01,
+    "sectorExportDemandFactor": 0.01,
+    "sectorExchangeFactor": 0.04,
+    "sectorCrisisFactor": 1,
+    "exchangeRateMin": 1,
+    "exchangeRateMax": 10000,
+    "inflationMin": -5,
+    "inflationMax": 100,
+    "unemploymentMax": 70,
+    "reserveMax": 60,
+    "realWageMin": 10,
+    "realWageMax": 500,
+    "informalityMax": 95,
+    "povertyMax": 90,
+    "productivityMin": 20,
+    "productivityMax": 300,
+    "foreignInvestmentMax": 25,
+    "fiscalDeficitMin": -20,
+    "fiscalDeficitMax": 40,
+    "debtMax": 300,
+    "countryRiskMax": 2000,
+    "tradeBalanceMin": -30,
+    "tradeBalanceMax": 30,
+    "currentAccountMin": -30,
+    "currentAccountMax": 30,
+    "sectorGrowthMin": -30,
+    "sectorGrowthMax": 30,
+    "sectorOutputMin": 1,
+    "sectorOutputMax": 10000,
+    "sectorCrisisDrag": 1,
+    "sectorGrowthMomentum": 0.18,
+    "demandBaselineUnemployment": 5,
+    "demandUnemploymentWeight": 2,
+    "demandBaselineInflation": 3,
+    "demandInflationWeight": 1.4,
+    "demandBaselinePoverty": 15,
+    "demandPovertyWeight": 0.7,
+    "unmetDemandPersistence": 0.82,
+    "unmetDemandNewWeight": 0.18,
+    "collectiveMoodThreshold": -25,
+    "collectiveDemandThreshold": 30,
+    "collectiveTypeOrganizationThreshold": 65,
+    "collectiveTypePressureThreshold": 65,
+    "collectiveActionLifetimeQuarters": 2,
+    "collectiveApprovalFactor": 0.01,
+    "collectiveApprovalMax": 3,
+    "collectiveStabilityFactor": 0.4,
+    "approvalToPartyTrust": 0.08,
+    "stabilityToInstitutionTrust": 0.06,
+    "socialActionSalienceEmployment": 0.03,
+    "socialActionSalienceInflation": 0.04,
+    "agendaSalienceDecay": 0.15,
+    "agendaTrustReversion": 0.25,
+    "polarizationReversion": 0.04,
+    "polarizationCollectiveFactor": 0.002,
+    "socialMoodActionBase": 0.6,
+    "socialMoodRandomAmplitude": 1.1,
+    "socialGrowthWeight": 0.12,
+    "socialPerCapitaWeight": 0.3,
+    "socialInformalityWeight": 0.07,
+    "socialDebtWeight": 0.018,
+    "socialDeficitWeight": 0.04,
+    "socialTradeWeight": 0.06,
+    "socialCurrentAccountWeight": 0.03,
+    "socialExchangeWeight": 0.02,
+    "socialReservesWeight": 0.1,
+    "socialInequalityWeight": 0.1,
+    "socialPovertyWeight": 0.12,
+    "socialProductivityWeight": 0.03,
+    "socialForeignInvestmentWeight": 0.15,
+    "socialCreditRatingWeight": 0.05,
+    "socialCountryRiskWeight": 0.005,
+    "socialPolicyRateWeight": 0.08,
+    "socialDomesticInvestmentWeight": 0.25,
+    "socialSectorWeight": 0.05,
+    "mandateUnemploymentGapWeight": 2,
+    "sectorTrendReversion": 0.12
+  }
+}

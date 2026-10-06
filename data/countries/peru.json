@@ -297,7 +297,18 @@
       "demands": [
         "empleo estable",
         "salarios que sigan el costo de vida"
-      ]
+      ],
+      "ideology": {
+        "economy": 28,
+        "social": 66,
+        "nationalism": 34,
+        "institutionalism": 64,
+        "rigidity": 52
+      },
+      "dispersion": 45,
+      "pressurePower": 80,
+      "organization": 84,
+      "unmetDemandIndex": 20
     },
     {
       "id": "middle-income",
@@ -307,7 +318,18 @@
       "demands": [
         "servicios públicos confiables",
         "seguridad económica"
-      ]
+      ],
+      "ideology": {
+        "economy": 55,
+        "social": 62,
+        "nationalism": 42,
+        "institutionalism": 70,
+        "rigidity": 34
+      },
+      "dispersion": 38,
+      "pressurePower": 42,
+      "organization": 58,
+      "unmetDemandIndex": 20
     },
     {
       "id": "business",
@@ -317,7 +339,18 @@
       "demands": [
         "reglas previsibles",
         "acceso a crédito"
-      ]
+      ],
+      "ideology": {
+        "economy": 86,
+        "social": 45,
+        "nationalism": 46,
+        "institutionalism": 74,
+        "rigidity": 48
+      },
+      "dispersion": 35,
+      "pressurePower": 64,
+      "organization": 78,
+      "unmetDemandIndex": 20
     },
     {
       "id": "rural-communities",
@@ -327,7 +360,18 @@
       "demands": [
         "infraestructura",
         "representación territorial"
-      ]
+      ],
+      "ideology": {
+        "economy": 43,
+        "social": 51,
+        "nationalism": 66,
+        "institutionalism": 54,
+        "rigidity": 64
+      },
+      "dispersion": 52,
+      "pressurePower": 75,
+      "organization": 56,
+      "unmetDemandIndex": 20
     },
     {
       "id": "media-and-faith",
@@ -337,7 +381,18 @@
       "demands": [
         "confianza institucional",
         "libertad de expresión"
-      ]
+      ],
+      "ideology": {
+        "economy": 55,
+        "social": 62,
+        "nationalism": 42,
+        "institutionalism": 70,
+        "rigidity": 34
+      },
+      "dispersion": 38,
+      "pressurePower": 42,
+      "organization": 58,
+      "unmetDemandIndex": 20
     },
     {
       "id": "youth",
@@ -347,7 +402,18 @@
       "demands": [
         "educación accesible",
         "oportunidades de futuro"
-      ]
+      ],
+      "ideology": {
+        "economy": 65,
+        "social": 78,
+        "nationalism": 22,
+        "institutionalism": 77,
+        "rigidity": 27
+      },
+      "dispersion": 58,
+      "pressurePower": 44,
+      "organization": 50,
+      "unmetDemandIndex": 20
     }
   ],
   "electoralDistricts": [

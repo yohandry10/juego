@@ -1,0 +1,5059 @@
+{
+  "schemaVersion": 1,
+  "id": "france",
+  "name": "Francia",
+  "experimental": false,
+  "startingYear": 2026,
+  "dataVersion": "france-institutions-2024-snapshot-v1",
+  "population": 68000000,
+  "politicalSystem": {
+    "formOfGovernment": "semi-presidential",
+    "executive": {
+      "officeId": "prime-minister",
+      "title": "Primer ministro",
+      "selection": "legislative-investiture",
+      "termYears": 5,
+      "consecutiveTermLimit": null,
+      "election": null,
+      "investiture": {
+        "firstVoteMajority": "absolute",
+        "laterVoteMajority": "simple",
+        "laterVoteDelayHours": 24,
+        "dissolutionAfterDays": 40
+      },
+      "confidence": {
+        "passMajority": "simple",
+        "failureEffect": "new-investiture"
+      },
+      "censure": {
+        "type": "ordinary",
+        "passageMajority": "absolute",
+        "minimumSponsorsPercent": 10,
+        "daysBeforeVote": 5
+      },
+      "dissolution": {
+        "executiveMayPropose": false,
+        "minimumMonthsBetween": 12
+      }
+    },
+    "legislature": {
+      "type": "bicameral",
+      "lowerChamber": {
+        "id": "assembly",
+        "name": "Asamblea Nacional",
+        "seats": 577,
+        "termYears": 5,
+        "electoralSystem": "majoritarian",
+        "districtCount": 577,
+        "nationalSeats": 0,
+        "seatAllocationMethod": "plurality",
+        "electoralThresholdPercent": 0
+      },
+      "upperChamber": {
+        "id": "senate",
+        "name": "Senado",
+        "seats": 348,
+        "termYears": 6,
+        "electoralSystem": "other",
+        "districtCount": 1,
+        "nationalSeats": 347,
+        "seatAllocationMethod": "plurality",
+        "electoralThresholdPercent": 0
+      }
+    },
+    "removalMechanisms": [
+      "censure",
+      "dissolution"
+    ],
+    "politicalDistribution": [
+      {
+        "sharePercent": 18,
+        "ideology": {
+          "institutionalism": 74,
+          "economy": 28,
+          "rigidity": 30,
+          "social": 72,
+          "nationalism": 38
+        }
+      },
+      {
+        "sharePercent": 24,
+        "ideology": {
+          "institutionalism": 65,
+          "economy": 42,
+          "rigidity": 34,
+          "social": 58,
+          "nationalism": 48
+        }
+      },
+      {
+        "sharePercent": 23,
+        "ideology": {
+          "institutionalism": 53,
+          "economy": 56,
+          "rigidity": 45,
+          "social": 42,
+          "nationalism": 56
+        }
+      },
+      {
+        "sharePercent": 20,
+        "ideology": {
+          "institutionalism": 60,
+          "economy": 68,
+          "rigidity": 41,
+          "social": 36,
+          "nationalism": 62
+        }
+      },
+      {
+        "sharePercent": 15,
+        "ideology": {
+          "institutionalism": 80,
+          "economy": 52,
+          "rigidity": 24,
+          "social": 50,
+          "nationalism": 28
+        }
+      }
+    ],
+    "headOfState": {
+      "officeId": "president",
+      "title": "Presidente de la República",
+      "selection": "direct-election",
+      "termYears": 5,
+      "ceremonial": false
+    },
+    "executiveAccountability": {
+      "presidentialVacancy": null,
+      "presidentialAccusation": {
+        "grounds": [
+          "incumplimiento grave de deberes constitucionales"
+        ]
+      },
+      "cabinetCensure": {
+        "minimumSponsorsPercent": 10,
+        "passageMajority": "absolute",
+        "minimumDaysBeforeVote": 5,
+        "maximumDaysBeforeVote": 14
+      }
+    },
+    "cohabitation": {
+      "effectiveAuthorityAlignedPercent": 65,
+      "effectiveAuthorityCohabitationPercent": 82,
+      "decreeAllowedWhenAligned": true,
+      "decreeAllowedWhenCohabiting": false
+    }
+  },
+  "candidateEligibility": [
+    {
+      "officeId": "deputy",
+      "activeSuffrageRequired": true,
+      "nationality": "citizen",
+      "voterRegistrationRequired": true,
+      "nomination": "party",
+      "minimumAge": 18,
+      "chamberId": "assembly"
+    },
+    {
+      "officeId": "senator",
+      "minimumAge": 24,
+      "chamberId": "senate",
+      "nationality": "citizen",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party"
+    },
+    {
+      "officeId": "prime-minister",
+      "minimumAge": 18,
+      "chamberId": "assembly",
+      "nationality": "citizen",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party"
+    }
+  ],
+  "dataSources": [
+    {
+      "name": "Constitución francesa, artículos 8, 12, 20 y 21 (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006527467",
+      "indicator": "Nombramiento del primer ministro y funciones constitucionales del Gobierno; artículo 12 regula disolución de la Asamblea",
+      "year": 2024,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Constitución francesa, artículo 12 (Légifrance)",
+      "url": "https://www.legifrance.gouv.fr/loda/article_lc/LEGIARTI000006527474/2021-08-30",
+      "indicator": "Disolución presidencial, consulta, calendario electoral y límite anual",
+      "year": 2021,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Vie publique · Les cohabitations",
+      "url": "https://www.vie-publique.fr/parole-dexpert/270319-les-cohabitations",
+      "indicator": "Descripción institucional de la cohabitación entre presidente y mayoría parlamentaria opuestos",
+      "year": 2024,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "INSEE · Comptes nationaux annuels 2024",
+      "url": "https://www.insee.fr/fr/statistiques/8574058",
+      "indicator": "Crecimiento real del PIB y cuentas nacionales, año 2024",
+      "year": 2025,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "INSEE · Déficit et dette publics 2024",
+      "url": "https://www.insee.fr/fr/statistiques/8540375",
+      "indicator": "Déficit y deuda de las administraciones públicas, año 2024",
+      "year": 2025,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Assemblée nationale · Composition et circonscriptions",
+      "url": "https://questions.assemblee-nationale.fr/synthese/fonctionnement-assemblee-nationale/travail-legislatif/la-seance-pleniere",
+      "indicator": "Effectivo de 577 escaños; el reparto en esta ficha es una abstracción de juego sin nombres territoriales oficiales",
+      "year": 2024,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Sénat · Modo de elección y mandato",
+      "url": "https://www.senat.fr/connaitre-le-senat/role-et-fonctionnement/mode-delection-des-senateurs.html",
+      "indicator": "348 escaños, elección indirecta y mandato de seis años; representación resumida en este escenario",
+      "year": 2026,
+      "accessedOn": "2026-10-06"
+    }
+  ],
+  "economy": {
+    "gdpUsd": 2920000000000,
+    "annualGrowthPercent": 1.2,
+    "annualInflationPercent": 2.0,
+    "unemploymentPercent": 7.4
+  },
+  "mandateExpectations": {
+    "annualGrowthFloorPercent": 0.8,
+    "inflationCeilingPercent": 3.5,
+    "unemploymentCeilingPercent": 8.2,
+    "approvalFloorPercent": 40
+  },
+  "trade": {
+    "goodsExportsUsd": 640000000000,
+    "dataYear": 2024,
+    "leadingSectors": [
+      "servicios",
+      "aeroespacial",
+      "agricultura",
+      "manufactura"
+    ]
+  },
+  "socialBlocks": [
+    {
+      "id": "workers",
+      "mood": 4,
+      "demands": [
+        "estabilidad laboral",
+        "salarios y coste de vida"
+      ],
+      "populationShare": 27,
+      "name": "Trabajadores",
+      "ideology": {
+        "economy": 28,
+        "social": 66,
+        "nationalism": 34,
+        "institutionalism": 64,
+        "rigidity": 52
+      },
+      "dispersion": 45,
+      "pressurePower": 80,
+      "organization": 84,
+      "unmetDemandIndex": 20
+    },
+    {
+      "id": "middle-income",
+      "mood": 3,
+      "demands": [
+        "servicios públicos",
+        "vivienda asequible"
+      ],
+      "populationShare": 25,
+      "name": "Clases medias",
+      "ideology": {
+        "economy": 55,
+        "social": 62,
+        "nationalism": 42,
+        "institutionalism": 70,
+        "rigidity": 34
+      },
+      "dispersion": 38,
+      "pressurePower": 42,
+      "organization": 58,
+      "unmetDemandIndex": 20
+    },
+    {
+      "id": "business",
+      "mood": 2,
+      "demands": [
+        "reglas previsibles",
+        "productividad"
+      ],
+      "populationShare": 13,
+      "name": "Empresariado",
+      "ideology": {
+        "economy": 86,
+        "social": 45,
+        "nationalism": 46,
+        "institutionalism": 74,
+        "rigidity": 48
+      },
+      "dispersion": 35,
+      "pressurePower": 64,
+      "organization": 78,
+      "unmetDemandIndex": 20
+    },
+    {
+      "id": "rural-communities",
+      "mood": 0,
+      "demands": [
+        "conectividad",
+        "servicios de proximidad"
+      ],
+      "populationShare": 12,
+      "name": "Territorios rurales",
+      "ideology": {
+        "economy": 43,
+        "social": 51,
+        "nationalism": 66,
+        "institutionalism": 54,
+        "rigidity": 64
+      },
+      "dispersion": 52,
+      "pressurePower": 75,
+      "organization": 56,
+      "unmetDemandIndex": 20
+    },
+    {
+      "id": "public-services",
+      "mood": 1,
+      "demands": [
+        "acceso territorial equitativo",
+        "continuidad de los servicios"
+      ],
+      "populationShare": 11,
+      "name": "Usuarios de servicios públicos",
+      "ideology": {
+        "economy": 42,
+        "social": 66,
+        "nationalism": 40,
+        "institutionalism": 72,
+        "rigidity": 42
+      },
+      "dispersion": 40,
+      "pressurePower": 58,
+      "organization": 70,
+      "unmetDemandIndex": 20
+    },
+    {
+      "id": "youth",
+      "mood": 5,
+      "demands": [
+        "empleo",
+        "acceso a vivienda"
+      ],
+      "populationShare": 12,
+      "name": "Jóvenes",
+      "ideology": {
+        "economy": 65,
+        "social": 78,
+        "nationalism": 22,
+        "institutionalism": 77,
+        "rigidity": 27
+      },
+      "dispersion": 58,
+      "pressurePower": 44,
+      "organization": 50,
+      "unmetDemandIndex": 20
+    }
+  ],
+  "electoralDistricts": [
+    {
+      "id": "circunscripcion-001",
+      "name": "Circunscripción legislativa 001",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-002",
+      "name": "Circunscripción legislativa 002",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-003",
+      "name": "Circunscripción legislativa 003",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-004",
+      "name": "Circunscripción legislativa 004",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-005",
+      "name": "Circunscripción legislativa 005",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-006",
+      "name": "Circunscripción legislativa 006",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-007",
+      "name": "Circunscripción legislativa 007",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-008",
+      "name": "Circunscripción legislativa 008",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-009",
+      "name": "Circunscripción legislativa 009",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-010",
+      "name": "Circunscripción legislativa 010",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-011",
+      "name": "Circunscripción legislativa 011",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-012",
+      "name": "Circunscripción legislativa 012",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-013",
+      "name": "Circunscripción legislativa 013",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-014",
+      "name": "Circunscripción legislativa 014",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-015",
+      "name": "Circunscripción legislativa 015",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-016",
+      "name": "Circunscripción legislativa 016",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-017",
+      "name": "Circunscripción legislativa 017",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-018",
+      "name": "Circunscripción legislativa 018",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-019",
+      "name": "Circunscripción legislativa 019",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-020",
+      "name": "Circunscripción legislativa 020",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-021",
+      "name": "Circunscripción legislativa 021",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-022",
+      "name": "Circunscripción legislativa 022",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-023",
+      "name": "Circunscripción legislativa 023",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-024",
+      "name": "Circunscripción legislativa 024",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-025",
+      "name": "Circunscripción legislativa 025",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-026",
+      "name": "Circunscripción legislativa 026",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-027",
+      "name": "Circunscripción legislativa 027",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-028",
+      "name": "Circunscripción legislativa 028",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-029",
+      "name": "Circunscripción legislativa 029",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-030",
+      "name": "Circunscripción legislativa 030",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-031",
+      "name": "Circunscripción legislativa 031",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-032",
+      "name": "Circunscripción legislativa 032",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-033",
+      "name": "Circunscripción legislativa 033",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-034",
+      "name": "Circunscripción legislativa 034",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-035",
+      "name": "Circunscripción legislativa 035",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-036",
+      "name": "Circunscripción legislativa 036",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-037",
+      "name": "Circunscripción legislativa 037",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-038",
+      "name": "Circunscripción legislativa 038",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-039",
+      "name": "Circunscripción legislativa 039",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-040",
+      "name": "Circunscripción legislativa 040",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-041",
+      "name": "Circunscripción legislativa 041",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-042",
+      "name": "Circunscripción legislativa 042",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-043",
+      "name": "Circunscripción legislativa 043",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-044",
+      "name": "Circunscripción legislativa 044",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-045",
+      "name": "Circunscripción legislativa 045",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-046",
+      "name": "Circunscripción legislativa 046",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-047",
+      "name": "Circunscripción legislativa 047",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-048",
+      "name": "Circunscripción legislativa 048",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-049",
+      "name": "Circunscripción legislativa 049",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-050",
+      "name": "Circunscripción legislativa 050",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-051",
+      "name": "Circunscripción legislativa 051",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-052",
+      "name": "Circunscripción legislativa 052",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-053",
+      "name": "Circunscripción legislativa 053",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-054",
+      "name": "Circunscripción legislativa 054",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-055",
+      "name": "Circunscripción legislativa 055",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-056",
+      "name": "Circunscripción legislativa 056",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-057",
+      "name": "Circunscripción legislativa 057",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-058",
+      "name": "Circunscripción legislativa 058",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-059",
+      "name": "Circunscripción legislativa 059",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-060",
+      "name": "Circunscripción legislativa 060",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-061",
+      "name": "Circunscripción legislativa 061",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-062",
+      "name": "Circunscripción legislativa 062",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-063",
+      "name": "Circunscripción legislativa 063",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-064",
+      "name": "Circunscripción legislativa 064",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-065",
+      "name": "Circunscripción legislativa 065",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-066",
+      "name": "Circunscripción legislativa 066",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-067",
+      "name": "Circunscripción legislativa 067",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-068",
+      "name": "Circunscripción legislativa 068",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-069",
+      "name": "Circunscripción legislativa 069",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-070",
+      "name": "Circunscripción legislativa 070",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-071",
+      "name": "Circunscripción legislativa 071",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-072",
+      "name": "Circunscripción legislativa 072",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-073",
+      "name": "Circunscripción legislativa 073",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-074",
+      "name": "Circunscripción legislativa 074",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-075",
+      "name": "Circunscripción legislativa 075",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-076",
+      "name": "Circunscripción legislativa 076",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-077",
+      "name": "Circunscripción legislativa 077",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-078",
+      "name": "Circunscripción legislativa 078",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-079",
+      "name": "Circunscripción legislativa 079",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-080",
+      "name": "Circunscripción legislativa 080",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-081",
+      "name": "Circunscripción legislativa 081",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-082",
+      "name": "Circunscripción legislativa 082",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-083",
+      "name": "Circunscripción legislativa 083",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-084",
+      "name": "Circunscripción legislativa 084",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-085",
+      "name": "Circunscripción legislativa 085",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-086",
+      "name": "Circunscripción legislativa 086",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-087",
+      "name": "Circunscripción legislativa 087",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-088",
+      "name": "Circunscripción legislativa 088",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-089",
+      "name": "Circunscripción legislativa 089",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-090",
+      "name": "Circunscripción legislativa 090",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-091",
+      "name": "Circunscripción legislativa 091",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-092",
+      "name": "Circunscripción legislativa 092",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-093",
+      "name": "Circunscripción legislativa 093",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-094",
+      "name": "Circunscripción legislativa 094",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-095",
+      "name": "Circunscripción legislativa 095",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-096",
+      "name": "Circunscripción legislativa 096",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-097",
+      "name": "Circunscripción legislativa 097",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-098",
+      "name": "Circunscripción legislativa 098",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-099",
+      "name": "Circunscripción legislativa 099",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-100",
+      "name": "Circunscripción legislativa 100",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-101",
+      "name": "Circunscripción legislativa 101",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-102",
+      "name": "Circunscripción legislativa 102",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-103",
+      "name": "Circunscripción legislativa 103",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-104",
+      "name": "Circunscripción legislativa 104",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-105",
+      "name": "Circunscripción legislativa 105",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-106",
+      "name": "Circunscripción legislativa 106",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-107",
+      "name": "Circunscripción legislativa 107",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-108",
+      "name": "Circunscripción legislativa 108",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-109",
+      "name": "Circunscripción legislativa 109",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-110",
+      "name": "Circunscripción legislativa 110",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-111",
+      "name": "Circunscripción legislativa 111",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-112",
+      "name": "Circunscripción legislativa 112",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-113",
+      "name": "Circunscripción legislativa 113",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-114",
+      "name": "Circunscripción legislativa 114",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-115",
+      "name": "Circunscripción legislativa 115",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-116",
+      "name": "Circunscripción legislativa 116",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-117",
+      "name": "Circunscripción legislativa 117",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-118",
+      "name": "Circunscripción legislativa 118",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-119",
+      "name": "Circunscripción legislativa 119",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-120",
+      "name": "Circunscripción legislativa 120",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-121",
+      "name": "Circunscripción legislativa 121",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-122",
+      "name": "Circunscripción legislativa 122",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-123",
+      "name": "Circunscripción legislativa 123",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-124",
+      "name": "Circunscripción legislativa 124",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-125",
+      "name": "Circunscripción legislativa 125",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-126",
+      "name": "Circunscripción legislativa 126",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-127",
+      "name": "Circunscripción legislativa 127",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-128",
+      "name": "Circunscripción legislativa 128",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-129",
+      "name": "Circunscripción legislativa 129",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-130",
+      "name": "Circunscripción legislativa 130",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-131",
+      "name": "Circunscripción legislativa 131",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-132",
+      "name": "Circunscripción legislativa 132",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-133",
+      "name": "Circunscripción legislativa 133",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-134",
+      "name": "Circunscripción legislativa 134",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-135",
+      "name": "Circunscripción legislativa 135",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-136",
+      "name": "Circunscripción legislativa 136",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-137",
+      "name": "Circunscripción legislativa 137",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-138",
+      "name": "Circunscripción legislativa 138",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-139",
+      "name": "Circunscripción legislativa 139",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-140",
+      "name": "Circunscripción legislativa 140",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-141",
+      "name": "Circunscripción legislativa 141",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-142",
+      "name": "Circunscripción legislativa 142",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-143",
+      "name": "Circunscripción legislativa 143",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-144",
+      "name": "Circunscripción legislativa 144",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-145",
+      "name": "Circunscripción legislativa 145",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-146",
+      "name": "Circunscripción legislativa 146",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-147",
+      "name": "Circunscripción legislativa 147",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-148",
+      "name": "Circunscripción legislativa 148",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-149",
+      "name": "Circunscripción legislativa 149",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-150",
+      "name": "Circunscripción legislativa 150",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-151",
+      "name": "Circunscripción legislativa 151",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-152",
+      "name": "Circunscripción legislativa 152",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-153",
+      "name": "Circunscripción legislativa 153",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-154",
+      "name": "Circunscripción legislativa 154",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-155",
+      "name": "Circunscripción legislativa 155",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-156",
+      "name": "Circunscripción legislativa 156",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-157",
+      "name": "Circunscripción legislativa 157",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-158",
+      "name": "Circunscripción legislativa 158",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-159",
+      "name": "Circunscripción legislativa 159",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-160",
+      "name": "Circunscripción legislativa 160",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-161",
+      "name": "Circunscripción legislativa 161",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-162",
+      "name": "Circunscripción legislativa 162",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-163",
+      "name": "Circunscripción legislativa 163",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-164",
+      "name": "Circunscripción legislativa 164",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-165",
+      "name": "Circunscripción legislativa 165",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-166",
+      "name": "Circunscripción legislativa 166",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-167",
+      "name": "Circunscripción legislativa 167",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-168",
+      "name": "Circunscripción legislativa 168",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-169",
+      "name": "Circunscripción legislativa 169",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-170",
+      "name": "Circunscripción legislativa 170",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-171",
+      "name": "Circunscripción legislativa 171",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-172",
+      "name": "Circunscripción legislativa 172",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-173",
+      "name": "Circunscripción legislativa 173",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-174",
+      "name": "Circunscripción legislativa 174",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-175",
+      "name": "Circunscripción legislativa 175",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-176",
+      "name": "Circunscripción legislativa 176",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-177",
+      "name": "Circunscripción legislativa 177",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-178",
+      "name": "Circunscripción legislativa 178",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-179",
+      "name": "Circunscripción legislativa 179",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-180",
+      "name": "Circunscripción legislativa 180",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-181",
+      "name": "Circunscripción legislativa 181",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-182",
+      "name": "Circunscripción legislativa 182",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-183",
+      "name": "Circunscripción legislativa 183",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-184",
+      "name": "Circunscripción legislativa 184",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-185",
+      "name": "Circunscripción legislativa 185",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-186",
+      "name": "Circunscripción legislativa 186",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-187",
+      "name": "Circunscripción legislativa 187",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-188",
+      "name": "Circunscripción legislativa 188",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-189",
+      "name": "Circunscripción legislativa 189",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-190",
+      "name": "Circunscripción legislativa 190",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-191",
+      "name": "Circunscripción legislativa 191",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-192",
+      "name": "Circunscripción legislativa 192",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-193",
+      "name": "Circunscripción legislativa 193",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-194",
+      "name": "Circunscripción legislativa 194",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-195",
+      "name": "Circunscripción legislativa 195",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-196",
+      "name": "Circunscripción legislativa 196",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-197",
+      "name": "Circunscripción legislativa 197",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-198",
+      "name": "Circunscripción legislativa 198",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-199",
+      "name": "Circunscripción legislativa 199",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-200",
+      "name": "Circunscripción legislativa 200",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-201",
+      "name": "Circunscripción legislativa 201",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-202",
+      "name": "Circunscripción legislativa 202",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-203",
+      "name": "Circunscripción legislativa 203",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-204",
+      "name": "Circunscripción legislativa 204",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-205",
+      "name": "Circunscripción legislativa 205",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-206",
+      "name": "Circunscripción legislativa 206",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-207",
+      "name": "Circunscripción legislativa 207",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-208",
+      "name": "Circunscripción legislativa 208",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-209",
+      "name": "Circunscripción legislativa 209",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-210",
+      "name": "Circunscripción legislativa 210",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-211",
+      "name": "Circunscripción legislativa 211",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-212",
+      "name": "Circunscripción legislativa 212",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-213",
+      "name": "Circunscripción legislativa 213",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-214",
+      "name": "Circunscripción legislativa 214",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-215",
+      "name": "Circunscripción legislativa 215",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-216",
+      "name": "Circunscripción legislativa 216",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-217",
+      "name": "Circunscripción legislativa 217",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-218",
+      "name": "Circunscripción legislativa 218",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-219",
+      "name": "Circunscripción legislativa 219",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-220",
+      "name": "Circunscripción legislativa 220",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-221",
+      "name": "Circunscripción legislativa 221",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-222",
+      "name": "Circunscripción legislativa 222",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-223",
+      "name": "Circunscripción legislativa 223",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-224",
+      "name": "Circunscripción legislativa 224",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-225",
+      "name": "Circunscripción legislativa 225",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-226",
+      "name": "Circunscripción legislativa 226",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-227",
+      "name": "Circunscripción legislativa 227",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-228",
+      "name": "Circunscripción legislativa 228",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-229",
+      "name": "Circunscripción legislativa 229",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-230",
+      "name": "Circunscripción legislativa 230",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-231",
+      "name": "Circunscripción legislativa 231",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-232",
+      "name": "Circunscripción legislativa 232",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-233",
+      "name": "Circunscripción legislativa 233",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-234",
+      "name": "Circunscripción legislativa 234",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-235",
+      "name": "Circunscripción legislativa 235",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-236",
+      "name": "Circunscripción legislativa 236",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-237",
+      "name": "Circunscripción legislativa 237",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-238",
+      "name": "Circunscripción legislativa 238",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-239",
+      "name": "Circunscripción legislativa 239",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-240",
+      "name": "Circunscripción legislativa 240",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-241",
+      "name": "Circunscripción legislativa 241",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-242",
+      "name": "Circunscripción legislativa 242",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-243",
+      "name": "Circunscripción legislativa 243",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-244",
+      "name": "Circunscripción legislativa 244",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-245",
+      "name": "Circunscripción legislativa 245",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-246",
+      "name": "Circunscripción legislativa 246",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-247",
+      "name": "Circunscripción legislativa 247",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-248",
+      "name": "Circunscripción legislativa 248",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-249",
+      "name": "Circunscripción legislativa 249",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-250",
+      "name": "Circunscripción legislativa 250",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-251",
+      "name": "Circunscripción legislativa 251",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-252",
+      "name": "Circunscripción legislativa 252",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-253",
+      "name": "Circunscripción legislativa 253",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-254",
+      "name": "Circunscripción legislativa 254",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-255",
+      "name": "Circunscripción legislativa 255",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-256",
+      "name": "Circunscripción legislativa 256",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-257",
+      "name": "Circunscripción legislativa 257",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-258",
+      "name": "Circunscripción legislativa 258",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-259",
+      "name": "Circunscripción legislativa 259",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-260",
+      "name": "Circunscripción legislativa 260",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-261",
+      "name": "Circunscripción legislativa 261",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-262",
+      "name": "Circunscripción legislativa 262",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-263",
+      "name": "Circunscripción legislativa 263",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-264",
+      "name": "Circunscripción legislativa 264",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-265",
+      "name": "Circunscripción legislativa 265",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-266",
+      "name": "Circunscripción legislativa 266",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-267",
+      "name": "Circunscripción legislativa 267",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-268",
+      "name": "Circunscripción legislativa 268",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-269",
+      "name": "Circunscripción legislativa 269",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-270",
+      "name": "Circunscripción legislativa 270",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-271",
+      "name": "Circunscripción legislativa 271",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-272",
+      "name": "Circunscripción legislativa 272",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-273",
+      "name": "Circunscripción legislativa 273",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-274",
+      "name": "Circunscripción legislativa 274",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-275",
+      "name": "Circunscripción legislativa 275",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-276",
+      "name": "Circunscripción legislativa 276",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-277",
+      "name": "Circunscripción legislativa 277",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-278",
+      "name": "Circunscripción legislativa 278",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-279",
+      "name": "Circunscripción legislativa 279",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-280",
+      "name": "Circunscripción legislativa 280",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-281",
+      "name": "Circunscripción legislativa 281",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-282",
+      "name": "Circunscripción legislativa 282",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-283",
+      "name": "Circunscripción legislativa 283",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-284",
+      "name": "Circunscripción legislativa 284",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-285",
+      "name": "Circunscripción legislativa 285",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-286",
+      "name": "Circunscripción legislativa 286",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-287",
+      "name": "Circunscripción legislativa 287",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-288",
+      "name": "Circunscripción legislativa 288",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-289",
+      "name": "Circunscripción legislativa 289",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-290",
+      "name": "Circunscripción legislativa 290",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-291",
+      "name": "Circunscripción legislativa 291",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-292",
+      "name": "Circunscripción legislativa 292",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-293",
+      "name": "Circunscripción legislativa 293",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-294",
+      "name": "Circunscripción legislativa 294",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-295",
+      "name": "Circunscripción legislativa 295",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-296",
+      "name": "Circunscripción legislativa 296",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-297",
+      "name": "Circunscripción legislativa 297",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-298",
+      "name": "Circunscripción legislativa 298",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-299",
+      "name": "Circunscripción legislativa 299",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-300",
+      "name": "Circunscripción legislativa 300",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-301",
+      "name": "Circunscripción legislativa 301",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-302",
+      "name": "Circunscripción legislativa 302",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-303",
+      "name": "Circunscripción legislativa 303",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-304",
+      "name": "Circunscripción legislativa 304",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-305",
+      "name": "Circunscripción legislativa 305",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-306",
+      "name": "Circunscripción legislativa 306",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-307",
+      "name": "Circunscripción legislativa 307",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-308",
+      "name": "Circunscripción legislativa 308",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-309",
+      "name": "Circunscripción legislativa 309",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-310",
+      "name": "Circunscripción legislativa 310",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-311",
+      "name": "Circunscripción legislativa 311",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-312",
+      "name": "Circunscripción legislativa 312",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-313",
+      "name": "Circunscripción legislativa 313",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-314",
+      "name": "Circunscripción legislativa 314",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-315",
+      "name": "Circunscripción legislativa 315",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-316",
+      "name": "Circunscripción legislativa 316",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-317",
+      "name": "Circunscripción legislativa 317",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-318",
+      "name": "Circunscripción legislativa 318",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-319",
+      "name": "Circunscripción legislativa 319",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-320",
+      "name": "Circunscripción legislativa 320",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-321",
+      "name": "Circunscripción legislativa 321",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-322",
+      "name": "Circunscripción legislativa 322",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-323",
+      "name": "Circunscripción legislativa 323",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-324",
+      "name": "Circunscripción legislativa 324",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-325",
+      "name": "Circunscripción legislativa 325",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-326",
+      "name": "Circunscripción legislativa 326",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-327",
+      "name": "Circunscripción legislativa 327",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-328",
+      "name": "Circunscripción legislativa 328",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-329",
+      "name": "Circunscripción legislativa 329",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-330",
+      "name": "Circunscripción legislativa 330",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-331",
+      "name": "Circunscripción legislativa 331",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-332",
+      "name": "Circunscripción legislativa 332",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-333",
+      "name": "Circunscripción legislativa 333",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-334",
+      "name": "Circunscripción legislativa 334",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-335",
+      "name": "Circunscripción legislativa 335",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-336",
+      "name": "Circunscripción legislativa 336",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-337",
+      "name": "Circunscripción legislativa 337",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-338",
+      "name": "Circunscripción legislativa 338",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-339",
+      "name": "Circunscripción legislativa 339",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-340",
+      "name": "Circunscripción legislativa 340",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-341",
+      "name": "Circunscripción legislativa 341",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-342",
+      "name": "Circunscripción legislativa 342",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-343",
+      "name": "Circunscripción legislativa 343",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-344",
+      "name": "Circunscripción legislativa 344",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-345",
+      "name": "Circunscripción legislativa 345",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-346",
+      "name": "Circunscripción legislativa 346",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-347",
+      "name": "Circunscripción legislativa 347",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-348",
+      "name": "Circunscripción legislativa 348",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-349",
+      "name": "Circunscripción legislativa 349",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-350",
+      "name": "Circunscripción legislativa 350",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-351",
+      "name": "Circunscripción legislativa 351",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-352",
+      "name": "Circunscripción legislativa 352",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-353",
+      "name": "Circunscripción legislativa 353",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-354",
+      "name": "Circunscripción legislativa 354",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-355",
+      "name": "Circunscripción legislativa 355",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-356",
+      "name": "Circunscripción legislativa 356",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-357",
+      "name": "Circunscripción legislativa 357",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-358",
+      "name": "Circunscripción legislativa 358",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-359",
+      "name": "Circunscripción legislativa 359",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-360",
+      "name": "Circunscripción legislativa 360",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-361",
+      "name": "Circunscripción legislativa 361",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-362",
+      "name": "Circunscripción legislativa 362",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-363",
+      "name": "Circunscripción legislativa 363",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-364",
+      "name": "Circunscripción legislativa 364",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-365",
+      "name": "Circunscripción legislativa 365",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-366",
+      "name": "Circunscripción legislativa 366",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-367",
+      "name": "Circunscripción legislativa 367",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-368",
+      "name": "Circunscripción legislativa 368",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-369",
+      "name": "Circunscripción legislativa 369",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-370",
+      "name": "Circunscripción legislativa 370",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-371",
+      "name": "Circunscripción legislativa 371",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-372",
+      "name": "Circunscripción legislativa 372",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-373",
+      "name": "Circunscripción legislativa 373",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-374",
+      "name": "Circunscripción legislativa 374",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-375",
+      "name": "Circunscripción legislativa 375",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-376",
+      "name": "Circunscripción legislativa 376",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-377",
+      "name": "Circunscripción legislativa 377",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-378",
+      "name": "Circunscripción legislativa 378",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-379",
+      "name": "Circunscripción legislativa 379",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-380",
+      "name": "Circunscripción legislativa 380",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-381",
+      "name": "Circunscripción legislativa 381",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-382",
+      "name": "Circunscripción legislativa 382",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-383",
+      "name": "Circunscripción legislativa 383",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-384",
+      "name": "Circunscripción legislativa 384",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-385",
+      "name": "Circunscripción legislativa 385",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-386",
+      "name": "Circunscripción legislativa 386",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-387",
+      "name": "Circunscripción legislativa 387",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-388",
+      "name": "Circunscripción legislativa 388",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-389",
+      "name": "Circunscripción legislativa 389",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-390",
+      "name": "Circunscripción legislativa 390",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-391",
+      "name": "Circunscripción legislativa 391",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-392",
+      "name": "Circunscripción legislativa 392",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-393",
+      "name": "Circunscripción legislativa 393",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-394",
+      "name": "Circunscripción legislativa 394",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-395",
+      "name": "Circunscripción legislativa 395",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-396",
+      "name": "Circunscripción legislativa 396",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-397",
+      "name": "Circunscripción legislativa 397",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-398",
+      "name": "Circunscripción legislativa 398",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-399",
+      "name": "Circunscripción legislativa 399",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-400",
+      "name": "Circunscripción legislativa 400",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-401",
+      "name": "Circunscripción legislativa 401",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-402",
+      "name": "Circunscripción legislativa 402",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-403",
+      "name": "Circunscripción legislativa 403",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-404",
+      "name": "Circunscripción legislativa 404",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-405",
+      "name": "Circunscripción legislativa 405",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-406",
+      "name": "Circunscripción legislativa 406",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-407",
+      "name": "Circunscripción legislativa 407",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-408",
+      "name": "Circunscripción legislativa 408",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-409",
+      "name": "Circunscripción legislativa 409",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-410",
+      "name": "Circunscripción legislativa 410",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-411",
+      "name": "Circunscripción legislativa 411",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-412",
+      "name": "Circunscripción legislativa 412",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-413",
+      "name": "Circunscripción legislativa 413",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-414",
+      "name": "Circunscripción legislativa 414",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-415",
+      "name": "Circunscripción legislativa 415",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-416",
+      "name": "Circunscripción legislativa 416",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-417",
+      "name": "Circunscripción legislativa 417",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-418",
+      "name": "Circunscripción legislativa 418",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-419",
+      "name": "Circunscripción legislativa 419",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-420",
+      "name": "Circunscripción legislativa 420",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-421",
+      "name": "Circunscripción legislativa 421",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-422",
+      "name": "Circunscripción legislativa 422",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-423",
+      "name": "Circunscripción legislativa 423",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-424",
+      "name": "Circunscripción legislativa 424",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-425",
+      "name": "Circunscripción legislativa 425",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-426",
+      "name": "Circunscripción legislativa 426",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-427",
+      "name": "Circunscripción legislativa 427",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-428",
+      "name": "Circunscripción legislativa 428",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-429",
+      "name": "Circunscripción legislativa 429",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-430",
+      "name": "Circunscripción legislativa 430",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-431",
+      "name": "Circunscripción legislativa 431",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-432",
+      "name": "Circunscripción legislativa 432",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-433",
+      "name": "Circunscripción legislativa 433",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-434",
+      "name": "Circunscripción legislativa 434",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-435",
+      "name": "Circunscripción legislativa 435",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-436",
+      "name": "Circunscripción legislativa 436",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-437",
+      "name": "Circunscripción legislativa 437",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-438",
+      "name": "Circunscripción legislativa 438",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-439",
+      "name": "Circunscripción legislativa 439",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-440",
+      "name": "Circunscripción legislativa 440",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-441",
+      "name": "Circunscripción legislativa 441",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-442",
+      "name": "Circunscripción legislativa 442",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-443",
+      "name": "Circunscripción legislativa 443",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-444",
+      "name": "Circunscripción legislativa 444",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-445",
+      "name": "Circunscripción legislativa 445",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-446",
+      "name": "Circunscripción legislativa 446",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-447",
+      "name": "Circunscripción legislativa 447",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-448",
+      "name": "Circunscripción legislativa 448",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-449",
+      "name": "Circunscripción legislativa 449",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-450",
+      "name": "Circunscripción legislativa 450",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-451",
+      "name": "Circunscripción legislativa 451",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-452",
+      "name": "Circunscripción legislativa 452",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-453",
+      "name": "Circunscripción legislativa 453",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-454",
+      "name": "Circunscripción legislativa 454",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-455",
+      "name": "Circunscripción legislativa 455",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-456",
+      "name": "Circunscripción legislativa 456",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-457",
+      "name": "Circunscripción legislativa 457",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-458",
+      "name": "Circunscripción legislativa 458",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-459",
+      "name": "Circunscripción legislativa 459",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-460",
+      "name": "Circunscripción legislativa 460",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-461",
+      "name": "Circunscripción legislativa 461",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-462",
+      "name": "Circunscripción legislativa 462",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-463",
+      "name": "Circunscripción legislativa 463",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-464",
+      "name": "Circunscripción legislativa 464",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-465",
+      "name": "Circunscripción legislativa 465",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-466",
+      "name": "Circunscripción legislativa 466",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-467",
+      "name": "Circunscripción legislativa 467",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-468",
+      "name": "Circunscripción legislativa 468",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-469",
+      "name": "Circunscripción legislativa 469",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-470",
+      "name": "Circunscripción legislativa 470",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-471",
+      "name": "Circunscripción legislativa 471",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-472",
+      "name": "Circunscripción legislativa 472",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-473",
+      "name": "Circunscripción legislativa 473",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-474",
+      "name": "Circunscripción legislativa 474",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-475",
+      "name": "Circunscripción legislativa 475",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-476",
+      "name": "Circunscripción legislativa 476",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-477",
+      "name": "Circunscripción legislativa 477",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-478",
+      "name": "Circunscripción legislativa 478",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-479",
+      "name": "Circunscripción legislativa 479",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-480",
+      "name": "Circunscripción legislativa 480",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-481",
+      "name": "Circunscripción legislativa 481",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-482",
+      "name": "Circunscripción legislativa 482",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-483",
+      "name": "Circunscripción legislativa 483",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-484",
+      "name": "Circunscripción legislativa 484",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-485",
+      "name": "Circunscripción legislativa 485",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-486",
+      "name": "Circunscripción legislativa 486",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-487",
+      "name": "Circunscripción legislativa 487",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-488",
+      "name": "Circunscripción legislativa 488",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-489",
+      "name": "Circunscripción legislativa 489",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-490",
+      "name": "Circunscripción legislativa 490",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-491",
+      "name": "Circunscripción legislativa 491",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-492",
+      "name": "Circunscripción legislativa 492",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-493",
+      "name": "Circunscripción legislativa 493",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-494",
+      "name": "Circunscripción legislativa 494",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-495",
+      "name": "Circunscripción legislativa 495",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-496",
+      "name": "Circunscripción legislativa 496",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-497",
+      "name": "Circunscripción legislativa 497",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-498",
+      "name": "Circunscripción legislativa 498",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-499",
+      "name": "Circunscripción legislativa 499",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-500",
+      "name": "Circunscripción legislativa 500",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-501",
+      "name": "Circunscripción legislativa 501",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-502",
+      "name": "Circunscripción legislativa 502",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-503",
+      "name": "Circunscripción legislativa 503",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-504",
+      "name": "Circunscripción legislativa 504",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-505",
+      "name": "Circunscripción legislativa 505",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-506",
+      "name": "Circunscripción legislativa 506",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-507",
+      "name": "Circunscripción legislativa 507",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-508",
+      "name": "Circunscripción legislativa 508",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-509",
+      "name": "Circunscripción legislativa 509",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-510",
+      "name": "Circunscripción legislativa 510",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-511",
+      "name": "Circunscripción legislativa 511",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-512",
+      "name": "Circunscripción legislativa 512",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-513",
+      "name": "Circunscripción legislativa 513",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-514",
+      "name": "Circunscripción legislativa 514",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-515",
+      "name": "Circunscripción legislativa 515",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-516",
+      "name": "Circunscripción legislativa 516",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-517",
+      "name": "Circunscripción legislativa 517",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-518",
+      "name": "Circunscripción legislativa 518",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-519",
+      "name": "Circunscripción legislativa 519",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-520",
+      "name": "Circunscripción legislativa 520",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-521",
+      "name": "Circunscripción legislativa 521",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-522",
+      "name": "Circunscripción legislativa 522",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-523",
+      "name": "Circunscripción legislativa 523",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-524",
+      "name": "Circunscripción legislativa 524",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-525",
+      "name": "Circunscripción legislativa 525",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-526",
+      "name": "Circunscripción legislativa 526",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-527",
+      "name": "Circunscripción legislativa 527",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-528",
+      "name": "Circunscripción legislativa 528",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-529",
+      "name": "Circunscripción legislativa 529",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-530",
+      "name": "Circunscripción legislativa 530",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-531",
+      "name": "Circunscripción legislativa 531",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-532",
+      "name": "Circunscripción legislativa 532",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-533",
+      "name": "Circunscripción legislativa 533",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-534",
+      "name": "Circunscripción legislativa 534",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-535",
+      "name": "Circunscripción legislativa 535",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-536",
+      "name": "Circunscripción legislativa 536",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-537",
+      "name": "Circunscripción legislativa 537",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-538",
+      "name": "Circunscripción legislativa 538",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-539",
+      "name": "Circunscripción legislativa 539",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-540",
+      "name": "Circunscripción legislativa 540",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-541",
+      "name": "Circunscripción legislativa 541",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-542",
+      "name": "Circunscripción legislativa 542",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-543",
+      "name": "Circunscripción legislativa 543",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-544",
+      "name": "Circunscripción legislativa 544",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-545",
+      "name": "Circunscripción legislativa 545",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-546",
+      "name": "Circunscripción legislativa 546",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-547",
+      "name": "Circunscripción legislativa 547",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-548",
+      "name": "Circunscripción legislativa 548",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-549",
+      "name": "Circunscripción legislativa 549",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-550",
+      "name": "Circunscripción legislativa 550",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-551",
+      "name": "Circunscripción legislativa 551",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-552",
+      "name": "Circunscripción legislativa 552",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-553",
+      "name": "Circunscripción legislativa 553",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-554",
+      "name": "Circunscripción legislativa 554",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-555",
+      "name": "Circunscripción legislativa 555",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-556",
+      "name": "Circunscripción legislativa 556",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-557",
+      "name": "Circunscripción legislativa 557",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-558",
+      "name": "Circunscripción legislativa 558",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-559",
+      "name": "Circunscripción legislativa 559",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-560",
+      "name": "Circunscripción legislativa 560",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-561",
+      "name": "Circunscripción legislativa 561",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-562",
+      "name": "Circunscripción legislativa 562",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-563",
+      "name": "Circunscripción legislativa 563",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-564",
+      "name": "Circunscripción legislativa 564",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-565",
+      "name": "Circunscripción legislativa 565",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-566",
+      "name": "Circunscripción legislativa 566",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-567",
+      "name": "Circunscripción legislativa 567",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-568",
+      "name": "Circunscripción legislativa 568",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-569",
+      "name": "Circunscripción legislativa 569",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-570",
+      "name": "Circunscripción legislativa 570",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-571",
+      "name": "Circunscripción legislativa 571",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-572",
+      "name": "Circunscripción legislativa 572",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-573",
+      "name": "Circunscripción legislativa 573",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-574",
+      "name": "Circunscripción legislativa 574",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-575",
+      "name": "Circunscripción legislativa 575",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-576",
+      "name": "Circunscripción legislativa 576",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "circunscripcion-577",
+      "name": "Circunscripción legislativa 577",
+      "seatsByChamber": {
+        "assembly": 1,
+        "senate": 0
+      }
+    },
+    {
+      "id": "senado-nacional",
+      "name": "Representación senatorial (resumen de escenario)",
+      "seatsByChamber": {
+        "assembly": 0,
+        "senate": 1
+      }
+    }
+  ],
+  "partyLeadership": {
+    "officeId": "party-leader",
+    "title": "Líder del partido",
+    "termYears": 2,
+    "minimumAge": 18,
+    "eligibleAfterOfficeIds": [
+      "deputy",
+      "senator",
+      "prime-minister",
+      "minister"
+    ],
+    "electionMethod": "generated-caucus-majority",
+    "requiredMajorityPercent": 50
+  },
+  "ministerialAppointment": {
+    "officeId": "minister",
+    "title": "Ministro",
+    "termYears": 2,
+    "minimumAge": 18,
+    "eligibleAfterOfficeIds": [
+      "deputy",
+      "senator",
+      "prime-minister",
+      "party-leader"
+    ],
+    "appointmentMethod": "generated-executive-choice",
+    "minimumSupportPercent": 45,
+    "portfolios": [
+      {
+        "id": "economy",
+        "title": "Economía",
+        "focus": "economy"
+      },
+      {
+        "id": "interior",
+        "title": "Interior",
+        "focus": "institutions"
+      },
+      {
+        "id": "health",
+        "title": "Salud",
+        "focus": "services"
+      },
+      {
+        "id": "education",
+        "title": "Educación",
+        "focus": "services"
+      },
+      {
+        "id": "infrastructure",
+        "title": "Infraestructura",
+        "focus": "economy"
+      }
+    ]
+  }
+}

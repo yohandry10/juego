@@ -1,4 +1,4 @@
-import type { CountryDefinition, GameEvent, GameState, Legislator, Party, SimulationResult, SocialBlock } from "../domain/types.js";
+import type { CountryDefinition, EconomicCrisisType, EconomicState, GameEvent, GameState, Legislator, Party, PublicAgendaState, SimulationResult, SocialBlock } from "../domain/types.js";
 import type { SimulationClock } from "./calendar.js";
 
 export interface TurnStarted {
@@ -14,12 +14,17 @@ export interface EconomyUpdated extends TurnStarted {
   readonly gdpIndex: number;
   readonly inflationPercent: number;
   readonly unemploymentPercent: number;
+  readonly economy: EconomicState;
+  readonly publicAgenda: PublicAgendaState;
+  readonly newCrises: readonly EconomicCrisisType[];
+  readonly policyMoodEffect: number;
 }
 
 export interface SocietyUpdated extends EconomyUpdated {
   readonly randomStreams: GameState["randomStreams"];
   readonly socialBlocks: readonly SocialBlock[];
   readonly averageMood: number;
+  readonly publicAgenda: PublicAgendaState;
 }
 
 export interface CongressUpdated extends SocietyUpdated {

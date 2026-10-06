@@ -1,0 +1,55 @@
+{
+  "version": "country-economic-snapshots-2026-10-06-v1",
+  "sources": {
+    "peru": [{ "title": "Ministerio de Economía y Finanzas del Perú, Marco Macroeconómico Multianual", "url": "https://www.mef.gob.pe/" }, { "title": "INEI, indicadores económicos", "url": "https://www.inei.gob.pe/estadisticas/indice-tematico/economia/" }],
+    "spain": [{ "title": "Instituto Nacional de Estadística, Contabilidad Nacional", "url": "https://www.ine.es/" }, { "title": "Eurostat, Government finance statistics", "url": "https://ec.europa.eu/eurostat/web/government-finance-statistics" }],
+    "france": [{ "title": "INSEE, comptes nationaux 2024", "url": "https://www.insee.fr/fr/statistiques/8574058" }, { "title": "INSEE, déficit et dette publics 2024", "url": "https://www.insee.fr/fr/statistiques/8540375" }, { "title": "Banque de France, projections macroéconomiques", "url": "https://www.banque-france.fr/fr/publications-et-statistiques/publications/projections-macroeconomiques-decembre-2024" }]
+  },
+  "scenarios": {
+    "peru": {
+      "snapshotYear": 2025,
+      "indicators": { "gdpPerCapitaUsd": 8448, "gdpGrowthPercent": 3.3, "inflationPercent": 2, "unemploymentPercent": 5.1, "informalityPercent": 70, "publicDebtPercentGdp": 33, "fiscalDeficitPercentGdp": 3.5, "tradeBalancePercentGdp": 3, "currentAccountPercentGdp": 0.2, "reservesMonthsImports": 15, "exchangeRateIndex": 100, "policyRatePercent": 4.5, "creditRatingIndex": 68, "countryRiskBasisPoints": 160, "inequalityIndex": 40, "povertyPercent": 27.5, "realWageIndex": 100, "domesticInvestmentPercentGdp": 22, "foreignInvestmentPercentGdp": 3.5, "productivityIndex": 100 },
+      "sectors": [
+        { "id": "extractive", "name": "Extractivo", "gdpSharePercent": 13, "annualGrowthPercent": 3.8, "employmentIntensity": 0.08, "exportSharePercent": 58, "commoditySensitivity": 0.9, "exchangeSensitivity": 0.35, "creditSensitivity": 0.3, "importDependence": 0.4, "stateOwnershipPercent": 32 },
+        { "id": "agriculture", "name": "Agropecuario", "gdpSharePercent": 7, "annualGrowthPercent": 3.2, "employmentIntensity": 0.7, "exportSharePercent": 14, "commoditySensitivity": 0.55, "exchangeSensitivity": 0.4, "creditSensitivity": 0.65, "importDependence": 0.2, "stateOwnershipPercent": 4 },
+        { "id": "manufacturing", "name": "Manufactura", "gdpSharePercent": 13, "annualGrowthPercent": 2.8, "employmentIntensity": 0.5, "exportSharePercent": 15, "commoditySensitivity": 0.3, "exchangeSensitivity": 0.55, "creditSensitivity": 0.7, "importDependence": 0.6, "stateOwnershipPercent": 8 },
+        { "id": "services", "name": "Servicios", "gdpSharePercent": 55, "annualGrowthPercent": 3.3, "employmentIntensity": 0.65, "exportSharePercent": 8, "commoditySensitivity": 0.12, "exchangeSensitivity": 0.2, "creditSensitivity": 0.5, "importDependence": 0.25, "stateOwnershipPercent": 22 },
+        { "id": "technology-finance", "name": "Tecnología y finanzas", "gdpSharePercent": 12, "annualGrowthPercent": 5.1, "employmentIntensity": 0.3, "exportSharePercent": 5, "commoditySensitivity": 0.08, "exchangeSensitivity": 0.45, "creditSensitivity": 0.8, "importDependence": 0.55, "stateOwnershipPercent": 12 }
+      ],
+      "fiscalSpendingPercentGdp": 22,
+      "taxBurdenPercentGdp": 17,
+      "tradeOpennessPercent": 50,
+      "publicOwnershipPercent": 18
+    },
+    "spain": {
+      "snapshotYear": 2024,
+      "indicators": { "gdpPerCapitaUsd": 35000, "gdpGrowthPercent": 3.2, "inflationPercent": 2.8, "unemploymentPercent": 11.4, "informalityPercent": 15, "publicDebtPercentGdp": 101.8, "fiscalDeficitPercentGdp": 3.2, "tradeBalancePercentGdp": 3, "currentAccountPercentGdp": 2, "reservesMonthsImports": 6, "exchangeRateIndex": 100, "policyRatePercent": 3.25, "creditRatingIndex": 80, "countryRiskBasisPoints": 75, "inequalityIndex": 33, "povertyPercent": 20, "realWageIndex": 100, "domesticInvestmentPercentGdp": 20, "foreignInvestmentPercentGdp": 3.5, "productivityIndex": 100 },
+      "sectors": [
+        { "id": "extractive", "name": "Extractivo", "gdpSharePercent": 3, "annualGrowthPercent": 1.5, "employmentIntensity": 0.1, "exportSharePercent": 8, "commoditySensitivity": 0.35, "exchangeSensitivity": 0.25, "creditSensitivity": 0.3, "importDependence": 0.5, "stateOwnershipPercent": 15 },
+        { "id": "agriculture", "name": "Agropecuario", "gdpSharePercent": 3, "annualGrowthPercent": 2.1, "employmentIntensity": 0.55, "exportSharePercent": 16, "commoditySensitivity": 0.55, "exchangeSensitivity": 0.3, "creditSensitivity": 0.55, "importDependence": 0.2, "stateOwnershipPercent": 2 },
+        { "id": "manufacturing", "name": "Manufactura", "gdpSharePercent": 15, "annualGrowthPercent": 1.8, "employmentIntensity": 0.48, "exportSharePercent": 25, "commoditySensitivity": 0.3, "exchangeSensitivity": 0.45, "creditSensitivity": 0.65, "importDependence": 0.55, "stateOwnershipPercent": 5 },
+        { "id": "services", "name": "Servicios", "gdpSharePercent": 67, "annualGrowthPercent": 3.7, "employmentIntensity": 0.62, "exportSharePercent": 42, "commoditySensitivity": 0.12, "exchangeSensitivity": 0.2, "creditSensitivity": 0.5, "importDependence": 0.25, "stateOwnershipPercent": 25 },
+        { "id": "technology-finance", "name": "Tecnología y finanzas", "gdpSharePercent": 12, "annualGrowthPercent": 5.5, "employmentIntensity": 0.35, "exportSharePercent": 9, "commoditySensitivity": 0.08, "exchangeSensitivity": 0.35, "creditSensitivity": 0.8, "importDependence": 0.45, "stateOwnershipPercent": 8 }
+      ],
+      "fiscalSpendingPercentGdp": 45,
+      "taxBurdenPercentGdp": 37,
+      "tradeOpennessPercent": 70,
+      "publicOwnershipPercent": 20
+    },
+    "france": {
+      "snapshotYear": 2024,
+      "indicators": { "gdpPerCapitaUsd": 44000, "gdpGrowthPercent": 1.2, "inflationPercent": 2, "unemploymentPercent": 7.4, "informalityPercent": 10, "publicDebtPercentGdp": 113, "fiscalDeficitPercentGdp": 5.8, "tradeBalancePercentGdp": -1, "currentAccountPercentGdp": 0.1, "reservesMonthsImports": 6, "exchangeRateIndex": 100, "policyRatePercent": 3.25, "creditRatingIndex": 82, "countryRiskBasisPoints": 70, "inequalityIndex": 30, "povertyPercent": 15, "realWageIndex": 100, "domesticInvestmentPercentGdp": 22, "foreignInvestmentPercentGdp": 3.1, "productivityIndex": 100 },
+      "sectors": [
+        { "id": "extractive", "name": "Extractivo", "gdpSharePercent": 2, "annualGrowthPercent": 0.8, "employmentIntensity": 0.08, "exportSharePercent": 7, "commoditySensitivity": 0.3, "exchangeSensitivity": 0.2, "creditSensitivity": 0.25, "importDependence": 0.5, "stateOwnershipPercent": 20 },
+        { "id": "agriculture", "name": "Agropecuario", "gdpSharePercent": 2, "annualGrowthPercent": 1.2, "employmentIntensity": 0.45, "exportSharePercent": 12, "commoditySensitivity": 0.5, "exchangeSensitivity": 0.3, "creditSensitivity": 0.5, "importDependence": 0.2, "stateOwnershipPercent": 2 },
+        { "id": "manufacturing", "name": "Manufactura", "gdpSharePercent": 10, "annualGrowthPercent": 0.9, "employmentIntensity": 0.4, "exportSharePercent": 30, "commoditySensitivity": 0.25, "exchangeSensitivity": 0.4, "creditSensitivity": 0.65, "importDependence": 0.5, "stateOwnershipPercent": 8 },
+        { "id": "services", "name": "Servicios", "gdpSharePercent": 74, "annualGrowthPercent": 1.3, "employmentIntensity": 0.6, "exportSharePercent": 42, "commoditySensitivity": 0.1, "exchangeSensitivity": 0.2, "creditSensitivity": 0.45, "importDependence": 0.22, "stateOwnershipPercent": 29 },
+        { "id": "technology-finance", "name": "Tecnología y finanzas", "gdpSharePercent": 12, "annualGrowthPercent": 3, "employmentIntensity": 0.3, "exportSharePercent": 9, "commoditySensitivity": 0.08, "exchangeSensitivity": 0.3, "creditSensitivity": 0.75, "importDependence": 0.4, "stateOwnershipPercent": 10 }
+      ],
+      "fiscalSpendingPercentGdp": 57,
+      "taxBurdenPercentGdp": 43,
+      "tradeOpennessPercent": 75,
+      "publicOwnershipPercent": 23
+    }
+  }
+}

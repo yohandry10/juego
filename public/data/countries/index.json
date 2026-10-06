@@ -1,6 +1,19 @@
 {
   "countries": [
-    { "id": "peru", "name": "Perú", "file": "peru.json" },
-    { "id": "spain", "name": "España", "file": "spain.json" }
+    {
+      "id": "peru",
+      "name": "Perú",
+      "file": "peru.json"
+    },
+    {
+      "id": "spain",
+      "name": "España",
+      "file": "spain.json"
+    },
+    {
+      "id": "france",
+      "name": "Francia",
+      "file": "france.json"
+    }
   ]
 }

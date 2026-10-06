@@ -38,7 +38,7 @@ function initialExecutiveState(country: CountryDefinition, seed: string, strateg
   const risk = calculateGovernmentStability({ ...initial, player }, supportPartyIds, chamberId, country);
   return careerGameStateSchema.parse({ ...initial, player, stage: "executive", electionOutcome, government: {
     status: "active", executiveId: player.id, chamberId, round: "first", supportPartyIds, termTurn: 0, totalTermTurns: country.politicalSystem.executive.termYears * 4,
-    lastInvestitureYes: null, ...risk, challenge: null, cabinet,
+    lastInvestitureYes: null, ...risk, challenge: null, cabinet, policyVotes: [],
   } });
 }
 

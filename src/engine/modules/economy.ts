@@ -1,32 +1,19 @@
-import { createRng } from "../rng.js";
+import { advanceEconomicQuarter } from "../../domain/economic-model.js";
 import type { SimulationModule } from "../module-contract.js";
-import type { SimulationMessages } from "../messages.js";
-
-const clamp = (value: number, min: number, max: number): number => Math.min(max, Math.max(min, value));
-const round = (value: number): number => Number(value.toFixed(2));
 
 export const economyModule: SimulationModule = {
   id: "economy",
-  query: (state) => ({ gdpIndex: state.gdpIndex, inflationPercent: state.inflationPercent, unemploymentPercent: state.unemploymentPercent }),
+  query: (state) => ({ indicators: state.economy.indicators, sectors: state.economy.sectors, crises: state.economy.crises }),
   register(bus) {
     return bus.on("turn.started", ({ country, state, nextTime, nextQuarterIndex }) => {
-      const rng = createRng(state.randomStreams.economy);
-      const growthNoise = (rng.next() - 0.5) * 0.8;
-      const inflationNoise = (rng.next() - 0.5) * 0.5;
-      const unemploymentNoise = (rng.next() - 0.5) * 0.18;
-      const quarterlyGrowth = (country.economy.annualGrowthPercent + growthNoise) / 400;
+      const result = advanceEconomicQuarter(state, country.economy.annualGrowthPercent, nextQuarterIndex);
       bus.emit("economy.updated", {
-        country,
-        state,
-        nextTime,
-        nextQuarterIndex,
-        randomStreams: { ...state.randomStreams, economy: rng.getState() },
-        quarterlyGrowth,
-        gdpIndex: round(Math.max(1, state.gdpIndex * (1 + quarterlyGrowth))),
-        inflationPercent: round(clamp(state.inflationPercent + ((country.economy.annualInflationPercent - state.inflationPercent) / 12) + inflationNoise, -20, 100)),
-        unemploymentPercent: round(clamp(state.unemploymentPercent + ((country.economy.unemploymentPercent - state.unemploymentPercent) / 12) + unemploymentNoise, 0, 80)),
+        country, state, nextTime, nextQuarterIndex,
+        randomStreams: { ...state.randomStreams, economy: result.randomState },
+        quarterlyGrowth: result.quarterlyGrowth, gdpIndex: result.gdpIndex,
+        inflationPercent: result.inflationPercent, unemploymentPercent: result.unemploymentPercent,
+        economy: result.economy, publicAgenda: state.publicAgenda, newCrises: result.newCrises, policyMoodEffect: result.policyMoodEffect,
       });
     });
   },
 };
-

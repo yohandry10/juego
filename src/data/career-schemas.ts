@@ -145,7 +145,7 @@ export const legacyProfileSchema: z.ZodType<LegacyProfile> = z.object({
 
 const gameState = gameStateSchema;
 export const careerGameStateSchema: z.ZodType<CareerGameState> = z.object({
-  saveSchemaVersion: z.literal(12), countryId: z.string().min(1), countryDataVersion: z.string().min(1), contentDataVersion: z.string().min(1),
+  saveSchemaVersion: z.literal(13), countryId: z.string().min(1), countryDataVersion: z.string().min(1), contentDataVersion: z.string().min(1),
   seed: z.string().min(1), stage: z.enum(["campaign", "election-result", "legislature", "executive", "party-leadership", "minister", "term-summary", "legacy"]), realism: realismModeSchema, ironman: z.boolean(),
   currentTurn: z.number().int().nonnegative(), world: gameState, player: politicalCharacterSchema,
   playerPartyId: z.string().min(1), campaign: campaignStateSchema, electionOutcome: electionOutcomeSchema.nullable(),

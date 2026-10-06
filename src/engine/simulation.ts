@@ -7,6 +7,7 @@ import { economyModule } from "./modules/economy.js";
 import { eventRulesModule } from "./modules/event-rules.js";
 import { societyModule } from "./modules/society.js";
 import { createRng, hashSeed } from "./rng.js";
+import { createEconomicState } from "../domain/economic-model.js";
 
 const clamp = (value: number, min: number, max: number): number => Math.min(max, Math.max(min, value));
 
@@ -64,7 +65,7 @@ function makePoliticalActors(country: CountryDefinition, rngState: number): { pa
   const factions: Faction[] = parties.flatMap((party) => [0, 1].map((index) => ({
     id: `faction-${party.id}-${index + 1}`, partyId: party.id,
     name: `${party.name} · ${factionQualities[Math.floor(rng.next() * factionQualities.length)]}`,
-    influencePercent: Math.round(30 + rng.next() * 40),
+    influencePercent: Math.round(30 + rng.next() * 40), ideology: { ...party.ideology, economy: clamp(party.ideology.economy + (index ? 6 : -6), 0, 100), rigidity: clamp(party.ideology.rigidity + (index ? -8 : 8), 0, 100) },
   })));
   const chambers: ChamberDefinition[] = country.politicalSystem.legislature.type === "bicameral"
     ? [country.politicalSystem.legislature.lowerChamber, country.politicalSystem.legislature.upperChamber]
@@ -135,10 +136,16 @@ export function createGameState(country: CountryDefinition, seed: string): GameS
     gdpIndex: 100,
     inflationPercent: country.economy.annualInflationPercent,
     unemploymentPercent: country.economy.unemploymentPercent,
+    economy: createEconomicState(country.id),
+    publicAgenda: {
+      issues: ["employment", "cost-of-living", "public-services", "institutions"].map((id, index) => ({ id, salience: [82, 76, 68, 44][index]!, ownerPartyId: null })),
+      polarization: 38, institutionalTrust: 52, partyTrust: 50, electorateTrust: 50, collectiveActions: [],
+    },
+    headOfStatePartyId: generated.parties[0]?.id ?? null,
     parties: generated.parties,
     factions: generated.factions,
     legislators: generated.legislators,
-    socialBlocks: country.socialBlocks.map((block) => ({ ...block, demands: [...block.demands] })),
+    socialBlocks: country.socialBlocks.map((block, index) => ({ ...block, demands: [...block.demands], ideology: block.ideology ?? { economy: 45 + index * 3, social: 48 + index * 2, nationalism: 50, institutionalism: 55, rigidity: 30 + (index % 3) * 10 }, dispersion: block.dispersion ?? 42, pressurePower: block.pressurePower ?? [72, 48, 58, 55, 65, 52][index % 6], organization: block.organization ?? [70, 40, 52, 58, 65, 48][index % 6], unmetDemandIndex: block.unmetDemandIndex ?? 20 })),
     eventHistory: [],
   };
 }

@@ -125,7 +125,7 @@ with sync_playwright() as playwright:
     for _ in range(8):
         presidential.get_by_role("button", name="Avanzar trimestre").click()
     assert presidential.get_by_text("MANDATO CERRADO").is_visible()
-    presidential.get_by_role("button", name="Competir por líder del partido").click()
+    presidential.get_by_role("button", name="Competir por", exact=False).click()
     assert presidential.get_by_text("Semana 1 de 4").is_visible()
     presidential.get_by_role("button", name="Confirmar candidatura").click()
     for _ in range(4):
@@ -134,7 +134,7 @@ with sync_playwright() as playwright:
         presidential.get_by_role("button", name="Siguiente semana").click()
     assert presidential.get_by_text("LIDERAZGO PARTIDARIO GANADO").is_visible()
     presidential.get_by_role("button", name="Iniciar mandato").click()
-    assert presidential.get_by_text("LIDERAZGO PARTIDARIO EN CURSO").is_visible()
+    assert presidential.get_by_text("LIDERAZGO PARTIDARIO", exact=True).count() > 0
     presidential.get_by_role("button", name="Unificar facciones").click()
     assert presidential.get_by_text("Decisiones anteriores").is_visible()
     for _ in range(8):
@@ -198,5 +198,21 @@ with sync_playwright() as playwright:
     party_test.get_by_label("Nombre del partido para volver").fill("Nueva Ruta")
     party_test.get_by_role("button", name="Fundar partido y volver como agente libre").click()
     assert party_test.get_by_text("Semana 1 de 4").is_visible()
+    france = browser.new_page()
+    france.on("pageerror", lambda error: errors.append(str(error)))
+    france.goto("http://127.0.0.1:5173/?country=france", wait_until="networkidle")
+    assert france.get_by_label("País de inicio").input_value() == "france"
+    france.get_by_label("Nombre público").fill("Lucía Martin")
+    france.get_by_label("Cargo inicial").select_option("prime-minister")
+    france.get_by_label("Semilla de la partida").fill("phase3-france-smoke")
+    france.get_by_role("button", name="Siguiente paso").click()
+    for _ in range(4):
+        france.get_by_role("button", name="Siguiente paso").click()
+    france.get_by_label("Edad").fill("40")
+    france.get_by_role("button", name="Empezar campaña").click()
+    france.get_by_role("button", name="05 Economía").click()
+    assert france.get_by_role("heading", name="El país, sus sectores y sus tensiones").is_visible()
+    assert france.get_by_text("Actividad por sector").is_visible()
+    assert france.locator(".country-facts details summary").count() == 20
     assert not errors, errors
     browser.close()

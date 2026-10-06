@@ -8,7 +8,7 @@ export const eventRulesModule: SimulationModule = {
   query: (state) => ({ eventHistory: state.eventHistory }),
   register(bus) {
     return bus.on("congress.updated", (congress) => {
-      const { country, nextTime, nextQuarterIndex, quarterlyGrowth, gdpIndex, inflationPercent, unemploymentPercent, politicalStability, socialBlocks } = congress;
+      const { country, nextTime, nextQuarterIndex, quarterlyGrowth, gdpIndex, inflationPercent, unemploymentPercent, politicalStability, socialBlocks, newCrises, economy, publicAgenda } = congress;
       const events: GameEvent[] = [{
         type: "simulation.quarter-advanced", year: nextTime.year, quarter: nextTime.quarter,
         explanation: `La actividad varió ${round(quarterlyGrowth * 100)}% en el trimestre; el ánimo social, la aprobación y la estabilidad se actualizaron con esos resultados y sus reglas propias.`,
@@ -35,6 +35,14 @@ export const eventRulesModule: SimulationModule = {
         type: "society.discontent", year: nextTime.year, quarter: nextTime.quarter, blockName: dissatisfied.name, mood: dissatisfied.mood,
         explanation: "El ánimo de este bloque cayó por debajo de -25 tras el efecto combinado del crecimiento, la inflación y el cambio de humor trimestral.",
       });
+      for (const crisis of newCrises) {
+        const active = economy.crises.find((entry) => entry.type === crisis)!;
+        events.push({ type: "economy.crisis", year: nextTime.year, quarter: nextTime.quarter, crisis, severity: active.severity, explanation: active.explanation });
+      }
+      for (const action of publicAgenda.collectiveActions.filter((entry) => entry.startedQuarter === nextQuarterIndex)) {
+        const block = socialBlocks.find((entry) => entry.id === action.blockId)!;
+        events.push({ type: "society.collective-action", year: nextTime.year, quarter: nextTime.quarter, blockName: block.name, action: action.type, severity: action.severity, explanation: action.explanation });
+      }
       const state: GameState = {
         ...congress.state,
         ...congress.nextTime,
@@ -45,6 +53,8 @@ export const eventRulesModule: SimulationModule = {
         gdpIndex: congress.gdpIndex,
         inflationPercent: congress.inflationPercent,
         unemploymentPercent: congress.unemploymentPercent,
+        economy: congress.economy,
+        publicAgenda: congress.publicAgenda,
         parties: congress.parties,
         legislators: congress.legislators,
         socialBlocks: congress.socialBlocks,
