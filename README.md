@@ -55,7 +55,18 @@ python scripts/accessibility-browser-check.py
 python scripts/contrast-browser-check.py
 ```
 
-Los scripts de producción usan 4173; smoke usa 5173. `MANDATO_BASE_URL` configura el arranque por país; `MANDATO_BROWSER=firefox` selecciona Firefox para Ayuda/offline. Batería ampliada: 4.500 muestras, 450 por país, tres estrategias y tres modos, con cargos e ideologías desglosados y semillas nuevas `balance-holdout-v2` ya utilizadas en este corte. Cada muestra cierra un mandato o derrota y retiro; no 40 años por muestra. El balance conserva extremos y no se declara satisfactorio. La carrera larga registrada sí cubre 40 años, con seis semillas previas fallidas explicitadas.
+Los scripts de producción usan 4173; smoke usa 5173. `MANDATO_BASE_URL` configura el arranque por país; `MANDATO_BROWSER=firefox` selecciona Firefox para Ayuda/offline. Batería ampliada: 4.500 muestras, 450 por país, tres estrategias y tres modos, con cargos e ideologías desglosados y semillas nuevas `balance-holdout-v2` ya utilizadas en este corte. Se repitió el mismo lote para verificar la optimización, comparando los 4.500 resultados sin sus tiempos; no constituye una nueva calibración. Cada muestra cierra un mandato o derrota y retiro; no 40 años por muestra. El balance conserva extremos y no se declara satisfactorio. La carrera larga registrada sí cubre 40 años, con seis semillas previas fallidas explicitadas.
+
+Para repetir la comprobación de interfaz de la carrera larga en PowerShell:
+
+```powershell
+$env:MANDATO_LONG_COMPARE_PATH = 'docs/performance-baseline-0df312e.json'
+$env:MANDATO_LONG_STATE_PATH = Join-Path $env:TEMP 'mandato-long-pc-state.json'
+npm run validate:long-career
+python scripts/long-career-browser-check.py
+```
+
+La comparación con la línea base solo corresponde a esta optimización que conserva comportamiento. Cuando cambien reglas, documentar otra referencia antes de usar sus hashes. El JSON temporal contiene una carrera real producida por comandos, sin modificar indicadores ni votos.
 
 ## Arquitectura
 
@@ -63,6 +74,6 @@ Domain define contratos; Engine genera actores y avanza mundo/economía/sociedad
 
 ## Estado verificable
 
-117 pruebas, build/Worker, smoke y navegadores pasan; 407 plantillas/64 arcos/80 internacionales/10 arcos mundiales. Auditoría mundial cada trimestre en 100 × 50 años y 651 arranques generados. Contraste CSS, teclado y texto verificados; Chromium/Firefox en PC y offline. El chunk principal es 334,58 KB minificado; separarlo no elimina las descargas iniciales de React/validación/datos. La carrera de 40 años restaura idénticamente y tiene 0% de repetición literal a 30 años, pero su memoria/estado/tiempo crecen.
+117 pruebas, build/Worker, smoke y navegadores pasan; 407 plantillas/64 arcos/80 internacionales/10 arcos mundiales. Auditoría mundial cada trimestre en 100 × 50 años y 651 arranques generados. Contraste CSS, teclado y texto verificados; Chromium/Firefox en PC y offline. El chunk principal es 334,05 KB minificado; separarlo no elimina las descargas iniciales de React/validación/datos. La carrera de 40 años conserva el estado anterior por SHA-256 y restaura idénticamente; última década 23,24 → 8,92 ms en una comparación local. La bandeja y el diario tienen páginas y búsqueda, sin eliminar pendientes ni recuerdos. El guardado sigue creciendo; memoria sostenida pendiente.
 
 Pendientes obligatorios: curación y balance, calibración y alcance mundial restante, contenido/editorial, legado histórico completo, tutorial/pulido, robustez sostenida, licencias específicas y publicación. [Cinco sesiones nuevas](docs/protocolo-prueba-jugadores.md), revisión humana y tecnologías de asistencia siguen sin evidencia; automatización no las cumple.

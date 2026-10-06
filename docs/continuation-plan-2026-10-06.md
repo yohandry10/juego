@@ -29,3 +29,9 @@ Membresías OMC/FMI/IBRD contrastadas; amortización protegida contra duplicaci�
 ## Corrección posterior del alcance: solo PC
 
 El usuario corrigió explícitamente la desviación hacia móvil. El proyecto se dedica exclusivamente a PC, con ratón, teclado y pantallas de escritorio. Se retiraron los controles añadidos solo para móvil y las baterías de interfaz se orientaron a 1280/1920 px. No se seguirá trabajo móvil ni se conservara como criterio de aceptación. Las menciones de comprobaciones móviles en registros previos son historia, no alcance vigente.
+
+## Plan del bloque de partidas largas
+
+Medir componentes del guardado y registrar SHA-256 del estado cada década antes de cambiar la selección de eventos. Sustituir búsquedas repetidas por índices, conservando orden, variantes y consecuencias; comparar los cuatro estados y la restauración al trimestre 80. Mostrar la bandeja y el diario por páginas, con búsqueda y acceso a decisiones resueltas, sin borrar decisiones pendientes ni recuerdos. Medir ambas interfaces con la misma carrera real de 40 años en Chromium/Firefox, ventanas PC de 1280/1920 px, teclado y exportación intacta. Mantener abierto el crecimiento del estado si estas mejoras solo resuelven búsqueda y renderizado.
+
+Resultado: hashes de las cuatro décadas idénticos; última década 23,24 → 8,92 ms en la medición local. Bandeja/diario por páginas y búsqueda pasan los cuatro casos PC y conservan todo el guardado. El tamaño del estado no se redujo; sigue abierto el crecimiento de memoria. Evidencia en `performance-baseline-0df312e.json`, `long-career-evidence.json` y `long-career-browser-evidence.json`.

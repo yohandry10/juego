@@ -175,3 +175,13 @@ Este bloque sustituye las afirmaciones anteriores sobre ausencia de tramos, revi
 ## 2026-10-06 — Corrección del usuario: exclusivamente PC
 
 El usuario rechazó explícitamente trabajo móvil. El alcance pasa a PC con ratón y teclado; esta instrucción prevalece sobre la guía original. Se retiró el bloque añadido de guardados móviles; las pruebas de financiación y accesibilidad usan 1280×900 y 1920×1080. Los registros de comprobaciones móviles anteriores describen trabajo previo y no fijan requisitos ni prioridad futura. Se mantiene la simplificación del lenguaje y la profundidad de decisiones.
+
+
+## 2026-10-06 — Partidas largas y bandeja para PC
+
+- Selección de eventos: mapas estáticos para plantilla/predecesores/disparadores, conjuntos por llamada para variantes y eventos vistos. Conserva el orden original, la primera coincidencia de arco, variantes fiscales y vínculo al personaje. No se guarda una caché mutable dentro del estado.
+- Línea base `0df312e` producida antes de cambiar el motor: cuatro hashes de estado (10/20/30/40 años). La optimización los reproduce todos y la restauración al trimestre 80 sigue idéntica. Última década 23,24 → 8,92 ms en una corrida local por versión; no es una promesa para todo hardware.
+- Bandeja: doce asuntos por página; pendientes/resueltas/todo, búsqueda sin distinción de acentos y orden. Diario bajo demanda, veinte entradas por página. Las consecuencias de cada opción son visibles; la respuesta confirmada se consulta en el diario. No se truncan decisiones, registros o memorias ni se modifican identificadores de guardados.
+- PC: Chromium/Firefox, 1280/1920 px, todas las 35 páginas de 414 pendientes, 432 recuerdos, teclado, búsquedas, respuesta efectiva e importación/exportación idéntica. Guardado v15 preservado. Prueba automática, no comprensión humana ni asistencia.
+- Tamaño del texto: Ayuda eliminaba la preferencia del documento al salir. Se mantiene globalmente y se restaura al cargar la aplicación; texto muy grande (20 px raíz) probado al navegar y recargar en ambos navegadores y ventanas PC.
+- La memoria y el archivo del motor aún crecen. El presupuesto de memoria sostenida, más cargos, legado completo y los criterios humanos permanecen pendientes. Dos builds idénticos: 30 archivos; Bandeja es un módulo diferido de 5,72 KB, precargado offline.

@@ -26,6 +26,12 @@ En la variante hegemónica consulta élites, partido, militares, seguridad, prot
 
 Economía empieza con cuatro señales: si el país crece, cuánto suben los precios, cuánta gente busca empleo y cuánta vive en pobreza. Cada una explica por qué cambió. Al elegir una medida ves su beneficio, su riesgo, el costo en apoyo político y cuánto tarda. Puede ayudar a unos grupos y perjudicar a otros; no promete resultados garantizados. Los veinte indicadores y las cuentas completas siguen disponibles en detalles opcionales.
 
+## Encontrar tus decisiones y recuerdos
+
+En Bandeja, **Pendientes** muestra asuntos por responder y **Resueltas** permite volver a leerlos. Busca una palabra o elige ver primero los más recientes, los más antiguos o los de mayor prioridad. Cada respuesta muestra qué puede cambiar antes de elegir. Usa Anterior y Siguiente para consultar hasta doce asuntos por página. Respondida una decisión, aparece una confirmación y su resultado queda en el diario.
+
+Abre **Diario** para buscar acciones y resultados anteriores; muestra veinte recuerdos por página. Las páginas ayudan a que una carrera larga sea más cómoda, sin borrar asuntos antiguos ni recuerdos. También puedes usar Tab y Enter para buscar, elegir y pasar de página.
+
 ## Ritmo del tiempo
 
 En Carrera puedes seguir paso a paso (tres meses) o avanzar hasta la próxima decisión. El ritmo rápido espera si tienes una respuesta en Bandeja, una propuesta que votar o una crisis que atender; también se detiene al terminar un cargo. Nunca elige una respuesta por ti y avanza como máximo un año por pulsación. Puedes volver al ritmo normal para observar cada trimestre.
@@ -43,7 +49,7 @@ Un Gobierno ejecutivo puede solicitar autorización de conflicto con 12 de capit
 | Pestaña | Uso |
 | --- | --- |
 | 01 Carrera | Campaña, cargo, recursos, riesgo y decisiones. |
-| 02 Bandeja | Noticias, arcos y decisiones pendientes. |
+| 02 Bandeja | Decisiones pendientes/resueltas, búsqueda y diario por páginas. |
 | 03 Congreso | Representantes ficticios, bancadas, negociación y votos. |
 | 04 Prensa | Titulares satíricos de sucesos del estado. |
 | 05 Economía | Indicadores, sectores, políticas y causas. |
@@ -57,7 +63,7 @@ Retirarte produce diez arquetipos posibles, estadísticas, texto y tarjeta copia
 
 IndexedDB conserva la partida v15. Guardados v3–v14 migran preservando la carrera; importar/exportar usa JSON, salvo importación bloqueada en Ironman. Los botones de importación y exportación están en la barra lateral de PC. El salón también es local. El sitio no necesita cuentas ni envía deliberadamente la partida; alojamiento y enlaces externos tienen sus propias condiciones. Borrar datos del sitio elimina guardado, salón y preferencias.
 
-En producción, tras la primera carga completa, se almacenan los diez perfiles, módulos, mapa, privacidad, créditos y licencias para jugar sin conexión; los escenarios generados se construyen desde ese material. La pestaña Ayuda ajusta texto y ofrece checklist. Hay foco de teclado y reducción de movimiento. Las pruebas automáticas cubren Chromium/Firefox y PC; no sustituyen lectores de pantalla ni sesiones con personas.
+En producción, tras la primera carga completa, se almacenan los diez perfiles, módulos, mapa, privacidad, créditos y licencias para jugar sin conexión; los escenarios generados se construyen desde ese material. La pestaña Ayuda ajusta texto y ofrece checklist. El tamaño elegido se mantiene al cambiar de pantalla y al volver a abrir el juego. Hay foco de teclado y reducción de movimiento. Las pruebas automáticas cubren Chromium/Firefox y PC; no sustituyen lectores de pantalla ni sesiones con personas.
 
 ## Países y límites
 

@@ -118,7 +118,9 @@ with sync_playwright() as playwright:
         presidential.wait_for_function("document.querySelector(\"main.app-shell\").getAttribute(\"aria-busy\") === \"false\"")
     presidential.get_by_role("button", name="02 Bandeja").click()
     presidential.get_by_role("button", name="Priorizar servicios").click()
-    assert presidential.get_by_text("Votación nominal", exact=False).count() > 0
+    presidential.locator(".inbox-diary > summary").click()
+    presidential.get_by_role("searchbox", name="Buscar en el diario").fill("Votación nominal")
+    assert presidential.locator(".inbox-diary .log-list p").filter(has_text="Votación nominal").first.is_visible()
     presidential.get_by_role("button", name="01 Carrera").click()
     assert presidential.get_by_text("PRESUPUESTO ANUAL", exact=True).is_visible()
     assert presidential.get_by_text("Actas de votación presupuestaria", exact=False).count() > 0

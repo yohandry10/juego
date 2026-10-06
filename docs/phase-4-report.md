@@ -29,7 +29,7 @@ Los turnos normales de Congreso, ejecutivo, ministerio y partido avanzan carrera
 | Golpes mundiales por corrida | 41.94 |
 | Shocks por corrida | 24.07 |
 | Sanciones por corrida | 0.99 |
-| Trimestre mundial medio, con auditoría | 2,73 ms |
+| Trimestre mundial medio, con auditoría | 3,01 ms |
 
 El conteo de golpes ahora es mundial, a partir de `coupHistory`; el anterior cero contaba únicamente el país del jugador y no es una comparación equivalente. Se eliminó la casi ausencia de conflictos del ajuste anterior, pero las frecuencias siguen siendo heurísticas. Conflictos iniciados no significa conflictos activos por año; no se comparan esas métricas directamente con estadísticas reales. El veto nuclear verifica la regla, no una predicción estratégica.
 
@@ -48,7 +48,7 @@ El conteo de golpes ahora es mundial, a partir de `coupHistory`; el anterior cer
 | 5. Shocks | Cumple en el modelo | 1.736 casos prueban dependencia, sector, proveedor y efecto local en los ocho tipos. El grafo es sintético, no una matriz comercial observada. |
 | 6. Guerra completa | Cumple en el modelo agregado | Fuerzas, cinco tipos, cuatro costos, autorización y resultado explicable; posguerra afecta presión, estabilidad, lealtad y transferencias, con ayuda civil. No hay frentes tácticos ni diplomacia exhaustiva. |
 | 7. País mediano | Cumple la comparación básica | 225 escenarios con costos, confianza y aislamiento diferenciados. Falta balance estratégico de carreras y distintas potencias asociadas. |
-| 8. Worker y rendimiento | Cumple medición local | Worker avanza el turno completo; Chromium/Firefox lo verifican sin red y sincronizado. Hay evolución anual agregada de secundarios. Mundo 2,73 ms/trimestre bajo carga; Worker frío 0,254/0,276 s y caliente 0,075/0,090 s (Chromium/Firefox), sin red; [JSON](career-worker-browser-evidence.json). No se extrapola a otro hardware. |
+| 8. Worker y rendimiento | Cumple medición local | Worker avanza el turno completo; Chromium/Firefox lo verifican sin red y sincronizado. Hay evolución anual agregada de secundarios. Mundo 3,01 ms/trimestre bajo carga; Worker frío 0,152/0,275 s y caliente 0,066/0,094 s (Chromium/Firefox), sin red; [JSON](career-worker-browser-evidence.json). No se extrapola a otro hardware. |
 | 9. Tasas razonables | Parcial | Frecuencias medidas, umbrales/enfriamiento y 36 corridas de sensibilidad; falta calibración independiente de tasas y validación de su verosimilitud. |
 | 10. Contenido | Cumple cantidad y validador | 80 plantillas y 10 arcos internacionales; revisión humana editorial pendiente. |
 
@@ -61,3 +61,5 @@ Completar auditoría semántica de causas y obligaciones; calibrar frecuencias c
 117 pruebas pasan; build y Worker pasan. Smoke Edge, diplomacia y régimen opcional pasan. Chromium inicia los diez perfiles y tres ejemplos generados con HTTP 200. Ayuda, créditos, licencias y perfiles sin conexión pasan en Chromium/Firefox; teclado, texto grande y ventanas de escritorio pasan. Entorno: Node 24.13.1, Windows, Core i5-10400F, ~16 GiB RAM. Las mediciones dependen del hardware y carga concurrente.
 
 La interfaz explica beneficios, costos y riesgos en lenguaje cotidiano, con reglas numéricas opcionales. Financiación pasa aprobación, pausa, recuperación y compromiso con costo en Chromium/Firefox, 1280 y 1920 px. La prueba usa una partida generada por comandos reales, sin alterar votos o indicadores: [evidencia](financing-browser-evidence.json). Esto no acredita comprensión humana ni completa la ratificación nacional, aún genérica.
+
+La continuación de rendimiento optimiza únicamente búsquedas de eventos de carrera y su interfaz PC; no cambia parámetros ni reglas de guerra, financiación o membresía. Los recorridos diplomáticos, financiación y Worker se vuelven a comprobar. El estado completo de una carrera larga coincide por SHA-256 con el motor previo; no cierra los criterios pendientes de esta fase.

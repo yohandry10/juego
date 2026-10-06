@@ -18,7 +18,6 @@ export function HelpView() {
   useEffect(() => {
     document.documentElement.dataset.textSize = textSize;
     try { localStorage.setItem("mandato.text-size.v1", textSize); } catch { /* El ajuste de esta sesión se mantiene aunque el navegador bloquee el almacenamiento. */ }
-    return () => { delete document.documentElement.dataset.textSize; };
   }, [textSize]);
   function toggle(index: number) {
     const next = done.includes(index) ? done.filter((item) => item !== index) : [...done, index].sort((a, b) => a - b);

@@ -1,30 +1,34 @@
 {
   "date": "2026-10-06",
   "identical": true,
-  "files": 29,
+  "files": 30,
   "command": "npm run build:repro-check",
   "environment": "Node v24.13.1, win32, installed lockfile dependencies",
   "limitation": "Dos builds consecutivos con las dependencias instaladas; no valida instalación limpia en otro SO.",
   "hashes": [
     {
-      "file": "assets/EconomyView-C3hpuIKm.js",
-      "sha256": "78e3da55297c3e24a61b20dc8eb07b4163cd135095e3789f09534e8110422586"
+      "file": "assets/EconomyView-CfF--YF0.js",
+      "sha256": "2017cbf12ada2923a8a99bc07beed13d1185bcff2ab6ec12bfc06a4bcad10192"
     },
     {
-      "file": "assets/HallOfFame-Dp65byxo.js",
-      "sha256": "99b9a5cc1f548360d164f3dbe8d1c967e82518af2a8f42b7ed2de56aa0b2ca9e"
+      "file": "assets/HallOfFame-DWPgviVJ.js",
+      "sha256": "98a861cb8f1f8d5be7db54f74e5df4f2ef3973f378d972257cc867a3bfdb5157"
     },
     {
-      "file": "assets/HelpView-BMrL2IbT.js",
-      "sha256": "105d2141a83a51a16a90d2269ad10a6e1ff07b1e6d02a31164fe30b71bb2b36e"
+      "file": "assets/HelpView-oFZ79OzC.js",
+      "sha256": "ecc8366936ed9555a5b6b9180a3fb4801043f4093ad8f1c5b36c5749991f5931"
     },
     {
-      "file": "assets/index-DFZJhy_E.js",
-      "sha256": "5517dae3519bafd208ac32ad8fb6e8147adac69b3d143f5ec8f9e64ddfcc7fd1"
+      "file": "assets/InboxView-3Wr2TA_o.js",
+      "sha256": "b79eff7ccb5ad00504e2e716597f5c3c4ca7a4240191bc660cff9a061e5df25d"
     },
     {
-      "file": "assets/index-ocEd9DCS.css",
-      "sha256": "aff33e08afc66d485d9a96fbb62f722a0fbdb2e28065c2fda3f5b846f506f20f"
+      "file": "assets/index-mmzyJpQD.css",
+      "sha256": "c5f166876ebf741e37f58c923c721438e2a16409fca080de498ed623d057cde3"
+    },
+    {
+      "file": "assets/index-yDxIzlH7.js",
+      "sha256": "77e9b2d5197ef7fe29edbe8b34ebb6836bcfdf0eb80c0e97f761293388eddb2c"
     },
     {
       "file": "assets/react-Dy-GIXkn.js",
@@ -35,8 +39,8 @@
       "sha256": "bbf7c5086ae414dc3f33777e3eebf16ea8631325b8bb4690d25091c03567f31a"
     },
     {
-      "file": "assets/simulation-worker-TferRALr.js",
-      "sha256": "9d0595b4f65366824d0fd036536f23686fd18dea2538619ad1079bbf32ae299c"
+      "file": "assets/simulation-worker-DQe353dm.js",
+      "sha256": "5bd85b442e7ed09fa63c0cad1e3c62e8ecf6e4b822df35938bc0010260e64fa4"
     },
     {
       "file": "assets/validation-2oiOZAhq.js",
@@ -47,8 +51,8 @@
       "sha256": "d4fa3fb524369d47cbd303a1e446bc487892a09135984a16291c726f4af4a5fb"
     },
     {
-      "file": "assets/WorldView-FNDYWy8C.js",
-      "sha256": "400056182fac7e3450f18b5cb1793004291a803830ada345e0cd0a96ad4f6d64"
+      "file": "assets/WorldView-JqjGLk_3.js",
+      "sha256": "7c87e50f9e192aebeff8c8bca86d21a27c58ada945aa59cb1f68e0cc64301579"
     },
     {
       "file": "credits.html",
@@ -104,11 +108,11 @@
     },
     {
       "file": "index.html",
-      "sha256": "28103eac8c95c3a26f40c8f608a78d9014f61d9a114c925b6a58bd1aa06c2727"
+      "sha256": "3ceda9ae92dc16155f6e0ea92d6772578c777f33f5d92c89bc32a3026bab7c32"
     },
     {
       "file": "offline-manifest.json",
-      "sha256": "bbee7079dfac526773d3295ba6a00040ed1f1bcf9bcc90cfcc03a334f954a6e9"
+      "sha256": "79728124e8b60241f2b0e1030dfda5db794dc9153a2feb8c5690cac179391e9f"
     },
     {
       "file": "privacy.html",
@@ -116,7 +120,7 @@
     },
     {
       "file": "sw.js",
-      "sha256": "8895f81ad8d93fd7513a1b10495fb6959aed3087f8c9c5953240fb5edddf4b0c"
+      "sha256": "eef4ccdbc036f4fe4054ee31a088b33bad5eea771720f1e4fc9cd478bbc0fb3c"
     },
     {
       "file": "THIRD-PARTY-NOTICES.txt",

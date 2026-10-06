@@ -49,6 +49,27 @@ const eventChoices = [
   { id: "negotiate", label: "Negociar apoyos", consequenceHint: "Invierte capital político para fortalecer una relación.", actionType: "negotiate" as const },
 ];
 
+const careerEventsById = new Map(careerEventCatalog.map((event) => [event.id, event]));
+const previousArcStepsByEventId = new Map<string, readonly string[]>();
+for (const arc of careerEventArcs) {
+  arc.eventIds.forEach((eventId, index) => {
+    // Keep the first matching arc, as the original ordered search did.
+    if (!previousArcStepsByEventId.has(eventId)) previousArcStepsByEventId.set(eventId, arc.eventIds.slice(0, index));
+  });
+}
+const externallyTriggeredEventIds = new Set(careerEventCatalog.filter((event) => careerEventArcs.some((arc) =>
+  arc.automaticProgressAfterStep !== undefined && event.arcId === arc.id && event.arcStep === arc.automaticProgressAfterStep)).map((event) => event.id));
+
+function usedEventIds(variants: readonly string[]): Set<string> {
+  const ids = new Set<string>();
+  for (const variant of variants) {
+    // Every colon prefix preserves the former startsWith(`${eventId}:`) rule,
+    // including identifiers from imported saves.
+    for (let colon = variant.indexOf(":"); colon >= 0; colon = variant.indexOf(":", colon + 1)) ids.add(variant.slice(0, colon));
+  }
+  return ids;
+}
+
 function choicesForEvent(event: typeof careerEventCatalog[number]): readonly InboxOption[] {
   const choice = (id: string, label: string, consequenceHint: string, effectId: NonNullable<InboxOption["effectId"]>): InboxOption => ({ id, label, consequenceHint, actionType: "event-choice", effectId });
   const choicesByArc: Record<string, readonly InboxOption[]> = {
@@ -145,20 +166,23 @@ export function registerMilitaryCoup(state: CareerGameState, country: CountryDef
     log: [...state.log, { turn: state.currentTurn + 1, text: "El Gobierno cayó tras un golpe militar.", explanation }] });
 }
 
-function nextArcStep(state: CareerGameState): { readonly eventId: string; readonly payloadId: string | null } | undefined {
-  const unused = (eventId: string) => !state.usedEventVariants.some((variant) => variant.startsWith(`${eventId}:`));
+function nextArcStep(state: CareerGameState, seenEventIds: ReadonlySet<string> = usedEventIds(state.usedEventVariants)): { readonly eventId: string; readonly payloadId: string | null } | undefined {
+  const unused = (eventId: string) => !seenEventIds.has(eventId);
   const stageEligible = (event: typeof careerEventCatalog[number]) => event.stage === "any" || event.stage === state.stage || (state.stage === "election-result" && event.stage === "campaign");
   for (const arc of careerEventArcs) {
     const startedAt = arc.eventIds.reduce((latest, eventId, index) => unused(eventId) ? latest : index, -1);
     if (startedAt < 0) continue;
     if (startedAt + 1 < (arc.automaticProgressAfterStep ?? 1)) continue;
     const next = arc.eventIds.slice(startedAt + 1).find((eventId) => {
-      const event = careerEventCatalog.find((item) => item.id === eventId);
+      const event = careerEventsById.get(eventId);
       return event && unused(eventId) && stageEligible(event);
     });
     if (next) {
-      const previous = [...state.inbox].reverse().find((item) => arc.eventIds.includes(item.eventId));
-      return { eventId: next, payloadId: previous?.payloadId ?? null };
+      for (let index = state.inbox.length - 1; index >= 0; index--) {
+        const item = state.inbox[index]!;
+        if (arc.eventIds.includes(item.eventId)) return { eventId: next, payloadId: item.payloadId };
+      }
+      return { eventId: next, payloadId: null };
     }
   }
   return undefined;
@@ -166,30 +190,25 @@ function nextArcStep(state: CareerGameState): { readonly eventId: string; readon
 
 function addCareerEvent(state: CareerGameState, preferredId?: string, payloadId: string | null = null, options?: readonly InboxOption[]): CareerGameState {
   const stageEligible = (event: typeof careerEventCatalog[number]) => event.stage === "any" || event.stage === state.stage || (state.stage === "election-result" && event.stage === "campaign");
-  const unused = (eventId: string) => !state.usedEventVariants.some((variant) => variant.startsWith(`${eventId}:`));
+  const usedVariants = new Set(state.usedEventVariants);
+  const seenEventIds = usedEventIds(state.usedEventVariants);
   const recurringBudgetRequest = preferredId === "budget-shortfall";
-  const continuation = nextArcStep(state);
-  const externallyTriggered = (event: typeof careerEventCatalog[number]) => careerEventArcs.some((arc) =>
-    arc.automaticProgressAfterStep !== undefined
-    && event.arcId === arc.id
-    && event.arcStep === arc.automaticProgressAfterStep);
+  const continuation = nextArcStep(state, seenEventIds);
   const arcStepReady = (eventId: string) => {
-    const arc = careerEventArcs.find((candidate) => (candidate.eventIds as readonly string[]).includes(eventId));
-    if (!arc) return true;
-    const index = (arc.eventIds as readonly string[]).indexOf(eventId);
-    return arc.eventIds.slice(0, index).every((previousEventId) => !unused(previousEventId));
+    return previousArcStepsByEventId.get(eventId)?.every((previousEventId) => seenEventIds.has(previousEventId)) ?? true;
   };
   const eligible = careerEventCatalog.filter((event) => stageEligible(event)
     && event.id !== "budget-shortfall"
-    && !externallyTriggered(event)
+    && !externallyTriggeredEventIds.has(event.id)
     && arcStepReady(event.id)
-    && event.variants.some((_, index) => !state.usedEventVariants.includes(`${event.id}:v${index + 1}`)));
-  const preferred = preferredId ? careerEventCatalog.find((event) => event.id === preferredId && stageEligible(event) && (recurringBudgetRequest || event.variants.some((_, index) => !state.usedEventVariants.includes(`${event.id}:v${index + 1}`)))) : undefined;
+    && event.variants.some((_, index) => !usedVariants.has(`${event.id}:v${index + 1}`)));
+  const candidate = preferredId ? careerEventsById.get(preferredId) : undefined;
+  const preferred = candidate && stageEligible(candidate) && (recurringBudgetRequest || candidate.variants.some((_, index) => !usedVariants.has(`${candidate.id}:v${index + 1}`))) ? candidate : undefined;
   const template = preferred
     ?? (continuation && eligible.find((event) => event.id === continuation.eventId))
     ?? eligible[(state.usedEventVariants.length * 7 + hashSeed(state.seed) % Math.max(1, eligible.length)) % Math.max(1, eligible.length)];
   if (!template) return state;
-  const unusedVariantIndex = template.variants.findIndex((_, index) => !state.usedEventVariants.includes(`${template.id}:v${index + 1}`));
+  const unusedVariantIndex = template.variants.findIndex((_, index) => !usedVariants.has(`${template.id}:v${index + 1}`));
   const variantIndex = unusedVariantIndex >= 0 ? unusedVariantIndex : template.id === "budget-shortfall" ? state.budget.lastProposalQuarterIndex % template.variants.length : -1;
   if (variantIndex < 0) return state;
   const variantId = template.id === "budget-shortfall" && recurringBudgetRequest ? `${template.id}:fiscal-${state.budget.lastProposalQuarterIndex}` : `${template.id}:v${variantIndex + 1}`;

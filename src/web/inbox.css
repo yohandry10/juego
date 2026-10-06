@@ -7,6 +7,22 @@
 .inbox-options{display:flex;gap:9px;margin-top:15px}
 .inbox-options button{flex:1;font-size:0.6875rem;padding:10px}
 .inbox-options .primary-button{background:#28372c;color:#d5e0bf;border-color:#536346}
+.inbox-view .inbox-intro{font-size:1rem;max-width:75ch;color:#c9d3c5;line-height:1.7}
+.inbox-filters{display:flex;gap:.75rem;margin:1.25rem 0}
+.inbox-filters button[aria-pressed="true"]{background:#c8d99e;color:#142018}
+.inbox-controls{display:grid;grid-template-columns:minmax(0,1fr) minmax(14rem,.4fr);gap:1rem}
+.inbox-controls label,.diary-search{display:grid;gap:.5rem;color:#c9d3c5;font-size:.95rem}
+.inbox-controls input,.inbox-controls select,.diary-search input{min-width:0;width:100%;padding:.8rem;background:#101815;border:1px solid #53624f;color:#edf0e5}
+.history-pages{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:1rem 0;color:#c9d3c5;font-size:.9rem}
+.inbox-view .history-count{font-size:.95rem;color:#c9d3c5;margin-top:1rem}
+.inbox-view .inbox-response{font-size:.95rem;color:#e4eddf;padding:.8rem 1rem;border-left:3px solid #d2e3a3;background:#202c25;margin:1rem 0}
+.inbox-view .inbox-grid{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+.inbox-view .inbox-item p{font-size:.95rem;color:#c9d3c5;line-height:1.7;overflow-wrap:anywhere}
+.inbox-item details{margin-top:1rem}.inbox-item summary,.inbox-diary>summary{cursor:pointer;color:#d2e3a3;font-size:.95rem;line-height:1.6}
+.inbox-view .inbox-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.9rem}
+.inbox-choice button{width:100%;font-size:.9rem;line-height:1.5;white-space:normal;text-align:left}
+.inbox-choice p{margin-top:.5rem}.inbox-diary{margin-top:2rem;border-top:1px solid #53624f;padding-top:1rem}.diary-search{margin-top:1rem;max-width:40rem}
+.inbox-view .log-list strong{font-size:.95rem}.inbox-view .log-list p{font-size:.9rem;color:#c9d3c5}
 @media(max-width:600px){.inbox-options{flex-direction:column}}
 .wizard-card h3{margin:2px 0 0;font:600 25px 'Playfair Display'}
 .wizard-help{margin:0;color:#95a094;font-size:0.75rem;line-height:1.65}

@@ -1,0 +1,101 @@
+{
+  "date": "2026-10-06",
+  "platform": "PC",
+  "fixtureSeed": "long-career-6",
+  "fixtureStateSha256": "874bb6a1e2604658a96d2328ce97a5d41b388af4aa2722fde079cb207e749c22",
+  "results": [
+    {
+      "engine": "chromium",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "years": 40,
+      "pendingAccessible": 414,
+      "maximumRenderedMatters": 12,
+      "maximumRenderedDiaryEntries": 20,
+      "openInboxMs": 351.0070999909658,
+      "allPagesMatchSave": true,
+      "keyboardPagination": true,
+      "oldestSearch": true,
+      "diarySearch": true,
+      "filtersDoNotChangeSave": true,
+      "resolvedMatterCannotBeAnsweredTwice": true,
+      "importExportIdentical": true,
+      "largestTextRootPx": 20,
+      "textSizePersistsOutsideHelpAndOnReload": true,
+      "noHorizontalOverflow": true,
+      "pageErrors": []
+    },
+    {
+      "engine": "chromium",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "years": 40,
+      "pendingAccessible": 414,
+      "maximumRenderedMatters": 12,
+      "maximumRenderedDiaryEntries": 20,
+      "openInboxMs": 345.5787999992026,
+      "allPagesMatchSave": true,
+      "keyboardPagination": true,
+      "oldestSearch": true,
+      "diarySearch": true,
+      "filtersDoNotChangeSave": true,
+      "resolvedMatterCannotBeAnsweredTwice": true,
+      "importExportIdentical": true,
+      "largestTextRootPx": 20,
+      "textSizePersistsOutsideHelpAndOnReload": true,
+      "noHorizontalOverflow": true,
+      "pageErrors": []
+    },
+    {
+      "engine": "firefox",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "years": 40,
+      "pendingAccessible": 414,
+      "maximumRenderedMatters": 12,
+      "maximumRenderedDiaryEntries": 20,
+      "openInboxMs": 366.22080000233836,
+      "allPagesMatchSave": true,
+      "keyboardPagination": true,
+      "oldestSearch": true,
+      "diarySearch": true,
+      "filtersDoNotChangeSave": true,
+      "resolvedMatterCannotBeAnsweredTwice": true,
+      "importExportIdentical": true,
+      "largestTextRootPx": 20,
+      "textSizePersistsOutsideHelpAndOnReload": true,
+      "noHorizontalOverflow": true,
+      "pageErrors": []
+    },
+    {
+      "engine": "firefox",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "years": 40,
+      "pendingAccessible": 414,
+      "maximumRenderedMatters": 12,
+      "maximumRenderedDiaryEntries": 20,
+      "openInboxMs": 362.74349999439437,
+      "allPagesMatchSave": true,
+      "keyboardPagination": true,
+      "oldestSearch": true,
+      "diarySearch": true,
+      "filtersDoNotChangeSave": true,
+      "resolvedMatterCannotBeAnsweredTwice": true,
+      "importExportIdentical": true,
+      "largestTextRootPx": 20,
+      "textSizePersistsOutsideHelpAndOnReload": true,
+      "noHorizontalOverflow": true,
+      "pageErrors": []
+    }
+  ],
+  "limitations": "Una carrera legislativa, ventanas de escritorio, navegadores sin interfaz visible; no mide comprensión humana, lector de pantalla ni memoria gráfica."
+}

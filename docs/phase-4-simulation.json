@@ -11,8 +11,8 @@
     "averageSanctions": 0.99,
     "maximumDirectNuclearWars": 0,
     "invalidValues": 0,
-    "averageQuarterMs": 2.7333538149999996,
-    "worldRuntimeMs": 54672.0303
+    "averageQuarterMs": 3.009862860000002,
+    "worldRuntimeMs": 60202.7606
   },
   "runsDetail": [
     {
@@ -26,7 +26,7 @@
       "coups": 50,
       "globalShocks": 27,
       "invalidValues": 0,
-      "averageQuarterMs": 5.8060599999999996,
+      "averageQuarterMs": 6.329743499999999,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -42,7 +42,7 @@
       "coups": 44,
       "globalShocks": 19,
       "invalidValues": 0,
-      "averageQuarterMs": 4.456034999999999,
+      "averageQuarterMs": 5.589303499999999,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -58,7 +58,7 @@
       "coups": 44,
       "globalShocks": 16,
       "invalidValues": 0,
-      "averageQuarterMs": 5.217196999999999,
+      "averageQuarterMs": 5.216577499999999,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -74,7 +74,7 @@
       "coups": 56,
       "globalShocks": 26,
       "invalidValues": 0,
-      "averageQuarterMs": 4.1900495,
+      "averageQuarterMs": 4.069066,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -90,7 +90,7 @@
       "coups": 46,
       "globalShocks": 30,
       "invalidValues": 0,
-      "averageQuarterMs": 2.6866179999999984,
+      "averageQuarterMs": 3.7572209999999995,
       "sanctions": 3,
       "sanctionerCosts": 0.22,
       "worldEvents": []
@@ -106,7 +106,7 @@
       "coups": 38,
       "globalShocks": 23,
       "invalidValues": 0,
-      "averageQuarterMs": 2.7361715,
+      "averageQuarterMs": 3.8175780000000032,
       "sanctions": 2,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -122,7 +122,7 @@
       "coups": 33,
       "globalShocks": 23,
       "invalidValues": 0,
-      "averageQuarterMs": 3.5078234999999993,
+      "averageQuarterMs": 3.5072130000000015,
       "sanctions": 2,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -138,7 +138,7 @@
       "coups": 45,
       "globalShocks": 26,
       "invalidValues": 0,
-      "averageQuarterMs": 3.3459259999999995,
+      "averageQuarterMs": 3.671685499999999,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -154,7 +154,7 @@
       "coups": 37,
       "globalShocks": 22,
       "invalidValues": 0,
-      "averageQuarterMs": 2.5680204999999976,
+      "averageQuarterMs": 3.7307220000000005,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -170,7 +170,7 @@
       "coups": 41,
       "globalShocks": 24,
       "invalidValues": 0,
-      "averageQuarterMs": 2.7001750000000038,
+      "averageQuarterMs": 3.279735000000005,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -186,7 +186,7 @@
       "coups": 46,
       "globalShocks": 29,
       "invalidValues": 0,
-      "averageQuarterMs": 2.7687689999999976,
+      "averageQuarterMs": 3.214398000000001,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -202,7 +202,7 @@
       "coups": 46,
       "globalShocks": 24,
       "invalidValues": 0,
-      "averageQuarterMs": 2.7162415000000055,
+      "averageQuarterMs": 3.6543454999999994,
       "sanctions": 3,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -218,7 +218,7 @@
       "coups": 53,
       "globalShocks": 31,
       "invalidValues": 0,
-      "averageQuarterMs": 2.3357304999999995,
+      "averageQuarterMs": 3.594517999999998,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -234,7 +234,7 @@
       "coups": 33,
       "globalShocks": 27,
       "invalidValues": 0,
-      "averageQuarterMs": 2.0091479999999957,
+      "averageQuarterMs": 3.6208439999999973,
       "sanctions": 2,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -250,7 +250,7 @@
       "coups": 40,
       "globalShocks": 23,
       "invalidValues": 0,
-      "averageQuarterMs": 2.0834850000000005,
+      "averageQuarterMs": 3.993789999999999,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -266,7 +266,7 @@
       "coups": 48,
       "globalShocks": 31,
       "invalidValues": 0,
-      "averageQuarterMs": 2.044019500000004,
+      "averageQuarterMs": 3.0461110000000007,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -282,7 +282,7 @@
       "coups": 56,
       "globalShocks": 28,
       "invalidValues": 0,
-      "averageQuarterMs": 1.9736054999999941,
+      "averageQuarterMs": 3.1430665000000046,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -298,7 +298,7 @@
       "coups": 39,
       "globalShocks": 26,
       "invalidValues": 0,
-      "averageQuarterMs": 2.0002520000000006,
+      "averageQuarterMs": 3.357554,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -314,7 +314,7 @@
       "coups": 46,
       "globalShocks": 23,
       "invalidValues": 0,
-      "averageQuarterMs": 2.0489015000000017,
+      "averageQuarterMs": 3.2291049999999997,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -330,7 +330,7 @@
       "coups": 33,
       "globalShocks": 29,
       "invalidValues": 0,
-      "averageQuarterMs": 1.982765499999996,
+      "averageQuarterMs": 3.443246999999992,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -346,7 +346,7 @@
       "coups": 32,
       "globalShocks": 22,
       "invalidValues": 0,
-      "averageQuarterMs": 1.8898945000000003,
+      "averageQuarterMs": 2.9342019999999955,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -362,7 +362,7 @@
       "coups": 49,
       "globalShocks": 18,
       "invalidValues": 0,
-      "averageQuarterMs": 1.9921085000000038,
+      "averageQuarterMs": 3.558265499999998,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -378,7 +378,7 @@
       "coups": 43,
       "globalShocks": 28,
       "invalidValues": 0,
-      "averageQuarterMs": 2.0267535000000043,
+      "averageQuarterMs": 2.9917015000000173,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -394,7 +394,7 @@
       "coups": 45,
       "globalShocks": 28,
       "invalidValues": 0,
-      "averageQuarterMs": 1.9677104999999937,
+      "averageQuarterMs": 2.7965509999999996,
       "sanctions": 3,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -410,7 +410,7 @@
       "coups": 45,
       "globalShocks": 21,
       "invalidValues": 0,
-      "averageQuarterMs": 1.9842324999999983,
+      "averageQuarterMs": 3.359064500000004,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -426,7 +426,7 @@
       "coups": 45,
       "globalShocks": 22,
       "invalidValues": 0,
-      "averageQuarterMs": 1.9970404999999938,
+      "averageQuarterMs": 3.29875,
       "sanctions": 2,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -442,7 +442,7 @@
       "coups": 31,
       "globalShocks": 20,
       "invalidValues": 0,
-      "averageQuarterMs": 1.9438365000000066,
+      "averageQuarterMs": 3.067507000000005,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -458,7 +458,7 @@
       "coups": 38,
       "globalShocks": 24,
       "invalidValues": 0,
-      "averageQuarterMs": 2.183406999999997,
+      "averageQuarterMs": 2.926830999999984,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -474,7 +474,7 @@
       "coups": 38,
       "globalShocks": 26,
       "invalidValues": 0,
-      "averageQuarterMs": 2.084931000000006,
+      "averageQuarterMs": 3.3784519999999976,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -490,7 +490,7 @@
       "coups": 37,
       "globalShocks": 19,
       "invalidValues": 0,
-      "averageQuarterMs": 1.923074999999999,
+      "averageQuarterMs": 2.7208024999999907,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -506,7 +506,7 @@
       "coups": 43,
       "globalShocks": 30,
       "invalidValues": 0,
-      "averageQuarterMs": 2.251427499999991,
+      "averageQuarterMs": 3.019122499999994,
       "sanctions": 3,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -522,7 +522,7 @@
       "coups": 39,
       "globalShocks": 31,
       "invalidValues": 0,
-      "averageQuarterMs": 2.0402999999999882,
+      "averageQuarterMs": 2.9443925000000126,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -538,7 +538,7 @@
       "coups": 56,
       "globalShocks": 27,
       "invalidValues": 0,
-      "averageQuarterMs": 3.4567484999999945,
+      "averageQuarterMs": 2.72228149999999,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -554,7 +554,7 @@
       "coups": 52,
       "globalShocks": 29,
       "invalidValues": 0,
-      "averageQuarterMs": 3.3352590000000055,
+      "averageQuarterMs": 2.6902360000000045,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -570,7 +570,7 @@
       "coups": 31,
       "globalShocks": 27,
       "invalidValues": 0,
-      "averageQuarterMs": 6.079439999999995,
+      "averageQuarterMs": 2.705434000000005,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -586,7 +586,7 @@
       "coups": 55,
       "globalShocks": 25,
       "invalidValues": 0,
-      "averageQuarterMs": 2.9986834999999883,
+      "averageQuarterMs": 2.6023565000000053,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -602,7 +602,7 @@
       "coups": 40,
       "globalShocks": 24,
       "invalidValues": 0,
-      "averageQuarterMs": 3.2637834999999904,
+      "averageQuarterMs": 2.6212109999999846,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -618,7 +618,7 @@
       "coups": 41,
       "globalShocks": 23,
       "invalidValues": 0,
-      "averageQuarterMs": 3.1581810000000043,
+      "averageQuarterMs": 2.7025005000000055,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -634,7 +634,7 @@
       "coups": 36,
       "globalShocks": 26,
       "invalidValues": 0,
-      "averageQuarterMs": 3.3425619999999983,
+      "averageQuarterMs": 2.769676500000005,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -650,7 +650,7 @@
       "coups": 34,
       "globalShocks": 28,
       "invalidValues": 0,
-      "averageQuarterMs": 3.059606499999991,
+      "averageQuarterMs": 2.781938000000009,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -666,7 +666,7 @@
       "coups": 39,
       "globalShocks": 29,
       "invalidValues": 0,
-      "averageQuarterMs": 3.2535009999999964,
+      "averageQuarterMs": 2.504640500000005,
       "sanctions": 2,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -682,7 +682,7 @@
       "coups": 41,
       "globalShocks": 20,
       "invalidValues": 0,
-      "averageQuarterMs": 2.9042844999999944,
+      "averageQuarterMs": 2.726951999999983,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -698,7 +698,7 @@
       "coups": 49,
       "globalShocks": 26,
       "invalidValues": 0,
-      "averageQuarterMs": 2.3660095,
+      "averageQuarterMs": 3.0742684999999983,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -714,7 +714,7 @@
       "coups": 36,
       "globalShocks": 15,
       "invalidValues": 0,
-      "averageQuarterMs": 2.238519500000002,
+      "averageQuarterMs": 2.825578999999998,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -730,7 +730,7 @@
       "coups": 34,
       "globalShocks": 33,
       "invalidValues": 0,
-      "averageQuarterMs": 2.703402499999993,
+      "averageQuarterMs": 2.7777620000000023,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -746,7 +746,7 @@
       "coups": 45,
       "globalShocks": 15,
       "invalidValues": 0,
-      "averageQuarterMs": 2.5684759999999915,
+      "averageQuarterMs": 2.5800864999999975,
       "sanctions": 2,
       "sanctionerCosts": 0.22,
       "worldEvents": []
@@ -762,7 +762,7 @@
       "coups": 32,
       "globalShocks": 23,
       "invalidValues": 0,
-      "averageQuarterMs": 2.2527479999999924,
+      "averageQuarterMs": 2.434884000000002,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -778,7 +778,7 @@
       "coups": 40,
       "globalShocks": 29,
       "invalidValues": 0,
-      "averageQuarterMs": 3.443009999999995,
+      "averageQuarterMs": 2.689416000000001,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -794,7 +794,7 @@
       "coups": 33,
       "globalShocks": 30,
       "invalidValues": 0,
-      "averageQuarterMs": 3.19593350000001,
+      "averageQuarterMs": 3.0849824999999873,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -810,7 +810,7 @@
       "coups": 37,
       "globalShocks": 24,
       "invalidValues": 0,
-      "averageQuarterMs": 3.1188950000000113,
+      "averageQuarterMs": 2.7194344999999887,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -826,7 +826,7 @@
       "coups": 42,
       "globalShocks": 20,
       "invalidValues": 0,
-      "averageQuarterMs": 4.5084369999999945,
+      "averageQuarterMs": 2.778819999999978,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -842,7 +842,7 @@
       "coups": 55,
       "globalShocks": 29,
       "invalidValues": 0,
-      "averageQuarterMs": 3.7013894999999866,
+      "averageQuarterMs": 2.861547000000028,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -858,7 +858,7 @@
       "coups": 45,
       "globalShocks": 21,
       "invalidValues": 0,
-      "averageQuarterMs": 2.812573000000011,
+      "averageQuarterMs": 3.056372999999985,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -874,7 +874,7 @@
       "coups": 45,
       "globalShocks": 20,
       "invalidValues": 0,
-      "averageQuarterMs": 2.3188235000000166,
+      "averageQuarterMs": 3.0468309999999836,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -890,7 +890,7 @@
       "coups": 61,
       "globalShocks": 31,
       "invalidValues": 0,
-      "averageQuarterMs": 2.5134139999999934,
+      "averageQuarterMs": 3.069898499999981,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -906,7 +906,7 @@
       "coups": 37,
       "globalShocks": 21,
       "invalidValues": 0,
-      "averageQuarterMs": 2.3923840000000016,
+      "averageQuarterMs": 2.6452150000000256,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -922,7 +922,7 @@
       "coups": 47,
       "globalShocks": 21,
       "invalidValues": 0,
-      "averageQuarterMs": 2.6620620000000055,
+      "averageQuarterMs": 2.804212000000007,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -938,7 +938,7 @@
       "coups": 37,
       "globalShocks": 19,
       "invalidValues": 0,
-      "averageQuarterMs": 2.765760000000009,
+      "averageQuarterMs": 2.914155000000028,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -954,7 +954,7 @@
       "coups": 53,
       "globalShocks": 16,
       "invalidValues": 0,
-      "averageQuarterMs": 2.4773325000000113,
+      "averageQuarterMs": 2.813706999999995,
       "sanctions": 2,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -970,7 +970,7 @@
       "coups": 35,
       "globalShocks": 22,
       "invalidValues": 0,
-      "averageQuarterMs": 2.7375475000000007,
+      "averageQuarterMs": 2.495221500000007,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -986,7 +986,7 @@
       "coups": 41,
       "globalShocks": 21,
       "invalidValues": 0,
-      "averageQuarterMs": 2.2870514999999796,
+      "averageQuarterMs": 2.5991410000000177,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1002,7 +1002,7 @@
       "coups": 45,
       "globalShocks": 22,
       "invalidValues": 0,
-      "averageQuarterMs": 2.1663744999999834,
+      "averageQuarterMs": 2.6155780000000233,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1018,7 +1018,7 @@
       "coups": 35,
       "globalShocks": 24,
       "invalidValues": 0,
-      "averageQuarterMs": 2.452699500000017,
+      "averageQuarterMs": 2.833399499999978,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1034,7 +1034,7 @@
       "coups": 57,
       "globalShocks": 28,
       "invalidValues": 0,
-      "averageQuarterMs": 2.536098500000007,
+      "averageQuarterMs": 2.6553100000000267,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1050,7 +1050,7 @@
       "coups": 43,
       "globalShocks": 19,
       "invalidValues": 0,
-      "averageQuarterMs": 2.1666229999999995,
+      "averageQuarterMs": 2.5693034999999873,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1066,7 +1066,7 @@
       "coups": 48,
       "globalShocks": 19,
       "invalidValues": 0,
-      "averageQuarterMs": 2.382899000000034,
+      "averageQuarterMs": 2.471762000000017,
       "sanctions": 2,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1082,7 +1082,7 @@
       "coups": 49,
       "globalShocks": 17,
       "invalidValues": 0,
-      "averageQuarterMs": 2.2454980000000067,
+      "averageQuarterMs": 2.501176000000014,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1098,7 +1098,7 @@
       "coups": 35,
       "globalShocks": 30,
       "invalidValues": 0,
-      "averageQuarterMs": 2.3558964999999805,
+      "averageQuarterMs": 2.506086499999983,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1114,7 +1114,7 @@
       "coups": 39,
       "globalShocks": 34,
       "invalidValues": 0,
-      "averageQuarterMs": 2.108281999999999,
+      "averageQuarterMs": 2.596729000000014,
       "sanctions": 3,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1130,7 +1130,7 @@
       "coups": 42,
       "globalShocks": 29,
       "invalidValues": 0,
-      "averageQuarterMs": 2.2468815000000175,
+      "averageQuarterMs": 2.495198500000006,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1146,7 +1146,7 @@
       "coups": 37,
       "globalShocks": 23,
       "invalidValues": 0,
-      "averageQuarterMs": 2.1581900000000314,
+      "averageQuarterMs": 2.5434495000000243,
       "sanctions": 2,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1162,7 +1162,7 @@
       "coups": 45,
       "globalShocks": 28,
       "invalidValues": 0,
-      "averageQuarterMs": 1.929984000000004,
+      "averageQuarterMs": 2.5190039999999865,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1178,7 +1178,7 @@
       "coups": 42,
       "globalShocks": 15,
       "invalidValues": 0,
-      "averageQuarterMs": 1.8965040000000226,
+      "averageQuarterMs": 2.7193680000000313,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1194,7 +1194,7 @@
       "coups": 31,
       "globalShocks": 30,
       "invalidValues": 0,
-      "averageQuarterMs": 2.035069000000003,
+      "averageQuarterMs": 2.77804500000002,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1210,7 +1210,7 @@
       "coups": 35,
       "globalShocks": 20,
       "invalidValues": 0,
-      "averageQuarterMs": 2.3754089999999994,
+      "averageQuarterMs": 3.0286194999999863,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1226,7 +1226,7 @@
       "coups": 34,
       "globalShocks": 22,
       "invalidValues": 0,
-      "averageQuarterMs": 1.9138385000000198,
+      "averageQuarterMs": 2.9261585000000196,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1242,7 +1242,7 @@
       "coups": 38,
       "globalShocks": 16,
       "invalidValues": 0,
-      "averageQuarterMs": 1.9040230000000156,
+      "averageQuarterMs": 2.8957924999999887,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1258,7 +1258,7 @@
       "coups": 47,
       "globalShocks": 22,
       "invalidValues": 0,
-      "averageQuarterMs": 1.9785675000000265,
+      "averageQuarterMs": 2.4174860000000264,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1274,7 +1274,7 @@
       "coups": 51,
       "globalShocks": 24,
       "invalidValues": 0,
-      "averageQuarterMs": 1.949782500000001,
+      "averageQuarterMs": 2.546046000000024,
       "sanctions": 3,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1290,7 +1290,7 @@
       "coups": 42,
       "globalShocks": 27,
       "invalidValues": 0,
-      "averageQuarterMs": 1.9646120000000156,
+      "averageQuarterMs": 2.8005719999999927,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1306,7 +1306,7 @@
       "coups": 46,
       "globalShocks": 23,
       "invalidValues": 0,
-      "averageQuarterMs": 1.8978149999999732,
+      "averageQuarterMs": 2.864500499999995,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1322,7 +1322,7 @@
       "coups": 48,
       "globalShocks": 25,
       "invalidValues": 0,
-      "averageQuarterMs": 1.9812715000000025,
+      "averageQuarterMs": 2.4432284999999685,
       "sanctions": 4,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1338,7 +1338,7 @@
       "coups": 38,
       "globalShocks": 23,
       "invalidValues": 0,
-      "averageQuarterMs": 2.0071610000000146,
+      "averageQuarterMs": 2.7366905000000044,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1354,7 +1354,7 @@
       "coups": 42,
       "globalShocks": 19,
       "invalidValues": 0,
-      "averageQuarterMs": 1.841474500000004,
+      "averageQuarterMs": 2.539907499999972,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1370,7 +1370,7 @@
       "coups": 50,
       "globalShocks": 18,
       "invalidValues": 0,
-      "averageQuarterMs": 1.7780204999999842,
+      "averageQuarterMs": 2.7856984999999987,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1386,7 +1386,7 @@
       "coups": 41,
       "globalShocks": 18,
       "invalidValues": 0,
-      "averageQuarterMs": 3.6316675000000034,
+      "averageQuarterMs": 2.430004500000032,
       "sanctions": 2,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1402,7 +1402,7 @@
       "coups": 48,
       "globalShocks": 30,
       "invalidValues": 0,
-      "averageQuarterMs": 2.60688900000001,
+      "averageQuarterMs": 2.7785410000000046,
       "sanctions": 1,
       "sanctionerCosts": 0.22,
       "worldEvents": []
@@ -1418,7 +1418,7 @@
       "coups": 37,
       "globalShocks": 27,
       "invalidValues": 0,
-      "averageQuarterMs": 4.744025499999989,
+      "averageQuarterMs": 2.584140499999994,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1434,7 +1434,7 @@
       "coups": 37,
       "globalShocks": 23,
       "invalidValues": 0,
-      "averageQuarterMs": 3.860783499999998,
+      "averageQuarterMs": 2.6436959999999816,
       "sanctions": 2,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1450,7 +1450,7 @@
       "coups": 36,
       "globalShocks": 26,
       "invalidValues": 0,
-      "averageQuarterMs": 3.1767734999999813,
+      "averageQuarterMs": 2.4962299999999957,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1466,7 +1466,7 @@
       "coups": 39,
       "globalShocks": 25,
       "invalidValues": 0,
-      "averageQuarterMs": 3.2869644999999945,
+      "averageQuarterMs": 2.5160455,
       "sanctions": 2,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1482,7 +1482,7 @@
       "coups": 34,
       "globalShocks": 19,
       "invalidValues": 0,
-      "averageQuarterMs": 3.463777000000009,
+      "averageQuarterMs": 2.632677499999991,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1498,7 +1498,7 @@
       "coups": 43,
       "globalShocks": 19,
       "invalidValues": 0,
-      "averageQuarterMs": 3.8001195000000005,
+      "averageQuarterMs": 2.5711549999999987,
       "sanctions": 2,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1514,7 +1514,7 @@
       "coups": 45,
       "globalShocks": 31,
       "invalidValues": 0,
-      "averageQuarterMs": 4.091837500000001,
+      "averageQuarterMs": 2.501908000000003,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1530,7 +1530,7 @@
       "coups": 36,
       "globalShocks": 30,
       "invalidValues": 0,
-      "averageQuarterMs": 3.4210015000000205,
+      "averageQuarterMs": 2.5617229999999838,
       "sanctions": 3,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1546,7 +1546,7 @@
       "coups": 37,
       "globalShocks": 27,
       "invalidValues": 0,
-      "averageQuarterMs": 3.2467634999999793,
+      "averageQuarterMs": 2.7040475000000153,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1562,7 +1562,7 @@
       "coups": 49,
       "globalShocks": 27,
       "invalidValues": 0,
-      "averageQuarterMs": 3.410272500000028,
+      "averageQuarterMs": 3.0561045000000013,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1578,7 +1578,7 @@
       "coups": 39,
       "globalShocks": 9,
       "invalidValues": 0,
-      "averageQuarterMs": 3.1889210000000094,
+      "averageQuarterMs": 3.687488000000012,
       "sanctions": 0,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1594,7 +1594,7 @@
       "coups": 35,
       "globalShocks": 24,
       "invalidValues": 0,
-      "averageQuarterMs": 3.4228729999999996,
+      "averageQuarterMs": 3.527256500000003,
       "sanctions": 1,
       "sanctionerCosts": 0,
       "worldEvents": []
@@ -1610,7 +1610,7 @@
       "coups": 31,
       "globalShocks": 25,
       "invalidValues": 0,
-      "averageQuarterMs": 2.3322090000000024,
+      "averageQuarterMs": 4.145932500000018,
       "sanctions": 2,
       "sanctionerCosts": 0,
       "worldEvents": []

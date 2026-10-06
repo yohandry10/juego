@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-06",
+  "baselineCommit": "0df312e",
+  "identical": true,
+  "samples": 4500,
+  "countries": 10,
+  "distinctSeeds": 500,
+  "comparableResultsSha256": "47531b2d9f3ea722adf1ebc43c143836a9b99e3ffbc0ef6353ff7ac9543ac715",
+  "omittedFields": [
+    "samples.maximumTurnMs"
+  ],
+  "command": "node scripts/check-career-event-index-regression.mjs <baseline> docs/career-balance.json 0df312e",
+  "scope": "Las mismas semillas balance-holdout-v2, estrategias y modos. Compara cada resultado y todos los grupos; no son semillas nuevas ni una calibración independiente. La carrera larga compara además el estado completo cada década."
+}
