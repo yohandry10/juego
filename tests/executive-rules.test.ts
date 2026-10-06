@@ -89,6 +89,7 @@ test("Peru exposes a data-driven presidential campaign and a full executive term
   assert.equal(state.electionOutcome?.elected, true);
   state = advanceCareer(state, peru);
   assert.equal(state.stage, "executive");
+  state = { ...state, government: { ...state.government!, supportPartyIds: state.world.parties.map((party) => party.id) } };
   for (let quarter = 0; quarter < 20; quarter += 1) state = advanceCareer(state, peru);
   assert.equal(state.stage, "term-summary");
   assert.equal(state.government?.status, "ended");

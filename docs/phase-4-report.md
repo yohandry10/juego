@@ -10,7 +10,7 @@
 - El guardado de carrera v14 incluye los 217 actores de partida, relaciones, organismos, votos, acuerdos, shocks, conflictos, acciones y efectos domésticos. Las versiones v3–v13 conservan sin cambios el estado legado y reciben geopolítica desde su semilla.
 - El Worker acepta `world-create` y `world-advance`; la vista usa el Worker para avanzar un trimestre. El calendario regular de carrera también avanza mundo, economía y sociedad; el shock mundial actualiza crecimiento, inflación, desempleo, causas visibles y ánimo/aprobación.
 - Los actores tienen seis estilos, inercia, sensibilidad doméstica y credibilidad. El motor produce acciones explicadas, shocks encadenados, flujo bilateral aproximado, aranceles limitados, sanciones, resoluciones anuales, guerras abstractas con costos/resultados, lealtad militar y riesgo simplificado de golpe. No permite guerra directa entre dos actores marcados con disuasión nuclear.
-- Hay postura exterior de alineamiento/equilibrio/neutralidad, visita, acuerdo comercial, sanción, ayuda, reconocimiento de interlocución y propuesta de movilidad humana. El tratado comercial o migratorio se somete a ratificación simplificada en una sesión legislativa; la UI muestra costo de influencia, historial y motivo.
+- Hay postura exterior de alineamiento/equilibrio/neutralidad, visita, acuerdo comercial, sanción, ayuda, reconocimiento de interlocución y propuesta de movilidad humana. El compromiso de ayuda reduce gradualmente el crecimiento y eleva la inflación; el acuerdo migratorio ratificado mejora en forma acotada crecimiento y empleo, con explicación persistente. Estos índices de balance no modelan transferencias ni personas. El tratado comercial o migratorio se somete a ratificación simplificada en una sesión legislativa; la UI muestra costo de influencia, historial y motivo.
 - Cambiar de postura exterior ya no regala influencia: alinearse cuesta 3, equilibrar 2 y mantener neutralidad 0; repetir la postura actual queda deshabilitado. Las tres opciones dejan efectos de juego distintos sobre aislamiento, confianza y flujo con el socio.
 
 ## Supuestos y límites
@@ -33,7 +33,7 @@ La tasa cero de guerra directa nuclear resulta de una restricción estructural d
 | Shocks | 23.77 por corrida (2,377/100) |
 | Sanciones | 0.95 por corrida (95/100) |
 | Golpes | 0 por corrida en el lote base |
-| Tiempo por trimestre | 1.015 ms de promedio de los procesos de 50 años (hardware dependiente) |
+| Tiempo por trimestre | 0.861 ms de promedio de los procesos de 50 años (hardware dependiente; medición del 2026-10-06) |
 
 ## Aceptación
 
@@ -47,7 +47,7 @@ Superados en esta implementación: catálogo estable de actores y variables limi
 | 4. Explicabilidad | Parcial | Acciones simuladas guardan motivos y el estado conserva historial. Falta auditar automáticamente que toda mutación/acción de todos los subsistemas tenga explicación persistente. |
 | 5. Shocks coherentes | Parcial | Shocks encadenados afectan actores según exposiciones sintéticas y pasan a la economía nacional. Falta validar sensibilidad entre perfiles y países con datos independientes. |
 | 6. Guerra completa | Parcial | Resolución explica costos humanos, económicos y políticos y asigna resultado; no incluye fuerzas y movimiento por mapa, persistencia de insurgencia, reconstrucción ni diplomacia de posguerra. |
-| 7. Presión sobre país mediano | Parcial | La UI impone costos distintos y cambia aislamiento, confianza y flujo según alineamiento/equilibrio/neutralidad; falta un lote comparativo de resultados en distintas semillas y países. |
+| 7. Presión sobre país mediano | Parcial | La UI impone costos distintos y cambia aislamiento, confianza y flujo según alineamiento/equilibrio/neutralidad. Ayuda y acuerdo migratorio ratificado ahora entran en la economía doméstica con motivos visibles; falta comparar resultados diplomáticos por múltiples semillas y países. |
 | 8. Rendimiento y Worker | Cumple en corte local | Worker usado por el avance geopolítico; media medida de 1.015 ms por trimestre en el lote de 50 años y smoke de turno ejecutivo 0.068 s en el entorno local. Hardware no normalizado. |
 | 9. Tasas razonables | Parcial | Frecuencias registradas y límites comprobados, pero 0 golpes y guerra/sanciones con tasas heurísticas no han recibido calibración externa. |
 | 10. Contenido | Cumple cantidad mínima | Se validan 80 plantillas internacionales y 10 arcos; no se ha hecho aprobación editorial humana línea por línea. |

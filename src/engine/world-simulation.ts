@@ -127,8 +127,20 @@ export function advanceGeopolitics(state: GeopoliticsState, seed: string, quarte
       const hit = sanctions.some((item) => item.fromId === relation.a && item.toId === relation.b || item.fromId === relation.b && item.toId === relation.a);
       return hit ? { ...relation, annualFlowUsd: relation.annualFlowUsd * 0.96, trust: clamp(relation.trust - 1, 0, 100), tension: clamp(relation.tension + 2, 0, 100) } : relation;
     });
+    const aidIndex = current.player.annualAidIndex;
+    const migrationAgreement = current.player.migrationAgreement;
+    const domesticCauses = [
+      ...(shock ? [shock.explanation] : []),
+      ...(aidIndex > 0 ? [`El compromiso de ayuda exterior (índice ${aidIndex}) presiona el presupuesto y el crecimiento nacionales.`] : []),
+      ...(migrationAgreement ? ["El acuerdo de movilidad ratificado mejora gradualmente la coordinación laboral; no simula personas ni flujos migratorios."] : []),
+    ];
     current = { ...current, quarterIndex: q, actors: actorsWithSanctionCosts, relations, conflicts, actions, sanctions, votes: vote ? [...current.votes.slice(-99), vote] : current.votes, shocks: shock ? [...current.shocks.slice(-199), shock] : current.shocks,
-      domesticImpact: { growthDelta: clamp((player?.tradeShockIndex ?? 0) * 0.025, -5, 5), inflationDelta: clamp(Math.abs(player?.tradeShockIndex ?? 0) * 0.018, 0, 5), unemploymentDelta: clamp(Math.max(0, -(player?.tradeShockIndex ?? 0)) * 0.012, 0, 3), causes: shock ? [shock.explanation] : current.domesticImpact.causes.slice(-3) },
+      domesticImpact: {
+        growthDelta: clamp((player?.tradeShockIndex ?? 0) * 0.025 - aidIndex * 0.008 + (migrationAgreement ? 0.3 : 0), -5, 5),
+        inflationDelta: clamp(Math.abs(player?.tradeShockIndex ?? 0) * 0.018 + aidIndex * 0.004 + (migrationAgreement ? 0.05 : 0), 0, 5),
+        unemploymentDelta: clamp(Math.max(0, -(player?.tradeShockIndex ?? 0)) * 0.012 - (migrationAgreement ? 0.35 : 0), -3, 3),
+        causes: domesticCauses.length ? domesticCauses : current.domesticImpact.causes.slice(-3),
+      },
       militaryLoyalty: clamp(current.militaryLoyalty + ((player?.regimeStability ?? 50) - 50) * 0.005, 0, 100), coups: current.coups + ((player?.regimeStability ?? 50) < 25 && roll(seed, q * 222223) < 0.025 ? 1 : 0) };
   }
   return current;

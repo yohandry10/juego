@@ -4,7 +4,7 @@
   "name": "Francia",
   "experimental": false,
   "startingYear": 2026,
-  "dataVersion": "france-institutions-2024-snapshot-v1",
+  "dataVersion": "france-institutions-2024-snapshot-v2",
   "population": 68000000,
   "politicalSystem": {
     "formOfGovernment": "semi-presidential",
@@ -67,7 +67,7 @@
     ],
     "politicalDistribution": [
       {
-        "sharePercent": 18,
+        "sharePercent": 29,
         "ideology": {
           "institutionalism": 74,
           "economy": 28,
@@ -87,7 +87,7 @@
         }
       },
       {
-        "sharePercent": 23,
+        "sharePercent": 20,
         "ideology": {
           "institutionalism": 53,
           "economy": 56,
@@ -97,7 +97,7 @@
         }
       },
       {
-        "sharePercent": 20,
+        "sharePercent": 15,
         "ideology": {
           "institutionalism": 60,
           "economy": 68,
@@ -107,7 +107,7 @@
         }
       },
       {
-        "sharePercent": 15,
+        "sharePercent": 12,
         "ideology": {
           "institutionalism": 80,
           "economy": 52,

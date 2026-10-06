@@ -10,3 +10,5 @@
 @media(max-width:600px){.text-size-control span{flex-basis:100%}.glossary-list>div{grid-template-columns:1fr;gap:4px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
 .footer-links{display:flex;flex-wrap:wrap;gap:16px;margin-top:10px}.footer-links a{color:#a8bb84;text-decoration:underline;text-underline-offset:3px;font-size:11px;letter-spacing:normal}
+
+.source-note { color: var(--muted); border-left: 3px solid var(--accent); padding: .65rem .85rem; background: rgba(255,255,255,.035); }

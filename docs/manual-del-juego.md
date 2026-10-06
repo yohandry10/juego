@@ -4,7 +4,7 @@ MANDATO es una simulación política para una persona. Creas una figura polític
 
 ## Empezar una partida
 
-En la pantalla inicial elige Perú, España o Francia y completa el creador de seis pasos:
+En la pantalla inicial elige uno de los escenarios disponibles y completa el creador de seis pasos:
 
 1. Indica nombre, origen social, cargo de inicio y circunscripción.
 2. Elige una profesión y una formación; ambas modifican habilidades iniciales.
@@ -37,7 +37,7 @@ Mundo permite consultar el catálogo de países y economías, seleccionar actore
 
 Los tratados pueden requerir ratificación legislativa. Organismos y votaciones usan reglas resumidas. Los conflictos son abstractos y deterministas; no hay combate táctico ni decisión de uso nuclear. Algunos actores del catálogo no tienen geometría en el mapa a esta escala, pero permanecen seleccionables desde los filtros y la lista.
 
-La interfaz permite alineamiento, visitas, sanciones, ayuda exterior, reconocimiento de interlocución y propuestas de tratados comerciales o migratorios. Son reglas simplificadas: la ayuda se resume como un índice anual, el acuerdo migratorio no simula flujos de personas y la ratificación de tratados no reproduce el debate parlamentario completo. El financiamiento internacional, las condiciones FMI/Banco Mundial y otros procedimientos de organismos siguen incompletos.
+La interfaz permite alineamiento, visitas, sanciones, ayuda exterior, reconocimiento de interlocución y propuestas de tratados comerciales o migratorios. La ayuda crea un compromiso de juego que afecta gradualmente crecimiento e inflación; el acuerdo migratorio ratificado mejora modestamente empleo y actividad, como aproximación de coordinación laboral, y no simula flujos de personas. La ratificación no reproduce el debate parlamentario completo. El financiamiento internacional, las condiciones FMI/Banco Mundial y otros procedimientos de organismos siguen incompletos.
 
 ## Pestañas
 
@@ -62,6 +62,6 @@ Los controles se pueden operar con teclado y muestran foco visible. Ayuda ofrece
 
 ## Escenarios disponibles y límites
 
-El selector incluye Perú, España y Francia. Perú tiene una ficha institucional y económica versionada; las fichas de España y Francia incluyen reglas institucionales configuradas, y parte de sus indicadores económicos y sociales es provisional. Consulta País y sus fuentes para distinguir observaciones, reglas oficiales y supuestos de simulación.
+El selector incluye Perú, España, Francia y Alemania. La ficha alemana usa reglas parlamentarias versionadas y snapshots económicos de 2024. El Bundestag se representa con 299 circunscripciones ficticias de un puesto y 331 puestos agregados de listas. El Bundesrat no es una cámara elegida directamente: sus 69 votos se designan por gobiernos regionales, pero el juego solo los usa como bancada generada. La ficha no implementa compensación entre primeros y segundos votos ni votación conjunta por Land. Los apoyos nacionales son ficticios; cada distrito recibe una variación territorial determinista para evitar que se repita mecánicamente el mismo resultado. Otros indicadores fiscales y sociales, e ideologías iniciales, son parámetros de balance y no datos oficiales. Las fichas económicas y sociales de varios escenarios siguen siendo provisionales. Consulta País y sus fuentes para distinguir observaciones, reglas oficiales y supuestos de simulación.
 
 Los informes de fase describen cobertura y calibración: [Fase 4](phase-4-report.md) y [Fase 5](phase-5-report.md). La guía interna y el estado del proyecto están en [MANDATO — Documento guía de diseño y construcción](MANDATO%20%E2%80%94%20Documento%20gu%C3%ADa%20de%20dise%C3%B1o%20y%20construcci%C3%B3n.md). El prototipo todavía no cumple todos los criterios de país, auditoría editorial, balance integral, pruebas con personas ni publicación que fija esa guía.

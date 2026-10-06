@@ -3,7 +3,8 @@
   "sources": {
     "peru": [{ "title": "Ministerio de Economía y Finanzas del Perú, Marco Macroeconómico Multianual", "url": "https://www.mef.gob.pe/" }, { "title": "INEI, indicadores económicos", "url": "https://www.inei.gob.pe/estadisticas/indice-tematico/economia/" }],
     "spain": [{ "title": "Instituto Nacional de Estadística, Contabilidad Nacional", "url": "https://www.ine.es/" }, { "title": "Eurostat, Government finance statistics", "url": "https://ec.europa.eu/eurostat/web/government-finance-statistics" }],
-    "france": [{ "title": "INSEE, comptes nationaux 2024", "url": "https://www.insee.fr/fr/statistiques/8574058" }, { "title": "INSEE, déficit et dette publics 2024", "url": "https://www.insee.fr/fr/statistiques/8540375" }, { "title": "Banque de France, projections macroéconomiques", "url": "https://www.banque-france.fr/fr/publications-et-statistiques/publications/projections-macroeconomiques-decembre-2024" }]
+    "france": [{ "title": "INSEE, comptes nationaux 2024", "url": "https://www.insee.fr/fr/statistiques/8574058" }, { "title": "INSEE, déficit et dette publics 2024", "url": "https://www.insee.fr/fr/statistiques/8540375" }, { "title": "Banque de France, projections macroéconomiques", "url": "https://www.banque-france.fr/fr/publications-et-statistiques/publications/projections-macroeconomiques-decembre-2024" }],
+    "germany": [{"title": "Destatis, indicadores básicos de Alemania (2024)", "url": "https://www.destatis.de/EN/Themes/Countries-Regions/International-Statistics/Country/Europe/DE.html"}, {"title": "Destatis, cuentas nacionales 2024", "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/01/PD25_019_811.html"}, {"title": "Destatis, inflación media anual 2024", "url": "https://www.destatis.de/EN/Press/2025/01/PE25_020_611.html"}, {"title": "Destatis, exportaciones de bienes 2024 (UN Comtrade)", "url": "https://www.destatis.de/EN/Themes/Countries-Regions/International-Statistics/Data-Topic/Tables/BasicData_Export.html"}]
   },
   "scenarios": {
     "peru": {
@@ -50,6 +51,102 @@
       "taxBurdenPercentGdp": 43,
       "tradeOpennessPercent": 75,
       "publicOwnershipPercent": 23
-    }
+    },
+    "germany": {
+        "snapshotYear": 2024,
+        "indicators": {
+          "gdpPerCapitaUsd": 56087,
+          "gdpGrowthPercent": -0.5,
+          "inflationPercent": 2.2,
+          "unemploymentPercent": 3.1,
+          "informalityPercent": 5,
+          "publicDebtPercentGdp": 62.5,
+          "fiscalDeficitPercentGdp": 2.7,
+          "tradeBalancePercentGdp": 5,
+          "currentAccountPercentGdp": 5.5,
+          "reservesMonthsImports": 3,
+          "exchangeRateIndex": 100,
+          "policyRatePercent": 3.25,
+          "creditRatingIndex": 92,
+          "countryRiskBasisPoints": 20,
+          "inequalityIndex": 31,
+          "povertyPercent": 16,
+          "realWageIndex": 100,
+          "domesticInvestmentPercentGdp": 21,
+          "foreignInvestmentPercentGdp": 2.5,
+          "productivityIndex": 100
+        },
+        "sectors": [
+          {
+            "id": "extractive",
+            "name": "Energía y materias primas",
+            "gdpSharePercent": 3,
+            "annualGrowthPercent": -1,
+            "employmentIntensity": 0.12,
+            "exportSharePercent": 5,
+            "commoditySensitivity": 0.8,
+            "exchangeSensitivity": 0.4,
+            "creditSensitivity": 0.25,
+            "importDependence": 0.65,
+            "stateOwnershipPercent": 20
+          },
+          {
+            "id": "agriculture",
+            "name": "Agricultura",
+            "gdpSharePercent": 1,
+            "annualGrowthPercent": -2,
+            "employmentIntensity": 0.4,
+            "exportSharePercent": 5,
+            "commoditySensitivity": 0.55,
+            "exchangeSensitivity": 0.3,
+            "creditSensitivity": 0.45,
+            "importDependence": 0.3,
+            "stateOwnershipPercent": 1
+          },
+          {
+            "id": "manufacturing",
+            "name": "Industria y manufactura",
+            "gdpSharePercent": 25,
+            "annualGrowthPercent": -3,
+            "employmentIntensity": 0.46,
+            "exportSharePercent": 42,
+            "commoditySensitivity": 0.5,
+            "exchangeSensitivity": 0.6,
+            "creditSensitivity": 0.7,
+            "importDependence": 0.6,
+            "stateOwnershipPercent": 5
+          },
+          {
+            "id": "services",
+            "name": "Servicios",
+            "gdpSharePercent": 63,
+            "annualGrowthPercent": 0.8,
+            "employmentIntensity": 0.67,
+            "exportSharePercent": 45,
+            "commoditySensitivity": 0.1,
+            "exchangeSensitivity": 0.25,
+            "creditSensitivity": 0.45,
+            "importDependence": 0.25,
+            "stateOwnershipPercent": 18
+          },
+          {
+            "id": "technology-finance",
+            "name": "Construcción y tecnología",
+            "gdpSharePercent": 8,
+            "annualGrowthPercent": -1,
+            "employmentIntensity": 0.58,
+            "exportSharePercent": 3,
+            "commoditySensitivity": 0.3,
+            "exchangeSensitivity": 0.25,
+            "creditSensitivity": 0.8,
+            "importDependence": 0.5,
+            "stateOwnershipPercent": 5
+          }
+        ],
+        "fiscalSpendingPercentGdp": 49,
+        "taxBurdenPercentGdp": 39,
+        "tradeOpennessPercent": 80,
+        "publicOwnershipPercent": 12
+      }
   }
 }

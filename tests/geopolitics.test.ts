@@ -54,3 +54,17 @@ test("sanctions lower trade flows and deterministic step bounds reject invalid r
   assert.ok(moved.actors.find((actor) => actor.id === relation.a)!.tradeShockIndex < baseline.actors.find((actor) => actor.id === relation.a)!.tradeShockIndex);
   assert.ok(moved.actors.find((actor) => actor.id === relation.b)!.tradeShockIndex < baseline.actors.find((actor) => actor.id === relation.b)!.tradeShockIndex);
 });
+
+test("foreign aid and a ratified mobility agreement create visible domestic economic effects", () => {
+  const seed = "player-diplomacy-domestic-impact";
+  const base = createGeopoliticsState("peru", seed);
+  const baseline = advanceGeopolitics(base, seed, 1).domesticImpact;
+  const aid = advanceGeopolitics({ ...base, player: { ...base.player, annualAidIndex: 50 } }, seed, 1).domesticImpact;
+  const mobility = advanceGeopolitics({ ...base, player: { ...base.player, migrationAgreement: true } }, seed, 1).domesticImpact;
+  assert.ok(aid.growthDelta < baseline.growthDelta);
+  assert.ok(aid.inflationDelta > baseline.inflationDelta);
+  assert.ok(aid.causes.some((cause) => cause.includes("ayuda exterior")));
+  assert.ok(mobility.growthDelta > baseline.growthDelta);
+  assert.ok(mobility.unemploymentDelta < baseline.unemploymentDelta);
+  assert.ok(mobility.causes.some((cause) => cause.includes("no simula personas")));
+});

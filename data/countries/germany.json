@@ -1,0 +1,2844 @@
+{
+  "schemaVersion": 1,
+  "id": "germany",
+  "name": "Alemania",
+  "experimental": false,
+  "startingYear": 2026,
+  "dataVersion": "germany-institutions-2025-economic-snapshot-2024-v2",
+  "population": 83511000,
+  "politicalSystem": {
+    "formOfGovernment": "parliamentary",
+    "headOfState": {
+      "officeId": "federal-president",
+      "title": "Presidente federal",
+      "selection": "indirect-election",
+      "termYears": 5,
+      "ceremonial": true
+    },
+    "executive": {
+      "officeId": "prime-minister",
+      "title": "Canciller federal",
+      "selection": "legislative-investiture",
+      "termYears": 4,
+      "consecutiveTermLimit": null,
+      "election": null,
+      "investiture": {
+        "firstVoteMajority": "absolute",
+        "laterVoteMajority": "absolute",
+        "laterVoteDelayHours": 336,
+        "dissolutionAfterDays": 14
+      },
+      "confidence": {
+        "passMajority": "simple",
+        "failureEffect": "new-investiture"
+      },
+      "censure": {
+        "type": "constructive",
+        "passageMajority": "absolute",
+        "minimumSponsorsPercent": 25,
+        "daysBeforeVote": 0
+      },
+      "dissolution": {
+        "executiveMayPropose": false,
+        "minimumMonthsBetween": 0
+      }
+    },
+    "legislature": {
+      "type": "bicameral",
+      "lowerChamber": {
+        "id": "bundestag",
+        "name": "Bundestag (representación agregada)",
+        "seats": 630,
+        "termYears": 4,
+        "electoralSystem": "mixed",
+        "districtCount": 299,
+        "nationalSeats": 331,
+        "seatAllocationMethod": "largest-remainder",
+        "electoralThresholdPercent": 5
+      },
+      "upperChamber": {
+        "id": "bundesrat",
+        "name": "Bundesrat (votos agregados)",
+        "seats": 69,
+        "termYears": 4,
+        "electoralSystem": "other",
+        "districtCount": 1,
+        "nationalSeats": 68,
+        "seatAllocationMethod": "largest-remainder",
+        "electoralThresholdPercent": 0,
+        "appointments": {
+          "appointedSeatsInSnapshot": 69,
+          "appointingBodies": "Gobiernos de los 16 Länder; los votos se emiten en bloque por Land",
+          "fixedSeatsPerBody": 3,
+          "extraSeatsPerPopulation": 1,
+          "populationUnit": 2000000,
+          "snapshotYear": 2025
+        }
+      }
+    },
+    "removalMechanisms": [
+      "censure",
+      "dissolution"
+    ],
+    "politicalDistribution": [
+      {
+        "sharePercent": 30,
+        "ideology": {
+          "institutionalism": 80,
+          "economy": 37,
+          "rigidity": 29,
+          "social": 69,
+          "nationalism": 30
+        }
+      },
+      {
+        "sharePercent": 25,
+        "ideology": {
+          "institutionalism": 75,
+          "economy": 51,
+          "rigidity": 36,
+          "social": 59,
+          "nationalism": 38
+        }
+      },
+      {
+        "sharePercent": 19,
+        "ideology": {
+          "institutionalism": 70,
+          "economy": 63,
+          "rigidity": 40,
+          "social": 45,
+          "nationalism": 47
+        }
+      },
+      {
+        "sharePercent": 15,
+        "ideology": {
+          "institutionalism": 57,
+          "economy": 57,
+          "rigidity": 52,
+          "social": 40,
+          "nationalism": 61
+        }
+      },
+      {
+        "sharePercent": 11,
+        "ideology": {
+          "institutionalism": 48,
+          "economy": 40,
+          "rigidity": 57,
+          "social": 60,
+          "nationalism": 52
+        }
+      }
+    ],
+    "executiveAccountability": {
+      "presidentialVacancy": null,
+      "presidentialAccusation": null,
+      "cabinetCensure": null
+    }
+  },
+  "candidateEligibility": [
+    {
+      "officeId": "deputy",
+      "activeSuffrageRequired": true,
+      "nationality": "citizen",
+      "voterRegistrationRequired": true,
+      "nomination": "party",
+      "minimumAge": 18,
+      "chamberId": "bundestag"
+    },
+    {
+      "officeId": "prime-minister",
+      "minimumAge": 18,
+      "chamberId": "bundestag",
+      "nationality": "citizen",
+      "activeSuffrageRequired": true,
+      "voterRegistrationRequired": true,
+      "nomination": "party"
+    }
+  ],
+  "dataSources": [
+    {
+      "name": "Ley Fundamental, arts. 38–39, 51 y 63–68 (Ministerio Federal de Justicia)",
+      "url": "https://www.gesetze-im-internet.de/englisch_gg/",
+      "indicator": "Elección del Bundestag, composición del Bundesrat, elección del Canciller, censura constructiva y confianza; traducción oficial consultada",
+      "year": 2025,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Bundesrat · Distribución de votos",
+      "url": "https://bundesrat.de/EN/organisation-en/stimmenverteilung-en/stimmenverteilung-en-node.html",
+      "indicator": "69 votos asignados a gobiernos de los 16 Länder; se emiten en bloque",
+      "year": 2026,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Deutscher Bundestag · Elección del Canciller según art. 63",
+      "url": "https://www.bundestag.de/dokumente/textarchiv/2025/kw19-de-kanzlerwahl-1062470",
+      "indicator": "Mayoría de miembros y plazos de elección parlamentaria; página explicativa del procedimiento",
+      "year": 2025,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Statistisches Bundesamt (Destatis) · Alemania, indicadores básicos",
+      "url": "https://www.destatis.de/EN/Themes/Countries-Regions/International-Statistics/Country/Europe/DE.html",
+      "indicator": "PIB nominal, población, distribución sectorial y principales indicadores nacionales 2024",
+      "year": 2024,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Destatis · Evolución anual del PIB 2024",
+      "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/01/PD25_019_811.html",
+      "indicator": "Variación real del PIB en 2024, primera estimación publicada",
+      "year": 2024,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Destatis · Inflación media de 2024",
+      "url": "https://www.destatis.de/EN/Press/2025/01/PE25_020_611.html",
+      "indicator": "Variación anual del IPC en 2024",
+      "year": 2024,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Destatis · Población a cierre de 2024",
+      "url": "https://www.destatis.de/DE/Presse/Pressemitteilungen/2025/06/PD25_221_124.html",
+      "indicator": "Población residente al final de 2024",
+      "year": 2024,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Destatis · Exportaciones de bienes por país",
+      "url": "https://www.destatis.de/EN/Themes/Countries-Regions/International-Statistics/Data-Topic/Tables/BasicData_Export.html",
+      "indicator": "Exportaciones nominales de mercancías en dólares estadounidenses: serie de referencia Destatis con fuente UN Comtrade, 2024",
+      "year": 2024,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Federal Returning Officer · sistema electoral Bundestag 2025",
+      "url": "https://www.bundeswahlleiterin.de/en/bundestagswahlen/2025/informationen-waehler/wahlsystem.html",
+      "indicator": "630 escaños desde la elección de 2025, segundo voto determina el reparto y cláusula del 5% con excepción judicial; la ficha de juego lo simplifica",
+      "year": 2025,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Federal Returning Officer · sistema electoral proporcional personalizado",
+      "url": "https://www.bundeswahlleiterin.de/service/glossar/w/wahlsysteme.html",
+      "indicator": "Relación entre voto de lista y circunscripción; el reparto de la ficha de juego está agregado",
+      "year": 2025,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Destatis · tasa de inflación media anual 2024",
+      "url": "https://www.destatis.de/EN/Press/2025/01/PE25_020_611.html",
+      "indicator": "IPC medio anual, 2.2% en 2024",
+      "year": 2024,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Bundeswahlleiterin · glosario de sistemas electorales",
+      "url": "https://www.bundeswahlleiterin.de/service/glossar/w/wahlsysteme.html",
+      "indicator": "299 distritos electorales uninominales y reparto proporcional mediante segundas papeletas; la ficha representa estos escaños como puestos agregados",
+      "year": 2025,
+      "accessedOn": "2026-10-06"
+    }
+  ],
+  "economy": {
+    "gdpUsd": 4684200000000,
+    "annualGrowthPercent": -0.5,
+    "annualInflationPercent": 2.2,
+    "unemploymentPercent": 3.1
+  },
+  "mandateExpectations": {
+    "annualGrowthFloorPercent": 0,
+    "inflationCeilingPercent": 3.5,
+    "unemploymentCeilingPercent": 5,
+    "approvalFloorPercent": 40
+  },
+  "trade": {
+    "goodsExportsUsd": 1630700000000,
+    "dataYear": 2024,
+    "leadingSectors": [
+      "manufactura",
+      "maquinaria",
+      "vehículos",
+      "servicios"
+    ]
+  },
+  "socialBlocks": [
+    {
+      "id": "workers",
+      "mood": 4,
+      "demands": [
+        "estabilidad laboral",
+        "salarios y coste de vida"
+      ],
+      "populationShare": 27,
+      "name": "Trabajadores",
+      "ideology": {
+        "economy": 28,
+        "social": 66,
+        "nationalism": 34,
+        "institutionalism": 64,
+        "rigidity": 52
+      },
+      "dispersion": 45,
+      "pressurePower": 80,
+      "organization": 84,
+      "unmetDemandIndex": 20
+    },
+    {
+      "id": "middle-income",
+      "mood": 3,
+      "demands": [
+        "servicios públicos",
+        "vivienda asequible"
+      ],
+      "populationShare": 25,
+      "name": "Clases medias",
+      "ideology": {
+        "economy": 55,
+        "social": 62,
+        "nationalism": 42,
+        "institutionalism": 70,
+        "rigidity": 34
+      },
+      "dispersion": 38,
+      "pressurePower": 42,
+      "organization": 58,
+      "unmetDemandIndex": 20
+    },
+    {
+      "id": "business",
+      "mood": 2,
+      "demands": [
+        "reglas previsibles",
+        "productividad"
+      ],
+      "populationShare": 13,
+      "name": "Empresariado",
+      "ideology": {
+        "economy": 86,
+        "social": 45,
+        "nationalism": 46,
+        "institutionalism": 74,
+        "rigidity": 48
+      },
+      "dispersion": 35,
+      "pressurePower": 64,
+      "organization": 78,
+      "unmetDemandIndex": 20
+    },
+    {
+      "id": "rural-communities",
+      "mood": 0,
+      "demands": [
+        "conectividad",
+        "servicios de proximidad"
+      ],
+      "populationShare": 12,
+      "name": "Territorios rurales",
+      "ideology": {
+        "economy": 43,
+        "social": 51,
+        "nationalism": 66,
+        "institutionalism": 54,
+        "rigidity": 64
+      },
+      "dispersion": 52,
+      "pressurePower": 75,
+      "organization": 56,
+      "unmetDemandIndex": 20
+    },
+    {
+      "id": "public-services",
+      "mood": 1,
+      "demands": [
+        "acceso territorial equitativo",
+        "continuidad de los servicios"
+      ],
+      "populationShare": 11,
+      "name": "Usuarios de servicios públicos",
+      "ideology": {
+        "economy": 42,
+        "social": 66,
+        "nationalism": 40,
+        "institutionalism": 72,
+        "rigidity": 42
+      },
+      "dispersion": 40,
+      "pressurePower": 58,
+      "organization": 70,
+      "unmetDemandIndex": 20
+    },
+    {
+      "id": "youth",
+      "mood": 5,
+      "demands": [
+        "empleo",
+        "acceso a vivienda"
+      ],
+      "populationShare": 12,
+      "name": "Jóvenes",
+      "ideology": {
+        "economy": 65,
+        "social": 78,
+        "nationalism": 22,
+        "institutionalism": 77,
+        "rigidity": 27
+      },
+      "dispersion": 58,
+      "pressurePower": 44,
+      "organization": 50,
+      "unmetDemandIndex": 20
+    }
+  ],
+  "electoralDistricts": [
+    {
+      "id": "bundestag-seat-001",
+      "name": "Circunscripción federal agregada 001",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 1
+      }
+    },
+    {
+      "id": "bundestag-seat-002",
+      "name": "Circunscripción federal agregada 002",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-003",
+      "name": "Circunscripción federal agregada 003",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-004",
+      "name": "Circunscripción federal agregada 004",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-005",
+      "name": "Circunscripción federal agregada 005",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-006",
+      "name": "Circunscripción federal agregada 006",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-007",
+      "name": "Circunscripción federal agregada 007",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-008",
+      "name": "Circunscripción federal agregada 008",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-009",
+      "name": "Circunscripción federal agregada 009",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-010",
+      "name": "Circunscripción federal agregada 010",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-011",
+      "name": "Circunscripción federal agregada 011",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-012",
+      "name": "Circunscripción federal agregada 012",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-013",
+      "name": "Circunscripción federal agregada 013",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-014",
+      "name": "Circunscripción federal agregada 014",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-015",
+      "name": "Circunscripción federal agregada 015",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-016",
+      "name": "Circunscripción federal agregada 016",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-017",
+      "name": "Circunscripción federal agregada 017",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-018",
+      "name": "Circunscripción federal agregada 018",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-019",
+      "name": "Circunscripción federal agregada 019",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-020",
+      "name": "Circunscripción federal agregada 020",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-021",
+      "name": "Circunscripción federal agregada 021",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-022",
+      "name": "Circunscripción federal agregada 022",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-023",
+      "name": "Circunscripción federal agregada 023",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-024",
+      "name": "Circunscripción federal agregada 024",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-025",
+      "name": "Circunscripción federal agregada 025",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-026",
+      "name": "Circunscripción federal agregada 026",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-027",
+      "name": "Circunscripción federal agregada 027",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-028",
+      "name": "Circunscripción federal agregada 028",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-029",
+      "name": "Circunscripción federal agregada 029",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-030",
+      "name": "Circunscripción federal agregada 030",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-031",
+      "name": "Circunscripción federal agregada 031",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-032",
+      "name": "Circunscripción federal agregada 032",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-033",
+      "name": "Circunscripción federal agregada 033",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-034",
+      "name": "Circunscripción federal agregada 034",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-035",
+      "name": "Circunscripción federal agregada 035",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-036",
+      "name": "Circunscripción federal agregada 036",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-037",
+      "name": "Circunscripción federal agregada 037",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-038",
+      "name": "Circunscripción federal agregada 038",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-039",
+      "name": "Circunscripción federal agregada 039",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-040",
+      "name": "Circunscripción federal agregada 040",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-041",
+      "name": "Circunscripción federal agregada 041",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-042",
+      "name": "Circunscripción federal agregada 042",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-043",
+      "name": "Circunscripción federal agregada 043",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-044",
+      "name": "Circunscripción federal agregada 044",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-045",
+      "name": "Circunscripción federal agregada 045",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-046",
+      "name": "Circunscripción federal agregada 046",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-047",
+      "name": "Circunscripción federal agregada 047",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-048",
+      "name": "Circunscripción federal agregada 048",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-049",
+      "name": "Circunscripción federal agregada 049",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-050",
+      "name": "Circunscripción federal agregada 050",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-051",
+      "name": "Circunscripción federal agregada 051",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-052",
+      "name": "Circunscripción federal agregada 052",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-053",
+      "name": "Circunscripción federal agregada 053",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-054",
+      "name": "Circunscripción federal agregada 054",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-055",
+      "name": "Circunscripción federal agregada 055",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-056",
+      "name": "Circunscripción federal agregada 056",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-057",
+      "name": "Circunscripción federal agregada 057",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-058",
+      "name": "Circunscripción federal agregada 058",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-059",
+      "name": "Circunscripción federal agregada 059",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-060",
+      "name": "Circunscripción federal agregada 060",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-061",
+      "name": "Circunscripción federal agregada 061",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-062",
+      "name": "Circunscripción federal agregada 062",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-063",
+      "name": "Circunscripción federal agregada 063",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-064",
+      "name": "Circunscripción federal agregada 064",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-065",
+      "name": "Circunscripción federal agregada 065",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-066",
+      "name": "Circunscripción federal agregada 066",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-067",
+      "name": "Circunscripción federal agregada 067",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-068",
+      "name": "Circunscripción federal agregada 068",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-069",
+      "name": "Circunscripción federal agregada 069",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-070",
+      "name": "Circunscripción federal agregada 070",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-071",
+      "name": "Circunscripción federal agregada 071",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-072",
+      "name": "Circunscripción federal agregada 072",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-073",
+      "name": "Circunscripción federal agregada 073",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-074",
+      "name": "Circunscripción federal agregada 074",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-075",
+      "name": "Circunscripción federal agregada 075",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-076",
+      "name": "Circunscripción federal agregada 076",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-077",
+      "name": "Circunscripción federal agregada 077",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-078",
+      "name": "Circunscripción federal agregada 078",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-079",
+      "name": "Circunscripción federal agregada 079",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-080",
+      "name": "Circunscripción federal agregada 080",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-081",
+      "name": "Circunscripción federal agregada 081",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-082",
+      "name": "Circunscripción federal agregada 082",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-083",
+      "name": "Circunscripción federal agregada 083",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-084",
+      "name": "Circunscripción federal agregada 084",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-085",
+      "name": "Circunscripción federal agregada 085",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-086",
+      "name": "Circunscripción federal agregada 086",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-087",
+      "name": "Circunscripción federal agregada 087",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-088",
+      "name": "Circunscripción federal agregada 088",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-089",
+      "name": "Circunscripción federal agregada 089",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-090",
+      "name": "Circunscripción federal agregada 090",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-091",
+      "name": "Circunscripción federal agregada 091",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-092",
+      "name": "Circunscripción federal agregada 092",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-093",
+      "name": "Circunscripción federal agregada 093",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-094",
+      "name": "Circunscripción federal agregada 094",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-095",
+      "name": "Circunscripción federal agregada 095",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-096",
+      "name": "Circunscripción federal agregada 096",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-097",
+      "name": "Circunscripción federal agregada 097",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-098",
+      "name": "Circunscripción federal agregada 098",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-099",
+      "name": "Circunscripción federal agregada 099",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-100",
+      "name": "Circunscripción federal agregada 100",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-101",
+      "name": "Circunscripción federal agregada 101",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-102",
+      "name": "Circunscripción federal agregada 102",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-103",
+      "name": "Circunscripción federal agregada 103",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-104",
+      "name": "Circunscripción federal agregada 104",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-105",
+      "name": "Circunscripción federal agregada 105",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-106",
+      "name": "Circunscripción federal agregada 106",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-107",
+      "name": "Circunscripción federal agregada 107",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-108",
+      "name": "Circunscripción federal agregada 108",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-109",
+      "name": "Circunscripción federal agregada 109",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-110",
+      "name": "Circunscripción federal agregada 110",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-111",
+      "name": "Circunscripción federal agregada 111",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-112",
+      "name": "Circunscripción federal agregada 112",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-113",
+      "name": "Circunscripción federal agregada 113",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-114",
+      "name": "Circunscripción federal agregada 114",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-115",
+      "name": "Circunscripción federal agregada 115",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-116",
+      "name": "Circunscripción federal agregada 116",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-117",
+      "name": "Circunscripción federal agregada 117",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-118",
+      "name": "Circunscripción federal agregada 118",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-119",
+      "name": "Circunscripción federal agregada 119",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-120",
+      "name": "Circunscripción federal agregada 120",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-121",
+      "name": "Circunscripción federal agregada 121",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-122",
+      "name": "Circunscripción federal agregada 122",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-123",
+      "name": "Circunscripción federal agregada 123",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-124",
+      "name": "Circunscripción federal agregada 124",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-125",
+      "name": "Circunscripción federal agregada 125",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-126",
+      "name": "Circunscripción federal agregada 126",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-127",
+      "name": "Circunscripción federal agregada 127",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-128",
+      "name": "Circunscripción federal agregada 128",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-129",
+      "name": "Circunscripción federal agregada 129",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-130",
+      "name": "Circunscripción federal agregada 130",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-131",
+      "name": "Circunscripción federal agregada 131",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-132",
+      "name": "Circunscripción federal agregada 132",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-133",
+      "name": "Circunscripción federal agregada 133",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-134",
+      "name": "Circunscripción federal agregada 134",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-135",
+      "name": "Circunscripción federal agregada 135",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-136",
+      "name": "Circunscripción federal agregada 136",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-137",
+      "name": "Circunscripción federal agregada 137",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-138",
+      "name": "Circunscripción federal agregada 138",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-139",
+      "name": "Circunscripción federal agregada 139",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-140",
+      "name": "Circunscripción federal agregada 140",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-141",
+      "name": "Circunscripción federal agregada 141",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-142",
+      "name": "Circunscripción federal agregada 142",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-143",
+      "name": "Circunscripción federal agregada 143",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-144",
+      "name": "Circunscripción federal agregada 144",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-145",
+      "name": "Circunscripción federal agregada 145",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-146",
+      "name": "Circunscripción federal agregada 146",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-147",
+      "name": "Circunscripción federal agregada 147",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-148",
+      "name": "Circunscripción federal agregada 148",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-149",
+      "name": "Circunscripción federal agregada 149",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-150",
+      "name": "Circunscripción federal agregada 150",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-151",
+      "name": "Circunscripción federal agregada 151",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-152",
+      "name": "Circunscripción federal agregada 152",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-153",
+      "name": "Circunscripción federal agregada 153",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-154",
+      "name": "Circunscripción federal agregada 154",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-155",
+      "name": "Circunscripción federal agregada 155",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-156",
+      "name": "Circunscripción federal agregada 156",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-157",
+      "name": "Circunscripción federal agregada 157",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-158",
+      "name": "Circunscripción federal agregada 158",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-159",
+      "name": "Circunscripción federal agregada 159",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-160",
+      "name": "Circunscripción federal agregada 160",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-161",
+      "name": "Circunscripción federal agregada 161",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-162",
+      "name": "Circunscripción federal agregada 162",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-163",
+      "name": "Circunscripción federal agregada 163",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-164",
+      "name": "Circunscripción federal agregada 164",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-165",
+      "name": "Circunscripción federal agregada 165",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-166",
+      "name": "Circunscripción federal agregada 166",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-167",
+      "name": "Circunscripción federal agregada 167",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-168",
+      "name": "Circunscripción federal agregada 168",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-169",
+      "name": "Circunscripción federal agregada 169",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-170",
+      "name": "Circunscripción federal agregada 170",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-171",
+      "name": "Circunscripción federal agregada 171",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-172",
+      "name": "Circunscripción federal agregada 172",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-173",
+      "name": "Circunscripción federal agregada 173",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-174",
+      "name": "Circunscripción federal agregada 174",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-175",
+      "name": "Circunscripción federal agregada 175",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-176",
+      "name": "Circunscripción federal agregada 176",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-177",
+      "name": "Circunscripción federal agregada 177",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-178",
+      "name": "Circunscripción federal agregada 178",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-179",
+      "name": "Circunscripción federal agregada 179",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-180",
+      "name": "Circunscripción federal agregada 180",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-181",
+      "name": "Circunscripción federal agregada 181",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-182",
+      "name": "Circunscripción federal agregada 182",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-183",
+      "name": "Circunscripción federal agregada 183",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-184",
+      "name": "Circunscripción federal agregada 184",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-185",
+      "name": "Circunscripción federal agregada 185",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-186",
+      "name": "Circunscripción federal agregada 186",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-187",
+      "name": "Circunscripción federal agregada 187",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-188",
+      "name": "Circunscripción federal agregada 188",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-189",
+      "name": "Circunscripción federal agregada 189",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-190",
+      "name": "Circunscripción federal agregada 190",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-191",
+      "name": "Circunscripción federal agregada 191",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-192",
+      "name": "Circunscripción federal agregada 192",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-193",
+      "name": "Circunscripción federal agregada 193",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-194",
+      "name": "Circunscripción federal agregada 194",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-195",
+      "name": "Circunscripción federal agregada 195",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-196",
+      "name": "Circunscripción federal agregada 196",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-197",
+      "name": "Circunscripción federal agregada 197",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-198",
+      "name": "Circunscripción federal agregada 198",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-199",
+      "name": "Circunscripción federal agregada 199",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-200",
+      "name": "Circunscripción federal agregada 200",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-201",
+      "name": "Circunscripción federal agregada 201",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-202",
+      "name": "Circunscripción federal agregada 202",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-203",
+      "name": "Circunscripción federal agregada 203",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-204",
+      "name": "Circunscripción federal agregada 204",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-205",
+      "name": "Circunscripción federal agregada 205",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-206",
+      "name": "Circunscripción federal agregada 206",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-207",
+      "name": "Circunscripción federal agregada 207",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-208",
+      "name": "Circunscripción federal agregada 208",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-209",
+      "name": "Circunscripción federal agregada 209",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-210",
+      "name": "Circunscripción federal agregada 210",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-211",
+      "name": "Circunscripción federal agregada 211",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-212",
+      "name": "Circunscripción federal agregada 212",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-213",
+      "name": "Circunscripción federal agregada 213",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-214",
+      "name": "Circunscripción federal agregada 214",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-215",
+      "name": "Circunscripción federal agregada 215",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-216",
+      "name": "Circunscripción federal agregada 216",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-217",
+      "name": "Circunscripción federal agregada 217",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-218",
+      "name": "Circunscripción federal agregada 218",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-219",
+      "name": "Circunscripción federal agregada 219",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-220",
+      "name": "Circunscripción federal agregada 220",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-221",
+      "name": "Circunscripción federal agregada 221",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-222",
+      "name": "Circunscripción federal agregada 222",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-223",
+      "name": "Circunscripción federal agregada 223",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-224",
+      "name": "Circunscripción federal agregada 224",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-225",
+      "name": "Circunscripción federal agregada 225",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-226",
+      "name": "Circunscripción federal agregada 226",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-227",
+      "name": "Circunscripción federal agregada 227",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-228",
+      "name": "Circunscripción federal agregada 228",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-229",
+      "name": "Circunscripción federal agregada 229",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-230",
+      "name": "Circunscripción federal agregada 230",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-231",
+      "name": "Circunscripción federal agregada 231",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-232",
+      "name": "Circunscripción federal agregada 232",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-233",
+      "name": "Circunscripción federal agregada 233",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-234",
+      "name": "Circunscripción federal agregada 234",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-235",
+      "name": "Circunscripción federal agregada 235",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-236",
+      "name": "Circunscripción federal agregada 236",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-237",
+      "name": "Circunscripción federal agregada 237",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-238",
+      "name": "Circunscripción federal agregada 238",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-239",
+      "name": "Circunscripción federal agregada 239",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-240",
+      "name": "Circunscripción federal agregada 240",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-241",
+      "name": "Circunscripción federal agregada 241",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-242",
+      "name": "Circunscripción federal agregada 242",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-243",
+      "name": "Circunscripción federal agregada 243",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-244",
+      "name": "Circunscripción federal agregada 244",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-245",
+      "name": "Circunscripción federal agregada 245",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-246",
+      "name": "Circunscripción federal agregada 246",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-247",
+      "name": "Circunscripción federal agregada 247",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-248",
+      "name": "Circunscripción federal agregada 248",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-249",
+      "name": "Circunscripción federal agregada 249",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-250",
+      "name": "Circunscripción federal agregada 250",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-251",
+      "name": "Circunscripción federal agregada 251",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-252",
+      "name": "Circunscripción federal agregada 252",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-253",
+      "name": "Circunscripción federal agregada 253",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-254",
+      "name": "Circunscripción federal agregada 254",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-255",
+      "name": "Circunscripción federal agregada 255",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-256",
+      "name": "Circunscripción federal agregada 256",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-257",
+      "name": "Circunscripción federal agregada 257",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-258",
+      "name": "Circunscripción federal agregada 258",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-259",
+      "name": "Circunscripción federal agregada 259",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-260",
+      "name": "Circunscripción federal agregada 260",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-261",
+      "name": "Circunscripción federal agregada 261",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-262",
+      "name": "Circunscripción federal agregada 262",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-263",
+      "name": "Circunscripción federal agregada 263",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-264",
+      "name": "Circunscripción federal agregada 264",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-265",
+      "name": "Circunscripción federal agregada 265",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-266",
+      "name": "Circunscripción federal agregada 266",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-267",
+      "name": "Circunscripción federal agregada 267",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-268",
+      "name": "Circunscripción federal agregada 268",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-269",
+      "name": "Circunscripción federal agregada 269",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-270",
+      "name": "Circunscripción federal agregada 270",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-271",
+      "name": "Circunscripción federal agregada 271",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-272",
+      "name": "Circunscripción federal agregada 272",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-273",
+      "name": "Circunscripción federal agregada 273",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-274",
+      "name": "Circunscripción federal agregada 274",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-275",
+      "name": "Circunscripción federal agregada 275",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-276",
+      "name": "Circunscripción federal agregada 276",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-277",
+      "name": "Circunscripción federal agregada 277",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-278",
+      "name": "Circunscripción federal agregada 278",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-279",
+      "name": "Circunscripción federal agregada 279",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-280",
+      "name": "Circunscripción federal agregada 280",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-281",
+      "name": "Circunscripción federal agregada 281",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-282",
+      "name": "Circunscripción federal agregada 282",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-283",
+      "name": "Circunscripción federal agregada 283",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-284",
+      "name": "Circunscripción federal agregada 284",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-285",
+      "name": "Circunscripción federal agregada 285",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-286",
+      "name": "Circunscripción federal agregada 286",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-287",
+      "name": "Circunscripción federal agregada 287",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-288",
+      "name": "Circunscripción federal agregada 288",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-289",
+      "name": "Circunscripción federal agregada 289",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-290",
+      "name": "Circunscripción federal agregada 290",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-291",
+      "name": "Circunscripción federal agregada 291",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-292",
+      "name": "Circunscripción federal agregada 292",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-293",
+      "name": "Circunscripción federal agregada 293",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-294",
+      "name": "Circunscripción federal agregada 294",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-295",
+      "name": "Circunscripción federal agregada 295",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-296",
+      "name": "Circunscripción federal agregada 296",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-297",
+      "name": "Circunscripción federal agregada 297",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-298",
+      "name": "Circunscripción federal agregada 298",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    },
+    {
+      "id": "bundestag-seat-299",
+      "name": "Circunscripción federal agregada 299",
+      "seatsByChamber": {
+        "bundestag": 1,
+        "bundesrat": 0
+      }
+    }
+  ],
+  "partyLeadership": {
+    "officeId": "party-leader",
+    "title": "Líder del partido",
+    "termYears": 2,
+    "minimumAge": 18,
+    "eligibleAfterOfficeIds": [
+      "deputy",
+      "prime-minister",
+      "minister"
+    ],
+    "electionMethod": "generated-caucus-majority",
+    "requiredMajorityPercent": 50
+  },
+  "ministerialAppointment": {
+    "officeId": "minister",
+    "title": "Ministro",
+    "termYears": 2,
+    "minimumAge": 18,
+    "eligibleAfterOfficeIds": [
+      "deputy",
+      "prime-minister",
+      "party-leader"
+    ],
+    "appointmentMethod": "generated-executive-choice",
+    "minimumSupportPercent": 45,
+    "portfolios": [
+      {
+        "id": "economy",
+        "title": "Economía",
+        "focus": "economy"
+      },
+      {
+        "id": "interior",
+        "title": "Interior",
+        "focus": "institutions"
+      },
+      {
+        "id": "health",
+        "title": "Salud",
+        "focus": "services"
+      },
+      {
+        "id": "education",
+        "title": "Educación",
+        "focus": "services"
+      },
+      {
+        "id": "infrastructure",
+        "title": "Infraestructura",
+        "focus": "economy"
+      }
+    ]
+  }
+}

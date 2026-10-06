@@ -19,7 +19,8 @@ export function simulateCampaign(country: CountryDefinition, runs: number, strat
     let state = createCareerGame(country, { seed: `mass-${strategy}-${run}`, name: "Ana Rivas", age: 34, originId: "urban-working", professionId: "teacher", educationId: "technical", districtId: country.electoralDistricts[0]!.id });
     state = nominate(state);
     for (let week = 0; week < 4; week += 1) {
-      const actions = strategy === "doorstep" ? ["door-knocking", "rally"] as const : ["fundraising", "fundraising"] as const;
+      const actions = strategy === "doorstep" ? ["door-knocking", "rally"] as const
+        : week === 0 ? ["fundraising", "media-interview"] as const : ["door-knocking", "rally"] as const;
       for (const action of actions) state = performCampaignAction(state, action);
       if (week < 3) state = advanceCareer(state, country);
     }

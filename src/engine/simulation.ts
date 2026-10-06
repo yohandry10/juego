@@ -73,7 +73,16 @@ function makePoliticalActors(country: CountryDefinition, rngState: number): { pa
   const legislators: NonNullable<GameState["legislators"]>[number][] = [];
   for (const chamber of chambers) {
     const generateForDistrict = (districtId: string, seats: number): void => {
-      const seatCounts = apportionSeats(seats, profiles.map((profile) => profile.sharePercent));
+      const districtShares = districtId === "national"
+        ? profiles.map((profile) => profile.sharePercent)
+        : (() => {
+          // National support does not predict identical local results in every district.
+          const swing = Math.max(12, 45 / Math.sqrt(Math.max(1, seats)));
+          const weights = profiles.map((profile) => Math.max(1, profile.sharePercent + (rng.next() * 2 - 1) * swing));
+          const total = weights.reduce((sum, weight) => sum + weight, 0);
+          return weights.map((weight) => weight / total * 100);
+        })();
+      const seatCounts = apportionSeats(seats, districtShares);
       const partySequence = parties.flatMap((party, index) => Array.from({ length: seatCounts[index] ?? 0 }, () => party));
       for (let index = partySequence.length - 1; index > 0; index -= 1) {
         const swapIndex = Math.floor(rng.next() * (index + 1));

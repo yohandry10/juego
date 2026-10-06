@@ -37,11 +37,12 @@ npm run validate:mass
 npm run sim -- --country peru --years 20 --runs 1000 --seed balance
 npm run validate:career
 npm run validate:government
+npm run validate:countries -- 25
 npm run content:validate
 npm run world:validate
 ```
 
-Cada corrida usa una subsemilla estable (`semilla-N`) y verifica que los indicadores principales permanezcan numéricos. `validate:career` compara 1.000 corridas de estrategia territorial y recaudación. `validate:government` compara 1.000 mandatos generados con apoyo aislado frente a una coalición negociada y defensa del Gobierno.
+Cada corrida usa una subsemilla estable (`semilla-N`) y verifica que los indicadores principales permanezcan numéricos. `validate:career` compara corridas de estrategia territorial y recaudación. `validate:government` compara mandatos generados con apoyo aislado frente a una coalición negociada y defensa del Gobierno. `validate:countries -- 25` ejecuta 25 semillas por estrategia en cada ficha del selector y registra resultados de campaña, escaños y, cuando se gana, el período legislativo completo. Es un lote básico de consistencia; no sustituye el balance estadístico de todos los cargos e ideologías ni una comparación con resultados reales.
 
 `content:validate` comprueba integridad del catálogo y duplicados literales entre títulos y variantes; el resultado es una auditoría estática, no una medición de repetición durante 30 años de juego.
 
@@ -73,7 +74,7 @@ El bus síncrono transmite eventos del motor a observadores como el CLI; cada ev
 
 El snapshot `world-2026-10-06-v1` contiene 217 países y economías del catálogo del Banco Mundial; 193 están marcados como miembros de la ONU. La matriz bilateral es una aproximación dispersa de juego, no una matriz observada de comercio. El mapa Natural Earth a escala 1:110m contiene 169 geometrías: los actores sin geometría siguen disponibles en el catálogo y pueden seleccionarse por código. Las membresías de ONU, FMI/Banco Mundial, OMC y bloques regionales se mantienen como snapshots simplificados. La actualización de WDI, roster ONU y Natural Earth se ejecuta con `npm run world:update-data`.
 
-Las cifras de guerra y shocks son calibración interna: `docs/phase-4-report.md` describe el alcance y las limitaciones. La guerra es abstracta; el juego no tiene uso nuclear. La guía inicial y el glosario están en Ayuda. Tras la primera carga completa, un service worker conserva el shell, los escenarios y el mapa para uso sin conexión; la interfaz avisa cuando esa capacidad del navegador está disponible. Fase 5 conserva límites explícitos: el catálogo nacional jugable tiene tres fichas (Perú, España y Francia), no diez países curados; la guía no se ha validado con cinco jugadores, y el balance completo, la auditoría editorial/legal y la publicación pública siguen abiertos.
+Las cifras de guerra y shocks son calibración interna: `docs/phase-4-report.md` describe el alcance y las limitaciones. La guerra es abstracta; el juego no tiene uso nuclear. La guía inicial y el glosario están en Ayuda. Tras la primera carga completa, un service worker conserva el shell, los escenarios y el mapa para uso sin conexión; la interfaz avisa cuando esa capacidad del navegador está disponible. Fase 5 conserva límites explícitos: el catálogo nacional jugable tiene cuatro fichas (Perú, España, Francia y Alemania), aún menos de los diez países iniciales; el nuevo perfil alemán agrega instituciones federales para jugabilidad y no simula las delegaciones de los Länder. La guía no se ha validado con cinco jugadores, y el balance completo, la auditoría editorial/legal y la publicación pública siguen abiertos.
 
 ## Datos iniciales
 
