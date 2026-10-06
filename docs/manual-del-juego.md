@@ -19,6 +19,8 @@ La semilla permite repetir la generación cuando el país y las versiones de dat
 
 Una campaña dura cuatro semanas. Dispones de dos acciones por semana: recorrer el distrito, organizar un mitin, hablar con la prensa, acercarte al partido, recaudar fondos o formular una promesa. Confirma tu nominación y avanza las semanas. Las promesas pueden volver como decisiones y afectar la confianza.
 
+Puedes perder la candidatura o el puesto. Una derrota electoral cierra la carrera de ese cargo; una vacancia, una censura aprobada o un golpe generado pueden terminar un Gobierno activo. El resumen y el historial indican qué procedimiento ocurrió y por qué. Las decisiones institucionales se pueden gestionar; el golpe es un evento probabilístico simplificado, no una batalla controlable.
+
 El resultado electoral muestra el apoyo y explica los factores principales. Si pierdes, puedes iniciar otra campaña; si ganas, el escenario avanza al cargo configurado. Las carreras legislativas muestran representantes generados, sus partidos, facciones y circunscripciones. Las opciones de negociación y los votos pueden dejar confianza, resentimiento o memoria duradera.
 
 Según el sistema del país, puedes formar o sostener un gobierno, negociar una investidura, reorganizar un gabinete, legislar, aprobar un presupuesto y responder a procedimientos de censura o vacancia. Cada procedimiento usa las reglas configuradas para ese escenario. El riesgo de caída, las señales de alerta y el registro de votos ayudan a entender por qué una coalición sobrevive o pierde poder.

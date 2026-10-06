@@ -30,7 +30,7 @@ Revisa `docs/phase-4-report.md` y la tabla de criterios de 7.5; implementa y val
 3. Shocks y transmisión por exposiciones completas, con explicaciones y causalidad verificable.
 4. Profundizar las acciones diplomáticas ya visibles (ayuda, reconocimiento y movilidad humana): integrar sus costos/beneficios al estado nacional y dar efectos inspeccionables a acuerdos migratorios.
 5. Conflictos con fuerzas y movimiento agregados, conflictos por terceros e híbridos, costos humanos/económicos/políticos/diplomáticos y estado de posguerra, todos abstractos, deterministas y sin combate táctico.
-6. Acoplamiento de lealtad militar y golpes con estabilidad y procedimientos internos, incluida medición de golpes en corridas largas.
+6. Calibración de lealtad militar y golpes en corridas largas; el evento ahora puede remover un Gobierno y queda registrado en el historial, pero falta probar tasas variadas y transiciones.
 7. Ampliar benchmark más allá de un único marcador: shocks, sanciones, conflictos, golpes, bounds, consistencia entre semillas y tiempo por turno.
 
 No confundas el núcleo publicado con el cierre de los criterios 7.5. Actualiza el informe con pruebas y límites vigentes.

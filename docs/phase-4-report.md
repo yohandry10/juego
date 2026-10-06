@@ -9,13 +9,13 @@
 - El mapa descargado tiene 169 geometrías para el catálogo de 217 actores. Los restantes siguen en el selector y no desaparecen del estado. La capa incluye selección por click/teclado y colores por alineamiento, comercio aproximado, sanciones, fuerzas y conflictos.
 - El guardado de carrera v14 incluye los 217 actores de partida, relaciones, organismos, votos, acuerdos, shocks, conflictos, acciones y efectos domésticos. Las versiones v3–v13 conservan sin cambios el estado legado y reciben geopolítica desde su semilla.
 - El Worker acepta `world-create` y `world-advance`; la vista usa el Worker para avanzar un trimestre. El calendario regular de carrera también avanza mundo, economía y sociedad; el shock mundial actualiza crecimiento, inflación, desempleo, causas visibles y ánimo/aprobación.
-- Los actores tienen seis estilos, inercia, sensibilidad doméstica y credibilidad. El motor produce acciones explicadas, shocks encadenados, flujo bilateral aproximado, aranceles limitados, sanciones, resoluciones anuales, guerras abstractas con costos/resultados, lealtad militar y riesgo simplificado de golpe. No permite guerra directa entre dos actores marcados con disuasión nuclear.
+- Los actores tienen seis estilos, inercia, sensibilidad doméstica y credibilidad. El motor produce acciones explicadas, shocks encadenados, flujo bilateral aproximado, aranceles limitados, sanciones, resoluciones anuales, guerras abstractas con costos/resultados, lealtad militar y riesgo simplificado de golpe. Un golpe generado ahora puede cerrar un Gobierno activo y deja un motivo en el resumen de carrera. No permite guerra directa entre dos actores marcados con disuasión nuclear.
 - Hay postura exterior de alineamiento/equilibrio/neutralidad, visita, acuerdo comercial, sanción, ayuda, reconocimiento de interlocución y propuesta de movilidad humana. El compromiso de ayuda reduce gradualmente el crecimiento y eleva la inflación; el acuerdo migratorio ratificado mejora en forma acotada crecimiento y empleo, con explicación persistente. Estos índices de balance no modelan transferencias ni personas. El tratado comercial o migratorio se somete a ratificación simplificada en una sesión legislativa; la UI muestra costo de influencia, historial y motivo.
 - Cambiar de postura exterior ya no regala influencia: alinearse cuesta 3, equilibrar 2 y mantener neutralidad 0; repetir la postura actual queda deshabilitado. Las tres opciones dejan efectos de juego distintos sobre aislamiento, confianza y flujo con el socio.
 
 ## Supuestos y límites
 
-Los flujos bilaterales, las dependencias y los índices de poder son variables de juego derivadas; el WDI no se presenta como una matriz bilateral. Las organizaciones son snapshots simplificados. La ONU usa un voto simplificado; FMI/Banco Mundial no desembolsan préstamos ni aplican condiciones macroeconómicas concretas; la OMC y los bloques no ejecutan procesos completos de disputa, negociación o decisión. Las alianzas y los tratados no son una implementación jurídica. Los conflictos son deterministas y agregados, sin tropas con ubicación, logística, ocupación, refugiados, insurgencias persistentes ni intervención de fuerzas del jugador. La lealtad/golpe es una señal básica y no se acopla todavía al procedimiento interno completo de caída. Los países y la clasificación nuclear requieren revisión editorial de su snapshot y fuentes antes de tratarse como canónicos.
+Los flujos bilaterales, las dependencias y los índices de poder son variables de juego derivadas; el WDI no se presenta como una matriz bilateral. Las organizaciones son snapshots simplificados. La ONU usa un voto simplificado; FMI/Banco Mundial no desembolsan préstamos ni aplican condiciones macroeconómicas concretas; la OMC y los bloques no ejecutan procesos completos de disputa, negociación o decisión. Las alianzas y los tratados no son una implementación jurídica. Los conflictos son deterministas y agregados, sin tropas con ubicación, logística, ocupación, refugiados, insurgencias persistentes ni intervención de fuerzas del jugador. El golpe puede cerrar un Gobierno activo y deja una causa en el historial; todavía carece de probabilidades calibradas, relación con lealtad por unidad militar y procedimiento de transición. Los países y la clasificación nuclear requieren revisión editorial de su snapshot y fuentes antes de tratárselos como canónicos.
 
 La tasa cero de guerra directa nuclear resulta de una restricción estructural del selector de pares; no mide la estabilidad estratégica del mundo real. No existe mecánica de uso nuclear. Las acciones de IA y los shocks usan heurísticas, no una calibración histórica. La capa de capas del mapa colorea países, no dibuja enlaces individuales. La comisión/ratificación es una papeleta simplificada, sin texto de tratado ni enmiendas.
 
@@ -33,7 +33,7 @@ La tasa cero de guerra directa nuclear resulta de una restricción estructural d
 | Shocks | 23.77 por corrida (2,377/100) |
 | Sanciones | 0.95 por corrida (95/100) |
 | Golpes | 0 por corrida en el lote base |
-| Tiempo por trimestre | 0.861 ms de promedio de los procesos de 50 años (hardware dependiente; medición del 2026-10-06) |
+| Tiempo por trimestre | 1.070 ms promedio; 21.409 s de CPU/tiempo acumulado para 100 procesos de 50 años (hardware dependiente; medición del 2026-10-06) |
 
 ## Aceptación
 
@@ -48,7 +48,7 @@ Superados en esta implementación: catálogo estable de actores y variables limi
 | 5. Shocks coherentes | Parcial | Shocks encadenados afectan actores según exposiciones sintéticas y pasan a la economía nacional. Falta validar sensibilidad entre perfiles y países con datos independientes. |
 | 6. Guerra completa | Parcial | Resolución explica costos humanos, económicos y políticos y asigna resultado; no incluye fuerzas y movimiento por mapa, persistencia de insurgencia, reconstrucción ni diplomacia de posguerra. |
 | 7. Presión sobre país mediano | Parcial | La UI impone costos distintos y cambia aislamiento, confianza y flujo según alineamiento/equilibrio/neutralidad. Ayuda y acuerdo migratorio ratificado ahora entran en la economía doméstica con motivos visibles; falta comparar resultados diplomáticos por múltiples semillas y países. |
-| 8. Rendimiento y Worker | Cumple en corte local | Worker usado por el avance geopolítico; media medida de 1.015 ms por trimestre en el lote de 50 años y smoke de turno ejecutivo 0.068 s en el entorno local. Hardware no normalizado. |
+| 8. Rendimiento y Worker | Cumple en corte local | Worker usado por el avance geopolítico; media medida de 1.070 ms por trimestre en el lote de 50 años y smoke de turno ejecutivo 0.079 s en el entorno local. Hardware no normalizado. |
 | 9. Tasas razonables | Parcial | Frecuencias registradas y límites comprobados, pero 0 golpes y guerra/sanciones con tasas heurísticas no han recibido calibración externa. |
 | 10. Contenido | Cumple cantidad mínima | Se validan 80 plantillas internacionales y 10 arcos; no se ha hecho aprobación editorial humana línea por línea. |
 
@@ -56,9 +56,10 @@ Parciales o pendientes: calibración independiente de frecuencias; transmisión 
 
 ## Validación del corte
 
-- `npm test` — 71/71 aprobadas, incluidas migración y simulación mundial.
-- `npm run build` — correcto; TypeScript y bundle incluida la emisión del Worker (el bundler reporta un chunk UI de 710 KB sin comprimir; 191.65 KB gzip).
+- `npm test` — 74/74 aprobadas, incluidas reglas ejecutivas, migración y simulación mundial; verificación posterior a la conexión del golpe con el fin del gobierno.
+- `npm run build` — correcto; TypeScript y bundle incluida la emisión del Worker (el bundler reporta un chunk UI de 716.78 KB sin comprimir; 193.36 KB gzip).
 - `npm run build:worker-check` — correcto.
-- `python tests/web-smoke.py` — correcto; turno ejecutivo normal 0,068 s en el entorno local.
-- `npm run world:validate` — 100 × 50 años; cero valores inválidos y cero guerras nucleares directas. Salida completa en `phase-4-simulation.json`.
-- `scripts/phase4-diplomacy-browser-check.py` — correcto en navegador: reconocimiento, ayuda, tratado migratorio, elección y ratificación legislativa simplificada.
+- `python tests/web-smoke.py` — correcto; turno ejecutivo normal 0,079 s en el entorno local.
+- `npm run world:validate` — 100 × 50 años; cero valores inválidos y cero guerras nucleares directas. Salida completa en `phase-4-simulation.json`; golpes observados: 0, por lo que su frecuencia sigue sin calibrar.
+- `scripts/phase4-diplomacy-browser-check.py` — correcto en navegador: postura con costo, reconocimiento, ayuda, tratado migratorio, elección y ratificación legislativa simplificada.
+- `scripts/phase5-browser-check.py` y `scripts/country-start-browser-check.py` — correctos en Chromium de escritorio; ayuda/offline y arranque de los cuatro perfiles.

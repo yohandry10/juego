@@ -125,6 +125,15 @@ function withStability(state: CareerGameState, government: Omit<GovernmentState,
   return { ...government, ...calculateGovernmentStability(state, government.supportPartyIds, government.chamberId, country) };
 }
 
+export function registerMilitaryCoup(state: CareerGameState, country: CountryDefinition, geopolitics: CareerGameState["geopolitics"]): CareerGameState {
+  if (geopolitics.coups <= state.geopolitics.coups || state.government?.status !== "active") return { ...state, geopolitics };
+  const explanation = `La lealtad militar llegó a ${geopolitics.militaryLoyalty.toFixed(1)} y el modelo nacional registró un golpe en ${country.name}. El Gobierno del jugador concluye; no se simulan combate ni violencia gráfica.`;
+  const government = withStability(state, { ...state.government, status: "removed", challenge: null }, country);
+  return validateCareer({ ...state, geopolitics, government, stage: "term-summary", currentTurn: state.currentTurn + 1,
+    careerHistory: [...state.careerHistory, { turn: state.currentTurn + 1, roleId: country.politicalSystem.executive.officeId, outcome: "military-coup", explanation }],
+    log: [...state.log, { turn: state.currentTurn + 1, text: "El Gobierno cayó tras un golpe militar.", explanation }] });
+}
+
 function nextArcStep(state: CareerGameState): { readonly eventId: string; readonly payloadId: string | null } | undefined {
   const unused = (eventId: string) => !state.usedEventVariants.some((variant) => variant.startsWith(`${eventId}:`));
   const stageEligible = (event: typeof careerEventCatalog[number]) => event.stage === "any" || event.stage === state.stage || (state.stage === "election-result" && event.stage === "campaign");
@@ -922,6 +931,9 @@ export function advanceCareer(state: CareerGameState, country?: CountryDefinitio
     if (state.government.challenge) throw new Error("Resuelve el procedimiento institucional antes de avanzar el trimestre.");
     const geopolitics = advanceGeopolitics(state.geopolitics, state.seed);
     const world = applyGeopoliticalEffects(advanceQuarter(country, state.world).state, geopolitics);
+    if (geopolitics.coups > state.geopolitics.coups) {
+      return applyAnnualMortality(registerMilitaryCoup({ ...state, world }, country, geopolitics), state.world.year);
+    }
     const termTurn = Math.min(state.government.totalTermTurns, state.government.termTurn + 1);
     const termFinished = termTurn >= state.government.totalTermTurns;
     const government = withStability({ ...state, world }, { ...state.government, termTurn, ...(termFinished ? { status: "ended" as const } : {}) }, country);

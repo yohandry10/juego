@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { loadCountry } from "../src/data/load-country.js";
 import { admitPresidentialVacancy, canSubmitCabinetCensure, canSubmitCensure, canSubmitPresidentialVacancy, resolveCensureVote, resolveConfidenceVote, resolveInvestitureVote, resolvePresidentialVacancy, vacancyDebateReady } from "../src/application/executive-rules.js";
 import { createGameState } from "../src/engine/simulation.js";
+import { createGeopoliticsState } from "../src/engine/world-simulation.js";
 import { advanceCareer, advanceChallengeDays, appointMinister, backSuccessor, buildLegacyProfile, calculateGovernmentStability, canStartMinisterialAppointment, canStartNextCareerCampaign, canStartPartyLeadershipElection, castVote, changePartyAffiliation, createCareerGame, declineReturnCall, defendGovernment, foundParty, negotiateGovernmentSupport, performCampaignAction, performMinistryAction, performPartyLeadershipAction, resolveGovernmentChallenge, resolveGovernmentInvestiture, retireCareer, returnFromRetirement, startGovernmentInvestiture, startMinisterialAppointment, startNextCareerCampaign, startPartyLeadershipElection, submitGovernmentChallenge } from "../src/application/career-commands.js";
 import { hashSeed } from "../src/engine/rng.js";
 import { simulateGovernmentSurvival } from "../src/cli/government-mass.js";
@@ -111,6 +112,25 @@ test("Peru exposes a data-driven presidential campaign and a full executive term
   assert.equal(agentFree.stage, "campaign");
   assert.equal(agentFree.campaign.playerPreferencePercent, 3);
   assert.ok(agentFree.careerHistory.some((entry) => entry.outcome === "returned-as-agent-free"));
+});
+
+test("a locally simulated coup removes the active executive and explains the lost term", () => {
+  const seed = "forced-coup-36";
+  let state = createCareerGame(peru, { seed, name: "Elena Cruz", age: 40, originId: "professional-middle", professionId: "teacher", educationId: "public-university", officeId: "president" });
+  const playerCountry = state.geopolitics.playerCountryId;
+  const geopolitics = createGeopoliticsState("peru", seed);
+  state = { ...state, geopolitics: { ...geopolitics, actors: geopolitics.actors.map((actor) => actor.id === playerCountry ? { ...actor, regimeStability: 0 } : actor) } };
+  state = { ...state, stage: "executive", government: {
+    status: "active", executiveId: state.player.id, chamberId: state.campaign.chamberId, round: "first", supportPartyIds: [state.playerPartyId],
+    termTurn: 0, totalTermTurns: 20, lastInvestitureYes: null, fallRiskPercent: 20, warningSignals: [], challenge: null, cabinet: [], policyVotes: [],
+  } };
+
+  const ended = advanceCareer(state, peru);
+  assert.equal(ended.stage, "term-summary");
+  assert.equal(ended.government?.status, "removed");
+  assert.equal(ended.geopolitics.coups, 1);
+  assert.ok(ended.careerHistory.some((entry) => entry.outcome === "military-coup"));
+  assert.ok(ended.log.at(-1)?.explanation.includes("registró un golpe"));
 });
 
 test("Peruvian cabinet censure and presidential vacancy use separate configured procedures", () => {
