@@ -47,7 +47,7 @@ export interface PromiseRecord {
   readonly status: "pending" | "kept" | "broken";
 }
 
-export type CampaignActionType = "primary-outreach" | "rally" | "door-knocking" | "media-interview" | "fundraising" | "make-promise";
+export type CampaignActionType = "primary-outreach" | "rally" | "door-knocking" | "media-interview" | "fundraising" | "make-promise" | "set-national-agenda" | "publish-poll" | "national-debate";
 
 export interface CampaignActionRecord {
   readonly id: string;
@@ -73,6 +73,9 @@ export interface CampaignState {
   readonly partySupportPercent: number;
   readonly playerPreferencePercent: number;
   readonly campaignFundsSpent: number;
+  readonly nationalAgenda: string | null;
+  readonly pollHistory: readonly { readonly week: number; readonly playerSharePercent: number; readonly leadingPartyId: string; readonly explanation: string }[];
+  readonly debateHistory: readonly { readonly week: number; readonly playerScore: number; readonly opponentScore: number; readonly won: boolean; readonly explanation: string }[];
 }
 
 export interface ElectionOutcome {
@@ -170,7 +173,7 @@ export interface CharacterRelationship {
 }
 
 export interface CareerGameState {
-  readonly saveSchemaVersion: 11;
+  readonly saveSchemaVersion: 12;
   readonly countryId: string;
   readonly countryDataVersion: string;
   readonly contentDataVersion: string;
@@ -201,6 +204,7 @@ export interface CareerGameState {
 
 export interface PartyLeadershipState {
   readonly partyId: string;
+  readonly role: "government" | "opposition";
   readonly termTurn: number;
   readonly totalTermTurns: number;
   readonly supportPercent: number;
@@ -267,6 +271,21 @@ export interface GovernmentState {
   readonly warningSignals: readonly string[];
   readonly challenge: GovernmentChallenge | null;
   readonly cabinet: readonly { readonly officeId: string; readonly title: string; readonly legislatorId: string; readonly loyalty: number }[];
+  readonly policyVotes: readonly GovernmentPolicyVoteRecord[];
+}
+
+export interface GovernmentPolicyVoteRecord {
+  readonly id: string;
+  readonly turn: number;
+  readonly kind: "project";
+  readonly focus: "employment" | "services" | "investment";
+  readonly title: string;
+  readonly requiredMajorityPercent: number;
+  readonly yes: number;
+  readonly no: number;
+  readonly passed: boolean;
+  readonly votes: readonly { readonly legislatorId: string; readonly choice: "yes" | "no"; readonly reasons: readonly string[] }[];
+  readonly explanation: string;
 }
 
 export interface GovernmentChallenge {

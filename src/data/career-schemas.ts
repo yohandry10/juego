@@ -36,7 +36,7 @@ export const promiseRecordSchema: z.ZodType<PromiseRecord> = z.object({
 
 export const campaignActionRecordSchema: z.ZodType<CampaignActionRecord> = z.object({
   id: z.string().min(1), week: z.number().int().min(1).max(4),
-  type: z.enum(["primary-outreach", "rally", "door-knocking", "media-interview", "fundraising", "make-promise"]),
+  type: z.enum(["primary-outreach", "rally", "door-knocking", "media-interview", "fundraising", "make-promise", "set-national-agenda", "publish-poll", "national-debate"]),
   districtId: z.string().min(1), explanation: z.string().min(1), result: z.number().finite(), promiseId: z.string().nullable(),
 }).strict();
 
@@ -45,6 +45,9 @@ export const campaignStateSchema: z.ZodType<CampaignState> = z.object({
   week: z.number().int().min(1).max(4), totalWeeks: z.literal(4), actionsRemaining: z.number().int().min(0).max(4), districtId: z.string().min(1), chamberId: z.string().min(1), partyId: z.string().min(1),
   nominated: z.boolean(), actionHistory: z.array(campaignActionRecordSchema), promises: z.array(promiseRecordSchema),
   partySupportPercent: bounded(), playerPreferencePercent: bounded(), campaignFundsSpent: z.number().nonnegative(),
+  nationalAgenda: z.string().min(1).nullable(),
+  pollHistory: z.array(z.object({ week: z.number().int().min(1).max(4), playerSharePercent: bounded(), leadingPartyId: z.string().min(1), explanation: z.string().min(1) }).strict()),
+  debateHistory: z.array(z.object({ week: z.number().int().min(1).max(4), playerScore: bounded(), opponentScore: bounded(), won: z.boolean(), explanation: z.string().min(1) }).strict()),
 }).strict();
 
 export const electionOutcomeSchema: z.ZodType<ElectionOutcome> = z.object({
@@ -110,6 +113,7 @@ export const governmentStateSchema: z.ZodType<GovernmentState> = z.object({
   fallRiskPercent: bounded(), warningSignals: z.array(z.string().min(1)),
   challenge: z.object({ type: z.enum(["presidential-vacancy", "constructive-censure"]), phase: z.enum(["admission", "defense"]), causeId: z.string().min(1), sponsorCount: z.number().int().nonnegative(), successorId: z.string().nullable(), daysElapsed: z.number().int().nonnegative(), defenseInfluence: bounded(), admissionPassed: z.boolean().nullable() }).strict().nullable(),
   cabinet: z.array(z.object({ officeId: z.string().min(1), title: z.string().min(1), legislatorId: z.string().min(1), loyalty: bounded() }).strict()),
+  policyVotes: z.array(z.object({ id: z.string().min(1), turn: z.number().int().nonnegative(), kind: z.literal("project"), focus: z.enum(["employment", "services", "investment"]), title: z.string().min(1), requiredMajorityPercent: bounded(50, 100), yes: z.number().int().nonnegative(), no: z.number().int().nonnegative(), passed: z.boolean(), votes: z.array(z.object({ legislatorId: z.string().min(1), choice: z.enum(["yes", "no"]), reasons: z.array(z.string().min(1)) }).strict()).min(1), explanation: z.string().min(1) }).strict()),
 }).strict();
 
 export const publicBudgetStateSchema: z.ZodType<PublicBudgetState> = z.object({
@@ -141,13 +145,13 @@ export const legacyProfileSchema: z.ZodType<LegacyProfile> = z.object({
 
 const gameState = gameStateSchema;
 export const careerGameStateSchema: z.ZodType<CareerGameState> = z.object({
-  saveSchemaVersion: z.literal(11), countryId: z.string().min(1), countryDataVersion: z.string().min(1), contentDataVersion: z.string().min(1),
+  saveSchemaVersion: z.literal(12), countryId: z.string().min(1), countryDataVersion: z.string().min(1), contentDataVersion: z.string().min(1),
   seed: z.string().min(1), stage: z.enum(["campaign", "election-result", "legislature", "executive", "party-leadership", "minister", "term-summary", "legacy"]), realism: realismModeSchema, ironman: z.boolean(),
   currentTurn: z.number().int().nonnegative(), world: gameState, player: politicalCharacterSchema,
   playerPartyId: z.string().min(1), campaign: campaignStateSchema, electionOutcome: electionOutcomeSchema.nullable(),
   legislature: legislatureStateSchema.nullable(), relationships: z.array(characterRelationshipSchema), government: governmentStateSchema.nullable(), budget: publicBudgetStateSchema,
   partyLeadership: z.object({
-    partyId: z.string().min(1), termTurn: z.number().int().nonnegative(), totalTermTurns: z.number().int().positive(),
+    partyId: z.string().min(1), role: z.enum(["government", "opposition"]), termTurn: z.number().int().nonnegative(), totalTermTurns: z.number().int().positive(),
     supportPercent: bounded(), actionsRemaining: z.number().int().min(0).max(2),
     actionsTaken: z.array(z.object({ turn: z.number().int().nonnegative(), action: z.enum(["unify-factions", "renew-platform", "enforce-discipline"]), explanation: z.string().min(1) }).strict()),
   }).strict().nullable(),
@@ -179,5 +183,9 @@ export const careerGameStateSchema: z.ZodType<CareerGameState> = z.object({
   if (state.government && !state.world.legislators.some((member) => member.chamberId === state.government!.chamberId)) context.addIssue({ code: "custom", message: "El Gobierno debe depender de una cámara generada en esta partida.", path: ["government", "chamberId"] });
   if (state.government && state.government.supportPartyIds.some((partyId) => !state.world.parties.some((party) => party.id === partyId))) context.addIssue({ code: "custom", message: "El acuerdo de investidura solo puede incluir partidos de esta partida.", path: ["government", "supportPartyIds"] });
   if (state.government && state.government.cabinet.some((minister) => !state.world.legislators.some((member) => member.id === minister.legislatorId))) context.addIssue({ code: "custom", message: "El gabinete debe componerse de personajes generados en esta partida.", path: ["government", "cabinet"] });
+  state.government?.policyVotes.forEach((vote, index) => {
+    if (vote.yes + vote.no !== vote.votes.length || vote.votes.length !== state.world.legislators.filter((member) => member.chamberId === state.government!.chamberId).length) context.addIssue({ code: "custom", message: "El acta del proyecto debe cubrir todos los escaños de la cámara.", path: ["government", "policyVotes", index] });
+    if (vote.passed !== (vote.yes / vote.votes.length * 100 > vote.requiredMajorityPercent)) context.addIssue({ code: "custom", message: "El resultado del proyecto debe coincidir con la mayoría configurada.", path: ["government", "policyVotes", index] });
+  });
   if (state.returnCall.partyId && !state.world.parties.some((party) => party.id === state.returnCall.partyId)) context.addIssue({ code: "custom", message: "La llamada de regreso debe proceder de un partido ficticio de esta partida.", path: ["returnCall", "partyId"] });
 });
