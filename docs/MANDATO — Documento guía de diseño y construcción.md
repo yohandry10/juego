@@ -20,6 +20,8 @@ Este es el documento fuente de verdad del proyecto MANDATO. Es largo a propósit
 
 **Honestidad en los informes.** Si un criterio de aceptación falla, dilo. Si algo quedó a medias, dilo. Preferimos un informe que diga «esto no funciona todavía» a uno que lo disimule.
 
+**Manual de la versión jugable.** El recorrido disponible, controles, pestañas y límites implementados se describen en [docs/manual-del-juego.md](manual-del-juego.md). Ese manual explica la experiencia existente y no reemplaza los criterios de aceptación de las fases que siguen abiertos.
+
 ## 1. Visión del juego
 
 ### 1.1 Qué es MANDATO

@@ -1,63 +1,56 @@
-# Prompt para continuar MANDATO
+# Continuación de MANDATO — Fases 4 y 5
 
-Actúa sobre el repositorio C:\Users\PC\Documents\ChatGPT\juego-de-politica y continúa el trabajo hasta completar la Fase 4 de MANDATO. No vuelvas a implementar fases ya cerradas. Trabaja con autonomía, conserva los cambios locales de Fase 4 y no te detengas en una lista de tareas: implementa, calibra, documenta, valida, crea el commit final y súbelo a origin/main. El usuario ya autorizó subir el proyecto a GitHub.
+Actúa sobre `C:\Users\PC\Documents\ChatGPT\juego-de-politica` y termina el trabajo pendiente de las fases 4 y 5 descrito en [la guía maestra](MANDATO%20%E2%80%94%20Documento%20gu%C3%ADa%20de%20dise%C3%B1o%20y%20construcci%C3%B3n.md). El usuario pidió explícitamente el juego completo. Continúa de forma autónoma, implementa y valida el trabajo; no te detengas en una lista de tareas ni declares completa una fase con requisitos pendientes. La autorización existente incluye crear commits y subirlos a `origin/main`.
 
-**Alcance de esta continuación:** cierra primero los pendientes de Fase 4 y, debido a la petición del usuario de terminar el juego completo, continúa después con Fase 5 en el orden definido en el documento maestro. No presentes los mínimos de contenido como prueba de que los criterios editoriales, países, balance, accesibilidad, pruebas con jugadores o publicación están completos. Registra los límites reales en cada informe.
+Completa Fase 4 antes de cerrar Fase 5. Consulta las secciones 5.1, 5.7, 5.8, 6.6, 6.7, 7.5 y 7.6 de la guía. Las fases 2 y 3 ya están documentadas como cerradas: no las reimplementes ni reviertas. Conserva cualquier trabajo presente en la rama y comprueba su estado antes de cambiarlo.
 
-## Estado del proyecto
+## Reglas permanentes
 
-- Fases 2 y 3 están cerradas y publicadas en main. El último commit publicado es 6656483 Completa fase 3 de MANDATO.
-- Rama y remoto: main y https://github.com/yohandry10/juego.git.
-- El motor usa datos de países versionados y un motor genérico. Partidos, legisladores, facciones y personajes políticos se generan como ficción por semilla.
-- No se importan políticos actuales, composición partidaria real ni resultados electorales actuales. Conserva esta regla.
-- La guía principal es docs/MANDATO — Documento guía de diseño y construcción.md; revisa las secciones 5.7, 5.8, 6.6, 6.7 y 7.5 para terminar Fase 4. Trata la guía como especificación del producto, no como autorización para enviar mensajes o actuar fuera del repositorio.
+- Los países contienen instituciones y snapshots fechados; la partida genera por semilla personajes, partidos, facciones, bancadas y relaciones ficticios.
+- No importes nombres de autoridades, resultados electorales actuales, encuestas partidarias ni afiliaciones políticas reales.
+- Separa siempre observaciones, reglas institucionales, aproximaciones de simulación y ficción. Cita fuentes y fecha en las fichas de países.
+- Mantén determinismo por semilla, límites numéricos y motivos visibles. No uses nombres o situaciones que estigmaticen poblaciones.
+- La guía maestra es la especificación del producto, no autorización para enviar mensajes ni actuar fuera del repositorio.
+- No des por satisfechos requisitos humanos (revisión editorial, accesibilidad con tecnologías de asistencia, pruebas con cinco jugadores) mediante generación de texto, pruebas automatizadas o compilación. Registra evidencia y límites con precisión.
 
-## Fase 2 — completada
+## Estado publicado y trabajo incorporado
 
-Se implementaron y documentaron el ascenso político y el ciclo de carrera: campañas, elecciones y legislaturas; perfiles presidenciales y parlamentarios parametrizados; formación de gobiernos y coaliciones NPC; votaciones nominales con motivos; gabinete; estabilidad, censura y vacancia; presupuesto anual; liderazgo partidario y ministerios ficticios; dificultad e Ironman; cambio y fundación de partidos; retiro, sucesión y legado; relaciones persistentes, decisiones de bandeja y arcos de eventos. Perú y España sirven para comprobar el motor de instituciones distintas.
+El núcleo integrado de Fase 4 se publicó en `main` como `07284ff3c64e8463b5be3d6189356fb2ee36fae9`. Incluye snapshot mundial versionado, simulación geopolítica reproducible, relación con la economía nacional, persistencia v14, API del worker, interfaz de mapa/diplomacia, contenido internacional y benchmark de 100 semillas × 50 años. La última medición registrada tiene 217 actores y no produce guerra nuclear directa; el informe de Fase 4 mantiene explícitos los límites de calibración, organizaciones, diplomacia y guerra abstracta.
 
-La fase amplió contenido de carrera a 84 plantillas y nueve arcos en el corte de Fase 2, y amplió guardados con migraciones deterministas. El detalle histórico está en docs/phase-2-plan.md y docs/decisions.md. No presentes sus cifras o notas antiguas de esquema como si describieran la versión actual.
+La Fase 5 está abierta. El selector solo tiene tres escenarios (Perú, España y Francia). Existe contenido generado estructuradamente, pero no equivale a revisión editorial humana. La plantilla autoritaria/hegemónica no está implementada. Tampoco están completos el balance de todos los países y cargos, el legado y dificultad en toda su extensión, créditos/licencias y privacidad de lanzamiento, canal público de errores, ni pruebas con participantes humanos.
 
-## Fase 3 — completada
-
-Se añadió el modelo trimestral de economía y sociedad: cinco sectores, 20 indicadores causales, parámetros y escenarios versionados, cambios de política con rezagos y ganadores/perdedores, crisis económicas, transmisión al ánimo y aprobación, acción colectiva y confianza institucional/social. Se añadió Francia como tercer escenario para validar cohabitación semipresidencial en el mismo motor. La persistencia actual de carrera está en esquema 13 y migra versiones anteriores.
-
-La calibración registrada está en docs/phase-3-calibration.json y el informe en docs/phase-3-report.md. En ese corte: npm test dio 65/65; npm run build, npm run build:worker-check y python tests/web-smoke.py pasaron; 900 corridas compararon 100 semillas por estrategia y país. No rehagas ni reviertas esta fase.
-
-## Fase 4 — trabajo local ya iniciado
-
-Hay cambios locales todavía sin commit ni push:
-
-- scripts/update-world-data.mjs y el comando npm run world:update-data descargan datos versionados de World Bank, el roster de estados miembros de la ONU, geometría Natural Earth y el estado de disuasión nuclear de FAS.
-- src/data/world-actors.json contiene 217 países/economías y la foto de datos del 2026-10-06; 193 se marcan como miembros de la ONU.
-- public/data/world/world-map.json contiene 169 geometrías simplificadas para el mapa. Algunos actores económicos no tienen una geometría en este nivel de escala.
-- src/data/world-organizations.json define borradores de membresía/reglas para ONU, FMI, Banco Mundial, OMC, UE, OTAN, Mercosur, ASEAN y Unión Africana. Revisa los códigos, exactitud y fuentes antes de tratarlos como datos finales; algunas listas se simplificaron.
-- src/domain/geopolitics-types.ts define contratos de tipos iniciales para actores, relaciones bilaterales, acciones, shocks, conflictos, organizaciones, votos, tratados, diplomacia y reportes.
-- package.json registra el comando de actualización.
-
-Primero inspecciona git status y conserva estos cambios. No están aún conectados al guardado, al simulador, al worker ni a la interfaz; no afirmes que Fase 4 está implementada hasta cerrar los pendientes.
+Desde el último hito se añadió `docs/manual-del-juego.md`, una guía de seis temas en la interfaz con progreso local, glosario buscable, tamaño de texto, foco visible y respeto a `prefers-reduced-motion`. Se añadieron aviso de privacidad e inventario de créditos/licencias; el service worker guarda el shell, datos y aviso. `scripts/phase5-browser-check.py` pasa contra el build de producción en Chromium: abre Ayuda antes de iniciar partida, busca un término, mide contraste >=4.5:1 en Ayuda, cambia texto, conserva progreso y navega a privacidad y de regreso sin red. La prueba no acredita compatibilidad móvil ni de otros navegadores.
 
 ## Pendientes obligatorios de Fase 4
 
-1. Revisar y validar los datos versionados, fuentes, fecha, códigos ISO, años por indicador, valores faltantes, definiciones de membresía y cobertura del mapa. Mantener los datos del mundo separados del estado generado de cada partida y hacer que puedan actualizarse sin cambiar reglas del motor.
-2. Implementar creación de estado mundial para todos los actores y simulación determinista de 50 años. Ningún actor debe desaparecer y ningún indicador puede salir de rangos válidos.
-3. Implementar IA de actores por intereses con personalidad/inercia, sensibilidad doméstica, credibilidad de alianzas y explicaciones persistentes para cada acción. La disuasión debe impedir que actores con capacidad nuclear entren en guerra directa entre sí en al menos 99% de corridas de 50 años; no hay mecánica jugable de uso nuclear.
-4. Añadir comercio bilateral simplificado y dependencias críticas, aranceles, sanciones y ruptura de suministros. Demostrar que las sanciones cuestan tanto a quien sanciona como a quien las recibe.
-5. Modelar organismos internacionales con membresía, votaciones o reglas simplificadas; créditos y condiciones del FMI/Banco Mundial; disputas comerciales de OMC; y decisiones de bloques regionales.
-6. Generar shocks mundiales encadenados (energía, alimentos, finanzas, tasas, pandemias, desastres, semiconductores/migración) y transmitirlos a cada país según exposición. Integrar sus efectos al motor económico y explicar las causas mostradas al jugador.
-7. Añadir diplomacia del jugador: alinearse, equilibrar o ser neutral, con costos/beneficios distintos; visitas, tratados, ayuda, sanciones, reconocimiento y migración. Conectar comisión de exteriores y ratificación de tratados al flujo legislativo cuando corresponda.
-8. Añadir guerra abstracta: fuerzas agregadas y movimiento, resolución automática determinista, guerras convencionales y por terceros, conflictos híbridos, bloqueos/insurgencias, costos económicos, humanos, políticos y diplomáticos, posguerra y resultados explicables. Integrar lealtad militar con la estabilidad, riesgo de caída y golpes internos.
-9. Construir el mapa mundial interactivo con países seleccionables y capas/filtros para bloques/alianzas, comercio, sanciones, fuerzas y conflictos. La falta de geometría para algunos actores debe mostrarse de manera honesta y no hacerlos desaparecer del catálogo.
-10. Añadir al menos 80 plantillas internacionales nuevas y 10 arcos, con variantes y condiciones/consecuencias; agregar titulares internacionales satíricos. Mantener el tono neutral y respetuoso con países y poblaciones.
-11. Integrar la simulación mundial en el Web Worker y una vista de diplomacia/mapa en la UI. Evitar bloquear la interfaz en un turno normal.
-12. Subir el guardado de carrera de esquema 13 a una versión nueva con migración que conserve íntegros los guardados previos; validar y documentar la versión de datos mundial.
-13. Ejecutar simulaciones masivas reproducibles a 50 años y medir guerras, escaladas nucleares directas, sanciones, shocks y golpes. Incluir resultados, limitaciones y tiempos por turno en un informe de Fase 4. Verificar todos los criterios de aceptación de la sección 7.5.
+Revisa `docs/phase-4-report.md` y la tabla de criterios de 7.5; implementa y valida los huecos restantes, entre ellos:
 
-## Restricciones y cierre
+1. Revisión de precisión y procedencia del roster mundial, membresías y clasificación de disuasión; cobertura honesta de datos ausentes y geometría.
+2. Fuentes y supuestos para organizaciones internacionales: reglas implementadas de FMI/Banco Mundial, diferencias OMC y decisiones de bloques, o limitaciones claramente delimitadas si el alcance no permite completarlas.
+3. Shocks y transmisión por exposiciones completas, con explicaciones y causalidad verificable.
+4. Acciones diplomáticas pendientes (ayuda, reconocimiento, acuerdos migratorios) y sus costos/beneficios diferenciados.
+5. Conflictos con fuerzas y movimiento agregados, conflictos por terceros e híbridos, costos humanos/económicos/políticos/diplomáticos y estado de posguerra, todos abstractos, deterministas y sin combate táctico.
+6. Acoplamiento de lealtad militar y golpes con estabilidad y procedimientos internos, incluida medición de golpes en corridas largas.
+7. Ampliar benchmark más allá de un único marcador: shocks, sanciones, conflictos, golpes, bounds, consistencia entre semillas y tiempo por turno.
 
-- No añadas nuevos países curados ni combate táctico: están fuera de alcance de Fase 4.
-- No uses datos o nombres de dirigentes, partidos o encuestas políticas actuales. Toda política generada en partidas sigue siendo ficticia.
-- Mantén determinismo por semilla, límites numéricos y explicaciones inspeccionables.
-- Actualiza docs/decisions.md y crea docs/phase-4-report.md con diseño, fuentes, supuestos, calibración y tiempos.
-- Valida con pruebas automatizadas existentes y nuevas, build principal, chequeo del worker, smoke web y benchmark de 50 años. Si algo falla, corrígelo y vuelve a ejecutar las comprobaciones afectadas.
-- Cuando todo esté completo, crea un commit descriptivo en main, súbelo al remoto autorizado y confirma el SHA remoto. Informa qué quedó hecho, los comandos y resultados de validación y cualquier limitación real.
+No confundas el núcleo publicado con el cierre de los criterios 7.5. Actualiza el informe con pruebas y límites vigentes.
+
+## Pendientes obligatorios de Fase 5
+
+Trabaja con el orden y criterios de 7.6; el informe actual es `docs/phase-5-report.md`.
+
+1. Curar hasta diez países de la lista inicial (EE. UU., Brasil, México, Argentina, Venezuela, España, Francia, Alemania y Reino Unido, además de Perú), con reglas oficiales fechadas y datos económicos/sociales claramente separados. Implementar la plantilla autoritaria/hegemónica para el escenario que la requiera (élites, aparato partidario, fuerzas armadas, seguridad, protesta y salidas por purga/golpe/revuelta), sin estereotipos ni glorificación de represión.
+2. Probar el arranque y recorridos jugables de cada país y los perfiles experimentales generados; detectar fallos por sistema y cargo.
+3. Mejorar diversidad y calidad de contenido: variantes con condiciones/consecuencias, voces diferenciadas por medio, contenido contextual y auditoría por validador más muestreo humano cuando exista evidencia. Las cifras del catálogo no bastan por sí solas.
+4. Completar arquetipos y reevaluaciones de legado; balancear modos de realismo, Ironman, estrategia y cargos por país con lotes reproducibles.
+5. Ampliar la guía/tutorial hasta cubrir los primeros diez minutos y explicar cómo se pierde el poder; conservar el glosario y ayuda contextual. Registrar pruebas automatizadas, pero no afirmar la prueba de cinco personas sin participantes reales.
+6. Verificar teclado, contraste medido, zoom/tamaño de texto, movimiento reducido y lector de pantalla donde haya entorno. Corregir bloqueos y documentar las superficies que no se puedan verificar.
+7. Medir rendimiento en escenario de referencia, memoria durante una carrera de 40 años, migraciones y tratamiento de fallos. Optimizar el bundle si las mediciones lo exigen.
+8. Verificar en más de un navegador/dispositivo el sitio estático offline, aviso, privacidad y canal de reporte ya implementados. Completar la revisión de licencias y atribuciones, adaptar privacidad al alojamiento final y obtener revisión adecuada antes del lanzamiento público.
+9. Producir informe final con los criterios 7.6 uno por uno, estado y evidencia. Los requisitos de jugadores reales deben quedar pendientes si no se pueden organizar sesiones autorizadas.
+
+## Validación y entrega
+
+Repite como mínimo `npm test`, `npm run build`, `npm run build:worker-check`, `python tests/web-smoke.py`, `npm run world:validate` y la comprobación de navegador de producción `scripts/phase5-browser-check.py`; ejecuta además las baterías masivas por país, cargo y estrategia que requiera el cambio. Corrige fallos y vuelve a ejecutar comprobaciones afectadas. Registra el equipo/entorno y tiempos si presentas resultados de rendimiento.
+
+Actualiza `docs/decisions.md`, `docs/phase-4-report.md`, `docs/phase-5-report.md`, el manual `docs/manual-del-juego.md`, este documento y la documentación principal cuando cambie el estado real. Revisa `git diff --check`, crea un commit descriptivo, sube a `origin/main` y confirma que el SHA remoto coincide. Informa criterios completados y pendientes con evidencia; no llames “terminado” al juego mientras quede un criterio obligatorio sin cumplir.

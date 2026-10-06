@@ -32,18 +32,31 @@ La tasa cero de guerra directa nuclear resulta de una restricción estructural d
 | Shocks | 23.77 por corrida (2,377/100) |
 | Sanciones | 0.95 por corrida (95/100) |
 | Golpes | 0 por corrida en el lote base |
-| Tiempo por trimestre | 1.018 ms de promedio de los procesos de 50 años (hardware dependiente) |
+| Tiempo por trimestre | 1.015 ms de promedio de los procesos de 50 años (hardware dependiente) |
 
 ## Aceptación
 
 Superados en esta implementación: catálogo estable de actores y variables limitadas; determinismo por semilla; migración a v14; sanción con costo para emisor y receptor; explicaciones de acción/shock/conflicto; disuasión directa nuclear completa por regla; mapa seleccionable con catálogo para actores sin geometría; ejecución del avance mundial en Worker; conteo mínimo de 80 plantillas internacionales y 10 arcos.
+
+| Criterio 7.5 | Estado | Evidencia y límite |
+| --- | --- | --- |
+| 1. Existencia y estabilidad | Cumple en este lote | `world:validate`: 217 actores retenidos, cero indicadores inválidos en 100 corridas de 50 años. La validación no prueba que cada dato observado sea correcto. |
+| 2. Disuasión coherente | Cumple por regla estructural | 0 guerras directas entre actores marcados nucleares; el selector veta esas parejas. No es un pronóstico de estabilidad ni un modelo de escalada nuclear. |
+| 3. Sanciones con costo | Cumple en pruebas deterministas | El cálculo reduce comercio e impone efectos al emisor y receptor. No está calibrado contra elasticidades reales. |
+| 4. Explicabilidad | Parcial | Acciones simuladas guardan motivos y el estado conserva historial. Falta auditar automáticamente que toda mutación/acción de todos los subsistemas tenga explicación persistente. |
+| 5. Shocks coherentes | Parcial | Shocks encadenados afectan actores según exposiciones sintéticas y pasan a la economía nacional. Falta validar sensibilidad entre perfiles y países con datos independientes. |
+| 6. Guerra completa | Parcial | Resolución explica costos humanos, económicos y políticos y asigna resultado; no incluye fuerzas y movimiento por mapa, persistencia de insurgencia, reconstrucción ni diplomacia de posguerra. |
+| 7. Presión sobre país mediano | Parcial | La UI ofrece alineamiento, equilibrio y neutralidad; falta un lote comparativo que demuestre costos/beneficios de cada postura con diversas semillas y escenarios. |
+| 8. Rendimiento y Worker | Cumple en corte local | Worker usado por el avance geopolítico; media medida de 1.015 ms por trimestre en el lote de 50 años y smoke de turno ejecutivo 0.068 s en el entorno local. Hardware no normalizado. |
+| 9. Tasas razonables | Parcial | Frecuencias registradas y límites comprobados, pero 0 golpes y guerra/sanciones con tasas heurísticas no han recibido calibración externa. |
+| 10. Contenido | Cumple cantidad mínima | Se validan 80 plantillas internacionales y 10 arcos; no se ha hecho aprobación editorial humana línea por línea. |
 
 Parciales o pendientes: calibración independiente de frecuencias; transmisión detallada por canasta y socios; financiamiento y condicionalidad FMI/Banco Mundial; solución de disputas OMC; decisiones reales de bloques; menú diplomático incompleto (ayuda, reconocimiento y acuerdo migratorio aún sin acción); fuerzas y movimiento por mapa; posguerra/reconstrucción; golpes conectados plenamente al flujo institucional; pruebas visuales del mapa en viewport móvil y medición del turno en hardware de gama media. No se afirma que toda la sección 7.5 esté cerrada.
 
 ## Validación del corte
 
 - `npm test` — 71/71 aprobadas, incluidas migración y simulación mundial.
-- `npm run build` — correcto; TypeScript y bundle incluida la emisión del Worker (el bundler reporta un chunk UI de 704 KB sin comprimir).
+- `npm run build` — correcto; TypeScript y bundle incluida la emisión del Worker (el bundler reporta un chunk UI de 710 KB sin comprimir; 191.65 KB gzip).
 - `npm run build:worker-check` — correcto.
-- `python tests/web-smoke.py` — correcto; turno ejecutivo normal 0,071 s en el entorno local.
+- `python tests/web-smoke.py` — correcto; turno ejecutivo normal 0,068 s en el entorno local.
 - `npm run world:validate` — 100 × 50 años; cero valores inválidos y cero guerras nucleares directas. Salida completa en `phase-4-simulation.json`.

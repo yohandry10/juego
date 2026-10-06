@@ -4,6 +4,10 @@ Prototipo web jugable de carrera política. Crea un personaje, haz campaña, com
 
 **Fuente de verdad del proyecto:** [MANDATO — Documento guía de diseño y construcción](docs/MANDATO%20%E2%80%94%20Documento%20gu%C3%ADa%20de%20dise%C3%B1o%20y%20construcci%C3%B3n.md). Los datos económicos e institucionales reales son versionados por país. El motor genera partidos, facciones y legisladores ficticios; no replica la política coyuntural. Informes: [Fase 0](docs/phase-0-report.md) y [Fase 1](docs/phase-1-report.md). Las decisiones están en [`docs/decisions.md`](docs/decisions.md).
 
+Consulta el [manual del juego](docs/manual-del-juego.md) para conocer la carrera, los sistemas disponibles, las pestañas y las limitaciones actuales.
+
+Créditos y procedencia: [`docs/creditos-y-licencias.md`](docs/creditos-y-licencias.md). El [aviso de privacidad](public/privacy.html) describe el comportamiento local del prototipo; requiere revisión antes del lanzamiento público.
+
 ## Requisitos
 
 - Node.js 22 o posterior
@@ -50,7 +54,7 @@ Web ──> Persistence (IndexedDB)
 - `src/data`: validación runtime con Zod y lectura de archivos JSON.
 - `src/cli`: composición de datos y motor; adapta eventos del juego a texto de terminal.
 - `src/application`: comandos deterministas para campaña, elección, negociación, votación, memoria, investidura y gabinete.
-- `src/web`: interfaz española con creador de seis pasos, carrera, Congreso, investidura, prensa, economía y mapa mundial seleccionable con capas.
+- `src/web`: interfaz española con creador de seis pasos, carrera, Congreso, investidura, prensa, economía, mapa mundial, guía inicial y glosario.
 - `src/persistence`: guardado IndexedDB e importación/exportación JSON versionada; las carreras históricas v3 a v13 migran a v14 preservando el estado nacional y creando el snapshot mundial con la semilla existente.
 - `src/data/event-catalog.ts`: 407 plantillas ficticias de tres variantes y 64 arcos narrativos; incluye 80 internacionales y 40 arcos nuevos de contenido ampliado.
 - `src/engine/world-simulation.ts`: 217 actores versionados, relaciones, shocks, sanciones, decisiones y guerras agregadas deterministas. El avance mundial jugable y masivo también corre en Web Worker.
@@ -62,7 +66,7 @@ El bus síncrono transmite eventos del motor a observadores como el CLI; cada ev
 
 El snapshot `world-2026-10-06-v1` contiene 217 países y economías del catálogo del Banco Mundial; 193 están marcados como miembros de la ONU. La matriz bilateral es una aproximación dispersa de juego, no una matriz observada de comercio. El mapa Natural Earth a escala 1:110m contiene 169 geometrías: los actores sin geometría siguen disponibles en el catálogo y pueden seleccionarse por código. Las membresías de ONU, FMI/Banco Mundial, OMC y bloques regionales se mantienen como snapshots simplificados. La actualización de WDI, roster ONU y Natural Earth se ejecuta con `npm run world:update-data`.
 
-Las cifras de guerra y shocks son calibración interna: `docs/phase-4-report.md` describe el alcance y las limitaciones. La guerra es abstracta; el juego no tiene uso nuclear. Fase 5 aún conserva límites explícitos: el catálogo nacional jugable tiene tres fichas (Perú, España y Francia), no diez países curados; la auditoría manual, el tutorial probado con cinco jugadores, el balance completo de todas las carreras y la publicación pública no se consideran satisfechos por generar más texto o por compilar el sitio.
+Las cifras de guerra y shocks son calibración interna: `docs/phase-4-report.md` describe el alcance y las limitaciones. La guerra es abstracta; el juego no tiene uso nuclear. La guía inicial y el glosario están en Ayuda. Tras la primera carga completa, un service worker conserva el shell, los escenarios y el mapa para uso sin conexión; la interfaz avisa cuando esa capacidad del navegador está disponible. Fase 5 conserva límites explícitos: el catálogo nacional jugable tiene tres fichas (Perú, España y Francia), no diez países curados; la guía no se ha validado con cinco jugadores, y el balance completo, la auditoría editorial/legal y la publicación pública siguen abiertos.
 
 ## Datos iniciales
 

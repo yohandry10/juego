@@ -6,3 +6,11 @@ import "./inbox.css";
 import "./congress.css";
 
 createRoot(document.getElementById("root")!).render(<React.StrictMode><App /></React.StrictMode>);
+
+if (import.meta.env.PROD && "serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    void navigator.serviceWorker.register("/sw.js").catch(() => {
+      // La aplicación sigue disponible en línea cuando el navegador no admite SW.
+    });
+  });
+}
