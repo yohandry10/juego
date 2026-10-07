@@ -6,7 +6,7 @@
 
 Se generó el despacho mediante la sesión de ChatGPT que estaba abierta. Se inspeccionó y guardó antes del siguiente lote. Al adjuntar el original apareció [un límite de almacenamiento](captura-limite-chatgpt.jpg). La tarea de imágenes se detuvo siguiendo las instrucciones del usuario. El lote de las otras cinco referencias está preparado, **sin enviar ni generar**. No se cambió la cuenta y no se usó otro generador.
 
-El tablero parcial muestra claramente cinco espacios pendientes; no son ilustraciones de sustitución. Hace falta resolver el límite en esa sesión, generar el lote adjuntando el despacho y revisar los recortes. Solo entonces se presenta el tablero completo para aprobación y se puede comenzar B.
+El tablero parcial muestra claramente cinco espacios pendientes; no son ilustraciones de sustitución. Hace falta resolver el límite en esa sesión, generar el lote adjuntando el despacho y revisar los recortes. Este fue el estado histórico de A. La instrucción posterior de ejecución continua y la revisión de Claude autorizan avanzar con recursos procedurales, conservando el inventario honesto de pendientes.
 
 ## Evidencia disponible
 
@@ -28,4 +28,4 @@ python design/etapa-a/revisar-entrega.py
 
 La captura del juego requiere el preview existente en `127.0.0.1:4173` y el guardado real `mandato-long-pc-state.json` en TEMP. No necesita datos nuevos ni investigación nacional. El documento de revisión se abre como archivo local y no forma parte de la aplicación.
 
-Cuando el lote se haya generado, `preparar-entrega.py --sheet RUTA_ABSOLUTA` recorta su cuadrícula de dos columnas y tres filas y convierte los recortes a WebP. El formato se comprueba antes de recortar; las imágenes y su procedencia deben revisarse y el estado de la entrega actualizarse antes de presentarlas como tablero completo. Este script no genera imágenes ni sustituye la aprobación del usuario.
+Cuando el lote se haya generado, `preparar-entrega.py --sheet RUTA_ABSOLUTA` recorta su cuadrícula de dos columnas y tres filas y convierte los recortes a WebP. El formato se comprueba antes de recortar; las imágenes y su procedencia deben revisarse y el estado de la entrega actualizarse antes de presentarlas como tablero completo. Este script no genera imágenes. La revisión de etapas se hace ahora con Claude, según la instrucción posterior del usuario.

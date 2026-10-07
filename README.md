@@ -4,7 +4,8 @@ Juego para PC, en navegador, para una persona, todavía en desarrollo. Crea un p
 
 La especificación es [MANDATO — Documento guía de diseño y construcción](docs/MANDATO%20%E2%80%94%20Documento%20gu%C3%ADa%20de%20dise%C3%B1o%20y%20construcci%C3%B3n.md). **Fases 4 y 5 siguen abiertas.** El [informe final de avance](docs/final-report.md) enlaza aceptación, evidencia y pendientes. Consulta el [manual](docs/manual-del-juego.md), [decisiones](docs/decisions.md) y [continuación](docs/prompt-continuacion-fases-2-a-4-5.md).
 
-**Corrección visual vigente:** [de dashboard a juego](docs/correccion-de-rumbo-ui.md) prevalece sobre la guía en UI: claridad y belleza, escenas y personas, diferencias nacionales sencillas. Se trabaja únicamente en la [Etapa A](design/etapa-a/README.md) hasta completar y aprobar su tablero. Estado parcial: auditoría, ficha y tokens preparados; un despacho generado, cinco referencias pendientes por límite de almacenamiento de ChatGPT. Motor, UI y pruebas sin cambios en esta etapa.
+
+**Modo de trabajo actualizado:** el usuario sustituyó las paradas por [ejecución continua con revisiones de capturas en Claude](docs/ejecucion-continua-y-revision-claude.md). Claude aprobó la dirección del despacho y guió B. La [Etapa B](design/etapa-b/README.md) integra escenas, componentes y archivo; C/D/E continúan. El desarrollo continúa hacia B/C/D/E y la terminación verificada del juego.
 
 ## Ejecutar
 

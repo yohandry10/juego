@@ -54,8 +54,8 @@ P1: estilo del mapa, estandartes de ejércitos, ilustraciones de arquetipos de l
 P2: variantes estacionales y del despacho por cargo, más retratos y más ilustraciones de eventos.
 El mapa mundial y el hemiciclo se dibujan en código; para el mapa usa datos geográficos abiertos y verifica su licencia antes de incluirlos.
 
-## 7. Plan de trabajo con paradas de aprobación
-Etapa A (PARA Y ENSÉÑAME): auditoría de la UI actual contra el «test de los cinco segundos»; ficha de estilo; tablero de seis imágenes de referencia (despacho, carta de decisión, hemiciclo, portada de prensa, mapa, ficha de personaje) generadas con ChatGPT; tokens de diseño. No pases a programar la UI hasta que yo apruebe el tablero.
+## 7. Plan de trabajo continuo y revisión con Claude
+Etapa A: auditoría de la UI actual contra el «test de los cinco segundos»; ficha de estilo; tablero de seis imágenes de referencia (despacho, carta de decisión, hemiciclo, portada de prensa, mapa, ficha de personaje) generadas con ChatGPT; tokens de diseño. Presenta las capturas y el estado real a Claude, recoge sus instrucciones y continúa. La instrucción posterior del usuario elimina las pausas de aprobación.
 Etapa B: sistema de componentes, despacho y flujo de inicio (mapa, tarjetas de cargo).
 Etapa C: biografía interactiva y ficha del personaje.
 Etapa D: bandeja con cartas, hemiciclo con noche de votación, prensa y fin de turno con ceremonia.
@@ -70,4 +70,4 @@ Al cerrar cada etapa, entrega capturas de cada pantalla (escritorio, y una compr
 5. El motor y las pruebas siguen intactos: no modifiques el motor salvo para exponer las vistas que la interfaz necesite, y que las 143 pruebas sigan pasando.
 6. Informe de experiencia con capturas y una lista honesta de lo que todavía no se siente bien.
 
-Empieza por la Etapa A y detente ahí.
+Continúa A, B, C, D y E sin pausas para pedir aprobación al usuario. Al cerrar cada etapa, muestra capturas reales a Claude y espera sus instrucciones antes de la siguiente; avanza en trabajo independiente mientras responde.
