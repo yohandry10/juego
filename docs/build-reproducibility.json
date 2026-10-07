@@ -1,46 +1,86 @@
 {
   "date": "2026-10-06",
   "identical": true,
-  "files": 30,
+  "files": 40,
   "command": "npm run build:repro-check",
   "environment": "Node v24.13.1, win32, installed lockfile dependencies",
   "limitation": "Dos builds consecutivos con las dependencias instaladas; no valida instalación limpia en otro SO.",
   "hashes": [
     {
-      "file": "assets/EconomyView-BreMmnCV.js",
-      "sha256": "b7338991b97c47681463f7722997745c63a3732acca2815c205ed3fc678ab0bc"
+      "file": "assets/DecisionInbox-CgwBQjPv.js",
+      "sha256": "f67750c9c9dc04d2e4fcba8794389c1e4def8f16fc666bc77e2ee96defc45233"
     },
     {
-      "file": "assets/HallOfFame-D8XQl_Ug.js",
-      "sha256": "64ec20f619663b1f526b4bba496dc7abed6c28a9044a41d58500a22f9a8636ef"
+      "file": "assets/EconomyView-DA0wj5zd.js",
+      "sha256": "a8a2aaffe435676c81ebe7380ea2e75a1eee00356c507a94aafc9ac4f8e4dad7"
     },
     {
-      "file": "assets/HelpView-BSmBaHiF.js",
-      "sha256": "83e7bb7ca0abf3bf14d274c73b1a4ecbb41a52be76f4f28d3c0b2b1c5208f82d"
+      "file": "assets/fonts/source-sans-LICENSE.md",
+      "sha256": "56af9b9c6715597e458284a474dc118a50a4150e9d547c70f7b4a33c3e6a9328"
     },
     {
-      "file": "assets/InboxView-3Wr2TA_o.js",
-      "sha256": "b79eff7ccb5ad00504e2e716597f5c3c4ca7a4240191bc660cff9a061e5df25d"
+      "file": "assets/fonts/source-serif-LICENSE.md",
+      "sha256": "c21d7293d87b6d7ab1d0229a2f55b77f33a7613a6a4e66f6693d68d7d8d09464"
     },
     {
-      "file": "assets/index-COQ0fVHk.css",
-      "sha256": "4d670c6207b336c0a8ca3d9d0a8f278f52b0a7dfb54744a18ceb08219395da93"
+      "file": "assets/fonts/SourceSans3-Regular.woff2",
+      "sha256": "53492fb3a0def77354f166a55d09b63a10855e91c206c7620a81cf56e97f8ec3"
     },
     {
-      "file": "assets/index-IeQeRKjG.js",
-      "sha256": "04ecc6883af8ec3eac7c044c5f3c0587dd9a2a35e239e036fb6980f27e9fc4b7"
+      "file": "assets/fonts/SourceSans3-Semibold.woff2",
+      "sha256": "47b9b661b9f395fe7f0d0e119637fba5c8dad97bde3df60066fd24229c0792f4"
     },
     {
-      "file": "assets/react-Dy-GIXkn.js",
-      "sha256": "6e6dcd4abf81fe24cc734fddac8cddcfd68fb888353c40807059fb21859e427d"
+      "file": "assets/fonts/SourceSerif4Display-Regular.woff2",
+      "sha256": "c75301c83bef55b3787f3060c2f62cb5d902a6706419149b7ff9d0c7927055ac"
+    },
+    {
+      "file": "assets/fonts/SourceSerif4Display-Semibold.woff2",
+      "sha256": "ccf074599b004eb9738128d1f4ed7ea8f9a9a4bff0326f52178128c0389bf22d"
+    },
+    {
+      "file": "assets/HallOfFame-DBTECan3.js",
+      "sha256": "2bbe7eb2cd448794bd40c82d1aa0aad56addffc5a04307959a194979e2eb97a2"
+    },
+    {
+      "file": "assets/HelpView-Cn-CfrdF.js",
+      "sha256": "f2ce719fb542aea30c6e069c2ed468de6c5573a2c022648444c3af5264089a5b"
+    },
+    {
+      "file": "assets/index-bwsAR-Y3.css",
+      "sha256": "66e9b4d6c6e89c8bc0c331b9eb64ad078f8439a9573ec54c77b852f300b5371e"
+    },
+    {
+      "file": "assets/index-C9RTTdEs.js",
+      "sha256": "61d410d8091aa43e5b887757bd01e7eca3f5dfffc04e32e2d07cce792db62701"
+    },
+    {
+      "file": "assets/manifest.json",
+      "sha256": "3efafd8f6618e0f538c45f220ee265256f44e30f50f6812ef5118599ef9b7e92"
+    },
+    {
+      "file": "assets/office/despacho-1600.webp",
+      "sha256": "4adc8cde29c6f5e6e2a8ef07723dcc314fecb7013eac5cd2f6655c3c174501c0"
+    },
+    {
+      "file": "assets/office/despacho-480.webp",
+      "sha256": "469704382aad765aff049ae468b14888fa929995d82a82a520ee2d85c882f4e0"
+    },
+    {
+      "file": "assets/office/despacho-900.webp",
+      "sha256": "787e050c2511db66b3b70963969f1fa7a056e97d43dc0d74c79eee136f074de2"
+    },
+    {
+      "file": "assets/react-DjX0U0Iu.js",
+      "sha256": "49f492b7a8b9e47e35b7a9aa36d96824c35439694a092fa912347d6fa34d5366"
     },
     {
       "file": "assets/rolldown-runtime-CbXtAM7H.js",
       "sha256": "bbf7c5086ae414dc3f33777e3eebf16ea8631325b8bb4690d25091c03567f31a"
     },
     {
-      "file": "assets/simulation-worker-D7vKpht3.js",
-      "sha256": "055e37e81e989495eeae240828311473f9ebdaaf36a70271b18abf0ab8883c67"
+      "file": "assets/simulation-worker-C9rqvmL2.js",
+      "sha256": "3b5da96ba4930732188725db09596dcadf6d72f4ff80c60313e426f8d1b0f3e0"
     },
     {
       "file": "assets/validation-2oiOZAhq.js",
@@ -51,12 +91,12 @@
       "sha256": "289fbc5acb1c1a39d445982d9c0d2e749d4e0c2992d758acec0aea9f029a2a88"
     },
     {
-      "file": "assets/WorldView-BYyVkkwd.js",
-      "sha256": "31d336884efc0c931e7e2104bdc832cc51e739a9a9f2a99bcb0bbeb9f9aa5d59"
+      "file": "assets/WorldView-DFjCoRLV.js",
+      "sha256": "0057524c5f1ba3e3bdde4d4b425b5d40f4015c6aa9d1e0e33169e4f2b8bc3d4c"
     },
     {
       "file": "credits.html",
-      "sha256": "162083d429d031f1668b00e6ada5f642ce303f7c219f42defccc87e00f8d0a5a"
+      "sha256": "baf96ee7bf984f60056db0ee63d2d46cb08789bfa226a8afa46ae1334863a834"
     },
     {
       "file": "data/countries/argentina.json",
@@ -108,11 +148,11 @@
     },
     {
       "file": "index.html",
-      "sha256": "4fb5c5672aac24a5583f3668f44800946913fcba31969a8cb11945426be65e6f"
+      "sha256": "3bc867fea07c0ea9b118c73341661a71c13df8585304783bd9259cf09e659ef4"
     },
     {
       "file": "offline-manifest.json",
-      "sha256": "63b88249bf6e7bd98842e23a0eaf6bd3d15a10f614278b28eb30d9f9645bc1b9"
+      "sha256": "9d3fd58e76a95252b6f24a5c0f707a0b62b2a302c0653af169b342066b24cd83"
     },
     {
       "file": "privacy.html",
@@ -120,11 +160,11 @@
     },
     {
       "file": "sw.js",
-      "sha256": "49640330fad31ad410cc29e79ee41c5c8abb3b5b30f8e39b49111b2156cc1a90"
+      "sha256": "c3db509abd6b62cfa6bf662151a349d2011b51c507cd74a549fab0a75851963c"
     },
     {
       "file": "THIRD-PARTY-NOTICES.txt",
-      "sha256": "174f2c3cb13951d14ecd4663c16a86267e6c2d72eccf9751928c5646e1b6e3f1"
+      "sha256": "3de9b09cd8597aefcad5ec74c254f80263be6301f112a68b328544a4d270232d"
     }
   ]
 }
