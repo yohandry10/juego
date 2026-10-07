@@ -1,13 +1,13 @@
 {
   "date": "2026-10-06",
-  "cut": "gameplay-first-quick-entry-and-campaign-clarity-2026-10-06",
+  "cut": "captured-coup-causes-and-import-audit-2026-10-06",
   "platformScope": "PC only, explicit user correction",
   "environment": "Windows; Node 24.13.1; Core i5-10400F; 17098092544 bytes RAM",
   "unitTests": {
     "command": "npm test",
-    "passed": 143,
+    "passed": 139,
     "failed": 0,
-    "durationMs": 32381.1803
+    "durationMs": 31074.4182
   },
   "build": {
     "command": "npm run build; npm run build:repro-check",
@@ -15,9 +15,9 @@
     "identicalBuilds": true,
     "reproducibleFiles": 30,
     "evidence": "build-reproducibility.json",
-    "mainChunkKb": 348.78,
-    "mainChunkGzipKb": 98.97,
-    "workerKb": 394.96,
+    "mainChunkKb": 346.02,
+    "mainChunkGzipKb": 98.16,
+    "workerKb": 393.85,
     "worldViewKb": 37.17,
     "worldDataKb": 110.44,
     "browserProfilesSynchronized": true,
@@ -102,10 +102,10 @@
     "samples": 500,
     "passed": true,
     "evidence": "country-balance-25.json",
-    "scope": "Known mass seeds rerun: campaign and complete won legislature regression. Numerical report precedes the narrative-only diary correction."
+    "scope": "Known seeds; basic campaign/legislature regression."
   },
   "careerBalance": {
-    "command": "MANDATO_BALANCE_SEED_PREFIX=balance-reserved-v4 npm run validate:balance",
+    "command": "MANDATO_BALANCE_SEED_PREFIX=balance-reserved-v3 npm run validate:balance",
     "profiles": 10,
     "samples": 4500,
     "distinctPairedSeeds": 500,
@@ -116,11 +116,11 @@
     "completed": true,
     "balanceAccepted": false,
     "evidence": "career-balance.json",
-    "mexicoDeputyWins": 15,
+    "mexicoDeputyWins": 0,
     "mexicoDeputySamples": 180,
-    "peruPresidentCompletedTerms": 9,
+    "peruPresidentCompletedTerms": 21,
     "peruPresidentSamples": 135,
-    "scopeNote": "Fresh 500 paired seeds, now consumed. No fitting to these outcomes; different reserves do not isolate an improvement. One term/defeat and retirement per sample. Numeric run precedes narrative-only diary correction; no numeric rule changed in that correction."
+    "scopeNote": "Regression reused consumed balance-reserved-v3 paired seeds after participation data changes. No electoral change or new balance claim. Samples close one term/defeat and retirement, not forty years; concurrent timing."
   },
   "generatedCountries": {
     "command": "npm run validate:generated",
@@ -171,7 +171,7 @@
     "memoryGrowthResolved": false,
     "thirtyYearRepeatedLiteralBodiesPercent": 0,
     "priorFailedSeeds": 6,
-    "scopeNote": "Reused d301e14 Peru legislative career; not a new run on this source hash. Narrative-only diary update changes fresh serialized text, so do not claim its final state hash for the new source. Prior restoration equality remains historical evidence; state/time growth unresolved.",
+    "scopeNote": "One Peru legislative career, after mass batches finished; current-engine restoration equality. Earlier hashes/timings are historical. State and time still grow; no sustained-memory or representative-hardware claim.",
     "heapBytesStart": 26525848,
     "heapBytesEnd": 30000904
   },
@@ -225,9 +225,8 @@
       "command": "python tests/web-smoke.py",
       "engine": "Edge Chromium",
       "passed": true,
-      "executiveTurnSeconds": 0.295,
-      "hallArchiveAndEscape": true,
-      "spendingProtocol": "Leadership campaign chooses actual fundraising when a desired paid action is unaffordable; no failed-click loop counted as campaign effort."
+      "executiveTurnSeconds": 0.349,
+      "hallArchiveAndEscape": true
     },
     "countryStart": {
       "command": "python scripts/country-start-browser-check.py",
@@ -344,56 +343,21 @@
       "importExportIdentical": true,
       "evidence": "participation-browser-evidence.json",
       "scope": "Eight generated institutional starts, no edited indicators or snapshot. Automated PC check; no current constitutional or human comprehension claim."
-    },
-    "quickStart": {
-      "command": "python scripts/quick-start-browser-check.py",
-      "engines": [
-        "chromium",
-        "firefox"
-      ],
-      "paths": 16,
-      "desktopWidths": [
-        1280,
-        1920
-      ],
-      "passed": true,
-      "oneClickEntry": true,
-      "sixStepCustomizationRetained": true,
-      "spendingAndFundraisingFlows": 4,
-      "humanTest": false,
-      "evidence": "quick-start-browser-evidence.json"
-    },
-    "mexicoElection": {
-      "command": "node --import tsx scripts/prepare-mexico-election-fixtures.ts; python scripts/mexico-election-browser-check.py",
-      "engines": [
-        "chromium",
-        "firefox"
-      ],
-      "paths": 8,
-      "desktopWidths": [
-        1280,
-        1920
-      ],
-      "passed": true,
-      "naturalWinAndLoss": true,
-      "resultAndStartExportIdentical": true,
-      "evidence": "mexico-election-browser-evidence.json"
     }
   },
   "sourceAtReportCut": {
-    "sha256": "24780e482eed760f1b7a983f3426598b22c38760d5e4ce46fc52e1c1928fe226",
-    "files": 169,
+    "sha256": "179590062cb9e45d07a05a1bc5e5467c8ecc4ba11c15e922503399a835681bf0",
+    "files": 166,
     "scope": "src, data/countries, public, tests (except __pycache__), scripts, package/configuration and independent world/shock references; other reports excluded",
     "command": "node scripts/source-fingerprint.mjs",
     "buildHashes": "build-reproducibility.json",
-    "note": "Current source: 143 tests, full builds/Worker/reproducibility, smoke, quick-start/election/ratification/Worker browser checks. Numeric country/career reports precede narrative-only diary adjustment; other batches explicitly reused, not new executions on this hash."
+    "note": "Current coup evidence/audit source; 139 tests, world100x50, builds/Worker, smoke, financing/ratification/Worker browsers and forty-year restoration rerun. Other stated batches are explicitly reused below, not new runs on this hash."
   },
   "historicalEvidence": {
-    "previousValidation": "historical-validation-latest-d301e14.json",
+    "previousValidation": "historical-validation-latest-e9bc537.json",
     "previousLongCareer": "historical-long-career-evidence-e9bc537.json",
-    "note": "Previous source hashes and batches retained explicitly. Current gameplay changes are territorial election/seat placement and Mexican lifetime reentry; diary text changes serialization. Previous long-career hash is not claimed for this cut.",
-    "previousFrequency": "historical-world-frequency-calibration-76f76c3.json",
-    "previousCareerBalance": "historical-career-balance-d301e14.json"
+    "note": "e9bc537/a8140c5 and earlier hashes/timings are historical. Coup evidence changes serialized state, not gameplay in the focused 600-quarter comparison. Old saves retain absent evidence.",
+    "previousFrequency": "historical-world-frequency-calibration-76f76c3.json"
   },
   "humanSessions": 0,
   "humanEvidenceStatus": "User confirmed that human sessions/editorial/assistive/physical testing have not yet been performed.",
@@ -402,7 +366,7 @@
   "representativePcHardwareCoverageCompleted": false,
   "publicReleaseCompleted": false,
   "allMandatoryCriteriaCompleted": false,
-  "behaviorSourceFingerprint": "24780e482eed760f1b7a983f3426598b22c38760d5e4ce46fc52e1c1928fe226",
+  "behaviorSourceFingerprint": "179590062cb9e45d07a05a1bc5e5467c8ecc4ba11c15e922503399a835681bf0",
   "shockFrequencyDiagnostic": {
     "command": "npm run world:shock-frequency",
     "reference": "independent-shock-reference.json",
@@ -421,42 +385,19 @@
     "scope": "Energy/food positive annual price-episode proxies, not supply-crisis equivalence. No tuning. These diagnostic seeds are now consumed."
   },
   "validationReuse": {
-    "sourceCuts": {
-      "d301e14": [
-        "world100x50",
-        "longCareer40years",
-        "financing browser",
-        "long career inbox browser"
-      ],
-      "a8140c5/e9bc537": [
-        "base1000",
-        "generated651",
-        "diplomacy2250",
-        "sensitivity1736+36",
-        "frequency-v2",
-        "shock-reference-v1",
-        "PC accessibility/contrast/help/participation/regime/start browsers"
-      ]
-    },
-    "reason": "World and economic mechanics unchanged. Reuse does not count as a new run, unseen seed or latest full-game validation. New numerical campaign/career batches execute changed election rules; the final diary adjustment changes prose only."
-  },
-  "userDirection": {
-    "priority": "Playable, understandable decisions, pacing and fun; preserve existing work and saves.",
-    "exhaustiveConstitutionalCurationRequired": false,
-    "countryByCountryLegalExpansionStopped": true,
-    "scope": "Simple country context and differences; no new national research after explicit user correction.",
-    "evidence": "prompt-continuacion-fases-2-a-4-5.md"
-  },
-  "mexicoElectionRegression": {
-    "evidence": "mexico-electoral-regression.json",
-    "samples": 100,
-    "distinctPairedSeeds": 50,
-    "districtsCovered": 50,
-    "priorRouteWins": 34,
-    "territorialRouteWins": 34,
-    "individualOutcomesChanged": 44,
-    "sameCampaignInputs": true,
-    "winningDistrictPreserved": true,
-    "scope": "Reserved mexico-territorial-v1 seeds, now consumed; counterfactual changes territorial method only. No probability fitting or full mixed-chamber claim."
+    "sourceCut": "a8140c5/e9bc537",
+    "batches": [
+      "base1000",
+      "country500",
+      "careerBalance4500",
+      "generated651",
+      "diplomacy2250",
+      "content",
+      "sensitivity1736+36",
+      "frequency-v2",
+      "shock-reference-v1",
+      "static PC accessibility/contrast/help/participation"
+    ],
+    "reason": "No economic/electoral/diplomatic or random-outcome rule changed. Only optional historical evidence and stricter invalid-save audit. Focused 600-quarter replay verifies unchanged world gameplay. These batches were not rerun in this increment and do not count as new seeds."
   }
 }

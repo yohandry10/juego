@@ -8,9 +8,13 @@ Elige país y variante. Hay diez perfiles nacionales y escenarios generados; est
 
 El creador tiene seis pasos: nombre/origen/cargo/circunscripción; profesión/formación; ideología; dos o tres rasgos; atributos; edad/partido/semilla/realismo/Ironman. La misma semilla y versiones reproducen el escenario. Los tres realismos modifican rivales e información, sin regalar recursos. Ironman conserva el guardado automático y bloquea importación.
 
+Para entrar directamente, pulsa **Jugar ahora** en el primer paso. Usa un personaje preparado y conserva tu elección de país, cargo y origen. Si dejas el nombre vacío, jugarás como Alex Ríos. Personalizar es opcional; una nueva carrera vuelve al primer paso.
+
 ## Campaña y acceso
 
 Cuatro semanas, dos acciones por semana. Recorrer, mitin, prensa, partido, recaudación y promesas tienen costos y efectos; recaudar acredita 12 mil una vez. Confirma nominación antes de cerrar. Las listas rivales y candidaturas personales compiten: ganar escaños para el partido no garantiza un puesto propio en una lista grande. El resultado explica la asignación y tu lugar. Las contiendas mayoritarias ordenan candidatos individuales; una nominación confirmada no enfrenta una lotería adicional de lista proporcional.
+
+Cada acción principal muestra cuánto gastas o recibes. Si no alcanza el dinero, esa opción se deshabilita: puedes elegir una acción más barata o recaudar. Recaudar no aumenta tu preferencia. En un distrito de un puesto, el resultado explica quién quedó primero y tu siguiente oportunidad; al ganar ocupas ese distrito.
 
 Las presidencias pueden tener pluralidad, dos vueltas o Colegio Electoral agregado; este último reparte 538 electores en delegaciones ficticias y simplifica la elección contingente, sin reproducir estados reales. Una candidatura de jefatura parlamentaria pasa a investidura, no a elección ejecutiva directa. Perder permite otra campaña. Un acceso hegemónico depende de la coalición dirigente y se identifica como hipotético, sin votos electorales ficticiamente presentados como reales.
 

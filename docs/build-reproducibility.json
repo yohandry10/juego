@@ -7,28 +7,28 @@
   "limitation": "Dos builds consecutivos con las dependencias instaladas; no valida instalación limpia en otro SO.",
   "hashes": [
     {
-      "file": "assets/EconomyView-D6fBRhYT.js",
-      "sha256": "27956cd6316beeec3e2416b84740633fb24c23c524bc53d185857ac453da0ae8"
+      "file": "assets/EconomyView-BreMmnCV.js",
+      "sha256": "b7338991b97c47681463f7722997745c63a3732acca2815c205ed3fc678ab0bc"
     },
     {
-      "file": "assets/HallOfFame-Djf4oTx6.js",
-      "sha256": "285d2c0b39860455ce1b97408fe8f0ed86a348297b436025de0c81de783c4579"
+      "file": "assets/HallOfFame-D8XQl_Ug.js",
+      "sha256": "64ec20f619663b1f526b4bba496dc7abed6c28a9044a41d58500a22f9a8636ef"
     },
     {
-      "file": "assets/HelpView-DgNhmiXR.js",
-      "sha256": "85a51e7ba90f3e3f72676a866f19652cb3a9cb1231f13b39758fcaab54a14003"
+      "file": "assets/HelpView-BSmBaHiF.js",
+      "sha256": "83e7bb7ca0abf3bf14d274c73b1a4ecbb41a52be76f4f28d3c0b2b1c5208f82d"
     },
     {
       "file": "assets/InboxView-3Wr2TA_o.js",
       "sha256": "b79eff7ccb5ad00504e2e716597f5c3c4ca7a4240191bc660cff9a061e5df25d"
     },
     {
-      "file": "assets/index-Cj-tOR_T.js",
-      "sha256": "86b021ec4c248d1713aaab8772a50e4f58220eb5b0d9814364e1136311dbfed0"
+      "file": "assets/index-COQ0fVHk.css",
+      "sha256": "4d670c6207b336c0a8ca3d9d0a8f278f52b0a7dfb54744a18ceb08219395da93"
     },
     {
-      "file": "assets/index-DK3j5ReG.css",
-      "sha256": "48f12f0922794ec85500a1fdbe8563f207094f58fc315f2c9a401ef6884967c6"
+      "file": "assets/index-IeQeRKjG.js",
+      "sha256": "04ecc6883af8ec3eac7c044c5f3c0587dd9a2a35e239e036fb6980f27e9fc4b7"
     },
     {
       "file": "assets/react-Dy-GIXkn.js",
@@ -39,8 +39,8 @@
       "sha256": "bbf7c5086ae414dc3f33777e3eebf16ea8631325b8bb4690d25091c03567f31a"
     },
     {
-      "file": "assets/simulation-worker-BnzANtal.js",
-      "sha256": "48877c5304dc276498a992cfdd7c9da0425a6b98df6ca11cfe116c8b24832199"
+      "file": "assets/simulation-worker-D7vKpht3.js",
+      "sha256": "055e37e81e989495eeae240828311473f9ebdaaf36a70271b18abf0ab8883c67"
     },
     {
       "file": "assets/validation-2oiOZAhq.js",
@@ -51,12 +51,12 @@
       "sha256": "289fbc5acb1c1a39d445982d9c0d2e749d4e0c2992d758acec0aea9f029a2a88"
     },
     {
-      "file": "assets/WorldView-Dj6l4kjm.js",
-      "sha256": "438a8244b9dfd75ff7d3e8abd8e3306a5a963ebea54e9580fd66d0b14a3dc94b"
+      "file": "assets/WorldView-BYyVkkwd.js",
+      "sha256": "31d336884efc0c931e7e2104bdc832cc51e739a9a9f2a99bcb0bbeb9f9aa5d59"
     },
     {
       "file": "credits.html",
-      "sha256": "d9cf97c14144312c95af2e9efd13c578685e035cb7d3e004e9abb68e40f8f79a"
+      "sha256": "162083d429d031f1668b00e6ada5f642ce303f7c219f42defccc87e00f8d0a5a"
     },
     {
       "file": "data/countries/argentina.json",
@@ -80,7 +80,7 @@
     },
     {
       "file": "data/countries/mexico.json",
-      "sha256": "9ab53af17c2411438d10f08283e40b64882951064ae0d97180f50d89bbc791ee"
+      "sha256": "366f4021aad9b0f438a3990fdcd7a46a39f65523ad3a96b7de2fa753838e2f81"
     },
     {
       "file": "data/countries/peru.json",
@@ -108,11 +108,11 @@
     },
     {
       "file": "index.html",
-      "sha256": "f6ee892faeea1031385b5c10ff19272f639c7e790f321e4f42dd8ad73de2bad4"
+      "sha256": "4fb5c5672aac24a5583f3668f44800946913fcba31969a8cb11945426be65e6f"
     },
     {
       "file": "offline-manifest.json",
-      "sha256": "fdd7467e65482f066e5c5d89eab7fd976ed969697091f115ed5a889933e0b27a"
+      "sha256": "63b88249bf6e7bd98842e23a0eaf6bd3d15a10f614278b28eb30d9f9645bc1b9"
     },
     {
       "file": "privacy.html",
@@ -120,7 +120,7 @@
     },
     {
       "file": "sw.js",
-      "sha256": "d53ca2ad69a5612c411544607d68cc8e59115a2b274bee101945f80f025fe2a3"
+      "sha256": "49640330fad31ad410cc29e79ee41c5c8abb3b5b30f8e39b49111b2156cc1a90"
     },
     {
       "file": "THIRD-PARTY-NOTICES.txt",

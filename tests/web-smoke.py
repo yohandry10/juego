@@ -148,7 +148,11 @@ with sync_playwright() as playwright:
     presidential.get_by_role("button", name="Confirmar candidatura").click()
     for _ in range(4):
         for action in ["Visitar comités del partido", "Convocar a la militancia"]:
-            presidential.get_by_role("button", name=action).click()
+            option = presidential.get_by_role("button", name=action)
+            if option.is_disabled():
+                presidential.get_by_role("button", name="Recaudar fondos").click()
+            else:
+                option.click()
         presidential.get_by_role("button", name="Siguiente semana").click()
     assert presidential.get_by_text("LIDERAZGO PARTIDARIO GANADO").is_visible()
     presidential.get_by_role("button", name="Iniciar mandato").click()

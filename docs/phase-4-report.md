@@ -1,6 +1,6 @@
 # Informe de Fase 4 — Mundo y geopolítica
 
-Corte: 2026-10-06, continuación desde `e9bc537`. **Fase abierta.** Snapshot económico `world-2026-10-06-v1`, parámetros `world-balance-v5`, carrera v15. Esta evidencia sustituye las cifras del corte anterior; las comparaciones de optimización contra `0df312e` son históricas.
+Corte: 2026-10-06, continuación desde `d301e14`. **Fase abierta.** Snapshot económico `world-2026-10-06-v1`, parámetros `world-balance-v5`, carrera v15. Esta evidencia sustituye las cifras del corte anterior; las comparaciones de optimización contra `0df312e` son históricas.
 
 ## Sistemas y procedencia
 
@@ -30,9 +30,9 @@ Tres candidatos comunes, ocho semillas emparejadas de ajuste a 50 años y 32 sem
 
 Se corrigió la aplicación de un solo shock cuando coincidían varios. Todos los activos conservan efecto y causa durante su plazo; los cortes sectoriales se combinan con las sanciones. La auditoría ahora rechaza identidades duplicadas, fechas/tipos imposibles, entregas repetidas o reordenadas, transiciones comerciales ilegales y sanciones contra el propio emisor. Se corrigió también el generador de esa sanción financiera. [Inventario semántico y límites](world-semantic-review.md). Guardados históricos sin un prefijo completo de evidencia no reciben evidencia inventada.
 
-## Validación del motor actual
+## Validación y evidencia conservada
 
-- 139/139 pruebas; build/Worker; dos builds con 30 archivos idénticos por SHA-256. Sincronización canónica de los diez perfiles con sus copias públicas comprobada; el build la ejecuta para evitar reglas antiguas en navegador.
+- 143/143 pruebas; build/Worker; dos builds con 30 archivos idénticos por SHA-256. Sincronización canónica de los diez perfiles con sus copias públicas comprobada; el build la ejecuta para evitar reglas antiguas en navegador.
 - [Mundo](phase-4-simulation.json): 100 × 50 años, auditoría cada trimestre; 217 actores conservados, cero valores/referencias inválidos, cero guerras nucleares directas. Medias por corrida: 31,08 conflictos, 63,94 golpes, 24,07 shocks, 0,99 sanciones; 2,76 ms/trimestre local con auditoría bajo baterías concurrentes; no se interpreta la diferencia como degradación.
 - [Sensibilidad](world-sensitivity.json): 1.736 casos de exposición y 36 mundos de 50 años. Conflictos medios bajo/base/alto: 21 / 31,67 / 37,17; golpes 52 / 61,17 / 69,33. Sin valores inválidos ni guerras nucleares.
 - [Diplomacia](diplomacy-balance.json): 2.250 escenarios, diez perfiles × 25 semillas utilizadas × tres socios × tres posturas × cinco años; visitas pagadas iguales antes de comparar posturas. Regresión v5 sobre las semillas diplomáticas usadas; costos y resultados diferentes comprobados. No demuestra estrategia óptima ni balance de una carrera completa.
@@ -62,4 +62,6 @@ Auditoría semántica integral; shocks y correspondencia de frecuencias; restric
 
 Diagnóstico de shocks por tipo: [referencia y resultados](shock-frequency-review.md). La distribución uniforme queda fuera de la banda de diseño frente a dos proxies independientes de encarecimiento (energía/alimentos); 32 semillas nuevas `shock-reference-v1`, ya consumidas. No se cambió el motor ni se ajustó a esos resultados. Faltan correspondencia suministro/precios y otros seis tipos; Fase 4 sigue abierta.
 
-En este incremento se repiten las 139 pruebas, build y comprobaciones del Worker, cien mundos de cincuenta años, smoke, financiación/ratificación/Worker en PC y carrera de cuarenta años con navegador. Base, campañas, balance de 4.500, generados, diplomacia, contenido, sensibilidad y referencias conservan la evidencia de a8140c5/e9bc537: no son lotes ni semillas nuevos de este incremento. Se añade evidencia de golpes y se endurece la auditoría de importación; la comparación de 600 trimestres mantiene el estado de juego idéntico salvo el registro nuevo.
+En este incremento se repiten 143 pruebas, build/Worker/reproducibilidad, 500 campañas, contenido, 4.500 carreras con 500 semillas nuevas emparejadas `balance-reserved-v4`, smoke y recorridos PC de entrada rápida, resultado electoral, ratificación y Worker offline. Las métricas numéricas de carreras se obtuvieron antes de ajustar el texto del diario, sin cambiar costos, probabilidades ni efectos en ese ajuste. Mundo, sensibilidad, diplomacia, generados, financiación, participación y carrera larga conservan evidencia explícita de cortes anteriores; no son lotes nuevos de esta integración.
+
+La ampliación jurídica país por país se detiene por corrección expresa del usuario; las diferencias del escenario deben aportar jugabilidad. Este incremento no repite los lotes mundiales/diplomáticos anteriores. Ratificación y Worker sí se recorren nuevamente; [detalle de vigencia](validation-latest.json).

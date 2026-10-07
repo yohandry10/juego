@@ -131,7 +131,7 @@
           "passedProposalPercent": 93.75,
           "singlePartyMajorityLegislatures": 0,
           "singlePartyMajorityRatePercent": 0,
-          "affirmativeBallotPercent": 64.77370689655172
+          "affirmativeBallotPercent": 64.7449712643678
         },
         "fundraising": {
           "runs": 25,
@@ -143,7 +143,7 @@
           "passedProposalPercent": 75,
           "singlePartyMajorityLegislatures": 0,
           "singlePartyMajorityRatePercent": 0,
-          "affirmativeBallotPercent": 58.537356321839084
+          "affirmativeBallotPercent": 58.52298850574713
         }
       }
     },
@@ -157,10 +157,10 @@
           "averagePlayerVoteSharePercent": 19.698268523368988,
           "averagePartySeatsInDistrict": 0.72,
           "legislaturesCompleted": 18,
-          "passedProposalPercent": 95.27777777777777,
+          "passedProposalPercent": 95,
           "singlePartyMajorityLegislatures": 0,
           "singlePartyMajorityRatePercent": 0,
-          "affirmativeBallotPercent": 64.30435201232429
+          "affirmativeBallotPercent": 64.28172539957635
         },
         "fundraising": {
           "runs": 25,
@@ -172,36 +172,36 @@
           "passedProposalPercent": 92.85714285714286,
           "singlePartyMajorityLegislatures": 0,
           "singlePartyMajorityRatePercent": 0,
-          "affirmativeBallotPercent": 64.02946273830156
+          "affirmativeBallotPercent": 64.06350581827185
         }
       }
     },
     {
-      "country": "México · mexico-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance-treaty-routes-v1",
+      "country": "México · mexico-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance-treaty-routes-v1-territorial-election-v1",
       "strategies": {
         "doorstep": {
           "runs": 25,
-          "wins": 6,
-          "winRatePercent": 24,
+          "wins": 11,
+          "winRatePercent": 44,
           "averagePlayerVoteSharePercent": 19.673268523368986,
-          "averagePartySeatsInDistrict": 0.36,
-          "legislaturesCompleted": 6,
-          "passedProposalPercent": 83.33333333333334,
+          "averagePartySeatsInDistrict": 0.44,
+          "legislaturesCompleted": 11,
+          "passedProposalPercent": 89.39393939393939,
           "singlePartyMajorityLegislatures": 0,
           "singlePartyMajorityRatePercent": 0,
-          "affirmativeBallotPercent": 59.425
+          "affirmativeBallotPercent": 62.43636363636364
         },
         "fundraising": {
           "runs": 25,
-          "wins": 10,
-          "winRatePercent": 40,
+          "wins": 8,
+          "winRatePercent": 32,
           "averagePlayerVoteSharePercent": 17.80280944306776,
-          "averagePartySeatsInDistrict": 0.6,
-          "legislaturesCompleted": 10,
-          "passedProposalPercent": 82.5,
+          "averagePartySeatsInDistrict": 0.32,
+          "legislaturesCompleted": 8,
+          "passedProposalPercent": 84.375,
           "singlePartyMajorityLegislatures": 0,
           "singlePartyMajorityRatePercent": 0,
-          "affirmativeBallotPercent": 60.41833333333333
+          "affirmativeBallotPercent": 62.42291666666666
         }
       }
     },
@@ -247,7 +247,7 @@
           "passedProposalPercent": 97.91666666666666,
           "singlePartyMajorityLegislatures": 0,
           "singlePartyMajorityRatePercent": 0,
-          "affirmativeBallotPercent": 66.68782051282052
+          "affirmativeBallotPercent": 66.68141025641026
         },
         "fundraising": {
           "runs": 25,
@@ -259,7 +259,7 @@
           "passedProposalPercent": 90.625,
           "singlePartyMajorityLegislatures": 0,
           "singlePartyMajorityRatePercent": 0,
-          "affirmativeBallotPercent": 66.09615384615385
+          "affirmativeBallotPercent": 66.10384615384616
         }
       }
     },

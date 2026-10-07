@@ -228,3 +228,10 @@ El usuario rechazó explícitamente trabajo móvil. El alcance pasa a PC con rat
 - Importación rechaza acciones desconocidas, organismos duplicados y golpes contradictorios. No se cambia la probabilidad ni la transición jugable.
 - 600trimestres comparados con la transición e9bc537, compartiendo dependencias actuales y retirando solo evidencia nueva: mismo estado completo. 139pruebas, cien mundos, build/Worker/repro, navegadores afectados y40años pasan. Otros lotes se conservan explícitamente como evidencia reutilizada.
 - Guardado1,40→1,90MiB, tiempos década7,38/10,50ms máximo26,95ms; memoria/tiempo sostenidos abiertos. Se preservan informes e9bc537.
+
+## 2026-10-06 — Prioridad de juego y entrada directa
+
+- Corrección expresa del usuario: detener la ampliación constitucional país por país. Priorizar criterio de juego, decisiones comprensibles, ritmo y diversión. Conservar lo existente; no borrar sistemas ni partidas. La curación jurídica exhaustiva deja de ser un requisito de desarrollo.
+- Se añade «Jugar ahora» al primer paso y se conserva la personalización completa. Las acciones principales muestran costos compartidos con el motor y bloquean gastos que no se pueden pagar.
+- Se integran correcciones ya iniciadas de candidatura territorial mexicana, escaño en el distrito ganado y límite presidencial conservado tras retiro. No se extiende esta investigación a otros perfiles. [Alcance y evidencia](electoral-gameplay-review.md).
+- Reserva nueva `balance-reserved-v4`: 4.500 muestras, 500 semillas emparejadas; México/diputación15/180 y Perú presidencial9/135 completados. Balance sin aceptar; resultados entre reservas diferentes no aíslan una mejora. Se conserva [el lote anterior](historical-career-balance-d301e14.json).

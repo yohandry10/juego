@@ -82,6 +82,8 @@ export interface ChamberDefinition {
   readonly termYears: number;
   readonly electoralSystem: ElectoralSystem;
   readonly seatAllocationMethod: "dhondt" | "largest-remainder" | "plurality";
+  /** Mixed chambers may elect territorial seats differently from their list seats. */
+  readonly territorialSeatAllocationMethod?: "dhondt" | "largest-remainder" | "plurality" | undefined;
   readonly electoralThresholdPercent: number;
   readonly districtCount: number;
   readonly nationalSeats: number;
@@ -171,6 +173,8 @@ export interface ExecutiveRules {
   readonly selection: "direct-election" | "legislative-investiture";
   readonly termYears: number;
   readonly consecutiveTermLimit: number | null;
+  /** Lifetime cap, independent of an intervening office or retirement. */
+  readonly totalTermLimit?: number | undefined;
   readonly election: {
     readonly method: "plurality" | "two-round" | "electoral-college";
     readonly firstRoundThresholdPercent: number;

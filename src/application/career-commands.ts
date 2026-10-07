@@ -295,12 +295,17 @@ export function createCareerGame(country: CountryDefinition, input: NewCareerInp
   return validateCareer(state);
 }
 
+export function campaignActionCost(action: CampaignActionType): number {
+  return { "primary-outreach": 4, rally: 12, "door-knocking": 3, "media-interview": 5, fundraising: -12,
+    "make-promise": 2, "set-national-agenda": 0, "publish-poll": 2, "national-debate": 4 }[action];
+}
+
 export function performCampaignAction(state: CareerGameState, action: CampaignActionType, focusId?: string): CareerGameState {
   if (state.stage !== "campaign") throw new Error("La campaña ya terminó.");
   if (state.campaign.actionsRemaining < 1) throw new Error("Ya usaste las acciones disponibles de esta semana.");
   if (action === "set-national-agenda" || action === "publish-poll" || action === "national-debate") {
     if (state.campaign.districtId !== "national") throw new Error("La agenda, las encuestas y el debate corresponden a una campaña nacional.");
-    const cost = action === "set-national-agenda" ? 0 : action === "publish-poll" ? 2 : 4;
+    const cost = campaignActionCost(action);
     if (state.player.resources.campaignFunds < cost) throw new Error("No hay fondos suficientes para esa acción nacional.");
     let campaign = state.campaign;
     let world = state.world;
@@ -334,18 +339,24 @@ export function performCampaignAction(state: CareerGameState, action: CampaignAc
     const record: CampaignActionRecord = { id: makeId(state.seed, `campaign-national-${campaign.week}-${campaign.actionHistory.length}`), week: campaign.week, type: action, districtId: "national", explanation, result, promiseId: null };
     return validateCareer({ ...state, currentTurn: state.currentTurn + 1, world, player: { ...state.player, resources: { ...state.player.resources, campaignFunds: state.player.resources.campaignFunds - cost } }, campaign: { ...campaign, actionsRemaining: campaign.actionsRemaining - 1, playerPreferencePercent: action === "national-debate" ? campaign.playerPreferencePercent : clamp(campaign.playerPreferencePercent + (action === "set-national-agenda" ? result : 0), 0, 100), campaignFundsSpent: campaign.campaignFundsSpent + cost, actionHistory: [...campaign.actionHistory, record] }, log: [...state.log, { turn: state.currentTurn + 1, text: explanation, explanation: `${action === "publish-poll" ? "Encuesta registrada" : action === "national-debate" ? "Debate registrado" : "Agenda actualizada"}; costo ${cost} mil.` }] });
   }
-  const costs: Record<Exclude<CampaignActionType, "set-national-agenda" | "publish-poll" | "national-debate">, number> = { "primary-outreach": 4, rally: 12, "door-knocking": 3, "media-interview": 5, fundraising: -12, "make-promise": 2 };
   const benefits: Record<Exclude<CampaignActionType, "set-national-agenda" | "publish-poll" | "national-debate">, number> = { "primary-outreach": 1.5, rally: 1.8, "door-knocking": 1.2, "media-interview": 1.4, fundraising: 0.2, "make-promise": 1.1 };
-  const expense = costs[action]!;
+  const expense = campaignActionCost(action);
   if (expense > 0 && state.player.resources.campaignFunds < expense) throw new Error("No hay fondos suficientes para esa acción.");
   const rng = createRng(hashSeed(`${state.seed}:campaign:${state.campaign.week}:${state.campaign.actionHistory.length}:${action}`));
   const noise = rng.next() * 1.2;
   const gain = benefits[action]! + noise;
   const funds = Math.max(0, state.player.resources.campaignFunds - expense);
-  const explanation = action === "fundraising" ? "La recaudación amplió el presupuesto de campaña." : `La acción ${action} sumó apoyo por contacto, visibilidad y ajuste al distrito.`;
+  const explanation = {
+    "door-knocking": "El contacto directo fortaleció el respaldo a tu candidatura.",
+    rally: "La convocatoria dio más visibilidad a tu candidatura.",
+    "media-interview": "La entrevista ayudó a difundir tus prioridades.",
+    "primary-outreach": "La reunión con tu equipo político sumó apoyo a tu candidatura.",
+    fundraising: "La recaudación agregó 12 mil a tus fondos de campaña.",
+    "make-promise": "El compromiso con los servicios públicos sumó apoyo; cumplirlo tendrá un costo durante el mandato.",
+  }[action];
   const promise = action === "make-promise" ? { id: makeId(state.seed, `promise-${state.campaign.week}-${state.campaign.promises.length}`), text: "Mejorar los servicios públicos del distrito", blockId: "workers", cost: 15, dueTurn: 8, status: "pending" as const } : null;
   const record = { id: makeId(state.seed, `campaign-${state.campaign.week}-${state.campaign.actionHistory.length}`), week: state.campaign.week, type: action, districtId: state.campaign.districtId, explanation, result: gain, promiseId: promise?.id ?? null } as const;
-  const log = [...state.log, { turn: state.currentTurn + 1, text: explanation, explanation: `Cambio de preferencia: +${gain.toFixed(1)} puntos; gasto: ${Math.max(0, expense)}.` }];
+  const log = [...state.log, { turn: state.currentTurn + 1, text: explanation, explanation: action === "fundraising" ? "Fondos: +12 mil. Tu preferencia no cambia." : `Cambio de preferencia: +${gain.toFixed(1)} puntos; gasto: ${Math.max(0, expense)} mil.` }];
   const next = { ...state, currentTurn: state.currentTurn + 1, player: { ...state.player, resources: { ...state.player.resources, campaignFunds: funds } }, campaign: { ...state.campaign, actionsRemaining: state.campaign.actionsRemaining - 1, playerPreferencePercent: clamp(state.campaign.playerPreferencePercent + (action === "fundraising" ? 0 : gain), 0, 100), campaignFundsSpent: state.campaign.campaignFundsSpent + Math.max(0, expense), actionHistory: [...state.campaign.actionHistory, record], promises: promise ? [...state.campaign.promises, promise] : state.campaign.promises }, log };
   const eventId = ({ "door-knocking": "district-meeting", rally: "youth-forum", "media-interview": "local-radio", "primary-outreach": "volunteer-team", fundraising: "campaign-donor", "make-promise": "promise-reminder" } as const)[action];
   return validateCareer(addCareerEvent(next, eventId));
@@ -473,7 +484,8 @@ export function resolveElection(state: CareerGameState, country: CountryDefiniti
     const electorate = (rng.next() - 0.5) * electoralParameters.executiveElectorateVariation;
     return Math.max(1, Math.round((party.supportPercent + campaign * 0.6 + electorate) * 1000));
   });
-  const seats = allocateDistrictSeats(chamber.seatAllocationMethod, chamber.electoralThresholdPercent, districtSeats, partyVotes);
+  const allocationMethod = chamber.territorialSeatAllocationMethod ?? chamber.seatAllocationMethod;
+  const seats = allocateDistrictSeats(allocationMethod, chamber.electoralThresholdPercent, districtSeats, partyVotes);
   const playerPartyIndex = state.world.parties.findIndex((party) => party.id === state.playerPartyId);
   let partySeats = seats[playerPartyIndex] ?? 0;
   const listRng = createRng(hashSeed(`${state.seed}:candidate-list:${state.campaign.districtId}`));
@@ -483,7 +495,7 @@ export function resolveElection(state: CareerGameState, country: CountryDefiniti
   let playerListPosition: number | null = 1 + Array.from({ length: candidateCount - 1 }, () => electoralParameters.rivalSupportFloor + listRng.next() * electoralParameters.rivalSupportRange + listStrength).filter((support) => support > share + personalNetwork).length;
   let elected = state.campaign.nominated && partySeats >= playerListPosition;
   let pluralityExplanation = "";
-  if (chamber.seatAllocationMethod === "plurality") {
+  if (allocationMethod === "plurality") {
     // A confirmed nomination in a single-member race has no second, hidden
     // list-position lottery. Multi-member races rank individual candidates,
     // rather than awarding every seat to the largest party.
@@ -499,7 +511,9 @@ export function resolveElection(state: CareerGameState, country: CountryDefiniti
     elected = state.campaign.nominated && winners.some((candidate) => candidate.isPlayer);
     partySeats = winners.filter((candidate) => candidate.partyId === state.playerPartyId).length;
     playerListPosition = null;
-    pluralityExplanation = `Contienda mayoritaria agregada: puesto personal ${position}/${candidates.length}, ${districtSeats} plazas en disputa. Apoyo partidario, campaña, red y variación del electorado determinan cada candidatura; no hay una lista proporcional. ${elected ? "Obtuviste escaño." : "No obtuviste escaño."}`;
+    pluralityExplanation = districtSeats === 1
+      ? `Contienda mayoritaria: este distrito elige una sola persona. ${!state.campaign.nominated ? "Tu nominación no se confirmó, por lo que no podías obtener el cargo. En otra campaña, confirma la nominación antes de la elección." : elected ? `Tu candidatura quedó primera entre ${candidates.length} y obtuviste el escaño.` : `Tu candidatura quedó en el puesto ${position} de ${candidates.length}; otra persona obtuvo el escaño. En otra campaña, recorrer el distrito y organizar mítines puede fortalecer tu candidatura.`}`
+      : `Contienda mayoritaria agregada: puesto personal ${position}/${candidates.length}, ${districtSeats} plazas en disputa. Apoyo partidario, campaña, red y variación del electorado determinan cada candidatura; no hay una lista proporcional. ${elected ? "Obtuviste escaño." : "No obtuviste escaño."}`;
   }
   const totalVotes = partyVotes.reduce((sum, vote) => sum + vote, 0);
   const turnoutPercent = clamp(66 + averageMood * 0.12 + state.world.approvalPercent * 0.1, 40, 90);
@@ -934,6 +948,7 @@ export function returnFromRetirement(state: CareerGameState, officeId: string, c
   if (!eligibility) throw new Error(`El país no ofrece el cargo ${officeId}.`);
   const priorOfficeIds = state.careerHistory.filter((entry) => ["legislative-term-completed", "executive-term-completed", "government-term-completed", "executive-election-won", "ministerial-term-completed", "ministerial-dismissed", "party-leadership-term-completed"].includes(entry.outcome)).map((entry) => entry.roleId);
   if (!meetsAgeRule(eligibility, state.player.age, priorOfficeIds)) throw new Error(`La edad actual no cumple el requisito para ${officeId}.`);
+  if (hasReachedLifetimeExecutiveLimit(state, country, officeId)) throw new Error("Ya ejerciste el máximo de mandatos permitido para este cargo; el retiro no reinicia ese límite.");
   const national = officeId === country.politicalSystem.executive.officeId;
   const chamberId = chamberForOffice(country, officeId);
   const district = national ? "national" : country.electoralDistricts.find((item) => (item.seatsByChamber[chamberId] ?? 0) > 0)?.id;
@@ -987,11 +1002,16 @@ function startLegislature(state: CareerGameState, country: CountryDefinition): C
       ? configuredLegislature.upperChamber
       : undefined;
   if (!chamber) throw new Error(`La cámara ${state.campaign.chamberId} no existe en la ficha del país.`);
-  const playerSeat = state.world.legislators.find((member) => member.chamberId === state.campaign.chamberId && member.districtId === state.campaign.districtId && member.partyId === state.playerPartyId)
+  const territorialMethod = chamber.territorialSeatAllocationMethod ?? chamber.seatAllocationMethod;
+  const district = country.electoralDistricts.find((item) => item.id === state.campaign.districtId);
+  const singleMemberWinner = territorialMethod === "plurality" && district?.seatsByChamber[chamber.id] === 1;
+  const playerSeat = state.world.legislators.find((member) => member.chamberId === state.campaign.chamberId && member.districtId === state.campaign.districtId && (singleMemberWinner || member.partyId === state.playerPartyId))
     ?? state.world.legislators.find((member) => member.chamberId === state.campaign.chamberId && member.partyId === state.playerPartyId);
   if (!playerSeat) throw new Error("El resultado asignó un escaño, pero no se encontró una plaza generada para el partido.");
+  if (singleMemberWinner && playerSeat.districtId !== state.campaign.districtId) throw new Error("El distrito ganado no tiene un escaño generado; no se puede ocupar una plaza de otro distrito.");
   const legislators = state.world.legislators.filter((member) => member.chamberId === state.campaign.chamberId);
-  const world = { ...state.world, legislators: state.world.legislators.map((member) => member.id === playerSeat.id ? { ...member, name: state.player.name, ideology: state.player.ideology, integrity: state.player.attributes.integrity, loyalty: 100, ambition: 75, scandalExposure: 0, influence: 50 } : member) };
+  const playerFaction = state.world.factions.find((faction) => faction.partyId === state.playerPartyId)!;
+  const world = { ...state.world, legislators: state.world.legislators.map((member) => member.id === playerSeat.id ? { ...member, name: state.player.name, partyId: state.playerPartyId, factionId: member.partyId === state.playerPartyId ? member.factionId : playerFaction.id, ideology: state.player.ideology, integrity: state.player.attributes.integrity, loyalty: 100, ambition: 75, scandalExposure: 0, influence: 50 } : member) };
   const groups = ["Economía", "Asuntos sociales", "Instituciones", "Regiones"];
   return { ...state, world, stage: "legislature", legislature: { turn: 0, totalTurns: chamber.termYears * 4, actionsRemaining: 3, chamberId: state.campaign.chamberId, playerLegislatorId: playerSeat.id, committees: groups.map((name, i) => ({ id: `committee-${i + 1}`, name, legislatorIds: legislators.filter((_, j) => j % groups.length === i).slice(0, 20).map((member) => member.id) })), currentProposal: makeProposal(state.seed, 1), voteHistory: [], pendingRelationshipConsequences: [] } };
 }
@@ -1131,12 +1151,24 @@ export function advanceCareer(state: CareerGameState, country?: CountryDefinitio
   return validateCareer(turnEvent);
 }
 
+function hasReachedLifetimeExecutiveLimit(state: CareerGameState, country: CountryDefinition, officeId: string): boolean {
+  const executive = country.politicalSystem.executive;
+  if (state.regime || officeId !== executive.officeId || executive.totalTermLimit === undefined) return false;
+  const history = state.careerHistory.filter((entry) => entry.roleId === officeId);
+  const starts = history.filter((entry) => ["executive-term-started", "government-formed"].includes(entry.outcome)).length;
+  // Older imports may retain completion/removal records without a start record.
+  // Use the larger count so a completed tenure is not counted twice.
+  const endings = history.filter((entry) => ["executive-term-completed", "government-term-completed", "government-removed"].includes(entry.outcome)).length;
+  return Math.max(starts, endings) >= executive.totalTermLimit;
+}
+
 export function canStartNextCareerCampaign(state: CareerGameState, country: CountryDefinition, officeId: string): boolean {
   if (state.stage !== "term-summary" || state.lifeStatus !== "active") return false;
   const rule = country.candidateEligibility.find((candidate) => candidate.officeId === officeId);
   if (!rule) return false;
   const priorOfficeIds = state.careerHistory.filter((entry) => ["legislative-term-completed", "executive-term-completed", "government-term-completed", "executive-election-won", "ministerial-term-completed", "ministerial-dismissed", "party-leadership-term-completed"].includes(entry.outcome)).map((entry) => entry.roleId);
   if (!meetsAgeRule(rule, state.player.age, priorOfficeIds)) return false;
+  if (hasReachedLifetimeExecutiveLimit(state, country, officeId)) return false;
   const termLimit = officeId === country.politicalSystem.executive.officeId ? country.politicalSystem.executive.consecutiveTermLimit : null;
   if (termLimit !== null) {
     const completedTerms = [...state.careerHistory].reverse().filter((entry) => ["legislative-term-completed", "executive-term-completed", "government-term-completed"].includes(entry.outcome));
@@ -1157,7 +1189,7 @@ export function canStartNextCareerCampaign(state: CareerGameState, country: Coun
 export function startNextCareerCampaign(state: CareerGameState, country: CountryDefinition, officeId: string): CareerGameState {
   if (state.stage !== "term-summary" || state.lifeStatus !== "active") throw new Error("La carrera solo puede ascender desde el cierre de un cargo activo.");
   if (!country.candidateEligibility.some((candidate) => candidate.officeId === officeId)) throw new Error(`El país no ofrece el cargo ${officeId}.`);
-  if (!canStartNextCareerCampaign(state, country, officeId)) throw new Error(`No cumples los requisitos o el límite de mandatos consecutivos para ${officeId}.`);
+  if (!canStartNextCareerCampaign(state, country, officeId)) throw new Error(`No cumples los requisitos o el límite de mandatos para ${officeId}.`);
   const chamberId = chamberForOffice(country, officeId);
   const national = officeId === country.politicalSystem.executive.officeId;
   const districtId = national ? "national" : country.electoralDistricts.find((district) => (district.seatsByChamber[chamberId] ?? 0) > 0)!.id;

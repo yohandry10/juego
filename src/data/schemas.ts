@@ -112,6 +112,7 @@ const chamberSchema: z.ZodType<ChamberDefinition> = z.object({
   id: z.string().min(1), name: z.string().min(1), seats: z.number().int().positive(),
   termYears: z.number().int().positive(), electoralSystem: z.enum(["proportional", "majoritarian", "mixed", "other"]),
   seatAllocationMethod: z.enum(["dhondt", "largest-remainder", "plurality"]), electoralThresholdPercent: bounded(),
+  territorialSeatAllocationMethod: z.enum(["dhondt", "largest-remainder", "plurality"]).optional(),
   districtCount: z.number().int().positive(),
   nationalSeats: z.number().int().nonnegative(),
   appointments: z.object({
@@ -125,6 +126,7 @@ const executiveRulesSchema: z.ZodType<ExecutiveRules> = z.object({
   officeId: z.string().min(1), title: z.string().min(1),
   selection: z.enum(["direct-election", "legislative-investiture"]), termYears: z.number().int().positive(),
   consecutiveTermLimit: z.number().int().positive().nullable(),
+  totalTermLimit: z.number().int().positive().optional(),
   election: z.object({ method: z.enum(["plurality", "two-round", "electoral-college"]), firstRoundThresholdPercent: bounded(), runoffDays: z.number().int().nonnegative() }).strict().nullable(),
   investiture: z.object({ firstVoteMajority: z.enum(["absolute", "simple"]), laterVoteMajority: z.enum(["absolute", "simple"]), laterVoteDelayHours: z.number().int().nonnegative(), dissolutionAfterDays: z.number().int().positive().nullable() }).strict().nullable(),
   confidence: z.object({ passMajority: z.enum(["absolute", "simple"]), failureEffect: z.enum(["resignation", "new-investiture"]) }).strict().nullable(),

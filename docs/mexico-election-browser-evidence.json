@@ -1,0 +1,111 @@
+{
+  "date": "2026-10-06",
+  "protocol": "50 semillas nuevas emparejadas mexico-territorial-v1 × dos estrategias; 50 distritos abstractos de 300. Comandos reales, sin editar preferencias, nominaciones, atributos, partidos ni representantes. Contrafactual cambia únicamente el método territorial al anterior proporcional; mismas preferencias, votos agregados y participación. No ajusta parámetros ni acredita el sistema mixto completo.",
+  "results": [
+    {
+      "engine": "chromium",
+      "width": 1280,
+      "id": "win",
+      "seed": "mexico-territorial-v1-0",
+      "strategy": "doorstep",
+      "districtId": "district-001",
+      "elected": true,
+      "explanation": "Contienda mayoritaria: este distrito elige una sola persona. Tu candidatura quedó primera entre 5 y obtuviste el escaño.",
+      "identicalResultAndStart": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 1280,
+      "id": "loss",
+      "seed": "mexico-territorial-v1-1",
+      "strategy": "doorstep",
+      "districtId": "district-008",
+      "elected": false,
+      "explanation": "Contienda mayoritaria: este distrito elige una sola persona. Tu candidatura quedó en el puesto 3 de 5; otra persona obtuvo el escaño. En otra campaña, recorrer el distrito y organizar mítines puede fortalecer tu candidatura.",
+      "identicalResultAndStart": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 1920,
+      "id": "win",
+      "seed": "mexico-territorial-v1-0",
+      "strategy": "doorstep",
+      "districtId": "district-001",
+      "elected": true,
+      "explanation": "Contienda mayoritaria: este distrito elige una sola persona. Tu candidatura quedó primera entre 5 y obtuviste el escaño.",
+      "identicalResultAndStart": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "width": 1920,
+      "id": "loss",
+      "seed": "mexico-territorial-v1-1",
+      "strategy": "doorstep",
+      "districtId": "district-008",
+      "elected": false,
+      "explanation": "Contienda mayoritaria: este distrito elige una sola persona. Tu candidatura quedó en el puesto 3 de 5; otra persona obtuvo el escaño. En otra campaña, recorrer el distrito y organizar mítines puede fortalecer tu candidatura.",
+      "identicalResultAndStart": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "width": 1280,
+      "id": "win",
+      "seed": "mexico-territorial-v1-0",
+      "strategy": "doorstep",
+      "districtId": "district-001",
+      "elected": true,
+      "explanation": "Contienda mayoritaria: este distrito elige una sola persona. Tu candidatura quedó primera entre 5 y obtuviste el escaño.",
+      "identicalResultAndStart": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "width": 1280,
+      "id": "loss",
+      "seed": "mexico-territorial-v1-1",
+      "strategy": "doorstep",
+      "districtId": "district-008",
+      "elected": false,
+      "explanation": "Contienda mayoritaria: este distrito elige una sola persona. Tu candidatura quedó en el puesto 3 de 5; otra persona obtuvo el escaño. En otra campaña, recorrer el distrito y organizar mítines puede fortalecer tu candidatura.",
+      "identicalResultAndStart": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "width": 1920,
+      "id": "win",
+      "seed": "mexico-territorial-v1-0",
+      "strategy": "doorstep",
+      "districtId": "district-001",
+      "elected": true,
+      "explanation": "Contienda mayoritaria: este distrito elige una sola persona. Tu candidatura quedó primera entre 5 y obtuviste el escaño.",
+      "identicalResultAndStart": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "width": 1920,
+      "id": "loss",
+      "seed": "mexico-territorial-v1-1",
+      "strategy": "doorstep",
+      "districtId": "district-008",
+      "elected": false,
+      "explanation": "Contienda mayoritaria: este distrito elige una sola persona. Tu candidatura quedó en el puesto 3 de 5; otra persona obtuvo el escaño. En otra campaña, recorrer el distrito y organizar mítines puede fortalecer tu candidatura.",
+      "identicalResultAndStart": true,
+      "overflow": false,
+      "errors": []
+    }
+  ],
+  "limitations": "Two naturally obtained outcomes in automated PC browsers. No human comprehension, screen reader or hardware coverage; no regional PR/Senate curation claim."
+}

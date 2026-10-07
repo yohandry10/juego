@@ -135,7 +135,7 @@
     {
       "engine": "chromium",
       "countryId": "mexico",
-      "seed": "ratification-browser-v1-mexico-0",
+      "seed": "ratification-browser-v1-mexico-5",
       "waiting": false,
       "reviewLabel": "Someter a votación",
       "ruleSummary": "El Senado decide sobre el tratado; los votos de la Cámara de Diputados no lo sustituyen.",
@@ -345,7 +345,7 @@
     {
       "engine": "firefox",
       "countryId": "mexico",
-      "seed": "ratification-browser-v1-mexico-0",
+      "seed": "ratification-browser-v1-mexico-5",
       "waiting": false,
       "reviewLabel": "Someter a votación",
       "ruleSummary": "El Senado decide sobre el tratado; los votos de la Cámara de Diputados no lo sustituyen.",

@@ -1,0 +1,1013 @@
+{
+  "date": "2026-10-06",
+  "protocol": "50 semillas nuevas emparejadas mexico-territorial-v1 × dos estrategias; 50 distritos abstractos de 300. Comandos reales, sin editar preferencias, nominaciones, atributos, partidos ni representantes. Contrafactual cambia únicamente el método territorial al anterior proporcional; mismas preferencias, votos agregados y participación. No ajusta parámetros ni acredita el sistema mixto completo.",
+  "samples": 100,
+  "distinctPairedSeeds": 50,
+  "districtsCovered": 50,
+  "oldWins": 34,
+  "wins": 34,
+  "identicalCampaignInputs": true,
+  "winningDistrictPreserved": true,
+  "results": [
+    {
+      "seed": "mexico-territorial-v1-0",
+      "strategy": "doorstep",
+      "districtId": "district-001",
+      "preferencePercent": 19.10514039583504,
+      "oldElected": true,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-0",
+      "strategy": "fundraising",
+      "districtId": "district-001",
+      "preferencePercent": 16.322226721327752,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-1",
+      "strategy": "doorstep",
+      "districtId": "district-008",
+      "preferencePercent": 20.912355893757198,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-1",
+      "strategy": "fundraising",
+      "districtId": "district-008",
+      "preferencePercent": 18.11215239148587,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-2",
+      "strategy": "doorstep",
+      "districtId": "district-015",
+      "preferencePercent": 22.204706522729246,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-2",
+      "strategy": "fundraising",
+      "districtId": "district-015",
+      "preferencePercent": 20.438560793735085,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-3",
+      "strategy": "doorstep",
+      "districtId": "district-022",
+      "preferencePercent": 20.508600608166308,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-3",
+      "strategy": "fundraising",
+      "districtId": "district-022",
+      "preferencePercent": 18.35340747833252,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-4",
+      "strategy": "doorstep",
+      "districtId": "district-029",
+      "preferencePercent": 20.342453982308506,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-4",
+      "strategy": "fundraising",
+      "districtId": "district-029",
+      "preferencePercent": 18.906653076875955,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-5",
+      "strategy": "doorstep",
+      "districtId": "district-036",
+      "preferencePercent": 19.81138424640521,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-5",
+      "strategy": "fundraising",
+      "districtId": "district-036",
+      "preferencePercent": 16.54170819055289,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-6",
+      "strategy": "doorstep",
+      "districtId": "district-043",
+      "preferencePercent": 20.90836559543386,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-6",
+      "strategy": "fundraising",
+      "districtId": "district-043",
+      "preferencePercent": 18.282932332810013,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-7",
+      "strategy": "doorstep",
+      "districtId": "district-050",
+      "preferencePercent": 19.60504716625437,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-7",
+      "strategy": "fundraising",
+      "districtId": "district-050",
+      "preferencePercent": 17.65629069274291,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-8",
+      "strategy": "doorstep",
+      "districtId": "district-057",
+      "preferencePercent": 19.3161231726408,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-8",
+      "strategy": "fundraising",
+      "districtId": "district-057",
+      "preferencePercent": 17.754014209937306,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-9",
+      "strategy": "doorstep",
+      "districtId": "district-064",
+      "preferencePercent": 19.150172095466402,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-9",
+      "strategy": "fundraising",
+      "districtId": "district-064",
+      "preferencePercent": 17.661071196943524,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-10",
+      "strategy": "doorstep",
+      "districtId": "district-071",
+      "preferencePercent": 18.439370446186512,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-10",
+      "strategy": "fundraising",
+      "districtId": "district-071",
+      "preferencePercent": 16.97640773570165,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-11",
+      "strategy": "doorstep",
+      "districtId": "district-078",
+      "preferencePercent": 18.623841945268214,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-11",
+      "strategy": "fundraising",
+      "districtId": "district-078",
+      "preferencePercent": 15.69274041559547,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-12",
+      "strategy": "doorstep",
+      "districtId": "district-085",
+      "preferencePercent": 18.540711828600617,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-12",
+      "strategy": "fundraising",
+      "districtId": "district-085",
+      "preferencePercent": 16.70754332728684,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-13",
+      "strategy": "doorstep",
+      "districtId": "district-092",
+      "preferencePercent": 19.381707716267552,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-13",
+      "strategy": "fundraising",
+      "districtId": "district-092",
+      "preferencePercent": 16.450018463470037,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-14",
+      "strategy": "doorstep",
+      "districtId": "district-099",
+      "preferencePercent": 18.39687317116186,
+      "oldElected": true,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-14",
+      "strategy": "fundraising",
+      "districtId": "district-099",
+      "preferencePercent": 16.840299756731838,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-15",
+      "strategy": "doorstep",
+      "districtId": "district-106",
+      "preferencePercent": 19.03560421485454,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-15",
+      "strategy": "fundraising",
+      "districtId": "district-106",
+      "preferencePercent": 16.800377076864244,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-16",
+      "strategy": "doorstep",
+      "districtId": "district-113",
+      "preferencePercent": 23.095941495615993,
+      "oldElected": true,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-16",
+      "strategy": "fundraising",
+      "districtId": "district-113",
+      "preferencePercent": 20.50319760898128,
+      "oldElected": true,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-17",
+      "strategy": "doorstep",
+      "districtId": "district-120",
+      "preferencePercent": 19.261145593319085,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-17",
+      "strategy": "fundraising",
+      "districtId": "district-120",
+      "preferencePercent": 17.249607012420892,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-18",
+      "strategy": "doorstep",
+      "districtId": "district-127",
+      "preferencePercent": 19.985291813872756,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-18",
+      "strategy": "fundraising",
+      "districtId": "district-127",
+      "preferencePercent": 17.823923197574914,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-19",
+      "strategy": "doorstep",
+      "districtId": "district-134",
+      "preferencePercent": 18.818669717665763,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-19",
+      "strategy": "fundraising",
+      "districtId": "district-134",
+      "preferencePercent": 17.373148618359117,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-20",
+      "strategy": "doorstep",
+      "districtId": "district-141",
+      "preferencePercent": 20.756594153679906,
+      "oldElected": true,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-20",
+      "strategy": "fundraising",
+      "districtId": "district-141",
+      "preferencePercent": 18.908914425782857,
+      "oldElected": true,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-21",
+      "strategy": "doorstep",
+      "districtId": "district-148",
+      "preferencePercent": 18.760720256622882,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-21",
+      "strategy": "fundraising",
+      "districtId": "district-148",
+      "preferencePercent": 16.881613418739292,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-22",
+      "strategy": "doorstep",
+      "districtId": "district-155",
+      "preferencePercent": 19.443661998957396,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-22",
+      "strategy": "fundraising",
+      "districtId": "district-155",
+      "preferencePercent": 17.17601202838123,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-23",
+      "strategy": "doorstep",
+      "districtId": "district-162",
+      "preferencePercent": 20.926858890429138,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-23",
+      "strategy": "fundraising",
+      "districtId": "district-162",
+      "preferencePercent": 18.472619671747086,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-24",
+      "strategy": "doorstep",
+      "districtId": "district-169",
+      "preferencePercent": 21.47956764455885,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-24",
+      "strategy": "fundraising",
+      "districtId": "district-169",
+      "preferencePercent": 18.86505492664874,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-25",
+      "strategy": "doorstep",
+      "districtId": "district-176",
+      "preferencePercent": 20.650397586543114,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-25",
+      "strategy": "fundraising",
+      "districtId": "district-176",
+      "preferencePercent": 18.665405189804734,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-26",
+      "strategy": "doorstep",
+      "districtId": "district-183",
+      "preferencePercent": 20.62132192533463,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-26",
+      "strategy": "fundraising",
+      "districtId": "district-183",
+      "preferencePercent": 18.519111483264716,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-27",
+      "strategy": "doorstep",
+      "districtId": "district-190",
+      "preferencePercent": 22.466236537322402,
+      "oldElected": true,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-27",
+      "strategy": "fundraising",
+      "districtId": "district-190",
+      "preferencePercent": 19.377814108133315,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-28",
+      "strategy": "doorstep",
+      "districtId": "district-197",
+      "preferencePercent": 19.71487004254013,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-28",
+      "strategy": "fundraising",
+      "districtId": "district-197",
+      "preferencePercent": 17.097905327100307,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-29",
+      "strategy": "doorstep",
+      "districtId": "district-204",
+      "preferencePercent": 19.216836617980153,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-29",
+      "strategy": "fundraising",
+      "districtId": "district-204",
+      "preferencePercent": 17.048591997940093,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-30",
+      "strategy": "doorstep",
+      "districtId": "district-211",
+      "preferencePercent": 19.770145572535693,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-30",
+      "strategy": "fundraising",
+      "districtId": "district-211",
+      "preferencePercent": 17.57847691131756,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-31",
+      "strategy": "doorstep",
+      "districtId": "district-218",
+      "preferencePercent": 20.292713271360846,
+      "oldElected": true,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-31",
+      "strategy": "fundraising",
+      "districtId": "district-218",
+      "preferencePercent": 17.17097869385034,
+      "oldElected": true,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-32",
+      "strategy": "doorstep",
+      "districtId": "district-225",
+      "preferencePercent": 19.113790097180754,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-32",
+      "strategy": "fundraising",
+      "districtId": "district-225",
+      "preferencePercent": 17.829548643156887,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-33",
+      "strategy": "doorstep",
+      "districtId": "district-232",
+      "preferencePercent": 19.01779198665172,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-33",
+      "strategy": "fundraising",
+      "districtId": "district-232",
+      "preferencePercent": 17.03873306456953,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-34",
+      "strategy": "doorstep",
+      "districtId": "district-239",
+      "preferencePercent": 20.599364138580857,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-34",
+      "strategy": "fundraising",
+      "districtId": "district-239",
+      "preferencePercent": 18.52940946659073,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-35",
+      "strategy": "doorstep",
+      "districtId": "district-246",
+      "preferencePercent": 20.24303001891822,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-35",
+      "strategy": "fundraising",
+      "districtId": "district-246",
+      "preferencePercent": 17.899603215791284,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-36",
+      "strategy": "doorstep",
+      "districtId": "district-253",
+      "preferencePercent": 19.42406466146931,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-36",
+      "strategy": "fundraising",
+      "districtId": "district-253",
+      "preferencePercent": 16.435501849558204,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-37",
+      "strategy": "doorstep",
+      "districtId": "district-260",
+      "preferencePercent": 20.919869271945206,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-37",
+      "strategy": "fundraising",
+      "districtId": "district-260",
+      "preferencePercent": 18.549782237689943,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-38",
+      "strategy": "doorstep",
+      "districtId": "district-267",
+      "preferencePercent": 20.197210291028025,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-38",
+      "strategy": "fundraising",
+      "districtId": "district-267",
+      "preferencePercent": 17.292906831763684,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-39",
+      "strategy": "doorstep",
+      "districtId": "district-274",
+      "preferencePercent": 21.65708102211356,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-39",
+      "strategy": "fundraising",
+      "districtId": "district-274",
+      "preferencePercent": 19.842127936705943,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-40",
+      "strategy": "doorstep",
+      "districtId": "district-281",
+      "preferencePercent": 19.310884496010836,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-40",
+      "strategy": "fundraising",
+      "districtId": "district-281",
+      "preferencePercent": 16.3007301222533,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-41",
+      "strategy": "doorstep",
+      "districtId": "district-288",
+      "preferencePercent": 20.45543495854363,
+      "oldElected": true,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-41",
+      "strategy": "fundraising",
+      "districtId": "district-288",
+      "preferencePercent": 17.379702438227834,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-42",
+      "strategy": "doorstep",
+      "districtId": "district-295",
+      "preferencePercent": 18.618052743840963,
+      "oldElected": true,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-42",
+      "strategy": "fundraising",
+      "districtId": "district-295",
+      "preferencePercent": 17.12700733039528,
+      "oldElected": true,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-43",
+      "strategy": "doorstep",
+      "districtId": "district-002",
+      "preferencePercent": 20.874415537063033,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-43",
+      "strategy": "fundraising",
+      "districtId": "district-002",
+      "preferencePercent": 18.944752258621158,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-44",
+      "strategy": "doorstep",
+      "districtId": "district-009",
+      "preferencePercent": 18.011761971283704,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-44",
+      "strategy": "fundraising",
+      "districtId": "district-009",
+      "preferencePercent": 15.510726480744779,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-45",
+      "strategy": "doorstep",
+      "districtId": "district-016",
+      "preferencePercent": 20.589612531568854,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-45",
+      "strategy": "fundraising",
+      "districtId": "district-016",
+      "preferencePercent": 18.241169379558414,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-46",
+      "strategy": "doorstep",
+      "districtId": "district-023",
+      "preferencePercent": 19.1009611453861,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-46",
+      "strategy": "fundraising",
+      "districtId": "district-023",
+      "preferencePercent": 17.39548932593316,
+      "oldElected": true,
+      "elected": false,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-47",
+      "strategy": "doorstep",
+      "districtId": "district-030",
+      "preferencePercent": 19.515331096854062,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-47",
+      "strategy": "fundraising",
+      "districtId": "district-030",
+      "preferencePercent": 16.817185315676035,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-48",
+      "strategy": "doorstep",
+      "districtId": "district-037",
+      "preferencePercent": 18.383493370190262,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-48",
+      "strategy": "fundraising",
+      "districtId": "district-037",
+      "preferencePercent": 16.63082395419478,
+      "oldElected": false,
+      "elected": false,
+      "oldListPosition": 2,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-49",
+      "strategy": "doorstep",
+      "districtId": "district-044",
+      "preferencePercent": 17.40996661428362,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    },
+    {
+      "seed": "mexico-territorial-v1-49",
+      "strategy": "fundraising",
+      "districtId": "district-044",
+      "preferencePercent": 15.744599038455638,
+      "oldElected": false,
+      "elected": true,
+      "oldListPosition": 1,
+      "listPosition": null
+    }
+  ]
+}

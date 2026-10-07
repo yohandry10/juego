@@ -4,7 +4,7 @@
   "name": "México",
   "experimental": true,
   "startingYear": 2026,
-  "dataVersion": "mexico-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance-treaty-routes-v1",
+  "dataVersion": "mexico-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance-treaty-routes-v1-territorial-election-v1",
   "population": 131946900,
   "politicalSystem": {
     "formOfGovernment": "presidential",
@@ -14,6 +14,7 @@
       "selection": "direct-election",
       "termYears": 6,
       "consecutiveTermLimit": null,
+      "totalTermLimit": 1,
       "election": {
         "method": "plurality",
         "firstRoundThresholdPercent": 50,
@@ -38,6 +39,7 @@
         "districtCount": 300,
         "nationalSeats": 200,
         "seatAllocationMethod": "largest-remainder",
+        "territorialSeatAllocationMethod": "plurality",
         "electoralThresholdPercent": 3
       },
       "upperChamber": {
@@ -210,7 +212,14 @@
     {
       "name": "Cámara de Diputados · Constitución Política",
       "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
-      "indicator": "Congreso bicameral, 500 diputaciones por mayoría relativa y representación proporcional, 128 senadurías y mandato presidencial de seis años sin reelección",
+      "indicator": "Arts. 51–54: 300 distritos de mayoría relativa, 200 puestos de listas regionales, renovación trienal. Art. 83: presidencia de seis años sin retorno tras ejercerla. Los distritos del juego son abstractos; listas, límites de sobrerrepresentación e interinatos siguen pendientes.",
+      "year": 2026,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "INE · Proceso Electoral Federal 2026–2027",
+      "url": "https://portal.ine.mx/voto-y-elecciones/elecciones-2027/",
+      "indicator": "Estructura 300 diputaciones territoriales y 200 de representación proporcional; candidatos, partidos y resultados del juego son ficticios.",
       "year": 2026,
       "accessedOn": "2026-10-06"
     },

@@ -1,6 +1,8 @@
 # Informe final de avance — MANDATO
 
-Corte 2026-10-06 desde `e9bc537`. Plataforma exclusivamente PC. **El juego completo no está terminado; Fases 4 y 5 siguen abiertas.** La integración conserva lo existente y no acredita criterios sin evidencia.
+Corte 2026-10-06 desde `d301e14`. Plataforma exclusivamente PC. **El juego completo no está terminado; Fases 4 y 5 siguen abiertas.** La integración conserva lo existente y no acredita criterios sin evidencia.
+
+Este incremento prioriza jugabilidad por corrección expresa del usuario: detiene la ampliación constitucional país por país y conserva lo existente. Añade «Jugar ahora», costos visibles, bloqueo de gastos sin fondos y diario de campaña en lenguaje cotidiano. Personalización completa disponible. Se integran las correcciones electorales ya iniciadas; [alcance y evidencia](electoral-gameplay-review.md).
 
 Se añadieron rutas nacionales de ratificación con cámaras, mayorías, quórum, abstenciones/ausencias, espera y desacuerdo. Préstamos usan autorización presupuestaria ficticia separada de tratados. Votos nominales y revisiones guardan evidencia auditada; el rechazo no activa beneficios y la interfaz explica el siguiente paso. Los diez perfiles públicos se sincronizan desde los canónicos durante el build.
 
@@ -10,22 +12,22 @@ La comparación externa de frecuencias usa agregados UCDP/Powell/Thyne de 2000�
 
 Se corrigió la pérdida de efectos en shocks simultáneos y la selección del propio emisor como receptor de una sanción financiera. La auditoría verifica identidades, fechas, tramos acumulados y orden comercial; [inventario y límites](world-semantic-review.md). Parámetros v5 mantienen los coeficientes comunes y se comprueban con reserva v2 nueva frente al corte anterior.
 
-## Validación actual
+## Validación y evidencia conservada
 
-- 139/139 pruebas; build/Worker; 30 archivos idénticos por SHA-256 en dos builds.
-- 100 mundos × 50 años, auditoría trimestral: 217 actores conservados, cero valores/referencias inválidos o guerras nucleares directas; medias 31,08 conflictos, 63,94 golpes, 24,07 shocks. Sensibilidad: 1.736 exposiciones y 36 mundos adicionales.
-- 1.000 simulaciones base; 500 campañas; 4.500 muestras cerradas, 450 por país, con 500 semillas emparejadas `balance-reserved-v3` reutilizadas; 651 arranques generados. Balance sin aceptar: diputación mexicana 0/180 y extremos ideológicos.
-- Contenido: 407 plantillas/64 arcos/80 internacionales/10 arcos mundiales; sin incidencias automáticas. Carrera de 40 años: ocho mandatos, restauración idéntica desde trimestre 80, cero repetición literal a 30 años. Guardado crece: 1,40 → 1,90 MiB; estabilidad de memoria sin acreditar.
+- 143/143 pruebas; build/Worker; 30 archivos idénticos por SHA-256 en dos builds.
+- Evidencia conservada de d301e14: 100 mundos × 50 años, auditoría trimestral: 217 actores conservados, cero valores/referencias inválidos o guerras nucleares directas; medias 31,08 conflictos, 63,94 golpes, 24,07 shocks. Sensibilidad: 1.736 exposiciones y 36 mundos adicionales.
+- Se conserva el lote base de 1.000; se repiten 500 campañas; 4.500 muestras cerradas, 450 por país, con 500 semillas nuevas emparejadas `balance-reserved-v4`; 651 arranques generados. Balance sin aceptar: diputación mexicana 15/180, Perú presidencial 9/135 mandatos completos y extremos ideológicos.
+- Contenido: 407 plantillas/64 arcos/80 internacionales/10 arcos mundiales; sin incidencias automáticas. Carrera anterior de 40 años: ocho mandatos, restauración idéntica desde trimestre 80, cero repetición literal a 30 años. Guardado crece: 1,40 → 1,90 MiB; estabilidad de memoria sin acreditar.
 - PC: Chromium/Firefox verifican dieciséis recorridos de participación y veinte rutas nacionales con exportación idéntica al comando, financiación aprobada/suspendida/recuperada, costo y esperas; Worker offline sincronizado sin fallback; bandeja/diario largos; Ayuda/créditos/perfiles offline y teclado/texto en 1280/1920 px. Contraste CSS, smoke Edge, régimen y arranques pasan.
 
 [Comandos, huella y límites](validation-latest.json), [Fase 4](phase-4-report.md), [Fase 5](phase-5-report.md). Las comparaciones contra `0df312e` conservadas en informes históricos no representan los parámetros mundiales v5 actuales.
 
 ## Criterios abiertos
 
-Auditoría semántica integral y tasas de shocks; restricciones restantes y alcance nacional excluido; curación institucional/electoral y balance; contenido/editorial/variantes/cultura; legado futuro completo; archivo/memoria sostenida y más cargos; fuentes/licencias/alojamiento/publicación. El usuario confirmó que las sesiones humanas aún no se realizaron: cinco personas nuevas, revisión editorial humana, lectores de pantalla y hardware PC representativo permanecen pendientes. Ninguna prueba automática los cumple.
+Auditoría semántica integral y tasas de shocks; restricciones restantes y alcance nacional excluido; balance de juego; contenido/editorial/variantes/cultura; legado futuro completo; archivo/memoria sostenida y más cargos; fuentes/licencias/alojamiento/publicación. La ampliación constitucional exhaustiva se detiene por la corrección del usuario. El usuario confirmó que las sesiones humanas aún no se realizaron: cinco personas nuevas, revisión editorial humana, lectores de pantalla y hardware PC representativo permanecen pendientes. Ninguna prueba automática los cumple.
 
 [Manual](manual-del-juego.md), [decisiones](decisions.md), [continuación](prompt-continuacion-fases-2-a-4-5.md) y [protocolo humano](protocolo-prueba-jugadores.md) contienen el alcance y orden vigente. Integración autorizada: diff/check, revisión del contenido preparado, commit, push a origin/main sin force y SHA remoto coincidente; el SHA definitivo se comunica después, sin autorreferencia. Integrar este avance no termina el juego.
 
 Diagnóstico de shocks por tipo: [referencia y resultados](shock-frequency-review.md). La distribución uniforme queda fuera de la banda de diseño frente a dos proxies independientes de encarecimiento (energía/alimentos); 32 semillas nuevas `shock-reference-v1`, ya consumidas. No se cambió el motor ni se ajustó a esos resultados. Faltan correspondencia suministro/precios y otros seis tipos; Fase 4 sigue abierta.
 
-En este incremento se repiten las 139 pruebas, build y comprobaciones del Worker, cien mundos de cincuenta años, smoke, financiación/ratificación/Worker en PC y carrera de cuarenta años con navegador. Base, campañas, balance de 4.500, generados, diplomacia, contenido, sensibilidad y referencias conservan la evidencia de a8140c5/e9bc537: no son lotes ni semillas nuevos de este incremento. Se añade evidencia de golpes y se endurece la auditoría de importación; la comparación de 600 trimestres mantiene el estado de juego idéntico salvo el registro nuevo.
+En este incremento se repiten 143 pruebas, build/Worker/reproducibilidad, 500 campañas, contenido, 4.500 carreras con 500 semillas nuevas emparejadas `balance-reserved-v4`, smoke y recorridos PC de entrada rápida, resultado electoral, ratificación y Worker offline. Las métricas numéricas de carreras se obtuvieron antes de ajustar el texto del diario, sin cambiar costos, probabilidades ni efectos en ese ajuste. Mundo, sensibilidad, diplomacia, generados, financiación, participación y carrera larga conservan evidencia explícita de cortes anteriores; no son lotes nuevos de esta integración.
