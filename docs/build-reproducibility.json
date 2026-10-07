@@ -7,28 +7,28 @@
   "limitation": "Dos builds consecutivos con las dependencias instaladas; no valida instalación limpia en otro SO.",
   "hashes": [
     {
-      "file": "assets/EconomyView-DLvtKCIh.js",
-      "sha256": "ddb368332b5e6f44610aa1db892504fb94c415f9f44455b0d3fca7fc3dd19f8e"
+      "file": "assets/EconomyView-D0Cvrw0A.js",
+      "sha256": "b0264a2270cce676b27657424fa298c5b655a090b66fe1874b7857c2b0d1703f"
     },
     {
-      "file": "assets/HallOfFame-CGFS0aZJ.js",
-      "sha256": "9870acbe8215306d8f6163d2fcc5e81c3af05b55b661808b3138be2f737bf3ef"
+      "file": "assets/HallOfFame-C44wA_B_.js",
+      "sha256": "00119e609341e4a1b3bf78f4dd7c88820d04807c9d2d1b7be15cd4277e40bdf0"
     },
     {
-      "file": "assets/HelpView-BZEBn7vw.js",
-      "sha256": "643591c03f3d57e6b6eb9d3365a06622c64cf886931adb7f5314d57b81a12364"
+      "file": "assets/HelpView-qG1KZDbH.js",
+      "sha256": "afaa51132f7f23f765ae9e4036db013a9e3809d590f0bb95e260ce3c4d992028"
     },
     {
       "file": "assets/InboxView-3Wr2TA_o.js",
       "sha256": "b79eff7ccb5ad00504e2e716597f5c3c4ca7a4240191bc660cff9a061e5df25d"
     },
     {
-      "file": "assets/index-DoqStGDc.css",
-      "sha256": "d136697ee77fefcce0f814f1c11edbfa7e5ad346537592451262301243480dc6"
+      "file": "assets/index-DLVAlKdC.js",
+      "sha256": "b19193b896cb366c9e1bca40602d6623f9a9ea1d3bf92283df538401af551f23"
     },
     {
-      "file": "assets/index-XsnIcX_D.js",
-      "sha256": "f27ca24de8273a7fe3a5e907be51e7b6e8d5094de3f5143da5f3f9a9a30d11ac"
+      "file": "assets/index-DoqStGDc.css",
+      "sha256": "d136697ee77fefcce0f814f1c11edbfa7e5ad346537592451262301243480dc6"
     },
     {
       "file": "assets/react-Dy-GIXkn.js",
@@ -39,8 +39,8 @@
       "sha256": "bbf7c5086ae414dc3f33777e3eebf16ea8631325b8bb4690d25091c03567f31a"
     },
     {
-      "file": "assets/simulation-worker-NimtLwUy.js",
-      "sha256": "c5df87aae21b80e3eb0e5ab222da5753afa37176f5efd8b784d42b0ddb6ed7b4"
+      "file": "assets/simulation-worker-bwX9gZse.js",
+      "sha256": "f458ffb61378a09236cb3b47486316c91357b7aa50499d22960c7e8f969991c0"
     },
     {
       "file": "assets/validation-2oiOZAhq.js",
@@ -51,8 +51,8 @@
       "sha256": "9e59c15f01cb211e22bd74f1a85f52406939271d2882e80ea4176404b513e7a1"
     },
     {
-      "file": "assets/WorldView-MUypTlpl.js",
-      "sha256": "666299603db5071d5d4fe7ffc6588d11be4bf0f0fd641cbf8b51013175386b94"
+      "file": "assets/WorldView-DC-k8JDs.js",
+      "sha256": "5d880e9c569cbd0063bf5851ae381316c4ffb784560077184fac503063aef41d"
     },
     {
       "file": "credits.html",
@@ -108,11 +108,11 @@
     },
     {
       "file": "index.html",
-      "sha256": "7cc210e0d017d04f374e9c7bef3372734b9e836d3529e0f0fa7a22185fda1887"
+      "sha256": "2ab8ae44b6b03201faa0830bf14a3bb5a482f866c5428f7483c0aaad1681232d"
     },
     {
       "file": "offline-manifest.json",
-      "sha256": "a0fd6264200bda7da460b9a7cefa8274137747ddb4b876c5471f0223c31275b1"
+      "sha256": "941f6bec1ef1a864c4630072e1eccb4ed9e74bcea4c7788d9dec5fe3ee8b6422"
     },
     {
       "file": "privacy.html",
@@ -120,7 +120,7 @@
     },
     {
       "file": "sw.js",
-      "sha256": "f9a9ac943444b14bec6341eaae03054646ba61e2d3889dbba7df2a0e918bca4c"
+      "sha256": "3c47cb17fc138da15395ef59847ce01af655331fae0b40ca6323fd97d6299e00"
     },
     {
       "file": "THIRD-PARTY-NOTICES.txt",

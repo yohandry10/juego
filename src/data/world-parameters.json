@@ -1,5 +1,5 @@
 {
-  "version": "world-balance-v4",
+  "version": "world-balance-v5",
   "description": "Coeficientes comunes de juego; frecuencias agregadas contrastadas como proxies con UCDP/Powell–Thyne. No probabilidades históricas nacionales ni pérdidas humanas observadas.",
   "conflictQuarterProbability": 0.65,
   "conflictMinTension": 25,

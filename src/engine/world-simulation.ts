@@ -5,6 +5,7 @@ import { advanceWorldConflict, beginWorldConflict, coupRisk, shockExposure } fro
 import { createRng, hashSeed } from "./rng.js";
 import { auditWorld } from "./world-audit.js";
 import { evaluateWorldDomesticImpact } from "./world-domestic-impact.js";
+import { activeGlobalShocks, shockSupplyFactor, shockTradeImpact } from "./world-shocks.js";
 import { evaluateWorldDecision, explainWorldDecision } from "./world-decisions.js";
 import { advanceFinancing, advanceTradeDisputes, collectiveEligibility, createTradeDispute, organizationMember } from "./world-institutions.js";
 import type { EconomicIndicators } from "../domain/types.js";
@@ -82,17 +83,14 @@ export function advanceGeopolitics(state: GeopoliticsState, seed: string, quarte
     const shockDue = roll(seed, q * 99991) < 0.12;
     const shockType = (["energy", "food", "finance", "interest-rates", "pandemic", "natural-disaster", "semiconductor", "migration"] as const)[hashSeed(`${seed}:shock:${q}`) % 8]!;
     const origin = actors[hashSeed(`${seed}:origin:${q}`) % actors.length]!;
-    const activeShock = shockDue ? null : current.shocks.find((item) => q - item.quarterIndex < item.durationQuarters);
-    const incomingShock = shockDue ? { id: `shock-${q}`, quarterIndex: q, type: shockType, originId: origin.id, intensity: 10 + roll(seed, q * 33331) * 35, durationQuarters: 2 + Math.floor(roll(seed, q * 44449) * 9), explanation: `El shock de ${shockType} se originó en ${definitions.find((d) => d.id === origin.id)?.name ?? origin.id}; las dependencias comerciales determinan la exposición.` } : activeShock;
+    const shock = shockDue ? { id: `shock-${q}`, quarterIndex: q, type: shockType, originId: origin.id, intensity: 10 + roll(seed, q * 33331) * 35, durationQuarters: 2 + Math.floor(roll(seed, q * 44449) * 9), explanation: `El shock de ${shockType} se originó en ${definitions.find((d) => d.id === origin.id)?.name ?? origin.id}; las dependencias comerciales determinan la exposición.` } : null;
+    const liveShocks = activeGlobalShocks(shock ? [...current.shocks, shock] : current.shocks, q);
     let relations = current.relations.map((relation, i) => {
       const sanctioned = current.sanctions.filter((item) => q - item.startedQuarter < parameters.sanctionDurationQuarters).some((item) => (item.fromId === relation.a && item.toId === relation.b) || (item.fromId === relation.b && item.toId === relation.a));
-      const supplyBreak = incomingShock && (relation.criticalSector === incomingShock.type || (relation.criticalSector === "technology" && incomingShock.type === "semiconductor"));
-      return { ...relation, tension: clamp(relation.tension + (roll(seed, q * 1700 + i) - 0.53) * 4 + (sanctioned ? 1.2 : 0), 0, 100), trust: clamp(relation.trust + (sanctioned ? -0.9 : 0.04), 0, 100), annualFlowUsd: relation.annualFlowUsd * (sanctioned ? 0.965 : supplyBreak ? 0.92 : 1) };
+      return { ...relation, tension: clamp(relation.tension + (roll(seed, q * 1700 + i) - 0.53) * 4 + (sanctioned ? 1.2 : 0), 0, 100), trust: clamp(relation.trust + (sanctioned ? -0.9 : 0.04), 0, 100), annualFlowUsd: relation.annualFlowUsd * (sanctioned ? 0.965 : 1) * shockSupplyFactor(relation, liveShocks) };
     });
-    const shock = shockDue ? incomingShock : null;
     const updated = actors.map((actor) => {
-      const exposure = incomingShock ? shockExposure(actor, incomingShock, current.relations, definitions) : 0;
-      const impact = incomingShock ? incomingShock.intensity * exposure * (incomingShock.type === "finance" ? -1 : -0.45) / incomingShock.durationQuarters : 0;
+      const impact = shockTradeImpact(actor, liveShocks, current.relations, definitions);
       return { ...actor, tradeShockIndex: clamp(actor.tradeShockIndex + impact, -100, 100), domesticStress: clamp(actor.domesticStress + Math.abs(impact) * 0.12, 0, 100) };
     });
     const annualVote = q % 4 === 0;
@@ -122,7 +120,9 @@ export function advanceGeopolitics(state: GeopoliticsState, seed: string, quarte
       headlines = [...headlines.slice(-49), { quarterIndex: q, text: "Dos cancillerías anuncian que la situación está bajo control, con mapas sobre la mesa.", explanation: conflict.explanation }];
     }
     const currentConflicts = conflicts.filter((conflict) => conflict.status === "active" || conflict.resolvedQuarter === q);
-    const sanctions = shock && shock.type === "finance" && shock.intensity > 34 && current.relations.length ? [...current.sanctions.slice(-49), { fromId: shock.originId, toId: conflictRelation?.b ?? updated[0]!.id, startedQuarter: q, reason: "Respuesta financiera simulada a tensión externa" }] : current.sanctions;
+    const responseTarget = conflictRelation?.b ?? updated[0]!.id;
+    const sanctionTarget = responseTarget !== shock?.originId ? responseTarget : conflictRelation?.a && conflictRelation.a !== shock?.originId ? conflictRelation.a : updated.find((a) => a.id !== shock?.originId)?.id;
+    const sanctions = shock && shock.type === "finance" && shock.intensity > 34 && current.relations.length && sanctionTarget ? [...current.sanctions.slice(-49), { fromId: shock.originId, toId: sanctionTarget, startedQuarter: q, reason: "Respuesta financiera simulada a tensión externa" }] : current.sanctions;
     const actorsWithSanctionCosts = updated.map((actor) => {
       const active = sanctions.filter((item) => q - item.startedQuarter < 12 && (item.fromId === actor.id || item.toId === actor.id));
       const senderCost = active.filter((item) => item.fromId === actor.id).length * 0.22;
@@ -193,7 +193,7 @@ export function advanceGeopolitics(state: GeopoliticsState, seed: string, quarte
     const domesticCauses = [
       ...(vote?.passed && organization && collectiveEligibility({ ...current, actors: actorsAfterCoups, coupHistory, quarterIndex: q }, organization, current.playerCountryId).eligible ? [vote.explanation] : []),
       ...(impactEvidence.tradeShockIndex !== 0 ? [`El impacto comercial acumulado (${impactEvidence.tradeShockIndex.toFixed(2)}) todavía repercute en crecimiento, precios y empleo; incorpora shocks, sanciones, conflictos y costos de coordinación.`] : []),
-      ...(incomingShock ? [`${incomingShock.explanation} Exposición nacional ${(player ? shockExposure(player, incomingShock, relations, definitions) * 100 : 0).toFixed(1)}% en el grafo sintético.`] : []),
+      ...liveShocks.map((item) => `${item.explanation} Exposición nacional ${(player ? shockExposure(player, item, current.relations, definitions) * 100 : 0).toFixed(1)}% en el grafo sintético; efecto trimestral durante su plazo activo.`),
       ...conflicts.filter((c) => [c.attackerId, c.defenderId].includes(current.playerCountryId)).slice(-2).map((c) => `${c.explanation}${c.reconstruction ? ` Posguerra actual: daño ${c.reconstruction.damage.toFixed(1)}, desplazamiento ${c.reconstruction.displacement.toFixed(1)} e insurgencia ${c.reconstruction.insurgency.toFixed(1)} aumentan presión interna; reparaciones ${c.reconstruction.reparations.toFixed(1)} afectan a pagador y receptor según el resultado.` : ""}`),
       ...(aidIndex > 0 ? [`El compromiso de ayuda exterior (índice ${aidIndex}) presiona el presupuesto y el crecimiento nacionales.`] : []),
       ...(migrationAgreement ? ["El acuerdo de movilidad ratificado mejora gradualmente la coordinación laboral; no simula personas ni flujos migratorios."] : []),

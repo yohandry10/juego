@@ -18,7 +18,7 @@ export function organizationParticipationRestriction(organization: International
 /** Eligibility for collective benefits is a game condition, never a change to the historical roster. */
 export function collectiveEligibility(state: GeopoliticsState, organization: InternationalOrganization, actorId: string): OrganizationStanding {
   const actor = state.actors.find((a) => a.id === actorId)!;
-  const recentCoup = (state.coupHistory ?? []).some((c) => c.actorId === actorId && state.quarterIndex - c.quarterIndex < 8);
+  const recentCoup = (state.coupHistory ?? []).some((c) => c.actorId === actorId && c.quarterIndex <= state.quarterIndex && state.quarterIndex - c.quarterIndex < 8);
   const conditioned = organization.kind === "regional" || organization.kind === "security";
   const restriction = organizationParticipationRestriction(organization, actorId);
   const eligible = organizationMember(state, organization.id, actorId) && !restriction && (!conditioned || actor.regimeStability >= 25 && actor.allianceCredibility >= 35 && !recentCoup);

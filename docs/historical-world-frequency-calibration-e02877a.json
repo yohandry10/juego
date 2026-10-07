@@ -1,0 +1,804 @@
+{
+  "date": "2026-10-06",
+  "targets": {
+    "episodesPerYear": 0.6538461538461539,
+    "coupsPerYear": 1.3846153846153846
+  },
+  "reference": "independent-world-reference.json",
+  "protocol": "Tres candidatos comunes, ocho semillas de ajuste emparejadas de 50 años; candidato seleccionado por suma de errores logarítmicos; 32 semillas nuevas de reserva de 50 años. No se vuelve a ajustar con la reserva.",
+  "proxyFactorTolerance": 2,
+  "withinProxyBand": true,
+  "applied": true,
+  "selected": {
+    "conflictQuarterProbability": 0.65,
+    "coupRiskScale": 0.0024
+  },
+  "training": [
+    {
+      "candidate": {
+        "conflictQuarterProbability": 0.35,
+        "coupRiskScale": 0.0012
+      },
+      "error": 1.324535434773264,
+      "measurement": {
+        "runs": 8,
+        "years": 50,
+        "episodesPerYear": 0.3,
+        "coupsPerYear": 0.8025,
+        "shocksPerYear": 0.46,
+        "rows": [
+          {
+            "seed": "frequency-training-v1-0",
+            "episodes": 12,
+            "coups": 37,
+            "shocks": 25,
+            "byType": {
+              "conventional": 2,
+              "proxy": 2,
+              "hybrid": 2,
+              "blockade": 2,
+              "insurgency": 4
+            }
+          },
+          {
+            "seed": "frequency-training-v1-1",
+            "episodes": 22,
+            "coups": 39,
+            "shocks": 40,
+            "byType": {
+              "conventional": 4,
+              "proxy": 2,
+              "hybrid": 9,
+              "blockade": 4,
+              "insurgency": 3
+            }
+          },
+          {
+            "seed": "frequency-training-v1-2",
+            "episodes": 19,
+            "coups": 48,
+            "shocks": 21,
+            "byType": {
+              "conventional": 5,
+              "proxy": 2,
+              "hybrid": 5,
+              "blockade": 4,
+              "insurgency": 3
+            }
+          },
+          {
+            "seed": "frequency-training-v1-3",
+            "episodes": 16,
+            "coups": 44,
+            "shocks": 29,
+            "byType": {
+              "conventional": 4,
+              "proxy": 3,
+              "hybrid": 2,
+              "blockade": 2,
+              "insurgency": 5
+            }
+          },
+          {
+            "seed": "frequency-training-v1-4",
+            "episodes": 7,
+            "coups": 36,
+            "shocks": 17,
+            "byType": {
+              "conventional": 3,
+              "proxy": 1,
+              "hybrid": 2,
+              "blockade": 0,
+              "insurgency": 1
+            }
+          },
+          {
+            "seed": "frequency-training-v1-5",
+            "episodes": 19,
+            "coups": 23,
+            "shocks": 14,
+            "byType": {
+              "conventional": 6,
+              "proxy": 3,
+              "hybrid": 4,
+              "blockade": 4,
+              "insurgency": 2
+            }
+          },
+          {
+            "seed": "frequency-training-v1-6",
+            "episodes": 15,
+            "coups": 46,
+            "shocks": 16,
+            "byType": {
+              "conventional": 2,
+              "proxy": 2,
+              "hybrid": 3,
+              "blockade": 5,
+              "insurgency": 3
+            }
+          },
+          {
+            "seed": "frequency-training-v1-7",
+            "episodes": 10,
+            "coups": 48,
+            "shocks": 22,
+            "byType": {
+              "conventional": 2,
+              "proxy": 1,
+              "hybrid": 1,
+              "blockade": 0,
+              "insurgency": 6
+            }
+          }
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "conflictQuarterProbability": 0.5,
+        "coupRiskScale": 0.0018
+      },
+      "error": 0.722798985492119,
+      "measurement": {
+        "runs": 8,
+        "years": 50,
+        "episodesPerYear": 0.445,
+        "coupsPerYear": 0.9875,
+        "shocksPerYear": 0.46,
+        "rows": [
+          {
+            "seed": "frequency-training-v1-0",
+            "episodes": 22,
+            "coups": 47,
+            "shocks": 25,
+            "byType": {
+              "conventional": 3,
+              "proxy": 2,
+              "hybrid": 7,
+              "blockade": 5,
+              "insurgency": 5
+            }
+          },
+          {
+            "seed": "frequency-training-v1-1",
+            "episodes": 26,
+            "coups": 47,
+            "shocks": 40,
+            "byType": {
+              "conventional": 6,
+              "proxy": 3,
+              "hybrid": 10,
+              "blockade": 4,
+              "insurgency": 3
+            }
+          },
+          {
+            "seed": "frequency-training-v1-2",
+            "episodes": 25,
+            "coups": 62,
+            "shocks": 21,
+            "byType": {
+              "conventional": 5,
+              "proxy": 6,
+              "hybrid": 6,
+              "blockade": 5,
+              "insurgency": 3
+            }
+          },
+          {
+            "seed": "frequency-training-v1-3",
+            "episodes": 20,
+            "coups": 52,
+            "shocks": 29,
+            "byType": {
+              "conventional": 5,
+              "proxy": 4,
+              "hybrid": 2,
+              "blockade": 3,
+              "insurgency": 6
+            }
+          },
+          {
+            "seed": "frequency-training-v1-4",
+            "episodes": 17,
+            "coups": 44,
+            "shocks": 17,
+            "byType": {
+              "conventional": 6,
+              "proxy": 3,
+              "hybrid": 5,
+              "blockade": 0,
+              "insurgency": 3
+            }
+          },
+          {
+            "seed": "frequency-training-v1-5",
+            "episodes": 26,
+            "coups": 33,
+            "shocks": 14,
+            "byType": {
+              "conventional": 9,
+              "proxy": 5,
+              "hybrid": 4,
+              "blockade": 5,
+              "insurgency": 3
+            }
+          },
+          {
+            "seed": "frequency-training-v1-6",
+            "episodes": 22,
+            "coups": 52,
+            "shocks": 16,
+            "byType": {
+              "conventional": 4,
+              "proxy": 4,
+              "hybrid": 6,
+              "blockade": 5,
+              "insurgency": 3
+            }
+          },
+          {
+            "seed": "frequency-training-v1-7",
+            "episodes": 20,
+            "coups": 58,
+            "shocks": 22,
+            "byType": {
+              "conventional": 5,
+              "proxy": 3,
+              "hybrid": 2,
+              "blockade": 1,
+              "insurgency": 9
+            }
+          }
+        ]
+      }
+    },
+    {
+      "candidate": {
+        "conflictQuarterProbability": 0.65,
+        "coupRiskScale": 0.0024
+      },
+      "error": 0.35152482987933564,
+      "measurement": {
+        "runs": 8,
+        "years": 50,
+        "episodesPerYear": 0.56,
+        "coupsPerYear": 1.1375,
+        "shocksPerYear": 0.46,
+        "rows": [
+          {
+            "seed": "frequency-training-v1-0",
+            "episodes": 28,
+            "coups": 53,
+            "shocks": 25,
+            "byType": {
+              "conventional": 5,
+              "proxy": 3,
+              "hybrid": 8,
+              "blockade": 6,
+              "insurgency": 6
+            }
+          },
+          {
+            "seed": "frequency-training-v1-1",
+            "episodes": 32,
+            "coups": 54,
+            "shocks": 40,
+            "byType": {
+              "conventional": 7,
+              "proxy": 5,
+              "hybrid": 11,
+              "blockade": 5,
+              "insurgency": 4
+            }
+          },
+          {
+            "seed": "frequency-training-v1-2",
+            "episodes": 32,
+            "coups": 69,
+            "shocks": 21,
+            "byType": {
+              "conventional": 8,
+              "proxy": 6,
+              "hybrid": 7,
+              "blockade": 7,
+              "insurgency": 4
+            }
+          },
+          {
+            "seed": "frequency-training-v1-3",
+            "episodes": 27,
+            "coups": 67,
+            "shocks": 29,
+            "byType": {
+              "conventional": 5,
+              "proxy": 6,
+              "hybrid": 6,
+              "blockade": 4,
+              "insurgency": 6
+            }
+          },
+          {
+            "seed": "frequency-training-v1-4",
+            "episodes": 20,
+            "coups": 53,
+            "shocks": 17,
+            "byType": {
+              "conventional": 6,
+              "proxy": 4,
+              "hybrid": 5,
+              "blockade": 0,
+              "insurgency": 5
+            }
+          },
+          {
+            "seed": "frequency-training-v1-5",
+            "episodes": 31,
+            "coups": 39,
+            "shocks": 14,
+            "byType": {
+              "conventional": 9,
+              "proxy": 6,
+              "hybrid": 6,
+              "blockade": 6,
+              "insurgency": 4
+            }
+          },
+          {
+            "seed": "frequency-training-v1-6",
+            "episodes": 30,
+            "coups": 55,
+            "shocks": 16,
+            "byType": {
+              "conventional": 5,
+              "proxy": 6,
+              "hybrid": 8,
+              "blockade": 6,
+              "insurgency": 5
+            }
+          },
+          {
+            "seed": "frequency-training-v1-7",
+            "episodes": 24,
+            "coups": 65,
+            "shocks": 22,
+            "byType": {
+              "conventional": 7,
+              "proxy": 4,
+              "hybrid": 2,
+              "blockade": 1,
+              "insurgency": 10
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "holdout": {
+    "runs": 32,
+    "years": 50,
+    "episodesPerYear": 0.5775,
+    "coupsPerYear": 1.240625,
+    "shocksPerYear": 0.481875,
+    "rows": [
+      {
+        "seed": "frequency-reserved-v1-0",
+        "episodes": 23,
+        "coups": 50,
+        "shocks": 20,
+        "byType": {
+          "conventional": 6,
+          "proxy": 4,
+          "hybrid": 6,
+          "blockade": 3,
+          "insurgency": 4
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-1",
+        "episodes": 24,
+        "coups": 52,
+        "shocks": 25,
+        "byType": {
+          "conventional": 4,
+          "proxy": 4,
+          "hybrid": 3,
+          "blockade": 7,
+          "insurgency": 6
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-2",
+        "episodes": 24,
+        "coups": 66,
+        "shocks": 30,
+        "byType": {
+          "conventional": 7,
+          "proxy": 3,
+          "hybrid": 3,
+          "blockade": 5,
+          "insurgency": 6
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-3",
+        "episodes": 34,
+        "coups": 60,
+        "shocks": 21,
+        "byType": {
+          "conventional": 11,
+          "proxy": 9,
+          "hybrid": 3,
+          "blockade": 6,
+          "insurgency": 5
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-4",
+        "episodes": 30,
+        "coups": 68,
+        "shocks": 18,
+        "byType": {
+          "conventional": 5,
+          "proxy": 4,
+          "hybrid": 6,
+          "blockade": 3,
+          "insurgency": 12
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-5",
+        "episodes": 35,
+        "coups": 64,
+        "shocks": 25,
+        "byType": {
+          "conventional": 4,
+          "proxy": 5,
+          "hybrid": 9,
+          "blockade": 10,
+          "insurgency": 7
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-6",
+        "episodes": 27,
+        "coups": 48,
+        "shocks": 31,
+        "byType": {
+          "conventional": 9,
+          "proxy": 8,
+          "hybrid": 5,
+          "blockade": 4,
+          "insurgency": 1
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-7",
+        "episodes": 33,
+        "coups": 65,
+        "shocks": 29,
+        "byType": {
+          "conventional": 9,
+          "proxy": 4,
+          "hybrid": 6,
+          "blockade": 4,
+          "insurgency": 10
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-8",
+        "episodes": 29,
+        "coups": 72,
+        "shocks": 25,
+        "byType": {
+          "conventional": 5,
+          "proxy": 6,
+          "hybrid": 7,
+          "blockade": 7,
+          "insurgency": 4
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-9",
+        "episodes": 20,
+        "coups": 67,
+        "shocks": 24,
+        "byType": {
+          "conventional": 5,
+          "proxy": 2,
+          "hybrid": 4,
+          "blockade": 2,
+          "insurgency": 7
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-10",
+        "episodes": 42,
+        "coups": 84,
+        "shocks": 25,
+        "byType": {
+          "conventional": 7,
+          "proxy": 8,
+          "hybrid": 11,
+          "blockade": 10,
+          "insurgency": 6
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-11",
+        "episodes": 28,
+        "coups": 47,
+        "shocks": 25,
+        "byType": {
+          "conventional": 4,
+          "proxy": 10,
+          "hybrid": 6,
+          "blockade": 5,
+          "insurgency": 3
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-12",
+        "episodes": 33,
+        "coups": 80,
+        "shocks": 19,
+        "byType": {
+          "conventional": 4,
+          "proxy": 11,
+          "hybrid": 7,
+          "blockade": 4,
+          "insurgency": 7
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-13",
+        "episodes": 20,
+        "coups": 76,
+        "shocks": 24,
+        "byType": {
+          "conventional": 4,
+          "proxy": 2,
+          "hybrid": 7,
+          "blockade": 5,
+          "insurgency": 2
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-14",
+        "episodes": 40,
+        "coups": 73,
+        "shocks": 24,
+        "byType": {
+          "conventional": 7,
+          "proxy": 10,
+          "hybrid": 5,
+          "blockade": 9,
+          "insurgency": 9
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-15",
+        "episodes": 30,
+        "coups": 58,
+        "shocks": 33,
+        "byType": {
+          "conventional": 5,
+          "proxy": 7,
+          "hybrid": 5,
+          "blockade": 6,
+          "insurgency": 7
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-16",
+        "episodes": 26,
+        "coups": 55,
+        "shocks": 21,
+        "byType": {
+          "conventional": 4,
+          "proxy": 4,
+          "hybrid": 8,
+          "blockade": 4,
+          "insurgency": 6
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-17",
+        "episodes": 20,
+        "coups": 49,
+        "shocks": 24,
+        "byType": {
+          "conventional": 5,
+          "proxy": 5,
+          "hybrid": 3,
+          "blockade": 1,
+          "insurgency": 6
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-18",
+        "episodes": 37,
+        "coups": 58,
+        "shocks": 24,
+        "byType": {
+          "conventional": 4,
+          "proxy": 6,
+          "hybrid": 6,
+          "blockade": 9,
+          "insurgency": 12
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-19",
+        "episodes": 26,
+        "coups": 43,
+        "shocks": 19,
+        "byType": {
+          "conventional": 9,
+          "proxy": 5,
+          "hybrid": 5,
+          "blockade": 3,
+          "insurgency": 4
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-20",
+        "episodes": 29,
+        "coups": 58,
+        "shocks": 22,
+        "byType": {
+          "conventional": 7,
+          "proxy": 7,
+          "hybrid": 6,
+          "blockade": 4,
+          "insurgency": 5
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-21",
+        "episodes": 33,
+        "coups": 68,
+        "shocks": 36,
+        "byType": {
+          "conventional": 8,
+          "proxy": 5,
+          "hybrid": 5,
+          "blockade": 10,
+          "insurgency": 5
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-22",
+        "episodes": 23,
+        "coups": 63,
+        "shocks": 16,
+        "byType": {
+          "conventional": 4,
+          "proxy": 5,
+          "hybrid": 5,
+          "blockade": 3,
+          "insurgency": 6
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-23",
+        "episodes": 31,
+        "coups": 58,
+        "shocks": 19,
+        "byType": {
+          "conventional": 3,
+          "proxy": 7,
+          "hybrid": 11,
+          "blockade": 7,
+          "insurgency": 3
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-24",
+        "episodes": 33,
+        "coups": 66,
+        "shocks": 23,
+        "byType": {
+          "conventional": 5,
+          "proxy": 5,
+          "hybrid": 6,
+          "blockade": 7,
+          "insurgency": 10
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-25",
+        "episodes": 29,
+        "coups": 67,
+        "shocks": 24,
+        "byType": {
+          "conventional": 7,
+          "proxy": 6,
+          "hybrid": 6,
+          "blockade": 3,
+          "insurgency": 7
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-26",
+        "episodes": 38,
+        "coups": 56,
+        "shocks": 28,
+        "byType": {
+          "conventional": 5,
+          "proxy": 7,
+          "hybrid": 8,
+          "blockade": 8,
+          "insurgency": 10
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-27",
+        "episodes": 29,
+        "coups": 64,
+        "shocks": 35,
+        "byType": {
+          "conventional": 6,
+          "proxy": 8,
+          "hybrid": 5,
+          "blockade": 6,
+          "insurgency": 4
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-28",
+        "episodes": 25,
+        "coups": 67,
+        "shocks": 17,
+        "byType": {
+          "conventional": 3,
+          "proxy": 6,
+          "hybrid": 7,
+          "blockade": 5,
+          "insurgency": 4
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-29",
+        "episodes": 24,
+        "coups": 56,
+        "shocks": 19,
+        "byType": {
+          "conventional": 2,
+          "proxy": 8,
+          "hybrid": 5,
+          "blockade": 4,
+          "insurgency": 5
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-30",
+        "episodes": 20,
+        "coups": 53,
+        "shocks": 22,
+        "byType": {
+          "conventional": 4,
+          "proxy": 3,
+          "hybrid": 3,
+          "blockade": 5,
+          "insurgency": 5
+        }
+      },
+      {
+        "seed": "frequency-reserved-v1-31",
+        "episodes": 29,
+        "coups": 74,
+        "shocks": 24,
+        "byType": {
+          "conventional": 4,
+          "proxy": 8,
+          "hybrid": 10,
+          "blockade": 2,
+          "insurgency": 5
+        }
+      }
+    ]
+  },
+  "limitations": "Comparación de orden de magnitud: los cinco tipos de conflicto de juego no exigen muertes reales ni corresponden a la categoría UCDP. La transición por golpe no mide control de siete días. No predice riesgos nacionales; pandemias/desastres son shocks abstractos sin calibración independiente. La banda ×/÷2 es una decisión de diseño, no un intervalo estadístico ni equivalencia histórica."
+}

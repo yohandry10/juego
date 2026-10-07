@@ -9,18 +9,18 @@
   "schema": 15,
   "restoredAtQuarter": 80,
   "identicalAfterRestore": true,
-  "stateSha256": "b9edb0509bdc120ca658e7ce12f0b0053343f5356bb0ba8e3163e561ef5b2ff1",
+  "stateSha256": "d5c87bd3047380ba4a7aa316582905669158e05eb7a26d787c98de2552c8592f",
   "identicalToBaseline": null,
   "comparisonPath": null,
-  "firstTenYearsAverageTurnMs": 7.291097500000023,
-  "lastTenYearsAverageTurnMs": 9.607157500000017,
-  "maximumTurnMs": 23.84599999999955,
-  "p95TurnMs": 15.787199999999757,
+  "firstTenYearsAverageTurnMs": 12.200617499999998,
+  "lastTenYearsAverageTurnMs": 12.248602500000015,
+  "maximumTurnMs": 44.220000000001164,
+  "p95TurnMs": 28.144800000000032,
   "snapshots": [
     {
       "quarter": 40,
       "serializedBytes": 1462377,
-      "heapBytes": 26491600,
+      "heapBytes": 27819360,
       "stateSha256": "95498c4f927ddb8f17811405eafe023727165aac9a422d6d537adeeec91bb0a0",
       "componentBytes": {
         "world": 101443,
@@ -46,19 +46,19 @@
     },
     {
       "quarter": 80,
-      "serializedBytes": 1628931,
-      "heapBytes": 32040600,
-      "stateSha256": "e0555c79bf9a05b2fc43e3a1833a49a1ef52212cbedc59da949700ade565a54b",
+      "serializedBytes": 1628082,
+      "heapBytes": 33303696,
+      "stateSha256": "459f27641bf37ebc79668fab5921a6ea27bbc8fa508d909fc5fa9586a59d8a12",
       "componentBytes": {
-        "world": 113742,
-        "geopolitics": 610472,
+        "world": 112989,
+        "geopolitics": 610269,
         "inbox": 210327,
         "log": 31891,
         "relationships": 21091,
         "budget": 278,
-        "legislature": 630342,
+        "legislature": 630450,
         "careerHistory": 1215,
-        "baseEventHistory": 23129
+        "baseEventHistory": 23130
       },
       "collectionCounts": {
         "inbox": 209,
@@ -73,19 +73,19 @@
     },
     {
       "quarter": 120,
-      "serializedBytes": 1800984,
-      "heapBytes": 29075760,
-      "stateSha256": "ac871de59987170411bfe3e20076086feae8a7cbf3d8984098902e0c90cfb2a1",
+      "serializedBytes": 1801057,
+      "heapBytes": 30356008,
+      "stateSha256": "6c2506d2ac9015ca21fe4e6a7a62e6ea578fd76e69c8344da958782fd23a8dc2",
       "componentBytes": {
-        "world": 124606,
-        "geopolitics": 646798,
+        "world": 124436,
+        "geopolitics": 646711,
         "inbox": 315848,
         "log": 47755,
         "relationships": 21091,
         "budget": 279,
-        "legislature": 630078,
+        "legislature": 630409,
         "careerHistory": 1825,
-        "baseEventHistory": 35317
+        "baseEventHistory": 35316
       },
       "collectionCounts": {
         "inbox": 311,
@@ -100,19 +100,19 @@
     },
     {
       "quarter": 160,
-      "serializedBytes": 1974462,
-      "heapBytes": 29900760,
-      "stateSha256": "b9edb0509bdc120ca658e7ce12f0b0053343f5356bb0ba8e3163e561ef5b2ff1",
+      "serializedBytes": 1974406,
+      "heapBytes": 31144056,
+      "stateSha256": "d5c87bd3047380ba4a7aa316582905669158e05eb7a26d787c98de2552c8592f",
       "componentBytes": {
-        "world": 139680,
-        "geopolitics": 680265,
+        "world": 139826,
+        "geopolitics": 680333,
         "inbox": 420898,
         "log": 63619,
         "relationships": 21091,
         "budget": 279,
-        "legislature": 630438,
+        "legislature": 630167,
         "careerHistory": 2435,
-        "baseEventHistory": 50528
+        "baseEventHistory": 50525
       },
       "collectionCounts": {
         "inbox": 414,

@@ -1,13 +1,13 @@
 {
   "date": "2026-10-06",
-  "cut": "overlapping-shocks-history-audit-2026-10-06",
+  "cut": "national-ratification-rosters-frequency-2026-10-06",
   "platformScope": "PC only, explicit user correction",
   "environment": "Windows; Node 24.13.1; Core i5-10400F; 17098092544 bytes RAM",
   "unitTests": {
     "command": "npm test",
-    "passed": 135,
+    "passed": 128,
     "failed": 0,
-    "durationMs": 57170.3302
+    "durationMs": 28181.9947
   },
   "build": {
     "command": "npm run build; npm run build:repro-check",
@@ -15,9 +15,9 @@
     "identicalBuilds": true,
     "reproducibleFiles": 30,
     "evidence": "build-reproducibility.json",
-    "mainChunkKb": 344.64,
-    "mainChunkGzipKb": 97.76,
-    "workerKb": 390.73,
+    "mainChunkKb": 341.83,
+    "mainChunkGzipKb": 96.98,
+    "workerKb": 390.33,
     "worldViewKb": 37.07,
     "worldDataKb": 107.8,
     "browserProfilesSynchronized": true,
@@ -33,25 +33,25 @@
     "runs": 1000,
     "years": 20,
     "passed": true,
-    "wallMs": 17787,
+    "wallMs": 6812,
     "scope": "Base Peru engine, not full careers."
   },
   "world": {
     "command": "npm run world:validate",
     "evidence": "phase-4-simulation.json",
-    "parameterVersion": "world-balance-v5",
+    "parameterVersion": "world-balance-v4",
     "runs": 100,
     "yearsPerRun": 50,
     "actors": 217,
     "quarterlyAudit": true,
     "averageWars": 31.08,
-    "averageCoups": 63.94,
+    "averageCoups": 60.57,
     "averageShocks": 24.07,
     "averageSanctions": 0.99,
     "maximumDirectNuclearWars": 0,
     "invalidValues": 0,
-    "averageQuarterMs": 2.3241282999999986,
-    "worldRuntimeMs": 46487.64,
+    "averageQuarterMs": 2.379895709999999,
+    "worldRuntimeMs": 47603.552500000005,
     "sensitivity": {
       "command": "npm run world:sensitivity",
       "cases": 1736,
@@ -59,13 +59,10 @@
       "yearsPerRun": 50,
       "passed": true,
       "evidence": "world-sensitivity.json"
-    },
-    "overlappingShockEffectsChecked": true,
-    "semanticReviewEvidence": "world-semantic-review.md",
-    "fullHistoricalEffectReplayCompleted": false
+    }
   },
   "frequencyReference": {
-    "command": "MANDATO_FREQUENCY_SEED_PREFIX=frequency-v2 node --import tsx src/cli/world-frequency.ts --apply",
+    "command": "python scripts/update-frequency-reference.py; npm run world:frequency -- --apply",
     "reference": "independent-world-reference.json",
     "evidence": "world-frequency-calibration.json",
     "referenceWindow": [
@@ -80,16 +77,13 @@
       "conflictQuarterProbability": 0.65,
       "coupRiskScale": 0.0024
     },
-    "episodesPerYear": 0.603125,
-    "coupsPerYear": 1.273125,
+    "episodesPerYear": 0.5775,
+    "coupsPerYear": 1.240625,
     "proxyFactorTolerance": 2,
     "withinProxyBand": true,
     "historicalEquivalenceProven": false,
     "globalShocksExternallyCalibrated": false,
-    "scopeNote": "New v2 paired training and reserve seeds, now consumed; final-code regression reused those same seeds. Common coefficients unchanged; historical definitions differ. Band is design tolerance, not a confidence interval.",
-    "seedPrefix": "frequency-v2",
-    "parameterVersion": "world-balance-v5",
-    "shocksPerYear": 0.46875
+    "scopeNote": "Common coefficients selected with training only; reserved seeds now used. Game types/indices differ from dataset definitions; band is a design tolerance, not confidence interval."
   },
   "countries": {
     "command": "npm run validate:countries -- 25",
@@ -117,7 +111,7 @@
     "mexicoDeputySamples": 180,
     "peruPresidentCompletedTerms": 21,
     "peruPresidentSamples": 135,
-    "scopeNote": "Regression reused consumed balance-reserved-v3 paired seeds after shock/audit fixes. No electoral change or new balance claim. Samples close one term/defeat and retirement, not forty years; concurrent timing."
+    "scopeNote": "New paired seeds, now consumed. Samples close one term/defeat and retirement, not forty years. Concurrent timing; no improvement inferred from differences across seeds."
   },
   "generatedCountries": {
     "command": "npm run validate:generated",
@@ -136,7 +130,7 @@
     "years": 5,
     "passed": true,
     "evidence": "diplomacy-balance.json",
-    "scope": "Regression reused diplomacy-reserved-v3 seeds with final v5 world; equal paid visit before extra stance cost. World scenarios, no proof of career strategy dominance."
+    "scope": "Equal paid visit before extra stance cost; world scenarios, no proof of career strategy dominance."
   },
   "content": {
     "command": "npm run content:validate",
@@ -157,20 +151,18 @@
     "completedTerms": 8,
     "identicalAfterRestore": true,
     "restoredAtQuarter": 80,
-    "stateSha256": "b9edb0509bdc120ca658e7ce12f0b0053343f5356bb0ba8e3163e561ef5b2ff1",
+    "stateSha256": "d5c87bd3047380ba4a7aa316582905669158e05eb7a26d787c98de2552c8592f",
     "comparedToPreviousMotor": false,
-    "firstTenYearsAverageTurnMs": 7.291097500000023,
-    "lastTenYearsAverageTurnMs": 9.607157500000017,
-    "maximumTurnMs": 23.84599999999955,
-    "p95TurnMs": 15.787199999999757,
+    "firstTenYearsAverageTurnMs": 12.200617499999998,
+    "lastTenYearsAverageTurnMs": 12.248602500000015,
+    "maximumTurnMs": 44.220000000001164,
+    "p95TurnMs": 28.144800000000032,
     "serializedBytesStart": 1462377,
-    "serializedBytesEnd": 1974462,
+    "serializedBytesEnd": 1974406,
     "memoryGrowthResolved": false,
     "thirtyYearRepeatedLiteralBodiesPercent": 0,
     "priorFailedSeeds": 6,
-    "scopeNote": "One Peru legislative career, after mass batches finished; current-engine restoration equality. Earlier hashes/timings are historical. State and time still grow; no sustained-memory or representative-hardware claim.",
-    "heapBytesStart": 26491600,
-    "heapBytesEnd": 29900760
+    "scopeNote": "One Peru legislative career, under concurrent validation load; restoration equality is current-engine only. Earlier SHA comparisons are historical. Decisions/logs retained; other offices/GPU/hardware not accredited."
   },
   "memberships": {
     "evidence": "../src/data/world-memberships.json",
@@ -204,7 +196,7 @@
       "command": "python tests/web-smoke.py",
       "engine": "Edge Chromium",
       "passed": true,
-      "executiveTurnSeconds": 0.312,
+      "executiveTurnSeconds": 0.243,
       "hallArchiveAndEscape": true
     },
     "countryStart": {
@@ -311,18 +303,17 @@
     }
   },
   "sourceAtReportCut": {
-    "sha256": "af54a2b4b2bc73dc741a89f5202e7115a7f17054950032e7394e76b57ea28a7c",
-    "files": 159,
+    "sha256": "adb144f7956fb8dfeb53865d2297da3f147254303fce89ad846e9b0ff3d0a9ae",
+    "files": 156,
     "scope": "src, data/countries, public, tests (except __pycache__), scripts, package/configuration and independent-world-reference.json; other reports excluded",
     "command": "node scripts/source-fingerprint.mjs",
     "buildHashes": "build-reproducibility.json",
-    "note": "Final v5 source. All behavior/browser regressions repeated on this cut; subsequent CLI default-prefix change uses the already measured frequency-v2 seeds and does not alter the client or engine."
+    "note": "Current source and reference; reports excluded except reference input. Browser behavior checks preceded only the final source-link color fix; contrast/accessibility then rechecked on final reproducible build."
   },
   "historicalEvidence": {
-    "previousValidation": "historical-validation-latest-e02877a.json",
-    "previousLongCareer": "historical-long-career-evidence-e02877a.json",
-    "note": "e02877a v4 source and earlier a86e34d/0df312e metrics/hashes are historical, not current v5 validation.",
-    "previousFrequency": "historical-world-frequency-calibration-e02877a.json"
+    "previousValidation": "historical-validation-a86e34d.json",
+    "previousLongCareer": "historical-long-career-a86e34d.json",
+    "note": "Prior 0df312e/a86e34d optimization hashes and timings are not current-world-v4 validation."
   },
   "humanSessions": 0,
   "humanEvidenceStatus": "User confirmed that human sessions/editorial/assistive/physical testing have not yet been performed.",

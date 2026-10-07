@@ -13,7 +13,7 @@
       "runs": 12,
       "years": 50,
       "averageWars": 21,
-      "averageCoups": 49.083333333333336,
+      "averageCoups": 52,
       "averageShocks": 23.416666666666668,
       "invalidValues": 0,
       "directNuclearWars": 0
@@ -25,7 +25,7 @@
       "runs": 12,
       "years": 50,
       "averageWars": 31.666666666666668,
-      "averageCoups": 58,
+      "averageCoups": 61.166666666666664,
       "averageShocks": 23.416666666666668,
       "invalidValues": 0,
       "directNuclearWars": 0
@@ -37,7 +37,7 @@
       "runs": 12,
       "years": 50,
       "averageWars": 37.166666666666664,
-      "averageCoups": 65.5,
+      "averageCoups": 69.33333333333333,
       "averageShocks": 23.416666666666668,
       "invalidValues": 0,
       "directNuclearWars": 0
