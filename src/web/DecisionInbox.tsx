@@ -1,0 +1,33 @@
+import { categoryLabels, DecisionArt } from "./ui/DecisionArt.js";
+import { useMemo, useState } from 'react';
+import { Archive, ArrowRight, BookOpen } from 'lucide-react';
+import type { CareerGameState, InboxItem } from '../domain/career-types.js';
+import { inboxOptionChips, projectInbox } from '../application/inbox-presentation.js';
+import { Button, Chip, Drawer, Notice, Portrait } from './ui/UI.js';
+
+const advisors = { campaign:['advisor-campaign','Jefa de campaña','Cuenta los apoyos antes de prometer.'],party:['advisor-politics','Asesor político','Hoy puedes ganar un aliado; mañana puede cobrarte.'],congress:['advisor-cabinet','Jefa de gabinete','Un discurso abre la puerta. Los votos la mantienen abierta.'],media:['advisor-press','Asesora de prensa','El titular durará un día. El recuerdo, bastante más.'],personal:['advisor-security','Asesor de seguridad','Deja espacio para pensar antes de responder.'],economy:['advisor-economy','Asesora económica','Mira el costo de hoy y el efecto de mañana.'],international:['advisor-politics','Asesor político','Los compromisos también cruzan fronteras.'] } as const;
+const searchable = (text: string) => text.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('es');
+
+
+
+export function InboxView({ state, onResolve }: { state: CareerGameState; onResolve: (itemId: string, optionId: string) => void }) {
+  const projected = useMemo(() => projectInbox(state),[state]);
+  const [selectedId,setSelectedId] = useState<string | null>(null);
+  const [archiveOpen,setArchiveOpen] = useState(false);
+  const [diaryOpen,setDiaryOpen] = useState(false);
+  const [query,setQuery] = useState('');
+  const [page,setPage] = useState(0);
+  const selected = state.inbox.find((item) => item.id === selectedId) ?? projected.active[0];
+  const archived = [...projected.archive].reverse().filter((item) => searchable(`${item.title} ${item.body}`).includes(searchable(query)));
+  const pages = Math.max(1,Math.ceil(archived.length/7));
+  const currentPage = Math.min(page,pages-1);
+  const advisor = selected ? advisors[selected.category] : advisors.personal;
+  const related = selected?.payloadId ? state.world.legislators.find((person) => person.id === selected.payloadId) : undefined;
+  return <section className="decision-scene"><header className="scene-heading"><div><span className="eyebrow">LA CARPETA · {projected.active.length} ASUNTOS VIGENTES</span><h2>Lo que necesita tu voz.</h2></div><div className="chip-row"><Button variant="quiet" onClick={() => setArchiveOpen(true)}><Archive size={18}/> Archivo ({projected.archive.length})</Button><Button variant="quiet" onClick={() => setDiaryOpen(true)}><BookOpen size={18}/> Diario</Button></div></header>
+    <div className="decision-layout"><nav className="decision-stack" aria-label="Asuntos vigentes">{projected.active.map((item,index) => <button type="button" key={item.id} aria-pressed={selected?.id === item.id} onClick={() => setSelectedId(item.id)}><span className="eyebrow">{String(index+1).padStart(2,'0')} · {categoryLabels[item.category]}</span><strong>{item.title}</strong><ArrowRight size={18}/></button>)}{!projected.active.length && <Notice>Tu carpeta está al día. El archivo conserva los asuntos anteriores.</Notice>}{projected.postponed > 0 && <p>{projected.postponed} asuntos adicionales esperan en el archivo.</p>}</nav>
+      {selected && <article className={`decision-letter ${selected.resolved ? 'resolved' : ''}`} key={selected.id}><DecisionArt category={selected.category}/><div className="letter-content"><span className="eyebrow">{categoryLabels[selected.category]} · {selected.resolved ? 'RESPONDIDA' : projected.active.some((item) => item.id === selected.id) ? 'EN TU MESA' : 'DEL ARCHIVO'}</span><h3>{selected.title}</h3><p className="letter-context">{selected.body}</p>{related && <div className="person-inline"><Portrait identity={related.id} name={related.name} size="small"/><strong>{related.name}</strong></div>}<details><summary>Leer el expediente completo</summary><p>{selected.explanation}</p><p>Recibido en el turno {selected.createdAtTurn}.</p></details>{selected.resolved ? <Notice>Respuesta registrada. Consulta las consecuencias en el diario.</Notice> : <div className="letter-options">{selected.options.map((option) => <Button key={option.id} variant={option.actionType === 'advance' ? 'secondary' : 'primary'} onClick={() => { onResolve(selected.id,option.id); setSelectedId(selected.id); }}><span><strong>{option.label}</strong><small>{option.consequenceHint}</small><span className="chip-row">{inboxOptionChips(state,selected,option).map((cost) => <Chip key={cost}>{cost}</Chip>)}</span></span><ArrowRight size={20}/></Button>)}</div>}<aside className="advisor-strip"><Portrait identity={advisor[0]} name={advisor[1]} size="small"/><div><strong>{advisor[1]}</strong><p>«{advisor[2]}»</p></div></aside></div></article>}
+    </div>
+    {archiveOpen && <Drawer title="El archivo" onClose={() => setArchiveOpen(false)}><p>Los asuntos anteriores pasan aquí sin borrarse ni responderse solos. Puedes retomar una decisión pendiente.</p><label>Buscar un asunto<input type="search" aria-label="Buscar en el archivo" value={query} onChange={(event) => { setQuery(event.target.value); setPage(0); }}/></label><div className="archive-list">{archived.slice(currentPage*7,(currentPage+1)*7).map((item) => <Button variant="secondary" key={item.id} onClick={() => { setSelectedId(item.id); setArchiveOpen(false); }}><span><strong>{item.title}</strong><small>{categoryLabels[item.category]} · {item.resolved ? 'Respondida' : 'Puedes retomarla'} · turno {item.createdAtTurn}</small></span><ArrowRight size={18}/></Button>)}</div><div className="archive-pages"><Button variant="quiet" disabled={currentPage===0} onClick={() => setPage(currentPage-1)}>Anterior</Button><span>{currentPage+1} / {pages}</span><Button variant="quiet" disabled={currentPage+1>=pages} onClick={() => setPage(currentPage+1)}>Siguiente</Button></div></Drawer>}
+    {diaryOpen && <Drawer title="El diario de tu carrera" onClose={() => setDiaryOpen(false)}><label>Buscar un recuerdo<input aria-label="Buscar en el diario" value={query} onChange={(event) => setQuery(event.target.value)}/></label><ol className="log-list">{[...state.log].reverse().filter((entry) => searchable(`${entry.text} ${entry.explanation}`).includes(searchable(query))).slice(0,7).map((entry,index) => <li key={index}><span className="log-dot"/><div><strong>{entry.text}</strong><p>{entry.explanation}</p></div></li>)}</ol><p>Se muestran los siete recuerdos más recientes que coinciden. Escribe para explorar el resto.</p></Drawer>}
+  </section>;
+}

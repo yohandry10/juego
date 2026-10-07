@@ -24,7 +24,7 @@
 .inbox-choice p{margin-top:.5rem}.inbox-diary{margin-top:2rem;border-top:1px solid #53624f;padding-top:1rem}.diary-search{margin-top:1rem;max-width:40rem}
 .inbox-view .log-list strong{font-size:.95rem}.inbox-view .log-list p{font-size:.9rem;color:#c9d3c5}
 @media(max-width:600px){.inbox-options{flex-direction:column}}
-.wizard-card h3{margin:2px 0 0;font:600 25px 'Playfair Display'}
+.wizard-card h3{margin:2px 0 0;font:600 25px 'Source Serif 4'}
 .wizard-help{margin:0;color:#95a094;font-size:0.75rem;line-height:1.65}
 .wizard-progress{display:grid;grid-template-columns:repeat(6,1fr);gap:5px}
 .wizard-progress i{height:3px;background:#344139}.wizard-progress i.done{background:#c4d797}
@@ -39,5 +39,5 @@
 .character-summary{display:grid;gap:5px;padding:12px;background:#202c25}.character-summary span{font-size:0.625rem;color:#99a598}
 .press-feed{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:24px}
 .press-feed article{padding:18px;background:#202c25;border:1px solid #344139}
-.press-feed h3{font:600 18px 'Playfair Display';line-height:1.4;margin:12px 0}
+.press-feed h3{font:600 18px 'Source Serif 4';line-height:1.4;margin:12px 0}
 .press-feed p{color:#9aa69a;font-size:0.6875rem;line-height:1.7}

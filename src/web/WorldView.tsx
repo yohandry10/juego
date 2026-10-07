@@ -1,3 +1,4 @@
+import { Selector } from "./ui/UI.js";
 import { canEnactForeignPolicy, changeDiplomaticStance, requestWarAuthorization, openTradeDispute, complyWithTradeDispute } from "../application/diplomacy-commands.js";
 import { useState } from "react";
 import type { CareerGameState } from "../domain/career-types.js";
@@ -5,7 +6,7 @@ import { detailedWorldActorIds, worldActorDefinitions } from "../engine/world-si
 import { TreatyReview } from "./TreatyReview.js";
 import { OrganizationCard } from "./OrganizationCard.js";
 import type { CountryDefinition } from "../domain/types.js";
-import { WorldMap } from "./WorldMap.js";
+import { WorldMap } from "./PoliticalMap.js";
 import { FinancingView } from "./FinancingView.js";
 import { DiplomacyActions } from "./DiplomacyActions.js";
 import copy from "../data/diplomacy-copy.es.json" with { type: "json" };
@@ -20,17 +21,18 @@ export function WorldView({ state, country, update }: { state: CareerGameState; 
   const chooseStance = (stance: "align" | "balance" | "neutral") => update(changeDiplomaticStance(state, targetId, stance));
   const colorFor = (id: string) => {
     const actor = geo.actors.find((candidate) => candidate.id === id);
-    if (!actor) return "#d7e2e4";
+    if (!actor) return "#647263";
     if (layer === "military") return `hsl(${Math.max(0, 210 - actor.militaryPower * 1.5)} 48% ${Math.max(30, 88 - actor.militaryPower * .45)}%)`;
-    if (layer === "sanctions") return geo.sanctions.some((item) => item.fromId === id || item.toId === id) ? "#db8a75" : "#b8d8c4";
-    if (layer === "conflicts") return geo.conflicts.some((item) => item.attackerId === id || item.defenderId === id) ? "#d87568" : "#bed9d5";
+    if (layer === "sanctions") return geo.sanctions.some((item) => item.fromId === id || item.toId === id) ? "#9D3547" : "#80976A";
+    if (layer === "conflicts") return geo.conflicts.some((item) => item.attackerId === id || item.defenderId === id) ? "#9D3547" : "#BEB99D";
     if (layer === "trade") return `hsl(190 42% ${88 - Math.min(35, actor.economicPower) * 1.1}%)`;
-    return `hsl(${Math.round(130 + actor.alignment * .75)} 38% 72%)`;
+    return actor.alignment < 35 ? "#CCA166" : actor.alignment > 65 ? "#72A8A0" : "#BEB99D";
   };
-  return <section className="side-card full-card world-panel"><span className="eyebrow">MUNDO · DATOS {geo.dataVersion}</span><h2>Relaciones con otros países</h2><p>{copy.intro}</p>
-    <div className="world-controls"><label>País o actor<select value={targetId} onChange={(event) => setTargetId(event.target.value)}>{worldActorDefinitions.map((actor) => <option key={actor.id} value={actor.id}>{actor.name} · {actor.code}</option>)}</select></label><label>Capa del mapa<select value={layer} onChange={(event) => setLayer(event.target.value)}><option value="alliances">Bloques y alineamientos</option><option value="trade">Comercio</option><option value="sanctions">Sanciones</option><option value="military">Fuerzas</option><option value="conflicts">Conflictos</option></select></label><p>El mundo avanza al cerrar el trimestre de tu carrera, junto con economía y gobierno.</p></div>
+  return <section className="side-card full-card world-panel"><span className="eyebrow">RELACIONES EXTERIORES</span><h2>Relaciones con otros países</h2><p>{copy.intro}</p>
+    <div className="world-controls"><label>País o actor<Selector value={targetId} onChange={(event) => setTargetId(event.target.value)}>{worldActorDefinitions.map((actor) => <option key={actor.id} value={actor.id}>{actor.name} · {actor.code}</option>)}</Selector></label><label>Capa del mapa<Selector value={layer} onChange={(event) => setLayer(event.target.value)}><option value="alliances">Bloques y alineamientos</option><option value="trade">Comercio</option><option value="sanctions">Sanciones</option><option value="military">Fuerzas</option><option value="conflicts">Conflictos</option></Selector></label><p>El mundo avanza al cerrar el trimestre de tu carrera, junto con economía y gobierno.</p></div>
     <WorldMap selectedId={targetId} onSelect={setTargetId} colorFor={colorFor} forces={geo.conflicts.filter((c) => c.status === "active").flatMap((c) => c.forces ?? [])}/>
-    <details className="optional-info"><summary>{copy.technical}</summary><p>{geo.actors.length} actores; {detailedWorldActorIds(geo).size} con evolución trimestral. Los demás actualizan su política una vez al año. Trimestre {geo.quarterIndex}; lealtad militar {geo.militaryLoyalty.toFixed(0)}; golpes nacionales {geo.coups}.</p></details>
+    <details className="optional-info"><summary>Acerca de los datos</summary><p>{geo.dataVersion}</p><p>{geo.actors.length} actores; {detailedWorldActorIds(geo).size} con evolución trimestral. Los demás actualizan su política una vez al año. Trimestre {geo.quarterIndex}; lealtad militar {geo.militaryLoyalty.toFixed(0)}; golpes nacionales {geo.coups}.</p></details>
+    <details className="world-dossier"><summary>Relaciones, acuerdos y decisiones con {target?.name ?? targetId}</summary>
     <h3>Postura exterior</h3><p>Tu línea: <strong>{({ align: "Alineamiento", balance: "Equilibrio", neutral: "Neutralidad" })[geo.player.stance]}</strong> · influencia {geo.player.influence.toFixed(0)} · aislamiento {geo.player.isolation.toFixed(0)}. Cambiar cuesta: alineamiento 3, equilibrio 2, neutralidad 0 de influencia.</p><div className="member-actions">{(["align", "balance", "neutral"] as const).map((stance) => <button key={stance} disabled={geo.player.stance === stance || geo.player.influence < ({ align: 3, balance: 2, neutral: 0 })[stance]} aria-pressed={geo.player.stance === stance} onClick={() => chooseStance(stance)}>{({ align: "Alinearse", balance: "Equilibrar", neutral: "Mantener neutralidad" })[stance]}</button>)}</div>
     <div className="decision-card-grid">{(["align", "balance", "neutral"] as const).map((stance) => <article className="decision-card" key={stance}><strong>{copy.stances[stance].label}</strong><p>{copy.stances[stance].text}</p><p>Cuesta {copy.stances[stance].cost} de influencia.</p></article>)}</div>
     <h3>Relación con {target?.name ?? targetId}</h3><DiplomacyActions state={state} targetId={targetId} update={update}/>
@@ -42,5 +44,6 @@ export function WorldView({ state, country, update }: { state: CareerGameState; 
     <h3>Organismos y decisiones</h3><div className="people-grid organization-grid">{geo.organizations.map((organization) => <OrganizationCard key={organization.id} state={geo} organization={organization}/>)}</div>{geo.votes.slice(-4).reverse().map((vote) => <article className="vote-report" key={vote.id}><strong>{geo.organizations.find((organization) => organization.id === vote.organizationId)?.name ?? "Legislatura nacional"} · {vote.passed ? "aprobada" : "sin acuerdo"}</strong><p>{vote.title}: {vote.yes} a favor, {vote.no} en contra, {vote.abstain} abstenciones. {vote.explanation}</p></article>)}{geo.domesticImpact.causes.map((cause, index) => <article className="vote-report" key={index}><strong>Impacto doméstico</strong><p>{cause}</p><small>Crecimiento {geo.domesticImpact.growthDelta.toFixed(2)} · inflación {geo.domesticImpact.inflationDelta.toFixed(2)}</small></article>)}
     <h3>Conflictos y posguerra</h3><button disabled={state.stage !== "executive" || state.player.resources.politicalCapital < 12 || targetId === geo.playerCountryId} onClick={() => { try { update(requestWarAuthorization(state, targetId)); } catch (error) { update({ ...state, log: [...state.log, { turn: state.currentTurn, text: "Solicitud no disponible", explanation: error instanceof Error ? error.message : "No se pudo solicitar autorización." }] }); } }}>Solicitar autorización de conflicto · 12 de capital</button>{geo.conflicts.slice(-6).reverse().map((conflict) => <article className="vote-report" key={conflict.id}><strong>{copy.conflictTypes[conflict.type]} · {conflict.status === "active" ? "en curso" : "finalizado"} · {conflict.attackerId} / {conflict.defenderId}</strong><p>{conflict.explanation}</p><p>Fuerzas: {(conflict.forces ?? []).map((force) => `${force.kind} de ${force.ownerId} en ${force.locationId}, logística ${force.logistics.toFixed(0)}`).join("; ")}</p>{conflict.reconstruction && <p>Posguerra: daño {conflict.reconstruction.damage.toFixed(1)}, desplazamiento agregado {conflict.reconstruction.displacement.toFixed(1)}, insurgencia {conflict.reconstruction.insurgency.toFixed(1)}, reparaciones {conflict.reconstruction.reparations.toFixed(1)}. {conflict.reconstruction.treaty}.</p>}</article>)}
     <h3>Registro internacional</h3>{geo.actions.slice(-8).reverse().map((action) => <article className="vote-report" key={action.id}><strong>{copy.actionKinds[action.kind]} · {worldActorDefinitions.find((actor) => actor.id === action.actorId)?.name ?? "Jugador"} → {worldActorDefinitions.find((actor) => actor.id === action.targetId)?.name ?? action.targetId}</strong><p>{action.explanation}</p></article>)}
+    </details>
   </section>;
 }

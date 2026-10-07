@@ -1,3 +1,4 @@
+import { Selector } from "./ui/UI.js";
 import { useState } from "react";
 import type { CareerGameState } from "../domain/career-types.js";
 import type { CountryDefinition, EconomicPolicyId } from "../domain/types.js";
@@ -31,7 +32,7 @@ export function EconomyView({ state, country, run }: { state: CareerGameState; c
       <details><summary>Ver causas de este problema</summary><p>{crisis.explanation}</p></details>
     </article>) : <p>No hay una crisis activa. Puedes prepararte y mejorar el país antes de que aparezca una.</p>}
     <h3>Elegir una medida</h3><p>{copy.capital}</p>
-    <label className="policy-picker">Qué quieres hacer<select aria-label="Política económica" value={policyId} onChange={(event) => setPolicyId(event.target.value as EconomicPolicyId)}>{(Object.keys(copy.policies) as EconomicPolicyId[]).map((id) => <option key={id} value={id}>{copy.policies[id].label}</option>)}</select></label>
+    <label className="policy-picker">Qué quieres hacer<Selector aria-label="Política económica" value={policyId} onChange={(event) => setPolicyId(event.target.value as EconomicPolicyId)}>{(Object.keys(copy.policies) as EconomicPolicyId[]).map((id) => <option key={id} value={id}>{copy.policies[id].label}</option>)}</Selector></label>
     <article className="decision-card selected-policy"><h4>{description.label}</h4><p><strong>Qué buscas:</strong> {description.benefit}</p><p><strong>Qué arriesgas:</strong> {description.risk}</p>
       <p><strong>Quién podría ganar:</strong> {policy.winners.map(group).join(", ")}.</p><p><strong>Quién podría perder:</strong> {policy.losers.map(group).join(", ")}.</p>
       <p className="decision-cost">Presentarla cuesta {policy.politicalCost} de capital político. {policy.lagQuarters ? `Parte de los efectos llega después de ${policy.lagQuarters} trimestres.` : "Puede tener efectos desde este trimestre."}</p>

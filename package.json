@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Motor determinista de simulaci\u00f3n pol\u00edtica para MANDATO",
+  "description": "Motor determinista de simulación política para MANDATO",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "build": "npm run data:sync && tsc -p tsconfig.json && vite build && node scripts/build-credits.mjs && node scripts/build-offline-manifest.mjs",
@@ -31,6 +31,7 @@
     "validate:long-career": "node --expose-gc --import tsx src/cli/long-career.ts"
   },
   "dependencies": {
+    "lucide-react": "^1.52.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "zod": "^4.1.12"

@@ -1,3 +1,4 @@
+import { Selector } from "./ui/UI.js";
 import { useMemo, useState } from "react";
 import type { CareerGameState, InboxItem } from "../domain/career-types.js";
 
@@ -60,7 +61,7 @@ export function InboxView({ state, onResolve }: { state: CareerGameState; onReso
     </div>
     <div className="inbox-controls">
       <label>Buscar un asunto<input type="search" aria-label="Buscar en la bandeja" value={query} placeholder="Escribe una palabra del asunto" onChange={(event) => { setQuery(event.target.value); setPage(0); }}/></label>
-      <label>Ver primero<select aria-label="Orden de la bandeja" value={order} onChange={(event) => { setOrder(event.target.value as typeof order); setPage(0); }}><option value="recent">Más recientes</option><option value="priority">Mayor prioridad</option><option value="oldest">Más antiguos</option></select></label>
+      <label>Ver primero<Selector aria-label="Orden de la bandeja" value={order} onChange={(event) => { setOrder(event.target.value as typeof order); setPage(0); }}><option value="recent">Más recientes</option><option value="priority">Mayor prioridad</option><option value="oldest">Más antiguos</option></Selector></label>
     </div>
     <p className="history-count" role="status">{items.length ? `Mostrando ${start + 1}–${start + visibleItems.length} de ${items.length} asuntos.` : query.trim() ? "No hay asuntos que coincidan con tu búsqueda." : filter === "pending" ? "Tu bandeja está al día." : "Todavía no hay asuntos en esta lista."}</p>
     <Pages label="de la bandeja" page={currentPage} total={pages} onPage={setPage}/>

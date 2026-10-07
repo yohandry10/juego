@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "id": "SourceSerif4Display-Regular",
+      "category": "font",
+      "status": "licencia abierta",
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-serif/release/WOFF2/TTF/SourceSerif4Display-Regular.ttf.woff2",
+      "author": "Adobe",
+      "license": "OFL-1.1",
+      "date": "2026-10-06",
+      "sha256": "c75301c83bef55b3787f3060c2f62cb5d902a6706419149b7ff9d0c7927055ac",
+      "file": "/assets/fonts/SourceSerif4Display-Regular.woff2"
+    },
+    {
+      "id": "SourceSerif4Display-Semibold",
+      "category": "font",
+      "status": "licencia abierta",
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-serif/release/WOFF2/TTF/SourceSerif4Display-Semibold.ttf.woff2",
+      "author": "Adobe",
+      "license": "OFL-1.1",
+      "date": "2026-10-06",
+      "sha256": "ccf074599b004eb9738128d1f4ed7ea8f9a9a4bff0326f52178128c0389bf22d",
+      "file": "/assets/fonts/SourceSerif4Display-Semibold.woff2"
+    },
+    {
+      "id": "SourceSans3-Regular",
+      "category": "font",
+      "status": "licencia abierta",
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-sans/release/WOFF2/TTF/SourceSans3-Regular.ttf.woff2",
+      "author": "Adobe",
+      "license": "OFL-1.1",
+      "date": "2026-10-06",
+      "sha256": "53492fb3a0def77354f166a55d09b63a10855e91c206c7620a81cf56e97f8ec3",
+      "file": "/assets/fonts/SourceSans3-Regular.woff2"
+    },
+    {
+      "id": "SourceSans3-Semibold",
+      "category": "font",
+      "status": "licencia abierta",
+      "url": "https://raw.githubusercontent.com/adobe-fonts/source-sans/release/WOFF2/TTF/SourceSans3-Semibold.ttf.woff2",
+      "author": "Adobe",
+      "license": "OFL-1.1",
+      "date": "2026-10-06",
+      "sha256": "47b9b661b9f395fe7f0d0e119637fba5c8dad97bde3df60066fd24229c0792f4",
+      "file": "/assets/fonts/SourceSans3-Semibold.woff2"
+    },
+    {
+      "id": "despacho-480",
+      "category": "office",
+      "status": "generada",
+      "file": "/assets/office/despacho-480.webp",
+      "promptFile": "design/etapa-a/prompts/01-despacho.txt",
+      "date": "2026-10-06",
+      "author": "Generada con ChatGPT",
+      "license": "OpenAI Terms of Use, 2026-01-01",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sha256": "469704382aad765aff049ae468b14888fa929995d82a82a520ee2d85c882f4e0"
+    },
+    {
+      "id": "despacho-900",
+      "category": "office",
+      "status": "generada",
+      "file": "/assets/office/despacho-900.webp",
+      "promptFile": "design/etapa-a/prompts/01-despacho.txt",
+      "date": "2026-10-06",
+      "author": "Generada con ChatGPT",
+      "license": "OpenAI Terms of Use, 2026-01-01",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sha256": "787e050c2511db66b3b70963969f1fa7a056e97d43dc0d74c79eee136f074de2"
+    },
+    {
+      "id": "despacho-1600",
+      "category": "office",
+      "status": "generada",
+      "file": "/assets/office/despacho-1600.webp",
+      "promptFile": "design/etapa-a/prompts/01-despacho.txt",
+      "date": "2026-10-06",
+      "author": "Generada con ChatGPT",
+      "license": "OpenAI Terms of Use, 2026-01-01",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sha256": "4adc8cde29c6f5e6e2a8ef07723dcc314fecb7013eac5cd2f6655c3c174501c0"
+    },
+    {
+      "id": "portrait-runtime",
+      "category": "portrait",
+      "status": "procedural",
+      "sourceFile": "src/web/ui/portraits.ts",
+      "date": "2026-10-07",
+      "author": "Código original de MANDATO",
+      "description": "Identidad estable, edades, tonos, peinados, gafas y ropa variados; 24 ejemplos en UI kit"
+    },
+    {
+      "id": "decision-art-runtime",
+      "category": "event",
+      "status": "procedural",
+      "sourceFile": "src/web/DecisionInbox.tsx",
+      "date": "2026-10-07",
+      "author": "Código original de MANDATO",
+      "description": "Siete categorías ilustradas mediante composición CSS, glifos Lucide y grano original"
+    },
+    {
+      "id": "lucide-icons",
+      "category": "icons",
+      "status": "licencia abierta",
+      "url": "https://lucide.dev/license",
+      "author": "Lucide Icons y Cole Bemis (Feather)",
+      "license": "ISC + MIT para derivados de Feather",
+      "date": "2026-10-07",
+      "source": "lucide-react, versión fijada en package-lock.json"
+    },
+    {
+      "id": "national-office",
+      "category": "office",
+      "status": "pendiente",
+      "description": "Se usa el despacho base con enganche por cargo; la segunda composición no está creada."
+    },
+    {
+      "id": "ai-portrait-pack",
+      "category": "portrait",
+      "status": "pendiente",
+      "description": "40 retratos ilustrados de IA; sustituidos provisionalmente por retratos procedurales."
+    },
+    {
+      "id": "ai-event-pack",
+      "category": "event",
+      "status": "pendiente",
+      "description": "24 cartas de IA; composiciones procedurales provisionales por categoría."
+    }
+  ]
+}
