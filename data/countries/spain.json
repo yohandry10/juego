@@ -4,7 +4,7 @@
   "name": "España",
   "experimental": true,
   "startingYear": 2026,
-  "dataVersion": "spain-institutions-2023-snapshot-v4",
+  "dataVersion": "spain-institutions-2023-snapshot-v4-treaty-routes-v1",
   "population": 48619695,
   "politicalSystem": {
     "formOfGovernment": "parliamentary",
@@ -136,6 +136,59 @@
       "presidentialVacancy": null,
       "presidentialAccusation": null,
       "cabinetCensure": null
+    },
+    "treatyApproval": {
+      "treaties": {
+        "chambers": [
+          {
+            "chamberId": "congress",
+            "majority": "simple"
+          },
+          {
+            "chamberId": "senate",
+            "majority": "simple"
+          }
+        ],
+        "resolution": "lower-final",
+        "minimumReviewQuarters": 0,
+        "summary": "Ambas cámaras revisan el tratado. Si discrepan, el Congreso puede resolverlo con mayoría absoluta.",
+        "scopeNote": "Los personajes y sus votos son ficticios. Se agregan iniciativa, autorización y ratificación ejecutiva en una acción; no se simulan reservas, control judicial ni tratados que reforman la Constitución. La conciliación y segunda lectura se agregan a un trimestre de espera y una nueva acción; no se garantiza su resultado.",
+        "sources": [
+          {
+            "name": "Reglas nacionales de autorización internacional",
+            "url": "https://boe.es/buscar/act.php?id=BOE-A-1978-31229&p=20260520&tn=1",
+            "indicator": "Constitución, arts. 74.2, 79 y 94.1",
+            "year": 2026,
+            "accessedOn": "2026-10-06"
+          }
+        ],
+        "finalMajority": "absolute"
+      },
+      "financing": {
+        "chambers": [
+          {
+            "chamberId": "congress",
+            "majority": "simple"
+          },
+          {
+            "chamberId": "senate",
+            "majority": "simple"
+          }
+        ],
+        "resolution": "all",
+        "minimumReviewQuarters": 0,
+        "summary": "El préstamo necesita autorización presupuestaria de ambas cámaras.",
+        "scopeNote": "Control presupuestario ficticio inspirado en las instituciones nacionales. No reproduce la aprobación real de un préstamo FMI/IBRD ni un contrato internacional. Usa una votación presupuestaria ordinaria, separada de las mayorías de los tratados.",
+        "sources": [
+          {
+            "name": "Reglas nacionales de autorización internacional",
+            "url": "https://boe.es/buscar/act.php?id=BOE-A-1978-31229&p=20260520&tn=1",
+            "indicator": "Constitución, arts. 74.2, 79 y 94.1",
+            "year": 2026,
+            "accessedOn": "2026-10-06"
+          }
+        ]
+      }
     }
   },
   "candidateEligibility": [
@@ -185,6 +238,13 @@
       "year": 2026,
       "accessedOn": "2026-10-05",
       "name": "Senado de España · Elección de senadores"
+    },
+    {
+      "name": "Reglas nacionales de autorización internacional",
+      "url": "https://boe.es/buscar/act.php?id=BOE-A-1978-31229&p=20260520&tn=1",
+      "indicator": "Constitución, arts. 74.2, 79 y 94.1",
+      "year": 2026,
+      "accessedOn": "2026-10-06"
     }
   ],
   "economy": {

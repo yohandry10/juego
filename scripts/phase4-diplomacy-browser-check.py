@@ -40,7 +40,7 @@ with sync_playwright() as playwright:
     page.get_by_text("Sesión 0 de 20").wait_for()
     page.locator(".tabbar").get_by_role("button", name="Mundo").click()
     page.locator(".vote-report").filter(has_text="Acuerdo de movilidad con").get_by_role("button", name="Someter a votación").click()
-    assert page.get_by_text("a favor", exact=False).is_visible()
+    assert page.get_by_text("Examen del acuerdo · Senado", exact=False).count() >= 1
     page.get_by_text("Ver compromisos y cifras exteriores", exact=True).click()
     assert (
         page.get_by_text("acuerdo migratorio ratificado: sí", exact=False).is_visible()
@@ -48,7 +48,7 @@ with sync_playwright() as playwright:
     )
     finance_proposal = page.get_by_role("article", name="Apoyo del FMI", exact=True)
     finance_proposal.get_by_role("button", name="Someter a votación").click()
-    assert page.get_by_text("Votación nominal ficticia en Perú", exact=False).count() >= 1
+    assert page.get_by_text("Examen del acuerdo · Senado", exact=False).count() >= 1
     executive = browser.new_page()
     executive.on("pageerror", lambda error: errors.append(str(error)))
     executive.goto("http://127.0.0.1:5173/?country=peru", wait_until="networkidle")
@@ -71,7 +71,7 @@ with sync_playwright() as playwright:
     assert executive.get_by_text("Ayuda exterior acumulada: índice 5", exact=False).is_visible()
     executive.get_by_role("button", name="Proponer tratado comercial").click()
     executive.get_by_role("button", name="Someter a votación").click()
-    assert executive.get_by_text("Votación nominal ficticia en Perú", exact=False).count() >= 1
+    assert executive.get_by_text("Examen del acuerdo · Senado", exact=False).count() >= 1
     assert not errors, errors
     print("OK: permisos por cargo, postura con costo, reconocimiento/ayuda ejecutivos, tratados y ratificación parlamentaria y ejecutiva.")
     browser.close()

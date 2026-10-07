@@ -143,10 +143,23 @@ const bicameralLegislatureSchema = z.object({
   type: z.literal("bicameral"), lowerChamber: chamberSchema, upperChamber: chamberSchema,
 }).strict();
 
+function treatyApprovalRuleSchema() {
+  return z.object({
+    chambers: z.array(z.object({ chamberId: z.string().min(1), majority: z.enum(["simple", "absolute", "two-thirds-present"]) }).strict()).min(1),
+    resolution: z.enum(["all", "lower-final", "scrutiny"]),
+    finalMajority: z.enum(["simple", "absolute", "two-thirds-present"]).optional(),
+    minimumReviewQuarters: z.number().int().nonnegative(), summary: z.string().min(1), scopeNote: z.string().min(1),
+    sources: z.array(dataSourceSchema).min(1),
+  }).strict();
+}
+
 const politicalSystemSchema: z.ZodType<PoliticalSystem> = z.object({
   formOfGovernment: z.enum(["presidential", "parliamentary", "semi-presidential", "authoritarian"]),
   headOfState: z.object({ officeId: z.string().min(1), title: z.string().min(1), selection: z.enum(["hereditary", "direct-election", "indirect-election", "rotating"]), termYears: z.number().int().positive().nullable(), ceremonial: z.boolean() }).strict(),
   legislature: z.discriminatedUnion("type", [unicameralLegislatureSchema, bicameralLegislatureSchema]),
+  treatyApproval: z.object({
+    treaties: treatyApprovalRuleSchema(), financing: treatyApprovalRuleSchema(),
+  }).strict().optional(),
   executive: executiveRulesSchema,
   executiveAccountability: z.object({
     presidentialVacancy: z.object({ causes: z.array(z.string().min(1)).min(1), minimumSponsorsPercent: bounded(), admissionVotePercent: bounded(), finalVotePercent: bounded(), minimumDaysBeforeVote: z.number().int().nonnegative(), maximumDaysBeforeVote: z.number().int().positive(), maximumDefenseMinutes: z.number().int().positive() }).strict().nullable(),
@@ -164,6 +177,16 @@ const politicalSystemSchema: z.ZodType<PoliticalSystem> = z.object({
     : [system.legislature.lowerChamber];
   if (new Set(chambers.map((chamber) => chamber.id)).size !== chambers.length) {
     context.addIssue({ code: "custom", message: "Los identificadores de cámara deben ser únicos.", path: ["legislature"] });
+  }
+  for (const [kind, rule] of Object.entries(system.treatyApproval ?? {})) {
+    const routeIds = rule.chambers.map((item) => item.chamberId);
+    if (new Set(routeIds).size !== routeIds.length || routeIds.some((id) => !chambers.some((chamber) => chamber.id === id))) {
+      context.addIssue({ code: "custom", message: "La ratificación debe referirse a cámaras existentes, sin duplicarlas.", path: ["treatyApproval", kind, "chambers"] });
+    }
+    if (rule.resolution !== "all" && routeIds[0] !== system.legislature.lowerChamber.id || rule.resolution === "lower-final" && (routeIds.length !== 2 || !rule.finalMajority)) {
+      context.addIssue({ code: "custom", message: "La revisión final requiere la cámara baja primero y una mayoría final explícita.", path: ["treatyApproval", kind] });
+    }
+    if (rule.resolution === "scrutiny" && rule.minimumReviewQuarters < 1) context.addIssue({ code: "custom", message: "El examen previo necesita un plazo de revisión.", path: ["treatyApproval", kind, "minimumReviewQuarters"] });
   }
   if (system.politicalDistribution.reduce((sum, item) => sum + item.sharePercent, 0) !== 100) {
     context.addIssue({ code: "custom", message: "La distribución política debe sumar 100%.", path: ["politicalDistribution"] });

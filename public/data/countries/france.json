@@ -4,7 +4,7 @@
   "name": "Francia",
   "experimental": false,
   "startingYear": 2026,
-  "dataVersion": "france-institutions-2024-snapshot-v2",
+  "dataVersion": "france-institutions-2024-snapshot-v2-treaty-routes-v1",
   "population": 68000000,
   "politicalSystem": {
     "formOfGovernment": "semi-presidential",
@@ -143,6 +143,59 @@
       "effectiveAuthorityCohabitationPercent": 82,
       "decreeAllowedWhenAligned": true,
       "decreeAllowedWhenCohabiting": false
+    },
+    "treatyApproval": {
+      "treaties": {
+        "chambers": [
+          {
+            "chamberId": "assembly",
+            "majority": "simple"
+          },
+          {
+            "chamberId": "senate",
+            "majority": "simple"
+          }
+        ],
+        "resolution": "lower-final",
+        "minimumReviewQuarters": 0,
+        "summary": "Ambas cámaras revisan la autorización. Si discrepan, la Asamblea puede tener la última palabra.",
+        "scopeNote": "Los personajes y sus votos son ficticios. Se agregan iniciativa, autorización y ratificación ejecutiva en una acción; no se simulan reservas, control judicial ni tratados que reforman la Constitución. La conciliación y segunda lectura se agregan a un trimestre de espera y una nueva acción; no se garantiza su resultado.",
+        "sources": [
+          {
+            "name": "Reglas nacionales de autorización internacional",
+            "url": "https://qpc360.conseil-constitutionnel.fr/constitution-4-octobre-1958",
+            "indicator": "Constitución, arts. 45, 52 y 53",
+            "year": 2026,
+            "accessedOn": "2026-10-06"
+          }
+        ],
+        "finalMajority": "simple"
+      },
+      "financing": {
+        "chambers": [
+          {
+            "chamberId": "assembly",
+            "majority": "simple"
+          },
+          {
+            "chamberId": "senate",
+            "majority": "simple"
+          }
+        ],
+        "resolution": "all",
+        "minimumReviewQuarters": 0,
+        "summary": "El préstamo necesita autorización presupuestaria de ambas cámaras.",
+        "scopeNote": "Control presupuestario ficticio inspirado en las instituciones nacionales. No reproduce la aprobación real de un préstamo FMI/IBRD ni un contrato internacional. Usa una votación presupuestaria ordinaria, separada de las mayorías de los tratados.",
+        "sources": [
+          {
+            "name": "Reglas nacionales de autorización internacional",
+            "url": "https://qpc360.conseil-constitutionnel.fr/constitution-4-octobre-1958",
+            "indicator": "Constitución, arts. 45, 52 y 53",
+            "year": 2026,
+            "accessedOn": "2026-10-06"
+          }
+        ]
+      }
     }
   },
   "candidateEligibility": [
@@ -221,6 +274,13 @@
       "name": "Sénat · Modo de elección y mandato",
       "url": "https://www.senat.fr/connaitre-le-senat/role-et-fonctionnement/mode-delection-des-senateurs.html",
       "indicator": "348 escaños, elección indirecta y mandato de seis años; representación resumida en este escenario",
+      "year": 2026,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Reglas nacionales de autorización internacional",
+      "url": "https://qpc360.conseil-constitutionnel.fr/constitution-4-octobre-1958",
+      "indicator": "Constitución, arts. 45, 52 y 53",
       "year": 2026,
       "accessedOn": "2026-10-06"
     }

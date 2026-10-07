@@ -48,18 +48,19 @@ test("international treaty ratification counts deterministic chamber votes and a
   const treaty = { id: "test-trade-vote", partnerId, kind: "trade" as const, status: "proposed" as const, signedQuarter: 0, explanation: "Acuerdo de prueba." };
   const highSupport = {
     ...state,
-    world: { ...state.world, approvalPercent: 100, legislators: state.world.legislators.map((member) => member.chamberId === state.legislature!.chamberId ? { ...member, ideology: { ...member.ideology, economy: 100, nationalism: 0, social: 100 } } : member) },
+    world: { ...state.world, approvalPercent: 100, legislators: state.world.legislators.map((member) => ({ ...member, ideology: { ...member.ideology, economy: 100, nationalism: 0, social: 100 } })) },
     geopolitics: { ...state.geopolitics, treaties: [...state.geopolitics.treaties, treaty], relations: state.geopolitics.relations.map((relation) => relation.a === partnerId || relation.b === partnerId ? { ...relation, trust: 100 } : relation) },
   };
   const passed = ratifyInternationalTreaty(highSupport, country, treaty.id);
   const passageVote = passed.geopolitics.votes.at(-1)!;
   assert.equal(passageVote.passed, true);
   assert.ok(passageVote.yes > passageVote.no);
-  assert.equal(passageVote.abstain + passageVote.yes + passageVote.no, state.world.legislators.filter((member) => member.chamberId === state.legislature!.chamberId).length);
+  assert.equal(passageVote.chamberEvidence!.chamberId, "senate");
+  assert.equal(passageVote.abstain + passageVote.yes + passageVote.no + passageVote.absent!, 60);
   assert.equal(passed.geopolitics.treaties.find((item) => item.id === treaty.id)?.status, "ratified");
   assert.equal(passed.geopolitics.relations.find((relation) => [relation.a, relation.b].includes(partnerId) && [relation.a, relation.b].includes(state.geopolitics.playerCountryId))?.annualFlowUsd, state.geopolitics.relations.find((relation) => [relation.a, relation.b].includes(partnerId) && [relation.a, relation.b].includes(state.geopolitics.playerCountryId))!.annualFlowUsd * 1.03);
 
-  const opposed = { ...highSupport, world: { ...highSupport.world, approvalPercent: 0, legislators: highSupport.world.legislators.map((member) => member.chamberId === state.legislature!.chamberId ? { ...member, ideology: { ...member.ideology, economy: 0, nationalism: 100, social: 0 } } : member) }, geopolitics: { ...highSupport.geopolitics, treaties: [{ ...treaty, id: "test-trade-rejected" }] } };
+  const opposed = { ...highSupport, world: { ...highSupport.world, approvalPercent: 0, legislators: highSupport.world.legislators.map((member) => ({ ...member, ideology: { ...member.ideology, economy: 0, nationalism: 100, social: 0 } })) }, geopolitics: { ...highSupport.geopolitics, treaties: [{ ...treaty, id: "test-trade-rejected" }] } };
   const rejected = ratifyInternationalTreaty(opposed, country, "test-trade-rejected");
   assert.equal(rejected.geopolitics.votes.at(-1)?.passed, false);
   assert.equal(rejected.geopolitics.treaties.find((item) => item.id === "test-trade-rejected")?.status, "rejected");
@@ -301,7 +302,7 @@ test("a successful candidate can serve a complete legislature with remembered re
 test("unicameral countries use their configured chamber id in the same career engine", () => {
   const unicameral = parseCountry(JSON.stringify({
     ...country, id: "single-house", dataVersion: "fixture-v1", candidateEligibility: country.candidateEligibility.map((rule) => ({ ...rule, ...(rule.chamberId ? { chamberId: "national-assembly" } : {}) })),
-    politicalSystem: { ...country.politicalSystem, legislature: { type: "unicameral", lowerChamber: { ...country.politicalSystem.legislature.lowerChamber, id: "national-assembly", name: "Asamblea", seats: 101, districtCount: 1, nationalSeats: 0 } } },
+    politicalSystem: { ...country.politicalSystem, treatyApproval: undefined, legislature: { type: "unicameral", lowerChamber: { ...country.politicalSystem.legislature.lowerChamber, id: "national-assembly", name: "Asamblea", seats: 101, districtCount: 1, nationalSeats: 0 } } },
     electoralDistricts: [{ id: "national", name: "Distrito nacional", seatsByChamber: { "national-assembly": 101 } }],
   }));
   let state = createCareerGame(unicameral, { seed: "single-house", name: "Mateo Rivas", age: 35, originId: "urban-working", professionId: "teacher", educationId: "technical", districtId: "national" });

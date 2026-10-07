@@ -1,22 +1,28 @@
 {
   "date": "2026-10-06",
+  "cut": "national-ratification-rosters-frequency-2026-10-06",
+  "platformScope": "PC only, explicit user correction",
   "environment": "Windows; Node 24.13.1; Core i5-10400F; 17098092544 bytes RAM",
   "unitTests": {
     "command": "npm test",
-    "passed": 117,
-    "failed": 0
+    "passed": 128,
+    "failed": 0,
+    "durationMs": 28181.9947
   },
   "build": {
-    "command": "npm run build",
+    "command": "npm run build; npm run build:repro-check",
     "passed": true,
-    "repeatedBuildHashesIdentical": true,
-    "hashesFile": "build-reproducibility.json",
-    "filesCompared": 30,
-    "mainChunkMinifiedKB": 334.05,
-    "mainChunkGzipKB": 94.27,
-    "workerChunkMinifiedKB": 385.65,
-    "inboxChunkMinifiedKB": 5.72,
-    "offlineFiles": 27
+    "identicalBuilds": true,
+    "reproducibleFiles": 30,
+    "evidence": "build-reproducibility.json",
+    "mainChunkKb": 341.83,
+    "mainChunkGzipKb": 96.98,
+    "workerKb": 390.33,
+    "worldViewKb": 37.07,
+    "worldDataKb": 107.8,
+    "browserProfilesSynchronized": true,
+    "offlinePrecacheFiles": 27,
+    "scopeNote": "Other initial chunks remain downloads. Reproducibility is local, same lockfile/environment."
   },
   "worker": {
     "command": "npm run build:worker-check",
@@ -26,89 +32,177 @@
     "command": "npm run validate:mass",
     "runs": 1000,
     "years": 20,
-    "workers": 4,
-    "invalidValues": 0,
-    "elapsedMs": 5634
+    "passed": true,
+    "wallMs": 6812,
+    "scope": "Base Peru engine, not full careers."
   },
   "world": {
     "command": "npm run world:validate",
-    "runs": 100,
-    "years": 50,
     "evidence": "phase-4-simulation.json",
-    "auditedEachQuarter": true,
+    "parameterVersion": "world-balance-v4",
+    "runs": 100,
+    "yearsPerRun": 50,
+    "actors": 217,
+    "quarterlyAudit": true,
+    "averageWars": 31.08,
+    "averageCoups": 60.57,
+    "averageShocks": 24.07,
+    "averageSanctions": 0.99,
+    "maximumDirectNuclearWars": 0,
+    "invalidValues": 0,
+    "averageQuarterMs": 2.379895709999999,
+    "worldRuntimeMs": 47603.552500000005,
     "sensitivity": {
       "command": "npm run world:sensitivity",
-      "shockCases": 1736,
-      "fiftyYearRuns": 36,
-      "evidence": "world-sensitivity.json",
-      "independentHistoricalCalibrationCompleted": false
+      "cases": 1736,
+      "worldRuns": 36,
+      "yearsPerRun": 50,
+      "passed": true,
+      "evidence": "world-sensitivity.json"
     }
+  },
+  "frequencyReference": {
+    "command": "python scripts/update-frequency-reference.py; npm run world:frequency -- --apply",
+    "reference": "independent-world-reference.json",
+    "evidence": "world-frequency-calibration.json",
+    "referenceWindow": [
+      2000,
+      2025
+    ],
+    "trainingSeeds": 8,
+    "candidates": 3,
+    "reservedSeeds": 32,
+    "years": 50,
+    "selected": {
+      "conflictQuarterProbability": 0.65,
+      "coupRiskScale": 0.0024
+    },
+    "episodesPerYear": 0.5775,
+    "coupsPerYear": 1.240625,
+    "proxyFactorTolerance": 2,
+    "withinProxyBand": true,
+    "historicalEquivalenceProven": false,
+    "globalShocksExternallyCalibrated": false,
+    "scopeNote": "Common coefficients selected with training only; reserved seeds now used. Game types/indices differ from dataset definitions; band is a design tolerance, not confidence interval."
   },
   "countries": {
     "command": "npm run validate:countries -- 25",
-    "campaigns": 500,
     "profiles": 10,
+    "runsPerStrategy": 25,
+    "strategies": 2,
+    "samples": 500,
+    "passed": true,
     "evidence": "country-balance-25.json",
-    "jsonCapturedFromNpmCommand": true,
-    "repeatedAfterEventIndexOptimization": true,
-    "allGroupedResultsIdenticalToPreviousEngine": true
+    "scope": "Known seeds; basic campaign/legislature regression."
   },
   "careerBalance": {
-    "command": "npm run validate:balance",
-    "runs": 4500,
-    "perProfile": 450,
-    "distinctSeeds": 500,
+    "command": "MANDATO_BALANCE_SEED_PREFIX=balance-reserved-v3 npm run validate:balance",
+    "profiles": 10,
+    "samples": 4500,
+    "distinctPairedSeeds": 500,
+    "samplesPerCountry": 450,
     "strategies": 3,
-    "realismModes": 3,
+    "modes": 3,
     "ideologies": 5,
-    "workers": 4,
-    "status": "complete",
+    "completed": true,
+    "balanceAccepted": false,
     "evidence": "career-balance.json",
-    "balanced": false,
-    "seedPrefix": "balance-holdout-v2",
-    "scope": "Se repite balance-holdout-v2 tras optimizar búsquedas de eventos para comprobar igualdad de los 4.500 resultados por muestra, excluyendo tiempos. Es regresión con semillas ya usadas, no una nueva calibración. Los extremos y los criterios de balance siguen pendientes.",
-    "regressionEvidence": "career-event-index-regression.json"
+    "mexicoDeputyWins": 0,
+    "mexicoDeputySamples": 180,
+    "peruPresidentCompletedTerms": 21,
+    "peruPresidentSamples": 135,
+    "scopeNote": "New paired seeds, now consumed. Samples close one term/defeat and retirement, not forty years. Concurrent timing; no improvement inferred from differences across seeds."
   },
   "generatedCountries": {
-    "command": "node --import tsx src/cli/generated-countries.ts",
-    "profiles": 217,
+    "command": "npm run validate:generated",
+    "actors": 217,
     "starts": 651,
-    "evidence": "generated-countries-evidence.json"
+    "passed": true,
+    "scope": "Three starts/first weeks per generated actor; fictitious institutional template."
   },
   "diplomacyComparison": {
-    "command": "node --import tsx src/cli/diplomacy-balance.ts",
-    "scenarios": 225,
-    "evidence": "diplomacy-balance.json"
+    "command": "npm run validate:diplomacy",
+    "samples": 2250,
+    "profiles": 10,
+    "seedsPerCountry": 25,
+    "partners": 3,
+    "stances": 3,
+    "years": 5,
+    "passed": true,
+    "evidence": "diplomacy-balance.json",
+    "scope": "Equal paid visit before extra stance cost; world scenarios, no proof of career strategy dominance."
+  },
+  "content": {
+    "command": "npm run content:validate",
+    "templates": 407,
+    "arcs": 64,
+    "internationalTemplates": 80,
+    "internationalArcs": 10,
+    "headlines": 30,
+    "staticTexts": 1628,
+    "repeatedStaticTexts": 0,
+    "issues": 0
   },
   "longCareer": {
     "command": "npm run validate:long-career",
-    "years": 40,
     "evidence": "long-career-evidence.json",
-    "memoryStabilityProven": false,
-    "maximumTurnMs": 19.566200000000208,
-    "p95TurnMs": 16.514899999999216,
-    "firstTenYearsAverageTurnMs": 6.673874999999953,
-    "lastTenYearsAverageTurnMs": 8.923919999999885,
-    "stateSha256": "874bb6a1e2604658a96d2328ce97a5d41b388af4aa2722fde079cb207e749c22",
-    "identicalToPreviousEngineAtEachDecade": true,
-    "baselineEvidence": "performance-baseline-0df312e.json",
-    "serializedBytesStart": 1431854,
-    "serializedBytesEnd": 1909872,
-    "historyTruncated": false,
-    "performanceComparisonScope": "Una corrida por versión en el mismo equipo y protocolo; no comparación estadística ni memoria sostenida resuelta."
+    "seed": "long-career-6",
+    "years": 40,
+    "completedTerms": 8,
+    "identicalAfterRestore": true,
+    "restoredAtQuarter": 80,
+    "stateSha256": "d5c87bd3047380ba4a7aa316582905669158e05eb7a26d787c98de2552c8592f",
+    "comparedToPreviousMotor": false,
+    "firstTenYearsAverageTurnMs": 12.200617499999998,
+    "lastTenYearsAverageTurnMs": 12.248602500000015,
+    "maximumTurnMs": 44.220000000001164,
+    "p95TurnMs": 28.144800000000032,
+    "serializedBytesStart": 1462377,
+    "serializedBytesEnd": 1974406,
+    "memoryGrowthResolved": false,
+    "thirtyYearRepeatedLiteralBodiesPercent": 0,
+    "priorFailedSeeds": 6,
+    "scopeNote": "One Peru legislative career, under concurrent validation load; restoration equality is current-engine only. Earlier SHA comparisons are historical. Decisions/logs retained; other offices/GPU/hardware not accredited."
+  },
+  "memberships": {
+    "evidence": "../src/data/world-memberships.json",
+    "officialCounts": {
+      "un": 193,
+      "imf": 191,
+      "world-bank": 189,
+      "wto": 166,
+      "eu": 27,
+      "nato": 32,
+      "mercosur": 6,
+      "asean": 11,
+      "au": 55
+    },
+    "unrepresented": {
+      "wto": [
+        "EU",
+        "TWN"
+      ],
+      "au": [
+        "SADR"
+      ]
+    },
+    "listsIndependentlyReviewed": 9,
+    "allParticipationRestrictionsReviewed": false,
+    "documentedRestriction": "Venezuela/Mercosur membership retained with suspension separate",
+    "existingWorldSavesKeepTheirSnapshot": true
   },
   "browser": {
     "smoke": {
       "command": "python tests/web-smoke.py",
       "engine": "Edge Chromium",
       "passed": true,
-      "executiveTurnSeconds": 0.326,
+      "executiveTurnSeconds": 0.243,
       "hallArchiveAndEscape": true
     },
     "countryStart": {
       "command": "python scripts/country-start-browser-check.py",
       "passed": true,
-      "nationalProfiles": 10,
+      "profiles": 10,
       "generatedExamples": 3
     },
     "diplomacy": {
@@ -134,21 +228,17 @@
         "firefox"
       ],
       "passed": true,
-      "desktopResolutions": [
-        {
-          "width": 1280,
-          "height": 900
-        },
-        {
-          "width": 1920,
-          "height": 1080
-        }
-      ]
+      "desktopWidths": [
+        1280,
+        1920
+      ],
+      "humanTest": false
     },
     "contrast": {
       "command": "python scripts/contrast-browser-check.py",
       "passed": true,
-      "evidence": "contrast-browser-evidence.json"
+      "evidence": "contrast-browser-evidence.json",
+      "newSourceLinkContrastFixed": true
     },
     "careerWorker": {
       "command": "python scripts/career-worker-browser-check.py",
@@ -160,9 +250,7 @@
       "offline": true,
       "persistentWorkerConfirmed": true,
       "worldEconomyCareerSynchronized": true,
-      "governmentNegotiationCost": 5,
-      "evidence": "career-worker-browser-evidence.json",
-      "fastPaceWaitsForUnansweredChoice": true
+      "evidence": "career-worker-browser-evidence.json"
     },
     "financing": {
       "command": "node --import tsx scripts/prepare-financing-fixtures.ts; python scripts/financing-browser-check.py",
@@ -171,68 +259,67 @@
         "firefox"
       ],
       "passed": true,
+      "desktopWidths": [
+        1280,
+        1920
+      ],
       "approvalSuspensionRecovery": true,
       "commitmentCostChecked": true,
-      "horizontalOverflow": false,
-      "economicExplanations": 20,
       "evidence": "financing-browser-evidence.json",
-      "humanTest": false,
-      "desktopResolutions": [
-        {
-          "width": 1280,
-          "height": 900
-        },
-        {
-          "width": 1920,
-          "height": 1080
-        }
-      ]
+      "humanTest": false
     },
-    "longCareerInbox": {
-      "command": "python scripts/long-career-browser-check.py",
-      "passed": true,
-      "evidence": "long-career-browser-evidence.json",
+    "ratification": {
+      "command": "node --import tsx scripts/prepare-ratification-fixtures.ts; python scripts/ratification-browser-check.py",
       "engines": [
         "chromium",
         "firefox"
       ],
-      "platform": "PC",
+      "paths": 20,
+      "profiles": 10,
+      "passed": true,
+      "identicalCommandState": true,
+      "britishWaitingChecked": true,
+      "evidence": "ratification-browser-evidence.json",
+      "scope": "Natural legislative checkpoints; rare disagreements/pass thresholds in domain tests. No fabricated majorities; nine rejections/one pending British reconsideration per engine."
+    },
+    "longCareerInbox": {
+      "command": "python scripts/long-career-browser-check.py",
+      "engines": [
+        "chromium",
+        "firefox"
+      ],
+      "passed": true,
+      "desktopWidths": [
+        1280,
+        1920
+      ],
       "pendingReachable": 414,
       "diaryEntries": 432,
       "maximumRenderedMatters": 12,
       "maximumRenderedDiaryEntries": 20,
-      "allPagesComparedAgainstSave": true,
-      "searchKeyboardImportExportPassed": true,
-      "largestTextRootPx": 20,
-      "textSizePersistsOutsideHelpAndOnReload": true,
+      "importExportIdentical": true,
+      "evidence": "long-career-browser-evidence.json",
       "humanTest": false
     }
   },
+  "sourceAtReportCut": {
+    "sha256": "adb144f7956fb8dfeb53865d2297da3f147254303fce89ad846e9b0ff3d0a9ae",
+    "files": 156,
+    "scope": "src, data/countries, public, tests (except __pycache__), scripts, package/configuration and independent-world-reference.json; other reports excluded",
+    "command": "node scripts/source-fingerprint.mjs",
+    "buildHashes": "build-reproducibility.json",
+    "note": "Current source and reference; reports excluded except reference input. Browser behavior checks preceded only the final source-link color fix; contrast/accessibility then rechecked on final reproducible build."
+  },
+  "historicalEvidence": {
+    "previousValidation": "historical-validation-a86e34d.json",
+    "previousLongCareer": "historical-long-career-a86e34d.json",
+    "note": "Prior 0df312e/a86e34d optimization hashes and timings are not current-world-v4 validation."
+  },
   "humanSessions": 0,
+  "humanEvidenceStatus": "User confirmed that human sessions/editorial/assistive/physical testing have not yet been performed.",
   "screenReaderTested": false,
   "humanEditorialReviewCompleted": false,
+  "representativePcHardwareCoverageCompleted": false,
   "publicReleaseCompleted": false,
-  "allMandatoryCriteriaCompleted": false,
-  "cut": "long-career-event-index-and-pc-inbox-2026-10-06",
-  "memberships": {
-    "evidence": "../src/data/world-memberships.json",
-    "officialWtoMembers": 166,
-    "representedWtoMembers": 164,
-    "officialImfMembers": 191,
-    "officialIbrdMembers": 189,
-    "unrepresentedWtoActors": [
-      "EU",
-      "TWN"
-    ],
-    "otherOrganizationRostersFullyReviewed": false,
-    "existingSavesKeepTheirSnapshot": true
-  },
-  "sourceAtReportCut": {
-    "sha256": "5052a9eeaebf3563dbc88717e136c604a66cb9abc1d31934835e36220be438c6",
-    "scope": "src, data/countries, public, tests sin pycache, scripts y configuración; excluye informes para evitar autorreferencia",
-    "buildHashes": "build-reproducibility.json",
-    "note": "Huella del código de este corte. La regresión de 4.500 muestras y la carrera larga comparan el mismo protocolo con el motor previo, sin cambiar reglas. Mundo, 500 campañas, 651 arranques generados y 225 escenarios diplomáticos se repitieron; base y sensibilidad conservan evidencia anterior porque sus reglas no cambiaron. No demuestra balance aceptado ni requisitos humanos."
-  },
-  "platformScope": "PC only, corrected explicitly by the user on 2026-10-06",
-  "representativePcHardwareCoverageCompleted": false
+  "allMandatoryCriteriaCompleted": false
 }

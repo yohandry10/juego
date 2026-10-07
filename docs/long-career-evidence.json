@@ -9,22 +9,22 @@
   "schema": 15,
   "restoredAtQuarter": 80,
   "identicalAfterRestore": true,
-  "stateSha256": "874bb6a1e2604658a96d2328ce97a5d41b388af4aa2722fde079cb207e749c22",
-  "identicalToBaseline": true,
-  "comparisonPath": "docs/performance-baseline-0df312e.json",
-  "firstTenYearsAverageTurnMs": 6.673874999999953,
-  "lastTenYearsAverageTurnMs": 8.923919999999885,
-  "maximumTurnMs": 19.566200000000208,
-  "p95TurnMs": 16.514899999999216,
+  "stateSha256": "d5c87bd3047380ba4a7aa316582905669158e05eb7a26d787c98de2552c8592f",
+  "identicalToBaseline": null,
+  "comparisonPath": null,
+  "firstTenYearsAverageTurnMs": 12.200617499999998,
+  "lastTenYearsAverageTurnMs": 12.248602500000015,
+  "maximumTurnMs": 44.220000000001164,
+  "p95TurnMs": 28.144800000000032,
   "snapshots": [
     {
       "quarter": 40,
-      "serializedBytes": 1431854,
-      "heapBytes": 27679008,
-      "stateSha256": "4ed2c171d281c5795f80e2cfe7811c2ed7fe7159c888301b857cf7f7e9fdb745",
+      "serializedBytes": 1462377,
+      "heapBytes": 27819360,
+      "stateSha256": "95498c4f927ddb8f17811405eafe023727165aac9a422d6d537adeeec91bb0a0",
       "componentBytes": {
-        "world": 100960,
-        "geopolitics": 550627,
+        "world": 101443,
+        "geopolitics": 580650,
         "inbox": 104930,
         "log": 15994,
         "relationships": 21091,
@@ -41,17 +41,17 @@
         "budgetVotes": 0,
         "legislativeVotes": 20,
         "relationshipMemories": 0,
-        "worldActions": 18
+        "worldActions": 25
       }
     },
     {
       "quarter": 80,
-      "serializedBytes": 1584019,
-      "heapBytes": 32963960,
-      "stateSha256": "a8465a7b65bf8d7c29fcc37628b7c973f6fde9d3666d3f55c00af51aa43c80f9",
+      "serializedBytes": 1628082,
+      "heapBytes": 33303696,
+      "stateSha256": "459f27641bf37ebc79668fab5921a6ea27bbc8fa508d909fc5fa9586a59d8a12",
       "componentBytes": {
-        "world": 112506,
-        "geopolitics": 566706,
+        "world": 112989,
+        "geopolitics": 610269,
         "inbox": 210327,
         "log": 31891,
         "relationships": 21091,
@@ -68,17 +68,17 @@
         "budgetVotes": 0,
         "legislativeVotes": 20,
         "relationshipMemories": 0,
-        "worldActions": 31
+        "worldActions": 47
       }
     },
     {
       "quarter": 120,
-      "serializedBytes": 1747231,
-      "heapBytes": 30062104,
-      "stateSha256": "d2e77339af612ef8a868054e2dc65a314209a51fdb5ea0d8078314e94b9f695f",
+      "serializedBytes": 1801057,
+      "heapBytes": 30356008,
+      "stateSha256": "6c2506d2ac9015ca21fe4e6a7a62e6ea578fd76e69c8344da958782fd23a8dc2",
       "componentBytes": {
-        "world": 124418,
-        "geopolitics": 592920,
+        "world": 124436,
+        "geopolitics": 646711,
         "inbox": 315848,
         "log": 47755,
         "relationships": 21091,
@@ -95,17 +95,17 @@
         "budgetVotes": 0,
         "legislativeVotes": 20,
         "relationshipMemories": 0,
-        "worldActions": 56
+        "worldActions": 82
       }
     },
     {
       "quarter": 160,
-      "serializedBytes": 1909872,
-      "heapBytes": 30823376,
-      "stateSha256": "874bb6a1e2604658a96d2328ce97a5d41b388af4aa2722fde079cb207e749c22",
+      "serializedBytes": 1974406,
+      "heapBytes": 31144056,
+      "stateSha256": "d5c87bd3047380ba4a7aa316582905669158e05eb7a26d787c98de2552c8592f",
       "componentBytes": {
-        "world": 139793,
-        "geopolitics": 615849,
+        "world": 139826,
+        "geopolitics": 680333,
         "inbox": 420898,
         "log": 63619,
         "relationships": 21091,
@@ -122,7 +122,7 @@
         "budgetVotes": 0,
         "legislativeVotes": 20,
         "relationshipMemories": 0,
-        "worldActions": 82
+        "worldActions": 118
       }
     }
   ],

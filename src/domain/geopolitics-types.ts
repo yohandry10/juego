@@ -124,6 +124,8 @@ export interface InternationalOrganization {
   readonly memberCodes: readonly string[];
   readonly consensus: boolean;
   readonly description: string;
+  readonly rosterSource?: { readonly url: string; readonly accessedOn: string; readonly officialMemberCount: number; readonly scopeNote: string };
+  readonly participationRestrictions?: readonly { readonly code: string; readonly sourceUrl: string; readonly accessedOn: string; readonly reason: string }[];
 }
 
 export interface InternationalVote {
@@ -136,6 +138,18 @@ export interface InternationalVote {
   readonly abstain: number;
   readonly passed: boolean;
   readonly explanation: string;
+  readonly absent?: number;
+  readonly chamberEvidence?: TreatyChamberEvidence;
+}
+
+export interface TreatyChamberEvidence {
+  readonly chamberId: string;
+  readonly totalSeats: number;
+  readonly majority: import("./types.js").TreatyVoteMajority;
+  readonly quorum: number;
+  readonly minimumYes: number;
+  readonly procedure: "approval" | "objection";
+  readonly ballots: readonly { readonly legislatorId: string; readonly choice: "yes" | "no" | "abstain" | "absent"; readonly score: number; readonly reasons: readonly string[] }[];
 }
 
 export interface PlayerTreaty {
@@ -147,6 +161,8 @@ export interface PlayerTreaty {
   readonly explanation: string;
   /** Optional so old approved programs are not disbursed a second time. */
   readonly financing?: FinancingProgram;
+  /** Pending readings only. Legacy resolved decisions remain unchanged. */
+  readonly review?: { readonly notBeforeQuarter: number; readonly round: number; readonly phase: "reconsideration" | "final-reading" };
 }
 
 export interface FinancingProgram {
@@ -162,7 +178,7 @@ export interface FinancingProgram {
   readonly target: number;
   readonly lastCommitmentQuarter: number;
   readonly lastRepaymentQuarter?: number;
-  readonly reviews: readonly { readonly quarter: number; readonly metric: number; readonly target: number; readonly passed: boolean; readonly disbursement: number; readonly explanation: string }[];
+  readonly reviews: readonly { readonly quarter: number; readonly metric: number; readonly target: number; readonly passed: boolean; readonly disbursement: number; readonly explanation: string; readonly evidence?: { readonly statusBefore: FinancingProgram["status"]; readonly tranchesBefore: number; readonly deadlineQuarter: number } }[];
 }
 
 export interface TradeDispute {
@@ -187,6 +203,16 @@ export interface OrganizationStanding {
   readonly credibility: number;
   readonly recentCoup: boolean;
   readonly explanation: string;
+}
+
+export interface WorldDomesticImpactEvidence {
+  readonly quarter: number;
+  readonly tradeShockIndex: number;
+  readonly aidIndex: number;
+  readonly migrationAgreement: boolean;
+  readonly tradeAgreement: boolean;
+  readonly imfProgram: boolean;
+  readonly worldBankProgram: boolean;
 }
 
 export interface PlayerDiplomacy {
@@ -217,7 +243,7 @@ export interface GeopoliticsState {
   readonly conflicts: readonly WorldConflict[];
   readonly actions: readonly InternationalAction[];
   readonly player: PlayerDiplomacy;
-  readonly domesticImpact: { readonly growthDelta: number; readonly inflationDelta: number; readonly unemploymentDelta: number; readonly causes: readonly string[]; readonly financing?: { readonly debt: number; readonly reserves: number; readonly investment: number; readonly fiscalDeficit: number; readonly risk: number } };
+  readonly domesticImpact: { readonly growthDelta: number; readonly inflationDelta: number; readonly unemploymentDelta: number; readonly causes: readonly string[]; readonly evidence?: WorldDomesticImpactEvidence; readonly financing?: { readonly debt: number; readonly reserves: number; readonly investment: number; readonly fiscalDeficit: number; readonly risk: number } };
   readonly militaryLoyalty: number;
   readonly coups: number;
   readonly coupHistory?: readonly { readonly actorId: string; readonly quarterIndex: number; readonly risk: number; readonly explanation: string }[];

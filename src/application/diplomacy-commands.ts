@@ -62,7 +62,7 @@ export function requestWarAuthorization(state: CareerGameState, targetId: string
         treatyIds: kind === "treaty" || kind === "migration" ? [...geo.player.treatyIds, treatyId] : geo.player.treatyIds,
         foreignAffairsCommittee: kind === "recognition" ? [...new Set([...geo.player.foreignAffairsCommittee, targetId])] : geo.player.foreignAffairsCommittee,
       },
-      ...(kind === "treaty" || kind === "migration" ? { treaties: [...geo.treaties, { id: treatyId, partnerId: targetId, kind: treatyKind, status: "proposed" as const, signedQuarter: q, explanation }] } : {}),
+      ...(kind === "treaty" || kind === "migration" ? { treaties: [...geo.treaties, { id: treatyId, partnerId: targetId, kind: treatyKind, status: "proposed" as const, signedQuarter: geo.quarterIndex, explanation }] } : {}),
       ...(kind === "sanction" ? { sanctions: [...geo.sanctions, { fromId: geo.playerCountryId, toId: targetId, startedQuarter: q, reason: "Medida diplomática decidida por el jugador" }] } : {}),
       ...(kind === "aid" ? { conflicts: geo.conflicts.map((conflict) => conflict.status === "ended" && conflict.reconstruction && [conflict.attackerId, conflict.defenderId].includes(targetId) ? { ...conflict, reconstruction: { ...conflict.reconstruction, damage: Math.max(0, conflict.reconstruction.damage - 2), displacement: Math.max(0, conflict.reconstruction.displacement - 2), insurgency: Math.max(0, conflict.reconstruction.insurgency - 1) }, explanation: `${conflict.explanation} La ayuda exterior de ${geo.playerCountryId} financió reconstrucción y retorno agregado; el donante asume un costo presupuestario.` } : conflict) } : {}),
       actions: [...geo.actions, { id, quarterIndex: q, actorId: geo.playerCountryId, targetId, kind: actionKind, intensity: kind === "treaty" || kind === "migration" ? 40 : kind === "sanction" ? 20 : 15, explanation, costToSender: cost }],
@@ -85,7 +85,7 @@ export function requestWarAuthorization(state: CareerGameState, targetId: string
     return ({ ...state, geopolitics: {
       ...geo,
       player: { ...geo.player, influence: geo.player.influence - cost, treatyIds: [...geo.player.treatyIds, treatyId] },
-      treaties: [...geo.treaties, { id: treatyId, partnerId: lender, kind: "aid" as const, status: "proposed" as const, signedQuarter: geo.quarterIndex + 1, explanation }],
+      treaties: [...geo.treaties, { id: treatyId, partnerId: lender, kind: "aid" as const, status: "proposed" as const, signedQuarter: geo.quarterIndex, explanation }],
       actions: [...geo.actions, { id: `player-financing-${geo.actions.length + 1}`, quarterIndex: geo.quarterIndex + 1, actorId: geo.playerCountryId, targetId: lender, kind: "security-assistance" as const, intensity: 25, explanation, costToSender: cost }],
     } });
   };

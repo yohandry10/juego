@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { mkdtemp, rm, writeFile } from "node:fs/promises";
+import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import test from "node:test";
@@ -13,6 +13,13 @@ import { restoreGameState, serializeGameState } from "../src/data/game-save.js";
 import { handleWorkerRequest } from "../src/worker/simulation-worker.js";
 import { advanceCareer, createCareerGame } from "../src/application/career-commands.js";
 import { advanceClock } from "../src/engine/calendar.js";
+
+test("browser and engine use identical national profiles and source metadata", async () => {
+  const manifest = JSON.parse(await readFile("public/data/countries/index.json", "utf8")) as { countries: { file: string }[] };
+  for (const { file } of manifest.countries) {
+    assert.equal(await readFile(`public/data/countries/${file}`, "utf8"), await readFile(`data/countries/${file}`, "utf8"), file);
+  }
+});
 
 test("the career worker advances world, economy and career with the same deterministic transition", async () => {
   const nation = await loadCountry("data/countries/peru.json");
@@ -32,7 +39,7 @@ const country = await loadCountry(countryPath);
 
 test("country fixture contains versioned world data and structural political parameters", () => {
   assert.equal(country.id, "peru");
-  assert.equal(country.dataVersion, "peru-2026-10-05-v7");
+  assert.equal(country.dataVersion, "peru-2026-10-05-v7-treaty-routes-v1");
   assert.equal(country.politicalSystem.formOfGovernment, "presidential");
   assert.equal(country.politicalSystem.legislature.type, "bicameral");
   if (country.politicalSystem.legislature.type !== "bicameral") throw new Error("La ficha de Perú debe tener dos cámaras.");
@@ -63,6 +70,7 @@ test("the same country schema and generator support a unicameral legislature", (
     ministerialAppointment: { ...country.ministerialAppointment, eligibleAfterOfficeIds: country.ministerialAppointment.eligibleAfterOfficeIds.filter((officeId) => officeId !== "senator") },
     politicalSystem: {
       ...country.politicalSystem,
+      treatyApproval: undefined,
       legislature: {
         type: "unicameral",
         lowerChamber: {

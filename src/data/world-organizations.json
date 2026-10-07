@@ -202,7 +202,13 @@
         "ZWE"
       ],
       "consensus": false,
-      "description": "Asamblea General simplificada; cada miembro tiene un voto."
+      "description": "193 miembros oficiales; 193 con actor. Membresía oficial; las consultas y beneficios del motor son ficticios.",
+      "rosterSource": {
+        "url": "https://www.un.org/en/about-us/member-states",
+        "accessedOn": "2026-10-06",
+        "officialMemberCount": 193,
+        "scopeNote": "Membresía oficial; las consultas y beneficios del motor son ficticios."
+      }
     },
     {
       "id": "imf",
@@ -787,21 +793,22 @@
         "AUT",
         "BEL",
         "BGR",
-        "HRV",
         "CYP",
         "CZE",
+        "DEU",
         "DNK",
+        "ESP",
         "EST",
         "FIN",
         "FRA",
-        "DEU",
         "GRC",
+        "HRV",
         "HUN",
         "IRL",
         "ITA",
-        "LVA",
         "LTU",
         "LUX",
+        "LVA",
         "MLT",
         "NLD",
         "POL",
@@ -809,11 +816,16 @@
         "ROU",
         "SVK",
         "SVN",
-        "ESP",
         "SWE"
       ],
       "consensus": true,
-      "description": "Mercado regional; decisiones colectivas simplificadas y membresía congelada."
+      "description": "27 miembros oficiales; 27 con actor. Membresía oficial; las consultas y beneficios del motor son ficticios.",
+      "rosterSource": {
+        "url": "https://european-union.europa.eu/principles-countries-history/eu-countries_en",
+        "accessedOn": "2026-10-06",
+        "officialMemberCount": 27,
+        "scopeNote": "Membresía oficial; las consultas y beneficios del motor son ficticios."
+      }
     },
     {
       "id": "nato",
@@ -825,37 +837,43 @@
         "BEL",
         "BGR",
         "CAN",
-        "HRV",
         "CZE",
+        "DEU",
         "DNK",
+        "ESP",
         "EST",
         "FIN",
         "FRA",
-        "DEU",
+        "GBR",
         "GRC",
+        "HRV",
         "HUN",
         "ISL",
         "ITA",
-        "LVA",
         "LTU",
         "LUX",
+        "LVA",
+        "MKD",
         "MNE",
         "NLD",
-        "MKD",
         "NOR",
         "POL",
         "PRT",
         "ROU",
         "SVK",
         "SVN",
-        "ESP",
         "SWE",
         "TUR",
-        "GBR",
         "USA"
       ],
       "consensus": true,
-      "description": "Alianza de seguridad; el mecanismo representa consultas, compromisos y credibilidad, no una garantía automática de guerra."
+      "description": "32 miembros oficiales; 32 con actor. Membresía oficial; las consultas y beneficios del motor son ficticios.",
+      "rosterSource": {
+        "url": "https://www.nato.int/en/about-us/organization/nato-member-countries",
+        "accessedOn": "2026-10-06",
+        "officialMemberCount": 32,
+        "scopeNote": "Membresía oficial; las consultas y beneficios del motor son ficticios."
+      }
     },
     {
       "id": "mercosur",
@@ -867,10 +885,25 @@
         "BOL",
         "BRA",
         "PRY",
-        "URY"
+        "URY",
+        "VEN"
       ],
       "consensus": true,
-      "description": "Integración regional sudamericana; Venezuela aparece suspendida y los asociados no votan como miembros."
+      "description": "6 miembros oficiales; 6 con actor. Estados Partes; excluye asociados. Venezuela sigue siendo Estado Parte con participación suspendida. La nota portuguesa antigua sobre adhesión boliviana no se usa para excluir a Bolivia.",
+      "rosterSource": {
+        "url": "https://www.mercosur.int/acerca-del-mercosur/paises",
+        "accessedOn": "2026-10-06",
+        "officialMemberCount": 6,
+        "scopeNote": "Estados Partes; excluye asociados. Venezuela sigue siendo Estado Parte con participación suspendida. La nota portuguesa antigua sobre adhesión boliviana no se usa para excluir a Bolivia."
+      },
+      "participationRestrictions": [
+        {
+          "code": "VEN",
+          "sourceUrl": "https://www.mercosur.int/acerca-del-mercosur/paises",
+          "accessedOn": "2026-10-06",
+          "reason": "La fuente oficial mantiene suspendidos sus derechos y obligaciones como Estado Parte. El snapshot conserva esa restricción; los índices de juego no la levantan."
+        }
+      ]
     },
     {
       "id": "asean",
@@ -879,11 +912,11 @@
       "rule": "fixed",
       "memberCodes": [
         "BRN",
-        "KHM",
         "IDN",
+        "KHM",
         "LAO",
-        "MYS",
         "MMR",
+        "MYS",
         "PHL",
         "SGP",
         "THA",
@@ -891,7 +924,13 @@
         "VNM"
       ],
       "consensus": true,
-      "description": "Cooperación regional del Sudeste Asiático; decisiones por consenso simplificado."
+      "description": "11 miembros oficiales; 11 con actor. Incluye Timor-Leste desde octubre de 2025. La representación de Myanmar y los procedimientos de consenso no se reproducen jurídicamente.",
+      "rosterSource": {
+        "url": "https://asean.org/about-asean/",
+        "accessedOn": "2026-10-06",
+        "officialMemberCount": 11,
+        "scopeNote": "Incluye Timor-Leste desde octubre de 2025. La representación de Myanmar y los procedimientos de consenso no se reproducen jurídicamente."
+      }
     },
     {
       "id": "au",
@@ -899,63 +938,69 @@
       "kind": "regional",
       "rule": "fixed",
       "memberCodes": [
-        "DZA",
         "AGO",
-        "BEN",
-        "BWA",
-        "BFA",
         "BDI",
-        "CPV",
-        "CMR",
+        "BEN",
+        "BFA",
+        "BWA",
         "CAF",
-        "TCD",
-        "COM",
-        "COG",
         "CIV",
+        "CMR",
         "COD",
+        "COG",
+        "COM",
+        "CPV",
         "DJI",
+        "DZA",
         "EGY",
-        "GNQ",
         "ERI",
-        "SWZ",
         "ETH",
         "GAB",
-        "GMB",
         "GHA",
         "GIN",
+        "GMB",
         "GNB",
+        "GNQ",
         "KEN",
-        "LSO",
         "LBR",
         "LBY",
+        "LSO",
+        "MAR",
         "MDG",
-        "MWI",
         "MLI",
+        "MOZ",
         "MRT",
         "MUS",
-        "MAR",
-        "MOZ",
+        "MWI",
         "NAM",
         "NER",
         "NGA",
         "RWA",
-        "STP",
+        "SDN",
         "SEN",
-        "SYC",
         "SLE",
         "SOM",
-        "ZAF",
         "SSD",
-        "SDN",
-        "TZA",
+        "STP",
+        "SWZ",
+        "SYC",
+        "TCD",
         "TGO",
         "TUN",
+        "TZA",
         "UGA",
+        "ZAF",
         "ZMB",
         "ZWE"
       ],
       "consensus": true,
-      "description": "Órgano continental; suspensiones y deliberaciones se abstraen como votos y mediación."
+      "description": "55 miembros oficiales; 54 con actor. Solo se usa la tabla de nombres, sin fechas ni notas históricas de suspensión. SADR es un identificador del organismo, sin actor: no se crean votos ni reconocimiento territorial. Las suspensiones actuales de participación requieren una curación separada; el motor aplica condiciones ficticias comunes.",
+      "rosterSource": {
+        "url": "https://au.int/en/AU_Member_States",
+        "accessedOn": "2026-10-06",
+        "officialMemberCount": 55,
+        "scopeNote": "Solo se usa la tabla de nombres, sin fechas ni notas históricas de suspensión. SADR es un identificador del organismo, sin actor: no se crean votos ni reconocimiento territorial. Las suspensiones actuales de participación requieren una curación separada; el motor aplica condiciones ficticias comunes."
+      }
     }
   ]
 }

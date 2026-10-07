@@ -1,0 +1,427 @@
+{
+  "date": "2026-10-06",
+  "protocol": "Comandos reales: campaña, victoria legislativa, propuesta, voto ordinario y avance del plazo cuando corresponde. No se modifican votos, representantes ni indicadores.",
+  "results": [
+    {
+      "engine": "chromium",
+      "countryId": "germany",
+      "seed": "ratification-browser-v1-germany-0",
+      "waiting": false,
+      "reviewLabel": "Someter a votación",
+      "ruleSummary": "El Bundestag vota la autorización del acuerdo.",
+      "voteTitle": "Examen del acuerdo · Bundestag (representación agregada)",
+      "route": [
+        {
+          "chamberId": "bundestag",
+          "majority": "simple"
+        }
+      ],
+      "status": "rejected",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "countryId": "argentina",
+      "seed": "ratification-browser-v1-argentina-1",
+      "waiting": false,
+      "reviewLabel": "Someter a votación",
+      "ruleSummary": "El acuerdo necesita la aprobación de ambas cámaras.",
+      "voteTitle": "Examen del acuerdo · Cámara de Diputados",
+      "route": [
+        {
+          "chamberId": "house",
+          "majority": "simple"
+        },
+        {
+          "chamberId": "senate",
+          "majority": "simple"
+        }
+      ],
+      "status": "rejected",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "countryId": "brazil",
+      "seed": "ratification-browser-v1-brazil-0",
+      "waiting": false,
+      "reviewLabel": "Someter a votación",
+      "ruleSummary": "El acuerdo necesita la aprobación de ambas cámaras.",
+      "voteTitle": "Examen del acuerdo · Cámara de Diputados",
+      "route": [
+        {
+          "chamberId": "house",
+          "majority": "simple"
+        },
+        {
+          "chamberId": "senate",
+          "majority": "simple"
+        }
+      ],
+      "status": "rejected",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "countryId": "spain",
+      "seed": "ratification-browser-v1-spain-0",
+      "waiting": false,
+      "reviewLabel": "Someter a votación",
+      "ruleSummary": "Ambas cámaras revisan el tratado. Si discrepan, el Congreso puede resolverlo con mayoría absoluta.",
+      "voteTitle": "Examen del acuerdo · Congreso de los Diputados",
+      "route": [
+        {
+          "chamberId": "congress",
+          "majority": "simple"
+        },
+        {
+          "chamberId": "senate",
+          "majority": "simple"
+        }
+      ],
+      "status": "rejected",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "countryId": "united-states",
+      "seed": "ratification-browser-v1-united-states-1",
+      "waiting": false,
+      "reviewLabel": "Someter a votación",
+      "ruleSummary": "El tratado necesita el apoyo de dos tercios de los senadores presentes.",
+      "voteTitle": "Examen del acuerdo · Senado (50 delegaciones estatales agregadas)",
+      "route": [
+        {
+          "chamberId": "senate",
+          "majority": "two-thirds-present"
+        }
+      ],
+      "status": "rejected",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "countryId": "france",
+      "seed": "ratification-browser-v1-france-0",
+      "waiting": false,
+      "reviewLabel": "Someter a votación",
+      "ruleSummary": "Ambas cámaras revisan la autorización. Si discrepan, la Asamblea puede tener la última palabra.",
+      "voteTitle": "Examen del acuerdo · Asamblea Nacional",
+      "route": [
+        {
+          "chamberId": "assembly",
+          "majority": "simple"
+        },
+        {
+          "chamberId": "senate",
+          "majority": "simple"
+        }
+      ],
+      "status": "rejected",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "countryId": "mexico",
+      "seed": "ratification-browser-v1-mexico-0",
+      "waiting": false,
+      "reviewLabel": "Someter a votación",
+      "ruleSummary": "El Senado decide sobre el tratado; los votos de la Cámara de Diputados no lo sustituyen.",
+      "voteTitle": "Examen del acuerdo · Senado de la República",
+      "route": [
+        {
+          "chamberId": "senate",
+          "majority": "simple"
+        }
+      ],
+      "status": "rejected",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "countryId": "peru",
+      "seed": "ratification-browser-v1-peru-1",
+      "waiting": false,
+      "reviewLabel": "Someter a votación",
+      "ruleSummary": "El Senado debe aprobar el tratado con más de la mitad de sus escaños.",
+      "voteTitle": "Examen del acuerdo · Senado",
+      "route": [
+        {
+          "chamberId": "senate",
+          "majority": "absolute"
+        }
+      ],
+      "status": "rejected",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "countryId": "united-kingdom",
+      "seed": "ratification-browser-v1-united-kingdom-3",
+      "waiting": true,
+      "reviewLabel": "Concluir la revisión",
+      "ruleSummary": "El Gobierno espera la revisión parlamentaria. Una objeción de los Comunes aplaza el acuerdo.",
+      "voteTitle": "Examen del acuerdo · House of Commons (650 circunscripciones abstractas)",
+      "route": [
+        {
+          "chamberId": "commons",
+          "majority": "simple"
+        },
+        {
+          "chamberId": "lords",
+          "majority": "simple"
+        }
+      ],
+      "status": "proposed",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "chromium",
+      "countryId": "venezuela",
+      "seed": "ratification-browser-v1-venezuela-4",
+      "waiting": false,
+      "reviewLabel": "Someter a votación",
+      "ruleSummary": "La Asamblea Nacional decide la autorización del acuerdo.",
+      "voteTitle": "Examen del acuerdo · Asamblea Nacional",
+      "route": [
+        {
+          "chamberId": "national-assembly",
+          "majority": "simple"
+        }
+      ],
+      "status": "rejected",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "countryId": "germany",
+      "seed": "ratification-browser-v1-germany-0",
+      "waiting": false,
+      "reviewLabel": "Someter a votación",
+      "ruleSummary": "El Bundestag vota la autorización del acuerdo.",
+      "voteTitle": "Examen del acuerdo · Bundestag (representación agregada)",
+      "route": [
+        {
+          "chamberId": "bundestag",
+          "majority": "simple"
+        }
+      ],
+      "status": "rejected",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "countryId": "argentina",
+      "seed": "ratification-browser-v1-argentina-1",
+      "waiting": false,
+      "reviewLabel": "Someter a votación",
+      "ruleSummary": "El acuerdo necesita la aprobación de ambas cámaras.",
+      "voteTitle": "Examen del acuerdo · Cámara de Diputados",
+      "route": [
+        {
+          "chamberId": "house",
+          "majority": "simple"
+        },
+        {
+          "chamberId": "senate",
+          "majority": "simple"
+        }
+      ],
+      "status": "rejected",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "countryId": "brazil",
+      "seed": "ratification-browser-v1-brazil-0",
+      "waiting": false,
+      "reviewLabel": "Someter a votación",
+      "ruleSummary": "El acuerdo necesita la aprobación de ambas cámaras.",
+      "voteTitle": "Examen del acuerdo · Cámara de Diputados",
+      "route": [
+        {
+          "chamberId": "house",
+          "majority": "simple"
+        },
+        {
+          "chamberId": "senate",
+          "majority": "simple"
+        }
+      ],
+      "status": "rejected",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "countryId": "spain",
+      "seed": "ratification-browser-v1-spain-0",
+      "waiting": false,
+      "reviewLabel": "Someter a votación",
+      "ruleSummary": "Ambas cámaras revisan el tratado. Si discrepan, el Congreso puede resolverlo con mayoría absoluta.",
+      "voteTitle": "Examen del acuerdo · Congreso de los Diputados",
+      "route": [
+        {
+          "chamberId": "congress",
+          "majority": "simple"
+        },
+        {
+          "chamberId": "senate",
+          "majority": "simple"
+        }
+      ],
+      "status": "rejected",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "countryId": "united-states",
+      "seed": "ratification-browser-v1-united-states-1",
+      "waiting": false,
+      "reviewLabel": "Someter a votación",
+      "ruleSummary": "El tratado necesita el apoyo de dos tercios de los senadores presentes.",
+      "voteTitle": "Examen del acuerdo · Senado (50 delegaciones estatales agregadas)",
+      "route": [
+        {
+          "chamberId": "senate",
+          "majority": "two-thirds-present"
+        }
+      ],
+      "status": "rejected",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "countryId": "france",
+      "seed": "ratification-browser-v1-france-0",
+      "waiting": false,
+      "reviewLabel": "Someter a votación",
+      "ruleSummary": "Ambas cámaras revisan la autorización. Si discrepan, la Asamblea puede tener la última palabra.",
+      "voteTitle": "Examen del acuerdo · Asamblea Nacional",
+      "route": [
+        {
+          "chamberId": "assembly",
+          "majority": "simple"
+        },
+        {
+          "chamberId": "senate",
+          "majority": "simple"
+        }
+      ],
+      "status": "rejected",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "countryId": "mexico",
+      "seed": "ratification-browser-v1-mexico-0",
+      "waiting": false,
+      "reviewLabel": "Someter a votación",
+      "ruleSummary": "El Senado decide sobre el tratado; los votos de la Cámara de Diputados no lo sustituyen.",
+      "voteTitle": "Examen del acuerdo · Senado de la República",
+      "route": [
+        {
+          "chamberId": "senate",
+          "majority": "simple"
+        }
+      ],
+      "status": "rejected",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "countryId": "peru",
+      "seed": "ratification-browser-v1-peru-1",
+      "waiting": false,
+      "reviewLabel": "Someter a votación",
+      "ruleSummary": "El Senado debe aprobar el tratado con más de la mitad de sus escaños.",
+      "voteTitle": "Examen del acuerdo · Senado",
+      "route": [
+        {
+          "chamberId": "senate",
+          "majority": "absolute"
+        }
+      ],
+      "status": "rejected",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "countryId": "united-kingdom",
+      "seed": "ratification-browser-v1-united-kingdom-3",
+      "waiting": true,
+      "reviewLabel": "Concluir la revisión",
+      "ruleSummary": "El Gobierno espera la revisión parlamentaria. Una objeción de los Comunes aplaza el acuerdo.",
+      "voteTitle": "Examen del acuerdo · House of Commons (650 circunscripciones abstractas)",
+      "route": [
+        {
+          "chamberId": "commons",
+          "majority": "simple"
+        },
+        {
+          "chamberId": "lords",
+          "majority": "simple"
+        }
+      ],
+      "status": "proposed",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    },
+    {
+      "engine": "firefox",
+      "countryId": "venezuela",
+      "seed": "ratification-browser-v1-venezuela-4",
+      "waiting": false,
+      "reviewLabel": "Someter a votación",
+      "ruleSummary": "La Asamblea Nacional decide la autorización del acuerdo.",
+      "voteTitle": "Examen del acuerdo · Asamblea Nacional",
+      "route": [
+        {
+          "chamberId": "national-assembly",
+          "majority": "simple"
+        }
+      ],
+      "status": "rejected",
+      "identicalCommandState": true,
+      "overflow": false,
+      "errors": []
+    }
+  ],
+  "limitations": "Natural legislative checkpoints, one seed per national procedure; no fabricated chamber support. Rare disagreements and threshold boundaries are covered by domain tests, not claimed as these browser paths. No human comprehension or screen-reader evidence."
+}

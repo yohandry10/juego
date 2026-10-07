@@ -4,7 +4,7 @@
   "name": "España",
   "experimental": true,
   "startingYear": 2026,
-  "dataVersion": "spain-institutions-2023-snapshot-v4",
+  "dataVersion": "spain-institutions-2023-snapshot-v4-treaty-routes-v1",
   "population": 48619695,
   "politicalSystem": {
     "formOfGovernment": "parliamentary",
@@ -136,6 +136,59 @@
       "presidentialVacancy": null,
       "presidentialAccusation": null,
       "cabinetCensure": null
+    },
+    "treatyApproval": {
+      "treaties": {
+        "chambers": [
+          {
+            "chamberId": "congress",
+            "majority": "simple"
+          },
+          {
+            "chamberId": "senate",
+            "majority": "simple"
+          }
+        ],
+        "resolution": "lower-final",
+        "minimumReviewQuarters": 0,
+        "summary": "Ambas cámaras revisan el tratado. Si discrepan, el Congreso puede resolverlo con mayoría absoluta.",
+        "scopeNote": "Los personajes y sus votos son ficticios. Se agregan iniciativa, autorización y ratificación ejecutiva en una acción; no se simulan reservas, control judicial ni tratados que reforman la Constitución. La conciliación y segunda lectura se agregan a un trimestre de espera y una nueva acción; no se garantiza su resultado.",
+        "sources": [
+          {
+            "name": "Reglas nacionales de autorización internacional",
+            "url": "https://boe.es/buscar/act.php?id=BOE-A-1978-31229&p=20260520&tn=1",
+            "indicator": "Constitución, arts. 74.2, 79 y 94.1",
+            "year": 2026,
+            "accessedOn": "2026-10-06"
+          }
+        ],
+        "finalMajority": "absolute"
+      },
+      "financing": {
+        "chambers": [
+          {
+            "chamberId": "congress",
+            "majority": "simple"
+          },
+          {
+            "chamberId": "senate",
+            "majority": "simple"
+          }
+        ],
+        "resolution": "all",
+        "minimumReviewQuarters": 0,
+        "summary": "El préstamo necesita autorización presupuestaria de ambas cámaras.",
+        "scopeNote": "Control presupuestario ficticio inspirado en las instituciones nacionales. No reproduce la aprobación real de un préstamo FMI/IBRD ni un contrato internacional. Usa una votación presupuestaria ordinaria, separada de las mayorías de los tratados.",
+        "sources": [
+          {
+            "name": "Reglas nacionales de autorización internacional",
+            "url": "https://boe.es/buscar/act.php?id=BOE-A-1978-31229&p=20260520&tn=1",
+            "indicator": "Constitución, arts. 74.2, 79 y 94.1",
+            "year": 2026,
+            "accessedOn": "2026-10-06"
+          }
+        ]
+      }
     }
   },
   "candidateEligibility": [
@@ -185,6 +238,13 @@
       "year": 2026,
       "accessedOn": "2026-10-05",
       "name": "Senado de España · Elección de senadores"
+    },
+    {
+      "name": "Reglas nacionales de autorización internacional",
+      "url": "https://boe.es/buscar/act.php?id=BOE-A-1978-31229&p=20260520&tn=1",
+      "indicator": "Constitución, arts. 74.2, 79 y 94.1",
+      "year": 2026,
+      "accessedOn": "2026-10-06"
     }
   ],
   "economy": {
@@ -217,7 +277,18 @@
         "salarios y coste de vida"
       ],
       "populationShare": 27,
-      "name": "Trabajadores"
+      "name": "Trabajadores",
+      "ideology": {
+        "economy": 28,
+        "social": 66,
+        "nationalism": 34,
+        "institutionalism": 64,
+        "rigidity": 52
+      },
+      "dispersion": 45,
+      "pressurePower": 80,
+      "organization": 84,
+      "unmetDemandIndex": 20
     },
     {
       "id": "middle-income",
@@ -227,7 +298,18 @@
         "vivienda asequible"
       ],
       "populationShare": 25,
-      "name": "Clases medias"
+      "name": "Clases medias",
+      "ideology": {
+        "economy": 55,
+        "social": 62,
+        "nationalism": 42,
+        "institutionalism": 70,
+        "rigidity": 34
+      },
+      "dispersion": 38,
+      "pressurePower": 42,
+      "organization": 58,
+      "unmetDemandIndex": 20
     },
     {
       "id": "business",
@@ -237,7 +319,18 @@
         "productividad"
       ],
       "populationShare": 13,
-      "name": "Empresariado"
+      "name": "Empresariado",
+      "ideology": {
+        "economy": 86,
+        "social": 45,
+        "nationalism": 46,
+        "institutionalism": 74,
+        "rigidity": 48
+      },
+      "dispersion": 35,
+      "pressurePower": 64,
+      "organization": 78,
+      "unmetDemandIndex": 20
     },
     {
       "id": "rural-communities",
@@ -247,7 +340,18 @@
         "servicios de proximidad"
       ],
       "populationShare": 12,
-      "name": "Territorios rurales"
+      "name": "Territorios rurales",
+      "ideology": {
+        "economy": 43,
+        "social": 51,
+        "nationalism": 66,
+        "institutionalism": 54,
+        "rigidity": 64
+      },
+      "dispersion": 52,
+      "pressurePower": 75,
+      "organization": 56,
+      "unmetDemandIndex": 20
     },
     {
       "id": "regional-identities",
@@ -257,7 +361,18 @@
         "financiación territorial"
       ],
       "populationShare": 11,
-      "name": "Comunidades territoriales"
+      "name": "Comunidades territoriales",
+      "ideology": {
+        "economy": 46,
+        "social": 69,
+        "nationalism": 30,
+        "institutionalism": 57,
+        "rigidity": 62
+      },
+      "dispersion": 48,
+      "pressurePower": 68,
+      "organization": 66,
+      "unmetDemandIndex": 20
     },
     {
       "id": "youth",
@@ -267,7 +382,18 @@
         "acceso a vivienda"
       ],
       "populationShare": 12,
-      "name": "Jóvenes"
+      "name": "Jóvenes",
+      "ideology": {
+        "economy": 65,
+        "social": 78,
+        "nationalism": 22,
+        "institutionalism": 77,
+        "rigidity": 27
+      },
+      "dispersion": 58,
+      "pressurePower": 44,
+      "organization": 50,
+      "unmetDemandIndex": 20
     }
   ],
   "electoralDistricts": [

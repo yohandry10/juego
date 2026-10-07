@@ -11,14 +11,19 @@ export function organizationMember(state: GeopoliticsState, organizationId: stri
   return Boolean(organization && (organization.rule === "all-actors" || organization.memberCodes.includes(codes.get(actorId) ?? "")));
 }
 
+export function organizationParticipationRestriction(organization: InternationalOrganization, actorId: string) {
+  return organization.participationRestrictions?.find((restriction) => restriction.code === codes.get(actorId));
+}
+
 /** Eligibility for collective benefits is a game condition, never a change to the historical roster. */
 export function collectiveEligibility(state: GeopoliticsState, organization: InternationalOrganization, actorId: string): OrganizationStanding {
   const actor = state.actors.find((a) => a.id === actorId)!;
   const recentCoup = (state.coupHistory ?? []).some((c) => c.actorId === actorId && state.quarterIndex - c.quarterIndex < 8);
   const conditioned = organization.kind === "regional" || organization.kind === "security";
-  const eligible = organizationMember(state, organization.id, actorId) && (!conditioned || actor.regimeStability >= 25 && actor.allianceCredibility >= 35 && !recentCoup);
+  const restriction = organizationParticipationRestriction(organization, actorId);
+  const eligible = organizationMember(state, organization.id, actorId) && !restriction && (!conditioned || actor.regimeStability >= 25 && actor.allianceCredibility >= 35 && !recentCoup);
   return { organizationId: organization.id, actorId, quarter: state.quarterIndex, eligible, stability: actor.regimeStability, credibility: actor.allianceCredibility, recentCoup,
-    explanation: `${organization.name}: estabilidad ${actor.regimeStability.toFixed(1)} y credibilidad ${actor.allianceCredibility.toFixed(1)}; golpe en los últimos ocho trimestres: ${recentCoup ? "sí" : "no"}. ${conditioned ? "Los beneficios colectivos requieren estabilidad ≥25, credibilidad ≥35 y ausencia de golpe reciente; son condiciones ficticias comunes, no un procedimiento jurídico de expulsión." : "Participación según la membresía del snapshot; no se suspende por estos índices."} ${eligible ? "Participación habilitada" : "Sin beneficios colectivos en esta revisión"}.` };
+    explanation: `${organization.name}: estabilidad ${actor.regimeStability.toFixed(1)} y credibilidad ${actor.allianceCredibility.toFixed(1)}; golpe en los últimos ocho trimestres: ${recentCoup ? "sí" : "no"}. ${restriction ? `${restriction.reason} Fuente revisada ${restriction.accessedOn}: ${restriction.sourceUrl}.` : ""} ${conditioned ? "Los beneficios colectivos requieren estabilidad ≥25, credibilidad ≥35 y ausencia de golpe reciente; son condiciones ficticias comunes, no un procedimiento jurídico de expulsión." : "Participación según la membresía del snapshot; no se suspende por estos índices."} ${eligible ? "Participación habilitada en el modelo" : "Sin beneficios colectivos en esta revisión"}.` };
 }
 
 export function createFinancingProgram(lender: FinancingProgram["lender"], quarter: number, indicators: EconomicIndicators): FinancingProgram {
@@ -46,7 +51,7 @@ export function advanceFinancing(treaties: readonly PlayerTreaty[], quarter: num
       const tranches = program.tranches + (passed ? 1 : 0);
       const status = quarter >= program.deadlineQuarter && tranches < terms.trancheCount ? "terminated" : tranches === terms.trancheCount ? "completed" : passed ? "active" : "suspended";
       const explanation = `${program.lender === "imf" ? "FMI" : "Banco Mundial"}, revisión trimestral ${quarter}: ${program.lender === "imf" ? "déficit" : "inversión"} ${metric.toFixed(2)} frente a meta ${program.target.toFixed(2)} puntos del PIB. ${status === "terminated" ? "Terminó el plazo: no habrá más entregas; lo recibido sigue pendiente de devolución." : initial ? "Primer tramo tras aprobación; las revisiones siguientes verifican la meta." : passed ? "Condición cumplida." : "Condición incumplida: tramo suspendido; puede recuperarse antes del plazo."} Desembolso ${disbursement.toFixed(2)} puntos; ${status}. Las metas y plazos son parámetros ficticios de juego.`;
-      program = { ...program, status, nextReviewQuarter: quarter + terms.reviewIntervalQuarters, tranches, disbursedPercentGdp: program.disbursedPercentGdp + disbursement, reviews: [...program.reviews, { quarter, metric, target: program.target, passed, disbursement, explanation }].slice(-terms.retainedReviews) };
+      program = { ...program, status, nextReviewQuarter: quarter + terms.reviewIntervalQuarters, tranches, disbursedPercentGdp: program.disbursedPercentGdp + disbursement, reviews: [...program.reviews, { quarter, metric, target: program.target, passed, disbursement, explanation, evidence: { statusBefore: program.status, tranchesBefore: program.tranches, deadlineQuarter: program.deadlineQuarter } }].slice(-terms.retainedReviews) };
       effects.debt += disbursement;
       effects.reserves += disbursement * loan.reserveShare;
       effects.investment += disbursement * loan.investmentShare;

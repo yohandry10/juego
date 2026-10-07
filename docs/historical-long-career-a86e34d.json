@@ -1,0 +1,151 @@
+{
+  "date": "2026-10-06",
+  "seed": "long-career-6",
+  "country": "peru",
+  "years": 40,
+  "quarters": 160,
+  "endYear": 2066,
+  "age": 70,
+  "schema": 15,
+  "restoredAtQuarter": 80,
+  "identicalAfterRestore": true,
+  "stateSha256": "874bb6a1e2604658a96d2328ce97a5d41b388af4aa2722fde079cb207e749c22",
+  "identicalToBaseline": true,
+  "comparisonPath": "docs/performance-baseline-0df312e.json",
+  "firstTenYearsAverageTurnMs": 6.673874999999953,
+  "lastTenYearsAverageTurnMs": 8.923919999999885,
+  "maximumTurnMs": 19.566200000000208,
+  "p95TurnMs": 16.514899999999216,
+  "snapshots": [
+    {
+      "quarter": 40,
+      "serializedBytes": 1431854,
+      "heapBytes": 27679008,
+      "stateSha256": "4ed2c171d281c5795f80e2cfe7811c2ed7fe7159c888301b857cf7f7e9fdb745",
+      "componentBytes": {
+        "world": 100960,
+        "geopolitics": 550627,
+        "inbox": 104930,
+        "log": 15994,
+        "relationships": 21091,
+        "budget": 278,
+        "legislature": 630590,
+        "careerHistory": 605,
+        "baseEventHistory": 11565
+      },
+      "collectionCounts": {
+        "inbox": 105,
+        "log": 108,
+        "baseEvents": 50,
+        "variants": 105,
+        "budgetVotes": 0,
+        "legislativeVotes": 20,
+        "relationshipMemories": 0,
+        "worldActions": 18
+      }
+    },
+    {
+      "quarter": 80,
+      "serializedBytes": 1584019,
+      "heapBytes": 32963960,
+      "stateSha256": "a8465a7b65bf8d7c29fcc37628b7c973f6fde9d3666d3f55c00af51aa43c80f9",
+      "componentBytes": {
+        "world": 112506,
+        "geopolitics": 566706,
+        "inbox": 210327,
+        "log": 31891,
+        "relationships": 21091,
+        "budget": 278,
+        "legislature": 630450,
+        "careerHistory": 1215,
+        "baseEventHistory": 23130
+      },
+      "collectionCounts": {
+        "inbox": 209,
+        "log": 216,
+        "baseEvents": 100,
+        "variants": 209,
+        "budgetVotes": 0,
+        "legislativeVotes": 20,
+        "relationshipMemories": 0,
+        "worldActions": 31
+      }
+    },
+    {
+      "quarter": 120,
+      "serializedBytes": 1747231,
+      "heapBytes": 30062104,
+      "stateSha256": "d2e77339af612ef8a868054e2dc65a314209a51fdb5ea0d8078314e94b9f695f",
+      "componentBytes": {
+        "world": 124418,
+        "geopolitics": 592920,
+        "inbox": 315848,
+        "log": 47755,
+        "relationships": 21091,
+        "budget": 279,
+        "legislature": 630409,
+        "careerHistory": 1825,
+        "baseEventHistory": 35316
+      },
+      "collectionCounts": {
+        "inbox": 311,
+        "log": 324,
+        "baseEvents": 153,
+        "variants": 311,
+        "budgetVotes": 0,
+        "legislativeVotes": 20,
+        "relationshipMemories": 0,
+        "worldActions": 56
+      }
+    },
+    {
+      "quarter": 160,
+      "serializedBytes": 1909872,
+      "heapBytes": 30823376,
+      "stateSha256": "874bb6a1e2604658a96d2328ce97a5d41b388af4aa2722fde079cb207e749c22",
+      "componentBytes": {
+        "world": 139793,
+        "geopolitics": 615849,
+        "inbox": 420898,
+        "log": 63619,
+        "relationships": 21091,
+        "budget": 279,
+        "legislature": 630167,
+        "careerHistory": 2435,
+        "baseEventHistory": 50525
+      },
+      "collectionCounts": {
+        "inbox": 414,
+        "log": 432,
+        "baseEvents": 221,
+        "variants": 414,
+        "budgetVotes": 0,
+        "legislativeVotes": 20,
+        "relationshipMemories": 0,
+        "worldActions": 82
+      }
+    }
+  ],
+  "thirtyYearRepeatedLiteralBodiesPercent": 0,
+  "thirtyYearInboxItems": 311,
+  "repeatedLiteralBodiesPercent": 0,
+  "duplicateBodies": [],
+  "inboxItems": 414,
+  "completedTerms": 8,
+  "failedSeeds": [
+    "long-career-0",
+    "long-career-1",
+    "long-career-2",
+    "long-career-3",
+    "long-career-4",
+    "long-career-5"
+  ],
+  "environment": {
+    "cpu": "Intel(R) Core(TM) i5-10400F CPU @ 2.90GHz",
+    "ramBytes": 17098092544,
+    "node": "v24.13.1",
+    "platform": "win32",
+    "explicitGc": true
+  },
+  "limitations": "Una carrera legislativa en Perú; no mide todos los cargos, navegadores ni memoria gráfica. Las decisiones sin responder se conservan. Se conservan las semillas que no llegaron al horizonte por derrotas repetidas."
+}

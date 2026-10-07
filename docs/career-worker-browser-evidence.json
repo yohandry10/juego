@@ -6,27 +6,27 @@
     {
       "engine": "chromium",
       "offline": true,
-      "workerUrl": "http://127.0.0.1:4173/assets/simulation-worker-DQe353dm.js",
+      "workerUrl": "http://127.0.0.1:4173/assets/simulation-worker-NimtLwUy.js",
       "workerAliveAfterTurns": true,
       "quarters": 2,
       "governmentNegotiationCost": 5,
       "worldEconomyCareerSynchronized": true,
       "fastPaceWaitsForUnansweredChoice": true,
-      "coldTurnMs": 152.1887999988394,
-      "warmTurnMs": 65.8471000060672,
+      "coldTurnMs": 264.4099000026472,
+      "warmTurnMs": 74.86579999385867,
       "pageErrors": []
     },
     {
       "engine": "firefox",
       "offline": true,
-      "workerUrl": "http://127.0.0.1:4173/assets/simulation-worker-DQe353dm.js",
+      "workerUrl": "http://127.0.0.1:4173/assets/simulation-worker-NimtLwUy.js",
       "workerAliveAfterTurns": true,
       "quarters": 2,
       "governmentNegotiationCost": 5,
       "worldEconomyCareerSynchronized": true,
       "fastPaceWaitsForUnansweredChoice": true,
-      "coldTurnMs": 274.72560000023805,
-      "warmTurnMs": 93.95989999757148,
+      "coldTurnMs": 272.86690000619274,
+      "warmTurnMs": 113.70950000127777,
       "pageErrors": []
     }
   ]

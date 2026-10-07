@@ -4,6 +4,7 @@ import parameters from "../data/world-parameters.json" with { type: "json" };
 import { advanceWorldConflict, beginWorldConflict, coupRisk, shockExposure } from "./world-conflicts.js";
 import { createRng, hashSeed } from "./rng.js";
 import { auditWorld } from "./world-audit.js";
+import { evaluateWorldDomesticImpact } from "./world-domestic-impact.js";
 import { evaluateWorldDecision, explainWorldDecision } from "./world-decisions.js";
 import { advanceFinancing, advanceTradeDisputes, collectiveEligibility, createTradeDispute, organizationMember } from "./world-institutions.js";
 import type { EconomicIndicators } from "../domain/types.js";
@@ -188,8 +189,10 @@ export function advanceGeopolitics(state: GeopoliticsState, seed: string, quarte
     const financialPrograms = financing.treaties.filter((treaty) => treaty.kind === "aid" && treaty.status === "ratified" && (!treaty.financing || ["active", "completed"].includes(treaty.financing.status)));
     const imfProgram = financialPrograms.some((treaty) => treaty.partnerId === "imf");
     const worldBankProgram = financialPrograms.some((treaty) => treaty.partnerId === "world-bank");
+    const impactEvidence = { quarter: q, tradeShockIndex: player?.tradeShockIndex ?? 0, aidIndex, migrationAgreement, tradeAgreement, imfProgram, worldBankProgram };
     const domesticCauses = [
-      ...(vote?.passed && organization?.memberCodes.includes(definitions.find((d) => d.id === current.playerCountryId)?.code ?? "") ? [vote.explanation] : []),
+      ...(vote?.passed && organization && collectiveEligibility({ ...current, actors: actorsAfterCoups, coupHistory, quarterIndex: q }, organization, current.playerCountryId).eligible ? [vote.explanation] : []),
+      ...(impactEvidence.tradeShockIndex !== 0 ? [`El impacto comercial acumulado (${impactEvidence.tradeShockIndex.toFixed(2)}) todavía repercute en crecimiento, precios y empleo; incorpora shocks, sanciones, conflictos y costos de coordinación.`] : []),
       ...(incomingShock ? [`${incomingShock.explanation} Exposición nacional ${(player ? shockExposure(player, incomingShock, relations, definitions) * 100 : 0).toFixed(1)}% en el grafo sintético.`] : []),
       ...conflicts.filter((c) => [c.attackerId, c.defenderId].includes(current.playerCountryId)).slice(-2).map((c) => `${c.explanation}${c.reconstruction ? ` Posguerra actual: daño ${c.reconstruction.damage.toFixed(1)}, desplazamiento ${c.reconstruction.displacement.toFixed(1)} e insurgencia ${c.reconstruction.insurgency.toFixed(1)} aumentan presión interna; reparaciones ${c.reconstruction.reparations.toFixed(1)} afectan a pagador y receptor según el resultado.` : ""}`),
       ...(aidIndex > 0 ? [`El compromiso de ayuda exterior (índice ${aidIndex}) presiona el presupuesto y el crecimiento nacionales.`] : []),
@@ -201,10 +204,8 @@ export function advanceGeopolitics(state: GeopoliticsState, seed: string, quarte
     ];
     current = { ...current, quarterIndex: q, actors: decisionActors, relations, conflicts, actions, sanctions, treaties: financing.treaties, votes: vote ? [...current.votes.slice(-99), vote] : current.votes, shocks: shock ? [...current.shocks.slice(-199), shock] : current.shocks,
       domesticImpact: {
-        growthDelta: clamp((player?.tradeShockIndex ?? 0) * 0.025 - aidIndex * 0.008 + (migrationAgreement ? 0.3 : 0) + (tradeAgreement ? 0.2 : 0) - (imfProgram ? 0.18 : 0) + (worldBankProgram ? 0.25 : 0), -5, 5),
-        inflationDelta: clamp(Math.abs(player?.tradeShockIndex ?? 0) * 0.018 + aidIndex * 0.004 + (migrationAgreement ? 0.05 : 0), 0, 5),
-        unemploymentDelta: clamp(Math.max(0, -(player?.tradeShockIndex ?? 0)) * 0.012 - (migrationAgreement ? 0.35 : 0) - (tradeAgreement ? 0.1 : 0) + (imfProgram ? 0.04 : 0) - (worldBankProgram ? 0.08 : 0), -3, 3),
-        causes: domesticCauses.length ? domesticCauses : current.domesticImpact.causes.slice(-3),
+        ...evaluateWorldDomesticImpact(impactEvidence), evidence: impactEvidence,
+        causes: domesticCauses.length ? domesticCauses : ["Este trimestre no hay un impacto exterior adicional sobre la economía nacional."],
         financing: financing.effects,
       },
       militaryLoyalty: player?.militaryLoyalty ?? current.militaryLoyalty, coupHistory: coupHistory.slice(-500), coups: current.coups + coupHistory.filter((entry) => entry.quarterIndex === q && entry.actorId === current.playerCountryId).length };

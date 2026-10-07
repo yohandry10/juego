@@ -4,7 +4,7 @@
   "name": "Argentina",
   "experimental": true,
   "startingYear": 2026,
-  "dataVersion": "argentina-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance",
+  "dataVersion": "argentina-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance-treaty-routes-v1",
   "population": 45851378,
   "politicalSystem": {
     "formOfGovernment": "presidential",
@@ -125,6 +125,58 @@
         ]
       },
       "cabinetCensure": null
+    },
+    "treatyApproval": {
+      "treaties": {
+        "chambers": [
+          {
+            "chamberId": "house",
+            "majority": "simple"
+          },
+          {
+            "chamberId": "senate",
+            "majority": "simple"
+          }
+        ],
+        "resolution": "all",
+        "minimumReviewQuarters": 0,
+        "summary": "El acuerdo necesita la aprobación de ambas cámaras.",
+        "scopeNote": "Los personajes y sus votos son ficticios. Se agregan iniciativa, autorización y ratificación ejecutiva en una acción; no se simulan reservas, control judicial ni tratados que reforman la Constitución.",
+        "sources": [
+          {
+            "name": "Reglas nacionales de autorización internacional",
+            "url": "https://www.congreso.gob.ar/constitucionSeccion1Cap4.php",
+            "indicator": "Constitución, arts. 64, 75-4 y 75-22",
+            "year": 2026,
+            "accessedOn": "2026-10-06"
+          }
+        ]
+      },
+      "financing": {
+        "chambers": [
+          {
+            "chamberId": "house",
+            "majority": "simple"
+          },
+          {
+            "chamberId": "senate",
+            "majority": "simple"
+          }
+        ],
+        "resolution": "all",
+        "minimumReviewQuarters": 0,
+        "summary": "El préstamo necesita autorización presupuestaria de ambas cámaras.",
+        "scopeNote": "Control presupuestario ficticio inspirado en las instituciones nacionales. No reproduce la aprobación real de un préstamo FMI/IBRD ni un contrato internacional. Usa una votación presupuestaria ordinaria, separada de las mayorías de los tratados.",
+        "sources": [
+          {
+            "name": "Reglas nacionales de autorización internacional",
+            "url": "https://www.congreso.gob.ar/constitucionSeccion1Cap4.php",
+            "indicator": "Constitución, arts. 64, 75-4 y 75-22",
+            "year": 2026,
+            "accessedOn": "2026-10-06"
+          }
+        ]
+      }
     }
   },
   "candidateEligibility": [
@@ -182,6 +234,13 @@
       "url": "https://www.indec.gob.ar/uploads/informesdeprensa/ipc_01_266741F036E8.pdf",
       "indicator": "Inflación nacional acumulada en 2025: 31,5%",
       "year": 2025,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Reglas nacionales de autorización internacional",
+      "url": "https://www.congreso.gob.ar/constitucionSeccion1Cap4.php",
+      "indicator": "Constitución, arts. 64, 75-4 y 75-22",
+      "year": 2026,
       "accessedOn": "2026-10-06"
     }
   ],

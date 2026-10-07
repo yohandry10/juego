@@ -3,7 +3,7 @@
   "seeds": "mass-<strategy>-<run>",
   "results": [
     {
-      "country": "Alemania · germany-institutions-2025-economic-snapshot-2024-v2",
+      "country": "Alemania · germany-institutions-2025-economic-snapshot-2024-v2-treaty-routes-v1",
       "strategies": {
         "doorstep": {
           "runs": 25,
@@ -32,7 +32,7 @@
       }
     },
     {
-      "country": "Argentina · argentina-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance",
+      "country": "Argentina · argentina-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance-treaty-routes-v1",
       "strategies": {
         "doorstep": {
           "runs": 25,
@@ -61,7 +61,7 @@
       }
     },
     {
-      "country": "Brasil · brazil-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance",
+      "country": "Brasil · brazil-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance-treaty-routes-v1",
       "strategies": {
         "doorstep": {
           "runs": 25,
@@ -90,7 +90,7 @@
       }
     },
     {
-      "country": "España · spain-institutions-2023-snapshot-v4",
+      "country": "España · spain-institutions-2023-snapshot-v4-treaty-routes-v1",
       "strategies": {
         "doorstep": {
           "runs": 25,
@@ -119,7 +119,7 @@
       }
     },
     {
-      "country": "Estados Unidos · united-states-institutions-2026-economic-snapshot-2024-v1",
+      "country": "Estados Unidos · united-states-institutions-2026-economic-snapshot-2024-v1-treaty-routes-v1",
       "strategies": {
         "doorstep": {
           "runs": 25,
@@ -148,7 +148,7 @@
       }
     },
     {
-      "country": "Francia · france-institutions-2024-snapshot-v2",
+      "country": "Francia · france-institutions-2024-snapshot-v2-treaty-routes-v1",
       "strategies": {
         "doorstep": {
           "runs": 25,
@@ -177,7 +177,7 @@
       }
     },
     {
-      "country": "México · mexico-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance",
+      "country": "México · mexico-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance-treaty-routes-v1",
       "strategies": {
         "doorstep": {
           "runs": 25,
@@ -206,7 +206,7 @@
       }
     },
     {
-      "country": "Perú · peru-2026-10-05-v7",
+      "country": "Perú · peru-2026-10-05-v7-treaty-routes-v1",
       "strategies": {
         "doorstep": {
           "runs": 25,
@@ -235,7 +235,7 @@
       }
     },
     {
-      "country": "Reino Unido · united-kingdom-institutions-2026-economic-snapshot-2025-v1",
+      "country": "Reino Unido · united-kingdom-institutions-2026-economic-snapshot-2025-v1-treaty-routes-v1",
       "strategies": {
         "doorstep": {
           "runs": 25,
@@ -264,7 +264,7 @@
       }
     },
     {
-      "country": "Venezuela · venezuela-constitutional-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance",
+      "country": "Venezuela · venezuela-constitutional-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance-treaty-routes-v1",
       "strategies": {
         "doorstep": {
           "runs": 25,

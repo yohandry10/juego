@@ -41,7 +41,7 @@ test("financing stages funds, suspends missed conditions, resumes and repays wit
   }
 });
 
-test("official financial and WTO rosters cover represented members without borrowing another institution's roster", () => {
+test("nine independent official rosters cover represented members without inventing absent actors", () => {
   const state = createGeopoliticsState("peru", "official-rosters");
   const actorCodes = new Set(worldData.actors.map((actor) => actor.code));
   for (const [id, roster] of Object.entries(memberships.rosters)) {
@@ -51,6 +51,18 @@ test("official financial and WTO rosters cover represented members without borro
       roster.members.filter((member) => actorCodes.has(member.code)).map((member) => member.code));
   }
   assert.equal(memberships.rosters.wto.officialMemberCount, 166);
+  assert.equal(Object.keys(memberships.rosters).length, 9);
+  assert.equal(memberships.rosters.un.officialMemberCount, 193);
+  assert.equal(memberships.rosters.eu.officialMemberCount, 27);
+  assert.equal(memberships.rosters.nato.officialMemberCount, 32);
+  assert.equal(memberships.rosters.asean.officialMemberCount, 11);
+  assert.equal(memberships.rosters.mercosur.officialMemberCount, 6);
+  assert.deepEqual(memberships.rosters.au.unrepresentedMembers.map((member) => member.code), ["SADR"]);
+  assert.equal(organizationMember(state, "asean", "tls"), true);
+  assert.equal(organizationMember(state, "mercosur", "ven"), true);
+  assert.equal(organizationMember(state, "mercosur", "per"), false);
+  assert.equal(organizationMember(state, "nato", "swe"), true);
+  assert.equal(organizationMember(state, "eu", "gbr"), false);
   assert.deepEqual(memberships.rosters.wto.unrepresentedMembers.map((member) => member.code), ["EU", "TWN"]);
   for (const id of ["ven", "zwe", "com", "tls"]) assert.equal(organizationMember(state, "wto", id), true);
   for (const id of ["irn", "dza"]) assert.equal(organizationMember(state, "wto", id), false);
@@ -58,6 +70,24 @@ test("official financial and WTO rosters cover represented members without borro
   assert.equal(organizationMember(state, "imf", "mco"), false);
   for (const id of ["and", "lie", "mco"]) assert.equal(organizationMember(state, "world-bank", id), false);
   for (const id of ["irn", "xkx"]) assert.equal(organizationMember(state, "world-bank", id), true);
+});
+
+test("a documented participation suspension is independent of membership and fictitious stability", () => {
+  const state = createGeopoliticsState("venezuela", "suspended-participant");
+  const mercosur = state.organizations.find((o) => o.id === "mercosur")!;
+  const stable = { ...state, actors: state.actors.map((a) => a.id === "ven" ? { ...a, regimeStability: 100, allianceCredibility: 100 } : a) };
+  const standing = collectiveEligibility(stable, mercosur, "ven");
+  assert.equal(organizationMember(stable, mercosur.id, "ven"), true);
+  assert.equal(standing.eligible, false);
+  assert.match(standing.explanation, /suspendidos/);
+  assert.deepEqual(auditWorld({ ...stable, organizationStanding: [standing] }), []);
+  assert.ok(auditWorld({ ...stable, organizationStanding: [{ ...standing, eligible: true }] }).some((i) => i.startsWith("standing:")));
+  const historical = { ...stable, organizations: stable.organizations.map((o) => {
+    if (o.id !== "mercosur") return o;
+    const { participationRestrictions: _restriction, ...snapshot } = o;
+    return snapshot;
+  }) };
+  assert.equal(collectiveEligibility(historical, historical.organizations.find((o) => o.id === "mercosur")!, "ven").eligible, true);
 });
 
 test("old approved financing preserves historical state and is never disbursed again", () => {
@@ -132,4 +162,29 @@ test("collective benefits require declared membership and explicit stability, cr
   assert.equal(collectiveEligibility({ ...coup, quarterIndex: 10 }, eu, "deu").eligible, true);
   const un = state.organizations.find((o) => o.id === "un")!;
   assert.equal(collectiveEligibility(coup, un, "deu").eligible, true);
+});
+
+test("domestic audit replays causal inputs and rejects altered effects while old saves remain valid", () => {
+  const base = createGeopoliticsState("peru", "domestic-proof");
+  const state = advanceGeopolitics({ ...base, player: { ...base.player, migrationAgreement: true, annualAidIndex: 5 } }, "domestic-proof");
+  assert.equal(state.domesticImpact.evidence?.aidIndex, 5);
+  assert.equal(state.domesticImpact.evidence?.migrationAgreement, true);
+  assert.deepEqual(auditWorld(state), []);
+  assert.ok(auditWorld({ ...state, domesticImpact: { ...state.domesticImpact, growthDelta: state.domesticImpact.growthDelta + 0.01 } }).includes("domestic-impact-cause"));
+  assert.ok(auditWorld({ ...state, domesticImpact: { ...state.domesticImpact, evidence: { ...state.domesticImpact.evidence!, quarter: 0 } } }).includes("domestic-impact-cause"));
+  const { evidence: _evidence, ...historicImpact } = state.domesticImpact;
+  assert.deepEqual(auditWorld({ ...state, domesticImpact: historicImpact }), []);
+});
+
+test("credit review audit distinguishes initial delivery from a fulfilled or missed condition", () => {
+  const world = createGeopoliticsState("peru", "credit-review-proof");
+  const treaty = programTreaty("imf");
+  const first = advanceFinancing([treaty], 1, indicators).treaties;
+  const missed = advanceFinancing(first, 3, indicators).treaties;
+  assert.equal(missed[0]!.financing!.reviews[1]!.passed, false);
+  assert.deepEqual(auditWorld({ ...world, quarterIndex: 3, treaties: missed }), []);
+  const contradictory = missed.map((t) => ({ ...t, financing: { ...t.financing!, reviews: t.financing!.reviews.map((r) => r.quarter === 3 ? { ...r, metric: 0 } : r) } }));
+  assert.ok(auditWorld({ ...world, quarterIndex: 3, treaties: contradictory }).some((i) => i.startsWith("financing:")));
+  const fabricated = missed.map((t) => ({ ...t, financing: { ...t.financing!, reviews: t.financing!.reviews.map((r) => ({ ...r, evidence: { ...r.evidence!, tranchesBefore: 10 } })) } }));
+  assert.ok(auditWorld({ ...world, quarterIndex: 3, treaties: fabricated }).some((i) => i.startsWith("financing:")));
 });

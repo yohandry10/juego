@@ -22,9 +22,9 @@ for (const [i, actor] of actors.entries()) for (const type of ["energy", "food",
 
 const base = { ...parameters };
 const scenarios = [
-  { name: "low", conflictQuarterProbability: 0.2, coupRiskScale: 0.0006 },
+  { name: "low", conflictQuarterProbability: 0.45, coupRiskScale: 0.0018 },
   { name: "baseline", conflictQuarterProbability: base.conflictQuarterProbability, coupRiskScale: base.coupRiskScale },
-  { name: "high", conflictQuarterProbability: 0.5, coupRiskScale: 0.0018 },
+  { name: "high", conflictQuarterProbability: 0.8, coupRiskScale: 0.003 },
 ];
 const results = [];
 try {

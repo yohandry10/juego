@@ -7,28 +7,28 @@
   "limitation": "Dos builds consecutivos con las dependencias instaladas; no valida instalación limpia en otro SO.",
   "hashes": [
     {
-      "file": "assets/EconomyView-CfF--YF0.js",
-      "sha256": "2017cbf12ada2923a8a99bc07beed13d1185bcff2ab6ec12bfc06a4bcad10192"
+      "file": "assets/EconomyView-DLvtKCIh.js",
+      "sha256": "ddb368332b5e6f44610aa1db892504fb94c415f9f44455b0d3fca7fc3dd19f8e"
     },
     {
-      "file": "assets/HallOfFame-DWPgviVJ.js",
-      "sha256": "98a861cb8f1f8d5be7db54f74e5df4f2ef3973f378d972257cc867a3bfdb5157"
+      "file": "assets/HallOfFame-CGFS0aZJ.js",
+      "sha256": "9870acbe8215306d8f6163d2fcc5e81c3af05b55b661808b3138be2f737bf3ef"
     },
     {
-      "file": "assets/HelpView-oFZ79OzC.js",
-      "sha256": "ecc8366936ed9555a5b6b9180a3fb4801043f4093ad8f1c5b36c5749991f5931"
+      "file": "assets/HelpView-BZEBn7vw.js",
+      "sha256": "643591c03f3d57e6b6eb9d3365a06622c64cf886931adb7f5314d57b81a12364"
     },
     {
       "file": "assets/InboxView-3Wr2TA_o.js",
       "sha256": "b79eff7ccb5ad00504e2e716597f5c3c4ca7a4240191bc660cff9a061e5df25d"
     },
     {
-      "file": "assets/index-mmzyJpQD.css",
-      "sha256": "c5f166876ebf741e37f58c923c721438e2a16409fca080de498ed623d057cde3"
+      "file": "assets/index-DoqStGDc.css",
+      "sha256": "d136697ee77fefcce0f814f1c11edbfa7e5ad346537592451262301243480dc6"
     },
     {
-      "file": "assets/index-yDxIzlH7.js",
-      "sha256": "77e9b2d5197ef7fe29edbe8b34ebb6836bcfdf0eb80c0e97f761293388eddb2c"
+      "file": "assets/index-XsnIcX_D.js",
+      "sha256": "f27ca24de8273a7fe3a5e907be51e7b6e8d5094de3f5143da5f3f9a9a30d11ac"
     },
     {
       "file": "assets/react-Dy-GIXkn.js",
@@ -39,40 +39,40 @@
       "sha256": "bbf7c5086ae414dc3f33777e3eebf16ea8631325b8bb4690d25091c03567f31a"
     },
     {
-      "file": "assets/simulation-worker-DQe353dm.js",
-      "sha256": "5bd85b442e7ed09fa63c0cad1e3c62e8ecf6e4b822df35938bc0010260e64fa4"
+      "file": "assets/simulation-worker-NimtLwUy.js",
+      "sha256": "c5df87aae21b80e3eb0e5ab222da5753afa37176f5efd8b784d42b0ddb6ed7b4"
     },
     {
       "file": "assets/validation-2oiOZAhq.js",
       "sha256": "8d848c7ef273e9082cf69252079d78d1e2a04bd56281726f34780a1f0c71c0c2"
     },
     {
-      "file": "assets/world-data-BfIfJd9a.js",
-      "sha256": "d4fa3fb524369d47cbd303a1e446bc487892a09135984a16291c726f4af4a5fb"
+      "file": "assets/world-data-C2D6w6qL.js",
+      "sha256": "9e59c15f01cb211e22bd74f1a85f52406939271d2882e80ea4176404b513e7a1"
     },
     {
-      "file": "assets/WorldView-JqjGLk_3.js",
-      "sha256": "7c87e50f9e192aebeff8c8bca86d21a27c58ada945aa59cb1f68e0cc64301579"
+      "file": "assets/WorldView-MUypTlpl.js",
+      "sha256": "666299603db5071d5d4fe7ffc6588d11be4bf0f0fd641cbf8b51013175386b94"
     },
     {
       "file": "credits.html",
-      "sha256": "d810b80641b9ed8a359529eca22720b6ddcd09c8321e7124f0c629b3145e9ca2"
+      "sha256": "7e6552e4d696e6841af331b0d30ec6b5c3b25ef2641e5b70e9b82f785a9c36c1"
     },
     {
       "file": "data/countries/argentina.json",
-      "sha256": "31876a5c996afbdfa26dc2b09e41e9cd2dd1ff3fd51edc867c157aa496df9dd2"
+      "sha256": "26f7e84fb3337549131736270172d72bd8ba2c1481bff13a872095dc54ade7c6"
     },
     {
       "file": "data/countries/brazil.json",
-      "sha256": "1380b1d382bb1f06876cbae63b56e5a3f70327d3ae4b1bcd902f551d9943ba93"
+      "sha256": "546d5f28061603ba854b4522e6f80b3fca3ce88b683ac4796afe55d7c6a84677"
     },
     {
       "file": "data/countries/france.json",
-      "sha256": "334c1160d46b84238921fe6f6ca1159df5a9977f1f09e6eb548132d79c88c886"
+      "sha256": "ba3738812dc809f3add652402c559f0f300b083a4bf7000baeb1521163dc17fb"
     },
     {
       "file": "data/countries/germany.json",
-      "sha256": "b807ed9e62dd9327e04cb38e3c893d8343693f9e6966ca35169cbb8a89d49283"
+      "sha256": "0255269dfdd9de6def462be963f0b62e3495c754c6a060581d885f5c31fbdb45"
     },
     {
       "file": "data/countries/index.json",
@@ -80,27 +80,27 @@
     },
     {
       "file": "data/countries/mexico.json",
-      "sha256": "53c1ee695dc669fc979121b0865806058b0210de4931bc696db34a56b507f126"
+      "sha256": "9ab53af17c2411438d10f08283e40b64882951064ae0d97180f50d89bbc791ee"
     },
     {
       "file": "data/countries/peru.json",
-      "sha256": "97b4bf0660feab256b26462e791d4b8777ce14f51f3984646670db5ba258e875"
+      "sha256": "3c0f6d54345e0a3a3dab0eed14ff8e1464f2c52c69ee782c83d579ad252b85e9"
     },
     {
       "file": "data/countries/spain.json",
-      "sha256": "f412651c9c8d7a71551b3c3214ff27eaa204844be2bb128c41e8805b545e57c5"
+      "sha256": "43e6a4f928162d6a2a4b51adeadcc68c3ecf035d056065e758a356658d186d00"
     },
     {
       "file": "data/countries/united-kingdom.json",
-      "sha256": "bdcbd901081dcaa167b0ce60901003f0b4b337d8f13fe0210a8dd516f7a50e51"
+      "sha256": "dd053194050e70d43eb4340d1cebdda9505c879726ee4e35d814e2e6bffeab91"
     },
     {
       "file": "data/countries/united-states.json",
-      "sha256": "d2372bad662a47fdb796c20462257f7b0d9c29e7b5464b102480b7e1d2aa13df"
+      "sha256": "de16bf7f92a8fa858e3c0a59865919fc034be63660741cb6884efb98dff92843"
     },
     {
       "file": "data/countries/venezuela.json",
-      "sha256": "428601cc9bcb5bc662c3537326430702291e8f6cafb3e4ac453cff96601640a3"
+      "sha256": "5aee1def2c201f9c17ffe4172bb7e6c439a4f14893bd4ba3609b3682e3b25c9e"
     },
     {
       "file": "data/world/world-map.json",
@@ -108,11 +108,11 @@
     },
     {
       "file": "index.html",
-      "sha256": "3ceda9ae92dc16155f6e0ea92d6772578c777f33f5d92c89bc32a3026bab7c32"
+      "sha256": "7cc210e0d017d04f374e9c7bef3372734b9e836d3529e0f0fa7a22185fda1887"
     },
     {
       "file": "offline-manifest.json",
-      "sha256": "79728124e8b60241f2b0e1030dfda5db794dc9153a2feb8c5690cac179391e9f"
+      "sha256": "a0fd6264200bda7da460b9a7cefa8274137747ddb4b876c5471f0223c31275b1"
     },
     {
       "file": "privacy.html",
@@ -120,7 +120,7 @@
     },
     {
       "file": "sw.js",
-      "sha256": "eef4ccdbc036f4fe4054ee31a088b33bad5eea771720f1e4fc9cd478bbc0fb3c"
+      "sha256": "f9a9ac943444b14bec6341eaae03054646ba61e2d3889dbba7df2a0e918bca4c"
     },
     {
       "file": "THIRD-PARTY-NOTICES.txt",

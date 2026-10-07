@@ -1,7 +1,7 @@
 {
-  "version": "world-balance-v3",
-  "description": "Coeficientes abstractos de juego; no probabilidades históricas ni pérdidas humanas observadas.",
-  "conflictQuarterProbability": 0.35,
+  "version": "world-balance-v4",
+  "description": "Coeficientes comunes de juego; frecuencias agregadas contrastadas como proxies con UCDP/Powell–Thyne. No probabilidades históricas nacionales ni pérdidas humanas observadas.",
+  "conflictQuarterProbability": 0.65,
   "conflictMinTension": 25,
   "maxConflictQuarters": 8,
   "logisticsAttrition": 4,
@@ -9,7 +9,7 @@
   "coupStabilityThreshold": 42,
   "coupLoyaltyThreshold": 48,
   "coupStressThreshold": 38,
-  "coupRiskScale": 0.0012,
+  "coupRiskScale": 0.0024,
   "coupCooldownQuarters": 24,
   "sanctionDurationQuarters": 12
 }

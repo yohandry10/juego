@@ -1,0 +1,223 @@
+{
+  "accessedOn": "2026-10-06",
+  "window": {
+    "firstYear": 2000,
+    "lastYear": 2025,
+    "years": 26
+  },
+  "sources": {
+    "ucdp": {
+      "url": "https://ucdp.uu.se/downloads/ucdpprio/ucdp-prio-acd-261-csv.zip",
+      "accessedOn": "2026-10-06",
+      "csvSha256": "2aea044f1bcae7b050bb6c79fb796743e787edeed3b90e74e146cfc4e5b05447",
+      "version": "26.1",
+      "codebook": "https://ucdp.uu.se/downloads/ucdpprio/ucdp-prio-acd-261.pdf",
+      "citation": "Davies, Pettersson & Öberg (2026), Organized violence 1989–2025, and violent political protests; Gleditsch et al. (2002), Armed Conflict 1946–2001: A New Dataset.",
+      "license": "CC BY 4.0 according to the UCDP download center"
+    },
+    "coups": {
+      "url": "https://jonathanmpowell.com/wp-content/uploads/2026/08/pt_20260829.csv",
+      "accessedOn": "2026-10-06",
+      "csvSha256": "1e8f933b22f4b9a77d0ba5eb59bf0d8158adcaab27746adcf345195be87a9012",
+      "version": "2026.08.29",
+      "codebook": "https://jonathanmpowell.com/coups/",
+      "citation": "Powell & Thyne (2011), Global Instances of Coups from 1950 to 2010: A New Dataset, Journal of Peace Research 48(2):249–259, doi:10.1177/0022343310397436.",
+      "license": "Only derived annual counts committed; publication terms require separate review."
+    }
+  },
+  "definitions": {
+    "interstate": "UCDP type 2, conflict-year with at least 25 battle-related deaths; episode starts use unique conflict_id/start_date2, excluding starts before 2000.",
+    "successfulCoup": "Powell/Thyne coup=2: unconstitutional overt removal with control for at least seven days. Failed attempts (1) are counted separately; provisional 2026 excluded."
+  },
+  "annual": [
+    {
+      "year": 2000,
+      "interstateActiveConflicts": 2,
+      "interstateEpisodeStarts": 0,
+      "successfulCoups": 1,
+      "failedCoupAttempts": 7
+    },
+    {
+      "year": 2001,
+      "interstateActiveConflicts": 2,
+      "interstateEpisodeStarts": 1,
+      "successfulCoups": 0,
+      "failedCoupAttempts": 4
+    },
+    {
+      "year": 2002,
+      "interstateActiveConflicts": 1,
+      "interstateEpisodeStarts": 0,
+      "successfulCoups": 0,
+      "failedCoupAttempts": 2
+    },
+    {
+      "year": 2003,
+      "interstateActiveConflicts": 2,
+      "interstateEpisodeStarts": 1,
+      "successfulCoups": 3,
+      "failedCoupAttempts": 1
+    },
+    {
+      "year": 2004,
+      "interstateActiveConflicts": 0,
+      "interstateEpisodeStarts": 0,
+      "successfulCoups": 0,
+      "failedCoupAttempts": 2
+    },
+    {
+      "year": 2005,
+      "interstateActiveConflicts": 0,
+      "interstateEpisodeStarts": 0,
+      "successfulCoups": 2,
+      "failedCoupAttempts": 0
+    },
+    {
+      "year": 2006,
+      "interstateActiveConflicts": 0,
+      "interstateEpisodeStarts": 0,
+      "successfulCoups": 2,
+      "failedCoupAttempts": 1
+    },
+    {
+      "year": 2007,
+      "interstateActiveConflicts": 0,
+      "interstateEpisodeStarts": 0,
+      "successfulCoups": 0,
+      "failedCoupAttempts": 0
+    },
+    {
+      "year": 2008,
+      "interstateActiveConflicts": 1,
+      "interstateEpisodeStarts": 1,
+      "successfulCoups": 2,
+      "failedCoupAttempts": 1
+    },
+    {
+      "year": 2009,
+      "interstateActiveConflicts": 0,
+      "interstateEpisodeStarts": 0,
+      "successfulCoups": 2,
+      "failedCoupAttempts": 0
+    },
+    {
+      "year": 2010,
+      "interstateActiveConflicts": 0,
+      "interstateEpisodeStarts": 0,
+      "successfulCoups": 1,
+      "failedCoupAttempts": 2
+    },
+    {
+      "year": 2011,
+      "interstateActiveConflicts": 1,
+      "interstateEpisodeStarts": 1,
+      "successfulCoups": 1,
+      "failedCoupAttempts": 1
+    },
+    {
+      "year": 2012,
+      "interstateActiveConflicts": 1,
+      "interstateEpisodeStarts": 1,
+      "successfulCoups": 3,
+      "failedCoupAttempts": 3
+    },
+    {
+      "year": 2013,
+      "interstateActiveConflicts": 1,
+      "interstateEpisodeStarts": 1,
+      "successfulCoups": 1,
+      "failedCoupAttempts": 0
+    },
+    {
+      "year": 2014,
+      "interstateActiveConflicts": 1,
+      "interstateEpisodeStarts": 0,
+      "successfulCoups": 3,
+      "failedCoupAttempts": 1
+    },
+    {
+      "year": 2015,
+      "interstateActiveConflicts": 1,
+      "interstateEpisodeStarts": 0,
+      "successfulCoups": 0,
+      "failedCoupAttempts": 2
+    },
+    {
+      "year": 2016,
+      "interstateActiveConflicts": 2,
+      "interstateEpisodeStarts": 1,
+      "successfulCoups": 0,
+      "failedCoupAttempts": 1
+    },
+    {
+      "year": 2017,
+      "interstateActiveConflicts": 1,
+      "interstateEpisodeStarts": 0,
+      "successfulCoups": 1,
+      "failedCoupAttempts": 0
+    },
+    {
+      "year": 2018,
+      "interstateActiveConflicts": 2,
+      "interstateEpisodeStarts": 1,
+      "successfulCoups": 0,
+      "failedCoupAttempts": 0
+    },
+    {
+      "year": 2019,
+      "interstateActiveConflicts": 2,
+      "interstateEpisodeStarts": 0,
+      "successfulCoups": 1,
+      "failedCoupAttempts": 1
+    },
+    {
+      "year": 2020,
+      "interstateActiveConflicts": 3,
+      "interstateEpisodeStarts": 1,
+      "successfulCoups": 1,
+      "failedCoupAttempts": 0
+    },
+    {
+      "year": 2021,
+      "interstateActiveConflicts": 2,
+      "interstateEpisodeStarts": 1,
+      "successfulCoups": 5,
+      "failedCoupAttempts": 2
+    },
+    {
+      "year": 2022,
+      "interstateActiveConflicts": 3,
+      "interstateEpisodeStarts": 1,
+      "successfulCoups": 2,
+      "failedCoupAttempts": 2
+    },
+    {
+      "year": 2023,
+      "interstateActiveConflicts": 2,
+      "interstateEpisodeStarts": 0,
+      "successfulCoups": 2,
+      "failedCoupAttempts": 1
+    },
+    {
+      "year": 2024,
+      "interstateActiveConflicts": 4,
+      "interstateEpisodeStarts": 2,
+      "successfulCoups": 1,
+      "failedCoupAttempts": 1
+    },
+    {
+      "year": 2025,
+      "interstateActiveConflicts": 8,
+      "interstateEpisodeStarts": 4,
+      "successfulCoups": 2,
+      "failedCoupAttempts": 1
+    }
+  ],
+  "annualMeans": {
+    "interstateActiveConflicts": 1.6153846153846154,
+    "interstateEpisodeStarts": 0.6538461538461539,
+    "successfulCoups": 1.3846153846153846,
+    "failedCoupAttempts": 1.3846153846153846
+  },
+  "mappingLimit": "Game conflicts include five abstract forms and casualties are indices, not deaths. Coup transitions do not track seven-day control. These aggregates check orders of magnitude; they do not estimate country-specific risks or prove historical equivalence. Global shocks require a separately defined reference."
+}

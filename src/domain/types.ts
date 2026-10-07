@@ -121,6 +121,11 @@ export interface PoliticalSystem {
     readonly ceremonial: boolean;
   };
   readonly legislature: Legislature;
+  /** National approval routes; procedural timing and financing are explicit game aggregations. */
+  readonly treatyApproval?: {
+    readonly treaties: TreatyApprovalRule;
+    readonly financing: TreatyApprovalRule;
+  } | undefined;
   readonly executive: ExecutiveRules;
   readonly executiveAccountability: {
     readonly presidentialVacancy: {
@@ -147,6 +152,18 @@ export interface PoliticalSystem {
   readonly politicalDistribution: readonly PoliticalDistribution[];
   readonly cohabitation?: { readonly effectiveAuthorityAlignedPercent: number; readonly effectiveAuthorityCohabitationPercent: number; readonly decreeAllowedWhenAligned: boolean; readonly decreeAllowedWhenCohabiting: boolean } | undefined;
 }
+
+export interface TreatyApprovalRule {
+  readonly chambers: readonly { readonly chamberId: string; readonly majority: TreatyVoteMajority }[];
+  readonly resolution: "all" | "lower-final" | "scrutiny";
+  readonly finalMajority?: TreatyVoteMajority | undefined;
+  readonly minimumReviewQuarters: number;
+  readonly summary: string;
+  readonly scopeNote: string;
+  readonly sources: readonly DataSource[];
+}
+
+export type TreatyVoteMajority = "simple" | "absolute" | "two-thirds-present";
 
 export interface ExecutiveRules {
   readonly officeId: string;

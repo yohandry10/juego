@@ -1,7 +1,7 @@
 import type { CareerGameState } from "../domain/career-types.js";
 import type { CountryDefinition } from "../domain/types.js";
 import { canEnactForeignPolicy, fulfillFinancingCommitment, requestInternationalFinancing } from "../application/diplomacy-commands.js";
-import { ratifyInternationalTreaty } from "../application/career-commands.js";
+import { TreatyReview } from "./TreatyReview.js";
 import { organizationMember } from "../engine/world-institutions.js";
 import terms from "../data/financing-parameters.json" with { type: "json" };
 
@@ -13,8 +13,6 @@ const offers = [
 export function FinancingView({ state, country, update }: { state: CareerGameState; country: CountryDefinition; update: (state: CareerGameState) => void }) {
   const geo = state.geopolitics;
   const official = canEnactForeignPolicy(state);
-  const executive = state.stage === "executive" && official;
-  const canRatify = executive ? state.player.resources.politicalCapital >= 3 : state.stage === "legislature" && Boolean(state.legislature?.actionsRemaining);
   return <section className="financing-section" aria-labelledby="financing-heading">
     <h3 id="financing-heading">Pedir apoyo económico</h3>
     <p className="financing-intro">Recibes un préstamo en {terms.trancheCount} entregas. Para seguir recibiendo dinero debes cumplir un compromiso. Lo recibido aumenta la deuda y se devuelve después.</p>
@@ -35,7 +33,7 @@ export function FinancingView({ state, country, update }: { state: CareerGameSta
         <span className="eyebrow">{offer.name}</span><h4>{offer.title}</h4>
         <dl className="financing-terms"><div><dt>Qué recibes</dt><dd>{offer.benefit}</dd></div><div><dt>Tu compromiso</dt><dd>{offer.commitment}</dd></div><div><dt>Qué arriesgas</dt><dd>{offer.risk} Devolverás el préstamo con un costo financiero.</dd></div></dl>
         <p className={`financing-status ${program?.status === "suspended" ? "is-paused" : ""}`}><strong>{status}</strong></p>
-        {waiting && <div className="financing-next"><p>Aún no has recibido dinero. El Congreso debe aprobar la solicitud; puede rechazarla.</p><button className="secondary-button" disabled={!canRatify} onClick={() => update(ratifyInternationalTreaty(state, country, treaty!.id))}>Someter a votación</button><p>{canRatify ? executive ? "Convocar cuesta 3 de capital político." : "La votación usa una de tus acciones de este turno." : "Podrás convocar la votación cuando tengas una sesión legislativa o encabeces un Gobierno con capital disponible."}</p></div>}
+        {waiting && <><p>Aún no has recibido dinero. Falta autorizar la solicitud; las cámaras pueden rechazarla.</p><TreatyReview state={state} country={country} treaty={treaty!} update={update}/></>}
         {treaty?.status === "rejected" && <p>El préstamo no se aprobó. Antes de volver a solicitarlo, negocia más apoyo en el Congreso. La influencia gastada en la solicitud no se recupera.</p>}
         {hasProgram && <div className="financing-next">
           <label className="financing-progress">Entregas recibidas: {program!.tranches} de {terms.trancheCount}<progress aria-label={`Entregas recibidas del ${offer.name}`} value={program!.tranches} max={terms.trancheCount}/></label>

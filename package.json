@@ -6,8 +6,10 @@
   "description": "Motor determinista de simulaci\u00f3n pol\u00edtica para MANDATO",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "tsc -p tsconfig.json && vite build && node scripts/build-credits.mjs && node scripts/build-offline-manifest.mjs",
-    "build:web": "vite build && node scripts/build-credits.mjs && node scripts/build-offline-manifest.mjs",
+    "build": "npm run data:sync && tsc -p tsconfig.json && vite build && node scripts/build-credits.mjs && node scripts/build-offline-manifest.mjs",
+    "build:web": "npm run data:sync && vite build && node scripts/build-credits.mjs && node scripts/build-offline-manifest.mjs",
+    "data:sync": "node scripts/sync-country-profiles.mjs",
+    "data:check": "node scripts/sync-country-profiles.mjs --check",
     "build:worker-check": "tsc -p tsconfig.worker.json",
     "build:repro-check": "node scripts/check-build-reproducibility.mjs",
     "test": "tsx --test tests/**/*.test.ts",
@@ -22,6 +24,7 @@
     "world:update-data": "node scripts/update-world-data.mjs",
     "world:validate": "tsx src/cli/world-mass.ts 100",
     "world:sensitivity": "tsx src/cli/world-sensitivity.ts",
+    "world:frequency": "tsx src/cli/world-frequency.ts",
     "validate:generated": "tsx src/cli/generated-countries.ts",
     "validate:diplomacy": "tsx src/cli/diplomacy-balance.ts",
     "validate:long-career": "node --expose-gc --import tsx src/cli/long-career.ts"

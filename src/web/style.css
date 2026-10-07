@@ -28,3 +28,4 @@
 .pace-controls select { width: 100%; }
 .pace-controls p { line-height: 1.6; }
 .pace-pause { border-left: 3px solid #b7c888; padding-left: .8rem; }
+.world-panel a { color: #d2e3a3; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }

@@ -129,7 +129,11 @@ for organization in organizations["organizations"]:
         if organization["id"] == "wto":
             organization["description"] = "Membresía oficial fechada: 166 miembros, 164 con actor. UE y el territorio aduanero de Chinese Taipei no tienen actor independiente en este catálogo; no se inventan votos para ellos. Disputas y compromisos simplificados de juego."
 organizations["snapshotDate"] = ACCESSED_ON
-(ROOT / "src/data/world-memberships.json").write_text(json.dumps({"snapshotDate": ACCESSED_ON, "rosters": rosters}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+memberships_path = ROOT / "src/data/world-memberships.json"
+snapshot_data = json.loads(memberships_path.read_text(encoding="utf-8"))
+snapshot_data["rosters"].update(rosters)  # Preserve the independently curated regional rosters.
+snapshot_data["snapshotDate"] = ACCESSED_ON
+memberships_path.write_text(json.dumps(snapshot_data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 organizations_path.write_text(json.dumps(organizations, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 for key, value in rosters.items():
     print(f"{key}: {value['officialMemberCount']} official members; {value['representedActorCount']} actors")

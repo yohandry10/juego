@@ -4,7 +4,7 @@
   "name": "Reino Unido",
   "experimental": false,
   "startingYear": 2026,
-  "dataVersion": "united-kingdom-institutions-2026-economic-snapshot-2025-v1",
+  "dataVersion": "united-kingdom-institutions-2026-economic-snapshot-2025-v1-treaty-routes-v1",
   "population": 69487000,
   "politicalSystem": {
     "formOfGovernment": "parliamentary",
@@ -141,6 +141,54 @@
         "minimumDaysBeforeVote": 7,
         "maximumDaysBeforeVote": 14
       }
+    },
+    "treatyApproval": {
+      "treaties": {
+        "chambers": [
+          {
+            "chamberId": "commons",
+            "majority": "simple"
+          },
+          {
+            "chamberId": "lords",
+            "majority": "simple"
+          }
+        ],
+        "resolution": "scrutiny",
+        "minimumReviewQuarters": 1,
+        "summary": "El Gobierno espera la revisión parlamentaria. Una objeción de los Comunes aplaza el acuerdo.",
+        "scopeNote": "Los personajes y sus votos son ficticios. Se agregan iniciativa, autorización y ratificación ejecutiva en una acción; no se simulan reservas, control judicial ni tratados que reforman la Constitución. El plazo real de 21 días de sesiones se agrega a un trimestre. Se simula un examen expreso; la ley no exige una votación afirmativa. La objeción de los Lores se acompaña de una declaración ministerial agregada.",
+        "sources": [
+          {
+            "name": "Reglas nacionales de autorización internacional",
+            "url": "https://commonslibrary.parliament.uk/research-briefings/cbp-9247/",
+            "indicator": "CRaG 2010, secciones 20–21: revisión parlamentaria de tratados",
+            "year": 2026,
+            "accessedOn": "2026-10-06"
+          }
+        ]
+      },
+      "financing": {
+        "chambers": [
+          {
+            "chamberId": "commons",
+            "majority": "simple"
+          }
+        ],
+        "resolution": "all",
+        "minimumReviewQuarters": 0,
+        "summary": "El préstamo necesita autorización presupuestaria de House of Commons (650 circunscripciones abstractas).",
+        "scopeNote": "Control presupuestario ficticio inspirado en las instituciones nacionales. No reproduce la aprobación real de un préstamo FMI/IBRD ni un contrato internacional. Usa una votación presupuestaria ordinaria, separada de las mayorías de los tratados. El juego concentra este control en la Cámara de los Comunes.",
+        "sources": [
+          {
+            "name": "Reglas nacionales de autorización internacional",
+            "url": "https://commonslibrary.parliament.uk/research-briefings/cbp-9247/",
+            "indicator": "CRaG 2010, secciones 20–21: revisión parlamentaria de tratados",
+            "year": 2026,
+            "accessedOn": "2026-10-06"
+          }
+        ]
+      }
     }
   },
   "candidateEligibility": [
@@ -196,6 +244,13 @@
       "name": "House of Lords Library · Current membership dashboard",
       "url": "https://lordslibrary.parliament.uk/house-of-lords-data-dashboard-membership-of-the-house/",
       "indicator": "Snapshot y composición de miembros de la Cámara de los Lores; lista real no importada a la simulación",
+      "year": 2026,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Reglas nacionales de autorización internacional",
+      "url": "https://commonslibrary.parliament.uk/research-briefings/cbp-9247/",
+      "indicator": "CRaG 2010, secciones 20–21: revisión parlamentaria de tratados",
       "year": 2026,
       "accessedOn": "2026-10-06"
     }

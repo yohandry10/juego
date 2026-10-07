@@ -4,7 +4,7 @@
   "name": "México",
   "experimental": true,
   "startingYear": 2026,
-  "dataVersion": "mexico-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance",
+  "dataVersion": "mexico-institutions-2026-economic-snapshot-2025-v1-fictional-social-balance-treaty-routes-v1",
   "population": 131946900,
   "politicalSystem": {
     "formOfGovernment": "presidential",
@@ -125,6 +125,50 @@
         ]
       },
       "cabinetCensure": null
+    },
+    "treatyApproval": {
+      "treaties": {
+        "chambers": [
+          {
+            "chamberId": "senate",
+            "majority": "simple"
+          }
+        ],
+        "resolution": "all",
+        "minimumReviewQuarters": 0,
+        "summary": "El Senado decide sobre el tratado; los votos de la Cámara de Diputados no lo sustituyen.",
+        "scopeNote": "Los personajes y sus votos son ficticios. Se agregan iniciativa, autorización y ratificación ejecutiva en una acción; no se simulan reservas, control judicial ni tratados que reforman la Constitución.",
+        "sources": [
+          {
+            "name": "Reglas nacionales de autorización internacional",
+            "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+            "indicator": "Constitución, arts. 63, 74-IV y 76-I",
+            "year": 2026,
+            "accessedOn": "2026-10-06"
+          }
+        ]
+      },
+      "financing": {
+        "chambers": [
+          {
+            "chamberId": "house",
+            "majority": "simple"
+          }
+        ],
+        "resolution": "all",
+        "minimumReviewQuarters": 0,
+        "summary": "El préstamo necesita autorización presupuestaria de Cámara de Diputados.",
+        "scopeNote": "Control presupuestario ficticio inspirado en las instituciones nacionales. No reproduce la aprobación real de un préstamo FMI/IBRD ni un contrato internacional. Usa una votación presupuestaria ordinaria, separada de las mayorías de los tratados. Usa el control presupuestario de la Cámara de Diputados.",
+        "sources": [
+          {
+            "name": "Reglas nacionales de autorización internacional",
+            "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+            "indicator": "Constitución, arts. 63, 74-IV y 76-I",
+            "year": 2026,
+            "accessedOn": "2026-10-06"
+          }
+        ]
+      }
     }
   },
   "candidateEligibility": [
@@ -175,6 +219,13 @@
       "url": "https://www.inegi.org.mx/app/tabulados/default.html?nc=588",
       "indicator": "PIB nominal nacional 2024; valor macroeconómico registrado por separado de los parámetros institucionales",
       "year": 2024,
+      "accessedOn": "2026-10-06"
+    },
+    {
+      "name": "Reglas nacionales de autorización internacional",
+      "url": "https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf",
+      "indicator": "Constitución, arts. 63, 74-IV y 76-I",
+      "year": 2026,
       "accessedOn": "2026-10-06"
     }
   ],

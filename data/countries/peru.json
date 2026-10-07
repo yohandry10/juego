@@ -4,7 +4,7 @@
   "name": "Perú",
   "experimental": false,
   "startingYear": 2026,
-  "dataVersion": "peru-2026-10-05-v7",
+  "dataVersion": "peru-2026-10-05-v7-treaty-routes-v1",
   "population": 34217848,
   "politicalSystem": {
     "formOfGovernment": "presidential",
@@ -144,6 +144,54 @@
         "minimumDaysBeforeVote": 4,
         "maximumDaysBeforeVote": 10
       }
+    },
+    "treatyApproval": {
+      "treaties": {
+        "chambers": [
+          {
+            "chamberId": "senate",
+            "majority": "absolute"
+          }
+        ],
+        "resolution": "all",
+        "minimumReviewQuarters": 0,
+        "summary": "El Senado debe aprobar el tratado con más de la mitad de sus escaños.",
+        "scopeNote": "Los personajes y sus votos son ficticios. Se agregan iniciativa, autorización y ratificación ejecutiva en una acción; no se simulan reservas, control judicial ni tratados que reforman la Constitución.",
+        "sources": [
+          {
+            "name": "Reglas nacionales de autorización internacional",
+            "url": "https://www.congreso.gob.pe/Docs/files/constitucion/constitucion-12-2024.pdf",
+            "indicator": "Constitución, arts. 56–57 tras Ley 31988; arts. 78–80",
+            "year": 2026,
+            "accessedOn": "2026-10-06"
+          }
+        ]
+      },
+      "financing": {
+        "chambers": [
+          {
+            "chamberId": "chamber-of-deputies",
+            "majority": "simple"
+          },
+          {
+            "chamberId": "senate",
+            "majority": "simple"
+          }
+        ],
+        "resolution": "all",
+        "minimumReviewQuarters": 0,
+        "summary": "El préstamo necesita autorización presupuestaria de ambas cámaras.",
+        "scopeNote": "Control presupuestario ficticio inspirado en las instituciones nacionales. No reproduce la aprobación real de un préstamo FMI/IBRD ni un contrato internacional. Usa una votación presupuestaria ordinaria, separada de las mayorías de los tratados. Agrega la revisión del Senado en el procedimiento presupuestario del juego.",
+        "sources": [
+          {
+            "name": "Reglas nacionales de autorización internacional",
+            "url": "https://www.congreso.gob.pe/Docs/files/constitucion/constitucion-12-2024.pdf",
+            "indicator": "Constitución, arts. 56–57 tras Ley 31988; arts. 78–80",
+            "year": 2026,
+            "accessedOn": "2026-10-06"
+          }
+        ]
+      }
     }
   },
   "candidateEligibility": [
@@ -265,6 +313,13 @@
       "indicator": "Artículo 89-A: iniciativa, admisión, intervalo de defensa y votos requeridos para la vacancia presidencial",
       "year": 2025,
       "accessedOn": "2026-10-05"
+    },
+    {
+      "name": "Reglas nacionales de autorización internacional",
+      "url": "https://www.congreso.gob.pe/Docs/files/constitucion/constitucion-12-2024.pdf",
+      "indicator": "Constitución, arts. 56–57 tras Ley 31988; arts. 78–80",
+      "year": 2026,
+      "accessedOn": "2026-10-06"
     }
   ],
   "economy": {

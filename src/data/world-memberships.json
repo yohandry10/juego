@@ -2770,6 +2770,1380 @@
         }
       ],
       "institution": "IBRD"
+    },
+    "un": {
+      "sourceUrl": "https://www.un.org/en/about-us/member-states",
+      "accessedOn": "2026-10-06",
+      "officialMemberCount": 193,
+      "members": [
+        {
+          "code": "AFG",
+          "name": "Afghanistan"
+        },
+        {
+          "code": "AGO",
+          "name": "Angola"
+        },
+        {
+          "code": "ALB",
+          "name": "Albania"
+        },
+        {
+          "code": "AND",
+          "name": "Andorra"
+        },
+        {
+          "code": "ARE",
+          "name": "United Arab Emirates"
+        },
+        {
+          "code": "ARG",
+          "name": "Argentina"
+        },
+        {
+          "code": "ARM",
+          "name": "Armenia"
+        },
+        {
+          "code": "ATG",
+          "name": "Antigua and Barbuda"
+        },
+        {
+          "code": "AUS",
+          "name": "Australia"
+        },
+        {
+          "code": "AUT",
+          "name": "Austria"
+        },
+        {
+          "code": "AZE",
+          "name": "Azerbaijan"
+        },
+        {
+          "code": "BDI",
+          "name": "Burundi"
+        },
+        {
+          "code": "BEL",
+          "name": "Belgium"
+        },
+        {
+          "code": "BEN",
+          "name": "Benin"
+        },
+        {
+          "code": "BFA",
+          "name": "Burkina Faso"
+        },
+        {
+          "code": "BGD",
+          "name": "Bangladesh"
+        },
+        {
+          "code": "BGR",
+          "name": "Bulgaria"
+        },
+        {
+          "code": "BHR",
+          "name": "Bahrain"
+        },
+        {
+          "code": "BHS",
+          "name": "Bahamas (The)"
+        },
+        {
+          "code": "BIH",
+          "name": "Bosnia and Herzegovina"
+        },
+        {
+          "code": "BLR",
+          "name": "Belarus"
+        },
+        {
+          "code": "BLZ",
+          "name": "Belize"
+        },
+        {
+          "code": "BOL",
+          "name": "Bolivia (Plurinational State of)"
+        },
+        {
+          "code": "BRA",
+          "name": "Brazil"
+        },
+        {
+          "code": "BRB",
+          "name": "Barbados"
+        },
+        {
+          "code": "BRN",
+          "name": "Brunei Darussalam"
+        },
+        {
+          "code": "BTN",
+          "name": "Bhutan"
+        },
+        {
+          "code": "BWA",
+          "name": "Botswana"
+        },
+        {
+          "code": "CAF",
+          "name": "Central African Republic"
+        },
+        {
+          "code": "CAN",
+          "name": "Canada"
+        },
+        {
+          "code": "CHE",
+          "name": "Switzerland"
+        },
+        {
+          "code": "CHL",
+          "name": "Chile"
+        },
+        {
+          "code": "CHN",
+          "name": "China (the People's Republic of)"
+        },
+        {
+          "code": "CIV",
+          "name": "Côte D'Ivoire"
+        },
+        {
+          "code": "CMR",
+          "name": "Cameroon"
+        },
+        {
+          "code": "COD",
+          "name": "Democratic Republic of the Congo"
+        },
+        {
+          "code": "COG",
+          "name": "Congo"
+        },
+        {
+          "code": "COL",
+          "name": "Colombia"
+        },
+        {
+          "code": "COM",
+          "name": "Comoros"
+        },
+        {
+          "code": "CPV",
+          "name": "Cabo Verde"
+        },
+        {
+          "code": "CRI",
+          "name": "Costa Rica"
+        },
+        {
+          "code": "CUB",
+          "name": "Cuba"
+        },
+        {
+          "code": "CYP",
+          "name": "Cyprus"
+        },
+        {
+          "code": "CZE",
+          "name": "Czechia"
+        },
+        {
+          "code": "DEU",
+          "name": "Germany"
+        },
+        {
+          "code": "DJI",
+          "name": "Djibouti"
+        },
+        {
+          "code": "DMA",
+          "name": "Dominica"
+        },
+        {
+          "code": "DNK",
+          "name": "Denmark"
+        },
+        {
+          "code": "DOM",
+          "name": "Dominican Republic"
+        },
+        {
+          "code": "DZA",
+          "name": "Algeria"
+        },
+        {
+          "code": "ECU",
+          "name": "Ecuador"
+        },
+        {
+          "code": "EGY",
+          "name": "Egypt"
+        },
+        {
+          "code": "ERI",
+          "name": "Eritrea"
+        },
+        {
+          "code": "ESP",
+          "name": "Spain"
+        },
+        {
+          "code": "EST",
+          "name": "Estonia"
+        },
+        {
+          "code": "ETH",
+          "name": "Ethiopia"
+        },
+        {
+          "code": "FIN",
+          "name": "Finland"
+        },
+        {
+          "code": "FJI",
+          "name": "Fiji"
+        },
+        {
+          "code": "FRA",
+          "name": "France"
+        },
+        {
+          "code": "FSM",
+          "name": "Micronesia (Federated States of)"
+        },
+        {
+          "code": "GAB",
+          "name": "Gabon"
+        },
+        {
+          "code": "GBR",
+          "name": "United Kingdom of Great Britain and Northern Ireland"
+        },
+        {
+          "code": "GEO",
+          "name": "Georgia"
+        },
+        {
+          "code": "GHA",
+          "name": "Ghana"
+        },
+        {
+          "code": "GIN",
+          "name": "Guinea"
+        },
+        {
+          "code": "GMB",
+          "name": "Gambia (Republic of The)"
+        },
+        {
+          "code": "GNB",
+          "name": "Guinea Bissau"
+        },
+        {
+          "code": "GNQ",
+          "name": "Equatorial Guinea"
+        },
+        {
+          "code": "GRC",
+          "name": "Greece"
+        },
+        {
+          "code": "GRD",
+          "name": "Grenada"
+        },
+        {
+          "code": "GTM",
+          "name": "Guatemala"
+        },
+        {
+          "code": "GUY",
+          "name": "Guyana"
+        },
+        {
+          "code": "HND",
+          "name": "Honduras"
+        },
+        {
+          "code": "HRV",
+          "name": "Croatia"
+        },
+        {
+          "code": "HTI",
+          "name": "Haiti"
+        },
+        {
+          "code": "HUN",
+          "name": "Hungary"
+        },
+        {
+          "code": "IDN",
+          "name": "Indonesia"
+        },
+        {
+          "code": "IND",
+          "name": "India"
+        },
+        {
+          "code": "IRL",
+          "name": "Ireland"
+        },
+        {
+          "code": "IRN",
+          "name": "Iran (Islamic Republic of)"
+        },
+        {
+          "code": "IRQ",
+          "name": "Iraq"
+        },
+        {
+          "code": "ISL",
+          "name": "Iceland"
+        },
+        {
+          "code": "ISR",
+          "name": "Israel"
+        },
+        {
+          "code": "ITA",
+          "name": "Italy"
+        },
+        {
+          "code": "JAM",
+          "name": "Jamaica"
+        },
+        {
+          "code": "JOR",
+          "name": "Jordan"
+        },
+        {
+          "code": "JPN",
+          "name": "Japan"
+        },
+        {
+          "code": "KAZ",
+          "name": "Kazakhstan"
+        },
+        {
+          "code": "KEN",
+          "name": "Kenya"
+        },
+        {
+          "code": "KGZ",
+          "name": "Kyrgyzstan"
+        },
+        {
+          "code": "KHM",
+          "name": "Cambodia"
+        },
+        {
+          "code": "KIR",
+          "name": "Kiribati"
+        },
+        {
+          "code": "KNA",
+          "name": "Saint Kitts and Nevis"
+        },
+        {
+          "code": "KOR",
+          "name": "Republic of Korea"
+        },
+        {
+          "code": "KWT",
+          "name": "Kuwait"
+        },
+        {
+          "code": "LAO",
+          "name": "Lao People’s Democratic Republic"
+        },
+        {
+          "code": "LBN",
+          "name": "Lebanon"
+        },
+        {
+          "code": "LBR",
+          "name": "Liberia"
+        },
+        {
+          "code": "LBY",
+          "name": "Libya"
+        },
+        {
+          "code": "LCA",
+          "name": "Saint Lucia"
+        },
+        {
+          "code": "LIE",
+          "name": "Liechtenstein"
+        },
+        {
+          "code": "LKA",
+          "name": "Sri Lanka"
+        },
+        {
+          "code": "LSO",
+          "name": "Lesotho"
+        },
+        {
+          "code": "LTU",
+          "name": "Lithuania"
+        },
+        {
+          "code": "LUX",
+          "name": "Luxembourg"
+        },
+        {
+          "code": "LVA",
+          "name": "Latvia"
+        },
+        {
+          "code": "MAR",
+          "name": "Morocco"
+        },
+        {
+          "code": "MCO",
+          "name": "Monaco"
+        },
+        {
+          "code": "MDA",
+          "name": "Republic of Moldova"
+        },
+        {
+          "code": "MDG",
+          "name": "Madagascar"
+        },
+        {
+          "code": "MDV",
+          "name": "Maldives"
+        },
+        {
+          "code": "MEX",
+          "name": "Mexico"
+        },
+        {
+          "code": "MHL",
+          "name": "Marshall Islands"
+        },
+        {
+          "code": "MKD",
+          "name": "North Macedonia"
+        },
+        {
+          "code": "MLI",
+          "name": "Mali"
+        },
+        {
+          "code": "MLT",
+          "name": "Malta"
+        },
+        {
+          "code": "MMR",
+          "name": "Myanmar"
+        },
+        {
+          "code": "MNE",
+          "name": "Montenegro"
+        },
+        {
+          "code": "MNG",
+          "name": "Mongolia"
+        },
+        {
+          "code": "MOZ",
+          "name": "Mozambique"
+        },
+        {
+          "code": "MRT",
+          "name": "Mauritania"
+        },
+        {
+          "code": "MUS",
+          "name": "Mauritius"
+        },
+        {
+          "code": "MWI",
+          "name": "Malawi"
+        },
+        {
+          "code": "MYS",
+          "name": "Malaysia"
+        },
+        {
+          "code": "NAM",
+          "name": "Namibia"
+        },
+        {
+          "code": "NER",
+          "name": "Niger"
+        },
+        {
+          "code": "NGA",
+          "name": "Nigeria"
+        },
+        {
+          "code": "NIC",
+          "name": "Nicaragua"
+        },
+        {
+          "code": "NLD",
+          "name": "Netherlands (Kingdom of the)"
+        },
+        {
+          "code": "NOR",
+          "name": "Norway"
+        },
+        {
+          "code": "NPL",
+          "name": "Nepal"
+        },
+        {
+          "code": "NRU",
+          "name": "Naoero"
+        },
+        {
+          "code": "NZL",
+          "name": "New Zealand"
+        },
+        {
+          "code": "OMN",
+          "name": "Oman"
+        },
+        {
+          "code": "PAK",
+          "name": "Pakistan"
+        },
+        {
+          "code": "PAN",
+          "name": "Panama"
+        },
+        {
+          "code": "PER",
+          "name": "Peru"
+        },
+        {
+          "code": "PHL",
+          "name": "Philippines"
+        },
+        {
+          "code": "PLW",
+          "name": "Palau"
+        },
+        {
+          "code": "PNG",
+          "name": "Papua New Guinea"
+        },
+        {
+          "code": "POL",
+          "name": "Poland"
+        },
+        {
+          "code": "PRK",
+          "name": "Democratic People's Republic of Korea"
+        },
+        {
+          "code": "PRT",
+          "name": "Portugal"
+        },
+        {
+          "code": "PRY",
+          "name": "Paraguay"
+        },
+        {
+          "code": "QAT",
+          "name": "Qatar"
+        },
+        {
+          "code": "ROU",
+          "name": "Romania"
+        },
+        {
+          "code": "RUS",
+          "name": "Russian Federation"
+        },
+        {
+          "code": "RWA",
+          "name": "Rwanda"
+        },
+        {
+          "code": "SAU",
+          "name": "Saudi Arabia"
+        },
+        {
+          "code": "SDN",
+          "name": "Sudan"
+        },
+        {
+          "code": "SEN",
+          "name": "Senegal"
+        },
+        {
+          "code": "SGP",
+          "name": "Singapore"
+        },
+        {
+          "code": "SLB",
+          "name": "Solomon Islands"
+        },
+        {
+          "code": "SLE",
+          "name": "Sierra Leone"
+        },
+        {
+          "code": "SLV",
+          "name": "El Salvador"
+        },
+        {
+          "code": "SMR",
+          "name": "San Marino"
+        },
+        {
+          "code": "SOM",
+          "name": "Somalia"
+        },
+        {
+          "code": "SRB",
+          "name": "Serbia"
+        },
+        {
+          "code": "SSD",
+          "name": "South Sudan"
+        },
+        {
+          "code": "STP",
+          "name": "Sao Tome and Principe"
+        },
+        {
+          "code": "SUR",
+          "name": "Suriname"
+        },
+        {
+          "code": "SVK",
+          "name": "Slovakia"
+        },
+        {
+          "code": "SVN",
+          "name": "Slovenia"
+        },
+        {
+          "code": "SWE",
+          "name": "Sweden"
+        },
+        {
+          "code": "SWZ",
+          "name": "Eswatini"
+        },
+        {
+          "code": "SYC",
+          "name": "Seychelles"
+        },
+        {
+          "code": "SYR",
+          "name": "Syrian Arab Republic"
+        },
+        {
+          "code": "TCD",
+          "name": "Chad"
+        },
+        {
+          "code": "TGO",
+          "name": "Togo"
+        },
+        {
+          "code": "THA",
+          "name": "Thailand"
+        },
+        {
+          "code": "TJK",
+          "name": "Tajikistan"
+        },
+        {
+          "code": "TKM",
+          "name": "Turkmenistan"
+        },
+        {
+          "code": "TLS",
+          "name": "Timor-Leste"
+        },
+        {
+          "code": "TON",
+          "name": "Tonga"
+        },
+        {
+          "code": "TTO",
+          "name": "Trinidad and Tobago"
+        },
+        {
+          "code": "TUN",
+          "name": "Tunisia"
+        },
+        {
+          "code": "TUR",
+          "name": "Türkiye"
+        },
+        {
+          "code": "TUV",
+          "name": "Tuvalu"
+        },
+        {
+          "code": "TZA",
+          "name": "United Republic of Tanzania"
+        },
+        {
+          "code": "UGA",
+          "name": "Uganda"
+        },
+        {
+          "code": "UKR",
+          "name": "Ukraine"
+        },
+        {
+          "code": "URY",
+          "name": "Uruguay"
+        },
+        {
+          "code": "USA",
+          "name": "United States of America"
+        },
+        {
+          "code": "UZB",
+          "name": "Uzbekistan"
+        },
+        {
+          "code": "VCT",
+          "name": "Saint Vincent and the Grenadines"
+        },
+        {
+          "code": "VEN",
+          "name": "Venezuela, Bolivarian Republic of"
+        },
+        {
+          "code": "VNM",
+          "name": "Viet Nam"
+        },
+        {
+          "code": "VUT",
+          "name": "Vanuatu"
+        },
+        {
+          "code": "WSM",
+          "name": "Samoa"
+        },
+        {
+          "code": "YEM",
+          "name": "Yemen"
+        },
+        {
+          "code": "ZAF",
+          "name": "South Africa"
+        },
+        {
+          "code": "ZMB",
+          "name": "Zambia"
+        },
+        {
+          "code": "ZWE",
+          "name": "Zimbabwe"
+        }
+      ],
+      "sourceSha256": "c700e794d2f55f9a58d122ec1d2ae161fdc3145efa27dca3f36318a40f0e143e",
+      "method": "official-html-list",
+      "representedActorCount": 193,
+      "unrepresentedMembers": []
+    },
+    "eu": {
+      "sourceUrl": "https://european-union.europa.eu/principles-countries-history/eu-countries_en",
+      "accessedOn": "2026-10-06",
+      "officialMemberCount": 27,
+      "members": [
+        {
+          "code": "AUT",
+          "name": "Austria"
+        },
+        {
+          "code": "BEL",
+          "name": "Belgium"
+        },
+        {
+          "code": "BGR",
+          "name": "Bulgaria"
+        },
+        {
+          "code": "CYP",
+          "name": "Cyprus"
+        },
+        {
+          "code": "CZE",
+          "name": "Czechia"
+        },
+        {
+          "code": "DEU",
+          "name": "Germany"
+        },
+        {
+          "code": "DNK",
+          "name": "Denmark"
+        },
+        {
+          "code": "ESP",
+          "name": "Spain"
+        },
+        {
+          "code": "EST",
+          "name": "Estonia"
+        },
+        {
+          "code": "FIN",
+          "name": "Finland"
+        },
+        {
+          "code": "FRA",
+          "name": "France"
+        },
+        {
+          "code": "GRC",
+          "name": "Greece"
+        },
+        {
+          "code": "HRV",
+          "name": "Croatia"
+        },
+        {
+          "code": "HUN",
+          "name": "Hungary"
+        },
+        {
+          "code": "IRL",
+          "name": "Ireland"
+        },
+        {
+          "code": "ITA",
+          "name": "Italy"
+        },
+        {
+          "code": "LTU",
+          "name": "Lithuania"
+        },
+        {
+          "code": "LUX",
+          "name": "Luxembourg"
+        },
+        {
+          "code": "LVA",
+          "name": "Latvia"
+        },
+        {
+          "code": "MLT",
+          "name": "Malta"
+        },
+        {
+          "code": "NLD",
+          "name": "Netherlands"
+        },
+        {
+          "code": "POL",
+          "name": "Poland"
+        },
+        {
+          "code": "PRT",
+          "name": "Portugal"
+        },
+        {
+          "code": "ROU",
+          "name": "Romania"
+        },
+        {
+          "code": "SVK",
+          "name": "Slovakia"
+        },
+        {
+          "code": "SVN",
+          "name": "Slovenia"
+        },
+        {
+          "code": "SWE",
+          "name": "Sweden"
+        }
+      ],
+      "sourceSha256": "1393f608a4f522da01df9e01ed25fc748f50c394032cbedf01d9bdd6970cf715",
+      "method": "official-html-list",
+      "representedActorCount": 27,
+      "unrepresentedMembers": []
+    },
+    "nato": {
+      "sourceUrl": "https://www.nato.int/en/about-us/organization/nato-member-countries",
+      "accessedOn": "2026-10-06",
+      "officialMemberCount": 32,
+      "members": [
+        {
+          "code": "ALB",
+          "name": "Albania"
+        },
+        {
+          "code": "BEL",
+          "name": "Belgium"
+        },
+        {
+          "code": "BGR",
+          "name": "Bulgaria"
+        },
+        {
+          "code": "CAN",
+          "name": "Canada"
+        },
+        {
+          "code": "CZE",
+          "name": "Czechia"
+        },
+        {
+          "code": "DEU",
+          "name": "Germany"
+        },
+        {
+          "code": "DNK",
+          "name": "Denmark"
+        },
+        {
+          "code": "ESP",
+          "name": "Spain"
+        },
+        {
+          "code": "EST",
+          "name": "Estonia"
+        },
+        {
+          "code": "FIN",
+          "name": "Finland"
+        },
+        {
+          "code": "FRA",
+          "name": "France"
+        },
+        {
+          "code": "GBR",
+          "name": "United Kingdom"
+        },
+        {
+          "code": "GRC",
+          "name": "Greece"
+        },
+        {
+          "code": "HRV",
+          "name": "Croatia"
+        },
+        {
+          "code": "HUN",
+          "name": "Hungary"
+        },
+        {
+          "code": "ISL",
+          "name": "Iceland"
+        },
+        {
+          "code": "ITA",
+          "name": "Italy"
+        },
+        {
+          "code": "LTU",
+          "name": "Lithuania"
+        },
+        {
+          "code": "LUX",
+          "name": "Luxembourg"
+        },
+        {
+          "code": "LVA",
+          "name": "Latvia"
+        },
+        {
+          "code": "MKD",
+          "name": "North Macedonia"
+        },
+        {
+          "code": "MNE",
+          "name": "Montenegro"
+        },
+        {
+          "code": "NLD",
+          "name": "The Netherlands"
+        },
+        {
+          "code": "NOR",
+          "name": "Norway"
+        },
+        {
+          "code": "POL",
+          "name": "Poland"
+        },
+        {
+          "code": "PRT",
+          "name": "Portugal"
+        },
+        {
+          "code": "ROU",
+          "name": "Romania"
+        },
+        {
+          "code": "SVK",
+          "name": "Slovakia"
+        },
+        {
+          "code": "SVN",
+          "name": "Slovenia"
+        },
+        {
+          "code": "SWE",
+          "name": "Sweden"
+        },
+        {
+          "code": "TUR",
+          "name": "Türkiye"
+        },
+        {
+          "code": "USA",
+          "name": "United States"
+        }
+      ],
+      "sourceSha256": "3cd4bda4be0cf89615d89d1c5c93205ed0bd3e6ef95a6e957fc1a0a511b5fb96",
+      "method": "official-html-list",
+      "representedActorCount": 32,
+      "unrepresentedMembers": []
+    },
+    "au": {
+      "sourceUrl": "https://au.int/en/AU_Member_States",
+      "accessedOn": "2026-10-06",
+      "officialMemberCount": 55,
+      "members": [
+        {
+          "code": "AGO",
+          "name": "Angola"
+        },
+        {
+          "code": "BDI",
+          "name": "Burundi"
+        },
+        {
+          "code": "BEN",
+          "name": "Benin"
+        },
+        {
+          "code": "BFA",
+          "name": "Burkina Faso"
+        },
+        {
+          "code": "BWA",
+          "name": "Botswana"
+        },
+        {
+          "code": "CAF",
+          "name": "Central African Republic"
+        },
+        {
+          "code": "CIV",
+          "name": "Côte d’Ivoire"
+        },
+        {
+          "code": "CMR",
+          "name": "Cameroon"
+        },
+        {
+          "code": "COD",
+          "name": "DR Congo"
+        },
+        {
+          "code": "COG",
+          "name": "Congo"
+        },
+        {
+          "code": "COM",
+          "name": "Comoros"
+        },
+        {
+          "code": "CPV",
+          "name": "Cabo Verde"
+        },
+        {
+          "code": "DJI",
+          "name": "Djibouti"
+        },
+        {
+          "code": "DZA",
+          "name": "Algeria"
+        },
+        {
+          "code": "EGY",
+          "name": "Egypt"
+        },
+        {
+          "code": "ERI",
+          "name": "Eritrea"
+        },
+        {
+          "code": "ETH",
+          "name": "Ethiopia"
+        },
+        {
+          "code": "GAB",
+          "name": "Gabon"
+        },
+        {
+          "code": "GHA",
+          "name": "Ghana"
+        },
+        {
+          "code": "GIN",
+          "name": "Guinea"
+        },
+        {
+          "code": "GMB",
+          "name": "Gambia"
+        },
+        {
+          "code": "GNB",
+          "name": "Guinea Bissau"
+        },
+        {
+          "code": "GNQ",
+          "name": "Equatorial Guinea"
+        },
+        {
+          "code": "KEN",
+          "name": "Kenya"
+        },
+        {
+          "code": "LBR",
+          "name": "Liberia"
+        },
+        {
+          "code": "LBY",
+          "name": "Libya"
+        },
+        {
+          "code": "LSO",
+          "name": "Lesotho"
+        },
+        {
+          "code": "MAR",
+          "name": "Morocco"
+        },
+        {
+          "code": "MDG",
+          "name": "Madagascar"
+        },
+        {
+          "code": "MLI",
+          "name": "Mali"
+        },
+        {
+          "code": "MOZ",
+          "name": "Mozambique"
+        },
+        {
+          "code": "MRT",
+          "name": "Mauritania"
+        },
+        {
+          "code": "MUS",
+          "name": "Mauritius"
+        },
+        {
+          "code": "MWI",
+          "name": "Malawi"
+        },
+        {
+          "code": "NAM",
+          "name": "Namibia"
+        },
+        {
+          "code": "NER",
+          "name": "Niger"
+        },
+        {
+          "code": "NGA",
+          "name": "Nigeria"
+        },
+        {
+          "code": "RWA",
+          "name": "Rwanda"
+        },
+        {
+          "code": "SADR",
+          "name": "Sahrawi Republic"
+        },
+        {
+          "code": "SDN",
+          "name": "Sudan"
+        },
+        {
+          "code": "SEN",
+          "name": "Senegal"
+        },
+        {
+          "code": "SLE",
+          "name": "Sierra Leone"
+        },
+        {
+          "code": "SOM",
+          "name": "Somalia"
+        },
+        {
+          "code": "SSD",
+          "name": "South Sudan"
+        },
+        {
+          "code": "STP",
+          "name": "São Tomé and Príncipe"
+        },
+        {
+          "code": "SWZ",
+          "name": "Swaziland"
+        },
+        {
+          "code": "SYC",
+          "name": "Seychelles"
+        },
+        {
+          "code": "TCD",
+          "name": "Chad"
+        },
+        {
+          "code": "TGO",
+          "name": "Togo"
+        },
+        {
+          "code": "TUN",
+          "name": "Tunisia"
+        },
+        {
+          "code": "TZA",
+          "name": "UR of Tanzania"
+        },
+        {
+          "code": "UGA",
+          "name": "Uganda"
+        },
+        {
+          "code": "ZAF",
+          "name": "South Africa"
+        },
+        {
+          "code": "ZMB",
+          "name": "Zambia"
+        },
+        {
+          "code": "ZWE",
+          "name": "Zimbabwe"
+        }
+      ],
+      "sourceSha256": "c8c91a483e23180840bfd428de1de75c530c50afb6034a07f240bc43104f7cda",
+      "method": "official-html-list",
+      "scopeNote": "Solo se usa la tabla de nombres, sin fechas ni notas históricas de suspensión. SADR es un identificador del organismo, sin actor: no se crean votos ni reconocimiento territorial. Las suspensiones actuales de participación requieren una curación separada; el motor aplica condiciones ficticias comunes.",
+      "representedActorCount": 54,
+      "unrepresentedMembers": [
+        {
+          "code": "SADR",
+          "name": "Sahrawi Republic"
+        }
+      ]
+    },
+    "asean": {
+      "sourceUrl": "https://asean.org/about-asean/",
+      "accessedOn": "2026-10-06",
+      "officialMemberCount": 11,
+      "method": "reviewed-transcription",
+      "members": [
+        {
+          "code": "BRN",
+          "name": "Brunei Darussalam"
+        },
+        {
+          "code": "IDN",
+          "name": "Indonesia"
+        },
+        {
+          "code": "KHM",
+          "name": "Cambodia"
+        },
+        {
+          "code": "LAO",
+          "name": "Lao PDR"
+        },
+        {
+          "code": "MMR",
+          "name": "Myanmar"
+        },
+        {
+          "code": "MYS",
+          "name": "Malaysia"
+        },
+        {
+          "code": "PHL",
+          "name": "Philippines"
+        },
+        {
+          "code": "SGP",
+          "name": "Singapore"
+        },
+        {
+          "code": "THA",
+          "name": "Thailand"
+        },
+        {
+          "code": "TLS",
+          "name": "Timor-Leste"
+        },
+        {
+          "code": "VNM",
+          "name": "Viet Nam"
+        }
+      ],
+      "additionalSources": [
+        "https://asean.org/forging-a-new-era-timor-leste-admitted-into-asean/"
+      ],
+      "scopeNote": "Incluye Timor-Leste desde octubre de 2025. La representación de Myanmar y los procedimientos de consenso no se reproducen jurídicamente.",
+      "representedActorCount": 11,
+      "unrepresentedMembers": []
+    },
+    "mercosur": {
+      "sourceUrl": "https://www.mercosur.int/acerca-del-mercosur/paises",
+      "accessedOn": "2026-10-06",
+      "officialMemberCount": 6,
+      "method": "reviewed-transcription",
+      "members": [
+        {
+          "code": "ARG",
+          "name": "Argentina"
+        },
+        {
+          "code": "BOL",
+          "name": "Bolivia"
+        },
+        {
+          "code": "BRA",
+          "name": "Brazil"
+        },
+        {
+          "code": "PRY",
+          "name": "Paraguay"
+        },
+        {
+          "code": "URY",
+          "name": "Uruguay"
+        },
+        {
+          "code": "VEN",
+          "name": "Venezuela"
+        }
+      ],
+      "additionalSources": [
+        "https://www.mercosur.int/pt-br/a-bolivia-depositou-o-instrumento-de-ratificacao-do-protocolo-de-adesao-ao-mercosul"
+      ],
+      "scopeNote": "Estados Partes; excluye asociados. Venezuela sigue siendo Estado Parte con participación suspendida. La nota portuguesa antigua sobre adhesión boliviana no se usa para excluir a Bolivia.",
+      "representedActorCount": 6,
+      "unrepresentedMembers": []
     }
   }
 }

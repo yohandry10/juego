@@ -1,0 +1,238 @@
+{
+  "date": "2026-10-06",
+  "environment": "Windows; Node 24.13.1; Core i5-10400F; 17098092544 bytes RAM",
+  "unitTests": {
+    "command": "npm test",
+    "passed": 117,
+    "failed": 0
+  },
+  "build": {
+    "command": "npm run build",
+    "passed": true,
+    "repeatedBuildHashesIdentical": true,
+    "hashesFile": "build-reproducibility.json",
+    "filesCompared": 30,
+    "mainChunkMinifiedKB": 334.05,
+    "mainChunkGzipKB": 94.27,
+    "workerChunkMinifiedKB": 385.65,
+    "inboxChunkMinifiedKB": 5.72,
+    "offlineFiles": 27
+  },
+  "worker": {
+    "command": "npm run build:worker-check",
+    "passed": true
+  },
+  "baseSimulation": {
+    "command": "npm run validate:mass",
+    "runs": 1000,
+    "years": 20,
+    "workers": 4,
+    "invalidValues": 0,
+    "elapsedMs": 5634
+  },
+  "world": {
+    "command": "npm run world:validate",
+    "runs": 100,
+    "years": 50,
+    "evidence": "phase-4-simulation.json",
+    "auditedEachQuarter": true,
+    "sensitivity": {
+      "command": "npm run world:sensitivity",
+      "shockCases": 1736,
+      "fiftyYearRuns": 36,
+      "evidence": "world-sensitivity.json",
+      "independentHistoricalCalibrationCompleted": false
+    }
+  },
+  "countries": {
+    "command": "npm run validate:countries -- 25",
+    "campaigns": 500,
+    "profiles": 10,
+    "evidence": "country-balance-25.json",
+    "jsonCapturedFromNpmCommand": true,
+    "repeatedAfterEventIndexOptimization": true,
+    "allGroupedResultsIdenticalToPreviousEngine": true
+  },
+  "careerBalance": {
+    "command": "npm run validate:balance",
+    "runs": 4500,
+    "perProfile": 450,
+    "distinctSeeds": 500,
+    "strategies": 3,
+    "realismModes": 3,
+    "ideologies": 5,
+    "workers": 4,
+    "status": "complete",
+    "evidence": "career-balance.json",
+    "balanced": false,
+    "seedPrefix": "balance-holdout-v2",
+    "scope": "Se repite balance-holdout-v2 tras optimizar búsquedas de eventos para comprobar igualdad de los 4.500 resultados por muestra, excluyendo tiempos. Es regresión con semillas ya usadas, no una nueva calibración. Los extremos y los criterios de balance siguen pendientes.",
+    "regressionEvidence": "career-event-index-regression.json"
+  },
+  "generatedCountries": {
+    "command": "node --import tsx src/cli/generated-countries.ts",
+    "profiles": 217,
+    "starts": 651,
+    "evidence": "generated-countries-evidence.json"
+  },
+  "diplomacyComparison": {
+    "command": "node --import tsx src/cli/diplomacy-balance.ts",
+    "scenarios": 225,
+    "evidence": "diplomacy-balance.json"
+  },
+  "longCareer": {
+    "command": "npm run validate:long-career",
+    "years": 40,
+    "evidence": "long-career-evidence.json",
+    "memoryStabilityProven": false,
+    "maximumTurnMs": 19.566200000000208,
+    "p95TurnMs": 16.514899999999216,
+    "firstTenYearsAverageTurnMs": 6.673874999999953,
+    "lastTenYearsAverageTurnMs": 8.923919999999885,
+    "stateSha256": "874bb6a1e2604658a96d2328ce97a5d41b388af4aa2722fde079cb207e749c22",
+    "identicalToPreviousEngineAtEachDecade": true,
+    "baselineEvidence": "performance-baseline-0df312e.json",
+    "serializedBytesStart": 1431854,
+    "serializedBytesEnd": 1909872,
+    "historyTruncated": false,
+    "performanceComparisonScope": "Una corrida por versión en el mismo equipo y protocolo; no comparación estadística ni memoria sostenida resuelta."
+  },
+  "browser": {
+    "smoke": {
+      "command": "python tests/web-smoke.py",
+      "engine": "Edge Chromium",
+      "passed": true,
+      "executiveTurnSeconds": 0.326,
+      "hallArchiveAndEscape": true
+    },
+    "countryStart": {
+      "command": "python scripts/country-start-browser-check.py",
+      "passed": true,
+      "nationalProfiles": 10,
+      "generatedExamples": 3
+    },
+    "diplomacy": {
+      "command": "python scripts/phase4-diplomacy-browser-check.py",
+      "passed": true
+    },
+    "regime": {
+      "command": "python scripts/regime-browser-check.py",
+      "passed": true
+    },
+    "helpOfflineCredits": {
+      "command": "python scripts/phase5-browser-check.py",
+      "engines": [
+        "chromium",
+        "firefox"
+      ],
+      "passed": true
+    },
+    "accessibility": {
+      "command": "python scripts/accessibility-browser-check.py",
+      "engines": [
+        "chromium",
+        "firefox"
+      ],
+      "passed": true,
+      "desktopResolutions": [
+        {
+          "width": 1280,
+          "height": 900
+        },
+        {
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    "contrast": {
+      "command": "python scripts/contrast-browser-check.py",
+      "passed": true,
+      "evidence": "contrast-browser-evidence.json"
+    },
+    "careerWorker": {
+      "command": "python scripts/career-worker-browser-check.py",
+      "engines": [
+        "chromium",
+        "firefox"
+      ],
+      "passed": true,
+      "offline": true,
+      "persistentWorkerConfirmed": true,
+      "worldEconomyCareerSynchronized": true,
+      "governmentNegotiationCost": 5,
+      "evidence": "career-worker-browser-evidence.json",
+      "fastPaceWaitsForUnansweredChoice": true
+    },
+    "financing": {
+      "command": "node --import tsx scripts/prepare-financing-fixtures.ts; python scripts/financing-browser-check.py",
+      "engines": [
+        "chromium",
+        "firefox"
+      ],
+      "passed": true,
+      "approvalSuspensionRecovery": true,
+      "commitmentCostChecked": true,
+      "horizontalOverflow": false,
+      "economicExplanations": 20,
+      "evidence": "financing-browser-evidence.json",
+      "humanTest": false,
+      "desktopResolutions": [
+        {
+          "width": 1280,
+          "height": 900
+        },
+        {
+          "width": 1920,
+          "height": 1080
+        }
+      ]
+    },
+    "longCareerInbox": {
+      "command": "python scripts/long-career-browser-check.py",
+      "passed": true,
+      "evidence": "long-career-browser-evidence.json",
+      "engines": [
+        "chromium",
+        "firefox"
+      ],
+      "platform": "PC",
+      "pendingReachable": 414,
+      "diaryEntries": 432,
+      "maximumRenderedMatters": 12,
+      "maximumRenderedDiaryEntries": 20,
+      "allPagesComparedAgainstSave": true,
+      "searchKeyboardImportExportPassed": true,
+      "largestTextRootPx": 20,
+      "textSizePersistsOutsideHelpAndOnReload": true,
+      "humanTest": false
+    }
+  },
+  "humanSessions": 0,
+  "screenReaderTested": false,
+  "humanEditorialReviewCompleted": false,
+  "publicReleaseCompleted": false,
+  "allMandatoryCriteriaCompleted": false,
+  "cut": "long-career-event-index-and-pc-inbox-2026-10-06",
+  "memberships": {
+    "evidence": "../src/data/world-memberships.json",
+    "officialWtoMembers": 166,
+    "representedWtoMembers": 164,
+    "officialImfMembers": 191,
+    "officialIbrdMembers": 189,
+    "unrepresentedWtoActors": [
+      "EU",
+      "TWN"
+    ],
+    "otherOrganizationRostersFullyReviewed": false,
+    "existingSavesKeepTheirSnapshot": true
+  },
+  "sourceAtReportCut": {
+    "sha256": "5052a9eeaebf3563dbc88717e136c604a66cb9abc1d31934835e36220be438c6",
+    "scope": "src, data/countries, public, tests sin pycache, scripts y configuración; excluye informes para evitar autorreferencia",
+    "buildHashes": "build-reproducibility.json",
+    "note": "Huella del código de este corte. La regresión de 4.500 muestras y la carrera larga comparan el mismo protocolo con el motor previo, sin cambiar reglas. Mundo, 500 campañas, 651 arranques generados y 225 escenarios diplomáticos se repitieron; base y sensibilidad conservan evidencia anterior porque sus reglas no cambiaron. No demuestra balance aceptado ni requisitos humanos."
+  },
+  "platformScope": "PC only, corrected explicitly by the user on 2026-10-06",
+  "representativePcHardwareCoverageCompleted": false
+}

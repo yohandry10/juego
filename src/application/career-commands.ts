@@ -14,6 +14,7 @@ import legacyCanon from "../data/legacy-archetypes.json" with { type: "json" };
 import electoralParameters from "../data/electoral-parameters.json" with { type: "json" };
 import { advanceGeopolitics } from "../engine/world-simulation.js";
 import { createFinancingProgram, organizationMember } from "../engine/world-institutions.js";
+import { treatyChamberVotes, treatyRatificationAvailability } from "./treaty-rules.js";
 import { admitPresidentialVacancy, canSubmitPresidentialVacancy, resolveCensureVote, resolveInvestitureVote, resolvePresidentialVacancy, vacancyDebateReady } from "./executive-rules.js";
 
 const clamp = (n: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, n));
@@ -1257,51 +1258,27 @@ export function nominate(state: CareerGameState): CareerGameState {
 export function ratifyInternationalTreaty(state: CareerGameState, country: CountryDefinition, treatyId: string): CareerGameState {
   const legislature = state.legislature;
   const treaty = state.geopolitics.treaties.find((item) => item.id === treatyId);
-  const executiveSession = state.stage === "executive" && state.government?.status === "active";
-  if (!executiveSession && (state.stage !== "legislature" || !legislature || legislature.actionsRemaining < 1)) throw new Error("La ratificación requiere una sesión legislativa o encabezar un Gobierno activo.");
-  if (executiveSession && state.player.resources.politicalCapital < 3) throw new Error("Convocar la ratificación desde el Gobierno requiere 3 de capital político.");
   if (!treaty || treaty.status !== "proposed") throw new Error("El acuerdo ya no está pendiente de ratificación.");
-  const chamber = executiveSession ? state.government!.chamberId : legislature!.chamberId;
-  const members = state.world.legislators.filter((member) => member.chamberId === chamber);
-  if (!members.length) throw new Error("La cámara no tiene representantes generados para votar el tratado.");
+  const availability = treatyRatificationAvailability(state, country, treaty);
+  if (!availability.available) throw new Error(availability.reason!);
+  const executiveSession = availability.executive;
+  const rule = availability.rule;
   if (treaty.kind === "aid" && !organizationMember(state.geopolitics, treaty.partnerId, state.geopolitics.playerCountryId)) throw new Error("El país no pertenece al organismo financiero del snapshot.");
   const ownBilateral = (item: CareerGameState["geopolitics"]["relations"][number]) => item.a === treaty.partnerId && item.b === state.geopolitics.playerCountryId || item.b === treaty.partnerId && item.a === state.geopolitics.playerCountryId;
-  const relation = state.geopolitics.relations.find(ownBilateral);
-  const partnerTrust = relation?.trust ?? 50;
-  const ballots = members.map((member) => {
-    const party = state.world.parties.find((item) => item.id === member.partyId);
-    const relationship = state.relationships.find((item) => item.legislatorId === member.id);
-    const openness = treaty.kind === "migration"
-      ? (member.ideology.social - 50) * 0.12 + (50 - member.ideology.nationalism) * 0.1
-      : treaty.kind === "aid"
-        ? (member.ideology.economy - 50) * 0.08 + (member.ideology.rigidity - 50) * 0.06
-        : (member.ideology.economy - 50) * 0.12 + (50 - member.ideology.nationalism) * 0.08;
-    const coalitionBonus = state.government?.supportPartyIds.includes(member.partyId) ? 3 : 0;
-    const score = (treaty.kind === "aid" ? 48 : 43) + openness + (partnerTrust - 50) * 0.12 + (state.world.approvalPercent - 50) * 0.06
-      + (party?.discipline ?? 50) * member.loyalty / 100 * 0.04 + (relationship?.trust ?? 0) * 0.08
-      - (relationship?.grudge ?? 0) * 0.08 + coalitionBonus
-      + (hashSeed(`${state.seed}:treaty:${treaty.id}:${member.id}`) % 3001) / 100 - 15;
-    const attendance = hashSeed(`${state.seed}:treaty-attendance:${treaty.id}:${member.id}`) % 100;
-    const choice = attendance < 7 ? "abstain" as const : score >= 50 ? "yes" as const : "no" as const;
-    return { legislatorId: member.id, choice, score: Math.round(score), reasons: [
-      treaty.kind === "migration" ? "Evalúa la coordinación de movilidad y empleo." : treaty.kind === "aid" ? "Evalúa el crédito externo, sus condiciones y costos presupuestarios." : "Evalúa los beneficios y costos de integración comercial.",
-      `Confianza bilateral: ${Math.round(partnerTrust)}; relación legislativa: ${Math.round(relationship?.trust ?? 0)}.`,
-      state.government?.supportPartyIds.includes(member.partyId) ? "Pertenece a la bancada de apoyo del Gobierno." : "Vota desde una bancada ajena al Gobierno.",
-    ] };
-  });
-  const yes = ballots.filter((ballot) => ballot.choice === "yes").length;
-  const no = ballots.filter((ballot) => ballot.choice === "no").length;
-  const abstain = ballots.length - yes - no;
-  const decided = yes + no;
-  const passed = yes / Math.max(1, decided) * 100 > 50;
-  const explanation = `Votación nominal ficticia en ${country.name}: ${yes} a favor, ${no} en contra y ${abstain} abstenciones. Se requiere más de la mitad de los votos emitidos; ${passed ? "el acuerdo queda ratificado" : "el acuerdo no alcanza la mayoría"}.`;
+  const chamberVotes = treatyChamberVotes(state, country, treaty);
+  // The upper chamber's objection in CRaG can be overridden by a reasoned ministerial statement.
+  const passed = rule.resolution === "scrutiny" ? chamberVotes[0]!.passed : chamberVotes.every((v) => v.passed);
+  const finalReadingDue = !passed && rule.resolution === "lower-final" && !treaty.review && chamberVotes[0]!.passed;
+  const deferred = finalReadingDue || !passed && rule.resolution === "scrutiny";
+  const review = deferred ? { notBeforeQuarter: state.geopolitics.quarterIndex + 1, round: (treaty.review?.round ?? 0) + 1, phase: finalReadingDue ? "final-reading" as const : "reconsideration" as const } : undefined;
+  const explanation = `${rule.summary} ${chamberVotes.map((v) => v.explanation).join(" ")} ${deferred ? finalReadingDue ? "Las cámaras discrepan. Avanza un trimestre para una lectura final; no hay beneficios mientras tanto." : "La cámara baja objetó el acuerdo o no reunió quórum. Puede revisarse de nuevo el próximo trimestre; aún no entra en vigor." : passed ? "Se completa la autorización y ratificación agregada del juego." : "El acuerdo queda rechazado. Negocia apoyos antes de presentar otra propuesta."} ${rule.resolution === "scrutiny" && passed && !chamberVotes[1]?.passed ? "El Gobierno deja constancia de su decisión de continuar pese a la objeción de la cámara alta; no impide por sí sola la ratificación." : ""} ${rule.scopeNote}`;
   const financeTerms = treaty.kind === "aid" && passed
     ? " Se aprueba una línea ficticia en cuatro tramos. Primer desembolso en el trimestre siguiente; las siguientes revisiones verifican déficit (FMI) o inversión (Banco Mundial). Incumplir suspende el tramo y hay amortización presupuestaria posterior. No son tasas, plazos ni condiciones oficiales."
     : "";
   const decisionExplanation = `${explanation}${financeTerms}`;
-  const nextTreaties = state.geopolitics.treaties.map((item) => item.id === treaty.id ? { ...item, status: passed ? "ratified" as const : "rejected" as const, ...(passed && treaty.kind === "aid" && ["imf", "world-bank"].includes(treaty.partnerId) ? { financing: createFinancingProgram(treaty.partnerId as "imf" | "world-bank", state.geopolitics.quarterIndex, state.world.economy.indicators) } : {}), explanation: `${item.explanation} ${decisionExplanation}` } : item);
+  const nextTreaties = state.geopolitics.treaties.map((item) => item.id === treaty.id ? { ...item, status: passed ? "ratified" as const : deferred ? "proposed" as const : "rejected" as const, ...(review ? { review } : {}), ...(passed && treaty.kind === "aid" && ["imf", "world-bank"].includes(treaty.partnerId) ? { financing: createFinancingProgram(treaty.partnerId as "imf" | "world-bank", state.geopolitics.quarterIndex, state.world.economy.indicators) } : {}), explanation: `${item.explanation} ${decisionExplanation}` } : item);
   const nextRelations = passed ? state.geopolitics.relations.map((item) => ownBilateral(item) ? { ...item, trust: clamp(item.trust + 3, 0, 100), annualFlowUsd: item.annualFlowUsd * (treaty.kind === "trade" ? 1.03 : 1.01) } : item) : state.geopolitics.relations;
-  const votes = [...state.geopolitics.votes, { id: `treaty-vote-${treaty.id}`, quarterIndex: state.geopolitics.quarterIndex, organizationId: "national-legislature", title: `Ratificación ${treaty.id}`, yes, no, abstain, passed, explanation: decisionExplanation }];
+  const votes = [...state.geopolitics.votes, ...chamberVotes];
   const world = state.world;
   const next: CareerGameState = {
     ...state,
@@ -1316,7 +1293,7 @@ export function ratifyInternationalTreaty(state: CareerGameState, country: Count
     },
     legislature: !executiveSession && legislature ? { ...legislature, actionsRemaining: legislature.actionsRemaining - 1 } : legislature,
     player: executiveSession ? { ...state.player, resources: { ...state.player.resources, politicalCapital: state.player.resources.politicalCapital - 3 } } : state.player,
-    log: [...state.log, { turn: state.currentTurn + 1, text: `${treaty.kind === "aid" ? "Programa financiero" : "Tratado"} ${passed ? "ratificado" : "rechazado"}.`, explanation: decisionExplanation }],
+    log: [...state.log, { turn: state.currentTurn + 1, text: `${treaty.kind === "aid" ? "Programa financiero" : "Tratado"} ${passed ? "ratificado" : deferred ? "sigue en revisión" : "rechazado"}.`, explanation: decisionExplanation }],
   };
   return validateCareer(next);
 }
