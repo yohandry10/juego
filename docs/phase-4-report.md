@@ -1,12 +1,12 @@
 # Informe de Fase 4 — Mundo y geopolítica
 
-Corte: 2026-10-06, continuación desde `e02877a`. **Fase abierta.** Snapshot económico `world-2026-10-06-v1`, parámetros `world-balance-v5`, carrera v15. Esta evidencia sustituye las cifras del corte anterior; las comparaciones de optimización contra `0df312e` son históricas.
+Corte: 2026-10-06, continuación desde `76f76c3`. **Fase abierta.** Snapshot económico `world-2026-10-06-v1`, parámetros `world-balance-v5`, carrera v15. Esta evidencia sustituye las cifras del corte anterior; las comparaciones de optimización contra `0df312e` son históricas.
 
 ## Sistemas y procedencia
 
 Se conservan 217 actores y 169 geometrías. Las magnitudes WDI están fechadas; relaciones, flujos, fuerzas, estabilidad y estilos son índices ficticios. Los diez perfiles se vinculan a su actor nacional. Las partidas existentes conservan su snapshot mundial; las decisiones resueltas no se vuelven a ejecutar. No se importan políticos ni resultados electorales actuales.
 
-Nueve listas independientes en [world-memberships.json](../src/data/world-memberships.json): ONU 193, FMI 191, IBRD 189, OMC 166, UE 27, OTAN 32, Mercosur 6, ASEAN 11 y Unión Africana 55. OMC representa 164 actores: UE/TWN no tienen actor; UA representa 54: la República Árabe Saharaui Democrática no tiene actor. El actualizador valida nombres, duplicados y conteos antes de escribir. ONU/UE/OTAN/UA proceden de HTML oficial con hashes; ASEAN/Mercosur de transcripción revisada con fuente y alcance. Venezuela permanece miembro de Mercosur con suspensión de participación conservada por separado. La revisión completa de otras restricciones, especialmente UA, continúa abierta. Mejorar índices del juego no elimina una restricción documentada. Los umbrales comunes de estabilidad/credibilidad/golpe son reglas ficticias de beneficios colectivos, no derecho internacional.
+Nueve listas independientes en [world-memberships.json](../src/data/world-memberships.json): ONU 193, FMI 191, IBRD 189, OMC 166, UE 27, OTAN 32, Mercosur 6, ASEAN 11 y Unión Africana 55. OMC representa 164 actores: UE/TWN no tienen actor; UA representa 54: la República Árabe Saharaui Democrática no tiene actor. El actualizador valida nombres, duplicados y conteos antes de escribir. ONU/UE/OTAN/UA proceden de HTML oficial con hashes; ASEAN/Mercosur de transcripción revisada con fuente y alcance. Venezuela permanece miembro de Mercosur con suspensión de participación conservada por separado. La UA conserva seis suspensiones separadas de membresía (BFA/GNB/MDG/MLI/NER/SDN), mientras Guinea y Gabón tienen participación restablecida. Es una síntesis fechada de actos primarios y seguimiento de 2026, no una lista oficial consolidada; [fundamentos y límites](participation-review.md). Otras restricciones de representación, cuotas y atrasos siguen pendientes. Mejorar índices del juego no elimina una restricción documentada. Los umbrales comunes de estabilidad/credibilidad/golpe son reglas ficticias de beneficios colectivos, no derecho internacional.
 
 Las guerras persisten, con fuerzas agregadas, logística, cinco tipos y cuatro costos; posguerra conserva daño, desplazamiento, insurgencia, reparaciones y ayuda civil. Sanciones temporales cuestan a emisor y receptor; shocks ponderan dependencia, proveedor, sector y efecto local. Los golpes tienen umbrales, transición y enfriamiento. No hay uso nuclear; el veto de guerra directa entre actores marcados nucleares es estructural. Los turnos de carrera, economía y mundo avanzan juntos en un Worker persistente; la política de secundarios se agrega anualmente.
 
@@ -24,7 +24,7 @@ Financiación conserva cuatro entregas, revisión de indicadores, suspensión/re
 
 Tres candidatos comunes, ocho semillas emparejadas de ajuste a 50 años y 32 semillas nuevas de reserva. Se selecciona por error logarítmico con el ajuste y no se reajusta con la reserva. Valores elegidos: probabilidad trimestral de intento de conflicto 0,65 y escala de riesgo de golpe 0,0024. Reserva: 0,603125 episodios y 1,273125 golpes/año; ambos dentro de la banda de diseño factor dos fijada antes de medir. [Protocolo completo](world-frequency-calibration.json).
 
-**Es una comparación de orden de magnitud, no equivalencia histórica.** Los cinco conflictos abstractos incluyen eventos que no corresponden al umbral UCDP de 25 muertes; las bajas del juego son índices y el golpe no modela siete días de control. La banda no es un intervalo estadístico. Falta definir/contrastar frecuencia de shocks y revisar verosimilitud por tipo. Las semillas `frequency-reserved-v1` y `frequency-v2-reserved` ya fueron utilizadas. La reserva v2 es nueva frente a e02877a; su repetición final es regresión sobre esas mismas semillas.
+**Es una comparación de orden de magnitud, no equivalencia histórica.** Los cinco conflictos abstractos incluyen eventos que no corresponden al umbral UCDP de 25 muertes; las bajas del juego son índices y el golpe no modela siete días de control. La banda no es un intervalo estadístico. Falta definir/contrastar frecuencia de shocks y revisar verosimilitud por tipo. Las semillas `frequency-reserved-v1` y `frequency-v2-reserved` ya fueron utilizadas. La reserva v2 fue nueva frente a e02877a; este corte repite sus semillas consumidas sin aplicar parámetros y no acredita otra reserva.
 
 ## Shocks e historial auditado
 
@@ -32,12 +32,14 @@ Se corrigió la aplicación de un solo shock cuando coincidían varios. Todos lo
 
 ## Validación del motor actual
 
-- 135/135 pruebas; build/Worker; dos builds con 30 archivos idénticos por SHA-256. Sincronización canónica de los diez perfiles con sus copias públicas comprobada; el build la ejecuta para evitar reglas antiguas en navegador.
-- [Mundo](phase-4-simulation.json): 100 × 50 años, auditoría cada trimestre; 217 actores conservados, cero valores/referencias inválidos, cero guerras nucleares directas. Medias por corrida: 31,08 conflictos, 63,94 golpes, 24,07 shocks, 0,99 sanciones; 2,32 ms/trimestre local con auditoría.
+- 136/136 pruebas; build/Worker; dos builds con 30 archivos idénticos por SHA-256. Sincronización canónica de los diez perfiles con sus copias públicas comprobada; el build la ejecuta para evitar reglas antiguas en navegador.
+- [Mundo](phase-4-simulation.json): 100 × 50 años, auditoría cada trimestre; 217 actores conservados, cero valores/referencias inválidos, cero guerras nucleares directas. Medias por corrida: 31,08 conflictos, 63,94 golpes, 24,07 shocks, 0,99 sanciones; 4,41 ms/trimestre local con auditoría bajo baterías concurrentes; no se interpreta la diferencia como degradación.
 - [Sensibilidad](world-sensitivity.json): 1.736 casos de exposición y 36 mundos de 50 años. Conflictos medios bajo/base/alto: 21 / 31,67 / 37,17; golpes 52 / 61,17 / 69,33. Sin valores inválidos ni guerras nucleares.
 - [Diplomacia](diplomacy-balance.json): 2.250 escenarios, diez perfiles × 25 semillas utilizadas × tres socios × tres posturas × cinco años; visitas pagadas iguales antes de comparar posturas. Regresión v5 sobre las semillas diplomáticas usadas; costos y resultados diferentes comprobados. No demuestra estrategia óptima ni balance de una carrera completa.
 - [Ratificación PC](ratification-browser-evidence.json): 20 recorridos, diez países en Chromium/Firefox, guardados producidos por campañas/comandos reales sin fabricar mayorías. Exportación idéntica al resultado del comando; espera británica y costos comprobados. Nueve rechazos y una revisión británica pendiente por motor; aprobación/lectura final/desacuerdos raros se prueban en dominio, no se atribuyen a estos recorridos.
 - [Financiación](financing-browser-evidence.json): aprobación, suspensión, recuperación, costo y ausencia de desbordamiento en Chromium/Firefox, ventanas de 1280/1920 px. [Worker](career-worker-browser-evidence.json): turno completo offline, sincronizado, sin fallback. Smoke Edge, régimen, arranques, contraste, teclado y offline también pasan.
+
+- [Participación PC](participation-browser-evidence.json): ocho arranques generados en ambos motores, membresía/suspensión/restablecimiento, fuentes y exportación exacta. Fichas de organismos más anchas; fundamento en detalles sin URL cruda ni párrafo duplicado.
 
 ## Aceptación 7.5
 
@@ -50,7 +52,7 @@ Se corrigió la aplicación de un solo shock cuando coincidían varios. Todos lo
 | 5. Shocks | Cumple modelo de exposición | 1.736 casos; el grafo no es una matriz comercial observada. |
 | 6. Guerra completa | Cumple alcance agregado | Cinco tipos, cuatro costos y posguerra; sin táctica individual. |
 | 7. País mediano | Comparación ampliada pasa | Diez países/tres socios/posturas; falta balance estratégico de carrera. |
-| 8. Worker/rendimiento | Pasa medición local | Offline Chromium/Firefox; mundo 2,32 ms/trimestre. No acredita todo hardware. |
+| 8. Worker/rendimiento | Pasa medición local | Offline Chromium/Firefox; mundo 4,41 ms/trimestre bajo carga concurrente. No acredita todo hardware. |
 | 9. Tasas razonables | Parcial | Ajuste y reserva frente a agregados externos con correspondencia limitada; shocks y juicio de verosimilitud pendientes. |
 | 10. Contenido | Cantidad/validador cumplen | 80 plantillas/10 arcos; editorial humana pendiente. |
 

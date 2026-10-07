@@ -207,3 +207,11 @@ El usuario rechazó explícitamente trabajo móvil. El alcance pasa a PC con rat
 - Revalidación: 135 pruebas; cien mundos de cincuenta años; sensibilidad 1.736+36; 2.250 escenarios diplomáticos y 4.500 carreras repiten sus semillas consumidas. Build/Worker y treinta archivos reproducibles; todos los recorridos PC afectados pasan Chromium/Firefox, incluidos financiación, veinte ratificaciones y guardado largo.
 - Carrera larga v5: 40 años, restauración idéntica; primera/última década 7,29/9,61ms después de las baterías. Guardado 1,39→1,88MiB; memoria y tiempo sostenidos abiertos. No atribuir diferencias frente a medidas bajo carga a optimización. Se preservan tres informes históricos e02877a.
 - El usuario confirmó que las pruebas humanas todavía no se realizaron; siguen pendientes. Fases 4/5 y juego completo permanecen abiertos.
+
+## 2026-10-06 — Participación UA y fichas comprensibles desde 76f76c3
+
+- Seis suspensiones conservan membresía y no se levantan por indicadores ficticios. Guinea/Gabón restablecidos no heredan notas antiguas de suspensión. Fuentes/fechas/localizadores en `world-participation.json`; continuidad es síntesis editorial fechada, no roster oficial consolidado. Guardados conservan snapshot.
+- Actualizador valida los registros y materializa solo restricciones suspendidas; no descubre automáticamente nuevos actos. Derechos de representación/cuotas/aportes restantes siguen pendientes.
+- Fichas PC más anchas, texto principal cotidiano y fuentes en detalles sin duplicar descripción ni imprimir URL cruda.
+- 136 pruebas, build/Worker y treinta archivos reproducibles; dieciséis recorridos de participación y demás baterías afectadas pasan. Semillas mundiales/diplomáticas/de balance repetidas como regresión, sin ajuste electoral ni otra reserva.
+- Cuarenta años/restauración idéntica; guardado 1,40→1,89MiB y tiempos 7,26/9,57ms por década, máximo21,49ms tras los lotes. Memoria sigue abierta; informes 76f76c3 se conservan como históricos. Las pruebas humanas no se han realizado.

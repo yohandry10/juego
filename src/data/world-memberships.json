@@ -4040,14 +4040,106 @@
       ],
       "sourceSha256": "c8c91a483e23180840bfd428de1de75c530c50afb6034a07f240bc43104f7cda",
       "method": "official-html-list",
-      "scopeNote": "Solo se usa la tabla de nombres, sin fechas ni notas históricas de suspensión. SADR es un identificador del organismo, sin actor: no se crean votos ni reconocimiento territorial. Las suspensiones actuales de participación requieren una curación separada; el motor aplica condiciones ficticias comunes.",
+      "scopeNote": "Solo se usa la tabla de nombres, sin fechas ni notas históricas de suspensión. SADR es un identificador del organismo, sin actor: no se crean votos ni reconocimiento territorial. La membresía se conserva. Seis suspensiones se incorporan desde sus actos del CPS y el seguimiento de transiciones de 2026; es una síntesis para el escenario, no una lista oficial consolidada. Guinea y Gabón tienen participación restablecida según fuentes de 2026. Los índices ficticios no levantan una suspensión documentada.",
       "representedActorCount": 54,
       "unrepresentedMembers": [
         {
           "code": "SADR",
           "name": "Sahrawi Republic"
         }
-      ]
+      ],
+      "participationReview": {
+        "method": "reviewed-resolutions-synthesis",
+        "scopeNote": "La membresía se conserva. Seis suspensiones se incorporan desde sus actos del CPS y el seguimiento de transiciones de 2026; es una síntesis para el escenario, no una lista oficial consolidada. Guinea y Gabón tienen participación restablecida según fuentes de 2026. Los índices ficticios no levantan una suspensión documentada.",
+        "contextSources": [
+          {
+            "url": "https://www.peaceau.org/uploads/annual-indicative-programme-of-activities-of-the-psc-for-2026-en.pdf",
+            "locator": "p. 2, agenda 15",
+            "note": "Enumera Burkina Faso, Guinea-Bissau, Madagascar, Mali, Níger y Sudán en consultas trimestrales de transición; una agenda no constituye por sí sola un acto de suspensión."
+          },
+          {
+            "url": "https://www.peaceau.org/en/article/communique-of-the-1356th-meeting-of-the-psc-held-on-27-july-2026-on-consideration-of-the-outcome-of-the-2nd-meeting-of-the-psc-sub-committee-on-sanctions-that-was-held-on-15-july-2026-on-engagement-on-political-and-socio-economic-developments-on-prevent",
+            "locator": "27-07-2026, párrafo 4",
+            "note": "Mantiene seguimiento de Estados suspendidos hasta restauración constitucional; no enumera todos los países."
+          },
+          {
+            "url": "https://www.peaceau.org/uploads/1356.1.comm-en.pdf",
+            "locator": "27-07-2026, preámbulo y párrafo 1",
+            "note": "Recuerda los actos de Burkina Faso y Níger y el retorno pendiente al orden constitucional."
+          },
+          {
+            "url": "https://peaceau.org/fr/article/communique-de-presse-de-la-1342eme-reunion-du-cps-de-l-ua-tenu-le-28-avril-2026-afin-de-faire-le-point-sur-la-situation-au-mali",
+            "locator": "28-04-2026, preámbulo",
+            "note": "Recuerda el acto 1001 de 2021 sobre Mali; no es un levantamiento de suspensión."
+          }
+        ],
+        "records": [
+          {
+            "code": "BFA",
+            "status": "suspended",
+            "sourceDate": "2022-01-31",
+            "sourceUrl": "https://www.peaceau.org/en/article/communique-of-the-1062nd-meeting-of-the-psc-held-on-31-january-2022-on-the-situation-in-burkina-faso",
+            "locator": "CPS 1062, párrafo 5",
+            "reason": "El CPS suspendió la participación de Burkina Faso el 31-01-2022 hasta restaurar el orden constitucional. El escenario conserva esa restricción documentada."
+          },
+          {
+            "code": "GNB",
+            "status": "suspended",
+            "sourceDate": "2025-11-28",
+            "sourceUrl": "https://www.peaceau.org/en/article/communique-of-the-1315th-meeting-emergency-of-the-peace-and-security-council-held-on-28-november-2025-on-the-consideration-of-the-emergency-situation-in-guinea-bissau",
+            "locator": "CPS 1315, párrafo 2",
+            "reason": "El CPS suspendió la participación de Guinea-Bissau el 28-11-2025 hasta restaurar el orden constitucional. El escenario conserva esa restricción documentada."
+          },
+          {
+            "code": "MDG",
+            "status": "suspended",
+            "sourceDate": "2025-10-15",
+            "sourceUrl": "https://www.peaceau.org/fr/article/communique-de-la-1306e-reunion-seance-d-urgence-du-cps-tenue-le-15-octobre-2025-et-portant-communication-actualisee-sur-la-situation-en-republique-de-madagascar",
+            "locator": "CPS 1306, párrafo 2",
+            "reason": "El CPS suspendió la participación de Madagascar el 15-10-2025 hasta restaurar el orden constitucional. El escenario conserva esa restricción documentada."
+          },
+          {
+            "code": "MLI",
+            "status": "suspended",
+            "sourceDate": "2021-06-01",
+            "sourceUrl": "https://www.peaceau.org/en/article/communique-of-1001st-meeting-of-the-african-union-peace-and-security-council-on-the-situation-in-mali-1st-of-june-2021",
+            "locator": "CPS 1001, párrafo 3",
+            "reason": "El CPS suspendió la participación de Mali el 01-06-2021 hasta restaurar el orden constitucional. El escenario conserva esa restricción documentada."
+          },
+          {
+            "code": "NER",
+            "status": "suspended",
+            "sourceDate": "2023-08-14",
+            "sourceUrl": "https://www.peaceau.org/uploads/1168.comm-en.pdf",
+            "locator": "CPS 1168, párrafo 7",
+            "reason": "El CPS suspendió la participación de Níger el 14-08-2023 hasta restaurar el orden constitucional. El escenario conserva esa restricción documentada."
+          },
+          {
+            "code": "SDN",
+            "status": "suspended",
+            "sourceDate": "2021-10-26",
+            "sourceUrl": "https://www.peaceau.org/en/article/communique-of-the-1041th-meeting-of-the-peace-and-security-council-of-the-african-union-held-on-26-october-2021-on-the-situation-in-sudan",
+            "locator": "CPS 1041, párrafo 4",
+            "reason": "El CPS suspendió la participación de Sudán el 26-10-2021 hasta restaurar la autoridad transitoria civil. El escenario conserva esa restricción documentada."
+          },
+          {
+            "code": "GIN",
+            "status": "restored",
+            "sourceDate": "2026-01-22",
+            "sourceUrl": "https://www.peaceau.org/en/article/communique-of-the-1325th-meeting-of-the-psc-held-on-22-january-2026-on-consideration-of-the-political-transition-in-the-republic-of-guinea",
+            "locator": "CPS 1325, párrafo 4",
+            "reason": "El CPS levantó la suspensión de Guinea el 22-01-2026. Una fuente antigua no justifica excluirla del escenario."
+          },
+          {
+            "code": "GAB",
+            "status": "restored",
+            "sourceDate": "2026-02-15",
+            "sourceUrl": "https://au.int/sites/default/files/decisions/46188-Assembly_Decisions_31_March_E.pdf",
+            "locator": "39ª Asamblea, 14–15-02-2026, p. 96, decisión sobre informe del CPS",
+            "reason": "La Asamblea de febrero de 2026 confirma que la suspensión de Gabón fue levantada. Esta es la fecha de confirmación, no la fecha del levantamiento."
+          }
+        ]
+      }
     },
     "asean": {
       "sourceUrl": "https://asean.org/about-asean/",

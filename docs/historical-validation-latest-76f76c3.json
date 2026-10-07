@@ -1,13 +1,13 @@
 {
   "date": "2026-10-06",
-  "cut": "au-participation-and-readable-organization-cards-2026-10-06",
+  "cut": "overlapping-shocks-history-audit-2026-10-06",
   "platformScope": "PC only, explicit user correction",
   "environment": "Windows; Node 24.13.1; Core i5-10400F; 17098092544 bytes RAM",
   "unitTests": {
     "command": "npm test",
-    "passed": 136,
+    "passed": 135,
     "failed": 0,
-    "durationMs": 46310.7631
+    "durationMs": 57170.3302
   },
   "build": {
     "command": "npm run build; npm run build:repro-check",
@@ -17,9 +17,9 @@
     "evidence": "build-reproducibility.json",
     "mainChunkKb": 344.64,
     "mainChunkGzipKb": 97.76,
-    "workerKb": 393.38,
-    "worldViewKb": 37.17,
-    "worldDataKb": 110.44,
+    "workerKb": 390.73,
+    "worldViewKb": 37.07,
+    "worldDataKb": 107.8,
     "browserProfilesSynchronized": true,
     "offlinePrecacheFiles": 27,
     "scopeNote": "Other initial chunks remain downloads. Reproducibility is local, same lockfile/environment."
@@ -33,7 +33,7 @@
     "runs": 1000,
     "years": 20,
     "passed": true,
-    "wallMs": 9967,
+    "wallMs": 17787,
     "scope": "Base Peru engine, not full careers."
   },
   "world": {
@@ -50,8 +50,8 @@
     "averageSanctions": 0.99,
     "maximumDirectNuclearWars": 0,
     "invalidValues": 0,
-    "averageQuarterMs": 4.408948845000003,
-    "worldRuntimeMs": 88188.41189999999,
+    "averageQuarterMs": 2.3241282999999986,
+    "worldRuntimeMs": 46487.64,
     "sensitivity": {
       "command": "npm run world:sensitivity",
       "cases": 1736,
@@ -62,11 +62,10 @@
     },
     "overlappingShockEffectsChecked": true,
     "semanticReviewEvidence": "world-semantic-review.md",
-    "fullHistoricalEffectReplayCompleted": false,
-    "timingScope": "Local measurement under concurrent mass batches; not comparable to the preceding cut as a performance change."
+    "fullHistoricalEffectReplayCompleted": false
   },
   "frequencyReference": {
-    "command": "node --import tsx src/cli/world-frequency.ts",
+    "command": "MANDATO_FREQUENCY_SEED_PREFIX=frequency-v2 node --import tsx src/cli/world-frequency.ts --apply",
     "reference": "independent-world-reference.json",
     "evidence": "world-frequency-calibration.json",
     "referenceWindow": [
@@ -87,7 +86,7 @@
     "withinProxyBand": true,
     "historicalEquivalenceProven": false,
     "globalShocksExternallyCalibrated": false,
-    "scopeNote": "Regression reused consumed frequency-v2 paired training/reserve seeds without applying parameters. Common coefficients unchanged; definitions differ. Band is design tolerance, not a confidence interval.",
+    "scopeNote": "New v2 paired training and reserve seeds, now consumed; final-code regression reused those same seeds. Common coefficients unchanged; historical definitions differ. Band is design tolerance, not a confidence interval.",
     "seedPrefix": "frequency-v2",
     "parameterVersion": "world-balance-v5",
     "shocksPerYear": 0.46875
@@ -118,7 +117,7 @@
     "mexicoDeputySamples": 180,
     "peruPresidentCompletedTerms": 21,
     "peruPresidentSamples": 135,
-    "scopeNote": "Regression reused consumed balance-reserved-v3 paired seeds after participation data changes. No electoral change or new balance claim. Samples close one term/defeat and retirement, not forty years; concurrent timing."
+    "scopeNote": "Regression reused consumed balance-reserved-v3 paired seeds after shock/audit fixes. No electoral change or new balance claim. Samples close one term/defeat and retirement, not forty years; concurrent timing."
   },
   "generatedCountries": {
     "command": "npm run validate:generated",
@@ -158,20 +157,20 @@
     "completedTerms": 8,
     "identicalAfterRestore": true,
     "restoredAtQuarter": 80,
-    "stateSha256": "62034ae728029689bb2fd7376706deffeeb9bb964198947b34009f9be20aef50",
+    "stateSha256": "b9edb0509bdc120ca658e7ce12f0b0053343f5356bb0ba8e3163e561ef5b2ff1",
     "comparedToPreviousMotor": false,
-    "firstTenYearsAverageTurnMs": 7.263919999999985,
-    "lastTenYearsAverageTurnMs": 9.56859499999996,
-    "maximumTurnMs": 21.4937000000009,
-    "p95TurnMs": 15.87329999999929,
-    "serializedBytesStart": 1467137,
-    "serializedBytesEnd": 1979209,
+    "firstTenYearsAverageTurnMs": 7.291097500000023,
+    "lastTenYearsAverageTurnMs": 9.607157500000017,
+    "maximumTurnMs": 23.84599999999955,
+    "p95TurnMs": 15.787199999999757,
+    "serializedBytesStart": 1462377,
+    "serializedBytesEnd": 1974462,
     "memoryGrowthResolved": false,
     "thirtyYearRepeatedLiteralBodiesPercent": 0,
     "priorFailedSeeds": 6,
     "scopeNote": "One Peru legislative career, after mass batches finished; current-engine restoration equality. Earlier hashes/timings are historical. State and time still grow; no sustained-memory or representative-hardware claim.",
-    "heapBytesStart": 26535336,
-    "heapBytesEnd": 29927200
+    "heapBytesStart": 26491600,
+    "heapBytesEnd": 29900760
   },
   "memberships": {
     "evidence": "../src/data/world-memberships.json",
@@ -197,33 +196,15 @@
     },
     "listsIndependentlyReviewed": 9,
     "allParticipationRestrictionsReviewed": false,
-    "documentedRestriction": "Venezuela/Mercosur and six African Union suspensions; membership retained separately.",
-    "existingWorldSavesKeepTheirSnapshot": true,
-    "participationReview": {
-      "evidence": "participation-review.md",
-      "data": "../src/data/world-participation.json",
-      "method": "reviewed-resolutions-synthesis",
-      "suspendedAuCodes": [
-        "BFA",
-        "GNB",
-        "MDG",
-        "MLI",
-        "NER",
-        "SDN"
-      ],
-      "restoredAuCodes": [
-        "GIN",
-        "GAB"
-      ],
-      "scope": "Dated editorial synthesis of primary decisions and 2026 follow-up; not an official consolidated current roster. Other representation, quotas and contribution restrictions remain unreviewed."
-    }
+    "documentedRestriction": "Venezuela/Mercosur membership retained with suspension separate",
+    "existingWorldSavesKeepTheirSnapshot": true
   },
   "browser": {
     "smoke": {
       "command": "python tests/web-smoke.py",
       "engine": "Edge Chromium",
       "passed": true,
-      "executiveTurnSeconds": 0.453,
+      "executiveTurnSeconds": 0.312,
       "hallArchiveAndEscape": true
     },
     "countryStart": {
@@ -327,35 +308,21 @@
       "importExportIdentical": true,
       "evidence": "long-career-browser-evidence.json",
       "humanTest": false
-    },
-    "participation": {
-      "command": "node --import tsx scripts/prepare-participation-fixtures.ts; python scripts/participation-browser-check.py",
-      "engines": [
-        "chromium",
-        "firefox"
-      ],
-      "paths": 16,
-      "passed": true,
-      "membershipPreserved": true,
-      "sixSuspensionsAndTwoRestored": true,
-      "importExportIdentical": true,
-      "evidence": "participation-browser-evidence.json",
-      "scope": "Eight generated institutional starts, no edited indicators or snapshot. Automated PC check; no current constitutional or human comprehension claim."
     }
   },
   "sourceAtReportCut": {
-    "sha256": "6777801ebb37eefc905ee11fb0243c6e898e616d9a386455ff8e6ec9e5fde1af",
-    "files": 162,
+    "sha256": "af54a2b4b2bc73dc741a89f5202e7115a7f17054950032e7394e76b57ea28a7c",
+    "files": 159,
     "scope": "src, data/countries, public, tests (except __pycache__), scripts, package/configuration and independent-world-reference.json; other reports excluded",
     "command": "node scripts/source-fingerprint.mjs",
     "buildHashes": "build-reproducibility.json",
-    "note": "Participation data and final organization-card layout; all behavior/browser regressions repeated on this frozen source cut."
+    "note": "Final v5 source. All behavior/browser regressions repeated on this cut; subsequent CLI default-prefix change uses the already measured frequency-v2 seeds and does not alter the client or engine."
   },
   "historicalEvidence": {
-    "previousValidation": "historical-validation-latest-76f76c3.json",
-    "previousLongCareer": "historical-long-career-evidence-76f76c3.json",
-    "note": "76f76c3 and e02877a reports/hashes/timings are historical. The current AU snapshot changes state hashes; no cross-engine equality claim.",
-    "previousFrequency": "historical-world-frequency-calibration-76f76c3.json"
+    "previousValidation": "historical-validation-latest-e02877a.json",
+    "previousLongCareer": "historical-long-career-evidence-e02877a.json",
+    "note": "e02877a v4 source and earlier a86e34d/0df312e metrics/hashes are historical, not current v5 validation.",
+    "previousFrequency": "historical-world-frequency-calibration-e02877a.json"
   },
   "humanSessions": 0,
   "humanEvidenceStatus": "User confirmed that human sessions/editorial/assistive/physical testing have not yet been performed.",

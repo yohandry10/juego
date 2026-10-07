@@ -90,6 +90,27 @@ test("a documented participation suspension is independent of membership and fic
   assert.equal(collectiveEligibility(historical, historical.organizations.find((o) => o.id === "mercosur")!, "ven").eligible, true);
 });
 
+test("African Union suspensions preserve membership and restored participation is not excluded by stale sources", () => {
+  const initial = createGeopoliticsState("generated-mdg", "au-participation-proof");
+  const state = { ...initial, actors: initial.actors.map((a) => ({ ...a, regimeStability: 100, allianceCredibility: 100 })) };
+  const au = state.organizations.find((o) => o.id === "au")!;
+  assert.deepEqual(au.participationRestrictions!.map((r) => r.code), ["BFA", "GNB", "MDG", "MLI", "NER", "SDN"]);
+  assert.equal(au.memberCodes.length, 54);
+  for (const id of ["bfa", "gnb", "mdg", "mli", "ner", "sdn"]) {
+    assert.equal(organizationMember(state, au.id, id), true);
+    const standing = collectiveEligibility(state, au, id);
+    assert.equal(standing.eligible, false);
+    assert.match(standing.explanation, /suspendió/);
+    assert.deepEqual(auditWorld({ ...state, organizationStanding: [standing] }), []);
+  }
+  for (const id of ["gin", "gab", "caf", "mar"]) assert.equal(collectiveEligibility(state, au, id).eligible, true);
+  assert.ok(memberships.rosters.au.participationReview.records.some((r) => r.code === "GIN" && r.status === "restored" && r.sourceDate === "2026-01-22"));
+  assert.ok(memberships.rosters.au.participationReview.records.some((r) => r.code === "GAB" && r.status === "restored"));
+  const { participationRestrictions: _restrictions, ...priorSnapshot } = au;
+  const historical = { ...state, organizations: state.organizations.map((o) => o.id === "au" ? priorSnapshot : o) };
+  assert.equal(collectiveEligibility(historical, priorSnapshot, "mdg").eligible, true);
+});
+
 test("old approved financing preserves historical state and is never disbursed again", () => {
   const { financing: _financing, ...old } = programTreaty("imf");
   assert.deepEqual(advanceFinancing([old], 1, indicators).treaties, [old]);

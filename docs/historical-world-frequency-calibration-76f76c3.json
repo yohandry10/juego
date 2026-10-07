@@ -10,7 +10,7 @@
   "engineParameterVersion": "world-balance-v5",
   "proxyFactorTolerance": 2,
   "withinProxyBand": true,
-  "applied": false,
+  "applied": true,
   "selected": {
     "conflictQuarterProbability": 0.65,
     "coupRiskScale": 0.0024

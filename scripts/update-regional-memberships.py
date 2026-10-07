@@ -102,7 +102,10 @@ def main():
         "method": "reviewed-transcription", "members": rows(["Argentina", "Bolivia", "Brazil", "Paraguay", "Uruguay", "Venezuela"]),
         "additionalSources": ["https://www.mercosur.int/pt-br/a-bolivia-depositou-o-instrumento-de-ratificacao-do-protocolo-de-adesao-ao-mercosul"],
         "scopeNote": "Estados Partes; excluye asociados. Venezuela sigue siendo Estado Parte con participación suspendida. La nota portuguesa antigua sobre adhesión boliviana no se usa para excluir a Bolivia."}
-    rosters["au"]["scopeNote"] = "Solo se usa la tabla de nombres, sin fechas ni notas históricas de suspensión. SADR es un identificador del organismo, sin actor: no se crean votos ni reconocimiento territorial. Las suspensiones actuales de participación requieren una curación separada; el motor aplica condiciones ficticias comunes."
+    participation = json.loads((ROOT / "src/data/world-participation.json").read_text(encoding="utf-8"))
+    if participation["schemaVersion"] != 1 or participation["snapshotDate"] != ACCESSED_ON:
+        raise ValueError("Participation review must match the roster snapshot date")
+    rosters["au"]["scopeNote"] = "Solo se usa la tabla de nombres, sin fechas ni notas históricas de suspensión. SADR es un identificador del organismo, sin actor: no se crean votos ni reconocimiento territorial. " + participation["organizations"]["au"]["scopeNote"]
     memberships_path = ROOT / "src/data/world-memberships.json"
     snapshot = json.loads(memberships_path.read_text(encoding="utf-8"))
     organizations_path = ROOT / "src/data/world-organizations.json"
@@ -119,6 +122,13 @@ def main():
         if key == "mercosur":
             org["participationRestrictions"] = [{"code": "VEN", "sourceUrl": roster["sourceUrl"], "accessedOn": ACCESSED_ON,
                 "reason": "La fuente oficial mantiene suspendidos sus derechos y obligaciones como Estado Parte. El snapshot conserva esa restricción; los índices de juego no la levantan."}]
+        if key in participation["organizations"]:
+            review = participation["organizations"][key]
+            records = review["records"]
+            if len({r["code"] for r in records}) != len(records) or any(r["code"] not in org["memberCodes"] or r["status"] not in ("suspended", "restored") or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", r["sourceDate"]) or r["sourceDate"] > ACCESSED_ON or not r["sourceUrl"].startswith("https://") or not r["reason"].strip() or not r["locator"].strip() for r in records):
+                raise ValueError(f"Invalid participation review: {key}")
+            org["participationRestrictions"] = [{"code": r["code"], "sourceUrl": r["sourceUrl"], "accessedOn": ACCESSED_ON, "reason": r["reason"]} for r in records if r["status"] == "suspended"]
+            roster["participationReview"] = review
         org["description"] = f"{roster['officialMemberCount']} miembros oficiales; {roster['representedActorCount']} con actor. " + org["rosterSource"]["scopeNote"]
         print(f"{key}: {roster['officialMemberCount']} official; {roster['representedActorCount']} represented")
     snapshot["rosters"].update(rosters)

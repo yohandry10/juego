@@ -11,8 +11,8 @@ export function OrganizationCard({ state, organization }: { state: GeopoliticsSt
     : "Tu país es miembro, pero sus beneficios están en pausa. Recuperar la estabilidad y la confianza de los socios puede habilitarlos.";
   return <article><strong>{organization.name}</strong><p>{text}</p>
     <details><summary>Ver membresía y condiciones</summary>
-      <p>{organization.memberCodes.length} miembros representados · {organization.description}</p>
-      <p>{standing?.explanation ?? "Sin participación en este escenario."}</p>
+      <p>{organization.memberCodes.length} miembros representados{organization.rosterSource ? ` de ${organization.rosterSource.officialMemberCount} miembros oficiales.` : ` · ${organization.description}`}</p>
+      {!restriction && <p>{standing?.explanation ?? "Sin participación en este escenario."}</p>}
       {organization.rosterSource && <p>Lista revisada el {organization.rosterSource.accessedOn}: <a href={organization.rosterSource.url} target="_blank" rel="noreferrer">fuente oficial</a>. {organization.rosterSource.scopeNote}</p>}
       {restriction && <p>{restriction.reason} <a href={restriction.sourceUrl} target="_blank" rel="noreferrer">Ver fundamento de la suspensión</a>.</p>}
     </details>
