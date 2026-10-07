@@ -59,3 +59,5 @@ Se corrigió la aplicación de un solo shock cuando coincidían varios. Todos lo
 ## Pendientes
 
 Auditoría semántica integral; shocks y correspondencia de frecuencias; restricciones de participación restantes; alcance nacional excluido y balance estratégico. No se da por cerrada Fase 4. La evidencia de Fase 5 valida sistemas existentes afectados, sin presentar los requisitos humanos o técnicos abiertos como satisfechos.
+
+Diagnóstico de shocks por tipo: [referencia y resultados](shock-frequency-review.md). La distribución uniforme queda fuera de la banda de diseño frente a dos proxies independientes de encarecimiento (energía/alimentos); 32 semillas nuevas `shock-reference-v1`, ya consumidas. No se cambió el motor ni se ajustó a esos resultados. Faltan correspondencia suministro/precios y otros seis tipos; Fase 4 sigue abierta.

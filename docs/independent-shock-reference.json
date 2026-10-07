@@ -1,0 +1,355 @@
+{
+  "accessedOn": "2026-10-06",
+  "window": {
+    "firstYear": 2000,
+    "lastYear": 2025,
+    "years": 26
+  },
+  "source": {
+    "url": "https://thedocs.worldbank.org/en/doc/74e8be41ceb20fa0da750cda2f6b9e4e-0050012026/related/CMO-Historical-Data-Annual.xlsx",
+    "landingPage": "https://www.worldbank.org/en/research/commodity-markets",
+    "workbookSha256": "d07bcb67ac39ceba4ef46a36e9d252f89d52c590ce6c05b23acb023d845e3a8b",
+    "workbookUpdatedLabel": "Updated on September 02, 2026",
+    "sheet": "Annual Indices (Nominal)",
+    "citation": "World Bank Prospects Group, Commodity Price Data (The Pink Sheet), annual nominal energy and food indices.",
+    "license": "CC BY 4.0",
+    "licenseMetadata": "https://datacatalog.worldbank.org/search/dataset/0038238/commodity-prices-history-and-projections"
+  },
+  "definition": {
+    "thresholdIncreasePercent": 20,
+    "direction": "positive increases only",
+    "episode": "First year at or above threshold following a year below threshold. Consecutive qualifying years are one episode; carry-in from 1999 is excluded.",
+    "scope": "Price-rise proxy defined by MANDATO, not an official catalog of supply crises. Completed annual observations only; 2026 and forecasts excluded."
+  },
+  "annual": {
+    "energy": [
+      {
+        "year": 2000,
+        "increasePercent": 60.65573770491805,
+        "aboveThreshold": true,
+        "episodeStart": false
+      },
+      {
+        "year": 2001,
+        "increasePercent": -10.71428571428572,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2002,
+        "increasePercent": -2.857142857142858,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2003,
+        "increasePercent": 21.76470588235293,
+        "aboveThreshold": true,
+        "episodeStart": true
+      },
+      {
+        "year": 2004,
+        "increasePercent": 28.985507246376805,
+        "aboveThreshold": true,
+        "episodeStart": false
+      },
+      {
+        "year": 2005,
+        "increasePercent": 41.198501872659186,
+        "aboveThreshold": true,
+        "episodeStart": false
+      },
+      {
+        "year": 2006,
+        "increasePercent": 13.262599469496017,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2007,
+        "increasePercent": 10.53864168618266,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2008,
+        "increasePercent": 36.652542372881356,
+        "aboveThreshold": true,
+        "episodeStart": true
+      },
+      {
+        "year": 2009,
+        "increasePercent": -38.44961240310077,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2010,
+        "increasePercent": 25.944584382871525,
+        "aboveThreshold": true,
+        "episodeStart": true
+      },
+      {
+        "year": 2011,
+        "increasePercent": 35.19999999999999,
+        "aboveThreshold": true,
+        "episodeStart": false
+      },
+      {
+        "year": 2012,
+        "increasePercent": -0.8136094674556227,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2013,
+        "increasePercent": -1.7897091722595126,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2014,
+        "increasePercent": -8.580106302201962,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2015,
+        "increasePercent": -45.099667774086384,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2016,
+        "increasePercent": -15.279878971255666,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2017,
+        "increasePercent": 23.92857142857143,
+        "aboveThreshold": true,
+        "episodeStart": true
+      },
+      {
+        "year": 2018,
+        "increasePercent": 28.818443804034576,
+        "aboveThreshold": true,
+        "episodeStart": false
+      },
+      {
+        "year": 2019,
+        "increasePercent": -12.416107382550345,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2020,
+        "increasePercent": -32.69476372924648,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2021,
+        "increasePercent": 81.02466793168881,
+        "aboveThreshold": true,
+        "episodeStart": true
+      },
+      {
+        "year": 2022,
+        "increasePercent": 59.958071278825976,
+        "aboveThreshold": true,
+        "episodeStart": false
+      },
+      {
+        "year": 2023,
+        "increasePercent": -29.882044560943644,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2024,
+        "increasePercent": -5.1401869158878455,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2025,
+        "increasePercent": -11.33004926108374,
+        "aboveThreshold": false,
+        "episodeStart": false
+      }
+    ],
+    "food": [
+      {
+        "year": 2000,
+        "increasePercent": -2.494802494802506,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2001,
+        "increasePercent": 3.837953091684443,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2002,
+        "increasePercent": 6.365503080082124,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2003,
+        "increasePercent": 8.4942084942085,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2004,
+        "increasePercent": 13.167259786476858,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2005,
+        "increasePercent": -1.7295597484276781,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2006,
+        "increasePercent": 8.319999999999993,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2007,
+        "increasePercent": 23.929098966026597,
+        "aboveThreshold": true,
+        "episodeStart": true
+      },
+      {
+        "year": 2008,
+        "increasePercent": 33.492252681763986,
+        "aboveThreshold": true,
+        "episodeStart": false
+      },
+      {
+        "year": 2009,
+        "increasePercent": -16.964285714285708,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2010,
+        "increasePercent": 7.526881720430101,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2011,
+        "increasePercent": 22.500000000000007,
+        "aboveThreshold": true,
+        "episodeStart": true
+      },
+      {
+        "year": 2012,
+        "increasePercent": 1.3877551020408108,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2013,
+        "increasePercent": -7.7294685990338285,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2014,
+        "increasePercent": -7.504363001745196,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2015,
+        "increasePercent": -16.509433962264154,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2016,
+        "increasePercent": 1.2429378531073398,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2017,
+        "increasePercent": 0.6696428571428603,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2018,
+        "increasePercent": 0.22172949002217113,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2019,
+        "increasePercent": -3.7610619469026663,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2020,
+        "increasePercent": 7.011494252873551,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2021,
+        "increasePercent": 29.86036519871107,
+        "aboveThreshold": true,
+        "episodeStart": true
+      },
+      {
+        "year": 2022,
+        "increasePercent": 14.226633581472292,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2023,
+        "increasePercent": -9.196234612599563,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2024,
+        "increasePercent": -7.655502392344504,
+        "aboveThreshold": false,
+        "episodeStart": false
+      },
+      {
+        "year": 2025,
+        "increasePercent": -5.699481865284972,
+        "aboveThreshold": false,
+        "episodeStart": false
+      }
+    ]
+  },
+  "annualEpisodeMeans": {
+    "energy": 0.19230769230769232,
+    "food": 0.11538461538461539
+  },
+  "unmappedTypes": [
+    "finance",
+    "interest-rates",
+    "pandemic",
+    "natural-disaster",
+    "semiconductor",
+    "migration"
+  ],
+  "mappingLimit": "A game shock has no observed price threshold and can represent supply disruption; its intensity is an index. These two price proxies diagnose frequency, not historical equivalence or all eight types. No parameter is fitted by this updater."
+}

@@ -215,3 +215,9 @@ El usuario rechazó explícitamente trabajo móvil. El alcance pasa a PC con rat
 - Fichas PC más anchas, texto principal cotidiano y fuentes en detalles sin duplicar descripción ni imprimir URL cruda.
 - 136 pruebas, build/Worker y treinta archivos reproducibles; dieciséis recorridos de participación y demás baterías afectadas pasan. Semillas mundiales/diplomáticas/de balance repetidas como regresión, sin ajuste electoral ni otra reserva.
 - Cuarenta años/restauración idéntica; guardado 1,40→1,89MiB y tiempos 7,26/9,57ms por década, máximo21,49ms tras los lotes. Memoria sigue abierta; informes 76f76c3 se conservan como históricos. Las pruebas humanas no se han realizado.
+
+## 2026-10-06 — Diagnóstico externo de shocks sin ajuste
+
+- Pink Sheet anual nominal, 2000–2025, umbral positivo20% y agrupación de años consecutivos declarados antes de leer datos. Cinco episodios energía/tres alimentos; hash, CC BY4.0 y transformaciones registrados.
+- 32 mundos nuevos de50años miden los ocho tipos; energía0,059375/año y alimentos0,0575/año quedan fuera de la banda×/÷2. Se conserva el resultado desfavorable.
+- No se ajustan parámetros: encarecimiento y suministro no son equivalentes. Otros seis tipos pendientes; semillas `shock-reference-v1` consumidas. Cliente/build/Worker siguen siendo los validados en a8140c5; solo cambia la herramienta de evidencia.

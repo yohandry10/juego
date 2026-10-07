@@ -25,6 +25,7 @@
     "world:validate": "tsx src/cli/world-mass.ts 100",
     "world:sensitivity": "tsx src/cli/world-sensitivity.ts",
     "world:frequency": "tsx src/cli/world-frequency.ts",
+    "world:shock-frequency": "tsx src/cli/shock-frequency.ts",
     "validate:generated": "tsx src/cli/generated-countries.ts",
     "validate:diplomacy": "tsx src/cli/diplomacy-balance.ts",
     "validate:long-career": "node --expose-gc --import tsx src/cli/long-career.ts"

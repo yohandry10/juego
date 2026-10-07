@@ -1,6 +1,6 @@
 {
   "date": "2026-10-06",
-  "cut": "au-participation-and-readable-organization-cards-2026-10-06",
+  "cut": "shock-frequency-diagnostic-with-unchanged-au-client-2026-10-06",
   "platformScope": "PC only, explicit user correction",
   "environment": "Windows; Node 24.13.1; Core i5-10400F; 17098092544 bytes RAM",
   "unitTests": {
@@ -344,12 +344,12 @@
     }
   },
   "sourceAtReportCut": {
-    "sha256": "6777801ebb37eefc905ee11fb0243c6e898e616d9a386455ff8e6ec9e5fde1af",
-    "files": 162,
-    "scope": "src, data/countries, public, tests (except __pycache__), scripts, package/configuration and independent-world-reference.json; other reports excluded",
+    "sha256": "72376fd97e3223627c9f63972ca769bdc71773b67c96e15516c3d340561e1f6f",
+    "files": 166,
+    "scope": "src, data/countries, public, tests (except __pycache__), scripts, package/configuration and independent world/shock references; other reports excluded",
     "command": "node scripts/source-fingerprint.mjs",
     "buildHashes": "build-reproducibility.json",
-    "note": "Participation data and final organization-card layout; all behavior/browser regressions repeated on this frozen source cut."
+    "note": "Client, engine, data and build unchanged from a8140c5. Added independent shock reference, updater, reference-semantics test and diagnostic CLI; its TypeScript and 32 fresh worlds validated separately. Existing browser and behavior evidence remains applicable to the unchanged game."
   },
   "historicalEvidence": {
     "previousValidation": "historical-validation-latest-76f76c3.json",
@@ -363,5 +363,23 @@
   "humanEditorialReviewCompleted": false,
   "representativePcHardwareCoverageCompleted": false,
   "publicReleaseCompleted": false,
-  "allMandatoryCriteriaCompleted": false
+  "allMandatoryCriteriaCompleted": false,
+  "behaviorSourceFingerprint": "6777801ebb37eefc905ee11fb0243c6e898e616d9a386455ff8e6ec9e5fde1af",
+  "shockFrequencyDiagnostic": {
+    "command": "npm run world:shock-frequency",
+    "reference": "independent-shock-reference.json",
+    "evidence": "shock-frequency-diagnostic.json",
+    "review": "shock-frequency-review.md",
+    "seedPrefix": "shock-reference-v1",
+    "newSeeds": 32,
+    "years": 50,
+    "energyPerYear": 0.059375,
+    "foodPerYear": 0.0575,
+    "allMappedWithinProxyBand": false,
+    "allEightTypesExternallyCalibrated": false,
+    "parametersChanged": false,
+    "referenceSemanticsCommand": "python tests/shock-reference.test.py",
+    "referenceSemanticsTests": 1,
+    "scope": "Energy/food positive annual price-episode proxies, not supply-crisis equivalence. No tuning. These diagnostic seeds are now consumed."
+  }
 }

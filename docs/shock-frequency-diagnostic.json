@@ -1,0 +1,465 @@
+{
+  "date": "2026-10-06",
+  "engineParameterVersion": "world-balance-v5",
+  "seedPrefix": "shock-reference-v1",
+  "runs": 32,
+  "years": 50,
+  "proxyFactorTolerance": 2,
+  "protocol": "32 untouched seeds of 50 years, eight type counts, energy/food comparisons to independently defined annual-price episode proxies. No tuning or application; diagnostics can fail a proxy band without invalidating execution.",
+  "reference": "independent-shock-reference.json",
+  "annualMeans": {
+    "energy": 0.059375,
+    "food": 0.0575,
+    "finance": 0.06125,
+    "interest-rates": 0.066875,
+    "pandemic": 0.06125,
+    "natural-disaster": 0.054375,
+    "semiconductor": 0.065,
+    "migration": 0.059375
+  },
+  "comparison": [
+    {
+      "type": "energy",
+      "observedProxyPerYear": 0.19230769230769232,
+      "gameStartsPerYear": 0.059375,
+      "ratio": 0.30874999999999997,
+      "withinProxyBand": false
+    },
+    {
+      "type": "food",
+      "observedProxyPerYear": 0.11538461538461539,
+      "gameStartsPerYear": 0.0575,
+      "ratio": 0.49833333333333335,
+      "withinProxyBand": false
+    }
+  ],
+  "allMappedWithinProxyBand": false,
+  "allEightTypesExternallyCalibrated": false,
+  "unmappedTypes": [
+    "finance",
+    "interest-rates",
+    "pandemic",
+    "natural-disaster",
+    "semiconductor",
+    "migration"
+  ],
+  "rows": [
+    {
+      "seed": "shock-reference-v1-0",
+      "byType": {
+        "energy": 5,
+        "food": 4,
+        "finance": 4,
+        "interest-rates": 3,
+        "pandemic": 0,
+        "natural-disaster": 2,
+        "semiconductor": 3,
+        "migration": 2
+      }
+    },
+    {
+      "seed": "shock-reference-v1-1",
+      "byType": {
+        "energy": 7,
+        "food": 3,
+        "finance": 1,
+        "interest-rates": 2,
+        "pandemic": 4,
+        "natural-disaster": 5,
+        "semiconductor": 3,
+        "migration": 2
+      }
+    },
+    {
+      "seed": "shock-reference-v1-2",
+      "byType": {
+        "energy": 2,
+        "food": 4,
+        "finance": 4,
+        "interest-rates": 6,
+        "pandemic": 3,
+        "natural-disaster": 3,
+        "semiconductor": 1,
+        "migration": 7
+      }
+    },
+    {
+      "seed": "shock-reference-v1-3",
+      "byType": {
+        "energy": 5,
+        "food": 5,
+        "finance": 3,
+        "interest-rates": 2,
+        "pandemic": 3,
+        "natural-disaster": 7,
+        "semiconductor": 4,
+        "migration": 5
+      }
+    },
+    {
+      "seed": "shock-reference-v1-4",
+      "byType": {
+        "energy": 4,
+        "food": 5,
+        "finance": 2,
+        "interest-rates": 2,
+        "pandemic": 4,
+        "natural-disaster": 3,
+        "semiconductor": 4,
+        "migration": 0
+      }
+    },
+    {
+      "seed": "shock-reference-v1-5",
+      "byType": {
+        "energy": 4,
+        "food": 2,
+        "finance": 3,
+        "interest-rates": 4,
+        "pandemic": 1,
+        "natural-disaster": 3,
+        "semiconductor": 6,
+        "migration": 3
+      }
+    },
+    {
+      "seed": "shock-reference-v1-6",
+      "byType": {
+        "energy": 3,
+        "food": 5,
+        "finance": 3,
+        "interest-rates": 4,
+        "pandemic": 6,
+        "natural-disaster": 4,
+        "semiconductor": 8,
+        "migration": 4
+      }
+    },
+    {
+      "seed": "shock-reference-v1-7",
+      "byType": {
+        "energy": 2,
+        "food": 2,
+        "finance": 0,
+        "interest-rates": 2,
+        "pandemic": 4,
+        "natural-disaster": 7,
+        "semiconductor": 3,
+        "migration": 2
+      }
+    },
+    {
+      "seed": "shock-reference-v1-8",
+      "byType": {
+        "energy": 3,
+        "food": 3,
+        "finance": 3,
+        "interest-rates": 6,
+        "pandemic": 4,
+        "natural-disaster": 1,
+        "semiconductor": 1,
+        "migration": 2
+      }
+    },
+    {
+      "seed": "shock-reference-v1-9",
+      "byType": {
+        "energy": 1,
+        "food": 3,
+        "finance": 3,
+        "interest-rates": 3,
+        "pandemic": 2,
+        "natural-disaster": 2,
+        "semiconductor": 10,
+        "migration": 2
+      }
+    },
+    {
+      "seed": "shock-reference-v1-10",
+      "byType": {
+        "energy": 4,
+        "food": 4,
+        "finance": 5,
+        "interest-rates": 3,
+        "pandemic": 6,
+        "natural-disaster": 3,
+        "semiconductor": 3,
+        "migration": 1
+      }
+    },
+    {
+      "seed": "shock-reference-v1-11",
+      "byType": {
+        "energy": 2,
+        "food": 1,
+        "finance": 0,
+        "interest-rates": 1,
+        "pandemic": 8,
+        "natural-disaster": 2,
+        "semiconductor": 5,
+        "migration": 2
+      }
+    },
+    {
+      "seed": "shock-reference-v1-12",
+      "byType": {
+        "energy": 5,
+        "food": 2,
+        "finance": 4,
+        "interest-rates": 1,
+        "pandemic": 3,
+        "natural-disaster": 1,
+        "semiconductor": 5,
+        "migration": 3
+      }
+    },
+    {
+      "seed": "shock-reference-v1-13",
+      "byType": {
+        "energy": 3,
+        "food": 2,
+        "finance": 2,
+        "interest-rates": 6,
+        "pandemic": 3,
+        "natural-disaster": 2,
+        "semiconductor": 1,
+        "migration": 2
+      }
+    },
+    {
+      "seed": "shock-reference-v1-14",
+      "byType": {
+        "energy": 1,
+        "food": 1,
+        "finance": 8,
+        "interest-rates": 7,
+        "pandemic": 4,
+        "natural-disaster": 0,
+        "semiconductor": 2,
+        "migration": 9
+      }
+    },
+    {
+      "seed": "shock-reference-v1-15",
+      "byType": {
+        "energy": 1,
+        "food": 0,
+        "finance": 2,
+        "interest-rates": 2,
+        "pandemic": 0,
+        "natural-disaster": 2,
+        "semiconductor": 3,
+        "migration": 4
+      }
+    },
+    {
+      "seed": "shock-reference-v1-16",
+      "byType": {
+        "energy": 4,
+        "food": 3,
+        "finance": 1,
+        "interest-rates": 4,
+        "pandemic": 1,
+        "natural-disaster": 2,
+        "semiconductor": 1,
+        "migration": 4
+      }
+    },
+    {
+      "seed": "shock-reference-v1-17",
+      "byType": {
+        "energy": 3,
+        "food": 4,
+        "finance": 4,
+        "interest-rates": 5,
+        "pandemic": 4,
+        "natural-disaster": 5,
+        "semiconductor": 6,
+        "migration": 4
+      }
+    },
+    {
+      "seed": "shock-reference-v1-18",
+      "byType": {
+        "energy": 2,
+        "food": 2,
+        "finance": 2,
+        "interest-rates": 2,
+        "pandemic": 3,
+        "natural-disaster": 2,
+        "semiconductor": 2,
+        "migration": 2
+      }
+    },
+    {
+      "seed": "shock-reference-v1-19",
+      "byType": {
+        "energy": 1,
+        "food": 2,
+        "finance": 6,
+        "interest-rates": 3,
+        "pandemic": 4,
+        "natural-disaster": 4,
+        "semiconductor": 2,
+        "migration": 1
+      }
+    },
+    {
+      "seed": "shock-reference-v1-20",
+      "byType": {
+        "energy": 2,
+        "food": 4,
+        "finance": 4,
+        "interest-rates": 6,
+        "pandemic": 1,
+        "natural-disaster": 0,
+        "semiconductor": 4,
+        "migration": 3
+      }
+    },
+    {
+      "seed": "shock-reference-v1-21",
+      "byType": {
+        "energy": 4,
+        "food": 0,
+        "finance": 1,
+        "interest-rates": 1,
+        "pandemic": 4,
+        "natural-disaster": 2,
+        "semiconductor": 1,
+        "migration": 2
+      }
+    },
+    {
+      "seed": "shock-reference-v1-22",
+      "byType": {
+        "energy": 4,
+        "food": 4,
+        "finance": 3,
+        "interest-rates": 3,
+        "pandemic": 3,
+        "natural-disaster": 2,
+        "semiconductor": 3,
+        "migration": 2
+      }
+    },
+    {
+      "seed": "shock-reference-v1-23",
+      "byType": {
+        "energy": 5,
+        "food": 3,
+        "finance": 6,
+        "interest-rates": 4,
+        "pandemic": 4,
+        "natural-disaster": 4,
+        "semiconductor": 4,
+        "migration": 2
+      }
+    },
+    {
+      "seed": "shock-reference-v1-24",
+      "byType": {
+        "energy": 1,
+        "food": 3,
+        "finance": 1,
+        "interest-rates": 1,
+        "pandemic": 6,
+        "natural-disaster": 3,
+        "semiconductor": 3,
+        "migration": 3
+      }
+    },
+    {
+      "seed": "shock-reference-v1-25",
+      "byType": {
+        "energy": 2,
+        "food": 2,
+        "finance": 6,
+        "interest-rates": 6,
+        "pandemic": 0,
+        "natural-disaster": 3,
+        "semiconductor": 3,
+        "migration": 2
+      }
+    },
+    {
+      "seed": "shock-reference-v1-26",
+      "byType": {
+        "energy": 4,
+        "food": 5,
+        "finance": 5,
+        "interest-rates": 3,
+        "pandemic": 3,
+        "natural-disaster": 3,
+        "semiconductor": 3,
+        "migration": 3
+      }
+    },
+    {
+      "seed": "shock-reference-v1-27",
+      "byType": {
+        "energy": 1,
+        "food": 2,
+        "finance": 3,
+        "interest-rates": 3,
+        "pandemic": 1,
+        "natural-disaster": 2,
+        "semiconductor": 2,
+        "migration": 0
+      }
+    },
+    {
+      "seed": "shock-reference-v1-28",
+      "byType": {
+        "energy": 2,
+        "food": 4,
+        "finance": 3,
+        "interest-rates": 3,
+        "pandemic": 1,
+        "natural-disaster": 2,
+        "semiconductor": 2,
+        "migration": 4
+      }
+    },
+    {
+      "seed": "shock-reference-v1-29",
+      "byType": {
+        "energy": 2,
+        "food": 3,
+        "finance": 1,
+        "interest-rates": 3,
+        "pandemic": 1,
+        "natural-disaster": 2,
+        "semiconductor": 2,
+        "migration": 1
+      }
+    },
+    {
+      "seed": "shock-reference-v1-30",
+      "byType": {
+        "energy": 1,
+        "food": 3,
+        "finance": 1,
+        "interest-rates": 3,
+        "pandemic": 3,
+        "natural-disaster": 3,
+        "semiconductor": 3,
+        "migration": 5
+      }
+    },
+    {
+      "seed": "shock-reference-v1-31",
+      "byType": {
+        "energy": 5,
+        "food": 2,
+        "finance": 4,
+        "interest-rates": 3,
+        "pandemic": 4,
+        "natural-disaster": 1,
+        "semiconductor": 1,
+        "migration": 7
+      }
+    }
+  ],
+  "limitations": "A game shock has no observed price threshold and can represent supply disruption; its intensity is an index. These two price proxies diagnose frequency, not historical equivalence or all eight types. No parameter is fitted by this updater."
+}

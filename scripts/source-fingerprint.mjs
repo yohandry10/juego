@@ -12,11 +12,11 @@ async function collect(directory) {
   }
 }
 for (const root of ["src", "data/countries", "public", "tests", "scripts"]) await collect(root);
-paths.push("package.json", "package-lock.json", "tsconfig.json", "tsconfig.worker.json", "vite.config.mts", "index.html", "docs/independent-world-reference.json");
+paths.push("package.json", "package-lock.json", "tsconfig.json", "tsconfig.worker.json", "vite.config.mts", "index.html", "docs/independent-world-reference.json", "docs/independent-shock-reference.json");
 const hash = createHash("sha256");
 for (const path of paths.sort()) {
   const bytes = await readFile(path);
   hash.update(`${Buffer.byteLength(path)}:${path}:${bytes.length}:`).update(bytes);
 }
 console.log(JSON.stringify({ sha256: hash.digest("hex"), files: paths.length,
-  scope: "src, data/countries, public, tests (except __pycache__), scripts, package/configuration and independent-world-reference.json; other reports excluded" }));
+  scope: "src, data/countries, public, tests (except __pycache__), scripts, package/configuration and independent world/shock references; other reports excluded" }));
