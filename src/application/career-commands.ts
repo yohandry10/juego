@@ -12,12 +12,18 @@ import { advanceRegime, createRegimeState } from "./regime-commands.js";
 import regimeParameters from "../data/regime-parameters.json" with { type: "json" };
 import legacyCanon from "../data/legacy-archetypes.json" with { type: "json" };
 import electoralParameters from "../data/electoral-parameters.json" with { type: "json" };
+import gameplayParameters from '../data/career-gameplay-parameters.json' with { type: 'json' };
 import { advanceGeopolitics } from "../engine/world-simulation.js";
 import { createFinancingProgram, organizationMember } from "../engine/world-institutions.js";
 import { treatyChamberVotes, treatyRatificationAvailability } from "./treaty-rules.js";
 import { admitPresidentialVacancy, canSubmitPresidentialVacancy, resolveCensureVote, resolveInvestitureVote, resolvePresidentialVacancy, vacancyDebateReady } from "./executive-rules.js";
 
 const clamp = (n: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, n));
+function campaignEffectiveness(state: CareerGameState, action: CampaignActionType) {
+  const skills: Record<CampaignActionType, readonly [AttributeId,AttributeId]> = { 'door-knocking':['charisma','network'],rally:['charisma','oratory'],'media-interview':['oratory','management'],'primary-outreach':['cunning','network'],fundraising:['network','management'],'make-promise':['oratory','integrity'],'set-national-agenda':['management','network'],'publish-poll':['management','integrity'],'national-debate':['oratory','charisma'] };
+  const [first,second]=skills[action];
+  return gameplayParameters.campaignBaseEffectiveness + (state.player.attributes[first]+state.player.attributes[second])*gameplayParameters.campaignAttributeWeight;
+}
 function applyGeopoliticalEffects<T extends CareerGameState["world"]>(world: T, geopolitics: CareerGameState["geopolitics"]): T {
   const impact = geopolitics.domesticImpact;
   if (!impact.causes.length) return world;
@@ -241,6 +247,7 @@ export interface NewCareerInput {
   readonly realism?: RealismMode;
   readonly ironman?: boolean;
   readonly scenario?: "constitutional" | "hegemony";
+  readonly portraitId?: number;
 }
 
 function validateCareer(state: CareerGameState): CareerGameState {
@@ -275,7 +282,7 @@ export function createCareerGame(country: CountryDefinition, input: NewCareerInp
   if (traitIds.includes("incorruptible")) baseAttributes.integrity += 2;
   if (input.attributes) for (const [attribute, value] of Object.entries(input.attributes) as [AttributeId, number][]) baseAttributes[attribute] = clamp(baseAttributes[attribute] + value - 10, 1, 20);
   const player: PoliticalCharacter = {
-    id: makeId(input.seed, "player"), name: input.name.trim(), age: input.age, originId: input.originId,
+    id: makeId(input.seed, "player") + (Number.isInteger(input.portraitId) && input.portraitId! >= 0 && input.portraitId! < 40 ? `:portrait:${input.portraitId}` : ''), name: input.name.trim(), age: input.age, originId: input.originId,
     professionId: input.professionId, educationId: input.educationId,
     nationality: input.nationality ?? (rule.nationality === "citizen-by-birth" ? "citizen-by-birth" : rule.nationality === "citizen" ? "citizen" : "none"), activeSuffrage: input.activeSuffrage ?? true, voterRegistered: input.voterRegistered ?? true,
     ideology: input.ideology ?? defaultIdeology, traitIds,
@@ -332,7 +339,7 @@ export function performCampaignAction(state: CareerGameState, action: CampaignAc
       const playerScore = clamp(35 + state.player.attributes.oratory * 2.4 + state.player.attributes.charisma * 1.2 + rng.next() * 15 + (campaign.nationalAgenda ? 4 : 0), 0, 100);
       const opponentScore = clamp(43 + rng.next() * 32, 0, 100);
       const won = playerScore >= opponentScore;
-      result = won ? 2.5 : -1.5;
+      result = (won ? 2.5 : -1.5) * campaignEffectiveness(state,action);
       explanation = `Debate nacional: tu desempeño fue ${playerScore.toFixed(1)} frente a ${opponentScore.toFixed(1)}; ${won ? "ganaste" : "perdiste"} y ${campaign.nationalAgenda ? "la agenda definida dio coherencia a tu intervención" : "faltó una agenda prioritaria"}.`;
       campaign = { ...campaign, playerPreferencePercent: clamp(campaign.playerPreferencePercent + result, 0, 100), debateHistory: [...campaign.debateHistory, { week: campaign.week, playerScore, opponentScore, won, explanation }] };
     }
@@ -344,7 +351,7 @@ export function performCampaignAction(state: CareerGameState, action: CampaignAc
   if (expense > 0 && state.player.resources.campaignFunds < expense) throw new Error("No hay fondos suficientes para esa acción.");
   const rng = createRng(hashSeed(`${state.seed}:campaign:${state.campaign.week}:${state.campaign.actionHistory.length}:${action}`));
   const noise = rng.next() * 1.2;
-  const gain = benefits[action]! + noise;
+  const gain = (benefits[action]! + noise) * campaignEffectiveness(state,action);
   const funds = Math.max(0, state.player.resources.campaignFunds - expense);
   const explanation = {
     "door-knocking": "El contacto directo fortaleció el respaldo a tu candidatura.",
@@ -356,7 +363,7 @@ export function performCampaignAction(state: CareerGameState, action: CampaignAc
   }[action];
   const promise = action === "make-promise" ? { id: makeId(state.seed, `promise-${state.campaign.week}-${state.campaign.promises.length}`), text: "Mejorar los servicios públicos del distrito", blockId: "workers", cost: 15, dueTurn: 8, status: "pending" as const } : null;
   const record = { id: makeId(state.seed, `campaign-${state.campaign.week}-${state.campaign.actionHistory.length}`), week: state.campaign.week, type: action, districtId: state.campaign.districtId, explanation, result: gain, promiseId: promise?.id ?? null } as const;
-  const log = [...state.log, { turn: state.currentTurn + 1, text: explanation, explanation: action === "fundraising" ? "Fondos: +12 mil. Tu preferencia no cambia." : `Cambio de preferencia: +${gain.toFixed(1)} puntos; gasto: ${Math.max(0, expense)} mil.` }];
+  const log = [...state.log, { turn: state.currentTurn + 1, text: explanation, explanation: action === "fundraising" ? "Fondos: +12 mil. Tu preferencia no cambia." : `Cambio de preferencia: +${gain.toFixed(1)} puntos; gasto: ${Math.max(0, expense)} mil. Las habilidades relevantes dieron una eficacia de ${campaignEffectiveness(state,action).toFixed(2)}; la respuesta ciudadana también varía.` }];
   const next = { ...state, currentTurn: state.currentTurn + 1, player: { ...state.player, resources: { ...state.player.resources, campaignFunds: funds } }, campaign: { ...state.campaign, actionsRemaining: state.campaign.actionsRemaining - 1, playerPreferencePercent: clamp(state.campaign.playerPreferencePercent + (action === "fundraising" ? 0 : gain), 0, 100), campaignFundsSpent: state.campaign.campaignFundsSpent + Math.max(0, expense), actionHistory: [...state.campaign.actionHistory, record], promises: promise ? [...state.campaign.promises, promise] : state.campaign.promises }, log };
   const eventId = ({ "door-knocking": "district-meeting", rally: "youth-forum", "media-interview": "local-radio", "primary-outreach": "volunteer-team", fundraising: "campaign-donor", "make-promise": "promise-reminder" } as const)[action];
   return validateCareer(addCareerEvent(next, eventId));
@@ -454,7 +461,7 @@ function resolveExecutiveElection(state: CareerGameState, country: CountryDefini
     explanation: rule.election.method === "electoral-college" ? electoralExplanation : rule.election.method === "two-round"
       ? finalist ? `Primera vuelta: ${firstRoundShare.toFixed(1)}%. ${firstRoundShare < rule.election.firstRoundThresholdPercent ? `En la segunda vuelta obtuviste ${runoffShare.toFixed(1)}%.` : "Superaste el umbral de primera vuelta."} ${elected ? "Ganaste la elección ejecutiva." : "No alcanzaste los votos necesarios."}` : `Quedaste fuera de las dos candidaturas más votadas en primera vuelta (${firstRoundShare.toFixed(1)}%).`
       : `${elected ? "Ganaste" : "No ganaste"} la elección ejecutiva con ${firstRoundShare.toFixed(1)}% en una elección de tipo ${rule.election.method}.`,
-    partyVotes: Object.fromEntries(parties.map((party, index) => [party.id, Math.round(candidateScores[index]! * 1000)])),
+    partyVotes: Object.fromEntries(parties.map((party, index) => [party.id, Math.round(totalVotes * candidateScores[index]! / scoreTotal)])),
   };
   return validateCareer({ ...state, stage: "election-result", currentTurn: state.currentTurn + 1, electionOutcome: outcome,
     log: [...state.log, { turn: state.currentTurn + 1, text: elected ? `Ganaste la elección para ${rule.title}.` : `La campaña para ${rule.title} terminó sin victoria.`, explanation: outcome.explanation }],
@@ -832,7 +839,7 @@ function generatedGovernmentChallengeVotes(state: CareerGameState, government: G
     // Shared prototype calibration by procedure type; this is neither a country switch nor a legal threshold.
     const procedureAdjustment = challenge.type === "constructive-censure" ? 12 : 0;
     const probability = governing
-      ? clamp(62 - procedureAdjustment + Math.max(0, approvalPressure) * 0.55 + Math.max(0, government.fallRiskPercent - 35) * 0.85
+      ? clamp(gameplayParameters.governingRemovalBasePercent - procedureAdjustment + Math.max(0, approvalPressure) * 0.55 + Math.max(0, government.fallRiskPercent - 35) * 0.85
         + (50 - (cabinetMember?.loyalty ?? member.loyalty)) * 0.2 + relationshipPressure
         - (party?.discipline ?? 50) * 0.08 - challenge.defenseInfluence * 0.25, 5, 90)
       : clamp(88 - procedureAdjustment + approvalPressure * 0.3 + (government.fallRiskPercent - 50) * 0.1

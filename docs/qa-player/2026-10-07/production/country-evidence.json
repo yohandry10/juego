@@ -1,0 +1,95 @@
+{
+  "base": "http://127.0.0.1:4180",
+  "results": [
+    {
+      "country": "germany",
+      "status": "passed",
+      "office": "deputy",
+      "realDecision": true,
+      "portraitDecoded": true,
+      "exactSaveRestored": true,
+      "errors": []
+    },
+    {
+      "country": "argentina",
+      "status": "passed",
+      "office": "deputy",
+      "realDecision": true,
+      "portraitDecoded": true,
+      "exactSaveRestored": true,
+      "errors": []
+    },
+    {
+      "country": "brazil",
+      "status": "passed",
+      "office": "deputy",
+      "realDecision": true,
+      "portraitDecoded": true,
+      "exactSaveRestored": true,
+      "errors": []
+    },
+    {
+      "country": "spain",
+      "status": "passed",
+      "office": "deputy",
+      "realDecision": true,
+      "portraitDecoded": true,
+      "exactSaveRestored": true,
+      "errors": []
+    },
+    {
+      "country": "united-states",
+      "status": "passed",
+      "office": "deputy",
+      "realDecision": true,
+      "portraitDecoded": true,
+      "exactSaveRestored": true,
+      "errors": []
+    },
+    {
+      "country": "france",
+      "status": "passed",
+      "office": "deputy",
+      "realDecision": true,
+      "portraitDecoded": true,
+      "exactSaveRestored": true,
+      "errors": []
+    },
+    {
+      "country": "mexico",
+      "status": "passed",
+      "office": "deputy",
+      "realDecision": true,
+      "portraitDecoded": true,
+      "exactSaveRestored": true,
+      "errors": []
+    },
+    {
+      "country": "peru",
+      "status": "passed",
+      "office": "deputy",
+      "realDecision": true,
+      "portraitDecoded": true,
+      "exactSaveRestored": true,
+      "errors": []
+    },
+    {
+      "country": "united-kingdom",
+      "status": "passed",
+      "office": "deputy",
+      "realDecision": true,
+      "portraitDecoded": true,
+      "exactSaveRestored": true,
+      "errors": []
+    },
+    {
+      "country": "venezuela",
+      "status": "passed",
+      "office": "deputy",
+      "realDecision": true,
+      "portraitDecoded": true,
+      "exactSaveRestored": true,
+      "errors": []
+    }
+  ]
+}

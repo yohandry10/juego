@@ -243,3 +243,11 @@ El usuario rechazó explícitamente trabajo móvil. El alcance pasa a PC con rat
 - Doce capturas nuevas de seis vistas en 1440/900 px. Revisión de cinco segundos heurística, no prueba humana. La interfaz actual todavía parece panel; mapa y costos sirven como base.
 - Una referencia del despacho generada, revisada y guardada con prompt/manifiesto/WebP. Al adjuntarla aparece un límite de almacenamiento de ChatGPT. Se detiene la generación sin cambiar la cuenta ni usar otra vía. Cinco referencias pendientes; A no está completa.
 - [Entrega y pendientes](../design/etapa-a/README.md), nueve pares de tokens con contraste de texto AA sobre fondos sólidos. No equivale a validar los componentes futuros sobre ilustraciones.
+
+## 2026-10-07 — Carrera completa y entrega PC local
+
+- La corrección posterior del usuario sustituye los avatares procedurales y el panel verde por personajes raster, ambientes políticos y decisiones integradas en escenas. Se preservan los retratos originales descargados, los comandos y los guardados. GPT en ChatGPT reemplaza a Claude como revisor; las aprobaciones y rechazos se conservan con capturas reales.
+- Se implementan seis capítulos de biografía, campaña, gabinete, investidura, Congreso y votación ceremonial, prensa, economía, mapa exterior, fin de mandato, legado, retorno y sucesor. Los detalles de datos siguen disponibles a demanda. Las proyecciones del legado no se presentan como historia simulada.
+- El ajuste de campaña y bancada aliada se congela como `career-agency-v2`. La reserva independiente conserva el resultado estadounidense de 8,9%, bajo la banda de acceso presidencial de 10%; no se retoca tras observarla. Mayoría no garantiza supervivencia si se pierde apoyo y desempeño.
+- GPT acepta visualmente C/D/E para entrega PC local y cierra seis bloqueadores. Pasan 153 pruebas y 44 recorridos públicos en Chromium y Firefox contra el paquete final, además de diez países, carga offline, guardados y una carrera de 40 años. El ZIP contiene los mismos 113 archivos de juego que la compilación reproducible.
+- Versión `1.0.0-rc.1`, navegador local con Node.js 22 o posterior. No se atribuyen sesiones humanas, certificación comercial, ejecución nativa ni auditoría constitucional completa. [Alcance y pruebas de entrega](completion-report.md); los informes previos permanecen como históricos.

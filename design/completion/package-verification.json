@@ -1,0 +1,513 @@
+{
+  "version": "1.0.0-rc.1",
+  "date": "2026-10-07",
+  "packageMatchesBuild": true,
+  "files": [
+    {
+      "file": "assets/DecisionInbox-BprdKqh8.js",
+      "sha256": "4be4b00dd7878532e907ea25d612b9dbf12d234960c27a941a1d5bd33752abe1"
+    },
+    {
+      "file": "assets/EconomyView-RxKRU5GV.js",
+      "sha256": "eac8d0fcf7f4516058234dfb6bcde76cea8f10df18cf73a2e5e6dee2ab86c03f"
+    },
+    {
+      "file": "assets/fonts/source-sans-LICENSE.md",
+      "sha256": "56af9b9c6715597e458284a474dc118a50a4150e9d547c70f7b4a33c3e6a9328"
+    },
+    {
+      "file": "assets/fonts/source-serif-LICENSE.md",
+      "sha256": "c21d7293d87b6d7ab1d0229a2f55b77f33a7613a6a4e66f6693d68d7d8d09464"
+    },
+    {
+      "file": "assets/fonts/SourceSans3-Regular.woff2",
+      "sha256": "53492fb3a0def77354f166a55d09b63a10855e91c206c7620a81cf56e97f8ec3"
+    },
+    {
+      "file": "assets/fonts/SourceSans3-Semibold.woff2",
+      "sha256": "47b9b661b9f395fe7f0d0e119637fba5c8dad97bde3df60066fd24229c0792f4"
+    },
+    {
+      "file": "assets/fonts/SourceSerif4Display-Regular.woff2",
+      "sha256": "c75301c83bef55b3787f3060c2f62cb5d902a6706419149b7ff9d0c7927055ac"
+    },
+    {
+      "file": "assets/fonts/SourceSerif4Display-Semibold.woff2",
+      "sha256": "ccf074599b004eb9738128d1f4ed7ea8f9a9a4bff0326f52178128c0389bf22d"
+    },
+    {
+      "file": "assets/HallOfFame-vX1Xknyc.js",
+      "sha256": "bb180ba82fa2bb3450f0a1f47e777a3e14f256d1c790c0a6d66452dca9326f4a"
+    },
+    {
+      "file": "assets/HelpView-Bi6HJfCv.js",
+      "sha256": "d9738492089d40e080fb4f7a87870f9bae1cff4e78e8f7331b9cf8b5cda8b154"
+    },
+    {
+      "file": "assets/index-BBKNbUTt.js",
+      "sha256": "495bf5670f28c9982e11667a4ce2d1961e10b75a542f67682dc971591c60b318"
+    },
+    {
+      "file": "assets/index-gw-9ctnU.css",
+      "sha256": "ac01e9dce511959c7eac9603f7c43242254d6eca5520ca00221afcfc92c6a659"
+    },
+    {
+      "file": "assets/manifest.json",
+      "sha256": "df42a6e9f91f3e45fc866b4d88ae545ada2ea76ed7d66ab4ad40b0fbc1593ed5"
+    },
+    {
+      "file": "assets/office/despacho-1600.webp",
+      "sha256": "4adc8cde29c6f5e6e2a8ef07723dcc314fecb7013eac5cd2f6655c3c174501c0"
+    },
+    {
+      "file": "assets/office/despacho-480.webp",
+      "sha256": "469704382aad765aff049ae468b14888fa929995d82a82a520ee2d85c882f4e0"
+    },
+    {
+      "file": "assets/office/despacho-900.webp",
+      "sha256": "787e050c2511db66b3b70963969f1fa7a056e97d43dc0d74c79eee136f074de2"
+    },
+    {
+      "file": "assets/portraits/advisor-cabinet.webp",
+      "sha256": "e9da610b1cc74b5f5900a1dd98b41c17ddee3e69bab61b2e19720e0e97b4bf80"
+    },
+    {
+      "file": "assets/portraits/advisor-campaign.webp",
+      "sha256": "9a10cc5f14f05a23613efa892e89d9d4cef0781f21a29432a7d1cffc71e6bdb2"
+    },
+    {
+      "file": "assets/portraits/advisor-economy.webp",
+      "sha256": "f85c8c5d5dfbafdab57544943e2ce7cc37dc80e90eadfbe01cad13c133a572af"
+    },
+    {
+      "file": "assets/portraits/advisor-politics.webp",
+      "sha256": "6339c3179af4781e8936483d5ce5f6ade9e2fcb1f7d8208e4f6debea0771a42b"
+    },
+    {
+      "file": "assets/portraits/advisor-press.webp",
+      "sha256": "e79866c0e89cc6634ccf9953955a3e11528de4b2a93c313fdf55c73082157e95"
+    },
+    {
+      "file": "assets/portraits/advisor-security.webp",
+      "sha256": "60c453d5883c6f96bd80e996c90a63d575de19484ef5455f30a836d2fc97c47b"
+    },
+    {
+      "file": "assets/portraits/character-00.webp",
+      "sha256": "1fe3eacf2220f8a8bf86813b9c3376feac2a630cdf49f9cda23c66b0e95d43ed"
+    },
+    {
+      "file": "assets/portraits/character-01.webp",
+      "sha256": "cd53e6feb973148daca8754125cbaeba4aa7addd8052461b23b29059fed05794"
+    },
+    {
+      "file": "assets/portraits/character-02.webp",
+      "sha256": "df44246cb12c98165f80235128009ceb72afed7d01b993e8b1b6f0dcb43e988a"
+    },
+    {
+      "file": "assets/portraits/character-03.webp",
+      "sha256": "da22898de6dd0513a52e88536e3db6f99f9b33a009963723b9d47b5d8d46e45b"
+    },
+    {
+      "file": "assets/portraits/character-04.webp",
+      "sha256": "baeed0a3a6882d4c4f328ae7ed8805ed46213cbb7d07d10af1f7bc1c65982404"
+    },
+    {
+      "file": "assets/portraits/character-05.webp",
+      "sha256": "cf8cb920355954d120b22b8290868909903654530af68388f551e1b7e63fd47d"
+    },
+    {
+      "file": "assets/portraits/character-06.webp",
+      "sha256": "72b8d6bd8c5f894fc69198c9dbab986205837e1307a5d782f7ef70822d9676ce"
+    },
+    {
+      "file": "assets/portraits/character-07.webp",
+      "sha256": "4beac2cbd5bebd85153397bbf2aba35619b280d4a35748dbaf201621a5c1af36"
+    },
+    {
+      "file": "assets/portraits/character-08.webp",
+      "sha256": "6ec3330f46d309ba526deb5668dba2819da45b36729897c264f61b80ea8323aa"
+    },
+    {
+      "file": "assets/portraits/character-09.webp",
+      "sha256": "4ffb2d953106a273472189c7462bfd277139cacc3f4078241f3ab738fe5366da"
+    },
+    {
+      "file": "assets/portraits/character-10.webp",
+      "sha256": "78ccb10b24a877a90b3a4e61db69a8edbad17dc91dbbe70bd5bdde9976bfa663"
+    },
+    {
+      "file": "assets/portraits/character-11.webp",
+      "sha256": "558a21be9cd320619f25d141e1bb727ee7fd16741b906486867c42d381bef29d"
+    },
+    {
+      "file": "assets/portraits/character-12.webp",
+      "sha256": "afa0c893cab499054a23835f9d771e9ba00883d07237e12fa1ce1555cd9a7a41"
+    },
+    {
+      "file": "assets/portraits/character-13.webp",
+      "sha256": "54d47539c91032b879152194222e6dfdd650f723eb5283d8e934ce8b9d0d4821"
+    },
+    {
+      "file": "assets/portraits/character-14.webp",
+      "sha256": "b4e378007267690c533087a9e8693164b9c11295bdc3b165c68a649ae5a85be5"
+    },
+    {
+      "file": "assets/portraits/character-15.webp",
+      "sha256": "e6c0dc85f818c29d1e6bdb9c0f5f09b6230ff373cea2e1bf3b72439bc4a30704"
+    },
+    {
+      "file": "assets/portraits/character-16.webp",
+      "sha256": "2c5070bc1d9be75cbd02e0882c2ed4637e7d4c89b89fac801397a190c1841154"
+    },
+    {
+      "file": "assets/portraits/character-17.webp",
+      "sha256": "09bb0021784393b6966902aab2951e8bc7f2925ad10bc55e0ab9a561240731f3"
+    },
+    {
+      "file": "assets/portraits/character-18.webp",
+      "sha256": "d69ae61e18af03275abdab37f7bac3ed57faf2031073d76862c809eecae4bfc7"
+    },
+    {
+      "file": "assets/portraits/character-19.webp",
+      "sha256": "91175af205932af0b51ebe4e468dc616911816dade2df3fb14728855d303c952"
+    },
+    {
+      "file": "assets/portraits/character-20.webp",
+      "sha256": "d8fd6578dfe631a1439a7ee2f44e49104c34f7854597a5b3806ca9dbe23160a1"
+    },
+    {
+      "file": "assets/portraits/character-21.webp",
+      "sha256": "9483a7ab5b4d4c9c795a282d83b28c1cf2b3b9ea48a8bb0412ca7db0fa75405b"
+    },
+    {
+      "file": "assets/portraits/character-22.webp",
+      "sha256": "75a5b0989e5abd4ef0db571d8c344b0d9df04f92e146361974cce8cb83bfd1d7"
+    },
+    {
+      "file": "assets/portraits/character-23.webp",
+      "sha256": "cc93e21c179a52e547a12950b758f08fe39ce0ea81271ece6b9a18caa854276e"
+    },
+    {
+      "file": "assets/portraits/character-24.webp",
+      "sha256": "9dbff32d0117f3b71e2015bf54add633599bcf6a2a4fc97ca75984b3b9ff48d2"
+    },
+    {
+      "file": "assets/portraits/character-25.webp",
+      "sha256": "a4f8780b2cba1ed4e5854cb24d8e018782cc796af80139379c393194accfb7eb"
+    },
+    {
+      "file": "assets/portraits/character-26.webp",
+      "sha256": "457f364e6f8b8eed53e22f3b3304e88f11cd8a38c7a5823f0686dcf2523e6fa7"
+    },
+    {
+      "file": "assets/portraits/character-27.webp",
+      "sha256": "22a6c77d509152b6fbc59c9c5c457a8da257f39e1f36bdce3a44c1d7aabb89c3"
+    },
+    {
+      "file": "assets/portraits/character-28.webp",
+      "sha256": "183e5d021405412a27e9a061e3d54e76d9d7c34b491757b453e01feaff0a6e7b"
+    },
+    {
+      "file": "assets/portraits/character-29.webp",
+      "sha256": "75bc12b75d41b0277c9252cd8118e6301ee311d3750e0fc5a5b9574c843c09d0"
+    },
+    {
+      "file": "assets/portraits/character-30.webp",
+      "sha256": "6bce788ce1ade4f27ac3f78a75028458342d8a918593242be0c19b54a07cdf80"
+    },
+    {
+      "file": "assets/portraits/character-31.webp",
+      "sha256": "08f66eccf295f27bbc412c79bcec7780142a5994dcb05131b729c73b900d374d"
+    },
+    {
+      "file": "assets/portraits/character-32.webp",
+      "sha256": "ed7a2ca380414549888e2c1b9cb5410f74ee8fd41654bfaa1b601ee9a7b61df4"
+    },
+    {
+      "file": "assets/portraits/character-33.webp",
+      "sha256": "8d706a331b7fc717b089b85d1424a02b2954317c0dbe86d849e5bc93fc39c721"
+    },
+    {
+      "file": "assets/portraits/character-34.webp",
+      "sha256": "92310b1bb8237149ed3b0a49fca856df07a51e48e39e57ca569002660b2ff0c5"
+    },
+    {
+      "file": "assets/portraits/character-35.webp",
+      "sha256": "827b38d3cbf906dbd561396fd59f3648b31f7ca2f21d3e5d7d291a7a28ff2284"
+    },
+    {
+      "file": "assets/portraits/character-36.webp",
+      "sha256": "f23ea44718383e9fbc37f11ed4b30c684f38b7d874b66ff592f836fd8beeb088"
+    },
+    {
+      "file": "assets/portraits/character-37.webp",
+      "sha256": "70a11cefad66eab48acbbc8e97b9e44ff757bb897c3061c54239dd3fc1d1cee9"
+    },
+    {
+      "file": "assets/portraits/character-38.webp",
+      "sha256": "f0a5625e41c6e2f37da3fbcbd7d349516b7499bcafebfd0c42fc1212d8213862"
+    },
+    {
+      "file": "assets/portraits/character-39.webp",
+      "sha256": "877397fdf110a982805c179ccf04f23346d1e9c8342b4d824ef8743dde1103c4"
+    },
+    {
+      "file": "assets/react-DjX0U0Iu.js",
+      "sha256": "49f492b7a8b9e47e35b7a9aa36d96824c35439694a092fa912347d6fa34d5366"
+    },
+    {
+      "file": "assets/rolldown-runtime-CbXtAM7H.js",
+      "sha256": "bbf7c5086ae414dc3f33777e3eebf16ea8631325b8bb4690d25091c03567f31a"
+    },
+    {
+      "file": "assets/scenes/campaign.webp",
+      "sha256": "df5b3d433bf8f3b6361a248f54040573713e4526a8367b80b0e2dc21593decc7"
+    },
+    {
+      "file": "assets/scenes/chamber.webp",
+      "sha256": "45b45d4b7ab084f7766c311760d4005c29773943c121045420e4525c73d0f849"
+    },
+    {
+      "file": "assets/scenes/event-00.webp",
+      "sha256": "84861a5c3bae8b3152748f419ad3f287313da8974290e89a7d23601ca64c0102"
+    },
+    {
+      "file": "assets/scenes/event-01.webp",
+      "sha256": "864c2abeaa08d95e3cfab2f96c415af61250ffb6736161e7d61927dde58991d9"
+    },
+    {
+      "file": "assets/scenes/event-02.webp",
+      "sha256": "15d2b62b0937f9a228f89621f5a411cac83c651e8676bb561f743cf3c8405a55"
+    },
+    {
+      "file": "assets/scenes/event-03.webp",
+      "sha256": "69c6ec6dc3ef86223de7eb1f15837b50b33c5c07d5d3ebbd1f6351095f4b3105"
+    },
+    {
+      "file": "assets/scenes/event-04.webp",
+      "sha256": "718b8dbee1247cb696357bffdb8d42941e0bc720fea234bcb9b7b552030a7cbf"
+    },
+    {
+      "file": "assets/scenes/event-05.webp",
+      "sha256": "bd019b7d76a5e6860593c06f39975dd42c8aa00153d38250724302822f051726"
+    },
+    {
+      "file": "assets/scenes/event-06.webp",
+      "sha256": "c9f7ecccb7560dec49f4cad8980d7b54bd94f1d472da17df6739da7ec0298c42"
+    },
+    {
+      "file": "assets/scenes/event-07.webp",
+      "sha256": "27a9aa781555ffe3bda5c148e49656c736411f13a31cda08de57bf3a556e35c7"
+    },
+    {
+      "file": "assets/scenes/event-08.webp",
+      "sha256": "c9cce8e886edf34d37e100e9a5c3f7858937c61e7146851254fb570f0e2f4474"
+    },
+    {
+      "file": "assets/scenes/event-09.webp",
+      "sha256": "739de593031fff64f2cdbf9710e41b66b608beeb3c0021abd78d27cd6e8b5bb0"
+    },
+    {
+      "file": "assets/scenes/event-10.webp",
+      "sha256": "e1d0ef4a2f489e60352b4ee6cc4591c99ceab5a46eae0d4ae8a08c150435973c"
+    },
+    {
+      "file": "assets/scenes/event-11.webp",
+      "sha256": "b8bbfc3586711b23ac0bc7ffb9872fb4ae7585ae44fd3546fd41a1a4ced323be"
+    },
+    {
+      "file": "assets/scenes/event-12.webp",
+      "sha256": "53c8aa19f177e1d4f2f1bddd1dc75f66f89c142fe97ce39d782f71d7f3a5043c"
+    },
+    {
+      "file": "assets/scenes/event-13.webp",
+      "sha256": "e4ce4d598502c7515a90076ba94674859afc43a42ff31fdfb0cfb75ed13bb30b"
+    },
+    {
+      "file": "assets/scenes/event-14.webp",
+      "sha256": "a034b7e8d92ff8b9c5b135b04ce21c20a6340df05873050d12ae4d695702772c"
+    },
+    {
+      "file": "assets/scenes/event-15.webp",
+      "sha256": "fa731bf1807eb78b0b4d79930cf3f0be5ef8ca61580f8ecb8e6b1a0b1ce5ecc3"
+    },
+    {
+      "file": "assets/scenes/event-16.webp",
+      "sha256": "176a5c0fb8c696ce09eb9f03ddcfd5d94e96f601e6204c5e273edbd9a14b9333"
+    },
+    {
+      "file": "assets/scenes/event-17.webp",
+      "sha256": "7ce76aa5af1a9f230b3b35999576a3832348afd7ef66cd9db21a093f13c97863"
+    },
+    {
+      "file": "assets/scenes/event-18.webp",
+      "sha256": "e96ad61af2dc8d246d2b4e3d41ea4f950aa52c69061305bd48d8b5c0b29a1fd1"
+    },
+    {
+      "file": "assets/scenes/event-19.webp",
+      "sha256": "6a41ace8bbd0e8f3c2d60f050ae491c4175d64d5bb2535d94e130ddc03ccd4c8"
+    },
+    {
+      "file": "assets/scenes/event-20.webp",
+      "sha256": "a4c3be04d67ef8c6aad4f4fe6929fe5cf977612b15d1ab9ded7ce5fa5648c46b"
+    },
+    {
+      "file": "assets/scenes/event-21.webp",
+      "sha256": "b791c31fc6f98d444cb5e5f53fcd3249b34fb121ffb6329cd3dc7b1cbe2805dd"
+    },
+    {
+      "file": "assets/scenes/event-22.webp",
+      "sha256": "e7d8d80c1d08f881d24e305e52da2ae612b94946a9c7302e6e2e9a250373d9a1"
+    },
+    {
+      "file": "assets/scenes/event-23.webp",
+      "sha256": "ef4d91c41859b85bf415ea8f0b2f57b470a5f0bd2de79d638413c0f3f32846e1"
+    },
+    {
+      "file": "assets/scenes/national-office.webp",
+      "sha256": "d820f51fd1aacec886252f09a15362fce9b1807e2e02879dcb28ff4d577fa718"
+    },
+    {
+      "file": "assets/simulation-worker-tAIs3Ypl.js",
+      "sha256": "532948b65ea559929161357bc48de7c354d08b6811ee9d7e1cbd3e447cc413ad"
+    },
+    {
+      "file": "assets/validation-2oiOZAhq.js",
+      "sha256": "8d848c7ef273e9082cf69252079d78d1e2a04bd56281726f34780a1f0c71c0c2"
+    },
+    {
+      "file": "assets/world-data-BIXuIriQ.js",
+      "sha256": "289fbc5acb1c1a39d445982d9c0d2e749d4e0c2992d758acec0aea9f029a2a88"
+    },
+    {
+      "file": "assets/WorldView-IH2gPWHo.js",
+      "sha256": "e1020b6ce96aaf7d6518a64b4bae298d772f3a2f6a836f1c8695ada51c97dc86"
+    },
+    {
+      "file": "credits.html",
+      "sha256": "803c5262602e772d15d77df0e0e212b48e50b07a7c80c4c5919f9e8fd8429b73"
+    },
+    {
+      "file": "data/countries/argentina.json",
+      "sha256": "26f7e84fb3337549131736270172d72bd8ba2c1481bff13a872095dc54ade7c6"
+    },
+    {
+      "file": "data/countries/brazil.json",
+      "sha256": "546d5f28061603ba854b4522e6f80b3fca3ce88b683ac4796afe55d7c6a84677"
+    },
+    {
+      "file": "data/countries/france.json",
+      "sha256": "ba3738812dc809f3add652402c559f0f300b083a4bf7000baeb1521163dc17fb"
+    },
+    {
+      "file": "data/countries/germany.json",
+      "sha256": "0255269dfdd9de6def462be963f0b62e3495c754c6a060581d885f5c31fbdb45"
+    },
+    {
+      "file": "data/countries/index.json",
+      "sha256": "3fd4f346c2552724d79c43192f1db010036e022e4bb03ab032e00b36c188f024"
+    },
+    {
+      "file": "data/countries/mexico.json",
+      "sha256": "366f4021aad9b0f438a3990fdcd7a46a39f65523ad3a96b7de2fa753838e2f81"
+    },
+    {
+      "file": "data/countries/peru.json",
+      "sha256": "3c0f6d54345e0a3a3dab0eed14ff8e1464f2c52c69ee782c83d579ad252b85e9"
+    },
+    {
+      "file": "data/countries/spain.json",
+      "sha256": "43e6a4f928162d6a2a4b51adeadcc68c3ecf035d056065e758a356658d186d00"
+    },
+    {
+      "file": "data/countries/united-kingdom.json",
+      "sha256": "dd053194050e70d43eb4340d1cebdda9505c879726ee4e35d814e2e6bffeab91"
+    },
+    {
+      "file": "data/countries/united-states.json",
+      "sha256": "de16bf7f92a8fa858e3c0a59865919fc034be63660741cb6884efb98dff92843"
+    },
+    {
+      "file": "data/countries/venezuela.json",
+      "sha256": "5aee1def2c201f9c17ffe4172bb7e6c439a4f14893bd4ba3609b3682e3b25c9e"
+    },
+    {
+      "file": "data/world/world-map.json",
+      "sha256": "7b4af331cb84b6410804f9b764f0ec41f1a561699a6947873f09956af44cfecc"
+    },
+    {
+      "file": "index.html",
+      "sha256": "edc64c8b72da8c21a96bd1a0f112bd1fb60dc6c5b6b614012f0117e647f1794d"
+    },
+    {
+      "file": "offline-manifest.json",
+      "sha256": "840733ebe1764feba8cfd23103ade41ff58933b51ef754ac1a25b3bd8c364ac6"
+    },
+    {
+      "file": "privacy.html",
+      "sha256": "046671fed1e260a329208d0ea388a1cc6230445f2738fd6ce928570fab47bb5c"
+    },
+    {
+      "file": "sw.js",
+      "sha256": "14d75a3546316a7729e8bcea744c8cf52258f72b4079bd8df8b8c8683263fb61"
+    },
+    {
+      "file": "THIRD-PARTY-NOTICES.txt",
+      "sha256": "3de9b09cd8597aefcad5ec74c254f80263be6301f112a68b328544a4d270232d"
+    }
+  ],
+  "qa": [
+    {
+      "browser": "chromium-1920",
+      "suite": "player-evidence.json",
+      "passed": 10,
+      "base": "http://127.0.0.1:4180"
+    },
+    {
+      "browser": "chromium-1920",
+      "suite": "completion-evidence.json",
+      "passed": 12,
+      "base": "http://127.0.0.1:4180"
+    },
+    {
+      "browser": "chromium-1920",
+      "suite": "player-contrast.json",
+      "screens": 23,
+      "textChecks": 1710,
+      "failures": 0
+    },
+    {
+      "browser": "chromium-1920",
+      "suite": "contrast-evidence.json",
+      "screens": 15,
+      "textChecks": 1517,
+      "failures": 0
+    },
+    {
+      "browser": "firefox-1280",
+      "suite": "player-evidence.json",
+      "passed": 10,
+      "base": "http://127.0.0.1:4180"
+    },
+    {
+      "browser": "firefox-1280",
+      "suite": "completion-evidence.json",
+      "passed": 12,
+      "base": "http://127.0.0.1:4180"
+    },
+    {
+      "browser": "firefox-1280",
+      "suite": "player-contrast.json",
+      "screens": 23,
+      "textChecks": 1710,
+      "failures": 0
+    },
+    {
+      "browser": "firefox-1280",
+      "suite": "contrast-evidence.json",
+      "screens": 15,
+      "textChecks": 1524,
+      "failures": 0
+    }
+  ]
+}

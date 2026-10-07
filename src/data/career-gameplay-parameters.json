@@ -1,0 +1,7 @@
+{
+  "version": "career-agency-v2",
+  "description": "Parámetros ficticios comunes a todos los países; las habilidades relevantes cambian la eficacia de campaña y una bancada aliada estable tiene menor propensión a remover su propio Gobierno.",
+  "campaignBaseEffectiveness": 0.75,
+  "campaignAttributeWeight": 0.02,
+  "governingRemovalBasePercent": 18
+}

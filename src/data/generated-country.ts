@@ -1,3 +1,4 @@
+import worldNames from './world-names.es.json' with { type: 'json' };
 import type { CountryDefinition } from "../domain/types.js";
 import type { WorldActorDefinition } from "../domain/geopolitics-types.js";
 import { countrySchema } from "./schemas.js";
@@ -8,7 +9,7 @@ export function generateExperimentalCountry(actor: WorldActorDefinition, templat
   if (legislature.type !== "bicameral") throw new Error("El generador requiere la plantilla bicameral ficticia.");
   return countrySchema.parse({
     ...template,
-    id: `generated-${actor.id}`, name: `${actor.name} · escenario generado`, experimental: true,
+    id: `generated-${actor.id}`, name: `${(worldNames as Record<string,string>)[actor.id] ?? actor.name} · escenario generado`, experimental: true,
     dataVersion: "generated-institutions-v1-world-snapshot-2026-10-06", startingYear: 2026,
     politicalSystem: { ...template.politicalSystem, legislature: { ...legislature, lowerChamber: { ...legislature.lowerChamber, districtCount: 1, nationalSeats: 0 }, upperChamber: { ...legislature.upperChamber, districtCount: 1, nationalSeats: 0 } } },
     population: actor.population ?? 5e6,

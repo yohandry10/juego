@@ -1,0 +1,19 @@
+{
+  "base": "http://127.0.0.1:4175",
+  "engine": "firefox",
+  "viewport": [
+    1280,
+    720
+  ],
+  "results": [
+    {
+      "scenario": "cross-country-import",
+      "status": "passed",
+      "details": {
+        "crossCountry": true,
+        "reload": true
+      },
+      "errors": []
+    }
+  ]
+}

@@ -7,6 +7,14 @@ import { migrateCareerSave } from "../src/persistence/career-save.js";
 
 const peru = await loadCountry(fileURLToPath(new URL("../data/countries/peru.json", import.meta.url)));
 
+test('chosen raster identity survives save validation and preserves all character and world references', () => {
+  const state = createCareerGame(peru,{seed:'chosen-portrait-save',name:'Lucía QA',age:31,originId:'professional-middle',professionId:'teacher',educationId:'technical',portraitId:27});
+  assert.match(state.player.id,/:portrait:27$/);
+  const restored = migrateCareerSave(JSON.parse(JSON.stringify(state)));
+  assert.deepEqual(restored,state);
+  assert.ok(restored.relationships.every(relation=>relation.characterId===restored.player.id));
+});
+
 test("phase 1 career saves migrate from schema 3 without changing the campaign or generated world", () => {
   const current = createCareerGame(peru, { seed: "migration-v3", name: "Elena Cruz", age: 31, originId: "professional-middle", professionId: "teacher", educationId: "technical" });
   const { government: _government, careerHistory: _history, ...legacyFields } = current;

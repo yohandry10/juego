@@ -1,0 +1,120 @@
+{
+  "limitations": "Colores CSS opacos frente al fondo más próximo; excluye imágenes, SVG y lector de pantalla.",
+  "results": [
+    {
+      "view": "nav-El-periódico",
+      "checked": 41,
+      "failures": []
+    },
+    {
+      "view": "nav-Mesa-de-mapas",
+      "checked": 160,
+      "failures": []
+    },
+    {
+      "view": "nav-La-ventana",
+      "checked": 177,
+      "failures": []
+    },
+    {
+      "view": "nav-El-Congreso",
+      "checked": 36,
+      "failures": []
+    },
+    {
+      "view": "nav-Tu-silla",
+      "checked": 60,
+      "failures": []
+    },
+    {
+      "view": "text-largest-conversation",
+      "checked": 55,
+      "failures": []
+    },
+    {
+      "view": "resume-mexico-from-root",
+      "checked": 38,
+      "failures": []
+    },
+    {
+      "view": "import-mexico-into-peru",
+      "checked": 40,
+      "failures": []
+    },
+    {
+      "view": "nomination-result",
+      "checked": 28,
+      "failures": []
+    },
+    {
+      "view": "election-ceremony",
+      "checked": 46,
+      "failures": []
+    },
+    {
+      "view": "election-result-before-view",
+      "checked": 47,
+      "failures": []
+    },
+    {
+      "view": "election-result-after-view",
+      "checked": 47,
+      "failures": []
+    },
+    {
+      "view": "recorded-vote-ceremony",
+      "checked": 315,
+      "failures": []
+    },
+    {
+      "view": "after-legislative-turn",
+      "checked": 40,
+      "failures": []
+    },
+    {
+      "view": "invalid-import",
+      "checked": 40,
+      "failures": []
+    },
+    {
+      "view": "biography-chapter-1",
+      "checked": 36,
+      "failures": []
+    },
+    {
+      "view": "biography-chapter-2",
+      "checked": 36,
+      "failures": []
+    },
+    {
+      "view": "biography-chapter-3",
+      "checked": 29,
+      "failures": []
+    },
+    {
+      "view": "biography-chapter-4",
+      "checked": 43,
+      "failures": []
+    },
+    {
+      "view": "biography-chapter-5",
+      "checked": 40,
+      "failures": []
+    },
+    {
+      "view": "biography-chapter-6",
+      "checked": 55,
+      "failures": []
+    },
+    {
+      "view": "custom-senate-ironman",
+      "checked": 38,
+      "failures": []
+    },
+    {
+      "view": "country-selector-keyboard-end",
+      "checked": 263,
+      "failures": []
+    }
+  ]
+}

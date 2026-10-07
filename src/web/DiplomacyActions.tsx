@@ -1,13 +1,15 @@
 import type { CareerGameState } from "../domain/career-types.js";
+import { useState } from 'react';
+import { Selector } from './ui/UI.js';
 import { canEnactForeignPolicy, performDiplomaticAction } from "../application/diplomacy-commands.js";
 import copy from "../data/diplomacy-copy.es.json" with { type: "json" };
 
 export function DiplomacyActions({ state, targetId, update }: { state: CareerGameState; targetId: string; update: (state: CareerGameState) => void }) {
   const official = canEnactForeignPolicy(state);
+  const [selected, setSelected] = useState<keyof typeof copy.choices>('visit');
   return <>
-    <p>{copy.influence}</p>
-    {!official && <p>{copy.officialOnly}</p>}
-    <div className="decision-card-grid">{(Object.keys(copy.choices) as (keyof typeof copy.choices)[]).map((kind) => {
+    <label>Qué propondrás<Selector aria-label="Acción diplomática" value={selected} onChange={event => setSelected(event.target.value as typeof selected)}>{Object.entries(copy.choices).map(([id,choice])=><option key={id} value={id}>{choice.label}</option>)}</Selector></label>
+    <div className="diplomatic-choice">{[selected].map((kind) => {
       const choice = copy.choices[kind];
       const governmentRequired = ["sanction", "aid", "recognition"].includes(kind);
       const reason = targetId === state.geopolitics.playerCountryId ? "Elige otro país."
@@ -20,6 +22,6 @@ export function DiplomacyActions({ state, targetId, update }: { state: CareerGam
         <button disabled={Boolean(reason)} onClick={() => update(performDiplomaticAction(state, targetId, kind))}>{choice.label}</button>
         {reason && <p className="decision-unavailable">{reason}</p>}
       </article>;
-    })}</div>
+    })}</div><details><summary>Tu autoridad y la influencia</summary><p>{copy.influence}</p>{!official && <p>{copy.officialOnly}</p>}</details>
   </>;
 }

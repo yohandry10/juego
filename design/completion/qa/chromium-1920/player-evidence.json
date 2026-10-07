@@ -1,0 +1,130 @@
+{
+  "base": "http://127.0.0.1:4180",
+  "engine": "chromium",
+  "viewport": [
+    1920,
+    1080
+  ],
+  "results": [
+    {
+      "scenario": "navigation",
+      "status": "passed",
+      "details": {
+        "visited": [
+          {
+            "zone": "El periódico:",
+            "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n100k\nFavores\n0\nImagen\n—\nOrganizar campaña\n← Volver al despacho\nPrensa\nEDICIÓN FICTICIA · 2026 · T1\nLa República de Papel\n\nEl poder pasa. La hemeroteca queda.\n\nLA EDICIÓN DE APERTURA\nAlex Ríos entra en campaña\nIlustración editorial ficticia. Los hechos de la nota proceden de tu partida.\n\nPerú. La candidatura para Diputación está en la semana 1 de 4. Alianza Renovadora tiene un respaldo inicial de 32.0%. La nominación sigue pendiente. Quedan "
+          },
+          {
+            "zone": "Mesa de mapas:",
+            "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n100k\nFavores\n0\nImagen\n—\nOrganizar campaña\n← Volver al despacho\nMundo\nLA MESA DE RELACIONES EXTERIORES\nEl país no decide solo.\nPaís o actor\nEstados Unidos · USA\nCapa del mapa\nBloques y alineamientos\n\nEl mundo avanza al cerrar el trimestre de tu carrera, junto con economía y gobierno.\n\nN\n✦\nElige un país · acerca para explorar\nREUNIÓN SOBRE Estados Unidos\nEstados Unidos\n\nConfianza 36/100 · tensión 19/100. Cada compromiso puede acercarnos o lim"
+          },
+          {
+            "zone": "La ventana:",
+            "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n100k\nFavores\n0\nImagen\n—\nOrganizar campaña\n← Volver al despacho\nEconomía\nEL INFORME ECONÓMICO · Perú\nLas cuentas tienen consecuencias.\nTU ASESORA ECONÓMICA\nTener margen hoy nos permite prepararnos para mañana.\n\nLee el país al que aspiras a gobernar. Las medidas estarán disponibles cuando dirijas un Gobierno.\n\nUNA PROPUESTA SOBRE TU MESA · TRIMESTRE 0\nACTIVIDAD ECONÓMICA\n3.3%\nSUBIDA DE PRECIOS\n2%\nPERSONAS SIN EMPLEO\n5.1%\nPERSONAS EN POBREZA\n2"
+          },
+          {
+            "zone": "El Congreso:",
+            "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n100k\nFavores\n0\nImagen\n—\nOrganizar campaña\n← Volver al despacho\nCongreso\nEL CONGRESO · 130 REPRESENTANTES\nCada voto tiene un nombre.\nCámara baja\nBuscar a un representante\n130\nVOCES EN LA CÁMARA\nAlianza Renovadora\nAlianza del Progreso\nFrente Federal\nPartido Democrático\nUnión Nacional\nÚLTIMA SESIÓN\nLas bancadas miden sus fuerzas.\n\nConoce a los representantes. Una conversación puede cambiar la siguiente sesión.\n\nMANDATO · Ficción política y sát"
+          },
+          {
+            "zone": "Tu silla:",
+            "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n100k\nFavores\n0\nImagen\n—\nOrganizar campaña\n← Volver al despacho\nPerú · Diputación\n\nLa calle tiene la última palabra.\n\nQUIEN PIDE LA CONFIANZA\nAlex Ríos\n\n30 años · Perú\n\nSEMANA 1 DE 4\nMi expediente →\nEl primer apoyo\nse gana en persona.\n\nHay puertas que aún no se abren. Tu equipo espera una decisión.\n\n2 acciones disponibles · fondos 100k · respaldo personal 3.0%\n\n1\nRecorrer el distrito\nEscucha a tus votantes antes de pedirles su confianza.\n−3k"
+          }
+        ],
+        "textPreferencePersisted": true
+      },
+      "errors": []
+    },
+    {
+      "scenario": "country-resume",
+      "status": "passed",
+      "details": {
+        "country": "mexico",
+        "sameSeed": true
+      },
+      "errors": []
+    },
+    {
+      "scenario": "cross-country-import",
+      "status": "passed",
+      "details": {
+        "crossCountry": true,
+        "reload": true
+      },
+      "errors": []
+    },
+    {
+      "scenario": "campaign-election",
+      "status": "passed",
+      "details": {
+        "campaignCompleted": true,
+        "elected": true,
+        "nextStage": "legislature",
+        "initialFunds": 100,
+        "finalFunds": 48
+      },
+      "errors": []
+    },
+    {
+      "scenario": "explicit-new-country",
+      "status": "passed",
+      "details": {
+        "previous": "mexico",
+        "new": "germany",
+        "foreignSetupCleared": true
+      },
+      "errors": []
+    },
+    {
+      "scenario": "generated-resume",
+      "status": "passed",
+      "details": {
+        "generatedSaveRestored": true
+      },
+      "errors": []
+    },
+    {
+      "scenario": "invalid-import",
+      "status": "passed",
+      "details": {
+        "rejected": true,
+        "originalPreserved": true
+      },
+      "errors": []
+    },
+    {
+      "scenario": "custom-character",
+      "status": "passed",
+      "details": {
+        "sixSteps": true,
+        "ageValidation": true,
+        "attributePool": 70,
+        "ironmanImportBlocked": true,
+        "newCareerCancelPreserved": true
+      },
+      "errors": []
+    },
+    {
+      "scenario": "map-country-selector",
+      "status": "passed",
+      "details": {
+        "countrySearch": true,
+        "keyboardOptionVisible": true,
+        "zoomReset": true
+      },
+      "errors": []
+    },
+    {
+      "scenario": "diplomacy-archive",
+      "status": "passed",
+      "details": {
+        "officialActionsBlockedAsCandidate": true,
+        "visitConsumesInfluence": true,
+        "resolvedArchiveReadable": true,
+        "diarySearch": true
+      },
+      "errors": []
+    }
+  ]
+}

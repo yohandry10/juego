@@ -4,3 +4,8 @@ coverage/
 *.log
 __pycache__/
 *.pyc
+
+release/
+design/completion/fixtures/*.json
+!design/completion/fixtures/manifest.json
+design/completion/qa/**/failed-*.png

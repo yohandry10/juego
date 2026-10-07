@@ -1,6 +1,6 @@
 # MANDATO · Etapa A · ficha de estilo
 
-Estado: propuesta pendiente de aprobación del usuario. No se integra todavía en la aplicación.
+Estado: ficha histórica, sustituida el 7 de octubre de 2026 por [realismo político cinematográfico](../vertical-slice/README.md). El párrafo siguiente documenta el origen de los assets existentes; no es el brief vigente para nuevas generaciones.
 
 ## Párrafo fijo para todas las generaciones
 

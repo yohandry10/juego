@@ -1,0 +1,66 @@
+[
+  {
+    "file": "periodico-1920.png",
+    "source": "design\\completion\\qa\\chromium-1920\\nav-El-periódico.png",
+    "sha256": "7fab1d7511a7540ac1645fae2802d82f792301b9ed74f55e2643bfea4928b246",
+    "browser": "chromium-1920",
+    "base": "http://127.0.0.1:5174",
+    "continuity": "Partidas aisladas. No inferir continuidad de cifras entre capturas."
+  },
+  {
+    "file": "campana-1920.png",
+    "source": "design\\completion\\qa\\chromium-1920\\full-role-national-campaign.png",
+    "sha256": "78d6f2fefa6bc32ab48d11a3e71b2c2b2c36de66d1a01a75acf05cdfd9ca20fe",
+    "browser": "chromium-1920",
+    "base": "http://127.0.0.1:5174",
+    "continuity": "Partidas aisladas. No inferir continuidad de cifras entre capturas."
+  },
+  {
+    "file": "votacion-1920.png",
+    "source": "design\\completion\\qa\\chromium-1920\\full-role-vote.png",
+    "sha256": "bb691478f044e05ed069c4900c693dfb360bb4cd75d6247281602ae2807f2c95",
+    "browser": "chromium-1920",
+    "base": "http://127.0.0.1:5174",
+    "continuity": "Partidas aisladas. No inferir continuidad de cifras entre capturas."
+  },
+  {
+    "file": "economia-1920.png",
+    "source": "design\\completion\\qa\\chromium-1920\\full-role-government-economy.png",
+    "sha256": "04002d99de1d2b889d9b23522f98f6da52696a64c912f4e57a8c7f9bed3a73af",
+    "browser": "chromium-1920",
+    "base": "http://127.0.0.1:5174",
+    "continuity": "Partidas aisladas. No inferir continuidad de cifras entre capturas."
+  },
+  {
+    "file": "legado-1920.png",
+    "source": "design\\completion\\qa\\chromium-1920\\full-role-legacy.png",
+    "sha256": "63d37698f4b3df32d24d0597851a9d74377448838076d74bd2f6a0dd7b6eef03",
+    "browser": "chromium-1920",
+    "base": "http://127.0.0.1:5174",
+    "continuity": "Partidas aisladas. No inferir continuidad de cifras entre capturas."
+  },
+  {
+    "file": "economia-1280.png",
+    "source": "design\\completion\\qa\\firefox-1280\\full-role-government-economy.png",
+    "sha256": "cbbb353b09e1d721969de51c0906936baad74825f415d99f3308a8c958e1a55f",
+    "browser": "firefox-1280",
+    "base": "http://127.0.0.1:5174",
+    "continuity": "Partidas aisladas. No inferir continuidad de cifras entre capturas."
+  },
+  {
+    "file": "campana-1280.png",
+    "source": "design\\completion\\qa\\firefox-1280\\full-role-national-campaign.png",
+    "sha256": "20eff76ad91379e4e4c1d00b84d14a7f095009d7b560b52246b1fb88fca510d3",
+    "browser": "firefox-1280",
+    "base": "http://127.0.0.1:5174",
+    "continuity": "Partidas aisladas. No inferir continuidad de cifras entre capturas."
+  },
+  {
+    "file": "votacion-1280.png",
+    "source": "design\\completion\\qa\\firefox-1280\\full-role-vote.png",
+    "sha256": "a131a41a1b91fb6d2d2f56c152981d77637322fab83e9c5b0c92e7896e212292",
+    "browser": "firefox-1280",
+    "base": "http://127.0.0.1:5174",
+    "continuity": "Partidas aisladas. No inferir continuidad de cifras entre capturas."
+  }
+]

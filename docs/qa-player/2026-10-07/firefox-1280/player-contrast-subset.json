@@ -1,0 +1,10 @@
+{
+  "limitations": "Colores CSS opacos frente al fondo más próximo; excluye imágenes, SVG y lector de pantalla.",
+  "results": [
+    {
+      "view": "import-mexico-into-peru",
+      "checked": 40,
+      "failures": []
+    }
+  ]
+}

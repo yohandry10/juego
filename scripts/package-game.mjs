@@ -1,0 +1,15 @@
+import { cp,mkdir,readFile,writeFile,rm } from 'node:fs/promises';
+import { resolve,relative,isAbsolute } from 'node:path';
+const releaseRoot=resolve('release');const out=resolve(releaseRoot,'MANDATO-PC');
+const target=resolve(out,'game');const within=relative(releaseRoot,target);
+if(!within||within.startsWith('..')||isAbsolute(within))throw new Error('Destino fuera de release');
+await mkdir(out,{recursive:true});
+const prior=JSON.parse(await readFile(`${out}/VERSION.json`,'utf8').catch(()=>'{"game":null}'));
+if(prior.game==='MANDATO')await rm(target,{recursive:true,force:true});
+await cp('dist',`${out}/game`,{recursive:true});
+await cp('scripts/serve-game.mjs',`${out}/serve-game.mjs`);
+await writeFile(`${out}/Jugar MANDATO.cmd`,'@echo off\r\ncd /d "%~dp0"\r\nwhere node >nul 2>nul\r\nif errorlevel 1 (\r\n echo MANDATO necesita Node.js 22 o posterior. Instala Node.js y vuelve a abrir este archivo.\r\n pause\r\n exit /b 1\r\n)\r\nstart "" "http://127.0.0.1:4180/"\r\nnode serve-game.mjs 4180\r\npause\r\n');
+await writeFile(`${out}/LEEME.txt`,'MANDATO · versión de PC\n\nExtrae toda la carpeta. En Windows abre Jugar MANDATO.cmd.\nNecesita Node.js 22 o posterior y un navegador actual. El juego no necesita npm ni descargar dependencias.\n\nSi la primera pestaña abre antes de que arranque el servidor, recárgala. Conserva abierta la ventana de MANDATO mientras juegas.\nUsa siempre http://127.0.0.1:4180/ y el mismo navegador: allí se conserva tu guardado automático. Opciones permite exportar una copia JSON.\nEl sonido empieza desactivado; actívalo en Opciones. Ratón, teclado, Escape para cerrar, tamaños de texto y reducción de movimiento disponibles.\n\nEl juego funciona localmente y sus recursos quedan disponibles sin red. Las cifras son reglas de una ficción política, no predicciones ni contratos oficiales. Créditos y privacidad están dentro del juego.\n');
+const manifest=JSON.parse(await readFile('dist/offline-manifest.json','utf8').catch(()=>'{"files":[]}'));
+await writeFile(`${out}/VERSION.json`,JSON.stringify({version:'1.0.0-rc.1',builtOn:new Date().toISOString().slice(0,10),assetFiles:manifest.files?.length??null,game:'MANDATO',platform:'PC · navegador local'},null,2));
+console.log(`Paquete listo: ${out}`);

@@ -1,0 +1,10 @@
+{
+  "url": "http://127.0.0.1:4180/",
+  "status": "passed",
+  "portraitsCached": 46,
+  "scenesCached": 27,
+  "offlineDecision": true,
+  "restoredFunds": 97,
+  "rasterFailureUsesPlaceholder": true,
+  "consoleErrors": []
+}

@@ -1,0 +1,64 @@
+{
+  "base": "http://127.0.0.1:5174",
+  "results": [
+    {
+      "scenario": "navigation",
+      "status": "passed",
+      "details": {
+        "visited": [
+          {
+            "zone": "El periódico:",
+            "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n100k\nFavores\n0\nImagen\n—\nOrganizar campaña\n← Volver al despacho\nPrensa\nEDICIÓN FICTICIA · 2026 · T1\nLa República de Papel\n\nEl poder pasa. La hemeroteca queda.\n\nTu primera decisión será la primera noticia.\n\nMANDATO · Ficción política y sátira; personajes y partidos generados · Guardado solo en este dispositivo ·\nSalón de la fama\nPrivacidad\nCréditos y fuentes\nReportar un error ↗"
+          },
+          {
+            "zone": "Mesa de mapas:",
+            "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n100k\nFavores\n0\nImagen\n—\nOrganizar campaña\n← Volver al despacho\nMundo\nRELACIONES EXTERIORES\nRelaciones con otros países\n\nElige con quién colaborar y cuándo poner límites. Mejorar una relación puede abrir oportunidades; presionar a otro país también puede perjudicar al tuyo.\n\nPaís o actor\nUnited States · USA\nCapa del mapa\nBloques y alineamientos\n\nEl mundo avanza al cerrar el trimestre de tu carrera, junto con economía y gobierno.\n\nN\n✦\nElige u"
+          },
+          {
+            "zone": "La ventana:",
+            "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n100k\nFavores\n0\nImagen\n—\nOrganizar campaña\n← Volver al despacho\nEconomía\nECONOMÍA\nEmpleo, precios y bienestar\n\nTus decisiones cambian la vida de la gente. Una medida puede ayudar a un grupo y perjudicar a otro. Revisa el costo y los riesgos antes de elegir; algunos resultados tardan varios trimestres.\n\nACTIVIDAD ECONÓMICA\n3.3%\n\nSi sube, el país produce más. Eso puede abrir oportunidades de empleo.\n\n¿Por qué cambió?\nSUBIDA DE PRECIOS\n2%\n\nCuan"
+          },
+          {
+            "zone": "El Congreso:",
+            "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n100k\nFavores\n0\nImagen\n—\nOrganizar campaña\n← Volver al despacho\nCongreso\nEL CONGRESO · 130 REPRESENTANTES\nCada voto tiene un nombre.\nCámara baja\nBuscar a un representante\n130\nVOCES EN LA CÁMARA\nPacto Cívico\nPartido Federal\nFrente Democrático\nPartido Popular\nMovimiento del Progreso\nÚLTIMA SESIÓN\nLas bancadas miden sus fuerzas.\n\nConoce a los representantes. Una conversación puede cambiar la siguiente sesión.\n\nMANDATO · Ficción política y sátir"
+          },
+          {
+            "zone": "Tu silla:",
+            "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n100k\nFavores\n0\nImagen\n—\nOrganizar campaña\n← Volver al despacho\nTU AGENDA · Diputación\nEl primer apoyo es el más difícil.\nAbrir mi expediente →\nAlex Ríos\n\nSemana 1 de 4\n\n2 acciones\n3.0% preferencia\n¿DÓNDE PONES TU TIEMPO?\nSal a buscar apoyo.\n\nDos acciones por semana. Elige a quién escuchar y qué estás dispuesto a prometer.\n\nRecorrer el distrito\nEscucha a tus votantes\n−3k · 1 acción\nOrganizar un mitin\nHazte visible\n−12k · 1 acción\nDar una ent"
+          }
+        ],
+        "textPreferencePersisted": true
+      },
+      "errors": []
+    },
+    {
+      "scenario": "country-resume",
+      "status": "passed",
+      "details": {
+        "country": "mexico",
+        "sameSeed": true
+      },
+      "errors": []
+    },
+    {
+      "scenario": "cross-country-import",
+      "status": "passed",
+      "details": {
+        "crossCountry": true,
+        "reload": true
+      },
+      "errors": []
+    },
+    {
+      "scenario": "campaign-election",
+      "status": "passed",
+      "details": {
+        "campaignCompleted": true,
+        "elected": true,
+        "initialFunds": 100,
+        "finalFunds": 48
+      },
+      "errors": []
+    }
+  ]
+}

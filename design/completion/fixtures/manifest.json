@@ -1,0 +1,89 @@
+{
+  "protocol": "Todos los estados proceden de comandos reales. Campañas, votos y trimestres; no se modificaron indicadores, votos, cargos ni recursos para fabricar resultados.",
+  "fixtures": [
+    {
+      "file": "campaign-national",
+      "seed": "completion-national-campaign",
+      "stage": "campaign",
+      "country": "peru",
+      "turn": 0
+    },
+    {
+      "file": "campaign-hegemony",
+      "seed": "completion-hegemony-campaign",
+      "stage": "campaign",
+      "country": "peru",
+      "turn": 0
+    },
+    {
+      "file": "hegemony",
+      "seed": "completion-hegemony-campaign",
+      "stage": "executive",
+      "country": "peru",
+      "turn": 12
+    },
+    {
+      "file": "legislature",
+      "seed": "completion-legislature-1",
+      "stage": "legislature",
+      "country": "peru",
+      "turn": 12
+    },
+    {
+      "file": "term-summary",
+      "seed": "completion-legislature-1",
+      "stage": "term-summary",
+      "country": "peru",
+      "turn": 52
+    },
+    {
+      "file": "legacy",
+      "seed": "completion-legislature-1",
+      "stage": "legacy",
+      "country": "peru",
+      "turn": 52
+    },
+    {
+      "file": "party-leadership",
+      "seed": "completion-legislature-1",
+      "stage": "party-leadership",
+      "country": "peru",
+      "turn": 66
+    },
+    {
+      "file": "minister",
+      "seed": "completion-legislature-1",
+      "stage": "minister",
+      "country": "peru",
+      "turn": 66
+    },
+    {
+      "file": "executive",
+      "seed": "completion-executive-0",
+      "stage": "executive",
+      "country": "peru",
+      "turn": 12
+    },
+    {
+      "file": "challenge",
+      "seed": "completion-executive-0",
+      "stage": "executive",
+      "country": "peru",
+      "turn": 12
+    },
+    {
+      "file": "investiture",
+      "seed": "completion-investiture-1",
+      "stage": "legislature",
+      "country": "spain",
+      "turn": 12
+    },
+    {
+      "file": "investiture-result",
+      "seed": "completion-investiture-1",
+      "stage": "legislature",
+      "country": "spain",
+      "turn": 12
+    }
+  ]
+}

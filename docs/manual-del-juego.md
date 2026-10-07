@@ -6,9 +6,9 @@ Juego político para PC y una persona, con ratón y teclado. No necesitas conoci
 
 Elige país y variante. Hay diez perfiles nacionales y escenarios generados; estos últimos usan instituciones y sociedad explícitamente ficticias. La variante constitucional es la predeterminada, también en Venezuela. La variante hegemónica es una experiencia hipotética opcional, independiente del régimen real.
 
-El creador tiene seis pasos: nombre/origen/cargo/circunscripción; profesión/formación; ideología; dos o tres rasgos; atributos; edad/partido/semilla/realismo/Ironman. La misma semilla y versiones reproducen el escenario. Los tres realismos modifican rivales e información, sin regalar recursos. Ironman conserva el guardado automático y bloquea importación.
+Elige **Elegir mi cargo** y selecciona una candidatura. **Escribir mi biografía** abre seis capítulos: origen; profesión; formación; convicciones; dos o tres rasgos; nombre, edad y habilidades. El último capítulo permite escoger entre 40 rostros, partido, distrito, semilla, realismo e Ironman. Las siete habilidades comparten 70 puntos. La misma semilla y versiones reproducen el escenario. Los tres realismos modifican rivales e información, sin regalar recursos. Ironman conserva el guardado automático y bloquea importación.
 
-Para entrar directamente, pulsa **Jugar ahora** en el primer paso. Usa un personaje preparado y conserva tu elección de país, cargo y origen. Si dejas el nombre vacío, jugarás como Alex Ríos. Personalizar es opcional; una nueva carrera vuelve al primer paso.
+Para entrar directamente, pulsa **Entrar al juego** tras elegir cargo. Usa un personaje preparado y conserva tu elección de país y cargo. Si dejas el nombre vacío, jugarás como Alex Ríos. Personalizar es opcional. **Nueva carrera** abre otra creación; en Ironman requiere confirmar el reemplazo del guardado.
 
 ## Campaña y acceso
 
@@ -54,26 +54,27 @@ Pedir apoyo económico cuesta 7 de influencia. Una solicitud aprobada abre cuatr
 
 Un Gobierno ejecutivo puede solicitar autorización de conflicto con 12 de capital y voto abstracto de coalición/lealtad. La guerra agrupa tierra/mar/aire con moral, logística y ubicación por país; avanza varios trimestres, causa daños y termina con una explicación. Proxy, híbrido, bloqueo e insurgencia tienen consecuencias distintas. Posguerra muestra daño, desplazamiento, insurgencia y reparación como índices de juego que afectan presión interna, estabilidad, lealtad y transferencias. La ayuda civil puede reducir daños con costo para el donante. No hay uso nuclear ni combate táctico.
 
-## Pestañas
+## Tu despacho
 
-| Pestaña | Uso |
+| Lugar | Uso |
 | --- | --- |
-| 01 Carrera | Campaña, cargo, recursos, riesgo y decisiones. |
-| 02 Bandeja | Decisiones pendientes/resueltas, búsqueda y diario por páginas. |
-| 03 Congreso | Representantes ficticios, bancadas, negociación y votos. |
-| 04 Prensa | Titulares satíricos de sucesos del estado. |
-| 05 Economía | Indicadores, sectores, políticas y causas. |
-| 06 Mundo | Mapa, actores, organismos y diplomacia. |
-| 07 País | Instituciones, versión, fuentes y supuestos. |
-| 08 Ayuda | Primeros diez minutos, glosario y texto. |
+| Tu silla | Campaña, cargo, recursos, riesgo y decisiones. |
+| Expedientes y teléfono | Asuntos y personas; decisión, consecuencia y regreso. Archivo y diario con búsqueda. |
+| El Congreso | Representantes ficticios, bancadas, negociación y votos nominales. |
+| El periódico | Titulares de acontecimientos registrados en tu partida. |
+| La ventana | Informe económico, políticas, sectores y causas. |
+| Mesa de mapas | Actores, relaciones, organismos y diplomacia. |
+| País y Ayuda, desde el selector de pantalla | Instituciones, fuentes, primeros diez minutos y glosario. |
 
 ## Retiro, legado y guardado
 
-Retirarte produce diez arquetipos posibles, estadísticas, texto y tarjeta copiable. El salón del pie conserva hasta cincuenta resúmenes locales; Escape cierra el diálogo. Las reevaluaciones a 5/15/30 años son fórmulas, no una historia posterior completa. Hay opciones de retorno y sucesión.
+Retirarte abre tu libro de legado: diez arquetipos posibles, cinco dimensiones, hitos registrados y una tarjeta descargable PNG de 1200×675, además de texto copiable. El salón conserva hasta cincuenta resúmenes locales; Escape cierra el diálogo. Las lecturas a 5/15/30 años son proyecciones, no una historia posterior simulada. Puedes volver a campaña cuando la carrera lo permite o respaldar a un sucesor pagando el costo indicado.
 
-IndexedDB conserva la partida v15. Guardados v3–v14 migran preservando la carrera; importar/exportar usa JSON, salvo importación bloqueada en Ironman. Los botones de importación y exportación están en la barra lateral de PC. El salón también es local. El sitio no necesita cuentas ni envía deliberadamente la partida; alojamiento y enlaces externos tienen sus propias condiciones. Borrar datos del sitio elimina guardado, salón y preferencias.
+IndexedDB conserva la partida v15. Guardados v3–v14 migran preservando la carrera; importar/exportar usa JSON, salvo importación bloqueada en Ironman. Abre «Opciones del juego» en el HUD para importar o exportar; también puedes importar desde la pantalla inicial. Al abrir la dirección principal sin un país explícito, se recupera la carrera guardada y su país. Una importación válida carga el perfil del país de esa partida. El salón también es local. El sitio no necesita cuentas ni envía deliberadamente la partida; alojamiento y enlaces externos tienen sus propias condiciones. Borrar datos del sitio elimina guardado, salón y preferencias.
 
-En producción, tras la primera carga completa, se almacenan los diez perfiles, módulos, mapa, privacidad, créditos y licencias para jugar sin conexión; los escenarios generados se construyen desde ese material. La pestaña Ayuda ajusta texto y ofrece checklist. El tamaño elegido se mantiene al cambiar de pantalla y al volver a abrir el juego. Hay foco de teclado y reducción de movimiento. Las pruebas automáticas cubren Chromium/Firefox y PC; no sustituyen lectores de pantalla ni sesiones con personas.
+En producción, tras la primera carga completa, se almacenan perfiles, módulos, mapa, fotografías, ilustraciones, fuentes, privacidad y créditos para jugar sin conexión; los escenarios generados se construyen desde ese material. El paquete PC se abre con **Jugar MANDATO.cmd**, requiere Node.js 22 o posterior y usa `http://127.0.0.1:4180/`. No necesita npm. Mantén abierta su ventana mientras juegas y exporta una copia antes de cambiar de navegador o dirección.
+
+Opciones permite activar lluvia, música y señales originales y ajustar el volumen; comienzan desactivados. También permite reducir movimiento. Ayuda ajusta texto y ofrece checklist. El tamaño elegido persiste. Tab mueve el foco, Enter activa y Escape cierra conversaciones y diálogos. Las pruebas cubren Chromium/Firefox en PC; no sustituyen lectores de pantalla ni sesiones con personas.
 
 ## Países y límites
 
@@ -81,4 +82,4 @@ Perú, España, Francia, Alemania, EE.UU., Reino Unido, Brasil, México, Argenti
 
 Venezuela: presidencia seis años, reelección sin límite tras Enmienda N.º 1 de 2009; Asamblea unicameral de 285 escaños/cinco años. Se representa una elección territorial agregada. La proyección histórica del WEO octubre 2025 para inflación 2026 es 682,1%; el motor limita el indicador a 100%. No la presenta como inflación observada ni activa una variante hegemónica por defecto.
 
-Economía y sociedad incluyen sectores, deuda, pobreza, desigualdad, distribuciones y expectativas de balance. Los generados utilizan una plantilla institucional común ficticia, aunque sus magnitudes disponibles de WDI están identificadas. Consulta País para distinguir cada origen. [Informes de Fase 4](phase-4-report.md), [Fase 5](phase-5-report.md) e [informe final de avance](final-report.md) enumeran lo pendiente. El juego completo sigue sin cumplir todos los criterios obligatorios.
+Economía y sociedad incluyen sectores, deuda, pobreza, desigualdad, distribuciones y expectativas. Los generados utilizan una plantilla institucional común ficticia, aunque sus magnitudes disponibles de WDI están identificadas. Consulta País para distinguir cada origen. [El informe de esta entrega](completion-report.md) registra la implementación y sus límites; los informes de fases anteriores describen cortes históricos. La experiencia de carrera está implementada hasta el legado, pero no se presenta como auditoría constitucional exhaustiva ni producto validado con nuevos jugadores humanos.

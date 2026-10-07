@@ -84,11 +84,11 @@
     {
       "id": "portrait-runtime",
       "category": "portrait",
-      "status": "procedural",
+      "status": "DEV FALLBACK",
       "sourceFile": "src/web/ui/portraits.ts",
       "date": "2026-10-07",
       "author": "Código original de MANDATO",
-      "description": "Identidad estable, edades, tonos, peinados, gafas y ropa variados; 24 ejemplos en UI kit"
+      "description": "SVG conservado para pruebas históricas; no se usa en la UI de producción"
     },
     {
       "id": "decision-art-runtime",
@@ -110,22 +110,1312 @@
       "source": "lucide-react, versión fijada en package-lock.json"
     },
     {
-      "id": "national-office",
-      "category": "office",
-      "status": "pendiente",
-      "description": "Se usa el despacho base con enganche por cargo; la segunda composición no está creada."
-    },
-    {
       "id": "ai-portrait-pack",
       "category": "portrait",
-      "status": "pendiente",
-      "description": "40 retratos ilustrados de IA; sustituidos provisionalmente por retratos procedurales."
+      "status": "integrada",
+      "description": "Seis asesores y 24 personajes raster aportados por el usuario"
     },
     {
       "id": "ai-event-pack",
       "category": "event",
       "status": "pendiente",
       "description": "24 cartas de IA; composiciones procedurales provisionales por categoría."
+    },
+    {
+      "id": "advisor-politics",
+      "file": "/assets/portraits/advisor-politics.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/advisors.png",
+      "crop": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "6339c3179af4781e8936483d5ce5f6ade9e2fcb1f7d8208e4f6debea0771a42b"
+    },
+    {
+      "id": "advisor-economy",
+      "file": "/assets/portraits/advisor-economy.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/advisors.png",
+      "crop": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "f85c8c5d5dfbafdab57544943e2ce7cc37dc80e90eadfbe01cad13c133a572af"
+    },
+    {
+      "id": "advisor-campaign",
+      "file": "/assets/portraits/advisor-campaign.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/advisors.png",
+      "crop": [
+        1024,
+        0,
+        1536,
+        512
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "9a10cc5f14f05a23613efa892e89d9d4cef0781f21a29432a7d1cffc71e6bdb2"
+    },
+    {
+      "id": "advisor-cabinet",
+      "file": "/assets/portraits/advisor-cabinet.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/advisors.png",
+      "crop": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "e9da610b1cc74b5f5900a1dd98b41c17ddee3e69bab61b2e19720e0e97b4bf80"
+    },
+    {
+      "id": "advisor-security",
+      "file": "/assets/portraits/advisor-security.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/advisors.png",
+      "crop": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "60c453d5883c6f96bd80e996c90a63d575de19484ef5455f30a836d2fc97c47b"
+    },
+    {
+      "id": "advisor-press",
+      "file": "/assets/portraits/advisor-press.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/advisors.png",
+      "crop": [
+        1024,
+        512,
+        1536,
+        1024
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "e79866c0e89cc6634ccf9953955a3e11528de4b2a93c313fdf55c73082157e95"
+    },
+    {
+      "id": "character-00",
+      "file": "/assets/portraits/character-00.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        0,
+        0,
+        256,
+        256
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "1fe3eacf2220f8a8bf86813b9c3376feac2a630cdf49f9cda23c66b0e95d43ed"
+    },
+    {
+      "id": "character-01",
+      "file": "/assets/portraits/character-01.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        256,
+        0,
+        512,
+        256
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "cd53e6feb973148daca8754125cbaeba4aa7addd8052461b23b29059fed05794"
+    },
+    {
+      "id": "character-02",
+      "file": "/assets/portraits/character-02.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        512,
+        0,
+        768,
+        256
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "df44246cb12c98165f80235128009ceb72afed7d01b993e8b1b6f0dcb43e988a"
+    },
+    {
+      "id": "character-03",
+      "file": "/assets/portraits/character-03.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        768,
+        0,
+        1024,
+        256
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "da22898de6dd0513a52e88536e3db6f99f9b33a009963723b9d47b5d8d46e45b"
+    },
+    {
+      "id": "character-04",
+      "file": "/assets/portraits/character-04.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        1024,
+        0,
+        1280,
+        256
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "baeed0a3a6882d4c4f328ae7ed8805ed46213cbb7d07d10af1f7bc1c65982404"
+    },
+    {
+      "id": "character-05",
+      "file": "/assets/portraits/character-05.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        1280,
+        0,
+        1536,
+        256
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "cf8cb920355954d120b22b8290868909903654530af68388f551e1b7e63fd47d"
+    },
+    {
+      "id": "character-06",
+      "file": "/assets/portraits/character-06.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        0,
+        256,
+        256,
+        512
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "72b8d6bd8c5f894fc69198c9dbab986205837e1307a5d782f7ef70822d9676ce"
+    },
+    {
+      "id": "character-07",
+      "file": "/assets/portraits/character-07.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        256,
+        256,
+        512,
+        512
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "4beac2cbd5bebd85153397bbf2aba35619b280d4a35748dbaf201621a5c1af36"
+    },
+    {
+      "id": "character-08",
+      "file": "/assets/portraits/character-08.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        512,
+        256,
+        768,
+        512
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "6ec3330f46d309ba526deb5668dba2819da45b36729897c264f61b80ea8323aa"
+    },
+    {
+      "id": "character-09",
+      "file": "/assets/portraits/character-09.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        768,
+        256,
+        1024,
+        512
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "4ffb2d953106a273472189c7462bfd277139cacc3f4078241f3ab738fe5366da"
+    },
+    {
+      "id": "character-10",
+      "file": "/assets/portraits/character-10.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        1024,
+        256,
+        1280,
+        512
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "78ccb10b24a877a90b3a4e61db69a8edbad17dc91dbbe70bd5bdde9976bfa663"
+    },
+    {
+      "id": "character-11",
+      "file": "/assets/portraits/character-11.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        1280,
+        256,
+        1536,
+        512
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "558a21be9cd320619f25d141e1bb727ee7fd16741b906486867c42d381bef29d"
+    },
+    {
+      "id": "character-12",
+      "file": "/assets/portraits/character-12.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        0,
+        512,
+        256,
+        768
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "afa0c893cab499054a23835f9d771e9ba00883d07237e12fa1ce1555cd9a7a41"
+    },
+    {
+      "id": "character-13",
+      "file": "/assets/portraits/character-13.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        256,
+        512,
+        512,
+        768
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "54d47539c91032b879152194222e6dfdd650f723eb5283d8e934ce8b9d0d4821"
+    },
+    {
+      "id": "character-14",
+      "file": "/assets/portraits/character-14.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        512,
+        512,
+        768,
+        768
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "b4e378007267690c533087a9e8693164b9c11295bdc3b165c68a649ae5a85be5"
+    },
+    {
+      "id": "character-15",
+      "file": "/assets/portraits/character-15.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        768,
+        512,
+        1024,
+        768
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "e6c0dc85f818c29d1e6bdb9c0f5f09b6230ff373cea2e1bf3b72439bc4a30704"
+    },
+    {
+      "id": "character-16",
+      "file": "/assets/portraits/character-16.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        1024,
+        512,
+        1280,
+        768
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "2c5070bc1d9be75cbd02e0882c2ed4637e7d4c89b89fac801397a190c1841154"
+    },
+    {
+      "id": "character-17",
+      "file": "/assets/portraits/character-17.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        1280,
+        512,
+        1536,
+        768
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "09bb0021784393b6966902aab2951e8bc7f2925ad10bc55e0ab9a561240731f3"
+    },
+    {
+      "id": "character-18",
+      "file": "/assets/portraits/character-18.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        0,
+        768,
+        256,
+        1024
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "d69ae61e18af03275abdab37f7bac3ed57faf2031073d76862c809eecae4bfc7"
+    },
+    {
+      "id": "character-19",
+      "file": "/assets/portraits/character-19.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        256,
+        768,
+        512,
+        1024
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "91175af205932af0b51ebe4e468dc616911816dade2df3fb14728855d303c952"
+    },
+    {
+      "id": "character-20",
+      "file": "/assets/portraits/character-20.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        512,
+        768,
+        768,
+        1024
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "d8fd6578dfe631a1439a7ee2f44e49104c34f7854597a5b3806ca9dbe23160a1"
+    },
+    {
+      "id": "character-21",
+      "file": "/assets/portraits/character-21.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        768,
+        768,
+        1024,
+        1024
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "9483a7ab5b4d4c9c795a282d83b28c1cf2b3b9ea48a8bb0412ca7db0fa75405b"
+    },
+    {
+      "id": "character-22",
+      "file": "/assets/portraits/character-22.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        1024,
+        768,
+        1280,
+        1024
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "75a5b0989e5abd4ef0db571d8c344b0d9df04f92e146361974cce8cb83bfd1d7"
+    },
+    {
+      "id": "character-23",
+      "file": "/assets/portraits/character-23.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "Generada con ChatGPT; archivo aportado por el usuario",
+      "source": "ChatGPT: Generar Imagen Política",
+      "sourceFile": "design/vertical-slice/assets/originales/characters.png",
+      "crop": [
+        1280,
+        768,
+        1536,
+        1024
+      ],
+      "date": "2026-10-07",
+      "license": "OpenAI Terms of Use; procedencia registrada, sin nueva revisión legal",
+      "sha256": "cc93e21c179a52e547a12950b758f08fe39ce0ea81271ece6b9a18caa854276e"
+    },
+    {
+      "id": "character-24",
+      "file": "/assets/portraits/character-24.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/portraits.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        0,
+        0,
+        314,
+        314
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "9dbff32d0117f3b71e2015bf54add633599bcf6a2a4fc97ca75984b3b9ff48d2"
+    },
+    {
+      "id": "character-25",
+      "file": "/assets/portraits/character-25.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/portraits.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        314,
+        0,
+        627,
+        314
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "a4f8780b2cba1ed4e5854cb24d8e018782cc796af80139379c393194accfb7eb"
+    },
+    {
+      "id": "character-26",
+      "file": "/assets/portraits/character-26.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/portraits.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        627,
+        0,
+        940,
+        314
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "457f364e6f8b8eed53e22f3b3304e88f11cd8a38c7a5823f0686dcf2523e6fa7"
+    },
+    {
+      "id": "character-27",
+      "file": "/assets/portraits/character-27.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/portraits.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        940,
+        0,
+        1254,
+        314
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "22a6c77d509152b6fbc59c9c5c457a8da257f39e1f36bdce3a44c1d7aabb89c3"
+    },
+    {
+      "id": "character-28",
+      "file": "/assets/portraits/character-28.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/portraits.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        0,
+        314,
+        314,
+        627
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "183e5d021405412a27e9a061e3d54e76d9d7c34b491757b453e01feaff0a6e7b"
+    },
+    {
+      "id": "character-29",
+      "file": "/assets/portraits/character-29.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/portraits.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        314,
+        314,
+        627,
+        627
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "75bc12b75d41b0277c9252cd8118e6301ee311d3750e0fc5a5b9574c843c09d0"
+    },
+    {
+      "id": "character-30",
+      "file": "/assets/portraits/character-30.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/portraits.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        627,
+        314,
+        940,
+        627
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "6bce788ce1ade4f27ac3f78a75028458342d8a918593242be0c19b54a07cdf80"
+    },
+    {
+      "id": "character-31",
+      "file": "/assets/portraits/character-31.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/portraits.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        940,
+        314,
+        1254,
+        627
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "08f66eccf295f27bbc412c79bcec7780142a5994dcb05131b729c73b900d374d"
+    },
+    {
+      "id": "character-32",
+      "file": "/assets/portraits/character-32.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/portraits.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        0,
+        627,
+        314,
+        940
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "ed7a2ca380414549888e2c1b9cb5410f74ee8fd41654bfaa1b601ee9a7b61df4"
+    },
+    {
+      "id": "character-33",
+      "file": "/assets/portraits/character-33.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/portraits.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        314,
+        627,
+        627,
+        940
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "8d706a331b7fc717b089b85d1424a02b2954317c0dbe86d849e5bc93fc39c721"
+    },
+    {
+      "id": "character-34",
+      "file": "/assets/portraits/character-34.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/portraits.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        627,
+        627,
+        940,
+        940
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "92310b1bb8237149ed3b0a49fca856df07a51e48e39e57ca569002660b2ff0c5"
+    },
+    {
+      "id": "character-35",
+      "file": "/assets/portraits/character-35.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/portraits.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        940,
+        627,
+        1254,
+        940
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "827b38d3cbf906dbd561396fd59f3648b31f7ca2f21d3e5d7d291a7a28ff2284"
+    },
+    {
+      "id": "character-36",
+      "file": "/assets/portraits/character-36.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/portraits.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        0,
+        940,
+        314,
+        1254
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "f23ea44718383e9fbc37f11ed4b30c684f38b7d874b66ff592f836fd8beeb088"
+    },
+    {
+      "id": "character-37",
+      "file": "/assets/portraits/character-37.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/portraits.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        314,
+        940,
+        627,
+        1254
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "70a11cefad66eab48acbbc8e97b9e44ff757bb897c3061c54239dd3fc1d1cee9"
+    },
+    {
+      "id": "character-38",
+      "file": "/assets/portraits/character-38.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/portraits.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        627,
+        940,
+        940,
+        1254
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "f0a5625e41c6e2f37da3fbcbd7d349516b7499bcafebfd0c42fc1212d8213862"
+    },
+    {
+      "id": "character-39",
+      "file": "/assets/portraits/character-39.webp",
+      "category": "portrait",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/portraits.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        940,
+        940,
+        1254,
+        1254
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "877397fdf110a982805c179ccf04f23346d1e9c8342b4d824ef8743dde1103c4"
+    },
+    {
+      "id": "event-00",
+      "file": "/assets/scenes/event-00.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_a.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        0,
+        0,
+        591,
+        332
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "84861a5c3bae8b3152748f419ad3f287313da8974290e89a7d23601ca64c0102"
+    },
+    {
+      "id": "event-01",
+      "file": "/assets/scenes/event-01.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_a.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        591,
+        0,
+        1182,
+        332
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "864c2abeaa08d95e3cfab2f96c415af61250ffb6736161e7d61927dde58991d9"
+    },
+    {
+      "id": "event-02",
+      "file": "/assets/scenes/event-02.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_a.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        0,
+        332,
+        591,
+        665
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "15d2b62b0937f9a228f89621f5a411cac83c651e8676bb561f743cf3c8405a55"
+    },
+    {
+      "id": "event-03",
+      "file": "/assets/scenes/event-03.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_a.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        591,
+        332,
+        1182,
+        665
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "69c6ec6dc3ef86223de7eb1f15837b50b33c5c07d5d3ebbd1f6351095f4b3105"
+    },
+    {
+      "id": "event-04",
+      "file": "/assets/scenes/event-04.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_a.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        0,
+        665,
+        591,
+        998
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "718b8dbee1247cb696357bffdb8d42941e0bc720fea234bcb9b7b552030a7cbf"
+    },
+    {
+      "id": "event-05",
+      "file": "/assets/scenes/event-05.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_a.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        591,
+        665,
+        1182,
+        998
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "bd019b7d76a5e6860593c06f39975dd42c8aa00153d38250724302822f051726"
+    },
+    {
+      "id": "event-06",
+      "file": "/assets/scenes/event-06.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_a.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        0,
+        998,
+        591,
+        1330
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "c9f7ecccb7560dec49f4cad8980d7b54bd94f1d472da17df6739da7ec0298c42"
+    },
+    {
+      "id": "event-07",
+      "file": "/assets/scenes/event-07.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_a.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        591,
+        998,
+        1182,
+        1330
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "27a9aa781555ffe3bda5c148e49656c736411f13a31cda08de57bf3a556e35c7"
+    },
+    {
+      "id": "event-08",
+      "file": "/assets/scenes/event-08.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_b.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        0,
+        0,
+        595,
+        330
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "c9cce8e886edf34d37e100e9a5c3f7858937c61e7146851254fb570f0e2f4474"
+    },
+    {
+      "id": "event-09",
+      "file": "/assets/scenes/event-09.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_b.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        595,
+        0,
+        1190,
+        330
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "739de593031fff64f2cdbf9710e41b66b608beeb3c0021abd78d27cd6e8b5bb0"
+    },
+    {
+      "id": "event-10",
+      "file": "/assets/scenes/event-10.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_b.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        0,
+        330,
+        595,
+        661
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "e1d0ef4a2f489e60352b4ee6cc4591c99ceab5a46eae0d4ae8a08c150435973c"
+    },
+    {
+      "id": "event-11",
+      "file": "/assets/scenes/event-11.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_b.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        595,
+        330,
+        1190,
+        661
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "b8bbfc3586711b23ac0bc7ffb9872fb4ae7585ae44fd3546fd41a1a4ced323be"
+    },
+    {
+      "id": "event-12",
+      "file": "/assets/scenes/event-12.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_b.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        0,
+        661,
+        595,
+        992
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "53c8aa19f177e1d4f2f1bddd1dc75f66f89c142fe97ce39d782f71d7f3a5043c"
+    },
+    {
+      "id": "event-13",
+      "file": "/assets/scenes/event-13.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_b.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        595,
+        661,
+        1190,
+        992
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "e4ce4d598502c7515a90076ba94674859afc43a42ff31fdfb0cfb75ed13bb30b"
+    },
+    {
+      "id": "event-14",
+      "file": "/assets/scenes/event-14.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_b.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        0,
+        992,
+        595,
+        1322
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "a034b7e8d92ff8b9c5b135b04ce21c20a6340df05873050d12ae4d695702772c"
+    },
+    {
+      "id": "event-15",
+      "file": "/assets/scenes/event-15.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_b.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        595,
+        992,
+        1190,
+        1322
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "fa731bf1807eb78b0b4d79930cf3f0be5ef8ca61580f8ecb8e6b1a0b1ce5ecc3"
+    },
+    {
+      "id": "event-16",
+      "file": "/assets/scenes/event-16.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_c.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        0,
+        0,
+        591,
+        332
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "176a5c0fb8c696ce09eb9f03ddcfd5d94e96f601e6204c5e273edbd9a14b9333"
+    },
+    {
+      "id": "event-17",
+      "file": "/assets/scenes/event-17.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_c.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        591,
+        0,
+        1182,
+        332
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "7ce76aa5af1a9f230b3b35999576a3832348afd7ef66cd9db21a093f13c97863"
+    },
+    {
+      "id": "event-18",
+      "file": "/assets/scenes/event-18.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_c.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        0,
+        332,
+        591,
+        665
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "e96ad61af2dc8d246d2b4e3d41ea4f950aa52c69061305bd48d8b5c0b29a1fd1"
+    },
+    {
+      "id": "event-19",
+      "file": "/assets/scenes/event-19.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_c.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        591,
+        332,
+        1182,
+        665
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "6a41ace8bbd0e8f3c2d60f050ae491c4175d64d5bb2535d94e130ddc03ccd4c8"
+    },
+    {
+      "id": "event-20",
+      "file": "/assets/scenes/event-20.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_c.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        0,
+        665,
+        591,
+        998
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "a4c3be04d67ef8c6aad4f4fe6929fe5cf977612b15d1ab9ded7ce5fa5648c46b"
+    },
+    {
+      "id": "event-21",
+      "file": "/assets/scenes/event-21.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_c.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        591,
+        665,
+        1182,
+        998
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "b791c31fc6f98d444cb5e5f53fcd3249b34fb121ffb6329cd3dc7b1cbe2805dd"
+    },
+    {
+      "id": "event-22",
+      "file": "/assets/scenes/event-22.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_c.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        0,
+        998,
+        591,
+        1330
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "e7d8d80c1d08f881d24e305e52da2ae612b94946a9c7302e6e2e9a250373d9a1"
+    },
+    {
+      "id": "event-23",
+      "file": "/assets/scenes/event-23.webp",
+      "category": "event",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/events_c.png",
+      "promptFile": "design/completion/assets/generation.json",
+      "crop": [
+        591,
+        998,
+        1182,
+        1330
+      ],
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; personajes y escenas ficticios",
+      "sha256": "ef4d91c41859b85bf415ea8f0b2f57b470a5f0bd2de79d638413c0f3f32846e1"
+    },
+    {
+      "id": "chamber",
+      "file": "/assets/scenes/chamber.webp",
+      "category": "scene",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/chamber.png",
+      "promptFile": "design/completion/assets/scene-directions.md",
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; instituciones ficticias",
+      "sha256": "45b45d4b7ab084f7766c311760d4005c29773943c121045420e4525c73d0f849"
+    },
+    {
+      "id": "campaign",
+      "file": "/assets/scenes/campaign.webp",
+      "category": "scene",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/campaign.png",
+      "promptFile": "design/completion/assets/scene-directions.md",
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; instituciones ficticias",
+      "sha256": "df5b3d433bf8f3b6361a248f54040573713e4526a8367b80b0e2dc21593decc7"
+    },
+    {
+      "id": "national-office",
+      "file": "/assets/scenes/national-office.webp",
+      "category": "scene",
+      "status": "generada",
+      "author": "MANDATO · imagegen",
+      "sourceFile": "design/completion/assets/originales/national-office.png",
+      "promptFile": "design/completion/assets/scene-directions.md",
+      "date": "2026-10-07",
+      "license": "Contenido generado con OpenAI; instituciones ficticias",
+      "sha256": "d820f51fd1aacec886252f09a15362fce9b1807e2e02879dcb28ff4d577fa718"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "mandato-simulation",
-  "version": "0.1.0",
+  "version": "1.0.0-rc.1",
   "private": true,
   "type": "module",
   "description": "Motor determinista de simulación política para MANDATO",
@@ -28,7 +28,9 @@
     "world:shock-frequency": "tsx src/cli/shock-frequency.ts",
     "validate:generated": "tsx src/cli/generated-countries.ts",
     "validate:diplomacy": "tsx src/cli/diplomacy-balance.ts",
-    "validate:long-career": "node --expose-gc --import tsx src/cli/long-career.ts"
+    "validate:long-career": "node --expose-gc --import tsx src/cli/long-career.ts",
+    "play": "node scripts/serve-game.mjs",
+    "package:pc": "npm run build && node scripts/package-game.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.52.0",

@@ -1,0 +1,44 @@
+{
+  "url": "http://127.0.0.1:5174/",
+  "runs": [
+    {
+      "viewport": [
+        2560,
+        1440
+      ],
+      "status": "passed",
+      "event": "Asamblea en el distrito",
+      "campaignResult": "EN EL DIARIO DE TU CARRERA\nCerrar el expediente\nEl contacto directo fortaleció el respaldo a tu candidatura.\n\nCambio de preferencia: +1.4 puntos; gasto: 3 mil.\n\n«Nos han escuchado. Ahora hay que volver y cumplir.»\n\nJefa de campaña\n\nTu decisión: Recorrer el distrito\n\nFondos\n−3k\nPreferencia\n+1,4 pp\nAcciones disponibles\n−1\n\nLa decisión y sus efectos se conservan en tu partida.\n\nVolver al despacho\nMANDATO\nCAMPAÑA · SEMANA 1",
+      "eventResult": "EN EL DIARIO DE TU CARRERA\nCerrar el expediente\nRespondiste: Asamblea en el distrito.\n\nLa respuesta pública mejoró ligeramente la aprobación.\n\n«La respuesta llegó. El siguiente paso cuenta más que el titular.»\n\nJefa de campaña\n\nTu decisión: Responder públicamente\n\nAprobación\n+0,4 pp\n\nLa decisión y sus efectos se conservan en tu partida.\n\nVolver al despacho\nMANDATO\nCAMPAÑA · SEMANA 1",
+      "keyboardEscapeAndFocus": true,
+      "restoredFunds": 97,
+      "consoleErrors": []
+    },
+    {
+      "viewport": [
+        1920,
+        1080
+      ],
+      "status": "passed",
+      "event": "Asamblea en el distrito",
+      "campaignResult": "EN EL DIARIO DE TU CARRERA\nCerrar el expediente\nEl contacto directo fortaleció el respaldo a tu candidatura.\n\nCambio de preferencia: +1.7 puntos; gasto: 3 mil.\n\n«Nos han escuchado. Ahora hay que volver y cumplir.»\n\nJefa de campaña\n\nTu decisión: Recorrer el distrito\n\nFondos\n−3k\nPreferencia\n+1,7 pp\nAcciones disponibles\n−1\n\nLa decisión y sus efectos se conservan en tu partida.\n\nVolver al despacho\nMANDATO\nCAMPAÑA · SEMANA 1",
+      "eventResult": "EN EL DIARIO DE TU CARRERA\nCerrar el expediente\nRespondiste: Asamblea en el distrito.\n\nLa respuesta pública mejoró ligeramente la aprobación.\n\n«La respuesta llegó. El siguiente paso cuenta más que el titular.»\n\nJefa de campaña\n\nTu decisión: Responder públicamente\n\nAprobación\n+0,4 pp\n\nLa decisión y sus efectos se conservan en tu partida.\n\nVolver al despacho\nMANDATO\nCAMPAÑA · SEMANA 1",
+      "keyboardEscapeAndFocus": true,
+      "restoredFunds": 97,
+      "consoleErrors": []
+    },
+    {
+      "viewport": [
+        1280,
+        720
+      ],
+      "status": "passed",
+      "event": "Asamblea en el distrito",
+      "campaignResult": "EN EL DIARIO DE TU CARRERA\nCerrar el expediente\nEl contacto directo fortaleció el respaldo a tu candidatura.\n\nCambio de preferencia: +2.3 puntos; gasto: 3 mil.\n\n«Nos han escuchado. Ahora hay que volver y cumplir.»\n\nJefa de campaña\n\nTu decisión: Recorrer el distrito\n\nFondos\n−3k\nPreferencia\n+2,3 pp\nAcciones disponibles\n−1\n\nLa decisión y sus efectos se conservan en tu partida.\n\nVolver al despacho\nMANDATO\nCAMPAÑA · SEMANA 1",
+      "eventResult": "EN EL DIARIO DE TU CARRERA\nCerrar el expediente\nRespondiste: Asamblea en el distrito.\n\nLa respuesta pública mejoró ligeramente la aprobación.\n\n«La respuesta llegó. El siguiente paso cuenta más que el titular.»\n\nJefa de campaña\n\nTu decisión: Responder públicamente\n\nAprobación\n+0,4 pp\n\nLa decisión y sus efectos se conservan en tu partida.\n\nVolver al despacho\nMANDATO\nCAMPAÑA · SEMANA 1",
+      "keyboardEscapeAndFocus": true,
+      "restoredFunds": 97,
+      "consoleErrors": []
+    }
+  ]
+}

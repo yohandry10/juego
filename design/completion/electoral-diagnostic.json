@@ -1,0 +1,2032 @@
+{
+  "protocol": "50 semillas nuevas × cinco partidos; mismos recursos y ocho acciones reales. Sin modificar estado ni electores.",
+  "rows": [
+    {
+      "seed": "completion-electoral-diagnostic-0",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 20.576089712270534,
+      "elected": true,
+      "explanation": "Colegio agregado: 302 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-0",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 20.576089712270534,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-0",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 20.576089712270534,
+      "elected": false,
+      "explanation": "Colegio agregado: 87 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-0",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 20.576089712270534,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-0",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 20.576089712270534,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-1",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 23.643890290925277,
+      "elected": true,
+      "explanation": "Colegio agregado: 491 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-1",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 23.643890290925277,
+      "elected": false,
+      "explanation": "Colegio agregado: 133 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-1",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 23.643890290925277,
+      "elected": false,
+      "explanation": "Colegio agregado: 95 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-1",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 23.643890290925277,
+      "elected": false,
+      "explanation": "Colegio agregado: 11 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-1",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 23.643890290925277,
+      "elected": false,
+      "explanation": "Colegio agregado: 10 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-2",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 24.831174044209536,
+      "elected": true,
+      "explanation": "Colegio agregado: 419 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-2",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 24.831174044209536,
+      "elected": false,
+      "explanation": "Colegio agregado: 130 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-2",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 24.831174044209536,
+      "elected": false,
+      "explanation": "Colegio agregado: 22 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-2",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 24.831174044209536,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-2",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 24.831174044209536,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-3",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 23.889164949467403,
+      "elected": true,
+      "explanation": "Colegio agregado: 473 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-3",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 23.889164949467403,
+      "elected": false,
+      "explanation": "Colegio agregado: 65 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-3",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 23.889164949467403,
+      "elected": false,
+      "explanation": "Colegio agregado: 152 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-3",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 23.889164949467403,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-3",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 23.889164949467403,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-4",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.85324884042889,
+      "elected": true,
+      "explanation": "Colegio agregado: 193 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-4",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.85324884042889,
+      "elected": true,
+      "explanation": "Colegio agregado: 334 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-4",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.85324884042889,
+      "elected": false,
+      "explanation": "Colegio agregado: 43 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-4",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.85324884042889,
+      "elected": false,
+      "explanation": "Colegio agregado: 54 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-4",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.85324884042889,
+      "elected": false,
+      "explanation": "Colegio agregado: 66 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-5",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 22.404328223546035,
+      "elected": true,
+      "explanation": "Colegio agregado: 462 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-5",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 22.404328223546035,
+      "elected": false,
+      "explanation": "Colegio agregado: 268 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-5",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 22.404328223546035,
+      "elected": false,
+      "explanation": "Colegio agregado: 21 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-5",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 22.404328223546035,
+      "elected": false,
+      "explanation": "Colegio agregado: 32 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-5",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 22.404328223546035,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-6",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 23.55520811541751,
+      "elected": true,
+      "explanation": "Colegio agregado: 323 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-6",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 23.55520811541751,
+      "elected": true,
+      "explanation": "Colegio agregado: 363 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-6",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 23.55520811541751,
+      "elected": false,
+      "explanation": "Colegio agregado: 32 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-6",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 23.55520811541751,
+      "elected": false,
+      "explanation": "Colegio agregado: 97 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-6",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 23.55520811541751,
+      "elected": false,
+      "explanation": "Colegio agregado: 10 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-7",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 22.531216039479705,
+      "elected": true,
+      "explanation": "Colegio agregado: 475 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-7",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 22.531216039479705,
+      "elected": false,
+      "explanation": "Colegio agregado: 96 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-7",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 22.531216039479705,
+      "elected": false,
+      "explanation": "Colegio agregado: 136 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-7",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 22.531216039479705,
+      "elected": false,
+      "explanation": "Colegio agregado: 53 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-7",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 22.531216039479705,
+      "elected": false,
+      "explanation": "Colegio agregado: 33 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-8",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.10762455945834,
+      "elected": false,
+      "explanation": "Colegio agregado: 184 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-8",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.10762455945834,
+      "elected": true,
+      "explanation": "Colegio agregado: 315 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-8",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.10762455945834,
+      "elected": false,
+      "explanation": "Colegio agregado: 115 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-8",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.10762455945834,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-8",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.10762455945834,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-9",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.28142023655679,
+      "elected": false,
+      "explanation": "Colegio agregado: 182 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-9",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.28142023655679,
+      "elected": true,
+      "explanation": "Colegio agregado: 404 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-9",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.28142023655679,
+      "elected": false,
+      "explanation": "Colegio agregado: 110 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-9",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.28142023655679,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-9",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.28142023655679,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-10",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.860062579284417,
+      "elected": true,
+      "explanation": "Colegio agregado: 335 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-10",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.860062579284417,
+      "elected": false,
+      "explanation": "Colegio agregado: 108 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-10",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.860062579284417,
+      "elected": false,
+      "explanation": "Colegio agregado: 97 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-10",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.860062579284417,
+      "elected": false,
+      "explanation": "Colegio agregado: 11 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-10",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.860062579284417,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-11",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.162165310389362,
+      "elected": false,
+      "explanation": "Colegio agregado: 109 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-11",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.162165310389362,
+      "elected": false,
+      "explanation": "Colegio agregado: 248 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-11",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.162165310389362,
+      "elected": false,
+      "explanation": "Colegio agregado: 193 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-11",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.162165310389362,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-11",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.162165310389362,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-12",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 22.445318611322904,
+      "elected": true,
+      "explanation": "Colegio agregado: 453 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-12",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 22.445318611322904,
+      "elected": true,
+      "explanation": "Colegio agregado: 343 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-12",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 22.445318611322904,
+      "elected": false,
+      "explanation": "Colegio agregado: 117 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-12",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 22.445318611322904,
+      "elected": false,
+      "explanation": "Colegio agregado: 22 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-12",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 22.445318611322904,
+      "elected": false,
+      "explanation": "Colegio agregado: 11 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-13",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 22.798473783091644,
+      "elected": true,
+      "explanation": "Colegio agregado: 203 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-13",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 22.798473783091644,
+      "elected": true,
+      "explanation": "Colegio agregado: 368 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-13",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 22.798473783091644,
+      "elected": false,
+      "explanation": "Colegio agregado: 43 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-13",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 22.798473783091644,
+      "elected": false,
+      "explanation": "Colegio agregado: 64 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-13",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 22.798473783091644,
+      "elected": false,
+      "explanation": "Colegio agregado: 22 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-14",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.10269439684879,
+      "elected": true,
+      "explanation": "Colegio agregado: 289 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-14",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.10269439684879,
+      "elected": false,
+      "explanation": "Colegio agregado: 150 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-14",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.10269439684879,
+      "elected": false,
+      "explanation": "Colegio agregado: 185 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-14",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.10269439684879,
+      "elected": false,
+      "explanation": "Colegio agregado: 10 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-14",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.10269439684879,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-15",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.592115373129957,
+      "elected": true,
+      "explanation": "Colegio agregado: 344 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-15",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.592115373129957,
+      "elected": false,
+      "explanation": "Colegio agregado: 194 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-15",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.592115373129957,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-15",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.592115373129957,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-15",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.592115373129957,
+      "elected": false,
+      "explanation": "Colegio agregado: 10 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-16",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 23.322443990257568,
+      "elected": true,
+      "explanation": "Colegio agregado: 193 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-16",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 23.322443990257568,
+      "elected": false,
+      "explanation": "Colegio agregado: 225 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-16",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 23.322443990257568,
+      "elected": false,
+      "explanation": "Colegio agregado: 203 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-16",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 23.322443990257568,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-16",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 23.322443990257568,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-17",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 24.545797106126322,
+      "elected": true,
+      "explanation": "Colegio agregado: 452 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-17",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 24.545797106126322,
+      "elected": false,
+      "explanation": "Colegio agregado: 246 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-17",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 24.545797106126322,
+      "elected": false,
+      "explanation": "Colegio agregado: 56 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-17",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 24.545797106126322,
+      "elected": false,
+      "explanation": "Colegio agregado: 10 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-17",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 24.545797106126322,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-18",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 23.450979164265092,
+      "elected": true,
+      "explanation": "Colegio agregado: 219 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-18",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 23.450979164265092,
+      "elected": false,
+      "explanation": "Colegio agregado: 150 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-18",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 23.450979164265092,
+      "elected": false,
+      "explanation": "Colegio agregado: 85 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-18",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 23.450979164265092,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-18",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 23.450979164265092,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-19",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.926329067900774,
+      "elected": false,
+      "explanation": "Colegio agregado: 173 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-19",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.926329067900774,
+      "elected": false,
+      "explanation": "Colegio agregado: 101 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-19",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.926329067900774,
+      "elected": false,
+      "explanation": "Colegio agregado: 234 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-19",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.926329067900774,
+      "elected": false,
+      "explanation": "Colegio agregado: 33 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-19",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.926329067900774,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-20",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 22.210311605310064,
+      "elected": true,
+      "explanation": "Colegio agregado: 284 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-20",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 22.210311605310064,
+      "elected": true,
+      "explanation": "Colegio agregado: 398 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-20",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 22.210311605310064,
+      "elected": false,
+      "explanation": "Colegio agregado: 229 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-20",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 22.210311605310064,
+      "elected": false,
+      "explanation": "Colegio agregado: 32 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-20",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 22.210311605310064,
+      "elected": false,
+      "explanation": "Colegio agregado: 21 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-21",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.862105608019977,
+      "elected": true,
+      "explanation": "Colegio agregado: 397 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-21",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.862105608019977,
+      "elected": true,
+      "explanation": "Colegio agregado: 336 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-21",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.862105608019977,
+      "elected": false,
+      "explanation": "Colegio agregado: 74 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-21",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.862105608019977,
+      "elected": false,
+      "explanation": "Colegio agregado: 11 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-21",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.862105608019977,
+      "elected": false,
+      "explanation": "Colegio agregado: 11 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-22",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 20.86656485400069,
+      "elected": true,
+      "explanation": "Colegio agregado: 421 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-22",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 20.86656485400069,
+      "elected": false,
+      "explanation": "Colegio agregado: 106 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-22",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 20.86656485400069,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-22",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 20.86656485400069,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-22",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 20.86656485400069,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-23",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 23.16867985385936,
+      "elected": true,
+      "explanation": "Colegio agregado: 463 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-23",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 23.16867985385936,
+      "elected": false,
+      "explanation": "Colegio agregado: 75 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-23",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 23.16867985385936,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-23",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 23.16867985385936,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-23",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 23.16867985385936,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-24",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 22.18317103384249,
+      "elected": false,
+      "explanation": "Colegio agregado: 239 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-24",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 22.18317103384249,
+      "elected": true,
+      "explanation": "Colegio agregado: 496 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-24",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 22.18317103384249,
+      "elected": false,
+      "explanation": "Colegio agregado: 108 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-24",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 22.18317103384249,
+      "elected": false,
+      "explanation": "Colegio agregado: 22 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-24",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 22.18317103384249,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-25",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.769898532581514,
+      "elected": false,
+      "explanation": "Colegio agregado: 214 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-25",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.769898532581514,
+      "elected": true,
+      "explanation": "Colegio agregado: 302 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-25",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.769898532581514,
+      "elected": false,
+      "explanation": "Colegio agregado: 64 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-25",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.769898532581514,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-25",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.769898532581514,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-26",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.907930248127318,
+      "elected": true,
+      "explanation": "Colegio agregado: 298 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-26",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.907930248127318,
+      "elected": false,
+      "explanation": "Colegio agregado: 85 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-26",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.907930248127318,
+      "elected": false,
+      "explanation": "Colegio agregado: 165 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-26",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.907930248127318,
+      "elected": false,
+      "explanation": "Colegio agregado: 10 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-26",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.907930248127318,
+      "elected": false,
+      "explanation": "Colegio agregado: 11 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-27",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.4839540080158,
+      "elected": false,
+      "explanation": "Colegio agregado: 86 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-27",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.4839540080158,
+      "elected": true,
+      "explanation": "Colegio agregado: 400 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-27",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.4839540080158,
+      "elected": false,
+      "explanation": "Colegio agregado: 10 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-27",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.4839540080158,
+      "elected": false,
+      "explanation": "Colegio agregado: 32 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-27",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.4839540080158,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-28",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 22.498760628039946,
+      "elected": true,
+      "explanation": "Colegio agregado: 288 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-28",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 22.498760628039946,
+      "elected": true,
+      "explanation": "Colegio agregado: 410 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-28",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 22.498760628039946,
+      "elected": false,
+      "explanation": "Colegio agregado: 258 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-28",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 22.498760628039946,
+      "elected": false,
+      "explanation": "Colegio agregado: 52 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-28",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 22.498760628039946,
+      "elected": false,
+      "explanation": "Colegio agregado: 32 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-29",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 24.84773838468734,
+      "elected": true,
+      "explanation": "Colegio agregado: 438 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-29",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 24.84773838468734,
+      "elected": true,
+      "explanation": "Colegio agregado: 284 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-29",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 24.84773838468734,
+      "elected": false,
+      "explanation": "Colegio agregado: 53 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-29",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 24.84773838468734,
+      "elected": false,
+      "explanation": "Colegio agregado: 11 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-29",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 24.84773838468734,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-30",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.8815605789721,
+      "elected": true,
+      "explanation": "Colegio agregado: 245 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-30",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.8815605789721,
+      "elected": false,
+      "explanation": "Colegio agregado: 131 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-30",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.8815605789721,
+      "elected": false,
+      "explanation": "Colegio agregado: 151 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-30",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.8815605789721,
+      "elected": false,
+      "explanation": "Colegio agregado: 206 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-30",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.8815605789721,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-31",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 22.787054078564974,
+      "elected": true,
+      "explanation": "Colegio agregado: 399 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-31",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 22.787054078564974,
+      "elected": true,
+      "explanation": "Colegio agregado: 302 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-31",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 22.787054078564974,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-31",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 22.787054078564974,
+      "elected": false,
+      "explanation": "Colegio agregado: 11 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-31",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 22.787054078564974,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-32",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.203791491670533,
+      "elected": true,
+      "explanation": "Colegio agregado: 234 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-32",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.203791491670533,
+      "elected": false,
+      "explanation": "Colegio agregado: 108 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-32",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.203791491670533,
+      "elected": false,
+      "explanation": "Colegio agregado: 250 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-32",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.203791491670533,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-32",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.203791491670533,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-33",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.964906957508997,
+      "elected": true,
+      "explanation": "Colegio agregado: 398 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-33",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.964906957508997,
+      "elected": false,
+      "explanation": "Colegio agregado: 63 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-33",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.964906957508997,
+      "elected": false,
+      "explanation": "Colegio agregado: 140 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-33",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.964906957508997,
+      "elected": false,
+      "explanation": "Colegio agregado: 11 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-33",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.964906957508997,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-34",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 22.178597149517387,
+      "elected": true,
+      "explanation": "Colegio agregado: 419 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-34",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 22.178597149517387,
+      "elected": false,
+      "explanation": "Colegio agregado: 141 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-34",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 22.178597149517387,
+      "elected": false,
+      "explanation": "Colegio agregado: 33 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-34",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 22.178597149517387,
+      "elected": false,
+      "explanation": "Colegio agregado: 11 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-34",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 22.178597149517387,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-35",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 23.8271879714923,
+      "elected": false,
+      "explanation": "Colegio agregado: 180 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-35",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 23.8271879714923,
+      "elected": true,
+      "explanation": "Colegio agregado: 451 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-35",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 23.8271879714923,
+      "elected": false,
+      "explanation": "Colegio agregado: 91 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-35",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 23.8271879714923,
+      "elected": false,
+      "explanation": "Colegio agregado: 53 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-35",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 23.8271879714923,
+      "elected": false,
+      "explanation": "Colegio agregado: 10 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-36",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.638784096778373,
+      "elected": true,
+      "explanation": "Colegio agregado: 228 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-36",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.638784096778373,
+      "elected": true,
+      "explanation": "Colegio agregado: 299 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-36",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.638784096778373,
+      "elected": false,
+      "explanation": "Colegio agregado: 86 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-36",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.638784096778373,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-36",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.638784096778373,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-37",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 20.638691115972588,
+      "elected": true,
+      "explanation": "Colegio agregado: 235 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-37",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 20.638691115972588,
+      "elected": false,
+      "explanation": "Colegio agregado: 216 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-37",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 20.638691115972588,
+      "elected": false,
+      "explanation": "Colegio agregado: 33 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-37",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 20.638691115972588,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-37",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 20.638691115972588,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-38",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 20.206655460082928,
+      "elected": true,
+      "explanation": "Colegio agregado: 205 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-38",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 20.206655460082928,
+      "elected": true,
+      "explanation": "Colegio agregado: 324 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-38",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 20.206655460082928,
+      "elected": false,
+      "explanation": "Colegio agregado: 117 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-38",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 20.206655460082928,
+      "elected": false,
+      "explanation": "Colegio agregado: 151 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-38",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 20.206655460082928,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-39",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 22.758019074445592,
+      "elected": true,
+      "explanation": "Colegio agregado: 507 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-39",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 22.758019074445592,
+      "elected": false,
+      "explanation": "Colegio agregado: 83 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-39",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 22.758019074445592,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-39",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 22.758019074445592,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-39",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 22.758019074445592,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-40",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 23.619995176155115,
+      "elected": true,
+      "explanation": "Colegio agregado: 538 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-40",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 23.619995176155115,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-40",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 23.619995176155115,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-40",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 23.619995176155115,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-40",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 23.619995176155115,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-41",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.377412569951264,
+      "elected": false,
+      "explanation": "Colegio agregado: 219 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-41",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.377412569951264,
+      "elected": false,
+      "explanation": "Colegio agregado: 256 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-41",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.377412569951264,
+      "elected": false,
+      "explanation": "Colegio agregado: 10 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-41",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.377412569951264,
+      "elected": false,
+      "explanation": "Colegio agregado: 10 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-41",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.377412569951264,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-42",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 23.392720067141575,
+      "elected": true,
+      "explanation": "Colegio agregado: 420 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-42",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 23.392720067141575,
+      "elected": false,
+      "explanation": "Colegio agregado: 182 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-42",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 23.392720067141575,
+      "elected": false,
+      "explanation": "Colegio agregado: 44 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-42",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 23.392720067141575,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-42",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 23.392720067141575,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-43",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.90376479490846,
+      "elected": true,
+      "explanation": "Colegio agregado: 538 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-43",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.90376479490846,
+      "elected": false,
+      "explanation": "Colegio agregado: 53 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-43",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.90376479490846,
+      "elected": false,
+      "explanation": "Colegio agregado: 31 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-43",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.90376479490846,
+      "elected": false,
+      "explanation": "Colegio agregado: 42 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-43",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.90376479490846,
+      "elected": false,
+      "explanation": "Colegio agregado: 10 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-44",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 23.947458414159712,
+      "elected": true,
+      "explanation": "Colegio agregado: 400 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-44",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 23.947458414159712,
+      "elected": false,
+      "explanation": "Colegio agregado: 216 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-44",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 23.947458414159712,
+      "elected": true,
+      "explanation": "Colegio agregado: 302 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-44",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 23.947458414159712,
+      "elected": false,
+      "explanation": "Colegio agregado: 90 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-44",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 23.947458414159712,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-45",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.933938840615557,
+      "elected": true,
+      "explanation": "Colegio agregado: 496 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-45",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.933938840615557,
+      "elected": false,
+      "explanation": "Colegio agregado: 162 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-45",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.933938840615557,
+      "elected": false,
+      "explanation": "Colegio agregado: 53 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-45",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.933938840615557,
+      "elected": false,
+      "explanation": "Colegio agregado: 11 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-45",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.933938840615557,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-46",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 24.296687130896377,
+      "elected": true,
+      "explanation": "Colegio agregado: 450 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-46",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 24.296687130896377,
+      "elected": false,
+      "explanation": "Colegio agregado: 207 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-46",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 24.296687130896377,
+      "elected": false,
+      "explanation": "Colegio agregado: 77 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-46",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 24.296687130896377,
+      "elected": false,
+      "explanation": "Colegio agregado: 96 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-46",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 24.296687130896377,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-47",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 22.10878322198521,
+      "elected": true,
+      "explanation": "Colegio agregado: 369 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-47",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 22.10878322198521,
+      "elected": true,
+      "explanation": "Colegio agregado: 407 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-47",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 22.10878322198521,
+      "elected": false,
+      "explanation": "Colegio agregado: 99 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-47",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 22.10878322198521,
+      "elected": false,
+      "explanation": "Colegio agregado: 151 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-47",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 22.10878322198521,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-48",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 22.54213398931548,
+      "elected": true,
+      "explanation": "Colegio agregado: 430 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-48",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 22.54213398931548,
+      "elected": false,
+      "explanation": "Colegio agregado: 54 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-48",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 22.54213398931548,
+      "elected": false,
+      "explanation": "Colegio agregado: 33 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-48",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 22.54213398931548,
+      "elected": false,
+      "explanation": "Colegio agregado: 22 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-48",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 22.54213398931548,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Resultado por delegaciones ficticias. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-49",
+      "party": 1,
+      "partySupport": 28,
+      "preference": 21.98896685711201,
+      "elected": true,
+      "explanation": "Colegio agregado: 164 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-49",
+      "party": 2,
+      "partySupport": 25,
+      "preference": 21.98896685711201,
+      "elected": false,
+      "explanation": "Colegio agregado: 137 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-49",
+      "party": 3,
+      "partySupport": 20,
+      "preference": 21.98896685711201,
+      "elected": false,
+      "explanation": "Colegio agregado: 76 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-49",
+      "party": 4,
+      "partySupport": 16,
+      "preference": 21.98896685711201,
+      "elected": false,
+      "explanation": "Colegio agregado: 0 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    },
+    {
+      "seed": "completion-electoral-diagnostic-49",
+      "party": 5,
+      "partySupport": 11,
+      "preference": 21.98896685711201,
+      "elected": false,
+      "explanation": "Colegio agregado: 42 de 538 electores; mayoría 270. Sin mayoría: elección contingente simplificada entre las tres candidaturas con más electores según respaldo legislativo. No reproduce fronteras ni resultados reales."
+    }
+  ],
+  "byParty": [
+    {
+      "party": 1,
+      "wins": 41,
+      "runs": 50
+    },
+    {
+      "party": 2,
+      "wins": 18,
+      "runs": 50
+    },
+    {
+      "party": 3,
+      "wins": 1,
+      "runs": 50
+    },
+    {
+      "party": 4,
+      "wins": 0,
+      "runs": 50
+    },
+    {
+      "party": 5,
+      "wins": 0,
+      "runs": 50
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+Codex: no cerraría todavía el paquete PC como versión visual final. B sigue siendo el benchmark correcto, pero C/D/E no mantienen ese nivel de forma uniforme. Hay pantallas muy buenas y otras que vuelven a caer en la gramática de “aplicación de gestión”.
+
+Pantalla	Veredicto visual	Nivel aprox.
+Biografía	APROBADA	8.5/10
+Periódico	RECHAZADA en este estado vacío	4.5/10
+Campaña nacional	RECHAZADA	6/10
+Votación	RECHAZADA	5.5/10
+Economía	RECHAZADA	6/10
+Mundo 1920	APROBADA con pulido	7.5/10
+Legado	APROBADA visualmente, con bugs editoriales	8/10
+Mundo Firefox 1280	PASA	7/10
+
+C sí supera el umbral. D no. E es mixto. La biografía tiene escena, atmósfera, jerarquía y una decisión narrativa clara. El mundo también empieza a sentirse como un juego estratégico porque el mapa es realmente el protagonista. El legado tiene un lenguaje de libro/archivo que encaja muy bien con MANDATO.
+
+Los bloqueadores que corregiría antes de cerrar el paquete son estos:
+
+Periódico vacío: una portada enorme con “Tu primera decisión será la primera noticia” parece contenido sin terminar. Nunca presentes esa superficie así. Si aún no existen noticias, muestra una edición de apertura construida solo con estado real disponible —inicio de campaña, cargo, semana, personaje— o mantén el periódico cerrado/inactivo hasta tener material. No inventes acontecimientos; evita simplemente una portada casi blanca.
+
+Campaña nacional: vuelve demasiado al patrón retrato + gran card marfil + porcentaje + lista de acciones. Es funcional, pero comparada con B parece una pantalla web. Reutiliza directamente la gramática del benchmark: candidato y sede/calle/acto político como escena dominante, un expediente integrado y solo dos decisiones prioritarias visibles; programa, debate y resto de acciones bajo demanda. La campaña necesita sentirse como estar haciendo campaña, no administrar una campaña.
+
+Votación: es el retroceso más evidente. El panel central oscuro con filas de puntos parece un modal estadístico. Esta es una de las ceremonias principales del juego y debe utilizar el hemiciclo como imagen dominante, con los votos apareciendo en sus escaños reales, contador progresivo y resultado final. El resumen 50/80/0/0 puede aparecer al final, pero no sustituir la ceremonia. Usa exactamente los votos reales que ya genera el motor.
+
+Economía: todavía parece un formulario administrativo: cuatro KPIs, desplegable y gran bloque explicativo. Conserva los datos, pero conviértelo en briefing económico. Asesora y expediente deben formar una composición como B; los cuatro indicadores pueden seguir arriba, pero la decisión activa debe convertirse en una propuesta política tangible con beneficio, riesgo y costo. El selector puede quedar dentro del expediente avanzado, no como interacción principal.
+
+Identidad del personaje: en campaña y legado aparece “Elena Ríos” con un rostro que visualmente se lee masculino. Si el juego permite explícitamente cualquier combinación de nombre/retrato, no es fallo lógico; pero en una simulación política seria parece un error de identidad si ocurre accidentalmente. Nombre, retrato y cualquier pronombre/descriptor deben pertenecer a un mismo perfil persistente.
+
+Texto de legado: hay contenido claramente no final: “candidatura generada para deputy en amazonas”. Eso rompe inmediatamente la ilusión de producto terminado. Haz una pasada de localización/editorial sobre todo texto visible generado por el motor antes del paquete; ningún identificador interno, término inglés accidental o etiqueta técnica debe alcanzar al jugador.
+
+El resto no lo considero bloqueante. El HUD superior es algo más pesado que en B y podría compactarse; los dos desplegables grandes sobre el mapa todavía recuerdan a una aplicación; el radar del legado tiene poco contraste; y en Firefox 1280 el mundo queda bastante denso. Pero ninguna de esas cosas justificaría retrasar por sí sola el paquete local.
+
+La prueba automatizada que describes es fuerte para estabilidad, pero mantendría escrito en el informe que no equivale a validación humana. Para una entrega PC local, eso no me impediría cerrar el juego una vez arreglados los bloqueadores anteriores.
+
+Mi criterio final para Codex sería: no reescribas sistemas ni motor. Corrige únicamente periódico, campaña, ceremonia de votación, presentación económica, coherencia de identidad y limpieza editorial. Luego vuelve con esas cuatro pantallas visuales principales. Si alcanzan el nivel de B, considero el lenguaje visual del juego completo listo para empaquetado.
+
+ChatGPT puede cometer errores. Comprueba la información importante.
+Última respuesta
+
+
+
+
+Alta
+Respuesta completada

@@ -16,3 +16,5 @@ if (import.meta.env.PROD && "serviceWorker" in navigator) {
 }
 
 import './ui/game.css';
+import './ui/cinematic-office.css';
+import './ui/cinematic-game.css';

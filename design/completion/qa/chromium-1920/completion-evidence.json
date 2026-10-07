@@ -1,0 +1,116 @@
+{
+  "base": "http://127.0.0.1:4180",
+  "engine": "chromium",
+  "results": [
+    {
+      "scenario": "legislation",
+      "status": "passed",
+      "data": {
+        "ballots": 130,
+        "singleVote": true,
+        "negotiationCostsFive": true,
+        "saveExact": true
+      }
+    },
+    {
+      "scenario": "party-leadership",
+      "status": "passed",
+      "data": {
+        "stage": "party-leadership",
+        "cost": 5,
+        "actionBudget": true,
+        "saveExact": true
+      }
+    },
+    {
+      "scenario": "minister",
+      "status": "passed",
+      "data": {
+        "stage": "minister",
+        "cost": 0,
+        "actionBudget": true,
+        "saveExact": true
+      }
+    },
+    {
+      "scenario": "executive",
+      "status": "passed",
+      "data": {
+        "executiveMeasure": true,
+        "policies": 1
+      }
+    },
+    {
+      "scenario": "challenge",
+      "status": "passed",
+      "data": {
+        "status": "active",
+        "constitutionalProcedureClosed": true
+      }
+    },
+    {
+      "scenario": "investiture",
+      "status": "passed",
+      "data": {
+        "status": "awaiting-investiture",
+        "actualAct": true
+      }
+    },
+    {
+      "scenario": "legacy",
+      "status": "passed",
+      "data": {
+        "historyProjectionsDoNotMutate": true,
+        "pngDownloaded": true,
+        "successorBacked": true,
+        "returned": true
+      }
+    },
+    {
+      "scenario": "forty-year-memory",
+      "status": "passed",
+      "data": {
+        "age": 70,
+        "retainedLetters": 414,
+        "visibleActiveMaximum": 7,
+        "archiveSearch": true
+      }
+    },
+    {
+      "scenario": "audio-motion",
+      "status": "passed",
+      "data": {
+        "noAutoplay": true,
+        "contextStartedAfterInteraction": true,
+        "soundAndVolumePersist": true,
+        "reducedMotionPersists": true
+      }
+    },
+    {
+      "scenario": "national-campaign",
+      "status": "passed",
+      "data": {
+        "agenda": true,
+        "debate": true,
+        "costAndActionBudget": true
+      }
+    },
+    {
+      "scenario": "hegemony",
+      "status": "passed",
+      "data": {
+        "explicitFictionalVariant": true,
+        "actualRegimeAction": true
+      }
+    },
+    {
+      "scenario": "financing",
+      "status": "passed",
+      "data": {
+        "actualRatification": true,
+        "firstTrancheOnce": true,
+        "saveExact": true
+      }
+    }
+  ]
+}

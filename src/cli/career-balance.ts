@@ -15,6 +15,9 @@ const ideologies: Record<string, Ideology> = {
   "market-traditional": { economy: 75, social: 35, nationalism: 65, institutionalism: 45, rigidity: 35 },
   pragmatic: { economy: 50, social: 50, nationalism: 50, institutionalism: 55, rigidity: 35 },
 };
+const balanceOutput = process.env.MANDATO_BALANCE_OUTPUT ?? "docs/career-balance.json";
+const balanceRuns = Number(process.env.MANDATO_BALANCE_RUNS ?? "50");
+if (!Number.isInteger(balanceRuns) || balanceRuns < 5 || balanceRuns > 1000) throw new Error("El número de semillas debe estar entre 5 y 1000.");
 const balanceSeedPrefix = process.env.MANDATO_BALANCE_SEED_PREFIX ?? "balance-holdout-v2";
 
 export function playCareerSample(country: CountryDefinition, seed: string, officeId: string, ideology: Ideology, strategy: "doorstep" | "fundraising" | "national-coalition", realism: RealismMode = "realistic") {
@@ -79,7 +82,7 @@ export async function simulateCountryBalance(file: string) {
   const country = await loadCountry(resolve("data/countries", file));
   const offices = country.candidateEligibility.map((rule) => rule.officeId);
   const results: (ReturnType<typeof playCareerSample> & { ideologyId: string })[] = [];
-  for (const realism of ["relaxed", "realistic", "relentless"] as const) for (const strategy of ["doorstep", "fundraising", "national-coalition"] as const) for (let run = 0; run < 50; run++) {
+  for (const realism of ["relaxed", "realistic", "relentless"] as const) for (const strategy of ["doorstep", "fundraising", "national-coalition"] as const) for (let run = 0; run < balanceRuns; run++) {
     const ideologyId = Object.keys(ideologies)[run % 5]!;
     const officeId = offices[Math.floor(run / 5) % offices.length]!;
     results.push({ ideologyId, ...playCareerSample(country, `${balanceSeedPrefix}-${country.id}-${run}`, officeId, ideologies[ideologyId]!, strategy, realism) });
@@ -94,8 +97,8 @@ export async function simulateCountryBalance(file: string) {
 async function runBalance() {
   const manifest = JSON.parse(await readFile("public/data/countries/index.json", "utf8")) as { countries: { id: string; file: string }[] };
   const samples: Awaited<ReturnType<typeof simulateCountryBalance>>[] = [];
-  const protocol = `450 carreras por país: 50 semillas reservadas (${balanceSeedPrefix}) × tres estrategias × tres modos; cinco ideologías y cargos iniciales configurados, partido afín elegido por distancia. Agenda/debate nacional y defensa en la tercera estrategia; recursos iniciales iguales en los tres modos. Son muestras de un mandato y retiro, no carreras de 40 años ni calibración externa. Cuatro workers; tiempos de muestras bajo carga concurrente.`;
-  await writeFile("docs/career-balance.json", JSON.stringify({ date: "2026-10-06", status: "running", protocol, results: [] }, null, 2) + "\n");
+  const protocol = `${balanceRuns * 9} carreras por país: ${balanceRuns} semillas reservadas (${balanceSeedPrefix}) × tres estrategias × tres modos; cinco ideologías y cargos iniciales configurados, partido afín elegido por distancia. Agenda/debate nacional y defensa en la tercera estrategia; recursos iniciales iguales en los tres modos. Son muestras de un mandato y retiro, no carreras de 40 años ni calibración externa. Cuatro workers; tiempos de muestras bajo carga concurrente.`;
+  await writeFile(balanceOutput, JSON.stringify({ date: new Date().toISOString().slice(0,10), status: "running", protocol, results: [] }, null, 2) + "\n");
   let index = 0;
   await Promise.all(Array.from({ length: Math.min(4, manifest.countries.length) }, async () => {
     while (index < manifest.countries.length) {
@@ -115,8 +118,8 @@ async function runBalance() {
       console.log(`${entry.id}: ${result.runs} carreras cerradas.`);
     }
   }));
-  if (samples.length !== manifest.countries.length || samples.some((row) => row.runs !== 450)) throw new Error("El lote de balance no está completo.");
-  await writeFile("docs/career-balance.json", JSON.stringify({ date: "2026-10-06", status: "complete", workers: 4, protocol, results: samples }, null, 2) + "\n");
+  if (samples.length !== manifest.countries.length || samples.some((row) => row.runs !== balanceRuns * 9)) throw new Error("El lote de balance no está completo.");
+  await writeFile(balanceOutput, JSON.stringify({ date: new Date().toISOString().slice(0,10), status: "complete", workers: 4, protocol, results: samples }, null, 2) + "\n");
 }
 
 if (isMainThread && process.argv[1] === fileURLToPath(import.meta.url)) await runBalance();

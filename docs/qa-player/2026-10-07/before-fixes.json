@@ -1,0 +1,53 @@
+{
+  "base": "http://127.0.0.1:5174",
+  "results": [
+    {
+      "scenario": "navigation",
+      "status": "passed",
+      "details": {
+        "visited": [
+          {
+            "zone": "El periódico:",
+            "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n100k\nFavores\n0\nImagen\n—\nOrganizar campaña\n← Volver al despacho\nPrensa\nEDICIÓN FICTICIA · 2026 · T1\nLa República de Papel\n\nEl poder pasa. La hemeroteca queda.\n\nTu primera decisión será la primera noticia.\n\nMANDATO · Ficción política y sátira; personajes y partidos generados · Guardado solo en este dispositivo ·\nSalón de la fama\nPrivacidad\nCréditos y fuentes\nReportar un error ↗"
+          },
+          {
+            "zone": "Mesa de mapas:",
+            "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n100k\nFavores\n0\nImagen\n—\nOrganizar campaña\n← Volver al despacho\nMundo\n\nCargando mundo…\n\nMANDATO · Ficción política y sátira; personajes y partidos generados · Guardado solo en este dispositivo ·\nSalón de la fama\nPrivacidad\nCréditos y fuentes\nReportar un error ↗"
+          },
+          {
+            "zone": "La ventana:",
+            "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n100k\nFavores\n0\nImagen\n—\nOrganizar campaña\n← Volver al despacho\nEconomía\n\nCargando economía…\n\nMANDATO · Ficción política y sátira; personajes y partidos generados · Guardado solo en este dispositivo ·\nSalón de la fama\nPrivacidad\nCréditos y fuentes\nReportar un error ↗"
+          },
+          {
+            "zone": "El Congreso:",
+            "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n100k\nFavores\n0\nImagen\n—\nOrganizar campaña\n← Volver al despacho\nCongreso\nEL CONGRESO · 130 REPRESENTANTES\nCada voto tiene un nombre.\nCámara baja\nBuscar a un representante\n130\nVOCES EN LA CÁMARA\nPartido Social\nPartido Federal\nMovimiento Cívico\nFrente Popular\nUnión Democrática\nÚLTIMA SESIÓN\nLas bancadas miden sus fuerzas.\n\nConoce a los representantes. Una conversación puede cambiar la siguiente sesión.\n\nMANDATO · Ficción política y sátira; per"
+          },
+          {
+            "zone": "Tu silla:",
+            "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n100k\nFavores\n0\nImagen\n—\nOrganizar campaña\n← Volver al despacho\nTU AGENDA · Diputación\nEl primer apoyo es el más difícil.\nAbrir mi expediente →\nAlex Ríos\n\nSemana 1 de 4\n\n2 acciones\n3.0% preferencia\n¿DÓNDE PONES TU TIEMPO?\nSal a buscar apoyo.\n\nDos acciones por semana. Elige a quién escuchar y qué estás dispuesto a prometer.\n\nRecorrer el distrito\nEscucha a tus votantes\n−3k · 1 acción\nOrganizar un mitin\nHazte visible\n−12k · 1 acción\nDar una ent"
+          }
+        ],
+        "textPreferencePersisted": true
+      },
+      "errors": []
+    },
+    {
+      "scenario": "country-resume",
+      "status": "failed",
+      "error": "La raíz no restaura la carrera guardada de México",
+      "errors": []
+    },
+    {
+      "scenario": "cross-country-import",
+      "status": "failed",
+      "error": "Importa el estado mexicano pero conserva instituciones y HUD de Perú",
+      "errors": []
+    },
+    {
+      "scenario": "campaign-election",
+      "status": "failed",
+      "error": "Ver resultado salta la elección sin mostrarla y cambia la etapa",
+      "errors": []
+    }
+  ]
+}

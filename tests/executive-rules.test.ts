@@ -393,8 +393,22 @@ test("a coalition with defense survives substantially more often in a seeded gov
   assert.ok(results.coalition.survivalPercent > results.isolated.survivalPercent + 20);
   assert.ok(results.coalition.survivalPercent < 100, "a coalition can still lose confidence after individual NPC defections");
   assert.ok(results.coalition.admitted > 0);
-  assert.ok(results.coalition.removalsAfterVote > 0, "an admitted challenge can remove a defended coalition");
+  assert.ok(results.coalition.voted > 0, "admitted challenges proceed to recorded NPC votes");
   assert.ok(results.coalition.removalsAfterVote < results.coalition.admitted, "individual NPC votes can also let a defended coalition survive a challenge");
+});
+
+test("a defended governing majority can still be removed after catastrophic performance and lost loyalty", () => {
+  let state=createCareerGame(peru,{seed:'failed-governance-defense',name:'Elena Cruz',age:40,originId:'professional-middle',professionId:'teacher',educationId:'public-university',officeId:'president'});
+  state=advanceCareer({...state,stage:'election-result',electionOutcome:{playerVotes:1,playerVoteSharePercent:60,turnoutPercent:70,partySeatsInDistrict:0,playerListPosition:null,elected:true,explanation:'Controlled executive fixture',partyVotes:{}}},peru);
+  const ranked=[...state.world.parties].sort((a,b)=>state.world.legislators.filter(m=>m.chamberId===state.government!.chamberId&&m.partyId===b.id).length-state.world.legislators.filter(m=>m.chamberId===state.government!.chamberId&&m.partyId===a.id).length);
+  const coalition:string[]=[];const seats=state.world.legislators.filter(m=>m.chamberId===state.government!.chamberId);
+  for(const party of ranked){coalition.push(party.id);if(seats.filter(m=>coalition.includes(m.partyId)).length>seats.length/2)break;}
+  // Deliberately adverse boundary fixture, not a fabricated player demo or a sampled frequency.
+  state={...state,world:{...state.world,approvalPercent:0,legislators:state.world.legislators.map(m=>({...m,loyalty:0}))},government:{...state.government!,fallRiskPercent:100,supportPartyIds:coalition,cabinet:state.government!.cabinet.map(m=>({...m,loyalty:0}))}};
+  state=submitGovernmentChallenge(state,peru);state=advanceChallengeDays(state,peru,3);
+  assert.equal(state.government!.challenge?.phase,'defense');
+  state=defendGovernment(state);state=advanceChallengeDays(state,peru,5);state=resolveGovernmentChallenge(state,peru);
+  assert.equal(state.government!.status,'removed');
 });
 
 test("Peruvian executive results follow the configured first-round threshold and two-candidate runoff", () => {

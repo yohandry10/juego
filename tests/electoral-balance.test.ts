@@ -14,6 +14,19 @@ const brazil = await loadCountry("data/countries/brazil.json");
 const mexico = await loadCountry("data/countries/mexico.json");
 const input = { seed: "resource-test", name: "Elena Ríos", age: 46, originId: "professional-middle", professionId: "teacher", educationId: "technical" } as const;
 
+test('campaign skill allocation changes persuasion without changing the resource budget or civic response seed', () => {
+  const speaker = createCareerGame(peru, {...input,attributes:{charisma:20,network:20,health:8,oratory:5,management:5,integrity:6,cunning:6}});
+  const administrator = createCareerGame(peru, {...input,attributes:{charisma:1,network:1,health:15,oratory:20,management:15,integrity:8,cunning:10}});
+  const strong = performCampaignAction(speaker,'door-knocking'); const weak = performCampaignAction(administrator,'door-knocking');
+  assert.ok(strong.campaign.playerPreferencePercent-speaker.campaign.playerPreferencePercent > weak.campaign.playerPreferencePercent-administrator.campaign.playerPreferencePercent);
+  for (const [before,after] of [[speaker,strong],[administrator,weak]] as const) {
+    assert.equal(after.player.resources.campaignFunds,before.player.resources.campaignFunds-3);
+    assert.equal(after.campaign.actionsRemaining,before.campaign.actionsRemaining-1);
+    assert.equal(after.campaign.actionHistory.length,before.campaign.actionHistory.length+1);
+    assert.match(after.log.at(-1)!.explanation,/habilidades relevantes/);
+  }
+});
+
 test("fundraising credits its stated twelve thousand only once", () => {
   const state = createCareerGame(peru, input);
   const next = performCampaignAction(state, "fundraising");

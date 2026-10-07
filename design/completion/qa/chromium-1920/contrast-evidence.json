@@ -1,0 +1,80 @@
+{
+  "limitations": "Solo texto con colores CSS opacos; no mide imágenes, gráficos ni un lector de pantalla.",
+  "results": [
+    {
+      "view": "full-role-vote",
+      "checked": 315,
+      "failures": []
+    },
+    {
+      "view": "full-role-party-leadership",
+      "checked": 47,
+      "failures": []
+    },
+    {
+      "view": "full-role-minister",
+      "checked": 46,
+      "failures": []
+    },
+    {
+      "view": "full-role-executive",
+      "checked": 44,
+      "failures": []
+    },
+    {
+      "view": "full-role-government-economy",
+      "checked": 179,
+      "failures": []
+    },
+    {
+      "view": "full-role-economy-after-decree",
+      "checked": 180,
+      "failures": []
+    },
+    {
+      "view": "full-role-government-world",
+      "checked": 160,
+      "failures": []
+    },
+    {
+      "view": "full-role-challenge",
+      "checked": 43,
+      "failures": []
+    },
+    {
+      "view": "full-role-investiture",
+      "checked": 44,
+      "failures": []
+    },
+    {
+      "view": "full-role-legacy",
+      "checked": 61,
+      "failures": []
+    },
+    {
+      "view": "full-role-forty-year-archive",
+      "checked": 63,
+      "failures": []
+    },
+    {
+      "view": "full-role-national-campaign",
+      "checked": 65,
+      "failures": []
+    },
+    {
+      "view": "full-role-national-after-debate",
+      "checked": 42,
+      "failures": []
+    },
+    {
+      "view": "full-role-hegemony",
+      "checked": 56,
+      "failures": []
+    },
+    {
+      "view": "full-role-financing",
+      "checked": 172,
+      "failures": []
+    }
+  ]
+}

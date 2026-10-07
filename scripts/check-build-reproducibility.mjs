@@ -27,5 +27,5 @@ const first = await hashes();
 build();
 const second = await hashes();
 if (JSON.stringify(first) !== JSON.stringify(second)) throw new Error("Las dos compilaciones difieren.");
-await writeFile("docs/build-reproducibility.json", JSON.stringify({ date: "2026-10-06", identical: true, files: second.length, command: "npm run build:repro-check", environment: `Node ${process.version}, ${process.platform}, installed lockfile dependencies`, limitation: "Dos builds consecutivos con las dependencias instaladas; no valida instalación limpia en otro SO.", hashes: second }, null, 2) + "\n");
+await writeFile("docs/build-reproducibility.json", JSON.stringify({ date: new Date().toISOString().slice(0,10), identical: true, files: second.length, command: "npm run build:repro-check", environment: `Node ${process.version}, ${process.platform}, installed lockfile dependencies`, limitation: "Dos builds consecutivos con las dependencias instaladas; no valida instalación limpia en otro SO.", hashes: second }, null, 2) + "\n");
 console.log(`${second.length} archivos idénticos por SHA-256 en dos builds.`);

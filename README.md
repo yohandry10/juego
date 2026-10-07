@@ -1,95 +1,55 @@
-# MANDATO — Carrera política
+# MANDATO
 
-Juego para PC, en navegador, para una persona, todavía en desarrollo. Crea un personaje ficticio, compite, negocia y gobierna; las instituciones y datos observados se distinguen de las reglas y distribuciones de simulación. No importa políticos ni resultados electorales actuales.
+Juego político para PC y una persona. Construye una carrera desde tu biografía y campaña hasta el Congreso, el Gobierno y tu legado. Los partidos, candidatos y relaciones de cada partida son ficticios; las instituciones y datos de referencia están identificados dentro del juego.
 
-La especificación es [MANDATO — Documento guía de diseño y construcción](docs/MANDATO%20%E2%80%94%20Documento%20gu%C3%ADa%20de%20dise%C3%B1o%20y%20construcci%C3%B3n.md). **Fases 4 y 5 siguen abiertas.** El [informe final de avance](docs/final-report.md) enlaza aceptación, evidencia y pendientes. Consulta el [manual](docs/manual-del-juego.md), [decisiones](docs/decisions.md) y [continuación](docs/prompt-continuacion-fases-2-a-4-5.md).
+## Jugar
 
+La entrega local es **1.0.0-rc.1**. Extrae `release/MANDATO-PC.zip` y abre **Jugar MANDATO.cmd**. Necesita Node.js 22 o posterior y un navegador actual; el paquete contiene el juego compilado y no necesita npm ni descargar dependencias. Conserva abierta la ventana del servidor y usa siempre `http://127.0.0.1:4180/` y el mismo navegador para recuperar el guardado. Es una aplicación local de navegador, no un ejecutable nativo.
 
-**Modo de trabajo actualizado:** el usuario sustituyó las paradas por [ejecución continua con revisiones de capturas en Claude](docs/ejecucion-continua-y-revision-claude.md). Claude aprobó la dirección del despacho y guió B. La [Etapa B](design/etapa-b/README.md) integra escenas, componentes y archivo; C/D/E continúan. El desarrollo continúa hacia B/C/D/E y la terminación verificada del juego.
-
-## Ejecutar
-
-Node 22+ y npm; el corte se validó en Node 24.13.1/Windows.
+Desde el repositorio:
 
 ```sh
 npm ci
-npm test
 npm run build
-npm run build:worker-check
-npm run dev -- --port 5173 --strictPort
+npm run play
 ```
 
-Para comprobar producción después del build: `node node_modules/vite/bin/vite.js preview --host 127.0.0.1 --port 4173 --strictPort`. Confirma HTTP 200 antes de las pruebas de navegador y evita builds simultáneos mientras se instala la caché offline.
+Elige país, pulsa **Elegir mi cargo** y **Entrar al juego**. **Escribir mi biografía** abre seis capítulos opcionales. En el despacho, los objetos llevan a campaña/cargo, asuntos, teléfono, periódico, Congreso, economía y mapa exterior. Las decisiones muestran costo, riesgo y consecuencias; **Fin de turno** avanza el mundo. Opciones permite exportar una copia de la partida. [Manual](docs/manual-del-juego.md).
 
-## Escenarios y sistemas
+## Experiencia implementada
 
-Diez perfiles nacionales (Perú, España, Francia, Alemania, Estados Unidos, Reino Unido, Brasil, México, Argentina, Venezuela), varios experimentales con agregaciones electorales explícitas. Además hay 217 escenarios generados con una plantilla institucional ficticia común; no describen las constituciones reales. Venezuela permanece constitucional experimental: seis años de presidencia, reelección sin límite tras enmienda 2009, Asamblea 285/cinco años; el cap de inflación a 100% se distingue de la proyección histórica del FMI citada.
+Biografía con origen, profesión, formación, convicciones, rasgos, 70 puntos de habilidades y 40 retratos. Campañas con nominación, recaudación, actos, programa y debate. Elecciones con resultados registrados, investidura parlamentaria, partidos y ministerios. Congreso con negociación y voto nominal; Gobierno con políticas, gabinete, mayorías, defensa y procedimientos de caída. Diplomacia, organismos, acuerdos, financiación y conflictos agregados. Prensa y archivo conservan acontecimientos de la partida. Retiro con cinco dimensiones, hitos, tarjeta PNG, retorno y respaldo a un sucesor.
 
-La variante hegemónica se elige voluntariamente en cualquier escenario; élites, partido, militares, seguridad, protesta y legitimidad condicionan acceso y caída. No se atribuye por defecto a ningún país. Las restricciones de derechos tienen costos domésticos y exteriores visibles.
+El despacho aprobado sirve de referencia para las demás pantallas: fotografía e ilustración realista, personas adultas, expedientes y escenas. Se conservan los originales descargados; la biblioteca de producción tiene 40 personajes y seis asesores, 24 ilustraciones de sucesos y tres ambientes adicionales. Los retratos de personajes son una biblioteca finita y pueden repetirse entre NPC. Audio original opcional: lluvia, música y señales. Empieza desactivado y requiere interacción.
 
-Campañas, competencia individual de listas, rivales con campaña, investidura negociada, censura/vacancia, Congreso, gabinete, economía/sociedad, tratados nominales, diplomacia, mundo y legado se conectan al mismo estado determinista. Hay diez arquetipos y salón local con hasta 50 resúmenes; las reevaluaciones históricas aún son fórmulas. Carrera v15 migra v3–v14. Guardado IndexedDB, importación/exportación; Ironman desactiva importación. Borrar datos del sitio elimina partidas, preferencias y salón.
+Hay diez perfiles nacionales y 217 escenarios generados explícitamente experimentales. La variante hegemónica es una ficción seleccionable, no una afirmación sobre el régimen actual de un país. El juego conserva instituciones agregadas y modelos simplificados. Las lecturas del legado a 5/15/30 años son proyecciones interpretativas, no una simulación de la historia posterior.
 
-Los shocks simultáneos acumulan sus efectos y explicaciones hasta caducar. La auditoría comprueba cronología, identidad y entregas financieras; [alcance semántico](docs/world-semantic-review.md).
+## Validación de esta entrega
 
-Mundo: 217 actores, 193 miembros ONU, 169 geometrías. Datos `world-2026-10-06-v1`; comercio bilateral, exposición, estilos y fuerzas son derivados ficticios. Los turnos completos avanzan en un Worker, con política anual agregada para secundarios. Conflictos agregados persisten con logística, movimiento, costos y posguerra; cinco tipos, autorización ejecutiva y golpes explicados. No hay uso nuclear. `npm run world:update-data` actualiza el snapshot económico. `python scripts/update-memberships.py` contrasta OMC/FMI/IBRD; `python scripts/update-regional-memberships.py` revisa ONU/UE/OTAN/UA y conserva las transcripciones de ASEAN/Mercosur. Hay nueve listas independientes con entidades sin actor explícitas. La participación suspendida se separa de la pertenencia: seis restricciones UA, dos restablecimientos y suspensión venezolana; [síntesis fechada y límites](docs/participation-review.md). Las fichas evitan fuentes duplicadas en el texto principal. Las rutas nacionales de ratificación están en cada perfil; los préstamos usan control presupuestario ficticio. El build sincroniza los perfiles públicos desde los canónicos. Los préstamos nuevos tienen entregas, revisiones, pausas y devolución; sus términos son reglas de juego.
+[Informe y evidencia de cierre](docs/completion-report.md): 153 pruebas del motor, TypeScript y Worker; builds idénticos en 113 archivos por SHA-256; recorridos públicos en Chromium 1920×1080 y Firefox 1280×720; diez arranques nacionales; guardado/importación, votaciones, Gobierno, financiación, sucesión, audio, teclado y recursos sin conexión. Una carrera real de 40 años conserva 414 cartas y restaura idénticamente desde mitad de carrera. El contraste automático mide texto con colores CSS opacos, no imágenes ni lectores de pantalla.
 
-La interfaz usa explicaciones cotidianas: beneficio, riesgo, costo y siguiente paso. Economía prioriza empleo, precios, pobreza y actividad; las cifras técnicas quedan en detalles opcionales. Ayuda incluye seis pasos, guía por etapa, checklist, glosario y texto ajustable. El ritmo opcional avanza hasta la próxima decisión, sin elegir por el jugador. El build emite créditos/fuentes de los diez países y avisos de dependencias; el service worker precarga módulos, países, mapa, privacidad y créditos. Los 217 escenarios generados se construyen localmente desde los datos ya almacenados. [Privacidad](public/privacy.html), [créditos y licencias](docs/creditos-y-licencias.md), [issues](https://github.com/yohandry10/juego/issues).
+La calibración de campaña usa las habilidades pertinentes y una regla común, sin recursos ni bonificaciones nacionales. La reserva independiente v2 contiene 4.500 carreras. El acceso presidencial estadounidense quedó en 8,9%, por debajo de la banda de diseño de 10%; el diagnóstico separado muestra que se puede ganar con partidos grandes. Esto no certifica equilibrio perfecto ni diversión. No se han realizado nuevas sesiones humanas, revisión editorial integral ni validación en hardware distinto. Los informes antiguos son evidencia histórica, no el estado de esta interfaz.
 
-## Verificar
+## Desarrollo y reproducción
 
 ```sh
-npm run validate:mass
-npm run validate:countries -- 25
-npm run validate:balance
-npm run validate:generated
-npm run validate:diplomacy
-npm run validate:long-career
-npm run content:validate
-npm run world:validate
-npm run world:sensitivity
-npm run world:frequency
+npm test
+npm run build:worker-check
 npm run build:repro-check
-python tests/web-smoke.py
-python scripts/country-start-browser-check.py
-node --import tsx scripts/prepare-financing-fixtures.ts
-python scripts/financing-browser-check.py
-node --import tsx scripts/prepare-ratification-fixtures.ts
-python scripts/ratification-browser-check.py
-python scripts/phase4-diplomacy-browser-check.py
-python scripts/regime-browser-check.py
-python scripts/career-worker-browser-check.py
-python scripts/phase5-browser-check.py
-python scripts/accessibility-browser-check.py
-python scripts/contrast-browser-check.py
+npm run content:validate
+npm run validate:generated
+node --import tsx scripts/prepare-completion-fixtures.ts
 ```
 
-Los scripts de producción usan 4173; smoke usa 5173. `MANDATO_BASE_URL` configura arranques/ratificación; `MANDATO_BROWSER=firefox` selecciona Firefox para Ayuda/offline. Batería actual: 4.500 muestras, 450 por país, tres estrategias y tres modos; 500 semillas nuevas emparejadas `balance-reserved-v4`, ahora utilizadas. Cierra un mandato/derrota y retiro, no 40 años por muestra. Balance sin aceptar: diputación mexicana 15/180 y Perú presidencial 9/135 mandatos completos.
+Las fixtures se producen con comandos reales del juego. Con Playwright para Python y los navegadores instalados, sirve `dist` con `npm run play` y configura `MANDATO_BASE_URL=http://127.0.0.1:4180`:
 
-La comparación de frecuencias usa UCDP/Powell/Thyne 2000–2025; tres candidatos comunes, ocho semillas de ajuste y 32 mundos nuevos de reserva v2, ya utilizados. `MANDATO_FREQUENCY_SEED_PREFIX` permite identificar otro protocolo; repetir el prefijo actual es regresión, no otra reserva nueva. `world:frequency` mide sin cambiar parámetros; `--apply` aplica solo el candidato elegido con el ajuste si la reserva pasa la banda de diseño. Los resultados actuales están en [world-frequency-calibration.json](docs/world-frequency-calibration.json). Las definiciones del juego e historia difieren: comparación de orden de magnitud, no calibración histórica completa. `python scripts/update-frequency-reference.py` regenera el agregado desde fuentes oficiales; no incorpora nombres al juego.
-
-Para repetir la interfaz de la carrera larga en PowerShell:
-
-```powershell
-Remove-Item Env:MANDATO_LONG_COMPARE_PATH -ErrorAction SilentlyContinue
-$env:MANDATO_LONG_STATE_PATH = Join-Path $env:TEMP 'mandato-long-pc-state.json'
-npm run validate:long-career
-python scripts/long-career-browser-check.py
+```sh
+python scripts/player-qa.py
+python scripts/completion-qa.py
+python scripts/player-qa-production.py
+python scripts/cinematic-offline-check.py
 ```
 
-No usar la línea base `0df312e` para el motor mundial v5. La comparación antigua se conserva como [evidencia histórica](docs/historical-long-career-a86e34d.json). El JSON temporal contiene una carrera real generada por comandos, sin modificar indicadores ni votos. Ratificación y financiación también preparan fixtures reales en el directorio temporal.
+`MANDATO_QA_ENGINE=firefox`, `MANDATO_QA_WIDTH=1280` y `MANDATO_QA_HEIGHT=720` seleccionan la segunda configuración. La reserva de balance y los protocolos están en `design/completion/`; repetir sus semillas es una regresión, no otra reserva independiente. `npm run package:pc` genera una carpeta distribuible desde una compilación nueva.
 
-## Arquitectura
-
-Domain define contratos; Engine genera actores y avanza mundo/economía/sociedad; Data valida y parametriza; Application ejecuta comandos puros; Web presenta; Persistence almacena y migra; CLI/Worker componen el motor. La lógica de régimen y diplomacia permanece fuera de React. El determinismo depende de semilla y versiones iguales, no de comparar builds con parámetros distintos.
-
-## Estado verificable
-
-143 pruebas, build/Worker y 30 archivos reproducibles; 407 plantillas/64 arcos/80 internacionales/10 arcos mundiales. Se conserva evidencia anterior de cien mundos de 50 años y 651 arranques generados. Ratificación de diez países y financiación, teclado/texto, Worker y perfiles offline pasan Chromium/Firefox en PC. Aplicación principal 348,78 KB; su división no elimina las descargas iniciales de React/validación/datos. La carrera anterior de 40 años restauró idénticamente, con máximo local 26,95 ms en este equipo; guardado 1,40 → 1,90 MiB, memoria sostenida pendiente. Bandeja y diario mantienen todas las decisiones/recuerdos con páginas y búsqueda.
-
-[validation-latest.json](docs/validation-latest.json) registra el motor actual y su huella; [corte 76f76c3](docs/historical-validation-latest-76f76c3.json) conserva los resultados previos. Pendientes: auditoría/calibración mundial restante, restricciones, balance de juego, contenido/editorial, legado completo, memoria, licencias y publicación. El usuario confirmó que aún no se realizaron pruebas humanas: [cinco sesiones nuevas](docs/protocolo-prueba-jugadores.md), revisión editorial y asistencia/hardware PC siguen sin evidencia. Automatización no los cumple.
-
-Diagnóstico de shocks por tipo: [referencia y resultados](docs/shock-frequency-review.md). La distribución uniforme queda fuera de la banda de diseño frente a dos proxies independientes de encarecimiento (energía/alimentos); 32 semillas nuevas `shock-reference-v1`, ya consumidas. No se cambió el motor ni se ajustó a esos resultados. Faltan correspondencia suministro/precios y otros seis tipos; Fase 4 sigue abierta.
-
-En este incremento se repiten 143 pruebas, build/Worker/reproducibilidad, 500 campañas, contenido, 4.500 carreras con 500 semillas nuevas emparejadas `balance-reserved-v4`, smoke y recorridos PC de entrada rápida, resultado electoral, ratificación y Worker offline. Las métricas numéricas de carreras se obtuvieron antes de ajustar el texto del diario, sin cambiar costos, probabilidades ni efectos en ese ajuste. Mundo, sensibilidad, diplomacia, generados, financiación, participación y carrera larga conservan evidencia explícita de cortes anteriores; no son lotes nuevos de esta integración.
-
-Prioridad de diseño: decisiones interesantes, ritmo y consecuencias comprensibles. Los países aportan contexto y diferencias sencillas. La ampliación jurídica exhaustiva se detiene por instrucción del usuario. «Jugar ahora» entra directamente a campaña y las acciones muestran el dinero que cuestan o reciben. [Cambios y pruebas](docs/electoral-gameplay-review.md).
+Domain define contratos; Engine avanza mundo, economía y sociedad; Application ejecuta comandos; Web presenta; Persistence guarda y migra. El determinismo exige la misma semilla y versiones. Créditos, fuentes y privacidad se distribuyen con el juego. [Créditos y licencias](docs/creditos-y-licencias.md), [privacidad](public/privacy.html).
