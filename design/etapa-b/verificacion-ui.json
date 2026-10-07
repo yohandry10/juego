@@ -1,0 +1,374 @@
+[
+  {
+    "screen": "inicio-mapa",
+    "width": 1440,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "Elige dóndecambiar la historia.",
+      "Perú"
+    ]
+  },
+  {
+    "screen": "tarjetas-cargo",
+    "width": 1440,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El poder empiezacon un puesto.",
+      "Diputación",
+      "Senado",
+      "Presidente"
+    ]
+  },
+  {
+    "screen": "despacho",
+    "width": 1440,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El despacho"
+    ]
+  },
+  {
+    "screen": "campana",
+    "width": 1440,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El primer apoyo es el más difícil.",
+      "Alex Ríos",
+      "Sal a buscar apoyo."
+    ]
+  },
+  {
+    "screen": "carta-decision",
+    "width": 1440,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "Lo que necesita tu voz.",
+      "Asamblea en el distrito"
+    ]
+  },
+  {
+    "screen": "prensa",
+    "width": 1440,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "La República de Papel",
+      "Asamblea en el distrito"
+    ]
+  },
+  {
+    "screen": "congreso",
+    "width": 1440,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "Cada voto tiene un nombre.",
+      "Las bancadas miden sus fuerzas."
+    ]
+  },
+  {
+    "screen": "ui-kit",
+    "width": 1440,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El lenguaje del juego",
+      "Acciones",
+      "Costos y cambios",
+      "Opciones",
+      "Personas y expedientes"
+    ]
+  },
+  {
+    "screen": "retratos",
+    "width": 1440,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El lenguaje del juego"
+    ]
+  },
+  {
+    "screen": "despacho-dia",
+    "width": 1440,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El lenguaje del juego",
+      "El despacho"
+    ]
+  },
+  {
+    "screen": "despacho-noche",
+    "width": 1440,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El lenguaje del juego",
+      "El despacho"
+    ]
+  },
+  {
+    "screen": "despacho-crisis",
+    "width": 1440,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El lenguaje del juego",
+      "El despacho"
+    ]
+  },
+  {
+    "screen": "inicio-mapa",
+    "width": 900,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "Elige dóndecambiar la historia.",
+      "Perú"
+    ]
+  },
+  {
+    "screen": "tarjetas-cargo",
+    "width": 900,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El poder empiezacon un puesto.",
+      "Diputación",
+      "Senado",
+      "Presidente"
+    ]
+  },
+  {
+    "screen": "despacho",
+    "width": 900,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El despacho"
+    ]
+  },
+  {
+    "screen": "campana",
+    "width": 900,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El primer apoyo es el más difícil.",
+      "Alex Ríos",
+      "Sal a buscar apoyo."
+    ]
+  },
+  {
+    "screen": "carta-decision",
+    "width": 900,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "Lo que necesita tu voz.",
+      "Asamblea en el distrito"
+    ]
+  },
+  {
+    "screen": "prensa",
+    "width": 900,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "La República de Papel",
+      "Asamblea en el distrito"
+    ]
+  },
+  {
+    "screen": "congreso",
+    "width": 900,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "Cada voto tiene un nombre.",
+      "Las bancadas miden sus fuerzas."
+    ]
+  },
+  {
+    "screen": "ui-kit",
+    "width": 900,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El lenguaje del juego",
+      "Acciones",
+      "Costos y cambios",
+      "Opciones",
+      "Personas y expedientes"
+    ]
+  },
+  {
+    "screen": "retratos",
+    "width": 900,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El lenguaje del juego"
+    ]
+  },
+  {
+    "screen": "despacho-dia",
+    "width": 900,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El lenguaje del juego",
+      "El despacho"
+    ]
+  },
+  {
+    "screen": "despacho-noche",
+    "width": 900,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El lenguaje del juego",
+      "El despacho"
+    ]
+  },
+  {
+    "screen": "despacho-crisis",
+    "width": 900,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El lenguaje del juego",
+      "El despacho"
+    ]
+  },
+  {
+    "screen": "inicio-mapa",
+    "width": 390,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "Elige dóndecambiar la historia.",
+      "Perú"
+    ]
+  },
+  {
+    "screen": "tarjetas-cargo",
+    "width": 390,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El poder empiezacon un puesto.",
+      "Diputación",
+      "Senado",
+      "Presidente"
+    ]
+  },
+  {
+    "screen": "despacho",
+    "width": 390,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El despacho"
+    ]
+  },
+  {
+    "screen": "campana",
+    "width": 390,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El primer apoyo es el más difícil.",
+      "Alex Ríos",
+      "Sal a buscar apoyo."
+    ]
+  },
+  {
+    "screen": "carta-decision",
+    "width": 390,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "Lo que necesita tu voz.",
+      "Asamblea en el distrito"
+    ]
+  },
+  {
+    "screen": "prensa",
+    "width": 390,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "La República de Papel",
+      "Asamblea en el distrito"
+    ]
+  },
+  {
+    "screen": "congreso",
+    "width": 390,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "Cada voto tiene un nombre.",
+      "Las bancadas miden sus fuerzas."
+    ]
+  },
+  {
+    "screen": "ui-kit",
+    "width": 390,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El lenguaje del juego",
+      "Acciones",
+      "Costos y cambios",
+      "Opciones",
+      "Personas y expedientes"
+    ]
+  },
+  {
+    "screen": "retratos",
+    "width": 390,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El lenguaje del juego"
+    ]
+  },
+  {
+    "screen": "despacho-dia",
+    "width": 390,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El lenguaje del juego",
+      "El despacho"
+    ]
+  },
+  {
+    "screen": "despacho-noche",
+    "width": 390,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El lenguaje del juego",
+      "El despacho"
+    ]
+  },
+  {
+    "screen": "despacho-crisis",
+    "width": 390,
+    "nativeSelects": 0,
+    "overflow": false,
+    "headings": [
+      "El lenguaje del juego",
+      "El despacho"
+    ]
+  }
+]

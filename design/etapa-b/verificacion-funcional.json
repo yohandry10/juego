@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-07",
+  "checks": [
+    "Selector: keyboard choice, disabled option, Escape and returned focus",
+    "Drawer: native focus trap and returned focus",
+    "Map: selects a real geometry without reloading and zoom reset works",
+    "Old career: import preserved, live matters bounded, archive searchable and focus restored",
+    "Congress: existing representatives and relationship profile remain accessible",
+    "Missing art: fallback preserves all navigation at 390 px"
+  ],
+  "pageErrors": [],
+  "humanSessions": 0
+}

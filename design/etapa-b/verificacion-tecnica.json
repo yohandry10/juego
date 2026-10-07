@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-07",
+  "tests": {
+    "command": "npm test",
+    "total": 150,
+    "passed": 150,
+    "failed": 0,
+    "durationMs": 27531.4337
+  },
+  "build": {
+    "command": "npm run build",
+    "passed": true,
+    "offlineFiles": 37,
+    "warnings": [
+      "Lucide use client directives: client-only app, no SSR boundary used"
+    ]
+  },
+  "workerTypesPassed": true,
+  "screenshots": 36,
+  "humanSessions": 0,
+  "humanEditorialReview": false,
+  "screenReaderReview": false,
+  "externalPcHardwareReview": false
+}

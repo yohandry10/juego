@@ -1,3 +1,4 @@
+import { eventContexts } from './event-contexts.es.js';
 export interface CareerEventTemplate {
   readonly id: string;
   readonly category: "campaign" | "party" | "congress" | "media" | "personal" | "economy" | "international";
@@ -121,7 +122,7 @@ const phase5Topics = phase5Families.flatMap((title, index) => {
     `${detail} ${["Los primeros informes muestran quiénes están expuestos.", "Cada alternativa distribuye beneficios y costos de manera diferente.", "Los resultados permiten revisar compromisos, ejecución y confianza pública."][index]}`] as const);
 });
 
-const allTopics = [...topics.map(([id, category, title, stage, arcId, arcStep]) => [id, category, title, stage, arcId, arcStep, `${title}: ${id.replaceAll("-", " ")}.`] as const), ...addedArcs, ...addedIssues, ...economyEvents, ...crisisArcEvents, ...internationalTopics, ...phase5Topics];
+const allTopics = [...topics.map(([id, category, title, stage, arcId, arcStep]) => [id, category, title, stage, arcId, arcStep, eventContexts[id] ?? title] as const), ...addedArcs, ...addedIssues, ...economyEvents, ...crisisArcEvents, ...internationalTopics, ...phase5Topics];
 
 export const eventCatalogVersion = "career-events-v7-phase-context";
 export const careerEventCatalog: readonly CareerEventTemplate[] = allTopics.map(([id, category, title, stage, arcId, arcStep, detail]) => {

@@ -1,3 +1,4 @@
+import { fictionalPoliticalName, formatPartyName } from "../data/political-names.js";
 import type { ChamberDefinition, CountryDefinition, Faction, GameEvent, GameState, Party, SimulationResult } from "../domain/types.js";
 import { advanceClock } from "./calendar.js";
 import { EventBus } from "./event-bus.js";
@@ -14,8 +15,6 @@ const clamp = (value: number, min: number, max: number): number => Math.min(max,
 const partyPrefixes = ["Unión", "Movimiento", "Frente", "Alianza", "Partido", "Pacto"];
 const partyQualities = ["Cívico", "Popular", "Renovador", "Federal", "Democrático", "del Progreso", "Nacional", "Social"];
 const factionQualities = ["Institucional", "Territorial", "Reformista", "Pragmática", "Juvenil", "Productiva", "Social", "Regional"];
-const givenNames = ["Lucía", "Mateo", "Valeria", "Diego", "Camila", "Andrés", "Mariana", "Joaquín", "Sofía", "Gabriel", "Elena", "Nicolás", "Rosa", "Tomás", "Daniela", "Bruno", "Ana", "Martín", "Paola", "Emilio"];
-const familyNames = ["Rojas", "Salazar", "Mendoza", "Vargas", "Paredes", "Quispe", "Cárdenas", "León", "Navarro", "Campos", "Reyes", "Silva", "Flores", "Castro", "Guzmán", "Torres", "Vega", "Cruz", "Arias", "Medina"];
 const interests = ["empleo", "educación", "salud", "seguridad", "agricultura", "minería", "transporte", "transparencia", "vivienda", "descentralización"];
 
 function apportionSeats(seatCount: number, shares: readonly number[]): number[] {
@@ -36,11 +35,16 @@ function makePoliticalActors(country: CountryDefinition, rngState: number): { pa
   const rng = createRng(rngState);
   const profiles = country.politicalSystem.politicalDistribution;
   const usedNames = new Set<string>();
+  const usedQualities = new Set<string>();
   const parties: Party[] = profiles.map((profile, index) => {
     let name = "";
     let nameAttempt = 0;
     while (!name || usedNames.has(name)) {
-      const base = `${partyPrefixes[Math.floor(rng.next() * partyPrefixes.length)]} ${partyQualities[Math.floor(rng.next() * partyQualities.length)]}`;
+      const prefix = partyPrefixes[Math.floor(rng.next() * partyPrefixes.length)]!;
+      const draw = Math.floor(rng.next() * partyQualities.length);
+      const quality = Array.from({length:partyQualities.length},(_,offset) => partyQualities[(draw+offset)%partyQualities.length]!).find((item) => !usedQualities.has(item)) ?? partyQualities[draw]!;
+      usedQualities.add(quality);
+      const base = formatPartyName(prefix,quality);
       name = nameAttempt === 0 ? base : `${base} ${index + 1}`;
       nameAttempt += 1;
     }
@@ -94,7 +98,7 @@ function makePoliticalActors(country: CountryDefinition, rngState: number): { pa
         const jitter = (): number => Math.round((rng.next() * 2 - 1) * 18);
         legislators.push({
           id: `leg-${String(legislators.length + 1).padStart(3, "0")}`,
-          name: `${givenNames[nameIndex % givenNames.length]} ${familyNames[Math.floor(nameIndex / givenNames.length) % familyNames.length]}`,
+          name: fictionalPoliticalName(country.id,nameIndex),
           chamberId: chamber.id,
           districtId,
           partyId: party.id,
