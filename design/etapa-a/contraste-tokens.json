@@ -1,0 +1,60 @@
+{
+  "method": "sRGB relative luminance; solid token pairs, no illustrated backgrounds",
+  "results": [
+    {
+      "foreground": "paper",
+      "background": "forest",
+      "ratio": 14.61,
+      "normalTextAA": true
+    },
+    {
+      "foreground": "paperMuted",
+      "background": "surface",
+      "ratio": 7.47,
+      "normalTextAA": true
+    },
+    {
+      "foreground": "ink",
+      "background": "paper",
+      "ratio": 16.04,
+      "normalTextAA": true
+    },
+    {
+      "foreground": "ink",
+      "background": "agency",
+      "ratio": 13.95,
+      "normalTextAA": true
+    },
+    {
+      "foreground": "paper",
+      "background": "crisis",
+      "ratio": 5.79,
+      "normalTextAA": true
+    },
+    {
+      "foreground": "crisisText",
+      "background": "forest",
+      "ratio": 8.26,
+      "normalTextAA": true
+    },
+    {
+      "foreground": "achievement",
+      "background": "forest",
+      "ratio": 8.36,
+      "normalTextAA": true
+    },
+    {
+      "foreground": "information",
+      "background": "forest",
+      "ratio": 8.95,
+      "normalTextAA": true
+    },
+    {
+      "foreground": "ochre",
+      "background": "forest",
+      "ratio": 5.71,
+      "normalTextAA": true
+    }
+  ],
+  "rule": "Put readable text on opaque paper or forest surfaces; test actual components after approval."
+}

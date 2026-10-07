@@ -1,0 +1,247 @@
+{
+  "date": "2026-10-06",
+  "baseCommit": "e60e789",
+  "method": "Automated local screenshots plus expert five-second heuristic. No human sessions performed.",
+  "fixture": "Existing unmodified forty-year save for inbox, congress, press and world. Initial campaign uses a fresh save.",
+  "results": [
+    {
+      "screen": "inicio",
+      "width": 1440,
+      "height": 960,
+      "nativeSelects": 6,
+      "images": 0,
+      "visibleButtons": 11,
+      "overflow": false,
+      "headings": [
+        "Una carrera. Un país real.",
+        "Tu nombre aúnno está en la lista.",
+        "Tu origen"
+      ]
+    },
+    {
+      "screen": "campana-y-ficha",
+      "width": 1440,
+      "height": 960,
+      "nativeSelects": 0,
+      "images": 0,
+      "visibleButtons": 27,
+      "overflow": false,
+      "headings": [
+        "Alex Ríos",
+        "Semana 1 de 4",
+        "Elige una acción",
+        "Lo que ha pasado",
+        "Unión Social"
+      ]
+    },
+    {
+      "screen": "bandeja",
+      "width": 1440,
+      "height": 960,
+      "nativeSelects": 1,
+      "images": 0,
+      "visibleButtons": 51,
+      "overflow": false,
+      "headings": [
+        "Elena Ríos",
+        "Decisiones y actividad",
+        "Revisión del sistema financiero",
+        "Revisión regulatoria: Centros de trabajo",
+        "Reducción de gasto: Territorios",
+        "Vencimientos concentrados: Hogares",
+        "Uso de reservas: Territorios",
+        "Criterios de préstamo: Hogares",
+        "Inversión privada: Hogares",
+        "Perspectiva crediticia: Centros de trabajo",
+        "El presupuesto anual no alcanza para todo",
+        "Resolución bancaria: Centros de trabajo"
+      ]
+    },
+    {
+      "screen": "congreso",
+      "width": 1440,
+      "height": 960,
+      "nativeSelects": 0,
+      "images": 0,
+      "visibleButtons": 19,
+      "overflow": false,
+      "headings": [
+        "Elena Ríos",
+        "190 representantes ficticios",
+        "Ley de empleo regional · Rechazada",
+        "Presupuesto de servicios esenciales · Rechazada",
+        "Reforma de transparencia · Rechazada",
+        "Moción de seguridad territorial · Aprobada",
+        "Ley de empleo regional · Rechazada",
+        "Presupuesto de servicios esenciales · Rechazada",
+        "Reforma de transparencia · Rechazada",
+        "Moción de seguridad territorial · Aprobada",
+        "Ley de empleo regional · Rechazada",
+        "Presupuesto de servicios esenciales · Rechazada"
+      ]
+    },
+    {
+      "screen": "prensa",
+      "width": 1440,
+      "height": 960,
+      "nativeSelects": 0,
+      "images": 0,
+      "visibleButtons": 19,
+      "overflow": false,
+      "headings": [
+        "Elena Ríos",
+        "Lo que mueve el debate",
+        "La bancada revisa sus compromisos públicos sobre Moción de seguridad territorial.",
+        "Representantes del distrito preguntan por el siguiente paso en Reforma de transparencia.",
+        "Presupuesto de servicios esenciales: las razones de cada voto quedan disponibles para consulta.",
+        "Ley de empleo regional reabre una conversación que parecía cerrada.",
+        "La decisión sobre Moción de seguridad territorial queda registrada en el diario de carrera.",
+        "La respuesta a Reforma de transparencia puede mover la confianza entre legisladores.",
+        "Una votación internacional sobre Presupuesto de servicios esenciales divide los apoyos y multiplica las abstenciones prudentes.",
+        "La bandeja registra novedades sobre Ley de empleo regional; las bancadas todavía miden el costo.",
+        "Los asesores entregan una nota sobre Moción de seguridad territorial; el resumen ejecutivo pide leer la nota completa.",
+        "Reforma de transparencia: las razones de cada voto quedan disponibles para consulta."
+      ]
+    },
+    {
+      "screen": "mundo",
+      "width": 1440,
+      "height": 960,
+      "nativeSelects": 2,
+      "images": 0,
+      "visibleButtons": 32,
+      "overflow": false,
+      "headings": [
+        "Elena Ríos",
+        "Relaciones con otros países",
+        "Postura exterior",
+        "Relación con United States",
+        "Pedir apoyo económico",
+        "Disputas comerciales",
+        "Organismos y decisiones",
+        "Conflictos y posguerra",
+        "Registro internacional"
+      ]
+    },
+    {
+      "screen": "inicio",
+      "width": 900,
+      "height": 960,
+      "nativeSelects": 6,
+      "images": 0,
+      "visibleButtons": 11,
+      "overflow": false,
+      "headings": [
+        "Una carrera. Un país real.",
+        "Tu nombre aúnno está en la lista.",
+        "Tu origen"
+      ]
+    },
+    {
+      "screen": "campana-y-ficha",
+      "width": 900,
+      "height": 960,
+      "nativeSelects": 0,
+      "images": 0,
+      "visibleButtons": 27,
+      "overflow": false,
+      "headings": [
+        "Alex Ríos",
+        "Semana 1 de 4",
+        "Elige una acción",
+        "Lo que ha pasado",
+        "Unión Social"
+      ]
+    },
+    {
+      "screen": "bandeja",
+      "width": 900,
+      "height": 960,
+      "nativeSelects": 1,
+      "images": 0,
+      "visibleButtons": 51,
+      "overflow": false,
+      "headings": [
+        "Elena Ríos",
+        "Decisiones y actividad",
+        "Revisión del sistema financiero",
+        "Revisión regulatoria: Centros de trabajo",
+        "Reducción de gasto: Territorios",
+        "Vencimientos concentrados: Hogares",
+        "Uso de reservas: Territorios",
+        "Criterios de préstamo: Hogares",
+        "Inversión privada: Hogares",
+        "Perspectiva crediticia: Centros de trabajo",
+        "El presupuesto anual no alcanza para todo",
+        "Resolución bancaria: Centros de trabajo"
+      ]
+    },
+    {
+      "screen": "congreso",
+      "width": 900,
+      "height": 960,
+      "nativeSelects": 0,
+      "images": 0,
+      "visibleButtons": 19,
+      "overflow": false,
+      "headings": [
+        "Elena Ríos",
+        "190 representantes ficticios",
+        "Ley de empleo regional · Rechazada",
+        "Presupuesto de servicios esenciales · Rechazada",
+        "Reforma de transparencia · Rechazada",
+        "Moción de seguridad territorial · Aprobada",
+        "Ley de empleo regional · Rechazada",
+        "Presupuesto de servicios esenciales · Rechazada",
+        "Reforma de transparencia · Rechazada",
+        "Moción de seguridad territorial · Aprobada",
+        "Ley de empleo regional · Rechazada",
+        "Presupuesto de servicios esenciales · Rechazada"
+      ]
+    },
+    {
+      "screen": "prensa",
+      "width": 900,
+      "height": 960,
+      "nativeSelects": 0,
+      "images": 0,
+      "visibleButtons": 19,
+      "overflow": false,
+      "headings": [
+        "Elena Ríos",
+        "Lo que mueve el debate",
+        "La bancada revisa sus compromisos públicos sobre Moción de seguridad territorial.",
+        "Representantes del distrito preguntan por el siguiente paso en Reforma de transparencia.",
+        "Presupuesto de servicios esenciales: las razones de cada voto quedan disponibles para consulta.",
+        "Ley de empleo regional reabre una conversación que parecía cerrada.",
+        "La decisión sobre Moción de seguridad territorial queda registrada en el diario de carrera.",
+        "La respuesta a Reforma de transparencia puede mover la confianza entre legisladores.",
+        "Una votación internacional sobre Presupuesto de servicios esenciales divide los apoyos y multiplica las abstenciones prudentes.",
+        "La bandeja registra novedades sobre Ley de empleo regional; las bancadas todavía miden el costo.",
+        "Los asesores entregan una nota sobre Moción de seguridad territorial; el resumen ejecutivo pide leer la nota completa.",
+        "Reforma de transparencia: las razones de cada voto quedan disponibles para consulta."
+      ]
+    },
+    {
+      "screen": "mundo",
+      "width": 900,
+      "height": 960,
+      "nativeSelects": 2,
+      "images": 0,
+      "visibleButtons": 32,
+      "overflow": false,
+      "headings": [
+        "Elena Ríos",
+        "Relaciones con otros países",
+        "Postura exterior",
+        "Relación con United States",
+        "Pedir apoyo económico",
+        "Disputas comerciales",
+        "Organismos y decisiones",
+        "Conflictos y posguerra",
+        "Registro internacional"
+      ]
+    }
+  ],
+  "pageErrors": []
+}

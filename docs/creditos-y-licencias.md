@@ -12,6 +12,8 @@ El snapshot mundial `world-2026-10-06-v1` usa WDI, rosterONU, geometrías Natura
 
 Los 217 escenarios generados tienen plantilla institucional ficticia; solo magnitudes WDI disponibles son observaciones y los faltantes usan supuestos. No constituyen investigación constitucional de 217 países. Contenido y personajes son locales generados/editados en desarrollo; no hay audio o ilustraciones externas ni fuentes web descargadas. Las familias tipográficas CSS tienen fallback del sistema.
 
+La [propuesta visual A](../design/etapa-a/creditos.md) contiene un despacho generado con IA mediante la sesión abierta de ChatGPT, con original, WebP, prompt, fecha y estado pendiente en su manifiesto. Está aislado del juego; las frases anteriores describen los recursos integrados en la aplicación. Los términos oficiales de OpenAI y las licencias propuestas de Source Serif/Source Sans, Lucide y Natural Earth se consultaron el 6 de octubre de 2026 y están enlazados en los créditos de la propuesta. Audio y catálogo de producción todavía pendientes.
+
 La procedencia de membresías se conserva separadamente en `src/data/world-memberships.json`: [OMC](https://www.wto.org/english/thewto_e/whatis_e/tif_e/org6_e.htm), [FMI](https://www.imf.org/external/np/sec/memdir/memdate.htm) e [IBRD/Banco Mundial](https://www.worldbank.org/en/about/leadership/members), consultados el 6 de octubre de 2026. Se transforman los nombres a códigos de actor y se identifican los miembros sin actor; no se distribuyen textos completos de esos sitios. Sus condiciones de reproducción requieren revisión específica antes de publicación. Los préstamos y beneficios del juego usan términos ficticios propios, sin atribuirlos a esos organismos.
 
 ## Revisión pendiente para publicación

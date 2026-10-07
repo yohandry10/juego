@@ -235,3 +235,11 @@ El usuario rechazó explícitamente trabajo móvil. El alcance pasa a PC con rat
 - Se añade «Jugar ahora» al primer paso y se conserva la personalización completa. Las acciones principales muestran costos compartidos con el motor y bloquean gastos que no se pueden pagar.
 - Se integran correcciones ya iniciadas de candidatura territorial mexicana, escaño en el distrito ganado y límite presidencial conservado tras retiro. No se extiende esta investigación a otros perfiles. [Alcance y evidencia](electoral-gameplay-review.md).
 - Reserva nueva `balance-reserved-v4`: 4.500 muestras, 500 semillas emparejadas; México/diputación15/180 y Perú presidencial9/135 completados. Balance sin aceptar; resultados entre reservas diferentes no aíslan una mejora. Se conserva [el lote anterior](historical-career-balance-d301e14.json).
+
+## 2026-10-06 — Dirección visual de juego, Etapa A parcial
+
+- Nueva instrucción del usuario: claridad y belleza, despacho como hub, escenas, rostros, prensa y votaciones ceremoniales. Prevalece sobre la guía en UI; sigue detenida la ampliación constitucional.
+- Parada explícita: completar auditoría, ficha, seis referencias ChatGPT y tokens; no programar UI hasta aprobación del tablero. No se modifican motor, aplicación ni las 143 pruebas.
+- Doce capturas nuevas de seis vistas en 1440/900 px. Revisión de cinco segundos heurística, no prueba humana. La interfaz actual todavía parece panel; mapa y costos sirven como base.
+- Una referencia del despacho generada, revisada y guardada con prompt/manifiesto/WebP. Al adjuntarla aparece un límite de almacenamiento de ChatGPT. Se detiene la generación sin cambiar la cuenta ni usar otra vía. Cinco referencias pendientes; A no está completa.
+- [Entrega y pendientes](../design/etapa-a/README.md), nueve pares de tokens con contraste de texto AA sobre fondos sólidos. No equivale a validar los componentes futuros sobre ilustraciones.
