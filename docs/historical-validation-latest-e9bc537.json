@@ -1,13 +1,13 @@
 {
   "date": "2026-10-06",
-  "cut": "captured-coup-causes-and-import-audit-2026-10-06",
+  "cut": "shock-frequency-diagnostic-with-unchanged-au-client-2026-10-06",
   "platformScope": "PC only, explicit user correction",
   "environment": "Windows; Node 24.13.1; Core i5-10400F; 17098092544 bytes RAM",
   "unitTests": {
     "command": "npm test",
-    "passed": 139,
+    "passed": 136,
     "failed": 0,
-    "durationMs": 31074.4182
+    "durationMs": 46310.7631
   },
   "build": {
     "command": "npm run build; npm run build:repro-check",
@@ -15,9 +15,9 @@
     "identicalBuilds": true,
     "reproducibleFiles": 30,
     "evidence": "build-reproducibility.json",
-    "mainChunkKb": 346.02,
-    "mainChunkGzipKb": 98.16,
-    "workerKb": 393.85,
+    "mainChunkKb": 344.64,
+    "mainChunkGzipKb": 97.76,
+    "workerKb": 393.38,
     "worldViewKb": 37.17,
     "worldDataKb": 110.44,
     "browserProfilesSynchronized": true,
@@ -50,8 +50,8 @@
     "averageSanctions": 0.99,
     "maximumDirectNuclearWars": 0,
     "invalidValues": 0,
-    "averageQuarterMs": 2.757412324999999,
-    "worldRuntimeMs": 55154.2871,
+    "averageQuarterMs": 4.408948845000003,
+    "worldRuntimeMs": 88188.41189999999,
     "sensitivity": {
       "command": "npm run world:sensitivity",
       "cases": 1736,
@@ -63,9 +63,7 @@
     "overlappingShockEffectsChecked": true,
     "semanticReviewEvidence": "world-semantic-review.md",
     "fullHistoricalEffectReplayCompleted": false,
-    "timingScope": "Local measurement under concurrent mass batches; not comparable to the preceding cut as a performance change.",
-    "coupEvidenceReplayed": true,
-    "gameplayRegressionEvidence": "coup-evidence-regression.json"
+    "timingScope": "Local measurement under concurrent mass batches; not comparable to the preceding cut as a performance change."
   },
   "frequencyReference": {
     "command": "node --import tsx src/cli/world-frequency.ts",
@@ -160,20 +158,20 @@
     "completedTerms": 8,
     "identicalAfterRestore": true,
     "restoredAtQuarter": 80,
-    "stateSha256": "f0b68d3e19cd3b35c2b1a9b39bd1bc11d7e806a15e08a80d95c2a4f8eb646535",
+    "stateSha256": "62034ae728029689bb2fd7376706deffeeb9bb964198947b34009f9be20aef50",
     "comparedToPreviousMotor": false,
-    "firstTenYearsAverageTurnMs": 7.375002500000027,
-    "lastTenYearsAverageTurnMs": 10.502972500000123,
-    "maximumTurnMs": 26.948700000000827,
-    "p95TurnMs": 17.040100000000166,
+    "firstTenYearsAverageTurnMs": 7.263919999999985,
+    "lastTenYearsAverageTurnMs": 9.56859499999996,
+    "maximumTurnMs": 21.4937000000009,
+    "p95TurnMs": 15.87329999999929,
     "serializedBytesStart": 1467137,
-    "serializedBytesEnd": 1994025,
+    "serializedBytesEnd": 1979209,
     "memoryGrowthResolved": false,
     "thirtyYearRepeatedLiteralBodiesPercent": 0,
     "priorFailedSeeds": 6,
     "scopeNote": "One Peru legislative career, after mass batches finished; current-engine restoration equality. Earlier hashes/timings are historical. State and time still grow; no sustained-memory or representative-hardware claim.",
-    "heapBytesStart": 26525848,
-    "heapBytesEnd": 30000904
+    "heapBytesStart": 26535336,
+    "heapBytesEnd": 29927200
   },
   "memberships": {
     "evidence": "../src/data/world-memberships.json",
@@ -225,7 +223,7 @@
       "command": "python tests/web-smoke.py",
       "engine": "Edge Chromium",
       "passed": true,
-      "executiveTurnSeconds": 0.349,
+      "executiveTurnSeconds": 0.453,
       "hallArchiveAndEscape": true
     },
     "countryStart": {
@@ -346,17 +344,17 @@
     }
   },
   "sourceAtReportCut": {
-    "sha256": "179590062cb9e45d07a05a1bc5e5467c8ecc4ba11c15e922503399a835681bf0",
+    "sha256": "72376fd97e3223627c9f63972ca769bdc71773b67c96e15516c3d340561e1f6f",
     "files": 166,
     "scope": "src, data/countries, public, tests (except __pycache__), scripts, package/configuration and independent world/shock references; other reports excluded",
     "command": "node scripts/source-fingerprint.mjs",
     "buildHashes": "build-reproducibility.json",
-    "note": "Current coup evidence/audit source; 139 tests, world100x50, builds/Worker, smoke, financing/ratification/Worker browsers and forty-year restoration rerun. Other stated batches are explicitly reused below, not new runs on this hash."
+    "note": "Client, engine, data and build unchanged from a8140c5. Added independent shock reference, updater, reference-semantics test and diagnostic CLI; its TypeScript and 32 fresh worlds validated separately. Existing browser and behavior evidence remains applicable to the unchanged game."
   },
   "historicalEvidence": {
-    "previousValidation": "historical-validation-latest-e9bc537.json",
-    "previousLongCareer": "historical-long-career-evidence-e9bc537.json",
-    "note": "e9bc537/a8140c5 and earlier hashes/timings are historical. Coup evidence changes serialized state, not gameplay in the focused 600-quarter comparison. Old saves retain absent evidence.",
+    "previousValidation": "historical-validation-latest-76f76c3.json",
+    "previousLongCareer": "historical-long-career-evidence-76f76c3.json",
+    "note": "76f76c3 and e02877a reports/hashes/timings are historical. The current AU snapshot changes state hashes; no cross-engine equality claim.",
     "previousFrequency": "historical-world-frequency-calibration-76f76c3.json"
   },
   "humanSessions": 0,
@@ -366,7 +364,7 @@
   "representativePcHardwareCoverageCompleted": false,
   "publicReleaseCompleted": false,
   "allMandatoryCriteriaCompleted": false,
-  "behaviorSourceFingerprint": "179590062cb9e45d07a05a1bc5e5467c8ecc4ba11c15e922503399a835681bf0",
+  "behaviorSourceFingerprint": "6777801ebb37eefc905ee11fb0243c6e898e616d9a386455ff8e6ec9e5fde1af",
   "shockFrequencyDiagnostic": {
     "command": "npm run world:shock-frequency",
     "reference": "independent-shock-reference.json",
@@ -383,21 +381,5 @@
     "referenceSemanticsCommand": "python tests/shock-reference.test.py",
     "referenceSemanticsTests": 1,
     "scope": "Energy/food positive annual price-episode proxies, not supply-crisis equivalence. No tuning. These diagnostic seeds are now consumed."
-  },
-  "validationReuse": {
-    "sourceCut": "a8140c5/e9bc537",
-    "batches": [
-      "base1000",
-      "country500",
-      "careerBalance4500",
-      "generated651",
-      "diplomacy2250",
-      "content",
-      "sensitivity1736+36",
-      "frequency-v2",
-      "shock-reference-v1",
-      "static PC accessibility/contrast/help/participation"
-    ],
-    "reason": "No economic/electoral/diplomatic or random-outcome rule changed. Only optional historical evidence and stricter invalid-save audit. Focused 600-quarter replay verifies unchanged world gameplay. These batches were not rerun in this increment and do not count as new seeds."
   }
 }

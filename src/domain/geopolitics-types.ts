@@ -85,6 +85,25 @@ export interface GlobalShock {
   readonly explanation: string;
 }
 
+export interface CoupRiskRules {
+  readonly coupStabilityThreshold: number;
+  readonly coupLoyaltyThreshold: number;
+  readonly coupStressThreshold: number;
+  readonly coupRiskScale: number;
+  readonly coupCooldownQuarters: number;
+}
+
+export interface CoupEvidence {
+  readonly ruleVersion: 1;
+  readonly parameterVersion: string;
+  readonly regimeStability: number;
+  readonly militaryLoyalty: number;
+  readonly domesticStress: number;
+  readonly draw: number;
+  readonly lastCoupQuarter: number | null;
+  readonly rules: CoupRiskRules;
+}
+
 export interface WorldConflict {
   readonly id: string;
   readonly type: ConflictType;
@@ -246,7 +265,7 @@ export interface GeopoliticsState {
   readonly domesticImpact: { readonly growthDelta: number; readonly inflationDelta: number; readonly unemploymentDelta: number; readonly causes: readonly string[]; readonly evidence?: WorldDomesticImpactEvidence; readonly financing?: { readonly debt: number; readonly reserves: number; readonly investment: number; readonly fiscalDeficit: number; readonly risk: number } };
   readonly militaryLoyalty: number;
   readonly coups: number;
-  readonly coupHistory?: readonly { readonly actorId: string; readonly quarterIndex: number; readonly risk: number; readonly explanation: string }[];
+  readonly coupHistory?: readonly { readonly actorId: string; readonly quarterIndex: number; readonly risk: number; readonly explanation: string; readonly evidence?: CoupEvidence }[];
   readonly headlines: readonly { readonly quarterIndex: number; readonly text: string; readonly explanation: string }[];
 }
 

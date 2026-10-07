@@ -221,3 +221,10 @@ El usuario rechazó explícitamente trabajo móvil. El alcance pasa a PC con rat
 - Pink Sheet anual nominal, 2000–2025, umbral positivo20% y agrupación de años consecutivos declarados antes de leer datos. Cinco episodios energía/tres alimentos; hash, CC BY4.0 y transformaciones registrados.
 - 32 mundos nuevos de50años miden los ocho tipos; energía0,059375/año y alimentos0,0575/año quedan fuera de la banda×/÷2. Se conserva el resultado desfavorable.
 - No se ajustan parámetros: encarecimiento y suministro no son equivalentes. Otros seis tipos pendientes; semillas `shock-reference-v1` consumidas. Cliente/build/Worker siguen siendo los validados en a8140c5; solo cambia la herramienta de evidencia.
+
+## 2026-10-06 — Causas históricas de golpes desde e9bc537
+
+- Evidencia opcional captura tres presiones, sorteo, último golpe y cinco reglas/versiones. Auditoría usa las reglas guardadas y comprueba riesgo, sorteo y enfriamiento; no reinterpreta historia con un ajuste posterior. Guardados antiguos no reciben evidencia fabricada.
+- Importación rechaza acciones desconocidas, organismos duplicados y golpes contradictorios. No se cambia la probabilidad ni la transición jugable.
+- 600trimestres comparados con la transición e9bc537, compartiendo dependencias actuales y retirando solo evidencia nueva: mismo estado completo. 139pruebas, cien mundos, build/Worker/repro, navegadores afectados y40años pasan. Otros lotes se conservan explícitamente como evidencia reutilizada.
+- Guardado1,40→1,90MiB, tiempos década7,38/10,50ms máximo26,95ms; memoria/tiempo sostenidos abiertos. Se preservan informes e9bc537.

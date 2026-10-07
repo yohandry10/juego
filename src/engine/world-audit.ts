@@ -4,6 +4,7 @@ import { organizationMember, organizationParticipationRestriction } from "./worl
 import financingTerms from "../data/financing-parameters.json" with { type: "json" };
 import { treatyVoteThreshold } from "../domain/treaty-vote.js";
 import { evaluateWorldDomesticImpact } from "./world-domestic-impact.js";
+import { coupRisk } from "./world-conflicts.js";
 
 /** Audit the whole snapshot, including references and explanations, each quarter. */
 export function auditWorld(state: GeopoliticsState): string[] {
@@ -12,7 +13,7 @@ export function auditWorld(state: GeopoliticsState): string[] {
   const targets = new Set([...ids, ...state.organizations.map((o) => o.id)]);
   const bounded = (value: number, min = 0, max = 100) => Number.isFinite(value) && value >= min && value <= max;
   const quarter = (value: number, future = 0) => Number.isInteger(value) && value >= 0 && value <= state.quarterIndex + future;
-  for (const [name, records] of [["conflicts", state.conflicts], ["actions", state.actions], ["shocks", state.shocks], ["votes", state.votes], ["treaties", state.treaties], ["disputes", state.tradeDisputes ?? []]] as const) {
+  for (const [name, records] of [["organizations", state.organizations], ["conflicts", state.conflicts], ["actions", state.actions], ["shocks", state.shocks], ["votes", state.votes], ["treaties", state.treaties], ["disputes", state.tradeDisputes ?? []]] as const) {
     if (new Set(records.map((r) => r.id)).size !== records.length || records.some((r) => !r.id.trim())) issues.push(`identities:${name}`);
   }
   if (ids.size !== state.actors.length || !ids.has(state.playerCountryId)) issues.push("actor identities");
@@ -35,7 +36,9 @@ export function auditWorld(state: GeopoliticsState): string[] {
     if (c.forces?.some((f) => ![c.attackerId, c.defenderId].includes(f.ownerId) || !ids.has(f.locationId) || !["army", "fleet", "air"].includes(f.kind) || ![f.strength, f.logistics, f.morale].every((v) => bounded(v)))) issues.push(`forces:${c.id}`);
     if (c.reconstruction && !Object.entries(c.reconstruction).filter(([key]) => key !== "treaty").every(([, value]) => typeof value === "number" && bounded(value))) issues.push(`postwar:${c.id}`);
   }
-  for (const a of state.actions) if (!ids.has(a.actorId) || !targets.has(a.targetId) || !quarter(a.quarterIndex, 1) || !a.explanation.trim() || !bounded(a.intensity) || !Number.isFinite(a.costToSender) || a.costToSender < 0) issues.push(`action:${a.id}`);
+  for (const a of state.actions) if (!ids.has(a.actorId) || !targets.has(a.targetId) || !quarter(a.quarterIndex, 1) || !a.explanation.trim()
+    || !["trade-deal", "tariff", "sanction", "alliance", "recognition", "security-assistance", "military-exercise", "ultimatum", "de-escalation", "crisis"].includes(a.kind)
+    || !bounded(a.intensity) || !Number.isFinite(a.costToSender) || a.costToSender < 0) issues.push(`action:${a.id}`);
   for (const a of state.actions) if (a.decisionEvidence && (![a.decisionEvidence.tension, a.decisionEvidence.trust, a.decisionEvidence.domesticStress, a.decisionEvidence.domesticSensitivity, a.decisionEvidence.credibility].every((v) => bounded(v)) || !["cautious", "broker", "guardian", "revisionist", "inward", "coalition-builder"].includes(a.decisionEvidence.style) || evaluateWorldDecision(a.decisionEvidence) !== a.kind)) issues.push(`decision-cause:${a.id}`);
   for (const s of state.shocks) if (!ids.has(s.originId) || !quarter(s.quarterIndex) || !["energy", "food", "finance", "interest-rates", "pandemic", "natural-disaster", "semiconductor", "migration"].includes(s.type) || !s.explanation.trim() || !bounded(s.intensity) || !Number.isInteger(s.durationQuarters) || s.durationQuarters < 1) issues.push(`shock:${s.id}`);
   for (const v of state.votes) if (!(state.organizations.some((o) => o.id === v.organizationId) || v.organizationId === "national-legislature" && v.id.startsWith("treaty-vote-")) || !quarter(v.quarterIndex) || !v.explanation.trim() || ![v.yes, v.no, v.abstain].every((n) => Number.isInteger(n) && n >= 0)) issues.push(`vote:${v.id}`);
@@ -53,7 +56,23 @@ export function auditWorld(state: GeopoliticsState): string[] {
         || b.choice === "yes" && b.score < 50 || b.choice === "no" && b.score >= 50)) issues.push(`treaty-ballots:${v.id}`);
   }
   for (const s of state.sanctions) if (!ids.has(s.fromId) || !ids.has(s.toId) || s.fromId === s.toId || !quarter(s.startedQuarter, 1) || !s.reason.trim()) issues.push("sanction");
-  for (const c of state.coupHistory ?? []) if (!ids.has(c.actorId) || !quarter(c.quarterIndex) || !c.explanation.trim() || !bounded(c.risk, 0, 1)) issues.push("coup");
+  const priorCoups = new Map<string, number>();
+  for (const c of state.coupHistory ?? []) {
+    const knownPrior = priorCoups.get(c.actorId);
+    if (!ids.has(c.actorId) || !quarter(c.quarterIndex) || !c.explanation.trim() || !bounded(c.risk, 0, 1)
+      || knownPrior !== undefined && c.quarterIndex <= knownPrior) issues.push("coup");
+    if (c.evidence) {
+      const e = c.evidence, r = e.rules;
+      if (e.ruleVersion !== 1 || !e.parameterVersion.trim() || ![e.regimeStability, e.militaryLoyalty, e.domesticStress].every((v) => bounded(v))
+        || !bounded(e.draw, 0, 1) || e.draw === 1 || e.draw >= c.risk
+        || ![r.coupStabilityThreshold, r.coupLoyaltyThreshold, r.coupStressThreshold].every((v) => bounded(v))
+        || !bounded(r.coupRiskScale, 0, 1) || !Number.isInteger(r.coupCooldownQuarters) || r.coupCooldownQuarters < 1
+        || Math.abs(coupRisk(e, r) - c.risk) > 1e-12
+        || e.lastCoupQuarter !== null && (!quarter(e.lastCoupQuarter) || c.quarterIndex - e.lastCoupQuarter < r.coupCooldownQuarters)
+        || knownPrior !== undefined && e.lastCoupQuarter !== knownPrior) issues.push(`coup-cause:${c.actorId}:${c.quarterIndex}`);
+    }
+    priorCoups.set(c.actorId, c.quarterIndex);
+  }
   if (![state.player.influence, state.player.isolation, state.player.annualAidIndex, state.militaryLoyalty].every((v) => bounded(v))) issues.push("player diplomacy");
   if (![state.domesticImpact.growthDelta, state.domesticImpact.inflationDelta, state.domesticImpact.unemploymentDelta].every((v) => bounded(v, -5, 5)) || !Array.isArray(state.domesticImpact.causes) || state.domesticImpact.causes.some((c) => typeof c !== "string")) issues.push("domestic impact");
   if (state.domesticImpact.evidence) {

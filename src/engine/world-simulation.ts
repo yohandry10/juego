@@ -144,10 +144,15 @@ export function advanceGeopolitics(state: GeopoliticsState, seed: string, quarte
     const coupHistory = [...(current.coupHistory ?? [])];
     const actorsAfterCoups = actorsWithSanctionCosts.map((actor) => {
       const risk = coupRisk(actor);
-      const cooldown = coupHistory.some((entry) => entry.actorId === actor.id && q - entry.quarterIndex < parameters.coupCooldownQuarters);
-      if (cooldown || roll(`${seed}:${actor.id}:coup`, q) >= risk) return actor;
+      const lastCoupQuarter = coupHistory.reduce<number | null>((last, entry) => entry.actorId === actor.id && (last === null || entry.quarterIndex > last) ? entry.quarterIndex : last, null);
+      if (lastCoupQuarter !== null && q - lastCoupQuarter < parameters.coupCooldownQuarters) return actor;
+      const draw = roll(`${seed}:${actor.id}:coup`, q);
+      if (draw >= risk) return actor;
       const explanation = `Golpe simulado: estabilidad ${actor.regimeStability.toFixed(1)}, lealtad militar ${actor.militaryLoyalty.toFixed(1)} y presión doméstica ${actor.domesticStress.toFixed(1)} cruzaron los umbrales; riesgo trimestral ${(risk * 100).toFixed(2)}%. Transición ficticia con costo institucional.`;
-      coupHistory.push({ actorId: actor.id, quarterIndex: q, risk, explanation });
+      coupHistory.push({ actorId: actor.id, quarterIndex: q, risk, explanation, evidence: { ruleVersion: 1, parameterVersion: parameters.version,
+        regimeStability: actor.regimeStability, militaryLoyalty: actor.militaryLoyalty, domesticStress: actor.domesticStress, draw, lastCoupQuarter,
+        rules: { coupStabilityThreshold: parameters.coupStabilityThreshold, coupLoyaltyThreshold: parameters.coupLoyaltyThreshold,
+          coupStressThreshold: parameters.coupStressThreshold, coupRiskScale: parameters.coupRiskScale, coupCooldownQuarters: parameters.coupCooldownQuarters } } });
       actions = [...actions.slice(-499), { id: `coup-${actor.id}-${q}`, quarterIndex: q, actorId: actor.id, targetId: actor.id, kind: "crisis", intensity: 80, explanation, costToSender: 2 }];
       return { ...actor, regimeStability: 48, militaryLoyalty: 55, domesticStress: clamp(actor.domesticStress + 5, 0, 100) };
     });

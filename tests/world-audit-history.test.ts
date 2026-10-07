@@ -7,6 +7,7 @@ import { loadCountry } from "../src/data/load-country.js";
 import { createCareerGame } from "../src/application/career-commands.js";
 import { migrateCareerSave } from "../src/persistence/career-save.js";
 import type { GeopoliticsState } from "../src/domain/geopolitics-types.js";
+import parameters from "../src/data/world-parameters.json" with { type: "json" };
 
 test("audit rejects duplicate identities, impossible dates and unknown shock types on import", async () => {
   const country = await loadCountry("data/countries/peru.json");
@@ -64,4 +65,47 @@ test("a financial response never sanctions its own origin, including a nuclear p
     assert.deepEqual(auditWorld(next), []);
     assert.ok(auditWorld({ ...next, sanctions: next.sanctions.map((s) => ({ ...s, toId: s.fromId })) }).includes("sanction"));
   }
+});
+
+test("coup history replays captured pressure, draw and historical rules without recalculating old saves under new parameters", () => {
+  const world = advanceGeopolitics(createGeopoliticsState("peru", "coup-evidence-proof"), "coup-evidence-proof", 200);
+  const entries = world.coupHistory!;
+  assert.ok(entries.length > 0 && entries.every((c) => c.evidence));
+  assert.deepEqual(auditWorld(world), []);
+  const entry = entries[0]!;
+  const evidence = entry.evidence!;
+  const changed = (patch: Partial<typeof evidence>) => ({ ...world, coupHistory: [{ ...entry, evidence: { ...evidence, ...patch } }, ...entries.slice(1)] });
+  for (const bad of [
+    changed({ regimeStability: 100 }),
+    changed({ draw: entry.risk }),
+    changed({ lastCoupQuarter: entry.quarterIndex - 1 }),
+    changed({ rules: { ...evidence.rules, coupRiskScale: 0 } }),
+    { ...world, coupHistory: [{ ...entry, risk: entry.risk + 0.001 }, ...entries.slice(1)] },
+    { ...world, coupHistory: [entry, entry, ...entries.slice(1)] },
+  ]) assert.ok(auditWorld(bad).some((issue) => issue === "coup" || issue.startsWith("coup-cause:")));
+  const originalScale = parameters.coupRiskScale;
+  try {
+    parameters.coupRiskScale = 0;
+    assert.deepEqual(auditWorld(world), [], "History must replay captured rules, not a later tuning parameter.");
+  } finally { parameters.coupRiskScale = originalScale; }
+  const historical = { ...world, coupHistory: entries.map(({ evidence: _evidence, ...c }) => c) };
+  assert.deepEqual(auditWorld(historical), [], "Old histories keep their data; evidence is not fabricated.");
+});
+
+test("import preserves new coup evidence and refuses a contradictory draw", async () => {
+  const country = await loadCountry("data/countries/peru.json");
+  const career = createCareerGame(country, { seed: "coup-import-proof", name: "Elena Ríos", age: 40, originId: "professional-middle", professionId: "teacher", educationId: "technical" });
+  const geopolitics = advanceGeopolitics(career.geopolitics, career.seed, 200);
+  assert.ok(geopolitics.coupHistory?.length);
+  const state = { ...career, geopolitics };
+  assert.deepEqual(migrateCareerSave(JSON.parse(JSON.stringify(state))), state);
+  assert.throws(() => migrateCareerSave({ ...state, geopolitics: { ...geopolitics, coupHistory: geopolitics.coupHistory!.map((c) => ({ ...c, evidence: { ...c.evidence!, draw: 1 } })) } }), /valores o referencias inválidos/);
+});
+
+test("unknown action kinds and duplicate organization identities cannot enter a saved world", () => {
+  const world = advanceGeopolitics(createGeopoliticsState("peru", "action-kind-proof"), "action-kind-proof", 20);
+  assert.ok(world.actions.length);
+  const invalid = { ...world, actions: world.actions.map((a) => ({ ...a, kind: "unknown" as typeof a.kind })) };
+  assert.ok(auditWorld(invalid).some((issue) => issue.startsWith("action:")));
+  assert.ok(auditWorld({ ...world, organizations: [...world.organizations, world.organizations[0]!] }).includes("identities:organizations"));
 });

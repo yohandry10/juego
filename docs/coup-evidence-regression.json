@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-06",
+  "baselineGitRef": "e9bc537",
+  "protocol": "Historical e9bc537 world-simulation.ts copied adjacent to current module, sharing current dependencies; coup-risk formula and defaults unchanged. Compare full state after every one of 600 quarters, stripping only optional new coup evidence. No seed selection/tuning.",
+  "rows": [
+    {
+      "seed": "coup-regression-unseen-0",
+      "quarters": 200,
+      "identicalAtEveryQuarterIgnoringAddedEvidence": true,
+      "coups": 70,
+      "baselineStateSha256": "4b11b6b046042323cb0b04c269c8b002d68c035d34990dc10cef63ff46544a53"
+    },
+    {
+      "seed": "coup-regression-unseen-1",
+      "quarters": 200,
+      "identicalAtEveryQuarterIgnoringAddedEvidence": true,
+      "coups": 65,
+      "baselineStateSha256": "f1a2749a1072aeb0f3d9ae5e9ba1b61b99daa2a085464c73fa93aa7231f90d2e"
+    },
+    {
+      "seed": "coup-regression-unseen-2",
+      "quarters": 200,
+      "identicalAtEveryQuarterIgnoringAddedEvidence": true,
+      "coups": 51,
+      "baselineStateSha256": "8bebd0d83151b0284cd9b5633520bce1bfdda6902fcee4efda1837536b5f655f"
+    }
+  ],
+  "limitation": "Three 50-year worlds focused on the changed transition; not an isolated old build, all careers or proof of every prior provenance."
+}

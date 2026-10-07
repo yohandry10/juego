@@ -1,4 +1,4 @@
-import type { BilateralRelation, ConflictType, GlobalShock, WorldActorDefinition, WorldActorState, WorldConflict } from "../domain/geopolitics-types.js";
+import type { BilateralRelation, ConflictType, CoupRiskRules, GlobalShock, WorldActorDefinition, WorldActorState, WorldConflict } from "../domain/geopolitics-types.js";
 import parameters from "../data/world-parameters.json" with { type: "json" };
 import { createRng, hashSeed } from "./rng.js";
 const clamp = (value: number) => Math.max(0, Math.min(100, value));
@@ -47,7 +47,7 @@ export function advanceWorldConflict(conflict: WorldConflict, quarter: number, s
     explanation: `Fuerzas efectivas ${attack.toFixed(1)} / ${defense.toFixed(1)}, logística decreciente, ventaja defensiva y ruido por semilla: movimiento ${movement}. Costos acumulados humanos ${casualties.toFixed(1)}, económicos ${economicCost.toFixed(1)}, políticos y diplomáticos. ${ended ? `Resultado ${outcome}; comienza reconstrucción y retorno gradual del índice de desplazamiento.` : "El conflicto continúa."}` };
 }
 
-export function coupRisk(actor: WorldActorState): number {
-  if (actor.regimeStability >= parameters.coupStabilityThreshold || actor.militaryLoyalty >= parameters.coupLoyaltyThreshold || actor.domesticStress <= parameters.coupStressThreshold) return 0;
-  return Math.min(0.12, (parameters.coupStabilityThreshold - actor.regimeStability) * (parameters.coupLoyaltyThreshold - actor.militaryLoyalty) / 48 * parameters.coupRiskScale);
+export function coupRisk(actor: Pick<WorldActorState, "regimeStability" | "militaryLoyalty" | "domesticStress">, rules: CoupRiskRules = parameters): number {
+  if (actor.regimeStability >= rules.coupStabilityThreshold || actor.militaryLoyalty >= rules.coupLoyaltyThreshold || actor.domesticStress <= rules.coupStressThreshold) return 0;
+  return Math.min(0.12, (rules.coupStabilityThreshold - actor.regimeStability) * (rules.coupLoyaltyThreshold - actor.militaryLoyalty) / 48 * rules.coupRiskScale);
 }

@@ -12,7 +12,7 @@ El validador actual pasa: 407 plantillas, 64 arcos, 80 internacionales, 10 arcos
 
 [Campañas básicas](country-balance-25.json): 500 muestras, 25 semillas × dos estrategias × diez perfiles, con legislaturas ganadas completas. Semillas conocidas `mass-<strategy>-<run>`; regresión funcional, no reserva nueva.
 
-[Carreras ampliadas](career-balance.json): 4.500 muestras cerradas, 450 por país; 50 semillas `balance-reserved-v3` por país × tres estrategias × tres modos, cinco ideologías/cargos rotados. Son 500 semillas distintas emparejadas, no 4.500 semillas independientes. Este corte repite la reserva ya consumida con el mundo v5; no es otra reserva nueva. Cada muestra cierra un mandato/derrota y retiro, no 40 años. Las semillas de esta reserva ya están consumidas. No se ajustó el motor electoral a estos resultados.
+[Carreras ampliadas](career-balance.json): 4.500 muestras cerradas, 450 por país; 50 semillas `balance-reserved-v3` por país × tres estrategias × tres modos, cinco ideologías/cargos rotados. Son 500 semillas distintas emparejadas, no 4.500 semillas independientes. La batería de a8140c5 repitió la reserva ya consumida con el mundo v5; este incremento conserva esa evidencia y no mide otra reserva. Cada muestra cierra un mandato/derrota y retiro, no 40 años. Las semillas de esta reserva ya están consumidas. No se ajustó el motor electoral a estos resultados.
 
 | País | Cargo inicial | n | Acceso | Completa mandato | Caída |
 | --- | --- | ---: | ---: | ---: | ---: |
@@ -47,9 +47,9 @@ El validador actual pasa: 407 plantillas, 64 arcos, 80 internacionales, 10 arcos
 
 ## Carrera larga y memoria
 
-[Carrera actual](long-career-evidence.json): Perú/diputación, `long-career-6`, 160 trimestres/40 años, ocho mandatos. Seis semillas previas no llegaron por derrotas repetidas y se conservan. Restaurar en el trimestre 80 produce estado idéntico durante todo el recorrido restante; SHA final `62034ae728029689bb2fd7376706deffeeb9bb964198947b34009f9be20aef50`. No se compara con los hashes del motor previo porque cambiaron sus reglas mundiales.
+[Carrera actual](long-career-evidence.json): Perú/diputación, `long-career-6`, 160 trimestres/40 años, ocho mandatos. Seis semillas previas no llegaron por derrotas repetidas y se conservan. Restaurar en el trimestre 80 produce estado idéntico durante todo el recorrido restante; SHA final `f0b68d3e19cd3b35c2b1a9b39bd1bc11d7e806a15e08a80d95c2a4f8eb646535`. No se compara con los hashes del motor previo porque cambiaron sus reglas mundiales.
 
-Tiempo local después de finalizar las baterías masivas: primera/última década 7,26/9,57 ms, máximo 21,49 ms, p95 15,87 ms. Heap con GC explícito 25,31 → 28,54 MiB; guardado 1.467.137 → 1.979.209 bytes (1,40 → 1,89 MiB). **El estado y el tiempo de turno siguen creciendo; memoria y tiempo sostenidos pendientes.** No se infiere una mejora frente a tiempos anteriores medidos bajo distinta carga. No representa otros cargos ni memoria gráfica.
+Tiempo local después de finalizar las baterías masivas: primera/última década 7,38/10,50 ms, máximo 26,95 ms, p95 17,04 ms. Heap con GC explícito 25,30 → 28,61 MiB; guardado 1.467.137 → 1.994.025 bytes (1,40 → 1,90 MiB). **El estado y el tiempo de turno siguen creciendo; memoria y tiempo sostenidos pendientes.** No se infiere una mejora frente a tiempos anteriores medidos bajo distinta carga. No representa otros cargos ni memoria gráfica.
 
 [Interfaz de la carrera larga](long-career-browser-evidence.json): Chromium/Firefox, 1280/1920 px, 414 asuntos pendientes y 432 recuerdos; todas las páginas coinciden con el guardado. Máximo doce asuntos/veinte recuerdos renderizados, búsquedas antiguas, teclado, respuesta única e importación/exportación intacta. Texto muy grande y preferencia tras navegación/recarga pasan. No se borran decisiones ni se responde por el jugador.
 
@@ -57,9 +57,9 @@ Tiempo local después de finalizar las baterías masivas: primera/última décad
 
 Ratificación explica quién decide, costos, espera, rechazo y siguiente acción, con fuentes/reglas opcionales. Financiación explica qué recibes, qué comprometes y qué arriesgas, pausa y recuperación. Organismos distinguen membresía de condiciones ficticias y suspensiones documentadas. Se corrigió el bajo contraste de los enlaces nuevos. La guía por etapa, glosario, checklist y ritmo hasta la próxima decisión se mantienen; la comprensión humana aún no se ha medido.
 
-136 pruebas, build, TypeScript del Worker y dos builds reproducibles (30 archivos) pasan. Smoke Edge: turno ejecutivo 0,453 s. Chromium/Firefox pasan dieciséis rutas de participación, financiación y ratificación, Worker offline sincronizado, Ayuda/créditos/perfiles sin red, teclado/texto/ventanas PC. Contraste CSS pasa inicio, creador y ocho vistas; no todos los gráficos/estados ni lectores de pantalla. Core i5-10400F, ~16 GiB, Node 24.13.1/Windows; no se extrapola a hardware representativo.
+139 pruebas, build, TypeScript del Worker y dos builds reproducibles (30 archivos) pasan. Smoke Edge: turno ejecutivo 0,349 s. Chromium/Firefox pasan dieciséis rutas de participación, financiación y ratificación, Worker offline sincronizado, Ayuda/créditos/perfiles sin red, teclado/texto/ventanas PC. Contraste CSS pasa inicio, creador y ocho vistas; no todos los gráficos/estados ni lectores de pantalla. Core i5-10400F, ~16 GiB, Node 24.13.1/Windows; no se extrapola a hardware representativo.
 
-Aplicación principal 344,64 KB / 97,76 KB gzip; Worker 393,38 KB, React 218,83 KB, validación 91,46 KB y datos mundiales 110,44 KB. Mundo diferido 37,17 KB; Bandeja 5,72 KB. La división no elimina otras descargas iniciales. Offline precarga 27 archivos. El build sincroniza perfiles públicos con los canónicos para impedir divergencias institucionales.
+Aplicación principal 346,02 KB / 98,16 KB gzip; Worker 393,85 KB, React 218,83 KB, validación 91,46 KB y datos mundiales 110,44 KB. Mundo diferido 37,17 KB; Bandeja 5,72 KB. La división no elimina otras descargas iniciales. Offline precarga 27 archivos. El build sincroniza perfiles públicos con los canónicos para impedir divergencias institucionales.
 
 Créditos y licencias runtime se emiten offline. Los agregados UCDP/Powell se usan solo para comprobación de frecuencias y conservan procedencia. Revisión específica de datasets/instituciones, alojamiento y publicación continúa abierta: [créditos](creditos-y-licencias.md).
 
@@ -81,3 +81,5 @@ Créditos y licencias runtime se emiten offline. Los agregados UCDP/Powell se us
 ## Trabajo pendiente
 
 Cerrar Fase 4; instituciones/elecciones/rotaciones/electores; equilibrio por cargos/estrategias; voces/tablas culturales, condiciones/enfriamientos y variantes revisadas; historia posterior del legado; tutorial con cinco personas; memoria/archivo, asistencia y hardware PC; fuentes/licencias/privacidad/publicación. [Protocolo humano](protocolo-prueba-jugadores.md). Automatización no sustituye esos requisitos.
+
+En este incremento se repiten las 139 pruebas, build y comprobaciones del Worker, cien mundos de cincuenta años, smoke, financiación/ratificación/Worker en PC y carrera de cuarenta años con navegador. Base, campañas, balance de 4.500, generados, diplomacia, contenido, sensibilidad y referencias conservan la evidencia de a8140c5/e9bc537: no son lotes ni semillas nuevos de este incremento. Se añade evidencia de golpes y se endurece la auditoría de importación; la comparación de 600 trimestres mantiene el estado de juego idéntico salvo el registro nuevo.

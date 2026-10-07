@@ -1,6 +1,6 @@
 # Informe de Fase 4 — Mundo y geopolítica
 
-Corte: 2026-10-06, continuación desde `76f76c3`. **Fase abierta.** Snapshot económico `world-2026-10-06-v1`, parámetros `world-balance-v5`, carrera v15. Esta evidencia sustituye las cifras del corte anterior; las comparaciones de optimización contra `0df312e` son históricas.
+Corte: 2026-10-06, continuación desde `e9bc537`. **Fase abierta.** Snapshot económico `world-2026-10-06-v1`, parámetros `world-balance-v5`, carrera v15. Esta evidencia sustituye las cifras del corte anterior; las comparaciones de optimización contra `0df312e` son históricas.
 
 ## Sistemas y procedencia
 
@@ -32,8 +32,8 @@ Se corrigió la aplicación de un solo shock cuando coincidían varios. Todos lo
 
 ## Validación del motor actual
 
-- 136/136 pruebas; build/Worker; dos builds con 30 archivos idénticos por SHA-256. Sincronización canónica de los diez perfiles con sus copias públicas comprobada; el build la ejecuta para evitar reglas antiguas en navegador.
-- [Mundo](phase-4-simulation.json): 100 × 50 años, auditoría cada trimestre; 217 actores conservados, cero valores/referencias inválidos, cero guerras nucleares directas. Medias por corrida: 31,08 conflictos, 63,94 golpes, 24,07 shocks, 0,99 sanciones; 4,41 ms/trimestre local con auditoría bajo baterías concurrentes; no se interpreta la diferencia como degradación.
+- 139/139 pruebas; build/Worker; dos builds con 30 archivos idénticos por SHA-256. Sincronización canónica de los diez perfiles con sus copias públicas comprobada; el build la ejecuta para evitar reglas antiguas en navegador.
+- [Mundo](phase-4-simulation.json): 100 × 50 años, auditoría cada trimestre; 217 actores conservados, cero valores/referencias inválidos, cero guerras nucleares directas. Medias por corrida: 31,08 conflictos, 63,94 golpes, 24,07 shocks, 0,99 sanciones; 2,76 ms/trimestre local con auditoría bajo baterías concurrentes; no se interpreta la diferencia como degradación.
 - [Sensibilidad](world-sensitivity.json): 1.736 casos de exposición y 36 mundos de 50 años. Conflictos medios bajo/base/alto: 21 / 31,67 / 37,17; golpes 52 / 61,17 / 69,33. Sin valores inválidos ni guerras nucleares.
 - [Diplomacia](diplomacy-balance.json): 2.250 escenarios, diez perfiles × 25 semillas utilizadas × tres socios × tres posturas × cinco años; visitas pagadas iguales antes de comparar posturas. Regresión v5 sobre las semillas diplomáticas usadas; costos y resultados diferentes comprobados. No demuestra estrategia óptima ni balance de una carrera completa.
 - [Ratificación PC](ratification-browser-evidence.json): 20 recorridos, diez países en Chromium/Firefox, guardados producidos por campañas/comandos reales sin fabricar mayorías. Exportación idéntica al resultado del comando; espera británica y costos comprobados. Nueve rechazos y una revisión británica pendiente por motor; aprobación/lectura final/desacuerdos raros se prueban en dominio, no se atribuyen a estos recorridos.
@@ -52,7 +52,7 @@ Se corrigió la aplicación de un solo shock cuando coincidían varios. Todos lo
 | 5. Shocks | Cumple modelo de exposición | 1.736 casos; el grafo no es una matriz comercial observada. |
 | 6. Guerra completa | Cumple alcance agregado | Cinco tipos, cuatro costos y posguerra; sin táctica individual. |
 | 7. País mediano | Comparación ampliada pasa | Diez países/tres socios/posturas; falta balance estratégico de carrera. |
-| 8. Worker/rendimiento | Pasa medición local | Offline Chromium/Firefox; mundo 4,41 ms/trimestre bajo carga concurrente. No acredita todo hardware. |
+| 8. Worker/rendimiento | Pasa medición local | Offline Chromium/Firefox; mundo 2,76 ms/trimestre bajo carga concurrente. No acredita todo hardware. |
 | 9. Tasas razonables | Parcial | Ajuste y reserva frente a agregados externos con correspondencia limitada; shocks y juicio de verosimilitud pendientes. |
 | 10. Contenido | Cantidad/validador cumplen | 80 plantillas/10 arcos; editorial humana pendiente. |
 
@@ -61,3 +61,5 @@ Se corrigió la aplicación de un solo shock cuando coincidían varios. Todos lo
 Auditoría semántica integral; shocks y correspondencia de frecuencias; restricciones de participación restantes; alcance nacional excluido y balance estratégico. No se da por cerrada Fase 4. La evidencia de Fase 5 valida sistemas existentes afectados, sin presentar los requisitos humanos o técnicos abiertos como satisfechos.
 
 Diagnóstico de shocks por tipo: [referencia y resultados](shock-frequency-review.md). La distribución uniforme queda fuera de la banda de diseño frente a dos proxies independientes de encarecimiento (energía/alimentos); 32 semillas nuevas `shock-reference-v1`, ya consumidas. No se cambió el motor ni se ajustó a esos resultados. Faltan correspondencia suministro/precios y otros seis tipos; Fase 4 sigue abierta.
+
+En este incremento se repiten las 139 pruebas, build y comprobaciones del Worker, cien mundos de cincuenta años, smoke, financiación/ratificación/Worker en PC y carrera de cuarenta años con navegador. Base, campañas, balance de 4.500, generados, diplomacia, contenido, sensibilidad y referencias conservan la evidencia de a8140c5/e9bc537: no son lotes ni semillas nuevos de este incremento. Se añade evidencia de golpes y se endurece la auditoría de importación; la comparación de 600 trimestres mantiene el estado de juego idéntico salvo el registro nuevo.
