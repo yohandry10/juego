@@ -1,0 +1,10 @@
+[
+  {"type":"click","name":"El periódico: Lo que dice la prensa"},
+  {"type":"inspect","name":"17-press"},
+  {"type":"click","name":"MANDATO · Volver al despacho"},
+  {"type":"click","name":"Mesa de mapas: El mundo y tus aliados"},
+  {"type":"inspect","name":"18-world"},
+  {"type":"click","name":"MANDATO · Volver al despacho"},
+  {"type":"click","name":"La carpeta: Decisiones pendientes","exact":false},
+  {"type":"inspect","name":"19-event"}
+]

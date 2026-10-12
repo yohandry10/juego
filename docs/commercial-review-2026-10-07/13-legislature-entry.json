@@ -1,0 +1,59 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n21k\nFavores\n0\nImagen\n—\nFin de turno\n← Volver al despacho\nTU AGENDA · Diputación\nAbrir mi expediente →\nAlex Ríos\n\nPerú · 30 años\n\nLa autoridad se demuestra cada día.\nEL ASUNTO DE HOY\nLey de empleo regional\n\nIncentivos temporales para la contratación formal fuera de la capital nacional.\n\nEntrar al Congreso →\nAbrir la carpeta\nGestión, carrera y acuerdos →\nMANDATO · Ficción política y sátira; personajes y partidos generados · Guardado solo en este dispositivo ·\nSalón de la fama\nPrivacidad\nCréditos y fuentes\nReportar un error ↗",
+  "buttons": [
+    {
+      "text": "M\nMANDATO",
+      "label": "MANDATO · Volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "Fin de turno",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Opciones del juego",
+      "disabled": false
+    },
+    {
+      "text": "← Volver al despacho",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Abrir mi expediente →",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Entrar al Congreso →",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Abrir la carpeta",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Gestión, carrera y acuerdos →",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Salón de la fama",
+      "label": null,
+      "disabled": false
+    }
+  ],
+  "inputs": [],
+  "images": [
+    {
+      "src": "/assets/portraits/character-15.webp",
+      "loaded": true
+    }
+  ],
+  "errors": []
+}

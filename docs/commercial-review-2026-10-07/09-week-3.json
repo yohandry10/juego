@@ -1,0 +1,79 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "text": "M\nMANDATO\nPerú · 2026 · T1\nAlex Ríos\nCandidatura · Diputación\nCAPITAL\n35\nFONDOS\n69K\nFAVORES\n0\nIMAGEN\n—\nOrganizar campaña\nCAMPAÑA · SEMANA 3\nEl despacho\n\nEl poder empieza con una conversación.\n\nAtender la llamada\n3\nLa votación interna ya tiene resultado\nLa carpeta\n6\nDecisiones pendientes\nEl periódico\nLo que dice la prensa\nMesa de mapas\nEl mundo y tus aliados\nLa ventana\nTu país y su economía\nEl Congreso\nLos votos que necesitas\nCalendario\nTu agenda y el siguiente paso\nLibro mayor\nFavores, pactos y rencores\nTu silla\nTu trayectoria y personaje\n6 asuntos esperan tu respuesta.\nExplorar el despacho\nTab ↵",
+  "buttons": [
+    {
+      "text": "M\nMANDATO",
+      "label": "MANDATO · Volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "Organizar campaña",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Opciones del juego",
+      "disabled": false
+    },
+    {
+      "text": "Atender la llamada\n3\nLa votación interna ya tiene resultado",
+      "label": "Teléfono: Llamadas y ofertas, 3 asuntos",
+      "disabled": false
+    },
+    {
+      "text": "La carpeta\n6\nDecisiones pendientes",
+      "label": "La carpeta: Decisiones pendientes, 6 asuntos",
+      "disabled": false
+    },
+    {
+      "text": "El periódico\nLo que dice la prensa",
+      "label": "El periódico: Lo que dice la prensa",
+      "disabled": false
+    },
+    {
+      "text": "Mesa de mapas\nEl mundo y tus aliados",
+      "label": "Mesa de mapas: El mundo y tus aliados",
+      "disabled": false
+    },
+    {
+      "text": "La ventana\nTu país y su economía",
+      "label": "La ventana: Tu país y su economía",
+      "disabled": false
+    },
+    {
+      "text": "El Congreso\nLos votos que necesitas",
+      "label": "El Congreso: Los votos que necesitas",
+      "disabled": false
+    },
+    {
+      "text": "Calendario\nTu agenda y el siguiente paso",
+      "label": "Calendario: Tu agenda y el siguiente paso",
+      "disabled": false
+    },
+    {
+      "text": "Libro mayor\nFavores, pactos y rencores",
+      "label": "Libro mayor: Favores, pactos y rencores",
+      "disabled": false
+    },
+    {
+      "text": "Tu silla\nTu trayectoria y personaje",
+      "label": "Tu silla: Tu trayectoria y personaje",
+      "disabled": false
+    },
+    {
+      "text": "Explorar el despacho\nTab ↵",
+      "label": null,
+      "disabled": false
+    }
+  ],
+  "inputs": [],
+  "images": [
+    {
+      "src": "/assets/office/despacho-1600.webp",
+      "loaded": true
+    }
+  ],
+  "errors": []
+}

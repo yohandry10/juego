@@ -1,0 +1,15 @@
+[
+  {"type":"click","name":"Ver resultado"},
+  {"type":"click","name":"Continuar mi carrera →"},
+  {"type":"inspect","name":"13-legislature-entry"},
+  {"type":"click","name":"MANDATO · Volver al despacho"},
+  {"type":"click","name":"El Congreso: Los votos que necesitas"},
+  {"type":"inspect","name":"14-congress"},
+  {"type":"click","name":"Votar a favor · 1 acción"},
+  {"type":"wait","ms":3000},
+  {"type":"inspect","name":"15-recorded-vote"},
+  {"type":"click","name":"Volver al hemiciclo"},
+  {"type":"click","name":"MANDATO · Volver al despacho"},
+  {"type":"click","name":"La ventana: Tu país y su economía"},
+  {"type":"inspect","name":"16-economy"}
+]

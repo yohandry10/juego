@@ -1,0 +1,54 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "text": "M\nMANDATO\nUna vida en el poder.\nMANDATO · UNA VIDA EN EL PODER\nEl poder empieza\ncon un puesto.\n\nTu primer cargo define a quién debes escuchar.\n\nTU VOZ EN LA CÁMARA\nDiputación\n\nGana tu candidatura, escucha al distrito y reúne votos para tus propuestas.\n\nCampaña territorial\n25+ años\nTU VOZ EN LA CÁMARA\nSenado\n\nGana tu candidatura, escucha al distrito y reúne votos para tus propuestas.\n\nCampaña territorial\n45+ años\nEL PAÍS TE MIRA\nPresidente\n\nForma un gobierno, protege tus apoyos y responde por el país.\n\nResponsabilidad nacional\n36+ años\nVolver al mapa\nEscribir mi biografía\nEntrar al juego\n\nLas exigencias corresponden al cargo. El personaje listo usa las mismas reglas y recursos que tu biografía.\n\nMANDATO · Ficción política y sátira; personajes y partidos generados · Guardado solo en este dispositivo ·\nSalón de la fama\nPrivacidad\nCréditos y fuentes\nReportar un error ↗",
+  "buttons": [
+    {
+      "text": "M\nMANDATO",
+      "label": "MANDATO · Volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Opciones del juego",
+      "disabled": false
+    },
+    {
+      "text": "TU VOZ EN LA CÁMARA\nDiputación\n\nGana tu candidatura, escucha al distrito y reúne votos para tus propuestas.\n\nCampaña territorial\n25+ años",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "TU VOZ EN LA CÁMARA\nSenado\n\nGana tu candidatura, escucha al distrito y reúne votos para tus propuestas.\n\nCampaña territorial\n45+ años",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "EL PAÍS TE MIRA\nPresidente\n\nForma un gobierno, protege tus apoyos y responde por el país.\n\nResponsabilidad nacional\n36+ años",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Volver al mapa",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Escribir mi biografía",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Entrar al juego",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Salón de la fama",
+      "label": null,
+      "disabled": false
+    }
+  ],
+  "inputs": [],
+  "images": [],
+  "errors": []
+}

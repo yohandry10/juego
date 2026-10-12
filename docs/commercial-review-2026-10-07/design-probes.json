@@ -1,0 +1,47 @@
+{
+  "catalogue": {
+    "templates": 407,
+    "variants": 1221,
+    "arcs": 64,
+    "genericByDefault": 388
+  },
+  "campaign": {
+    "elected": true,
+    "pending": 11,
+    "preference": 26.09483527722023
+  },
+  "legislation": {
+    "proposal": "Ley de empleo regional",
+    "yesPassed": true,
+    "noPassed": true,
+    "yesEconomicIndicatorsUnchanged": true,
+    "noEconomicIndicatorsUnchanged": true,
+    "yesApprovalDelta": 0.29999999999999716,
+    "noApprovalDelta": 0.29999999999999716,
+    "skippedVoteRecords": 0,
+    "skippedNextProposal": "Presupuesto de servicios esenciales"
+  },
+  "budget": [
+    {
+      "position": 25,
+      "yes": 5,
+      "members": 130,
+      "economyBelow40Yes": 5,
+      "economyBelow40Members": 25
+    },
+    {
+      "position": 50,
+      "yes": 51,
+      "members": 130,
+      "economyBelow40Yes": 25,
+      "economyBelow40Members": 25
+    },
+    {
+      "position": 75,
+      "yes": 121,
+      "members": 130,
+      "economyBelow40Yes": 25,
+      "economyBelow40Members": 25
+    }
+  ]
+}

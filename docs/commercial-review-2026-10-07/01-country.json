@@ -1,0 +1,896 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "text": "M\nMANDATO\nUna vida en el poder.\nMANDATO · UNA VIDA EN EL PODER\nElige dónde\ncambiar la historia.\n\nUn país. Una ambición. Personas que recordarán tus decisiones.\n\nN\n✦\nElige un país · acerca para explorar\nBuscar un país\nTU ESCENARIO\nPerú\nSistema\nPresidencial\nEl desafío\nEmpleo: 5.1% sin trabajo\nLa oportunidad\nMinería · Agroexportación\nElegir mi cargo\nMANDATO · Ficción política y sátira; personajes y partidos generados · Guardado solo en este dispositivo ·\nSalón de la fama\nPrivacidad\nCréditos y fuentes\nReportar un error ↗",
+  "buttons": [
+    {
+      "text": "M\nMANDATO",
+      "label": "MANDATO · Volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Opciones del juego",
+      "disabled": false
+    },
+    {
+      "text": null,
+      "label": "Fiyi",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Tanzania",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Canadá",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Estados Unidos",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Kazajistán",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Uzbekistán",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Papúa Nueva Guinea",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Indonesia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Argentina",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Chile",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "República Democrática del Congo",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Somalia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Kenia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Sudán",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Chad",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Haití",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "República Dominicana",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Rusia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Bahamas",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Noruega",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Groenlandia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Timor-Leste",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Sudáfrica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Lesoto",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "México",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Uruguay",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Brasil",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Bolivia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Perú",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Colombia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Panamá",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Costa Rica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Nicaragua",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Honduras",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "El Salvador",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Guatemala",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Belice",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Venezuela",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Guyana",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Surinam",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Francia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Ecuador",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Puerto Rico",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Jamaica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Cuba",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Zimbabue",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Botsuana",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Namibia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Senegal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Mali",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Mauritania",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Benín",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Níger",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Nigeria",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Camerún",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Togo",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Ghana",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Côte d’Ivoire",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Guinea",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Guinea-Bisáu",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Liberia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Sierra Leona",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Burkina Faso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "República Centroafricana",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Congo",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Gabón",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Guinea Ecuatorial",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Zambia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Malaui",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Mozambique",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Esuatini",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Angola",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Burundi",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Israel",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Líbano",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Madagascar",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Territorios Palestinos",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Gambia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Túnez",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Argelia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Jordania",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Emiratos Árabes Unidos",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Catar",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Kuwait",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Irak",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Omán",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Vanuatu",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Camboya",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Tailandia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Laos",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Myanmar (Birmania)",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Vietnam",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Corea del Norte",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Corea del Sur",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Mongolia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "India",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Bangladés",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Bután",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Nepal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Pakistán",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Afganistán",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Tayikistán",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Kirguistán",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Turkmenistán",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Irán",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Siria",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Armenia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Suecia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Bielorrusia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Ucrania",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Polonia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Austria",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Hungría",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Moldavia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Rumanía",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Lituania",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Letonia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Estonia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Alemania",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Bulgaria",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Grecia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Turquía",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Albania",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Croacia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Suiza",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Luxemburgo",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Bélgica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Países Bajos",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Portugal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "España",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Irlanda",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Nueva Caledonia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Islas Salomón",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Nueva Zelanda",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Australia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Sri Lanka",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "China",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Italia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Dinamarca",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Reino Unido",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Islandia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Azerbaiyán",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Georgia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Filipinas",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Malasia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Brunéi",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Eslovenia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Finlandia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Eslovaquia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Chequia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Eritrea",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Japón",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Paraguay",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Yemen",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Arabia Saudí",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Chipre",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Marruecos",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Egipto",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Libia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Etiopía",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Yibuti",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Uganda",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Ruanda",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Bosnia y Herzegovina",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Macedonia del Norte",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Serbia",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Montenegro",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Trinidad y Tobago",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Sudán del Sur",
+      "disabled": null
+    },
+    {
+      "text": "",
+      "label": "Acercar mapa",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Alejar mapa",
+      "disabled": true
+    },
+    {
+      "text": "",
+      "label": "Restablecer mapa",
+      "disabled": false
+    },
+    {
+      "text": "Elegir mi cargo",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Salón de la fama",
+      "label": null,
+      "disabled": false
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "INPUT",
+      "type": "search",
+      "label": null,
+      "value": ""
+    }
+  ],
+  "images": [],
+  "errors": []
+}

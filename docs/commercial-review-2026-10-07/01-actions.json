@@ -1,0 +1,7 @@
+[
+  {"type":"inspect","name":"01-country"},
+  {"type":"click","name":"Elegir mi cargo"},
+  {"type":"inspect","name":"02-office-choice"},
+  {"type":"click","name":"Entrar al juego"},
+  {"type":"inspect","name":"03-first-desk"}
+]

@@ -1,0 +1,54 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n21k\nFavores\n0\nImagen\n—\nContinuar mi carrera\n← Volver al despacho\nTRANSMISIÓN ELECTORAL · Diputación\nAbrir mi expediente →\nAlex Ríos\n\nPerú · 30 años\n\nUna campaña termina. Una historia empieza.\nESCRUTINIO CERRADO · RESULTADO FICTICIO\nTu nombre entra en la historia.\n\nObtuviste un escaño en Cámara de Diputados: tu partido ganó 1 en el distrito y tu respaldo personal te ubicó en el puesto 1 de la lista.\n\n23.9%\nTu respaldo personal\n1\nEscaños de tu partido en el distrito\nEl recuento electoral registrado\nUnión del Progreso\n43.520\nAlianza Popular\n40.192\nPacto Federal\n30.410\nUnión Cívica\n23.477\nFrente Renovador\n20.705\nContinuar mi carrera →\nLeer la reacción de mi equipo\nMANDATO · Ficción política y sátira; personajes y partidos generados · Guardado solo en este dispositivo ·\nSalón de la fama\nPrivacidad\nCréditos y fuentes\nReportar un error ↗",
+  "buttons": [
+    {
+      "text": "M\nMANDATO",
+      "label": "MANDATO · Volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "Continuar mi carrera",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Opciones del juego",
+      "disabled": false
+    },
+    {
+      "text": "← Volver al despacho",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Abrir mi expediente →",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Continuar mi carrera →",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Leer la reacción de mi equipo",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Salón de la fama",
+      "label": null,
+      "disabled": false
+    }
+  ],
+  "inputs": [],
+  "images": [
+    {
+      "src": "/assets/portraits/character-15.webp",
+      "loaded": true
+    }
+  ],
+  "errors": []
+}

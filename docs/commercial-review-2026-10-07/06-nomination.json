@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "text": "M\nMANDATO\nPerú · 2026 · T1\nAlex Ríos\nCandidatura · Diputación\nCAPITAL\n35\nFONDOS\n93K\n-4\nFAVORES\n0\nIMAGEN\n—\nTU EQUIPO\nJefa de campaña\n\n«Cuenta los apoyos antes de prometer.»\n\nEN EL DIARIO DE TU CARRERA\nCerrar el expediente\nEl partido confirmó tu nominación.\n\nTu partido ficticio confirmó tu candidatura para la contienda en curso.\n\n«La respuesta está dada. Ahora nos toca sostenerla.»\n\nJefa de campaña\n\nTu decisión: Pedir la nominación\n\nLa decisión y sus efectos se conservan en tu partida.\n\nVolver al despacho\nMANDATO\nCAMPAÑA · SEMANA 1",
+  "buttons": [
+    {
+      "text": "M\nMANDATO",
+      "label": "MANDATO · Volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Opciones del juego",
+      "disabled": false
+    },
+    {
+      "text": "Cerrar el expediente",
+      "label": "Cerrar conversación y volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "Volver al despacho",
+      "label": null,
+      "disabled": false
+    }
+  ],
+  "inputs": [],
+  "images": [
+    {
+      "src": "/assets/office/despacho-1600.webp",
+      "loaded": true
+    },
+    {
+      "src": "/assets/portraits/advisor-campaign.webp",
+      "loaded": true
+    }
+  ],
+  "errors": []
+}

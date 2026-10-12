@@ -1,0 +1,112 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "text": "M\nMANDATO\nPerú · 2026 · T2\nAlex Ríos\nEn la cámara · Diputación\nCAPITAL\n35\nFONDOS\n21K\nFAVORES\n0\nIMAGEN\n—\nFin de turno\nDiputación\nEl despacho\n\nDetrás de cada decisión hay una persona.\n\nAtender la llamada\n4\nAulas y materiales: Territorios\nLa carpeta\n4\nDecisiones pendientes\nEl periódico\nLo que dice la prensa\nMesa de mapas\nEl mundo y tus aliados\nLa ventana\nTu país y su economía\nEl Congreso\nLos votos que necesitas\nCalendario\nTu agenda y el siguiente paso\nLibro mayor\nFavores, pactos y rencores\nTu silla\nTu trayectoria y personaje\n4 asuntos esperan tu respuesta.\nExplorar el despacho\nTab ↵\nOpciones del juego\nSonido y ambiente\nVolumen\nReducir movimiento\nAyuda y accesibilidad\nExportar partida\nImportar partida\nNueva carrera\nAcerca de los datos\nCréditos y licencias",
+  "buttons": [
+    {
+      "text": "M\nMANDATO",
+      "label": "MANDATO · Volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "Fin de turno",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Opciones del juego",
+      "disabled": false
+    },
+    {
+      "text": "Atender la llamada\n4\nAulas y materiales: Territorios",
+      "label": "Teléfono: Llamadas y ofertas, 4 asuntos",
+      "disabled": false
+    },
+    {
+      "text": "La carpeta\n4\nDecisiones pendientes",
+      "label": "La carpeta: Decisiones pendientes, 4 asuntos",
+      "disabled": false
+    },
+    {
+      "text": "El periódico\nLo que dice la prensa",
+      "label": "El periódico: Lo que dice la prensa",
+      "disabled": false
+    },
+    {
+      "text": "Mesa de mapas\nEl mundo y tus aliados",
+      "label": "Mesa de mapas: El mundo y tus aliados",
+      "disabled": false
+    },
+    {
+      "text": "La ventana\nTu país y su economía",
+      "label": "La ventana: Tu país y su economía",
+      "disabled": false
+    },
+    {
+      "text": "El Congreso\nLos votos que necesitas",
+      "label": "El Congreso: Los votos que necesitas",
+      "disabled": false
+    },
+    {
+      "text": "Calendario\nTu agenda y el siguiente paso",
+      "label": "Calendario: Tu agenda y el siguiente paso",
+      "disabled": false
+    },
+    {
+      "text": "Libro mayor\nFavores, pactos y rencores",
+      "label": "Libro mayor: Favores, pactos y rencores",
+      "disabled": false
+    },
+    {
+      "text": "Tu silla\nTu trayectoria y personaje",
+      "label": "Tu silla: Tu trayectoria y personaje",
+      "disabled": false
+    },
+    {
+      "text": "Explorar el despacho\nTab ↵",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Cerrar expediente",
+      "disabled": false
+    },
+    {
+      "text": "Ayuda y accesibilidad",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Exportar partida",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Nueva carrera",
+      "label": null,
+      "disabled": false
+    }
+  ],
+  "inputs": [
+    {
+      "tag": "INPUT",
+      "type": "range",
+      "label": "Volumen",
+      "value": "0.25"
+    },
+    {
+      "tag": "INPUT",
+      "type": "file",
+      "label": null,
+      "value": ""
+    }
+  ],
+  "images": [
+    {
+      "src": "/assets/office/despacho-1600.webp",
+      "loaded": true
+    }
+  ],
+  "errors": []
+}

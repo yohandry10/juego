@@ -1,0 +1,59 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n21k\nFavores\n0\nImagen\n—\nFin de turno\n← Volver al despacho\nPrensa\nEDICIÓN FICTICIA · 2026 · T1\nLa República de Papel\n\nEl poder pasa. La hemeroteca queda.\n\nECONOMÍA\nSequía y abastecimiento: Centros de trabajo\nIlustración editorial ficticia. Los hechos de la nota proceden de tu partida.\n\nProductores y municipios compiten por agua limitada. La respuesta distribuye costos y beneficios entre centros de trabajo y el resto del país. El reporte llegó antes del cierre y deja una decisión sobre tu mesa.\n\nLeer la nota completa →\nMUNDO\nDesastre y ayuda internacional: Revisión de efectos\n\nEl daño a infraestructura y hogares demanda ayuda coordinada y una reconstrucción verificable. Revisión de efectos: los …\n\nLeer →\nCAMPAÑA\nPreguntas sin guion\n\nUn grupo de jóvenes dejó de lado las preguntas preparadas. Quieren escuchar qué harás por su futuro. Una conversación pr…\n\nLeer →\nMUNDO\nCoordinación sanitaria: Votación multilateral\n\nLa circulación de una enfermedad exige compartir información y proteger servicios esenciales. Votación multilateral: los…\n\nLeer →\nEL PASILLO · COMENTARIO SATÍRICO\n\n«Si todo el mundo promete escuchar, ¿quién va a contestar el teléfono?»\n\n«Las actas recuerdan lo que los discursos olvidan.»\n\nMANDATO · Ficción política y sátira; personajes y partidos generados · Guardado solo en este dispositivo ·\nSalón de la fama\nPrivacidad\nCréditos y fuentes\nReportar un error ↗",
+  "buttons": [
+    {
+      "text": "M\nMANDATO",
+      "label": "MANDATO · Volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "Fin de turno",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Opciones del juego",
+      "disabled": false
+    },
+    {
+      "text": "← Volver al despacho",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Leer la nota completa →",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Leer →",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Leer →",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Leer →",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Salón de la fama",
+      "label": null,
+      "disabled": false
+    }
+  ],
+  "inputs": [],
+  "images": [
+    {
+      "src": "/assets/scenes/event-13.webp",
+      "loaded": true
+    }
+  ],
+  "errors": []
+}

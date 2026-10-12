@@ -1,0 +1,59 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n21k\nFavores\n0\nImagen\n—\nFin de turno\n← Volver al despacho\nMundo\nLA MESA DE RELACIONES EXTERIORES\nEl país no decide solo.\nPaís o actor\nEstados Unidos · USA\nCapa del mapa\nBloques y alineamientos\n\nEl mundo avanza al cerrar el trimestre de tu carrera, junto con economía y gobierno.\n\nN\n✦\nElige un país · acerca para explorar\nREUNIÓN SOBRE Estados Unidos\nEstados Unidos\n\nConfianza 57/100 · tensión 39/100. Cada compromiso puede acercarnos o limitar nuestro margen.\n\nQué propondrás\nRealizar visita\nRealizar visita\n\nAcerca posiciones y mejora la confianza.\n\nQué arriesgas: Gasta influencia; una visita no asegura un acuerdo.\n\nCuesta 2 de influencia.\n\nRealizar visita\nTu autoridad y la influencia\nAcerca de los datos\nRelaciones, acuerdos y decisiones con Estados Unidos\nMANDATO · Ficción política y sátira; personajes y partidos generados · Guardado solo en este dispositivo ·\nSalón de la fama\nPrivacidad\nCréditos y fuentes\nReportar un error ↗",
+  "buttons": [
+    {
+      "text": "M\nMANDATO",
+      "label": "MANDATO · Volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "Fin de turno",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Opciones del juego",
+      "disabled": false
+    },
+    {
+      "text": "← Volver al despacho",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Acercar mapa",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Alejar mapa",
+      "disabled": true
+    },
+    {
+      "text": "",
+      "label": "Restablecer mapa",
+      "disabled": false
+    },
+    {
+      "text": "Realizar visita",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Salón de la fama",
+      "label": null,
+      "disabled": false
+    }
+  ],
+  "inputs": [],
+  "images": [
+    {
+      "src": "/assets/portraits/advisor-politics.webp",
+      "loaded": true
+    }
+  ],
+  "errors": []
+}

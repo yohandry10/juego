@@ -1,0 +1,8 @@
+[
+  {"type":"click","name":"Teléfono: Llamadas y ofertas"},
+  {"type":"click","name":"Recorrer el distrito","exact":false},
+  {"type":"inspect","name":"05-after-district"},
+  {"type":"click","name":"Hablar con el partido","exact":false},
+  {"type":"click","name":"Pedir la nominación"},
+  {"type":"inspect","name":"06-nomination"}
+]

@@ -1,0 +1,58 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "text": "M\nMANDATO\nPerú · 2026 · T1\nAlex Ríos\nEn la cámara · Diputación\nCAPITAL\n35\nFONDOS\n21K\nFAVORES\n0\nIMAGEN\n—\nTU EQUIPO\nAsesora económica\n\n«Mira el costo de hoy y el efecto de mañana.»\n\nEXPEDIENTE SOBRE TU MESA\nCerrar el expediente\nSequía y abastecimiento: Centros de trabajo\n\nProductores y municipios compiten por agua limitada. La respuesta distribuye costos y beneficios entre centros de trabajo y el resto del país. El reporte llegó antes del cierre y deja una decisión sobre tu mesa.\n\n¿Qué respuesta damos?\n\n01\nResponder públicamente\nLa ciudadanía valora una respuesta concreta.\n+0,4 aprobación\n02\nNegociar apoyos\nInvierte capital político para fortalecer una relación.\n−5 capital · 1 acción · +12 confianza · +5 favor\nLeer el expediente completo\n4 asuntos en tu mesa\nSiguiente expediente\nDejar en la mesa\nConsultar el archivo\nMANDATO\nCAMPAÑA · SEMANA 4",
+  "buttons": [
+    {
+      "text": "M\nMANDATO",
+      "label": "MANDATO · Volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Opciones del juego",
+      "disabled": false
+    },
+    {
+      "text": "Cerrar el expediente",
+      "label": "Cerrar conversación y volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "01\nResponder públicamente\nLa ciudadanía valora una respuesta concreta.\n+0,4 aprobación",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "02\nNegociar apoyos\nInvierte capital político para fortalecer una relación.\n−5 capital · 1 acción · +12 confianza · +5 favor",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Siguiente expediente",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Dejar en la mesa",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Consultar el archivo",
+      "label": null,
+      "disabled": false
+    }
+  ],
+  "inputs": [],
+  "images": [
+    {
+      "src": "/assets/office/despacho-1600.webp",
+      "loaded": true
+    },
+    {
+      "src": "/assets/portraits/advisor-economy.webp",
+      "loaded": true
+    }
+  ],
+  "errors": []
+}

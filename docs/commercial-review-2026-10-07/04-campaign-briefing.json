@@ -1,0 +1,58 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "text": "M\nMANDATO\nPerú · 2026 · T1\nAlex Ríos\nCandidatura · Diputación\nCAPITAL\n35\nFONDOS\n100K\nFAVORES\n0\nIMAGEN\n—\nTU EQUIPO\nJefa de campaña\n\n«Cuenta los apoyos antes de prometer.»\n\nLA PRIMERA CONVERSACIÓN\nCerrar el expediente\nEl primer apoyo es el más difícil.\n\nTodavía somos un nombre en una lista. Podemos empezar por escuchar al distrito o buscar el respaldo del partido. Cada conversación cuenta; nuestro tiempo y nuestros fondos también.\n\nSemana 1 de 4 · 2 acciones disponibles\n\n01\nRecorrer el distrito\nSalir de este despacho y escuchar, puerta por puerta.\nGanar respaldo entre los votantes.\n−3k fondos · 1 acción\n02\nHablar con el partido\nConvencer a quienes deciden quién entra en la lista.\nBuscar apoyo interno para la nominación.\n−4k fondos · 1 acción\nOtras acciones de campaña\nPedir la nominación\nLeer el expediente completo\nDejar en la mesa\nConsultar el archivo\nMANDATO\nCAMPAÑA · SEMANA 1",
+  "buttons": [
+    {
+      "text": "M\nMANDATO",
+      "label": "MANDATO · Volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Opciones del juego",
+      "disabled": false
+    },
+    {
+      "text": "Cerrar el expediente",
+      "label": "Cerrar conversación y volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "01\nRecorrer el distrito\nSalir de este despacho y escuchar, puerta por puerta.\nGanar respaldo entre los votantes.\n−3k fondos · 1 acción",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "02\nHablar con el partido\nConvencer a quienes deciden quién entra en la lista.\nBuscar apoyo interno para la nominación.\n−4k fondos · 1 acción",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Pedir la nominación",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Dejar en la mesa",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Consultar el archivo",
+      "label": null,
+      "disabled": false
+    }
+  ],
+  "inputs": [],
+  "images": [
+    {
+      "src": "/assets/office/despacho-1600.webp",
+      "loaded": true
+    },
+    {
+      "src": "/assets/portraits/advisor-campaign.webp",
+      "loaded": true
+    }
+  ],
+  "errors": []
+}

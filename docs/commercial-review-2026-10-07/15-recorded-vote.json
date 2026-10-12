@@ -1,0 +1,689 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n21k\nFavores\n0\nImagen\n—\nFin de turno\n← Volver al despacho\nCongreso\nEL CONGRESO · 130 REPRESENTANTES\nCada voto tiene un nombre.\nCámara baja\nBuscar a un representante\n130\nVOCES EN LA CÁMARA\nUnión del Progreso\nAlianza Popular\nPacto Federal\nFrente Renovador\nUnión Cívica\nÚLTIMA SESIÓN\nLey de empleo regional\n\nVotos afirmativos 66/130 (51%); se requería 50%.\n\nAprobada\n66 a favor\n64 en contra\nSESIÓN PLENARIA · ACTA DE VOTACIÓN\nLey de empleo regional\nLA PRESIDENCIA ABRE EL ESCRUTINIO\n\nCada escaño responde por su voto.\n\n130 / 130\nVOTOS REGISTRADOS\n66\nA favor\n64\nEn contra\n0\nAbstenciones\n0\nAusentes\n\nLa propuesta queda aprobada.\n\nVolver al hemiciclo\n\nVotos afirmativos 66/130 (51%); se requería 50%.\n\nQuién votó y por qué\nMANDATO · Ficción política y sátira; personajes y partidos generados · Guardado solo en este dispositivo ·\nSalón de la fama\nPrivacidad\nCréditos y fuentes\nReportar un error ↗",
+  "buttons": [
+    {
+      "text": "M\nMANDATO",
+      "label": "MANDATO · Volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "Fin de turno",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Opciones del juego",
+      "disabled": false
+    },
+    {
+      "text": "← Volver al despacho",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": null,
+      "label": "Alex Ríos, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Camila Fuentes, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Andrés Benítez, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Gabriel Ramos, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Valeria Acosta, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Diego Montoya, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Camila Quispe, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Andrés Flores, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Nicolás Castro, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Ana León, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Paola Aguilar, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Valeria Campos, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Diego Vega, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Mariana Morales, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Gabriel Cruz, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Tomás Paredes, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Ana Delgado, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Paola Montoya, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Mateo Molina, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Diego Ibarra, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Andrés León, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Joaquín Aguilar, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Gabriel Benítez, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Diego Silva, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Mariana Acosta, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Joaquín Montoya, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Elena Medina, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Daniela Cárdenas, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Bruno Castro, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Ana Molina, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Paola Ibarra, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Camila Cabrera, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Mariana Campos, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Joaquín Vega, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Nicolás Vargas, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Rosa Reyes, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Ana Carrasco, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Emilio Arias, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Lucía Ortega, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Sofía Rojas, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Gabriel León, Unión del Progreso",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Valeria Guzmán, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Diego Aguilar, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Mariana Salazar, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Sofía Torres, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Daniela Vega, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Bruno Soto, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Paola Vargas, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Lucía Arias, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Mariana Medina, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Sofía Roldán, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Daniela Ibarra, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Martín Guzmán, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Lucía Cabrera, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Sofía Reyes, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Emilio Quispe, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Valeria Valdés, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Sofía Fuentes, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Elena Salazar, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Nicolás Navarro, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Rosa Torres, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Martín Campos, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Paola Vega, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Emilio Soto, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Lucía Suárez, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Mateo Carrasco, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Valeria Paredes, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Tomás Sánchez, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Lucía Navarro, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Mateo Torres, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Andrés Mendoza, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Gabriel Ponce, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Elena Morales, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Bruno Suárez, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Mateo Roldán, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Mariana Valdés, Alianza Popular",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Joaquín Navarro, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Elena Vidal, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Tomás Campos, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Joaquín Ortega, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Bruno Rojas, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Emilio Fuentes, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Nicolás Suárez, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Rosa Carrasco, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Daniela Silva, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Bruno Arias, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Camila Rojas, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Mariana Guzmán, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Ana Mendoza, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Camila Arias, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Sofía Quispe, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Emilio Rojas, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Daniela Herrera, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Martín Paredes, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Valeria Sánchez, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Diego Cárdenas, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Andrés Molina, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Joaquín Ibarra, Pacto Federal",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Nicolás Cabrera, Frente Renovador",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Martín Morales, Frente Renovador",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Gabriel Sánchez, Frente Renovador",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Tomás Valdés, Frente Renovador",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Camila Soto, Frente Renovador",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Joaquín Vargas, Frente Renovador",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Elena Herrera, Frente Renovador",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Lucía Castro, Frente Renovador",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Tomás Ramos, Frente Renovador",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Daniela Vidal, Frente Renovador",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Bruno Cabrera, Frente Renovador",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Andrés Delgado, Frente Renovador",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Gabriel Flores, Frente Renovador",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Rosa Roldán, Frente Renovador",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Martín Valdés, Frente Renovador",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Tomás Cruz, Frente Renovador",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Lucía Rojas, Unión Cívica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Rosa Mendoza, Unión Cívica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Ana Ponce, Unión Cívica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Emilio Reyes, Unión Cívica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Mateo Delgado, Unión Cívica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Elena Cárdenas, Unión Cívica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Rosa Molina, Unión Cívica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Mateo Mendoza, Unión Cívica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Andrés Ponce, Unión Cívica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Martín Acosta, Unión Cívica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Nicolás Ortega, Unión Cívica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Valeria Ramos, Unión Cívica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Diego Vidal, Unión Cívica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Sofía Soto, Unión Cívica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Paola Silva, Unión Cívica",
+      "disabled": null
+    },
+    {
+      "text": null,
+      "label": "Camila Castro, Unión Cívica",
+      "disabled": null
+    },
+    {
+      "text": "Volver al hemiciclo",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Salón de la fama",
+      "label": null,
+      "disabled": false
+    }
+  ],
+  "inputs": [],
+  "images": [],
+  "errors": []
+}

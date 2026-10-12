@@ -1,0 +1,140 @@
+[
+  {
+    "type": "click",
+    "name": "Organizar campaña"
+  },
+  {
+    "type": "locator-click",
+    "selector": "details.encounter-other > summary"
+  },
+  {
+    "type": "click",
+    "name": "Organizar un mitin",
+    "exact": false
+  },
+  {
+    "type": "click",
+    "name": "Volver al despacho"
+  },
+  {
+    "type": "click",
+    "name": "Organizar campaña"
+  },
+  {
+    "type": "locator-click",
+    "selector": "details.encounter-other > summary"
+  },
+  {
+    "type": "click",
+    "name": "Organizar un mitin",
+    "exact": false
+  },
+  {
+    "type": "click",
+    "name": "Volver al despacho"
+  },
+  {
+    "type": "click",
+    "name": "Siguiente semana"
+  },
+  {
+    "type": "wait",
+    "ms": 1300
+  },
+  {
+    "type": "inspect",
+    "name": "09-week-3"
+  },
+  {
+    "type": "click",
+    "name": "Organizar campaña"
+  },
+  {
+    "type": "locator-click",
+    "selector": "details.encounter-other > summary"
+  },
+  {
+    "type": "click",
+    "name": "Organizar un mitin",
+    "exact": false
+  },
+  {
+    "type": "click",
+    "name": "Volver al despacho"
+  },
+  {
+    "type": "click",
+    "name": "Organizar campaña"
+  },
+  {
+    "type": "locator-click",
+    "selector": "details.encounter-other > summary"
+  },
+  {
+    "type": "click",
+    "name": "Organizar un mitin",
+    "exact": false
+  },
+  {
+    "type": "click",
+    "name": "Volver al despacho"
+  },
+  {
+    "type": "click",
+    "name": "Siguiente semana"
+  },
+  {
+    "type": "wait",
+    "ms": 1300
+  },
+  {
+    "type": "inspect",
+    "name": "010-week-4"
+  },
+  {
+    "type": "click",
+    "name": "Organizar campaña"
+  },
+  {
+    "type": "locator-click",
+    "selector": "details.encounter-other > summary"
+  },
+  {
+    "type": "click",
+    "name": "Organizar un mitin",
+    "exact": false
+  },
+  {
+    "type": "click",
+    "name": "Volver al despacho"
+  },
+  {
+    "type": "click",
+    "name": "Organizar campaña"
+  },
+  {
+    "type": "locator-click",
+    "selector": "details.encounter-other > summary"
+  },
+  {
+    "type": "click",
+    "name": "Organizar un mitin",
+    "exact": false
+  },
+  {
+    "type": "click",
+    "name": "Volver al despacho"
+  },
+  {
+    "type": "click",
+    "name": "Siguiente semana"
+  },
+  {
+    "type": "wait",
+    "ms": 1300
+  },
+  {
+    "type": "inspect",
+    "name": "11-election"
+  }
+]

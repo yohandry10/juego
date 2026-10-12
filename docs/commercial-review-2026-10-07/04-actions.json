@@ -1,0 +1,13 @@
+[
+  {"type":"click","name":"Organizar campaña"},
+  {"type":"click","name":"Hablar con el partido","exact":false},
+  {"type":"click","name":"Volver al despacho"},
+  {"type":"click","name":"Organizar campaña"},
+  {"type":"click","name":"Pedir la nominación"},
+  {"type":"inspect","name":"06-nomination"},
+  {"type":"click","name":"Volver al despacho"},
+  {"type":"inspect","name":"07-week-one-complete"},
+  {"type":"click","name":"Siguiente semana"},
+  {"type":"wait","ms":1200},
+  {"type":"inspect","name":"08-week-two"}
+]

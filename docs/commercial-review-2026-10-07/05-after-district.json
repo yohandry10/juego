@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "text": "M\nMANDATO\nPerú · 2026 · T1\nAlex Ríos\nCandidatura · Diputación\nCAPITAL\n35\nFONDOS\n97K\n-3\nFAVORES\n0\nIMAGEN\n—\nTU EQUIPO\nJefa de campaña\n\n«Cuenta los apoyos antes de prometer.»\n\nEN EL DIARIO DE TU CARRERA\nCerrar el expediente\nEl contacto directo fortaleció el respaldo a tu candidatura.\n\nCambio de preferencia: +1.8 puntos; gasto: 3 mil. Las habilidades relevantes dieron una eficacia de 1.15; la respuesta ciudadana también varía.\n\n«Nos han escuchado. Ahora hay que volver y cumplir.»\n\nJefa de campaña\n\nTu decisión: Recorrer el distrito\n\nFondos\n−3k\nPreferencia\n+1,8 pp\nAcciones disponibles\n−1\n\nLa decisión y sus efectos se conservan en tu partida.\n\nVolver al despacho\nMANDATO\nCAMPAÑA · SEMANA 1",
+  "buttons": [
+    {
+      "text": "M\nMANDATO",
+      "label": "MANDATO · Volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Opciones del juego",
+      "disabled": false
+    },
+    {
+      "text": "Cerrar el expediente",
+      "label": "Cerrar conversación y volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "Volver al despacho",
+      "label": null,
+      "disabled": false
+    }
+  ],
+  "inputs": [],
+  "images": [
+    {
+      "src": "/assets/office/despacho-1600.webp",
+      "loaded": true
+    },
+    {
+      "src": "/assets/portraits/advisor-campaign.webp",
+      "loaded": true
+    }
+  ],
+  "errors": []
+}

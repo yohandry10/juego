@@ -1,0 +1,4 @@
+[
+  {"type":"click","name":"Opciones del juego"},
+  {"type":"download","name":"Exportar partida","file":"review-career-save.json"}
+]

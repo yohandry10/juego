@@ -1,0 +1,9 @@
+[
+  {"type":"click","name":"La carpeta: Decisiones pendientes","exact":false},
+  {"type":"click","name":"Responder públicamente","exact":false},
+  {"type":"inspect","name":"20-drought-response"},
+  {"type":"click","name":"Volver al despacho"},
+  {"type":"click","name":"Fin de turno"},
+  {"type":"wait","ms":1500},
+  {"type":"inspect","name":"21-first-quarter"}
+]

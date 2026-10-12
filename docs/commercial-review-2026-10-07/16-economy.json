@@ -1,0 +1,39 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "text": "M\nMANDATO\nPerú · 2026 · T1\nDiputación\nCapital\n35\nFondos\n21k\nFavores\n0\nImagen\n—\nFin de turno\n← Volver al despacho\nEconomía\nEL INFORME ECONÓMICO · Perú\nLas cuentas tienen consecuencias.\nTU ASESORA ECONÓMICA\nTener margen hoy nos permite prepararnos para mañana.\n\nLee el país al que aspiras a gobernar. Las medidas estarán disponibles cuando dirijas un Gobierno.\n\nUNA PROPUESTA SOBRE TU MESA · TRIMESTRE 0\nACTIVIDAD ECONÓMICA\n3.3%\nSUBIDA DE PRECIOS\n2%\nPERSONAS SIN EMPLEO\n5.1%\nPERSONAS EN POBREZA\n27.5%\nPREPARAR EL PAÍS ANTES DE LA CRISIS\nInvertir en obras y proyectos\n\nLo que buscamos. Busca crear empleo y aumentar lo que el país puede producir.\n\nEl precio de decidir. Aumenta la deuda. Los resultados tardan; el gasto empieza antes de que se vean.\n\nPresentarla cuesta 5 de capital político. Parte de los efectos llega después de 4 trimestres.\n\nPodrás aplicar medidas cuando dirijas un Gobierno activo. Por ahora puedes conocer las opciones.\n\nQuién gana, quién pierde y cuándo\nExaminar otra medida y los problemas del país\nVer todos los indicadores y sus causas\nVer sectores y grupos de la sociedad\nMANDATO · Ficción política y sátira; personajes y partidos generados · Guardado solo en este dispositivo ·\nSalón de la fama\nPrivacidad\nCréditos y fuentes\nReportar un error ↗",
+  "buttons": [
+    {
+      "text": "M\nMANDATO",
+      "label": "MANDATO · Volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "Fin de turno",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Opciones del juego",
+      "disabled": false
+    },
+    {
+      "text": "← Volver al despacho",
+      "label": null,
+      "disabled": false
+    },
+    {
+      "text": "Salón de la fama",
+      "label": null,
+      "disabled": false
+    }
+  ],
+  "inputs": [],
+  "images": [
+    {
+      "src": "/assets/portraits/advisor-economy.webp",
+      "loaded": true
+    }
+  ],
+  "errors": []
+}

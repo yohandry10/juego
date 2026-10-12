@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:5173/",
+  "text": "M\nMANDATO\nPerú · 2026 · T1\nAlex Ríos\nEn la cámara · Diputación\nCAPITAL\n35\nFONDOS\n21K\nFAVORES\n0\nIMAGEN\n—\nTU EQUIPO\nAsesora económica\n\n«Mira el costo de hoy y el efecto de mañana.»\n\nEN EL DIARIO DE TU CARRERA\nCerrar el expediente\nRespondiste: Sequía y abastecimiento: Centros de trabajo.\n\nLa respuesta pública mejoró ligeramente la aprobación.\n\n«La respuesta llegó. El siguiente paso cuenta más que el titular.»\n\nAsesora económica\n\nTu decisión: Responder públicamente\n\nAprobación\n+0,4 pp\n\nLa decisión y sus efectos se conservan en tu partida.\n\nVolver al despacho\nMANDATO\nCAMPAÑA · SEMANA 4",
+  "buttons": [
+    {
+      "text": "M\nMANDATO",
+      "label": "MANDATO · Volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "",
+      "label": "Opciones del juego",
+      "disabled": false
+    },
+    {
+      "text": "Cerrar el expediente",
+      "label": "Cerrar conversación y volver al despacho",
+      "disabled": false
+    },
+    {
+      "text": "Volver al despacho",
+      "label": null,
+      "disabled": false
+    }
+  ],
+  "inputs": [],
+  "images": [
+    {
+      "src": "/assets/office/despacho-1600.webp",
+      "loaded": true
+    },
+    {
+      "src": "/assets/portraits/advisor-economy.webp",
+      "loaded": true
+    }
+  ],
+  "errors": []
+}
